@@ -1,0 +1,96 @@
+{
+  "id": "ro-anaf",
+  "slug": "anaf",
+  "name": "Agenția Națională de Administrare Fiscală",
+  "shortname": "anaf",
+  "category": "agentie",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-10",
+    "keywords": [
+      "anaf",
+      "taxe",
+      "fiscal",
+      "administrare fiscală",
+      "venituri"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": "București"
+  },
+  "description": "Agenția Națională de Administrare Fiscală (ANAF) este un organ de specialitate al administrației publice centrale responsabil cu administrarea veniturilor statului și colectarea taxelor. A fost înființată în 2003 și funcționează în subordinea Ministerului Finanțelor.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Principala",
+      "hex": "#2C2C76",
+      "rgb": [
+        44,
+        44,
+        118
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    },
+    {
+      "name": "Text",
+      "hex": "#151515",
+      "rgb": [
+        21,
+        21,
+        21
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "helvetica neue pro lt",
+      "url": "https://www.myfonts.com/collections/neue-helvetica-font-linotype",
+      "weights": []
+    },
+    "secondary": null
+  },
+  "resources": {
+    "website": "https://www.anaf.ro/",
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-anaf/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-anaf/horizontal/white.svg",
+      "black": "/logos/ro-anaf/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-anaf/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-anaf/horizontal/white.svg",
+      "black": "/logos/ro-anaf/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/ro-anaf/symbol/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-anaf/symbol/white.svg",
+      "black": "/logos/ro-anaf/symbol/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "favicon": null
+  }
+}

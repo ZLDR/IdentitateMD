@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-02-15T10:44:24.325Z",
+  "generatedAt": "2026-02-15T12:43:33.366Z",
   "total": 36,
   "stats": {
     "byCategory": {
@@ -585,19 +585,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Color #B42059",
-          "hex": "#B42059",
-          "rgb": [
-            180,
-            32,
-            89
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "primary"
-        },
-        {
-          "name": "Color #1B1918",
+          "name": "primară",
           "hex": "#1B1918",
           "rgb": [
             27,
@@ -606,7 +594,19 @@
           ],
           "cmyk": null,
           "pantone": null,
-          "usage": "secondary"
+          "usage": "primary"
+        },
+        {
+          "name": "accent",
+          "hex": "#B42059",
+          "rgb": [
+            180,
+            32,
+            89
+          ],
+          "cmyk": null,
+          "pantone": null,
+          "usage": "accent"
         }
       ],
       "typography": null,
@@ -1151,7 +1151,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "S",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1163,7 +1163,7 @@
           "usage": "primary"
         },
         {
-          "name": "Gri",
+          "name": "Color #58595B",
           "hex": "#58595B",
           "rgb": [
             88,
@@ -1175,14 +1175,7 @@
           "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        },
-        "secondary": {
-          "family": "Trebuchet MS"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1347,7 +1340,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1357,25 +1350,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1432,35 +1409,31 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
-          "hex": "#004990",
+          "name": "black",
+          "hex": "#000000",
           "rgb": [
             0,
-            73,
-            144
+            0,
+            0
           ],
           "cmyk": null,
           "pantone": null,
-          "usage": "primary"
+          "usage": "neutral"
         },
         {
-          "name": "Gri",
-          "hex": "#58595B",
+          "name": "white",
+          "hex": "#FFFFFF",
           "rgb": [
-            88,
-            89,
-            91
+            255,
+            255,
+            255
           ],
           "cmyk": null,
           "pantone": null,
-          "usage": "secondary"
+          "usage": "neutral"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1517,7 +1490,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1527,25 +1500,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1603,7 +1560,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1613,25 +1570,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1688,7 +1629,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1698,25 +1639,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1773,7 +1698,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1783,25 +1708,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1858,7 +1767,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1868,25 +1777,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -1943,7 +1836,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -1953,25 +1846,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2028,7 +1905,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2038,25 +1915,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2113,7 +1974,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2123,25 +1984,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2199,7 +2044,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2209,25 +2054,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2284,35 +2113,31 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
-          "hex": "#004990",
+          "name": "negru",
+          "hex": "#000000",
           "rgb": [
             0,
-            73,
-            144
+            0,
+            0
           ],
           "cmyk": null,
           "pantone": null,
-          "usage": "primary"
+          "usage": "neutral"
         },
         {
-          "name": "Gri",
-          "hex": "#58595B",
+          "name": "alb",
+          "hex": "#FFFFFF",
           "rgb": [
-            88,
-            89,
-            91
+            255,
+            255,
+            255
           ],
           "cmyk": null,
           "pantone": null,
-          "usage": "secondary"
+          "usage": "neutral"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2369,7 +2194,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2379,25 +2204,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2455,7 +2264,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2465,25 +2274,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2540,7 +2333,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2550,25 +2343,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,
@@ -2626,7 +2403,7 @@
       "usage_notes": null,
       "colors": [
         {
-          "name": "Albastru",
+          "name": "Color #004990",
           "hex": "#004990",
           "rgb": [
             0,
@@ -2636,25 +2413,9 @@
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
-        },
-        {
-          "name": "Gri",
-          "hex": "#58595B",
-          "rgb": [
-            88,
-            89,
-            91
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "secondary"
         }
       ],
-      "typography": {
-        "primary": {
-          "family": "Trajan Pro"
-        }
-      },
+      "typography": null,
       "resources": {
         "website": null,
         "branding_manual": null,

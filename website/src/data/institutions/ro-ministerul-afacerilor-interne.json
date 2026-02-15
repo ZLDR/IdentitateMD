@@ -1,0 +1,81 @@
+{
+  "id": "ro-ministerul-afacerilor-interne",
+  "slug": "ministerul-afacerilor-interne",
+  "name": "Ministerul Afacerilor Interne",
+  "shortname": "mai",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "minister",
+      "ordine publică",
+      "securitate",
+      "poliție",
+      "jandarmerie"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": "București"
+  },
+  "description": "Ministerul Afacerilor Interne (MAI) este instituția guvernamentală responsabilă pentru asigurarea ordinii publice, protecția cetățenilor și coordonarea structurilor de poliție, jandarmerie şi protecţie civilă din România.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "black",
+      "hex": "#000000",
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "neutral"
+    },
+    {
+      "name": "white",
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "neutral"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-afacerilor-interne/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-afacerilor-interne/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-afacerilor-interne/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-afacerilor-interne/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-afacerilor-interne/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-afacerilor-interne/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": null,
+    "favicon": null
+  }
+}

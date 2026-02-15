@@ -1,0 +1,70 @@
+{
+  "id": "ro-ministerul-apararii",
+  "slug": "ministerul-apararii",
+  "name": "Ministerul Apărării Naționale",
+  "shortname": "mapn",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "apărare",
+      "minister",
+      "armată",
+      "securitate",
+      "forțe",
+      "național"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": null
+  },
+  "description": "Ministerul Apărării Naționale este instituția guvernamentală responsabilă cu apărarea națională și organizarea forțelor armate ale României. Coordonează politica de securitate, pregătirea și operațiunile militare ale statului.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Color #004990",
+      "hex": "#004990",
+      "rgb": [
+        0,
+        73,
+        144
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-apararii/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-apararii/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-apararii/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-apararii/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-apararii/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-apararii/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": null,
+    "favicon": null
+  }
+}

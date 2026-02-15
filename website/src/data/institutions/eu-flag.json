@@ -1,0 +1,81 @@
+{
+  "id": "ro-eu-flag",
+  "slug": "eu-flag",
+  "name": "Steagul Uniunii Europene",
+  "shortname": "ue",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "uniunea europeană",
+      "steag",
+      "steagul european",
+      "simbol",
+      "ue"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": null
+  },
+  "description": "Steagul Uniunii Europene este simbolul oficial al Uniunii, reprezentat printr-un cerc de 12 stele aurii pe un fond albastru. Este utilizat pentru identificarea instituţiilor şi iniţiativelor asociate Uniunii Europene.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Color #FFCC00",
+      "hex": "#FFCC00",
+      "rgb": [
+        255,
+        204,
+        0
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    },
+    {
+      "name": "Color #003399",
+      "hex": "#003399",
+      "rgb": [
+        0,
+        51,
+        153
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "secondary"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/eu-flag/symbol/color.svg",
+      "dark_mode": null,
+      "white": "/logos/eu-flag/symbol/white.svg",
+      "black": "/logos/eu-flag/symbol/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": null,
+    "vertical": null,
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/eu-flag/symbol/color.svg",
+      "dark_mode": null,
+      "white": "/logos/eu-flag/symbol/white.svg",
+      "black": "/logos/eu-flag/symbol/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "favicon": null
+  }
+}

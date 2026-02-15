@@ -1,0 +1,69 @@
+{
+  "id": "ro-ministerul-sanatatii",
+  "slug": "ministerul-sanatatii",
+  "name": "Ministerul Sănătății",
+  "shortname": "ms",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "minister",
+      "sănătate",
+      "sănătate publică",
+      "politici",
+      "servicii medicale"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": "București"
+  },
+  "description": "Ministerul Sănătății este autoritatea guvernamentală responsabilă de politica națională în domeniul sănătății și de organizarea serviciilor medicale. Coordonează programe de sănătate publică, legislația și reglementările din domeniul sănătății.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Color #004990",
+      "hex": "#004990",
+      "rgb": [
+        0,
+        73,
+        144
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-sanatatii/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-sanatatii/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-sanatatii/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-sanatatii/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-sanatatii/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-sanatatii/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": null,
+    "favicon": null
+  }
+}

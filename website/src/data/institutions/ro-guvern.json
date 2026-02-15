@@ -26,7 +26,7 @@
   "usage_notes": null,
   "colors": [
     {
-      "name": "Albastru",
+      "name": "S",
       "hex": "#004990",
       "rgb": [
         0,
@@ -38,7 +38,7 @@
       "usage": "primary"
     },
     {
-      "name": "Gri",
+      "name": "Color #58595B",
       "hex": "#58595B",
       "rgb": [
         88,
@@ -50,14 +50,7 @@
       "usage": "secondary"
     }
   ],
-  "typography": {
-    "primary": {
-      "family": "Trajan Pro"
-    },
-    "secondary": {
-      "family": "Trebuchet MS"
-    }
-  },
+  "typography": null,
   "resources": {
     "website": null,
     "branding_manual": null,

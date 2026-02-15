@@ -1,0 +1,69 @@
+{
+  "id": "ro-ministerul-mediului",
+  "slug": "ministerul-mediului",
+  "name": "Ministerul Mediului",
+  "shortname": "mm",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "mediu",
+      "protecția mediului",
+      "conservare",
+      "poluare",
+      "resurse naturale"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": "B",
+    "city": "București"
+  },
+  "description": "Ministerul Mediului este autoritatea publică centrală responsabilă cu elaborarea şi implementarea politicilor privind protecția mediului, gestionarea resurselor naturale și combaterea schimbărilor climatice în România.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Color #004990",
+      "hex": "#004990",
+      "rgb": [
+        0,
+        73,
+        144
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-mediului/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-mediului/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-mediului/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-mediului/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-mediului/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-mediului/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": null,
+    "favicon": null
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ro-ministerul-energiei",
+  "slug": "ministerul-energiei",
+  "name": "Ministerul Energiei",
+  "shortname": "me",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "energie",
+      "minister",
+      "guvern",
+      "energie-electrică",
+      "resurse-energetice"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": "București"
+  },
+  "description": "Ministerul Energiei este instituția guvernamentală responsabilă pentru elaborarea și implementarea politicilor naționale în domeniul energiei, inclusiv energie electrică, gaze și resurse energetice. Coordonează reglementările, proiectele strategice și cooperarea internațională în sectorul energetic.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Color #004990",
+      "hex": "#004990",
+      "rgb": [
+        0,
+        73,
+        144
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-energiei/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-energiei/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-energiei/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-energiei/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-energiei/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-energiei/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": null,
+    "favicon": null
+  }
+}

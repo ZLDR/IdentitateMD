@@ -1,0 +1,69 @@
+{
+  "id": "ro-ministerul-finantelor",
+  "slug": "ministerul-finantelor",
+  "name": "Ministerul Finanțelor",
+  "shortname": "mf",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "finanțe",
+      "buget",
+      "taxe",
+      "fiscalitate",
+      "minister"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": "București"
+  },
+  "description": "Ministerul Finanțelor elaborează și coordonează politica fiscală, bugetară și financiară a României și gestionează resursele publice. Instituția are responsabilități privind colectarea veniturilor la buget și administrarea datoriei publice.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "Color #004990",
+      "hex": "#004990",
+      "rgb": [
+        0,
+        73,
+        144
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": null,
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-finantelor/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-finantelor/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-finantelor/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/ro-ministerul-finantelor/horizontal/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-ministerul-finantelor/horizontal/white.svg",
+      "black": "/logos/ro-ministerul-finantelor/horizontal/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "vertical": null,
+    "symbol": null,
+    "favicon": null
+  }
+}

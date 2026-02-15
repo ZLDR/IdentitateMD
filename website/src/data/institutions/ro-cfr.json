@@ -1,0 +1,81 @@
+{
+  "id": "ro-cfr",
+  "slug": "cfr",
+  "name": "Căile Ferate Române",
+  "shortname": "cfr",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-15",
+    "keywords": [
+      "cale ferată",
+      "transport feroviar",
+      "infrastructură",
+      "trenuri",
+      "cfr"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "RO",
+    "county": null,
+    "city": "București"
+  },
+  "description": "Căile Ferate Române (CFR) este compania națională de transport feroviar a României, administratorul infrastructurii feroviare pentru circulația trenurilor de călători și marfă. Sediul central este în București, în Palatul CFR.",
+  "usage_notes": null,
+  "colors": [
+    {
+      "name": "primară",
+      "hex": "#1B1918",
+      "rgb": [
+        27,
+        25,
+        24
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    },
+    {
+      "name": "accent",
+      "hex": "#B42059",
+      "rgb": [
+        180,
+        32,
+        89
+      ],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "accent"
+    }
+  ],
+  "typography": null,
+  "resources": {
+    "website": "https://cfr.ro/",
+    "branding_manual": null,
+    "social_media": null
+  },
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/ro-cfr/symbol/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-cfr/symbol/white.svg",
+      "black": "/logos/ro-cfr/symbol/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": null,
+    "vertical": null,
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/ro-cfr/symbol/color.svg",
+      "dark_mode": null,
+      "white": "/logos/ro-cfr/symbol/white.svg",
+      "black": "/logos/ro-cfr/symbol/black.svg",
+      "monochrome": null,
+      "png": null
+    },
+    "favicon": null
+  }
+}

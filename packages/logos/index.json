@@ -1,16 +1,24 @@
 {
   "version": "1.1.0",
-  "generated": "2026-02-15T10:53:44.780Z",
+  "generated": "2026-02-15T12:41:12.137Z",
   "count": 36,
-  "totalLogos": 42,
+  "totalLogos": 133,
   "institutions": [
     {
       "id": "eu-flag",
       "slug": "eu-flag",
       "name": "Eu Flag",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "symbol": {
+          "black": "/logos/eu-flag/symbol/black.svg",
+          "color": "/logos/eu-flag/symbol/color.svg",
+          "white": "/logos/eu-flag/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-anaf",
@@ -76,25 +84,45 @@
       "id": "ro-camera-deputatilor",
       "slug": "ro-camera-deputatilor",
       "name": "Camera Deputatilor",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/ro-camera-deputatilor/symbol/color.svg"
+        }
+      }
     },
     {
       "id": "ro-cfr",
       "slug": "ro-cfr",
       "name": "Cfr",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "symbol": {
+          "black": "/logos/ro-cfr/symbol/black.svg",
+          "color": "/logos/ro-cfr/symbol/color.svg",
+          "white": "/logos/ro-cfr/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-cfr-marfa",
       "slug": "ro-cfr-marfa",
       "name": "Cfr Marfa",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/ro-cfr-marfa/symbol/color.svg"
+        }
+      }
     },
     {
       "id": "ro-cnair",
@@ -150,25 +178,71 @@
       "id": "ro-consiliul-timis",
       "slug": "ro-consiliul-timis",
       "name": "Consiliul Timis",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal",
+        "vertical",
+        "symbol"
+      ],
+      "logoCount": 9,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-consiliul-timis/horizontal/black.svg",
+          "color": "/logos/ro-consiliul-timis/horizontal/color.svg",
+          "white": "/logos/ro-consiliul-timis/horizontal/white.svg"
+        },
+        "vertical": {
+          "black": "/logos/ro-consiliul-timis/vertical/black.svg",
+          "color": "/logos/ro-consiliul-timis/vertical/color.svg",
+          "white": "/logos/ro-consiliul-timis/vertical/white.svg"
+        },
+        "symbol": {
+          "black": "/logos/ro-consiliul-timis/symbol/black.svg",
+          "color": "/logos/ro-consiliul-timis/symbol/color.svg",
+          "white": "/logos/ro-consiliul-timis/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-dna",
       "slug": "ro-dna",
       "name": "Dna",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "vertical",
+        "symbol"
+      ],
+      "logoCount": 6,
+      "logos": {
+        "vertical": {
+          "black": "/logos/ro-dna/vertical/black.svg",
+          "color": "/logos/ro-dna/vertical/color.svg",
+          "white": "/logos/ro-dna/vertical/white.svg"
+        },
+        "symbol": {
+          "black": "/logos/ro-dna/symbol/black.svg",
+          "color": "/logos/ro-dna/symbol/color.svg",
+          "white": "/logos/ro-dna/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-finantat-de-ue",
       "slug": "ro-finantat-de-ue",
       "name": "Finantat De Ue",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/ro-finantat-de-ue/horizontal/color.svg",
+          "white": "/logos/ro-finantat-de-ue/horizontal/white.svg"
+        },
+        "vertical": {
+          "color": "/logos/ro-finantat-de-ue/vertical/color.svg",
+          "white": "/logos/ro-finantat-de-ue/vertical/white.svg"
+        }
+      }
     },
     {
       "id": "ro-guvern",
@@ -212,129 +286,255 @@
       "id": "ro-ministerul-afacerilor-externe",
       "slug": "ro-ministerul-afacerilor-externe",
       "name": "Ministerul Afacerilor Externe",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-afacerilor-externe/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-afacerilor-externe/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-afacerilor-externe/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-afacerilor-interne",
       "slug": "ro-ministerul-afacerilor-interne",
       "name": "Ministerul Afacerilor Interne",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-afacerilor-interne/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-afacerilor-interne/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-afacerilor-interne/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-agriculturii",
       "slug": "ro-ministerul-agriculturii",
       "name": "Ministerul Agriculturii",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-agriculturii/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-agriculturii/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-agriculturii/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-apararii",
       "slug": "ro-ministerul-apararii",
       "name": "Ministerul Apararii",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-apararii/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-apararii/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-apararii/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-culturii",
       "slug": "ro-ministerul-culturii",
       "name": "Ministerul Culturii",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-culturii/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-culturii/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-culturii/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-dezvoltarii",
       "slug": "ro-ministerul-dezvoltarii",
       "name": "Ministerul Dezvoltarii",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-dezvoltarii/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-dezvoltarii/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-dezvoltarii/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-economiei",
       "slug": "ro-ministerul-economiei",
       "name": "Ministerul Economiei",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-economiei/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-economiei/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-economiei/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-educatiei",
       "slug": "ro-ministerul-educatiei",
       "name": "Ministerul Educatiei",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-educatiei/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-educatiei/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-educatiei/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-energiei",
       "slug": "ro-ministerul-energiei",
       "name": "Ministerul Energiei",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-energiei/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-energiei/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-energiei/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-finantelor",
       "slug": "ro-ministerul-finantelor",
       "name": "Ministerul Finantelor",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-finantelor/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-finantelor/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-finantelor/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-investitiilor-europene",
       "slug": "ro-ministerul-investitiilor-europene",
       "name": "Ministerul Investitiilor Europene",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-investitiilor-europene/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-investitiilor-europene/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-investitiilor-europene/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-justitiei",
       "slug": "ro-ministerul-justitiei",
       "name": "Ministerul Justitiei",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-justitiei/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-justitiei/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-justitiei/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-mediului",
       "slug": "ro-ministerul-mediului",
       "name": "Ministerul Mediului",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-mediului/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-mediului/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-mediului/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-muncii",
       "slug": "ro-ministerul-muncii",
       "name": "Ministerul Muncii",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/ro-ministerul-muncii/horizontal/color.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-sanatatii",
       "slug": "ro-ministerul-sanatatii",
       "name": "Ministerul Sanatatii",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-sanatatii/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-sanatatii/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-sanatatii/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-ministerul-transporturilor",
       "slug": "ro-ministerul-transporturilor",
       "name": "Ministerul Transporturilor",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/ro-ministerul-transporturilor/horizontal/black.svg",
+          "color": "/logos/ro-ministerul-transporturilor/horizontal/color.svg",
+          "white": "/logos/ro-ministerul-transporturilor/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-monitorul-oficial",
@@ -356,41 +556,90 @@
       "id": "ro-pnrr",
       "slug": "ro-pnrr",
       "name": "Pnrr",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/ro-pnrr/horizontal/color.svg",
+          "white": "/logos/ro-pnrr/horizontal/white.svg"
+        }
+      }
     },
     {
       "id": "ro-registrul-comertului",
       "slug": "ro-registrul-comertului",
       "name": "Registrul Comertului",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "vertical",
+        "symbol"
+      ],
+      "logoCount": 6,
+      "logos": {
+        "vertical": {
+          "black": "/logos/ro-registrul-comertului/vertical/black.svg",
+          "color": "/logos/ro-registrul-comertului/vertical/color.svg",
+          "white": "/logos/ro-registrul-comertului/vertical/white.svg"
+        },
+        "symbol": {
+          "black": "/logos/ro-registrul-comertului/symbol/black.svg",
+          "color": "/logos/ro-registrul-comertului/symbol/color.svg",
+          "white": "/logos/ro-registrul-comertului/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-sie",
       "slug": "ro-sie",
       "name": "Sie",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "symbol": {
+          "black": "/logos/ro-sie/symbol/black.svg",
+          "color": "/logos/ro-sie/symbol/color.svg",
+          "white": "/logos/ro-sie/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-sri",
       "slug": "ro-sri",
       "name": "Sri",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "vertical",
+        "symbol"
+      ],
+      "logoCount": 6,
+      "logos": {
+        "vertical": {
+          "black": "/logos/ro-sri/vertical/black.svg",
+          "color": "/logos/ro-sri/vertical/color.svg",
+          "white": "/logos/ro-sri/vertical/white.svg"
+        },
+        "symbol": {
+          "black": "/logos/ro-sri/symbol/black.svg",
+          "color": "/logos/ro-sri/symbol/color.svg",
+          "white": "/logos/ro-sri/symbol/white.svg"
+        }
+      }
     },
     {
       "id": "ro-stema",
       "slug": "ro-stema",
       "name": "Stema",
-      "layouts": [],
-      "logoCount": 0,
-      "logos": {}
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/ro-stema/symbol/color.svg"
+        }
+      }
     }
   ]
 }
