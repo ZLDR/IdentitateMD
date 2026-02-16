@@ -136,7 +136,10 @@ export interface Resources {
     twitter?: string;
     linkedin?: string;
     instagram?: string;
+    youtube?: string;                            // YouTube channel
   };
+  wikidata_id?: string;                          // Wikidata entity ID (e.g., "Q12345")
+  wikipedia_url?: string;                        // Romanian Wikipedia URL
 }
 
 /**
@@ -147,6 +150,8 @@ export interface Meta {
   last_updated: string;                          // ISO 8601 date
   keywords: string[];                            // Keywords for search (was 'tags' in v2)
   quality?: 'verified' | 'community' | 'draft';  // Optional quality level
+  seo_title?: string;                            // Custom SEO title override
+  seo_description?: string;                      // Custom meta description override
 }
 
 /**

@@ -7,9 +7,11 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
 }
 
-const { title, description, ogImage }: Props = Astro.props;
+const { title, description, ogImage, ogType, noindex }: Props = Astro.props;
 
 const pageTitle = title || 'IdentitateRO — Registrul Vizual al Instituțiilor Publice';
 const pageDescription = description || 'Registru digital open-source pentru logo-uri vectoriale (SVG) ale instituțiilor publice din România. O singură sursă de adevăr.';
@@ -28,10 +30,12 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
 
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
     <!-- Open Graph -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType || 'website'} />
     <meta property="og:locale" content="ro_RO" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="IdentitateRO" />
@@ -68,6 +72,9 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
         "url": "https://identitate.eu"
       }
     })} />
+
+    <!-- Page-specific head content (JSON-LD, etc.) -->
+    <slot name="head" />
 
     <title>{pageTitle}</title>
   </head>

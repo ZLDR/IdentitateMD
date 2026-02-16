@@ -53,6 +53,14 @@
         "quality": {
           "type": ["string", "null"],
           "enum": ["verified", "community", "draft", null]
+        },
+        "seo_title": {
+          "type": ["string", "null"],
+          "description": "Custom SEO title override for the institution page"
+        },
+        "seo_description": {
+          "type": ["string", "null"],
+          "description": "Custom meta description override for the institution page"
         }
       }
     },
@@ -157,8 +165,17 @@
             "facebook": { "type": ["string", "null"] },
             "twitter": { "type": ["string", "null"] },
             "linkedin": { "type": ["string", "null"] },
-            "instagram": { "type": ["string", "null"] }
+            "instagram": { "type": ["string", "null"] },
+            "youtube": { "type": ["string", "null"] }
           }
+        },
+        "wikidata_id": {
+          "type": ["string", "null"],
+          "description": "Wikidata entity ID (e.g., Q12345)"
+        },
+        "wikipedia_url": {
+          "type": ["string", "null"],
+          "description": "Romanian Wikipedia URL for the institution"
         }
       }
     }
