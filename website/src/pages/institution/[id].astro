@@ -154,7 +154,7 @@ const cdnLogoPath = `${cdnBasePath}/${mainLayout}/color.svg`;
             {/* Preview-uri variante */}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-3">
               {variants.map(([variant, path]) => (
-                <div class="border border-surface-200 rounded overflow-hidden">
+                <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
                   <div class:list={[
                     "aspect-[3/2] flex items-center justify-center p-6",
                     variant === 'white' ? 'bg-gray-800' : 'checkerboard'
@@ -197,7 +197,7 @@ const cdnLogoPath = `${cdnBasePath}/${mainLayout}/color.svg`;
                 const pngPath = resolveAssetPath(group.png.path);
                 if (!pngPath) return null;
                 return (
-                  <div class="border border-surface-200 rounded overflow-hidden">
+                  <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
                     <div class="checkerboard aspect-[3/2] flex items-center justify-center p-6">
                       <img
                         src={pngPath}

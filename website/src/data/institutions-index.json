@@ -1,11 +1,11 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-02-15T12:43:33.366Z",
-  "total": 36,
+  "generatedAt": "2026-02-16T06:28:20.166Z",
+  "total": 37,
   "stats": {
     "byCategory": {
       "altele": 5,
-      "agentie": 7,
+      "agentie": 8,
       "autoritate": 4,
       "consiliu-judetean": 1,
       "proiect-ue": 2,
@@ -13,7 +13,7 @@
       "minister": 16
     },
     "withManual": 0,
-    "withSvg": 36
+    "withSvg": 37
   },
   "categories": [
     {
@@ -29,7 +29,7 @@
     {
       "id": "agentie",
       "label": "Agenții",
-      "count": 7
+      "count": 8
     },
     {
       "id": "autoritate",
@@ -951,6 +951,75 @@
           "dark_mode": null,
           "white": "/logos/ro-consiliul-timis/symbol/white.svg",
           "black": "/logos/ro-consiliul-timis/symbol/black.svg",
+          "monochrome": null,
+          "png": null
+        },
+        "favicon": null
+      }
+    },
+    {
+      "id": "ro-diicot",
+      "slug": "diicot",
+      "name": "Direcția de Investigare a Infracțiunilor de Criminalitate Organizată și Terorism",
+      "shortname": "diicot",
+      "category": "agentie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-02-16",
+        "keywords": [
+          "procuratura",
+          "criminalitate organizata",
+          "terorism",
+          "investigatii",
+          "drept penal"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "RO",
+        "county": null,
+        "city": "București"
+      },
+      "description": "Direcția de Investigare a Infracțiunilor de Criminalitate Organizată și Terorism (DIICOT) este o structură a Ministerului Public responsabilă cu investigarea și urmărirea penală a infracțiunilor de criminalitate organizată, trafic de persoane, trafic de droguri și terorism. Coordonează anchete complexe și colaborează cu instituțiile naționale și internaționale pentru combaterea fenomenelor infracționale deosebit de grave.",
+      "usage_notes": null,
+      "colors": [
+        {
+          "name": "Color #1F3568",
+          "hex": "#1F3568",
+          "rgb": [
+            31,
+            53,
+            104
+          ],
+          "cmyk": null,
+          "pantone": null,
+          "usage": "primary"
+        }
+      ],
+      "typography": null,
+      "resources": {
+        "website": null,
+        "branding_manual": null,
+        "social_media": null
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/ro-diicot/symbol/color.svg",
+          "dark_mode": null,
+          "white": "/logos/ro-diicot/symbol/white.svg",
+          "black": "/logos/ro-diicot/symbol/black.svg",
+          "monochrome": null,
+          "png": null
+        },
+        "horizontal": null,
+        "vertical": null,
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/ro-diicot/symbol/color.svg",
+          "dark_mode": null,
+          "white": "/logos/ro-diicot/symbol/white.svg",
+          "black": "/logos/ro-diicot/symbol/black.svg",
           "monochrome": null,
           "png": null
         },
