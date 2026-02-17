@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 // Header component - Navbar-ul aplicației
 const currentPath = Astro.url.pathname;
 
@@ -18,13 +19,8 @@ function isActive(href: string): boolean {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <nav class="flex items-center justify-between h-12">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-1.5 group">
-        <div class="w-6 h-6 bg-primary-500 rounded flex items-center justify-center">
-          <span class="text-white font-bold text-[10px]">id</span>
-        </div>
-        <span class="text-sm font-bold text-primary-900">
-          Identitate<span class="text-primary-500">.RO</span>
-        </span>
+      <a href="/" class="flex items-center group">
+        <Logo class="h-7 max-w-[201px]" />
       </a>
 
       <!-- Navigation Links (Desktop) -->

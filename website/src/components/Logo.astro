@@ -1,0 +1,21 @@
+---
+/**
+ * Logo.astro — Componenta reutilizabilă pentru logo-ul IdentitateRO
+ * Folosește logo-identitate.svg din public/
+ */
+interface Props {
+  /** Înălțimea logo-ului (default: h-7 pentru header) */
+  class?: string;
+}
+
+const { class: className = 'h-7' } = Astro.props;
+---
+
+<img
+  src="/logo-identitate.svg"
+  alt="Identitate.eu"
+  class={className}
+  width="939"
+  height="195"
+  loading="eager"
+/>
