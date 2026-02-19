@@ -187,8 +187,8 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
   document.addEventListener('DOMContentLoaded', () => {
 
-  const data = (window as any).__IDENTITATE_DATA__ as Array<{slug: string; name: string; shortname?: string; category: string; meta: {keywords: string[]}; description?: string}>;
-  const LABELS: Record<string, string> = (window as any).__CATEGORY_LABELS__;
+  const data = window.__IDENTITATE_DATA__;
+  const LABELS: Record<string, string> = window.__CATEGORY_LABELS__;
 
   // Initialize Fuse.js for fuzzy search
   const fuse = new Fuse(data, {

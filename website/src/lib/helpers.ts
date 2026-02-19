@@ -37,12 +37,12 @@ export function getPrimaryLogoPath(inst: Institution): string | null {
   
   // Priority: color → dark_mode → black → white → monochrome → png
   // Rezolvă AssetUrls la string folosind CDN sau local
-  if (main.color) return resolveAssetPath(main.color);
-  if (main.dark_mode) return resolveAssetPath(main.dark_mode);
-  if (main.black) return resolveAssetPath(main.black);
-  if (main.white) return resolveAssetPath(main.white);
-  if (main.monochrome) return resolveAssetPath(main.monochrome);
-  if (main.png) return resolveAssetPath(main.png.path);
+  if (main.color) return resolveAssetPath(main.color, true);
+  if (main.dark_mode) return resolveAssetPath(main.dark_mode, true);
+  if (main.black) return resolveAssetPath(main.black, true);
+  if (main.white) return resolveAssetPath(main.white, true);
+  if (main.monochrome) return resolveAssetPath(main.monochrome, true);
+  if (main.png) return resolveAssetPath(main.png.path, true);
   
   return null;
 }
@@ -90,7 +90,7 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
     
     for (const { variant, asset } of variants) {
       if (!asset) continue;
-      const path = resolveAssetPath(asset);
+      const path = resolveAssetPath(asset, true);
       if (!path) continue;
       const variantLabel = LOGO_VARIANT_LABELS[variant] || variant;
       assets.push({
@@ -104,7 +104,7 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
     
     // PNG
     if (group.png) {
-      const pngPath = resolveAssetPath(group.png.path);
+      const pngPath = resolveAssetPath(group.png.path, true);
       if (pngPath) {
         assets.push({
           label: `${layoutLabel} — PNG`,
@@ -140,7 +140,7 @@ export function getLogoVariants(group: LogoAssetGroup | undefined): Array<[strin
   return variantKeys
     .filter(({ asset }) => asset)
     .map(({ key, asset }) => {
-      const path = resolveAssetPath(asset);
+      const path = resolveAssetPath(asset, true);
       return path ? [key, path] as [string, string] : null;
     })
     .filter((item): item is [string, string] => item !== null);
@@ -180,11 +180,12 @@ export function getCdnLogoUrl(inst: Institution, preferredVariant: string = 'col
  * Returnează numele de afișat al instituției (numele complet).
  */
 export function getDisplayName(inst: Institution): string {
-  return inst.name;
+  // Shortname for display (uppercase), fallback to full name
+  return inst.shortname?.toUpperCase() || inst.name;
 }
 
 /**
- * Returnează numele complet pentru titluri.
+ * Returnează numele complet pentru titluri (always full name).
  */
 export function getFullName(inst: Institution): string {
   return inst.name;

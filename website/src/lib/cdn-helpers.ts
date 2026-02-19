@@ -38,11 +38,11 @@ export function getCdnUrls(localPath: string, version: string = CDN_VERSION): As
 
 /**
  * Rezolvă AssetUrls la un string URL
- * Dacă asset e string (path local), generează automat CDN URL dacă preferCdn=true
+ * Dacă asset e string (path local), generează automat CDN URL dacă preferCdn=true ȘI path începe cu /logos/
  * Dacă asset e object cu cdn_primary/cdn_fallback/local, folosește logica de fallback
  * 
  * @param asset - AssetUrls sau string
- * @param preferCdn - Dacă true, preferă CDN-ul; altfel folosește local (default: true)
+ * @param preferCdn - Dacă true, preferă CDN-ul; altfel folosește local (default: false)
  * @returns String URL
  */
 export function resolveAssetPath(asset: AssetUrls | undefined, preferCdn: boolean = false): string | null {
