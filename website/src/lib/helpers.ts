@@ -2,7 +2,7 @@
  * IdentitateRO — Funcții helper
  */
 
-import type { Institution, LogoLayout, LogoColorVariant } from '../types/institution';
+import type { Institution, LogoLayout, LogoColorVariant, LogoAssetGroup } from '../types/institution';
 import { LOGO_LAYOUT_LABELS, LOGO_VARIANT_LABELS } from './labels';
 import { resolveAssetPath } from './cdn-helpers';
 
@@ -123,6 +123,60 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
 }
 
 /**
+ * Extrage variantele disponibile dintr-un grup de asset-uri logo.
+ * Returnează un array de [variantKey, resolvedPath] pentru afișare.
+ */
+export function getLogoVariants(group: LogoAssetGroup | undefined): Array<[string, string]> {
+  if (!group) return [];
+  
+  const variantKeys: Array<{ key: string; asset: typeof group.color }> = [
+    { key: 'color', asset: group.color },
+    { key: 'dark_mode', asset: group.dark_mode },
+    { key: 'white', asset: group.white },
+    { key: 'black', asset: group.black },
+    { key: 'monochrome', asset: group.monochrome },
+  ];
+  
+  return variantKeys
+    .filter(({ asset }) => asset)
+    .map(({ key, asset }) => {
+      const path = resolveAssetPath(asset);
+      return path ? [key, path] as [string, string] : null;
+    })
+    .filter((item): item is [string, string] => item !== null);
+}
+
+/**
+ * Construiește URL-ul CDN pentru un logo cu verificare.
+ * Returnează null dacă varianta specificată nu există.
+ */
+export function getCdnLogoUrl(inst: Institution, preferredVariant: string = 'color'): string | null {
+  const cdnBase = `https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/${inst.id}`;
+  const mainLayout = inst.assets.main?.type || 'horizontal';
+  
+  // Verificăm dacă varianta există în assets.main
+  const main = inst.assets.main;
+  if (!main) return null;
+  
+  // Găsim variantele disponibile
+  const availableVariants: string[] = [];
+  if (main.color) availableVariants.push('color');
+  if (main.dark_mode) availableVariants.push('dark_mode');
+  if (main.white) availableVariants.push('white');
+  if (main.black) availableVariants.push('black');
+  if (main.monochrome) availableVariants.push('monochrome');
+  
+  if (availableVariants.length === 0) return null;
+  
+  // Folosim varianta preferată sau prima disponibilă
+  const variant = availableVariants.includes(preferredVariant) 
+    ? preferredVariant 
+    : availableVariants[0];
+  
+  return `${cdnBase}/${mainLayout}/${variant}.svg`;
+}
+
+/**
  * Returnează numele de afișat al instituției (numele complet).
  */
 export function getDisplayName(inst: Institution): string {
@@ -176,4 +230,27 @@ export function getWebsiteUrl(inst: Institution): string | undefined {
  */
 export function getBrandManualUrl(inst: Institution): string | undefined {
   return inst.resources?.branding_manual;
+}
+
+/**
+ * Returnează URL-ul site-ului curat (fără slash la final).
+ * Folosește configurația din Astro sau fallback.
+ */
+export function getSiteUrl(siteConfig?: string): string {
+  if (siteConfig) {
+    return siteConfig.replace(/\/$/, '');
+  }
+  return 'https://identitate.eu';
+}
+
+/**
+ * Returnează origin-ul (protocol + host) din URL-ul site-ului.
+ */
+export function getSiteOrigin(siteConfig?: string): string {
+  const url = getSiteUrl(siteConfig);
+  try {
+    return new URL(url).origin;
+  } catch {
+    return url;
+  }
 }
