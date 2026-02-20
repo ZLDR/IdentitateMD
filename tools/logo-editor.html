@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IdentitateRO — Logo Editor</title>
+<style>
+  :root {
+    --bg: #0f0f14;
+    --bg-card: #1a1a24;
+    --bg-card-hover: #22223a;
+    --bg-input: #14141e;
+    --border: #2a2a3e;
+    --border-focus: #6366f1;
+    --text: #e4e4ed;
+    --text-muted: #8888a4;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 15, 20, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+  header .stats {
+    font-size: 13px;
+    color: var(--text-muted);
+    flex: 1;
+  }
+  header .actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-success { background: var(--success); border-color: var(--success); color: #fff; }
+  .btn-success:hover { opacity: 0.9; }
+  .btn-danger { background: transparent; border-color: var(--danger); color: var(--danger); }
+  .btn-danger:hover { background: var(--danger); color: #fff; }
+  .btn-sm { padding: 5px 10px; font-size: 12px; }
+
+  /* ── Layout ── */
+  .container {
+    display: flex;
+    height: calc(100vh - 53px);
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 320px;
+    min-width: 320px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+  }
+  .sidebar-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .search-box {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-input);
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-box:focus { border-color: var(--border-focus); }
+  .filter-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .filter-chip {
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .sidebar-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  .sidebar-list::-webkit-scrollbar { width: 6px; }
+  .sidebar-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.12s;
+    border: 1px solid transparent;
+  }
+  .sidebar-item:hover { background: var(--bg-card); }
+  .sidebar-item.active { background: var(--bg-card); border-color: var(--accent); }
+  .sidebar-item .thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .sidebar-item .thumb img {
+    max-width: 30px;
+    max-height: 30px;
+    object-fit: contain;
+  }
+  .sidebar-item .info { flex: 1; min-width: 0; }
+  .sidebar-item .info .name {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sidebar-item .info .meta-line {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .sidebar-item .modified-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--warning);
+    flex-shrink: 0;
+    display: none;
+  }
+  .sidebar-item.modified .modified-dot { display: block; }
+
+  /* ── Main content ── */
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px;
+  }
+  .main::-webkit-scrollbar { width: 6px; }
+  .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 16px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .empty-state .icon { font-size: 48px; opacity: 0.3; }
+  .empty-state p { max-width: 400px; line-height: 1.6; }
+
+  /* ── Form sections ── */
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-input);
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--border-focus); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  /* ── Tags / Keywords ── */
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-input);
+    min-height: 40px;
+    cursor: text;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+  }
+  .tag .remove {
+    cursor: pointer;
+    opacity: 0.7;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .tag .remove:hover { opacity: 1; }
+  .tag-input {
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 12px;
+    outline: none;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  /* ── Color rows ── */
+  .color-list { display: flex; flex-direction: column; gap: 8px; }
+  .color-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .color-row .swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .color-row input[type="color"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .color-row .color-fields {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .color-row .color-fields input {
+    padding: 5px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    font-size: 12px;
+    outline: none;
+    width: 100px;
+  }
+  .color-row .color-fields input:focus { border-color: var(--border-focus); }
+  .color-row .color-fields select {
+    padding: 5px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    font-size: 12px;
+    outline: none;
+  }
+  .color-row .remove-color {
+    cursor: pointer;
+    color: var(--danger);
+    font-size: 18px;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  .color-row .remove-color:hover { opacity: 1; }
+
+  /* ── Logo preview grid ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .logo-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .logo-card:hover { border-color: var(--accent); }
+  .logo-card .preview {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+  }
+  .logo-card .preview.bg-white { background: #ffffff; }
+  .logo-card .preview.bg-dark { background: #1a1a2e; }
+  .logo-card .preview.bg-checker {
+    background-image: 
+      linear-gradient(45deg, #ccc 25%, transparent 25%),
+      linear-gradient(-45deg, #ccc 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ccc 75%),
+      linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  }
+  .logo-card .preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .logo-card .preview .no-file {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  .logo-card .card-info {
+    padding: 10px 12px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-card .card-info .label {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .logo-card .card-info .layout-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+
+  /* ── Toast ── */
+  .toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toast {
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  .toast.success { background: var(--success); color: #fff; }
+  .toast.error { background: var(--danger); color: #fff; }
+  .toast.warning { background: var(--warning); color: #000; }
+  .toast.info { background: var(--accent); color: #fff; }
+
+  @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes toastOut { from { opacity: 1; } to { opacity: 0; transform: translateY(-10px); } }
+
+  /* ── Modal ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    width: 480px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .modal h3 { font-size: 16px; margin-bottom: 16px; }
+  .modal .form-group { margin-bottom: 12px; }
+  .modal .modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  /* ── Validation badges ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .badge.verified { background: rgba(34, 197, 94, 0.15); color: var(--success); }
+  .badge.draft { background: rgba(245, 158, 11, 0.15); color: var(--warning); }
+  .badge.community { background: rgba(99, 102, 241, 0.15); color: var(--accent); }
+
+  /* ── Assets edit area ── */
+  .asset-layout-section {
+    margin-bottom: 16px;
+  }
+  .asset-layout-section h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .asset-variant-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    padding: 6px 10px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .asset-variant-row .variant-label {
+    width: 80px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+  .asset-variant-row input {
+    flex: 1;
+    padding: 5px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    font-size: 12px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    outline: none;
+  }
+  .asset-variant-row input:focus { border-color: var(--border-focus); }
+  .asset-variant-row .remove-asset {
+    cursor: pointer;
+    color: var(--danger);
+    font-size: 16px;
+    opacity: 0.5;
+  }
+  .asset-variant-row .remove-asset:hover { opacity: 1; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; min-width: unset; max-height: 40vh; border-right: none; border-bottom: 1px solid var(--border); }
+    .main { padding: 16px; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── JSON preview ── */
+  .json-preview {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    max-height: 400px;
+    overflow: auto;
+    white-space: pre-wrap;
+    color: var(--text);
+  }
+
+  /* Validation error list */
+  .validation-errors {
+    list-style: none;
+    padding: 0;
+  }
+  .validation-errors li {
+    padding: 6px 10px;
+    margin-bottom: 4px;
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 3px solid var(--danger);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 12px;
+    color: var(--danger);
+  }
+
+  /* ── Drop zone overlay ── */
+  .drop-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(99, 102, 241, 0.1);
+    border: 3px dashed var(--accent);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .drop-overlay.visible { display: flex; }
+</style>
+</head>
+<body>
+
+<!-- Drop overlay -->
+<div class="drop-overlay" id="dropOverlay">📂 Drop fișierele JSON aici</div>
+
+<!-- Header -->
+<header>
+  <h1>🏛️ IdentitateRO Editor</h1>
+  <div class="stats" id="headerStats">Nicio instituție încărcată</div>
+  <div class="actions">
+    <button class="btn" id="btnLoadFolder" title="Încarcă un folder cu JSON-uri">📂 Încarcă Folder</button>
+    <button class="btn" id="btnLoadFiles" title="Încarcă fișiere JSON individuale">📄 Încarcă Fișiere</button>
+    <button class="btn btn-primary" id="btnAddNew" title="Adaugă o instituție nouă">＋ Instituție Nouă</button>
+    <button class="btn btn-success" id="btnSaveAll" title="Salvează toate modificările">💾 Salvează Tot</button>
+    <button class="btn" id="btnExportZip" title="Descarcă toate JSON-urile ca fișiere individuale">📦 Export</button>
+  </div>
+</header>
+
+<!-- Container -->
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <input type="text" class="search-box" id="searchBox" placeholder="Caută instituție...">
+      <div class="filter-row" id="filterRow">
+        <button class="filter-chip active" data-cat="all">Toate</button>
+      </div>
+    </div>
+    <div class="sidebar-list" id="sidebarList"></div>
+  </div>
+
+  <!-- Main -->
+  <div class="main" id="mainContent">
+    <div class="empty-state" id="emptyState">
+      <div class="icon">🏛️</div>
+      <h2>IdentitateRO Logo Editor</h2>
+      <p>Încarcă un folder cu fișiere JSON ale instituțiilor sau adaugă manual o instituție nouă. Poți edita toate câmpurile, previzualiza logo-urile SVG și salva înapoi fișierele.</p>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button class="btn btn-primary" onclick="document.getElementById('btnLoadFolder').click()">📂 Încarcă Folder</button>
+        <button class="btn" onclick="document.getElementById('btnLoadFiles').click()">📄 Încarcă Fișiere</button>
+      </div>
+    </div>
+    <div id="editorArea" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- Modal: New Institution -->
+<div class="modal-overlay" id="modalNew">
+  <div class="modal">
+    <h3>➕ Instituție Nouă</h3>
+    <div class="form-group">
+      <label>Nume complet</label>
+      <input type="text" id="newName" placeholder="ex: Ministerul Digitalizării">
+    </div>
+    <div class="form-group">
+      <label>Slug (se va genera din nume dacă lași gol)</label>
+      <input type="text" id="newSlug" placeholder="ex: digitalizarii">
+    </div>
+    <div class="form-group">
+      <label>Categorie</label>
+      <select id="newCategory">
+        <option value="guvern">Guvern</option>
+        <option value="minister" selected>Minister</option>
+        <option value="primarie">Primărie</option>
+        <option value="consiliu-judetean">Consiliu Județean</option>
+        <option value="prefectura">Prefectură</option>
+        <option value="agentie">Agenție</option>
+        <option value="autoritate">Autoritate</option>
+        <option value="proiect-ue">Proiect UE</option>
+        <option value="institutie-cultura">Instituție de Cultură</option>
+        <option value="altele">Altele</option>
+      </select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal('modalNew')">Anulează</button>
+      <button class="btn btn-primary" id="btnCreateInstitution">Creează</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="institutions-data.js"></script>
+<script>
+// ============================================================================
+// STATE
+// ============================================================================
+const state = {
+  institutions: new Map(),   // id -> institution data
+  modified: new Set(),       // ids that have been modified
+  selected: null,            // currently selected id
+  dirHandle: null,           // File System Access API directory handle
+  fileHandles: new Map(),    // id -> file handle (for saving back)
+  logoBasePath: '',          // base path for logo SVGs (set when loading folder)
+  svgCache: new Map(),       // path -> data URL for SVG previews
+};
+
+const CATEGORIES = {
+  'guvern': 'Guvern',
+  'minister': 'Ministere',
+  'primarie': 'Primării',
+  'consiliu-judetean': 'Consilii Județene',
+  'prefectura': 'Prefecturi',
+  'agentie': 'Agenții',
+  'autoritate': 'Autorități',
+  'proiect-ue': 'Proiecte UE',
+  'institutie-cultura': 'Cultură',
+  'altele': 'Altele',
+};
+
+const LAYOUTS = ['horizontal', 'vertical', 'symbol'];
+const VARIANTS = ['color', 'dark_mode', 'white', 'black', 'monochrome'];
+const QUALITY_LEVELS = ['draft', 'community', 'verified'];
+
+// ============================================================================
+// UTILITIES
+// ============================================================================
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[ăâ]/g, 'a').replace(/[îì]/g, 'i')
+    .replace(/[șş]/g, 's').replace(/[țţ]/g, 't')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function toast(msg, type = 'info') {
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.textContent = msg;
+  document.getElementById('toastContainer').appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+function deepClone(obj) { return JSON.parse(JSON.stringify(obj)); }
+
+function getAssetLocalPath(asset) {
+  if (!asset) return null;
+  if (typeof asset === 'string') return asset;
+  if (typeof asset === 'object' && asset.local) return asset.local;
+  return null;
+}
+
+// ============================================================================
+// TEMPLATE: Empty Institution
+// ============================================================================
+function createEmptyInstitution(name, slug, category) {
+  const id = `ro-${slug}`;
+  return {
+    id,
+    slug,
+    name,
+    shortname: slug,
+    category,
+    meta: {
+      version: "1.0",
+      last_updated: new Date().toISOString().split('T')[0],
+      keywords: [],
+      quality: "draft"
+    },
+    location: {
+      country_code: "RO",
+      county: null,
+      city: "București"
+    },
+    description: null,
+    usage_notes: null,
+    colors: [],
+    typography: null,
+    resources: {
+      website: null,
+      branding_manual: null,
+      social_media: null
+    },
+    assets: {
+      main: {
+        type: "symbol",
+        color: null,
+        dark_mode: null,
+        white: null,
+        black: null,
+        monochrome: null,
+        png: null
+      },
+      horizontal: null,
+      vertical: null,
+      symbol: null,
+      favicon: null
+    }
+  };
+}
+
+// ============================================================================
+// VALIDATION
+// ============================================================================
+function validateInstitution(inst) {
+  const errors = [];
+  if (!inst.id) errors.push('Lipsă ID');
+  if (!inst.id?.startsWith('ro-') && inst.id !== 'eu-flag') errors.push('ID-ul trebuie să înceapă cu "ro-"');
+  if (!inst.slug) errors.push('Lipsă slug');
+  if (!inst.name) errors.push('Lipsă nume');
+  if (!inst.category) errors.push('Lipsă categorie');
+  if (!Object.keys(CATEGORIES).includes(inst.category)) errors.push(`Categorie invalidă: ${inst.category}`);
+  if (!inst.meta) errors.push('Lipsă meta');
+  if (!inst.meta?.version) errors.push('Lipsă meta.version');
+  if (!inst.meta?.last_updated) errors.push('Lipsă meta.last_updated');
+  if (!Array.isArray(inst.meta?.keywords)) errors.push('meta.keywords trebuie să fie array');
+  if (!inst.assets) errors.push('Lipsă assets');
+  if (!inst.assets?.main) errors.push('Lipsă assets.main');
+  if (inst.assets?.main && !inst.assets.main.type) errors.push('Lipsă assets.main.type');
+
+  if (inst.colors && Array.isArray(inst.colors)) {
+    inst.colors.forEach((c, i) => {
+      if (!c.hex) errors.push(`Culoare ${i + 1}: lipsă HEX`);
+      if (c.hex && !/^#[0-9A-Fa-f]{6}$/.test(c.hex)) errors.push(`Culoare ${i + 1}: HEX invalid (${c.hex})`);
+    });
+  }
+
+  return errors;
+}
+
+// ============================================================================
+// FILE LOADING
+// ============================================================================
+
+// Load via File System Access API (folder)
+async function loadFolder() {
+  try {
+    const dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+    state.dirHandle = dirHandle;
+    
+    let count = 0;
+    for await (const [name, handle] of dirHandle.entries()) {
+      if (name.endsWith('.json') && !name.endsWith('.bak') && handle.kind === 'file') {
+        try {
+          const file = await handle.getFile();
+          const text = await file.text();
+          const data = JSON.parse(text);
+          if (data.id) {
+            state.institutions.set(data.id, data);
+            state.fileHandles.set(data.id, handle);
+            count++;
+          }
+        } catch (e) {
+          console.warn(`Skip ${name}: ${e.message}`);
+        }
+      }
+    }
+
+    // Try to find logos directory at parent level
+    try {
+      // Navigate up and find the logos
+      // We'll try to read SVGs when needed
+    } catch (e) { /* ignore */ }
+
+    toast(`${count} instituții încărcate din folder`, 'success');
+    refreshSidebar();
+    refreshStats();
+  } catch (e) {
+    if (e.name !== 'AbortError') toast('Eroare la încărcare: ' + e.message, 'error');
+  }
+}
+
+// Load via file input (individual files)
+async function loadFiles() {
+  try {
+    const handles = await window.showOpenFilePicker({
+      multiple: true,
+      types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+    });
+    
+    let count = 0;
+    for (const handle of handles) {
+      try {
+        const file = await handle.getFile();
+        const text = await file.text();
+        const data = JSON.parse(text);
+        if (data.id) {
+          state.institutions.set(data.id, data);
+          state.fileHandles.set(data.id, handle);
+          count++;
+        }
+      } catch (e) {
+        console.warn(`Skip: ${e.message}`);
+      }
+    }
+
+    toast(`${count} instituții încărcate`, 'success');
+    refreshSidebar();
+    refreshStats();
+  } catch (e) {
+    if (e.name !== 'AbortError') toast('Eroare la încărcare: ' + e.message, 'error');
+  }
+}
+
+// Drag and drop
+function setupDragDrop() {
+  const overlay = document.getElementById('dropOverlay');
+  let dragCount = 0;
+
+  document.addEventListener('dragenter', (e) => {
+    e.preventDefault();
+    dragCount++;
+    overlay.classList.add('visible');
+  });
+  document.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    dragCount--;
+    if (dragCount <= 0) { dragCount = 0; overlay.classList.remove('visible'); }
+  });
+  document.addEventListener('dragover', (e) => e.preventDefault());
+  document.addEventListener('drop', async (e) => {
+    e.preventDefault();
+    dragCount = 0;
+    overlay.classList.remove('visible');
+
+    let count = 0;
+    for (const item of e.dataTransfer.files) {
+      if (item.name.endsWith('.json') && !item.name.endsWith('.bak')) {
+        try {
+          const text = await item.text();
+          const data = JSON.parse(text);
+          if (data.id) {
+            state.institutions.set(data.id, data);
+            count++;
+          }
+        } catch (err) {
+          console.warn(`Skip ${item.name}: ${err.message}`);
+        }
+      }
+    }
+    if (count > 0) {
+      toast(`${count} instituții încărcate via drag & drop`, 'success');
+      refreshSidebar();
+      refreshStats();
+    }
+  });
+}
+
+// ============================================================================
+// SAVING
+// ============================================================================
+async function saveInstitution(id) {
+  const inst = state.institutions.get(id);
+  if (!inst) return;
+
+  const errors = validateInstitution(inst);
+  if (errors.length > 0) {
+    toast(`Validare eșuată: ${errors[0]}`, 'error');
+    return false;
+  }
+
+  // Update last_updated
+  inst.meta.last_updated = new Date().toISOString().split('T')[0];
+
+  const json = JSON.stringify(inst, null, 2) + '\n';
+
+  // Try File System Access API
+  const handle = state.fileHandles.get(id);
+  if (handle) {
+    try {
+      const writable = await handle.createWritable();
+      await writable.write(json);
+      await writable.close();
+      state.modified.delete(id);
+      toast(`${inst.name} salvat ✓`, 'success');
+      refreshSidebar();
+      return true;
+    } catch (e) {
+      toast('Eroare la salvare: ' + e.message, 'error');
+      return false;
+    }
+  }
+
+  // Fallback: Save in directory handle if available
+  if (state.dirHandle) {
+    try {
+      const fileName = `${id}.json`;
+      const newHandle = await state.dirHandle.getFileHandle(fileName, { create: true });
+      const writable = await newHandle.createWritable();
+      await writable.write(json);
+      await writable.close();
+      state.fileHandles.set(id, newHandle);
+      state.modified.delete(id);
+      toast(`${inst.name} salvat ✓`, 'success');
+      refreshSidebar();
+      return true;
+    } catch (e) {
+      toast('Eroare la salvare: ' + e.message, 'error');
+      return false;
+    }
+  }
+
+  // Final fallback: download
+  downloadJSON(inst);
+  state.modified.delete(id);
+  refreshSidebar();
+  return true;
+}
+
+async function saveAll() {
+  const toSave = state.modified.size > 0 ? [...state.modified] : [...state.institutions.keys()];
+  let saved = 0;
+  for (const id of toSave) {
+    const ok = await saveInstitution(id);
+    if (ok) saved++;
+  }
+  if (saved > 0) toast(`${saved} fișiere salvate`, 'success');
+}
+
+function downloadJSON(inst) {
+  const json = JSON.stringify(inst, null, 2) + '\n';
+  const blob = new Blob([json], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${inst.id}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function exportAll() {
+  state.institutions.forEach(inst => downloadJSON(inst));
+  toast(`${state.institutions.size} fișiere exportate`, 'success');
+}
+
+// ============================================================================
+// SIDEBAR
+// ============================================================================
+function refreshSidebar() {
+  const list = document.getElementById('sidebarList');
+  const search = document.getElementById('searchBox').value.toLowerCase();
+  const activeFilter = document.querySelector('.filter-chip.active')?.dataset.cat || 'all';
+
+  // Build categories for filter
+  const cats = new Set();
+  state.institutions.forEach(inst => cats.add(inst.category));
+  
+  const filterRow = document.getElementById('filterRow');
+  filterRow.innerHTML = '<button class="filter-chip ' + (activeFilter === 'all' ? 'active' : '') + '" data-cat="all">Toate</button>';
+  [...cats].sort().forEach(cat => {
+    const label = CATEGORIES[cat] || cat;
+    filterRow.innerHTML += `<button class="filter-chip ${activeFilter === cat ? 'active' : ''}" data-cat="${cat}">${label}</button>`;
+  });
+
+  // Bind filter clicks
+  filterRow.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterRow.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      refreshSidebar();
+    });
+  });
+
+  // Filter & sort institutions
+  let items = [...state.institutions.values()];
+  if (activeFilter !== 'all') items = items.filter(i => i.category === activeFilter);
+  if (search) items = items.filter(i => 
+    i.name.toLowerCase().includes(search) || 
+    i.id.toLowerCase().includes(search) ||
+    i.slug.toLowerCase().includes(search) ||
+    (i.meta?.keywords || []).some(k => k.toLowerCase().includes(search))
+  );
+  items.sort((a, b) => a.name.localeCompare(b.name, 'ro'));
+
+  list.innerHTML = '';
+  items.forEach(inst => {
+    const isModified = state.modified.has(inst.id);
+    const isActive = state.selected === inst.id;
+    
+    // Find a color SVG for thumbnail
+    const thumbPath = findFirstSvgPath(inst);
+    
+    const el = document.createElement('div');
+    el.className = `sidebar-item ${isActive ? 'active' : ''} ${isModified ? 'modified' : ''}`;
+    el.innerHTML = `
+      <div class="thumb">${thumbPath ? `<img src="${thumbPath}" onerror="this.parentElement.innerHTML='🏛️'">` : '🏛️'}</div>
+      <div class="info">
+        <div class="name">${inst.name}</div>
+        <div class="meta-line">${inst.id} · ${CATEGORIES[inst.category] || inst.category}</div>
+      </div>
+      <div class="modified-dot" title="Modificat"></div>
+    `;
+    el.addEventListener('click', () => selectInstitution(inst.id));
+    list.appendChild(el);
+  });
+}
+
+function findFirstSvgPath(inst) {
+  if (!inst.assets) return null;
+  // Try main color first
+  const mainColor = getAssetLocalPath(inst.assets.main?.color);
+  if (mainColor) return resolveLogoPath(mainColor);
+  
+  // Try any layout
+  for (const layout of LAYOUTS) {
+    const group = inst.assets[layout];
+    if (!group) continue;
+    for (const variant of VARIANTS) {
+      const p = getAssetLocalPath(group[variant]);
+      if (p) return resolveLogoPath(p);
+    }
+  }
+  return null;
+}
+
+function resolveLogoPath(path) {
+  if (!path) return null;
+  // Check SVG cache
+  if (state.svgCache.has(path)) return state.svgCache.get(path);
+  // Path is relative like /logos/ro-guvern/symbol/color.svg
+  // We'll just return it - won't resolve in a local HTML file without server
+  return null;
+}
+
+function refreshStats() {
+  const total = state.institutions.size;
+  const modified = state.modified.size;
+  const stats = document.getElementById('headerStats');
+  stats.textContent = `${total} instituții${modified > 0 ? ` · ${modified} modificate` : ''}`;
+}
+
+// ============================================================================
+// EDITOR
+// ============================================================================
+function selectInstitution(id) {
+  state.selected = id;
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('editorArea').style.display = 'block';
+  renderEditor();
+  refreshSidebar();
+}
+
+function markModified(id) {
+  if (!id) id = state.selected;
+  state.modified.add(id);
+  refreshSidebar();
+  refreshStats();
+}
+
+function renderEditor() {
+  const id = state.selected;
+  const inst = state.institutions.get(id);
+  if (!inst) return;
+
+  const errors = validateInstitution(inst);
+  const qualityClass = inst.meta?.quality || 'draft';
+
+  const area = document.getElementById('editorArea');
+  area.innerHTML = `
+    <!-- Top bar -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+      <h2 style="font-size:22px;flex:1;">${inst.name}</h2>
+      <span class="badge ${qualityClass}">${qualityClass}</span>
+      <button class="btn btn-sm" onclick="showJSONPreview()">{ } JSON</button>
+      <button class="btn btn-sm btn-success" onclick="saveInstitution('${id}')">💾 Salvează</button>
+      <button class="btn btn-sm btn-danger" onclick="deleteInstitution('${id}')">🗑️ Șterge</button>
+    </div>
+
+    ${errors.length > 0 ? `
+    <div class="section">
+      <div class="section-title" style="color:var(--danger);">⚠️ Probleme de validare</div>
+      <ul class="validation-errors">${errors.map(e => `<li>${e}</li>`).join('')}</ul>
+    </div>` : ''}
+
+    <!-- Identificare -->
+    <div class="section">
+      <div class="section-title">Identificare</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" id="f-id" value="${esc(inst.id)}" data-field="id">
+        </div>
+        <div class="form-group">
+          <label>Slug</label>
+          <input type="text" id="f-slug" value="${esc(inst.slug)}" data-field="slug">
+        </div>
+        <div class="form-group full">
+          <label>Nume complet</label>
+          <input type="text" id="f-name" value="${esc(inst.name)}" data-field="name">
+        </div>
+        <div class="form-group">
+          <label>Nume scurt</label>
+          <input type="text" id="f-shortname" value="${esc(inst.shortname || '')}" data-field="shortname">
+        </div>
+        <div class="form-group">
+          <label>Categorie</label>
+          <select id="f-category" data-field="category">
+            ${Object.entries(CATEGORIES).map(([k, v]) => `<option value="${k}" ${inst.category === k ? 'selected' : ''}>${v}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meta -->
+    <div class="section">
+      <div class="section-title">Metadata</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Versiune</label>
+          <input type="text" id="f-meta-version" value="${esc(inst.meta?.version || '1.0')}" data-path="meta.version">
+        </div>
+        <div class="form-group">
+          <label>Calitate</label>
+          <select id="f-meta-quality" data-path="meta.quality">
+            ${QUALITY_LEVELS.map(q => `<option value="${q}" ${inst.meta?.quality === q ? 'selected' : ''}>${q}</option>`).join('')}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ultima actualizare</label>
+          <input type="date" id="f-meta-date" value="${esc(inst.meta?.last_updated || '')}" data-path="meta.last_updated">
+        </div>
+        <div class="form-group">
+          <label>Locație (Oraș)</label>
+          <input type="text" id="f-city" value="${esc(inst.location?.city || '')}" data-path="location.city">
+        </div>
+        <div class="form-group full">
+          <label>Cuvinte cheie (Enter pentru a adăuga)</label>
+          <div class="tags-container" id="keywordsContainer">
+            ${(inst.meta?.keywords || []).map(k => `<span class="tag">${esc(k)}<span class="remove" onclick="removeKeyword(this, '${esc(k)}')">×</span></span>`).join('')}
+            <input type="text" class="tag-input" id="keywordInput" placeholder="adaugă...">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Descriere -->
+    <div class="section">
+      <div class="section-title">Descriere</div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Descriere</label>
+          <textarea id="f-description" data-field="description">${esc(inst.description || '')}</textarea>
+        </div>
+        <div class="form-group full">
+          <label>Note de utilizare</label>
+          <textarea id="f-usage_notes" data-field="usage_notes" style="min-height:50px">${esc(inst.usage_notes || '')}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Culori -->
+    <div class="section">
+      <div class="section-title">Culori <button class="btn btn-sm" style="margin-left:auto;" onclick="addColor()">＋ Adaugă</button></div>
+      <div class="color-list" id="colorList">
+        ${(inst.colors || []).map((c, i) => renderColorRow(c, i)).join('')}
+        ${(!inst.colors || inst.colors.length === 0) ? '<div style="color:var(--text-muted);font-size:13px;padding:8px;">Nicio culoare definită</div>' : ''}
+      </div>
+    </div>
+
+    <!-- Tipografie -->
+    <div class="section">
+      <div class="section-title">Tipografie</div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <!-- Primary font -->
+        <div style="padding:12px;background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius-sm);">
+          <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">Font Primar</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Familie</label>
+              <input type="text" value="${esc(inst.typography?.primary?.family || '')}" 
+                onchange="updateTypography('primary', 'family', this.value)"
+                placeholder="ex: Open Sans, Helvetica Neue">
+            </div>
+            <div class="form-group">
+              <label>URL</label>
+              <input type="url" value="${esc(inst.typography?.primary?.url || '')}" 
+                onchange="updateTypography('primary', 'url', this.value)"
+                placeholder="https://fonts.google.com/...">
+            </div>
+            <div class="form-group full">
+              <label>Weights (separate cu virgulă)</label>
+              <input type="text" value="${(inst.typography?.primary?.weights || []).join(', ')}" 
+                onchange="updateTypographyWeights('primary', this.value)"
+                placeholder="ex: 400, 500, 700">
+            </div>
+          </div>
+          ${inst.typography?.primary?.family ? `<div style="margin-top:8px;padding:10px;background:var(--bg-card);border-radius:var(--radius-sm);font-size:14px;color:var(--text);">
+            Preview: <span style="font-family:'${esc(inst.typography.primary.family)}',sans-serif;font-size:16px;">Agenția Națională — 0123456789</span>
+          </div>` : ''}
+        </div>
+        <!-- Secondary font -->
+        <div style="padding:12px;background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius-sm);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="font-size:12px;font-weight:600;color:var(--text-muted);">Font Secundar</span>
+            ${!inst.typography?.secondary ? `<button class="btn btn-sm" onclick="addSecondaryFont()">＋ Activează</button>` : `<button class="btn btn-sm btn-danger" onclick="removeSecondaryFont()">× Elimină</button>`}
+          </div>
+          ${inst.typography?.secondary ? `
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Familie</label>
+              <input type="text" value="${esc(inst.typography.secondary.family || '')}" 
+                onchange="updateTypography('secondary', 'family', this.value)"
+                placeholder="ex: Roboto Mono">
+            </div>
+            <div class="form-group">
+              <label>URL</label>
+              <input type="url" value="${esc(inst.typography.secondary.url || '')}" 
+                onchange="updateTypography('secondary', 'url', this.value)"
+                placeholder="https://fonts.google.com/...">
+            </div>
+            <div class="form-group full">
+              <label>Weights (separate cu virgulă)</label>
+              <input type="text" value="${(inst.typography.secondary.weights || []).join(', ')}" 
+                onchange="updateTypographyWeights('secondary', this.value)"
+                placeholder="ex: 400, 700">
+            </div>
+          </div>` : '<div style="color:var(--text-muted);font-size:12px;">Font secundar dezactivat</div>'}
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo Preview + Assets -->
+    <div class="section">
+      <div class="section-title">Logo-uri & Assets</div>
+      
+      <div style="margin-bottom:16px;">
+        <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:6px;">
+          Main logo type
+        </label>
+        <select id="f-main-type" onchange="updateMainType(this.value)" style="padding:6px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-input);color:var(--text);font-size:13px;">
+          ${LAYOUTS.map(l => `<option value="${l}" ${inst.assets?.main?.type === l ? 'selected' : ''}>${l}</option>`).join('')}
+        </select>
+      </div>
+
+      ${LAYOUTS.map(layout => renderAssetLayoutSection(inst, layout)).join('')}
+
+      <div style="margin-top:12px;">
+        <div class="form-group" style="max-width:400px;">
+          <label>Favicon</label>
+          <input type="text" id="f-favicon" value="${esc(inst.assets?.favicon || '')}" 
+            oninput="updateFavicon(this.value)" 
+            placeholder="/logos/ro-slug/favicon.svg"
+            style="font-family:'SF Mono','Fira Code',monospace;font-size:12px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo Preview Grid -->
+    <div class="section">
+      <div class="section-title">Preview Logo-uri</div>
+      <div class="logo-grid" id="logoGrid">
+        ${renderLogoGrid(inst)}
+      </div>
+      <div style="margin-top:12px;">
+        <button class="btn btn-sm" onclick="loadLogoFiles()">📂 Încarcă SVG-uri pentru preview</button>
+        <span style="font-size:11px;color:var(--text-muted);margin-left:8px;">Selectează fișiere SVG locale pentru a le vedea ca preview</span>
+      </div>
+    </div>
+
+    <!-- Resurse -->
+    <div class="section">
+      <div class="section-title">Resurse</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Website oficial</label>
+          <input type="url" id="f-website" value="${esc(inst.resources?.website || '')}" data-path="resources.website" placeholder="https://...">
+        </div>
+        <div class="form-group">
+          <label>Manual de brand</label>
+          <input type="url" id="f-branding" value="${esc(inst.resources?.branding_manual || '')}" data-path="resources.branding_manual" placeholder="https://...">
+        </div>
+      </div>
+    </div>
+
+    <!-- JSON Preview -->
+    <div class="section" id="jsonPreviewSection" style="display:none;">
+      <div class="section-title">JSON Preview <button class="btn btn-sm" onclick="copyJSON()">📋 Copiază</button></div>
+      <div class="json-preview" id="jsonPreview"></div>
+    </div>
+  `;
+
+  // Bind events
+  bindEditorEvents();
+}
+
+function esc(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderColorRow(color, index) {
+  return `
+    <div class="color-row" data-color-index="${index}">
+      <div class="swatch" style="background:${color.hex || '#ccc'}" onclick="this.nextElementSibling.click()"></div>
+      <input type="color" value="${color.hex || '#000000'}" onchange="updateColorHex(${index}, this.value)">
+      <div class="color-fields">
+        <input type="text" value="${esc(color.name || '')}" placeholder="Nume" onchange="updateColorField(${index}, 'name', this.value)">
+        <input type="text" value="${esc(color.hex || '')}" placeholder="#RRGGBB" onchange="updateColorHex(${index}, this.value)" style="width:90px;font-family:monospace;">
+        <select onchange="updateColorField(${index}, 'usage', this.value)">
+          <option value="">– uz –</option>
+          <option value="primary" ${color.usage === 'primary' ? 'selected' : ''}>Primary</option>
+          <option value="secondary" ${color.usage === 'secondary' ? 'selected' : ''}>Secondary</option>
+          <option value="accent" ${color.usage === 'accent' ? 'selected' : ''}>Accent</option>
+          <option value="neutral" ${color.usage === 'neutral' ? 'selected' : ''}>Neutral</option>
+        </select>
+        <input type="text" value="${esc(color.pantone || '')}" placeholder="Pantone" onchange="updateColorField(${index}, 'pantone', this.value)" style="width:90px;">
+      </div>
+      <span class="remove-color" onclick="removeColor(${index})">×</span>
+    </div>
+  `;
+}
+
+function renderAssetLayoutSection(inst, layout) {
+  const group = inst.assets?.[layout];
+  const hasGroup = group && typeof group === 'object' && group.type;
+
+  return `
+    <div class="asset-layout-section">
+      <h4>
+        <span>${layout.charAt(0).toUpperCase() + layout.slice(1)}</span>
+        ${!hasGroup ? `<button class="btn btn-sm" onclick="addAssetLayout('${layout}')">＋ Activează</button>` : `<button class="btn btn-sm btn-danger" onclick="removeAssetLayout('${layout}')">×</button>`}
+      </h4>
+      ${hasGroup ? VARIANTS.map(variant => `
+        <div class="asset-variant-row">
+          <span class="variant-label">${variant}</span>
+          <input type="text" value="${esc(getAssetLocalPath(group[variant]) || '')}" 
+            onchange="updateAssetPath('${layout}', '${variant}', this.value)"
+            placeholder="/logos/${inst.id}/${layout}/${variant}.svg">
+          <span class="remove-asset" onclick="clearAssetPath('${layout}', '${variant}')" title="Golește">×</span>
+        </div>
+      `).join('') : '<div style="color:var(--text-muted);font-size:12px;padding:4px 10px;">Layout dezactivat</div>'}
+    </div>
+  `;
+}
+
+function renderLogoGrid(inst) {
+  if (!inst.assets) return '';
+  let html = '';
+
+  const allEntries = [];
+  for (const layout of LAYOUTS) {
+    const group = inst.assets[layout];
+    if (!group || !group.type) continue;
+    for (const variant of VARIANTS) {
+      const path = getAssetLocalPath(group[variant]);
+      if (!path) continue;
+      allEntries.push({ layout, variant, path });
+    }
+  }
+
+  if (allEntries.length === 0) {
+    return '<div style="color:var(--text-muted);font-size:13px;padding:8px;">Niciun logo definit. Activează un layout și adaugă căi SVG mai sus.</div>';
+  }
+
+  for (const entry of allEntries) {
+    const bgClass = entry.variant === 'white' ? 'bg-dark' : entry.variant === 'black' ? 'bg-white' : 'bg-checker';
+    const cachedSrc = state.svgCache.get(entry.path);
+    
+    html += `
+      <div class="logo-card">
+        <div class="preview ${bgClass}">
+          ${cachedSrc 
+            ? `<img src="${cachedSrc}" alt="${entry.layout} ${entry.variant}">` 
+            : `<div class="no-file">📁<br>${entry.path.split('/').pop()}</div>`
+          }
+        </div>
+        <div class="card-info">
+          <span class="label">${entry.variant}</span>
+          <span class="layout-badge">${entry.layout}</span>
+        </div>
+      </div>
+    `;
+  }
+  return html;
+}
+
+// ============================================================================
+// EDITOR EVENTS
+// ============================================================================
+function bindEditorEvents() {
+  const id = state.selected;
+  const inst = state.institutions.get(id);
+  if (!inst) return;
+
+  // Simple field bindings
+  document.querySelectorAll('[data-field]').forEach(el => {
+    el.addEventListener('input', () => {
+      const field = el.dataset.field;
+      inst[field] = el.value || null;
+      markModified(id);
+    });
+  });
+
+  // Nested path bindings
+  document.querySelectorAll('[data-path]').forEach(el => {
+    el.addEventListener('input', () => {
+      const path = el.dataset.path.split('.');
+      let obj = inst;
+      for (let i = 0; i < path.length - 1; i++) {
+        if (!obj[path[i]]) obj[path[i]] = {};
+        obj = obj[path[i]];
+      }
+      obj[path[path.length - 1]] = el.value || null;
+      markModified(id);
+    });
+    // Also handle change for selects and dates
+    el.addEventListener('change', () => {
+      const path = el.dataset.path.split('.');
+      let obj = inst;
+      for (let i = 0; i < path.length - 1; i++) {
+        if (!obj[path[i]]) obj[path[i]] = {};
+        obj = obj[path[i]];
+      }
+      obj[path[path.length - 1]] = el.value || null;
+      markModified(id);
+    });
+  });
+
+  // Keywords
+  const kwInput = document.getElementById('keywordInput');
+  if (kwInput) {
+    kwInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && kwInput.value.trim()) {
+        e.preventDefault();
+        if (!inst.meta) inst.meta = { version: '1.0', last_updated: '', keywords: [] };
+        if (!inst.meta.keywords) inst.meta.keywords = [];
+        const kw = kwInput.value.trim().toLowerCase();
+        if (!inst.meta.keywords.includes(kw)) {
+          inst.meta.keywords.push(kw);
+          markModified(id);
+          renderEditor();
+        }
+        kwInput.value = '';
+      }
+    });
+
+    // Focus input when clicking container
+    document.getElementById('keywordsContainer')?.addEventListener('click', () => kwInput.focus());
+  }
+}
+
+function removeKeyword(el, keyword) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.meta?.keywords) return;
+  inst.meta.keywords = inst.meta.keywords.filter(k => k !== keyword);
+  markModified();
+  renderEditor();
+}
+
+// ============================================================================
+// COLOR OPERATIONS
+// ============================================================================
+function addColor() {
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  if (!inst.colors) inst.colors = [];
+  inst.colors.push({ name: 'Nouă', hex: '#000000', rgb: [0, 0, 0], cmyk: null, pantone: null, usage: 'primary' });
+  markModified();
+  renderEditor();
+}
+
+function removeColor(index) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.colors) return;
+  inst.colors.splice(index, 1);
+  markModified();
+  renderEditor();
+}
+
+function updateColorHex(index, hex) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.colors?.[index]) return;
+  if (!hex.startsWith('#')) hex = '#' + hex;
+  inst.colors[index].hex = hex;
+  // Auto-compute RGB
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  if (!isNaN(r)) inst.colors[index].rgb = [r, g, b];
+  markModified();
+  renderEditor();
+}
+
+function updateColorField(index, field, value) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.colors?.[index]) return;
+  inst.colors[index][field] = value || null;
+  markModified();
+}
+
+// ============================================================================
+// TYPOGRAPHY OPERATIONS
+// ============================================================================
+function updateTypography(level, field, value) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  if (!inst.typography) inst.typography = { primary: { family: '', url: null, weights: [] }, secondary: null };
+  if (!inst.typography[level]) inst.typography[level] = { family: '', url: null, weights: [] };
+  inst.typography[level][field] = value || null;
+  markModified();
+}
+
+function updateTypographyWeights(level, value) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  if (!inst.typography) inst.typography = { primary: { family: '', url: null, weights: [] }, secondary: null };
+  if (!inst.typography[level]) inst.typography[level] = { family: '', url: null, weights: [] };
+  inst.typography[level].weights = value
+    .split(',')
+    .map(w => parseInt(w.trim()))
+    .filter(w => !isNaN(w));
+  markModified();
+}
+
+function addSecondaryFont() {
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  if (!inst.typography) inst.typography = { primary: { family: '', url: null, weights: [] }, secondary: null };
+  inst.typography.secondary = { family: '', url: null, weights: [] };
+  markModified();
+  renderEditor();
+}
+
+function removeSecondaryFont() {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.typography) return;
+  inst.typography.secondary = null;
+  markModified();
+  renderEditor();
+}
+
+// ============================================================================
+// ASSET OPERATIONS
+// ============================================================================
+function addAssetLayout(layout) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  if (!inst.assets) inst.assets = {};
+  inst.assets[layout] = {
+    type: layout,
+    color: null,
+    dark_mode: null,
+    white: null,
+    black: null,
+    monochrome: null,
+    png: null
+  };
+  markModified();
+  renderEditor();
+}
+
+function removeAssetLayout(layout) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.assets) return;
+  inst.assets[layout] = null;
+  markModified();
+  renderEditor();
+}
+
+function updateAssetPath(layout, variant, value) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.assets?.[layout]) return;
+  inst.assets[layout][variant] = value || null;
+
+  // Auto-update main if it matches the layout
+  if (inst.assets.main?.type === layout) {
+    inst.assets.main[variant] = value || null;
+  }
+
+  markModified();
+  // Refresh logo grid
+  const grid = document.getElementById('logoGrid');
+  if (grid) grid.innerHTML = renderLogoGrid(inst);
+}
+
+function clearAssetPath(layout, variant) {
+  updateAssetPath(layout, variant, null);
+  renderEditor();
+}
+
+function updateMainType(type) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.assets) return;
+  
+  // Copy from the selected layout if it exists
+  const source = inst.assets[type];
+  if (source) {
+    inst.assets.main = deepClone(source);
+    inst.assets.main.type = type;
+  } else {
+    inst.assets.main = {
+      type,
+      color: null, dark_mode: null, white: null, black: null, monochrome: null, png: null
+    };
+  }
+  markModified();
+}
+
+function updateFavicon(value) {
+  const inst = state.institutions.get(state.selected);
+  if (!inst?.assets) return;
+  inst.assets.favicon = value || null;
+  markModified();
+}
+
+// ============================================================================
+// SVG PREVIEW LOADER
+// ============================================================================
+async function loadLogoFiles() {
+  try {
+    const handles = await window.showOpenFilePicker({
+      multiple: true,
+      types: [{ description: 'SVG Files', accept: { 'image/svg+xml': ['.svg'] } }]
+    });
+
+    for (const handle of handles) {
+      const file = await handle.getFile();
+      const text = await file.text();
+      const blob = new Blob([text], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+
+      // Try to match this file to an asset path
+      const fileName = file.name;
+      // Cache by filename and try to match with paths
+      state.institutions.forEach(inst => {
+        if (!inst.assets) return;
+        for (const layout of LAYOUTS) {
+          const group = inst.assets[layout];
+          if (!group) continue;
+          for (const variant of VARIANTS) {
+            const path = getAssetLocalPath(group[variant]);
+            if (path && path.endsWith(fileName)) {
+              state.svgCache.set(path, url);
+            }
+          }
+        }
+      });
+
+      // Also cache by raw name
+      state.svgCache.set(fileName, url);
+    }
+
+    // Re-render
+    if (state.selected) renderEditor();
+    toast(`${handles.length} SVG-uri încărcate pentru preview`, 'success');
+  } catch (e) {
+    if (e.name !== 'AbortError') toast('Eroare: ' + e.message, 'error');
+  }
+}
+
+// ============================================================================
+// JSON PREVIEW
+// ============================================================================
+function showJSONPreview() {
+  const section = document.getElementById('jsonPreviewSection');
+  const pre = document.getElementById('jsonPreview');
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  
+  section.style.display = section.style.display === 'none' ? 'block' : 'none';
+  pre.textContent = JSON.stringify(inst, null, 2);
+}
+
+function copyJSON() {
+  const inst = state.institutions.get(state.selected);
+  if (!inst) return;
+  navigator.clipboard.writeText(JSON.stringify(inst, null, 2));
+  toast('JSON copiat în clipboard', 'success');
+}
+
+// ============================================================================
+// CRUD
+// ============================================================================
+function deleteInstitution(id) {
+  if (!confirm(`Sigur vrei să ștergi ${id}? (fișierul NU va fi șters de pe disc, doar din editor)`)) return;
+  state.institutions.delete(id);
+  state.modified.delete(id);
+  state.fileHandles.delete(id);
+  if (state.selected === id) {
+    state.selected = null;
+    document.getElementById('emptyState').style.display = '';
+    document.getElementById('editorArea').style.display = 'none';
+  }
+  refreshSidebar();
+  refreshStats();
+  toast(`${id} eliminat din editor`, 'info');
+}
+
+// ============================================================================
+// INIT
+// ============================================================================
+function init() {
+  setupDragDrop();
+
+  // Auto-load institutions from inline data (generated by generate-editor-data.js)
+  if (typeof INSTITUTIONS_DATA !== 'undefined' && Array.isArray(INSTITUTIONS_DATA)) {
+    for (const inst of INSTITUTIONS_DATA) {
+      if (inst.id) {
+        state.institutions.set(inst.id, inst);
+      }
+    }
+    // Load inline SVGs into cache
+    if (typeof SVG_DATA !== 'undefined' && SVG_DATA) {
+      for (const [path, dataUri] of Object.entries(SVG_DATA)) {
+        state.svgCache.set(path, dataUri);
+      }
+    }
+    if (state.institutions.size > 0) {
+      const svgCount = state.svgCache.size;
+      toast(`${state.institutions.size} instituții, ${svgCount} logo-uri încărcate`, 'success');
+      refreshSidebar();
+      refreshStats();
+      // Hide empty state since we have data
+      document.getElementById('emptyState').querySelector('h2').textContent = 'Selectează o instituție din stânga';
+      document.getElementById('emptyState').querySelector('p').textContent = 
+        'Sau adaugă una nouă cu butonul "＋ Instituție Nouă" din header.';
+      // Remove the load buttons from empty state
+      const btnsDiv = document.getElementById('emptyState').querySelector('div[style]');
+      if (btnsDiv) btnsDiv.style.display = 'none';
+    }
+  }
+
+  document.getElementById('btnLoadFolder').addEventListener('click', loadFolder);
+  document.getElementById('btnLoadFiles').addEventListener('click', loadFiles);
+  document.getElementById('btnAddNew').addEventListener('click', () => openModal('modalNew'));
+  document.getElementById('btnSaveAll').addEventListener('click', saveAll);
+  document.getElementById('btnExportZip').addEventListener('click', exportAll);
+  document.getElementById('searchBox').addEventListener('input', refreshSidebar);
+
+  // Create new institution
+  document.getElementById('btnCreateInstitution').addEventListener('click', () => {
+    const name = document.getElementById('newName').value.trim();
+    if (!name) { toast('Introdu un nume', 'warning'); return; }
+    let slug = document.getElementById('newSlug').value.trim();
+    if (!slug) slug = slugify(name.replace(/^ministerul\s+/i, ''));
+    const category = document.getElementById('newCategory').value;
+    const id = `ro-${slug}`;
+    
+    if (state.institutions.has(id)) {
+      toast(`${id} există deja`, 'warning');
+      return;
+    }
+
+    const inst = createEmptyInstitution(name, slug, category);
+    state.institutions.set(id, inst);
+    state.modified.add(id);
+
+    closeModal('modalNew');
+    document.getElementById('newName').value = '';
+    document.getElementById('newSlug').value = '';
+    
+    refreshSidebar();
+    refreshStats();
+    selectInstitution(id);
+    toast(`${name} creată`, 'success');
+  });
+
+  // Check File System Access API support
+  if (!window.showDirectoryPicker) {
+    document.getElementById('btnLoadFolder').title = 'Browser-ul tău nu suportă File System Access API. Folosește Chrome/Edge.';
+    document.getElementById('btnLoadFolder').style.opacity = '0.5';
+  }
+}
+
+init();
+</script>
+</body>
+</html>

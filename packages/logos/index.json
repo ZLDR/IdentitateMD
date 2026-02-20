@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-02-16T06:31:41.234Z",
-  "count": 37,
-  "totalLogos": 136,
+  "generated": "2026-02-20T18:12:15.183Z",
+  "count": 34,
+  "totalLogos": 124,
   "institutions": [
     {
       "id": "eu-flag",
@@ -199,22 +199,6 @@
           "black": "/logos/ro-consiliul-timis/symbol/black.svg",
           "color": "/logos/ro-consiliul-timis/symbol/color.svg",
           "white": "/logos/ro-consiliul-timis/symbol/white.svg"
-        }
-      }
-    },
-    {
-      "id": "ro-diicot",
-      "slug": "ro-diicot",
-      "name": "Direcția de Investigare a Infracțiunilor de Criminalitate Organizată și Terorism",
-      "layouts": [
-        "symbol"
-      ],
-      "logoCount": 3,
-      "logos": {
-        "symbol": {
-          "black": "/logos/ro-diicot/symbol/black.svg",
-          "color": "/logos/ro-diicot/symbol/color.svg",
-          "white": "/logos/ro-diicot/symbol/white.svg"
         }
       }
     },
@@ -602,44 +586,6 @@
           "black": "/logos/ro-registrul-comertului/symbol/black.svg",
           "color": "/logos/ro-registrul-comertului/symbol/color.svg",
           "white": "/logos/ro-registrul-comertului/symbol/white.svg"
-        }
-      }
-    },
-    {
-      "id": "ro-sie",
-      "slug": "ro-sie",
-      "name": "Serviciul de Informații Externe",
-      "layouts": [
-        "symbol"
-      ],
-      "logoCount": 3,
-      "logos": {
-        "symbol": {
-          "black": "/logos/ro-sie/symbol/black.svg",
-          "color": "/logos/ro-sie/symbol/color.svg",
-          "white": "/logos/ro-sie/symbol/white.svg"
-        }
-      }
-    },
-    {
-      "id": "ro-sri",
-      "slug": "ro-sri",
-      "name": "Serviciul Român de Informații",
-      "layouts": [
-        "vertical",
-        "symbol"
-      ],
-      "logoCount": 6,
-      "logos": {
-        "vertical": {
-          "black": "/logos/ro-sri/vertical/black.svg",
-          "color": "/logos/ro-sri/vertical/color.svg",
-          "white": "/logos/ro-sri/vertical/white.svg"
-        },
-        "symbol": {
-          "black": "/logos/ro-sri/symbol/black.svg",
-          "color": "/logos/ro-sri/symbol/color.svg",
-          "white": "/logos/ro-sri/symbol/white.svg"
         }
       }
     },
