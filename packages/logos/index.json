@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-02-20T18:12:15.183Z",
-  "count": 34,
-  "totalLogos": 124,
+  "generated": "2026-02-20T18:48:56.161Z",
+  "count": 33,
+  "totalLogos": 118,
   "institutions": [
     {
       "id": "eu-flag",
@@ -199,28 +199,6 @@
           "black": "/logos/ro-consiliul-timis/symbol/black.svg",
           "color": "/logos/ro-consiliul-timis/symbol/color.svg",
           "white": "/logos/ro-consiliul-timis/symbol/white.svg"
-        }
-      }
-    },
-    {
-      "id": "ro-dna",
-      "slug": "ro-dna",
-      "name": "Direcția Națională Anticorupție",
-      "layouts": [
-        "vertical",
-        "symbol"
-      ],
-      "logoCount": 6,
-      "logos": {
-        "vertical": {
-          "black": "/logos/ro-dna/vertical/black.svg",
-          "color": "/logos/ro-dna/vertical/color.svg",
-          "white": "/logos/ro-dna/vertical/white.svg"
-        },
-        "symbol": {
-          "black": "/logos/ro-dna/symbol/black.svg",
-          "color": "/logos/ro-dna/symbol/color.svg",
-          "white": "/logos/ro-dna/symbol/white.svg"
         }
       }
     },

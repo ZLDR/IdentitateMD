@@ -1,19 +1,19 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-02-20T18:12:23.203Z",
-  "total": 34,
+  "generatedAt": "2026-02-20T18:49:01.126Z",
+  "total": 33,
   "stats": {
     "byCategory": {
       "altele": 5,
       "agentie": 5,
-      "autoritate": 4,
+      "autoritate": 3,
       "consiliu-judetean": 1,
       "proiect-ue": 2,
       "guvern": 1,
       "minister": 16
     },
     "withManual": 0,
-    "withSvg": 34
+    "withSvg": 33
   },
   "categories": [
     {
@@ -34,7 +34,7 @@
     {
       "id": "autoritate",
       "label": "Autorități",
-      "count": 4
+      "count": 3
     },
     {
       "id": "consiliu-judetean",
@@ -951,83 +951,6 @@
           "dark_mode": null,
           "white": "/logos/ro-consiliul-timis/symbol/white.svg",
           "black": "/logos/ro-consiliul-timis/symbol/black.svg",
-          "monochrome": null,
-          "png": null
-        },
-        "favicon": null
-      }
-    },
-    {
-      "id": "ro-dna",
-      "slug": "dna",
-      "name": "Direcția Națională Anticorupție",
-      "shortname": "dna",
-      "category": "autoritate",
-      "meta": {
-        "version": "1.0",
-        "last_updated": "2026-02-15",
-        "keywords": [
-          "anticorupție",
-          "procuratură",
-          "justiție",
-          "investigații",
-          "integritate"
-        ],
-        "quality": "draft"
-      },
-      "location": {
-        "country_code": "RO",
-        "county": "B",
-        "city": "București"
-      },
-      "description": "Direcția Națională Anticorupție (DNA) este instituția responsabilă cu prevenirea, investigarea și combaterea faptelor de corupție la nivel înalt. Coordonează anchete penale și acțiuni judiciare pentru tragerea la răspundere a celor implicați în infracțiuni de corupție.",
-      "usage_notes": null,
-      "colors": [
-        {
-          "name": "Color #002B7F",
-          "hex": "#002B7F",
-          "rgb": [
-            0,
-            43,
-            127
-          ],
-          "cmyk": null,
-          "pantone": null,
-          "usage": "primary"
-        }
-      ],
-      "typography": null,
-      "resources": {
-        "website": null,
-        "branding_manual": null,
-        "social_media": null
-      },
-      "assets": {
-        "main": {
-          "type": "symbol",
-          "color": "/logos/ro-dna/symbol/color.svg",
-          "dark_mode": null,
-          "white": "/logos/ro-dna/symbol/white.svg",
-          "black": "/logos/ro-dna/symbol/black.svg",
-          "monochrome": null,
-          "png": null
-        },
-        "horizontal": null,
-        "vertical": {
-          "type": "vertical",
-          "color": "/logos/ro-dna/vertical/color.svg",
-          "dark_mode": null,
-          "white": "/logos/ro-dna/vertical/white.svg",
-          "black": "/logos/ro-dna/vertical/black.svg",
-          "monochrome": null,
-          "png": null
-        },
-        "symbol": {
-          "type": "symbol",
-          "color": "/logos/ro-dna/symbol/color.svg",
-          "dark_mode": null,
-          "white": "/logos/ro-dna/symbol/white.svg",
-          "black": "/logos/ro-dna/symbol/black.svg",
           "monochrome": null,
           "png": null
         },
