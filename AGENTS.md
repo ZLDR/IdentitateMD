@@ -4,7 +4,7 @@
 
 **Type**: Static website / Digital registry  
 **Domain**: Civic Tech / Government Digital Identity  
-**Purpose**: Open-source registry for visual identities (logos, colors, brand guidelines) of Romanian public institutions
+**Purpose**: Open-source registry for visual identities (logos, colors, brand guidelines) of the Republic of Moldova public institutions
 
 ## Technology Stack
 
@@ -295,7 +295,7 @@ interface InstitutionV3 {
 
 **astro.config.mjs**:
 
-- Sets site URL: `https://identitate.eu`
+- Sets site URL: `https://identitate.md`
 - Integrates Tailwind CSS
 - Configures static output
 - Custom asset file naming for cache busting
