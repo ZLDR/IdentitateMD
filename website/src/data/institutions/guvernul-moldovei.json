@@ -18,30 +18,18 @@
   "colors": [
     {
       "name": "Albastru Oficial",
-      "hex": "#0047AB",
-      "rgb": [0, 71, 171],
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
       "usage": "primary"
-    },
-    {
-      "name": "Auriu",
-      "hex": "#D4AF37",
-      "rgb": [212, 175, 55],
-      "usage": "accent"
-    },
-    {
-      "name": "Alb",
-      "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
-      "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
-      "family": "Inter",
-      "weights": [400, 500, 600, 700]
+      "family": "Trajan Pro",
+      "weights": [400, 700]
     },
     "secondary": {
-      "family": "Georgia",
+      "family": "Onest",
       "weights": [400, 700]
     }
   },
