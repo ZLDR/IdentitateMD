@@ -74,6 +74,7 @@
 | DATA-02 | Phase 2 | Pending |
 | DATA-03 | Phase 2 | Pending |
 | DATA-04 | Phase 2 | Pending |
+| DX-02 | Phase 2 | Pending |
 | CONT-01 | Phase 3 | Pending |
 | CONT-02 | Phase 3 | Pending |
 | CONT-03 | Phase 3 | Pending |
@@ -82,7 +83,6 @@
 | CONT-06 | Phase 3 | Pending |
 | CONT-07 | Phase 3 | Pending |
 | DX-01 | Phase 3 | Pending |
-| DX-02 | Phase 2 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
@@ -90,5 +90,6 @@
 - Unmapped: 0 ✓
 
 ---
+
 *Requirements defined: 2026-03-04*
-*Last updated: 2026-03-04 after initial definition*
+*Last updated: 2026-03-04 after roadmap creation*
