@@ -9,7 +9,7 @@
 
 - [x] **BRAND-01**: Site URL updated to identitate.md in all configs (astro.config.mjs, vercel.json, meta tags)
 - [x] **BRAND-02**: All page titles, descriptions, and OG tags reference Republic of Moldova (not Romania)
-- [x] **BRAND-03**: Package name updated from `@identitate-ro/logos` to `@identitate-md/logos` in all references
+- [x] **BRAND-03**: Package name updated from `@identitate-md/logos` to `@identitate-md/logos` in all references
 - [x] **BRAND-04**: CDN version/package references updated to match new package name
 
 ### Typography
@@ -22,7 +22,7 @@
 
 - [ ] **DATA-01**: Institution ID prefix changed from `ro-` to `md-` throughout codebase (validation scripts, type guards, generate-index.js)
 - [ ] **DATA-02**: Existing Romanian institution JSON files removed
-- [ ] **DATA-03**: Logo directory structure uses `md-{slug}` pattern (public/logos/md-*)
+- [ ] **DATA-03**: Logo directory structure uses `md-{slug}` pattern (public/logos/md-\*)
 - [ ] **DATA-04**: institutions-index.json regenerated (empty or with initial MD institutions)
 
 ### Content & Pages
@@ -53,43 +53,44 @@
 
 ## Out of Scope
 
-| Feature | Reason |
-|---------|--------|
-| npm package | Deferred to v2; focus on website first |
-| Russian language | Romanian only for v1; adds complexity |
-| Admin UI / CRUD | Existing empty stubs remain; owner adds data manually |
+| Feature          | Reason                                                |
+| ---------------- | ----------------------------------------------------- |
+| npm package      | Deferred to v2; focus on website first                |
+| Russian language | Romanian only for v1; adds complexity                 |
+| Admin UI / CRUD  | Existing empty stubs remain; owner adds data manually |
 
 ## Traceability
 
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| BRAND-01 | Phase 1 | Complete |
-| BRAND-02 | Phase 1 | Complete |
-| BRAND-03 | Phase 1 | Complete |
-| BRAND-04 | Phase 1 | Complete |
-| TYPO-01 | Phase 1 | Complete |
-| TYPO-02 | Phase 1 | Complete |
-| TYPO-03 | Phase 1 | Complete |
-| DATA-01 | Phase 2 | Pending |
-| DATA-02 | Phase 2 | Pending |
-| DATA-03 | Phase 2 | Pending |
-| DATA-04 | Phase 2 | Pending |
-| DX-02 | Phase 2 | Pending |
-| CONT-01 | Phase 3 | Pending |
-| CONT-02 | Phase 3 | Pending |
-| CONT-03 | Phase 3 | Pending |
-| CONT-04 | Phase 3 | Pending |
-| CONT-05 | Phase 3 | Pending |
-| CONT-06 | Phase 3 | Pending |
-| CONT-07 | Phase 3 | Pending |
-| DX-01 | Phase 3 | Pending |
+| Requirement | Phase   | Status   |
+| ----------- | ------- | -------- |
+| BRAND-01    | Phase 1 | Complete |
+| BRAND-02    | Phase 1 | Complete |
+| BRAND-03    | Phase 1 | Complete |
+| BRAND-04    | Phase 1 | Complete |
+| TYPO-01     | Phase 1 | Complete |
+| TYPO-02     | Phase 1 | Complete |
+| TYPO-03     | Phase 1 | Complete |
+| DATA-01     | Phase 2 | Pending  |
+| DATA-02     | Phase 2 | Pending  |
+| DATA-03     | Phase 2 | Pending  |
+| DATA-04     | Phase 2 | Pending  |
+| DX-02       | Phase 2 | Pending  |
+| CONT-01     | Phase 3 | Pending  |
+| CONT-02     | Phase 3 | Pending  |
+| CONT-03     | Phase 3 | Pending  |
+| CONT-04     | Phase 3 | Pending  |
+| CONT-05     | Phase 3 | Pending  |
+| CONT-06     | Phase 3 | Pending  |
+| CONT-07     | Phase 3 | Pending  |
+| DX-01       | Phase 3 | Pending  |
 
 **Coverage:**
+
 - v1 requirements: 17 total
 - Mapped to phases: 17
 - Unmapped: 0 ✓
 
 ---
 
-*Requirements defined: 2026-03-04*
-*Last updated: 2026-03-04 after roadmap creation*
+_Requirements defined: 2026-03-04_
+_Last updated: 2026-03-04 after roadmap creation_

@@ -18,6 +18,7 @@
 ## Phase Details
 
 ### Phase 1: Branding & Typography
+
 **Goal:** Site is visually and textually branded for Moldova; all references to Romania removed; modern typography (Onest) replaces Public Sans.
 
 **Depends on:** Nothing (foundation phase)
@@ -25,21 +26,24 @@
 **Requirements:** BRAND-01, BRAND-02, BRAND-03, BRAND-04, TYPO-01, TYPO-02, TYPO-03
 
 **Success Criteria** (what must be TRUE when complete):
+
 1. Site URL in browser is identitate.md; astro.config.mjs, vercel.json, and all meta tags reference identitate.md
 2. Page titles, descriptions, and OG images reference "Republic of Moldova" (not Romania); all Romania-specific language removed
-3. Package references across codebase (`@identitate-ro/logos` → `@identitate-md/logos`) updated in package.json, CDN configs, and comments
+3. Package references across codebase (`@identitate-md/logos` → `@identitate-md/logos`) updated in package.json, CDN configs, and comments
 4. Onest font from Google Fonts loads on every page; Public Sans is removed; Tailwind config uses Onest as primary font family
 5. No visual inconsistency: font preload/preconnect tags work; Onest renders consistently across all pages and components
 
 **Plans:** 2/2 plans complete
 
 Plans:
+
 - [x] 01-01-PLAN.md — Update config files and package references (astro.config, vercel.json, package.json, cdn-helpers.ts)
 - [x] 01-02-PLAN.md — Update layout meta tags, replace Public Sans with Onest, rebrand components (BaseLayout, Tailwind, global.css, Header, Footer, 404)
 
 ---
 
 ### Phase 2: Data Architecture
+
 **Goal:** Institution data layer is restructured and validated for Moldova; schema expects `md-` prefix; build system enforces this validation.
 
 **Depends on:** Phase 1
@@ -47,6 +51,7 @@ Plans:
 **Requirements:** DATA-01, DATA-02, DATA-03, DATA-04, DX-02
 
 **Success Criteria** (what must be TRUE when complete):
+
 1. All institution ID references in codebase (type guards, validation scripts, generate-index.js) validate and enforce `md-` prefix (not `ro-`)
 2. Existing Romanian institution JSON files removed from data directory; logo directory structure uses `md-{slug}` pattern only
 3. Institution build validation passes: generate-index.js checks that all institutions match `md-*` pattern; build fails if `ro-` prefix detected
@@ -56,6 +61,7 @@ Plans:
 **Plans:** 4/4 plans
 
 Plans:
+
 - [ ] 02-01-PLAN.md — Update Institution type guards and generate-index.js validation for md- prefix (DATA-01)
 - [ ] 02-02-PLAN.md — Delete Romanian institution JSON files from src/data/institutions/ (DATA-02)
 - [ ] 02-03-PLAN.md — Delete Romanian logo directories from public/logos/ (DATA-03)
@@ -64,6 +70,7 @@ Plans:
 ---
 
 ### Phase 3: Content Localization
+
 **Goal:** All user-facing content (hero, pages, labels, footer) reflects Moldovan government context and terminology; site is ready for institution data population.
 
 **Depends on:** Phase 2
@@ -71,6 +78,7 @@ Plans:
 **Requirements:** CONT-01, CONT-02, CONT-03, CONT-04, CONT-05, CONT-06, CONT-07, DX-01
 
 **Success Criteria** (what must be TRUE when complete):
+
 1. Homepage hero text and taglines reference Moldovan public institutions (not Romanian); context is locally accurate
 2. Static pages (despre.astro, utilizare.astro, solicita.astro, legal, privacy) rewritten for Moldova: language, references, and links are Moldova-appropriate
 3. Institution categories (labels.ts) reflect Moldovan government structure (ministries, agencies, etc.); categorization matches target institutions
@@ -83,11 +91,11 @@ Plans:
 
 ## Progress Table
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Branding & Typography | 2/2 | Complete    | 2026-03-04 |
-| 2. Data Architecture | 0/4 | Planning    | — |
-| 3. Content Localization | 0/? | Not started | — |
+| Phase                    | Plans Complete | Status      | Completed  |
+| ------------------------ | -------------- | ----------- | ---------- |
+| 1. Branding & Typography | 2/2            | Complete    | 2026-03-04 |
+| 2. Data Architecture     | 0/4            | Planning    | —          |
+| 3. Content Localization  | 0/?            | Not started | —          |
 
 **Total Work Items:** 2 + 4 + ? (phase 3 TBD)
 
@@ -103,6 +111,6 @@ Every requirement is assigned to exactly one phase. No orphans.
 
 ---
 
-*Roadmap created: 2026-03-04*
-*Phase 1 planned: 2026-03-04*
-*Phase 2 planned: 2026-03-04*
+_Roadmap created: 2026-03-04_
+_Phase 1 planned: 2026-03-04_
+_Phase 2 planned: 2026-03-04_

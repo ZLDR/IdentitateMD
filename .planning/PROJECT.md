@@ -29,7 +29,7 @@ Any developer can find and use the official logo of any Moldovan public institut
 - [ ] Adapt all page content and static pages for Republic of Moldova context
 - [ ] Update institution categories to reflect Moldovan government structure
 - [ ] Update build validation (schema v3.0 prefix check: `ro-` → `md-`)
-- [ ] Update CDN package references (`@identitate-ro/logos` → `@identitate-md/logos`)
+- [ ] Update CDN package references (`@identitate-md/logos` → `@identitate-md/logos`)
 - [ ] Update vercel.json with new domain and build config
 - [ ] Clean up/remove Romania-specific institution data; prepare for Moldova institutions
 
@@ -54,12 +54,13 @@ Current codebase has 33 Romanian institutions that need to be replaced. All IDs 
 
 ## Key Decisions
 
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Keep Astro (no rewrite) | Codebase is well-structured; adaptation not rewrite | — Pending |
-| Onest font via Google Fonts | Owner preference; modern, readable typeface | — Pending |
-| Romanian only | Moldova's official language; simplifies v1 | — Pending |
-| No npm package in v1 | Focus on website; can add later | — Pending |
+| Decision                    | Rationale                                           | Outcome   |
+| --------------------------- | --------------------------------------------------- | --------- |
+| Keep Astro (no rewrite)     | Codebase is well-structured; adaptation not rewrite | — Pending |
+| Onest font via Google Fonts | Owner preference; modern, readable typeface         | — Pending |
+| Romanian only               | Moldova's official language; simplifies v1          | — Pending |
+| No npm package in v1        | Focus on website; can add later                     | — Pending |
 
 ---
-*Last updated: 2026-03-04 after initialization*
+
+_Last updated: 2026-03-04 after initialization_

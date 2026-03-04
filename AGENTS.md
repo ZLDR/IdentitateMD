@@ -9,6 +9,7 @@
 ## Technology Stack
 
 ### Core Technologies
+
 - **Framework**: Astro 5.2.0 (Static Site Generator)
 - **Styling**: Tailwind CSS 3.4.0 via @astrojs/tailwind 6.0.0
 - **Language**: TypeScript 5.7.0 (strict mode)
@@ -16,9 +17,10 @@
 - **Build Tool**: Vite (bundled with Astro)
 - **Package Manager**: npm
 - **CDN**: jsDelivr (primary), unpkg (fallback)
-- **npm Package**: @identitate-ro/logos@1.0.0
+- **npm Package**: @identitate-md/logos@1.0.0
 
 ### Development Environment
+
 - Node.js required (version specified in package.json engines if present)
 - Local dev server runs on port 4321 (default Astro port)
 - Build output: Static HTML/CSS/JS files
@@ -94,7 +96,9 @@ IdentitateRO/
 ## Data Schema (Current: v3.0)
 
 ### Schema Philosophy
+
 The v3.0 schema uses a **flat, simplified structure** with these key improvements:
+
 - Flattened top-level fields (no nested `institution` object)
 - Asset URLs are CDN-ready with absolute paths
 - `main` shortcut for the primary logo (improved developer experience)
@@ -109,6 +113,7 @@ Located in: `src/types/institution-v3.ts` (v3.0) and `src/types/institution.ts` 
 #### Main Types (v3.0):
 
 **Institution Categories** (InstitutionCategoryV3):
+
 - `guvern` - Government
 - `minister` - Ministry
 - `primarie` - City Hall
@@ -121,11 +126,13 @@ Located in: `src/types/institution-v3.ts` (v3.0) and `src/types/institution.ts` 
 - `altele` - Other
 
 **Logo Layouts** (LogoLayoutV3):
+
 - `horizontal` - Horizontal full logo
 - `vertical` - Vertical full logo
 - `symbol` - Symbol/icon only
 
 **Logo Color Variants** (LogoColorVariantV3):
+
 - `color` - Full color version
 - `dark_mode` - Dark mode optimized version
 - `white` - White version (for dark backgrounds)
@@ -133,6 +140,7 @@ Located in: `src/types/institution-v3.ts` (v3.0) and `src/types/institution.ts` 
 - `monochrome` - Monochrome version
 
 **Quality Levels** (QualityLevel):
+
 - `verified` - Officially verified
 - `community` - Community contributed and checked
 - `draft` - Work in progress
@@ -142,31 +150,31 @@ Located in: `src/types/institution-v3.ts` (v3.0) and `src/types/institution.ts` 
 ```typescript
 interface InstitutionV3 {
   // Top-level identification (flattened from v2)
-  id: string;                          // Unique ID: "ro-{slug}" format (e.g., "ro-anaf")
-  slug: string;                        // URL slug (e.g., "anaf")
-  name: string;                        // Full official name
-  shortname?: string;                  // Short name (lowercase)
-  category: InstitutionCategoryV3;     // Institution type
-  
+  id: string; // Unique ID: "ro-{slug}" format (e.g., "ro-anaf")
+  slug: string; // URL slug (e.g., "anaf")
+  name: string; // Full official name
+  shortname?: string; // Short name (lowercase)
+  category: InstitutionCategoryV3; // Institution type
+
   // Metadata (simplified)
   meta: {
-    version: string;                   // Data version (e.g., "1.2.0")
-    last_updated: string;              // ISO 8601 date (snake_case)
-    keywords: string[];                // Keywords for search (was 'tags' in v2)
-    quality?: 'verified' | 'community' | 'draft';
+    version: string; // Data version (e.g., "1.2.0")
+    last_updated: string; // ISO 8601 date (snake_case)
+    keywords: string[]; // Keywords for search (was 'tags' in v2)
+    quality?: "verified" | "community" | "draft";
   };
-  
+
   // Location (simplified)
   location?: {
-    country_code: string;              // "RO"
-    county?: string;                   // County code (e.g., "B", "CJ")
-    city?: string;                     // City name
+    country_code: string; // "RO"
+    county?: string; // County code (e.g., "B", "CJ")
+    city?: string; // City name
   };
-  
+
   // Description
-  description?: string;                // Brief description
-  usage_notes?: string;                // Usage restrictions
-  
+  description?: string; // Brief description
+  usage_notes?: string; // Usage restrictions
+
   // Visual identity (flattened from v2)
   colors?: Array<{
     name: string;
@@ -174,10 +182,11 @@ interface InstitutionV3 {
     rgb?: [number, number, number];
     cmyk?: [number, number, number, number];
     pantone?: string;
-    usage?: 'primary' | 'secondary' | 'accent' | 'neutral';
+    usage?: "primary" | "secondary" | "accent" | "neutral";
   }>;
-  
-  typography?: {                       // Object with primary/secondary (not array)
+
+  typography?: {
+    // Object with primary/secondary (not array)
     primary: {
       family: string;
       url?: string;
@@ -189,12 +198,13 @@ interface InstitutionV3 {
       weights?: number[];
     };
   };
-  
+
   // Assets (new structure with main shortcut)
   assets: {
-    main: {                            // Primary logo shortcut ⭐
-      type: 'horizontal' | 'vertical' | 'symbol';
-      color?: string;                  // CDN-ready URLs
+    main: {
+      // Primary logo shortcut ⭐
+      type: "horizontal" | "vertical" | "symbol";
+      color?: string; // CDN-ready URLs
       dark_mode?: string;
       white?: string;
       black?: string;
@@ -205,16 +215,22 @@ interface InstitutionV3 {
         height: number;
       };
     };
-    horizontal?: { /* same structure */ };
-    vertical?: { /* same structure */ };
-    symbol?: { /* same structure */ };
+    horizontal?: {
+      /* same structure */
+    };
+    vertical?: {
+      /* same structure */
+    };
+    symbol?: {
+      /* same structure */
+    };
     favicon?: string;
   };
-  
+
   // External resources
   resources?: {
     website?: string;
-    branding_manual?: string;          // Was 'manualUrl' in v2
+    branding_manual?: string; // Was 'manualUrl' in v2
     social_media?: {
       facebook?: string;
       twitter?: string;
@@ -278,27 +294,32 @@ interface InstitutionV3 {
 ### Configuration Files
 
 **astro.config.mjs**:
+
 - Sets site URL: `https://identitate.eu`
 - Integrates Tailwind CSS
 - Configures static output
 - Custom asset file naming for cache busting
 
 **tsconfig.json**:
+
 - TypeScript strict mode enabled
 - Astro-specific paths and types
 
 **tailwind.config.mjs**:
+
 - Custom Tailwind configuration (if extended)
 
 ### Data Files
 
 **src/data/institutions-index.json**:
+
 - Generated by `scripts/generate-index.js`
 - Aggregates all institution data
 - Includes statistics and category summaries
 - Used for homepage rendering and filtering
 
-**src/data/institutions/*.json**:
+**src/data/institutions/\*.json**:
+
 - Individual institution data files
 - Follow the Institution schema v2.0
 - Manually created and maintained
@@ -306,6 +327,7 @@ interface InstitutionV3 {
 ### Helper Functions (src/lib/helpers.ts)
 
 Key functions for v3.0:
+
 - `getPrimaryLogoPath(inst)` - Returns the main logo path (uses `assets.main` shortcut)
 - `hasSvg(inst)` - Checks if institution has at least one SVG
 - `getAllDownloadableAssets(inst)` - Extracts all downloadable assets
@@ -321,6 +343,7 @@ Key functions for v3.0:
 ### Label Constants (src/lib/labels.ts)
 
 Defines:
+
 - `CATEGORY_LABELS` - Romanian labels for categories
 - `CATEGORY_ORDER` - Display order for categories
 - `LOGO_LAYOUT_LABELS` - Labels for logo layouts
@@ -329,20 +352,24 @@ Defines:
 ### Components
 
 **LogoCard.astro**:
+
 - Displays institution logo card
 - Props: id, name, shortName, acronym, category, logoPath, quality, hasSvg, tags
 - Links to `/institution/[id]` page
 
 **Header.astro** / **Footer.astro**:
+
 - Site-wide navigation and footer
 
 **BaseLayout.astro**:
+
 - Main layout wrapper
 - Includes meta tags, fonts, global styles
 
 ### Pages
 
 **index.astro**:
+
 - Homepage with search and filter functionality
 - Uses Fuse.js for client-side search
 - Category filtering with "sticky" filter bar
@@ -350,6 +377,7 @@ Defines:
 - Client-side interactivity via inline `<script>` tags
 
 **institution/[id].astro**:
+
 - Dynamic route for individual institution pages
 - Displays full details, colors, typography, downloadable assets
 
@@ -373,6 +401,7 @@ npm run data:generate # Generate institutions-index.json
 5. Test locally with `npm run dev`
 
 **Key v3.0 requirements:**
+
 - `id` must be in format `ro-{slug}`
 - Use `keywords` (array) instead of `tags`
 - Use `last_updated` (snake_case) instead of `lastUpdated`
@@ -383,12 +412,14 @@ npm run data:generate # Generate institutions-index.json
 ### Naming Conventions
 
 **Slugs** (institution IDs):
+
 - Lowercase only
 - No diacritics
 - Words separated by hyphens
 - Examples: `primaria-timisoara`, `anaf`, `ministerul-educatiei`
 
 **File naming**:
+
 - Institution JSON: `[slug].json`
 - Logo files: `[slug].svg`, `[slug]-mono.svg`, etc.
 

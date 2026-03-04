@@ -1,7 +1,7 @@
 # IdentitateRO
 
 [![Website](https://img.shields.io/badge/website-identitate.eu-blue)](https://identitate.eu)
-[![npm version](https://img.shields.io/npm/v/@identitate-ro/logos.svg)](https://www.npmjs.com/package/@identitate-ro/logos)
+[![npm version](https://img.shields.io/npm/v/@identitate-md/logos.svg)](https://www.npmjs.com/package/@identitate-md/logos)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Registru digital open-source pentru identitatea vizuală a instituțiilor publice din România.
@@ -9,24 +9,27 @@ Registru digital open-source pentru identitatea vizuală a instituțiilor public
 Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o singură sursă de adevăr.
 
 🌐 **Website**: [identitate.eu](https://identitate.eu)  
-📦 **NPM Package**: [@identitate-ro/logos](https://www.npmjs.com/package/@identitate-ro/logos)
+📦 **NPM Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 
 ## 🚀 Utilizare Rapidă
 
 ### Prin CDN (Recomandat)
 
 ```html
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/anaf/anaf.svg" alt="ANAF">
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg"
+  alt="ANAF"
+/>
 ```
 
 ### Prin NPM
 
 ```bash
-npm install @identitate-ro/logos
+npm install @identitate-md/logos
 ```
 
 ```javascript
-import logoPath from '@identitate-ro/logos/logos/anaf/anaf.svg';
+import logoPath from "@identitate-md/logos/logos/anaf/anaf.svg";
 ```
 
 📖 **Documentație completă**: [identitate.eu/utilizare](https://identitate.eu/utilizare)
@@ -81,7 +84,7 @@ npm run generate  # Generează index.json
 
 ## 📦 NPM Package
 
-Pachetul `@identitate-ro/logos` include:
+Pachetul `@identitate-md/logos` include:
 
 - 🖼️ Toate logo-urile în format SVG
 - 📋 `index.json` cu metadata completă
@@ -122,9 +125,9 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 ## 🔗 Link-uri Utile
 
 - **Website**: [identitate.eu](https://identitate.eu)
-- **NPM Package**: [@identitate-ro/logos](https://www.npmjs.com/package/@identitate-ro/logos)
-- **CDN (jsDelivr)**: [cdn.jsdelivr.net/npm/@identitate-ro/logos](https://cdn.jsdelivr.net/npm/@identitate-ro/logos/)
-- **CDN (unpkg)**: [unpkg.com/@identitate-ro/logos](https://unpkg.com/@identitate-ro/logos/)
+- **NPM Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
+- **CDN (jsDelivr)**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
+- **CDN (unpkg)**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
 - **Documentație**: [identitate.eu/utilizare](https://identitate.eu/utilizare)
 
 ---

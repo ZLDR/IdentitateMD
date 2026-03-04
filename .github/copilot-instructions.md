@@ -6,10 +6,10 @@ Welcome to the IdentitateRO codebase! This document provides essential context a
 
 IdentitateRO is a monorepo consisting of two main parts:
 
-1. **`packages/logos/`**: An NPM package (`@identitate-ro/logos`) containing the source of truth for all logos (SVGs) and their metadata (`index.json`). It also includes a framework-agnostic web component (`identity-loader.js`).
+1. **`packages/logos/`**: An NPM package (`@identitate-md/logos`) containing the source of truth for all logos (SVGs) and their metadata (`index.json`). It also includes a framework-agnostic web component (`identity-loader.js`).
 2. **`website/`**: An Astro 5 static site (`identitate.eu`) that serves as the public registry and search interface.
 
-**Data Flow**: 
+**Data Flow**:
 Raw SVGs and `metadata.md` files in `packages/logos/logos/[slug]/` -> AI Generator -> `website/src/data/institutions/[slug].json` -> Index Generator -> `website/src/data/institutions-index.json` -> Astro Pages.
 
 ## 📊 Data Schema (v3.0)
@@ -22,7 +22,7 @@ The project uses a flattened JSON schema (v3.0) for institution data.
 - **Search**: Uses `keywords` (array of strings) instead of `tags`.
 - **Location**: Simplified to `country_code`, `county`, `city`.
 
-*Reference: `website/src/types/institution.ts` and `docs/schema-migration-plan.md`*
+_Reference: `website/src/types/institution.ts` and `docs/schema-migration-plan.md`_
 
 ## 🛠️ Critical Developer Workflows
 
@@ -43,6 +43,7 @@ We use an AI-assisted workflow to generate the JSON data:
    ```
 
 ### 2. Local Development
+
 ```bash
 cd website
 npm install
@@ -87,6 +88,7 @@ These rules must be followed to maintain data integrity and consistency across t
    - Colors matching official brand manual
 
 7. **Maintain Directory Structure** — Follow exact hierarchy:
+
    ```
    packages/logos/logos/ro-{slug}/
    ├── metadata.md
@@ -108,6 +110,7 @@ These rules must be followed to maintain data integrity and consistency across t
 ### Data Maintenance
 
 12. **Run Index Generator After Changes** — After modifying any JSON file, run both:
+
     ```bash
     cd packages/logos && node scripts/generate-index.js
     cd website && npm run data:generate
@@ -133,4 +136,4 @@ These rules must be followed to maintain data integrity and consistency across t
 
 ---
 
-*For the full type definition, see `website/src/types/institution.ts`.*
+_For the full type definition, see `website/src/types/institution.ts`._

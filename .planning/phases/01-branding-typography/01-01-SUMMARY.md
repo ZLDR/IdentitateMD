@@ -56,6 +56,7 @@ completed: 2026-03-04
 - **Files modified:** 5
 
 ## Accomplishments
+
 - astro.config.mjs site URL updated to https://identitate.md (was identitate.eu)
 - vercel.json CDN rewrites now deliver from @identitate-md/logos@1.3.4 (was @identitate-ro)
 - website/package.json name/description/author reference Moldova
@@ -72,13 +73,15 @@ Each task was committed atomically:
 **Plan metadata:** (docs commit follows)
 
 ## Files Created/Modified
+
 - `website/astro.config.mjs` - site field: https://identitate.eu → https://identitate.md
-- `vercel.json` - CDN rewrite destinations: @identitate-ro/logos → @identitate-md/logos
+- `vercel.json` - CDN rewrite destinations: @identitate-md/logos → @identitate-md/logos
 - `website/package.json` - name, description, author updated for Moldova
 - `packages/logos/package.json` - name, description, author, homepage, repository, keywords updated for Moldova
 - `website/src/lib/cdn-helpers.ts` - file header and CDN_PATTERNS template strings updated to @identitate-md/logos
 
 ## Decisions Made
+
 - Placeholder GitHub repo URL `https://github.com/identitate-md/identitate-md` used in packages/logos/package.json as specified in the plan; owner will update when real org is created.
 
 ## Deviations from Plan
@@ -94,12 +97,14 @@ None. All five target files had the correct structure; only string values needed
 None - no external service configuration required.
 
 ## Next Phase Readiness
+
 - All CDN and package naming is consistent for Moldova; Phase 01-02 (typography) can proceed without CDN conflicts.
 - vercel.json CDN rewrites are live as soon as the @identitate-md/logos npm package is published.
 
 ---
-*Phase: 01-branding-typography*
-*Completed: 2026-03-04*
+
+_Phase: 01-branding-typography_
+_Completed: 2026-03-04_
 
 ## Self-Check: PASSED
 

@@ -3,7 +3,8 @@
 ## Overview
 
 Logo-urile IdentitateRO sunt disponibile prin:
-1. **Pachet npm** `@identitate-ro/logos` - Pentru instalare în proiecte
+
+1. **Pachet npm** `@identitate-md/logos` - Pentru instalare în proiecte
 2. **CDN gratuit** - jsDelivr (primary) și unpkg (fallback)
 3. **Local fallback** - Logo-uri servite de la Vercel
 
@@ -43,11 +44,13 @@ Logo-urile IdentitateRO sunt disponibile prin:
 ### Tipul AssetUrls
 
 ```typescript
-type AssetUrls = string | {
-  cdn_primary?: string;      // jsDelivr URL
-  cdn_fallback?: string;     // unpkg URL
-  local: string;             // Local path (always required)
-};
+type AssetUrls =
+  | string
+  | {
+      cdn_primary?: string; // jsDelivr URL
+      cdn_fallback?: string; // unpkg URL
+      local: string; // Local path (always required)
+    };
 ```
 
 ### Exemplu JSON
@@ -58,8 +61,8 @@ type AssetUrls = string | {
     "main": {
       "type": "horizontal",
       "color": {
-        "cdn_primary": "https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
-        "cdn_fallback": "https://unpkg.com/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
+        "cdn_primary": "https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
+        "cdn_fallback": "https://unpkg.com/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
         "local": "/logos/anaf/anaf.svg"
       }
     }
@@ -88,8 +91,8 @@ Schema v3.1 este **100% backwards compatible** cu v3.0:
     "main": {
       "type": "horizontal",
       "color": {
-        "cdn_primary": "https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
-        "cdn_fallback": "https://unpkg.com/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
+        "cdn_primary": "https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
+        "cdn_fallback": "https://unpkg.com/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
         "local": "/logos/anaf/anaf.svg"
       }
     }
@@ -104,7 +107,7 @@ Schema v3.1 este **100% backwards compatible** cu v3.0:
 Rezolvă un AssetUrls la un string URL, cu logică de fallback:
 
 ```typescript
-import { resolveAssetPath } from './lib/cdn-helpers';
+import { resolveAssetPath } from "./lib/cdn-helpers";
 
 // String simplu (backwards compatible)
 const path1 = resolveAssetPath("/logos/anaf/anaf.svg");
@@ -114,7 +117,7 @@ const path1 = resolveAssetPath("/logos/anaf/anaf.svg");
 const path2 = resolveAssetPath({
   cdn_primary: "https://cdn.jsdelivr.net/...",
   cdn_fallback: "https://unpkg.com/...",
-  local: "/logos/anaf/anaf.svg"
+  local: "/logos/anaf/anaf.svg",
 });
 // Returns: "https://cdn.jsdelivr.net/..." (preferă CDN)
 
@@ -128,12 +131,12 @@ const path3 = resolveAssetPath(asset, false);
 Extrage toate URL-urile pentru fallback chain:
 
 ```typescript
-import { getAssetFallbackUrls } from './lib/cdn-helpers';
+import { getAssetFallbackUrls } from "./lib/cdn-helpers";
 
 const urls = getAssetFallbackUrls(asset);
 // Returns: [
-//   "https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
-//   "https://unpkg.com/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
+//   "https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
+//   "https://unpkg.com/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
 //   "/logos/anaf/anaf.svg"
 // ]
 ```
@@ -143,22 +146,22 @@ const urls = getAssetFallbackUrls(asset);
 Generează CDN URLs din path local:
 
 ```typescript
-import { getCdnUrls } from './lib/cdn-helpers';
+import { getCdnUrls } from "./lib/cdn-helpers";
 
 const urls = getCdnUrls("/logos/anaf/anaf.svg", "1.0.0");
 // Returns: {
-//   cdn_primary: "https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
-//   cdn_fallback: "https://unpkg.com/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg",
+//   cdn_primary: "https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
+//   cdn_fallback: "https://unpkg.com/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg",
 //   local: "/logos/anaf/anaf.svg"
 // }
 ```
 
-## Pachet npm @identitate-ro/logos
+## Pachet npm @identitate-md/logos
 
 ### Structură
 
 ```
-@identitate-ro/logos/
+@identitate-md/logos/
 ├── package.json
 ├── README.md
 ├── LICENSE
@@ -182,16 +185,16 @@ npm publish --access public
 
 ```bash
 # Instalare
-npm install @identitate-ro/logos
+npm install @identitate-md/logos
 
 # Via CDN
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg">
+<img src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg">
 
 # Via unpkg (fallback)
-<img src="https://unpkg.com/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg">
+<img src="https://unpkg.com/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg">
 
 # Latest version
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/anaf/anaf.svg">
+<img src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg">
 ```
 
 ## Scripts
@@ -206,6 +209,7 @@ node scripts/migrate-to-cdn.js
 ```
 
 Output:
+
 ```
 🔄 Migrare la schema v3.1 cu CDN URLs...
 📁 Director: /path/to/institutions
@@ -241,20 +245,22 @@ node scripts/generate-index.js
 
 ### Benchmarks
 
-| Sursă | TTFB | Load Time |
-|-------|------|-----------|
-| Local (Vercel) | ~150ms | ~200ms |
-| jsDelivr CDN | ~20ms | ~50ms |
-| unpkg CDN | ~30ms | ~70ms |
+| Sursă          | TTFB   | Load Time |
+| -------------- | ------ | --------- |
+| Local (Vercel) | ~150ms | ~200ms    |
+| jsDelivr CDN   | ~20ms  | ~50ms     |
+| unpkg CDN      | ~30ms  | ~70ms     |
 
 ### Cache Headers
 
 **Versiuni specifice** (`@1.0.0`):
+
 ```
 Cache-Control: public, max-age=31536000, immutable
 ```
 
 **Latest version** (`@latest`):
+
 ```
 Cache-Control: public, max-age=600
 ```
@@ -282,12 +288,14 @@ Cache-Control: public, max-age=600
 ### Logo-urile nu se încarcă de pe CDN
 
 **Cauze posibile:**
+
 1. Pachetul nu e publicat încă pe npm
 2. CDN-ul încă nu a sincronizat (wait ~5 min după publish)
 3. Versiunea specificată nu există
 
 **Soluție:**
-- Verifică pachetul pe npmjs.com: https://www.npmjs.com/package/@identitate-ro/logos
+
+- Verifică pachetul pe npmjs.com: https://www.npmjs.com/package/@identitate-md/logos
 - Așteaptă ~5 minute după publish
 - Test cu versiunea `@latest`
 - Fallback-ul local ar trebui să funcționeze oricum
@@ -297,6 +305,7 @@ Cache-Control: public, max-age=600
 **Cauză:** Type definitions out of sync
 
 **Soluție:**
+
 ```bash
 cd website
 npm run build
@@ -306,10 +315,12 @@ npm run build
 ### CDN rate limiting
 
 **jsDelivr limits:**
+
 - 100 GB/month free
 - No hard rate limits pentru normal usage
 
 **unpkg limits:**
+
 - Unlimited bandwidth
 - Rate limiting pentru abuse (very high threshold)
 
@@ -320,6 +331,7 @@ npm run build
 ### CDN URLs sunt safe?
 
 ✅ **Da**, pentru că:
+
 1. URLs-urile pointează spre pachete npm imutabile
 2. npm registry are package signing
 3. CDN-urile verifică integrity
@@ -330,8 +342,10 @@ npm run build
 Add to `<meta>` tags:
 
 ```html
-<meta http-equiv="Content-Security-Policy" 
-      content="img-src 'self' https://cdn.jsdelivr.net https://unpkg.com">
+<meta
+  http-equiv="Content-Security-Policy"
+  content="img-src 'self' https://cdn.jsdelivr.net https://unpkg.com"
+/>
 ```
 
 ## Monitoring
@@ -339,17 +353,19 @@ Add to `<meta>` tags:
 ### CDN Stats
 
 **jsDelivr:**
-- Dashboard: https://www.jsdelivr.com/package/npm/@identitate-ro/logos
-- Stats API: `https://data.jsdelivr.com/v1/package/npm/@identitate-ro/logos`
+
+- Dashboard: https://www.jsdelivr.com/package/npm/@identitate-md/logos
+- Stats API: `https://data.jsdelivr.com/v1/package/npm/@identitate-md/logos`
 
 **unpkg:**
+
 - No public dashboard
 - Traffic included în npm stats
 
 ### npm Stats
 
 ```bash
-npm view @identitate-ro/logos
+npm view @identitate-md/logos
 ```
 
 ## FAQ
@@ -372,5 +388,5 @@ A: Nu, jsDelivr și unpkg sunt gratuite pentru open-source projects.
 ---
 
 **Documentație completă:** https://identitate.eu  
-**Pachet npm:** https://www.npmjs.com/package/@identitate-ro/logos  
+**Pachet npm:** https://www.npmjs.com/package/@identitate-md/logos  
 **GitHub:** https://github.com/laurentiucotet/IdentitateRO

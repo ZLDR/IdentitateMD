@@ -1,8 +1,9 @@
-# Cum să publici pachetul @identitate-ro/logos pe npm
+# Cum să publici pachetul @identitate-md/logos pe npm
 
 ## Problema: npm necesită 2FA pentru publicare
 
 Ai primit eroarea:
+
 ```
 403 Forbidden - Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages.
 ```
@@ -12,6 +13,7 @@ Ai primit eroarea:
 ### Pași:
 
 1. **Mergi la pagina de tokens npm**:
+
    ```
    https://www.npmjs.com/settings/YOUR_USERNAME/tokens
    ```
@@ -25,7 +27,7 @@ Ai primit eroarea:
    - **Expiration**: 90 days (maximum)
    - **Select Packages**:
      - Click "Select packages and scopes"
-     - Select: "All packages" SAU specifică `@identitate-ro/logos`
+     - Select: "All packages" SAU specifică `@identitate-md/logos`
    - **Permissions**:
      - Select: **"Read and write"**
    - **IP Allowlist**: Leave empty (optional)
@@ -86,13 +88,13 @@ npm publish --access public --otp=123456
 
 ```bash
 # Verifică că pachetul e publicat
-npm view @identitate-ro/logos
+npm view @identitate-md/logos
 
 # Testează instalarea
-npm install @identitate-ro/logos
+npm install @identitate-md/logos
 
 # Verifică CDN URLs
-curl https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg
+curl https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg
 ```
 
 ## Note de securitate
@@ -100,6 +102,7 @@ curl https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg
 ⚠️ **NU commit-ui .npmrc cu tokenul în Git!**
 
 Fișierul `.gitignore` din `packages/logos/` deja conține:
+
 ```
 .npmrc
 ```
@@ -114,7 +117,7 @@ Fișierul `.gitignore` din `packages/logos/` deja conține:
 
 ### "Package name too similar"
 
-- Verifică că numele `@identitate-ro/logos` e disponibil
+- Verifică că numele `@identitate-md/logos` e disponibil
 - Poate fi nevoie să schimbi scope-ul dacă `@identitate-ro` e luat
 
 ### "Invalid token"
