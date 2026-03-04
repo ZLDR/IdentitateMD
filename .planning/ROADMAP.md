@@ -31,7 +31,7 @@
 4. Onest font from Google Fonts loads on every page; Public Sans is removed; Tailwind config uses Onest as primary font family
 5. No visual inconsistency: font preload/preconnect tags work; Onest renders consistently across all pages and components
 
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
 - [x] 01-01-PLAN.md — Update config files and package references (astro.config, vercel.json, package.json, cdn-helpers.ts)
@@ -79,7 +79,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Branding & Typography | 2/2 | Complete | 2026-03-04 |
+| 1. Branding & Typography | 2/2 | Complete    | 2026-03-04 |
 | 2. Data Architecture | 0/5 | Not started | — |
 | 3. Content Localization | 0/8 | Not started | — |
 
