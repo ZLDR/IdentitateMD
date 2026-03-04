@@ -1,27 +1,20 @@
 {
   "id": "md-guvernul-moldovei",
-  "slug": "guvernul-moldovei",
+  "slug": "guvern",
   "name": "Guvernul Republicii Moldova",
-  "shortname": "guvernul-moldovei",
+  "shortname": "guvern",
   "category": "guvern",
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-04",
-    "keywords": [
-      "moldova",
-      "guvern",
-      "executiv",
-      "administrație",
-      "prim-ministru",
-      "republic"
-    ],
+    "keywords": ["moldova", "guvern", "executiv"],
     "quality": "draft"
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Autoritatea centrală de execuție a Republicii Moldova, condusă de Prim-ministru",
+  "description": "Autoritatea centrală de execuție a Republicii Moldova",
   "colors": [
     {
       "name": "Albastru Oficial",
