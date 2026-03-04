@@ -13,7 +13,7 @@ export default {
     },
     extend: {
       colors: {
-        // IdentitateRO Design System — Navy Blue #004990
+        // IdentitateMD Design System — Navy Blue #004990
         primary: {
           50: '#e6f0fa',
           100: '#cce0f5',
@@ -41,7 +41,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Public Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Onest', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       boxShadow: {
