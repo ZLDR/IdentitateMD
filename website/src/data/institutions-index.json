@@ -24,90 +24,41 @@
   ],
   "institutions": [
     {
-      "id": "md-guvernul-moldovei",
-      "slug": "guvernul-moldovei",
+      "id": "md-guvern",
+      "slug": "guvern",
       "name": "Guvernul Republicii Moldova",
-      "shortname": "guvernul-moldovei",
+      "shortname": "guvern",
       "category": "guvern",
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "guvern",
-          "executiv",
-          "administrație",
-          "prim-ministru",
-          "republic"
-        ],
+        "keywords": ["moldova", "guvern", "executiv"],
         "quality": "draft"
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Autoritatea centrală de execuție a Republicii Moldova, condusă de Prim-ministru",
+      "description": "Autoritatea centrală de execuție a Republicii Moldova",
       "colors": [
         {
           "name": "Albastru Oficial",
-          "hex": "#0047AB",
-          "rgb": [
-            0,
-            71,
-            171
-          ],
+          "hex": "#0E4C90",
+          "rgb": [14, 76, 144],
           "usage": "primary"
-        },
-        {
-          "name": "Auriu",
-          "hex": "#D4AF37",
-          "rgb": [
-            212,
-            175,
-            55
-          ],
-          "usage": "accent"
-        },
-        {
-          "name": "Alb",
-          "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
-          "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
-          "family": "Inter",
-          "weights": [
-            400,
-            500,
-            600,
-            700
-          ]
+          "family": "Trajan Pro",
+          "weights": [400, 700]
         },
         "secondary": {
-          "family": "Georgia",
-          "weights": [
-            400,
-            700
-          ]
+          "family": "Onest",
+          "weights": [400, 700]
         }
       },
       "assets": {
-        "main": {
-          "type": "horizontal",
-          "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
-          "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
-        },
-        "horizontal": {
-          "type": "horizontal",
-          "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
-          "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
-        },
         "symbol": {
           "type": "symbol",
           "color": "/logos/md-guvernul-moldovei/symbol/color.svg"
@@ -122,7 +73,7 @@
       }
     },
     {
-      "id": "ro-eu-flag",
+      "id": "md-eu-flag",
       "slug": "eu-flag",
       "name": "Steagul Uniunii Europene",
       "shortname": "ue",
@@ -140,7 +91,7 @@
         "quality": "draft"
       },
       "location": {
-        "country_code": "RO",
+        "country_code": "MD",
         "county": null,
         "city": null
       },
@@ -150,11 +101,7 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [
-            255,
-            204,
-            0
-          ],
+          "rgb": [255, 204, 0],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -162,11 +109,7 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [
-            0,
-            51,
-            153
-          ],
+          "rgb": [0, 51, 153],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

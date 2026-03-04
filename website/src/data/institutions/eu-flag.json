@@ -1,5 +1,5 @@
 {
-  "id": "ro-eu-flag",
+  "id": "md-eu-flag",
   "slug": "eu-flag",
   "name": "Steagul Uniunii Europene",
   "shortname": "ue",
@@ -27,11 +27,7 @@
     {
       "name": "Color #FFCC00",
       "hex": "#FFCC00",
-      "rgb": [
-        255,
-        204,
-        0
-      ],
+      "rgb": [255, 204, 0],
       "cmyk": null,
       "pantone": null,
       "usage": "primary"
@@ -39,11 +35,7 @@
     {
       "name": "Color #003399",
       "hex": "#003399",
-      "rgb": [
-        0,
-        51,
-        153
-      ],
+      "rgb": [0, 51, 153],
       "cmyk": null,
       "pantone": null,
       "usage": "secondary"
