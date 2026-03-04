@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-02-20T18:48:56.161Z",
-  "count": 33,
-  "totalLogos": 118,
+  "generated": "2026-03-04T16:17:38.474Z",
+  "count": 35,
+  "totalLogos": 121,
   "institutions": [
     {
       "id": "eu-flag",
@@ -17,6 +17,33 @@
           "black": "/logos/eu-flag/symbol/black.svg",
           "color": "/logos/eu-flag/symbol/color.svg",
           "white": "/logos/eu-flag/symbol/white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-guvern",
+      "slug": "md-guvern",
+      "name": "Md Guvern",
+      "layouts": [],
+      "logoCount": 0,
+      "logos": {}
+    },
+    {
+      "id": "md-guvernul-moldovei",
+      "slug": "md-guvernul-moldovei",
+      "name": "Md Guvernul Moldovei",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
+          "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-guvernul-moldovei/symbol/color.svg"
         }
       }
     },

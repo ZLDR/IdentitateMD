@@ -1,0 +1,78 @@
+{
+  "id": "md-guvernul-moldovei",
+  "slug": "guvernul-moldovei",
+  "name": "Guvernul Republicii Moldova",
+  "shortname": "guvernul-moldovei",
+  "category": "guvern",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-04",
+    "keywords": [
+      "moldova",
+      "guvern",
+      "executiv",
+      "administrație",
+      "prim-ministru",
+      "republic"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Autoritatea centrală de execuție a Republicii Moldova, condusă de Prim-ministru",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0047AB",
+      "rgb": [0, 71, 171],
+      "usage": "primary"
+    },
+    {
+      "name": "Auriu",
+      "hex": "#D4AF37",
+      "rgb": [212, 175, 55],
+      "usage": "accent"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "neutral"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Inter",
+      "weights": [400, 500, 600, 700]
+    },
+    "secondary": {
+      "family": "Georgia",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
+      "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
+      "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-guvernul-moldovei/symbol/color.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.gov.md",
+    "social_media": {
+      "facebook": "https://www.facebook.com/guvernulrepubliciimodova",
+      "twitter": "https://twitter.com/GovMD"
+    }
+  }
+}

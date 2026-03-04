@@ -151,7 +151,7 @@ export function getLogoVariants(group: LogoAssetGroup | undefined): Array<[strin
  * Returnează null dacă varianta specificată nu există.
  */
 export function getCdnLogoUrl(inst: Institution, preferredVariant: string = 'color'): string | null {
-  const cdnBase = `https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/${inst.id}`;
+  const cdnBase = `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${inst.id}`;
   const mainLayout = inst.assets.main?.type || 'horizontal';
   
   // Verificăm dacă varianta există în assets.main

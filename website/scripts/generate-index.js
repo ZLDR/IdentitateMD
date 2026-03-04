@@ -62,8 +62,9 @@ async function generateIndex() {
       }
 
       // Validate v3 schema markers
-      if (!data.id.startsWith('ro-') || !data.meta?.keywords || !data.assets?.main) {
-        console.error(`  ⚠️  ${file}: nu respectă schema v3.0 (lipsește ro- prefix, keywords sau assets.main)`);
+      const hasCountryPrefix = /^[a-z]{2}-/.test(data.id);
+      if (!hasCountryPrefix || !data.meta?.keywords || !data.assets?.main) {
+        console.error(`  ⚠️  ${file}: nu respectă schema v3.0 (lipsește country prefix, keywords sau assets.main)`);
         continue;
       }
 

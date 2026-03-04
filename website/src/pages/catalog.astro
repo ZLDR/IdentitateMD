@@ -116,7 +116,7 @@ const cdnVersion = CDN_VERSION;
             </div>
             {institutionsByCategory[cat.value].map((inst: Institution) => {
               const logoSrc = inst.assets?.main?.color
-                ? `https://cdn.jsdelivr.net/npm/@identitate-ro/logos@${cdnVersion}${inst.assets.main.color}`
+                ? `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}${inst.assets.main.color}`
                 : null;
               return (
                 <button
@@ -175,7 +175,7 @@ const VARIANT_LABELS = JSON.parse(logoVariantLabelsJson);
 const USAGE_LABELS   = JSON.parse(colorUsageLabelsJson);
 const QUALITY_LABELS = JSON.parse(qualityLabelsJson);
 
-const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-ro/logos@${cdnVersion}`;
+const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}`;
 const SITE = 'https://identitate.eu';
 
 /** Build an index map by slug */
@@ -452,7 +452,7 @@ function buildDetail(inst) {
   }
 
   // ── Integration tabs ───────────────────────────────────────────────────────
-  const npmSnippet = `import logos from '@identitate-ro/logos';\\nconst logo = logos.institutions.find(i => i.id === '${inst.id}');`;
+  const npmSnippet = `import logos from '@identitate-md/logos';\\nconst logo = logos.institutions.find(i => i.id === '${inst.id}');`;
   const integrationHtml = `
     <section class="mb-8">
       <h2 class="text-lg font-semibold text-primary-900 mb-4 flex items-center gap-2">
@@ -476,11 +476,11 @@ function buildDetail(inst) {
           <p class="text-sm text-surface-600 mb-3">Instalează pachetul și importă datele:</p>
           <div class="space-y-2">
             <div class="relative bg-gray-50 p-3 rounded font-mono text-sm border">
-              <span class="text-surface-500">$</span> npm install @identitate-ro/logos
-              <button type="button" class="copy-code-btn absolute top-2 right-2 p-2 rounded hover:bg-gray-200 text-gray-500 transition-colors" data-value="npm install @identitate-ro/logos" title="Copiază">${ICONS.copy}</button>
+              <span class="text-surface-500">$</span> npm install @identitate-md/logos
+              <button type="button" class="copy-code-btn absolute top-2 right-2 p-2 rounded hover:bg-gray-200 text-gray-500 transition-colors" data-value="npm install @identitate-md/logos" title="Copiază">${ICONS.copy}</button>
             </div>
             <div class="relative bg-gray-50 p-3 rounded font-mono text-sm border overflow-x-auto">
-              <span class="text-pink-600">import</span> logos <span class="text-pink-600">from</span> <span class="text-green-600">'@identitate-ro/logos'</span>;<br>
+              <span class="text-pink-600">import</span> logos <span class="text-pink-600">from</span> <span class="text-green-600">'@identitate-md/logos'</span>;<br>
               <span class="text-pink-600">const</span> logo = logos.institutions.<span class="text-blue-600">find</span>(i =&gt; i.id === <span class="text-green-600">'${escHtml(inst.id)}'</span>);
               <button type="button" class="copy-code-btn absolute top-2 right-2 p-2 rounded hover:bg-gray-200 text-gray-500 transition-colors" data-value="${escHtml(npmSnippet)}" title="Copiază">${ICONS.copy}</button>
             </div>
