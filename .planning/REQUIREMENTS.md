@@ -7,10 +7,10 @@
 
 ### Branding & Identity
 
-- [ ] **BRAND-01**: Site URL updated to identitate.md in all configs (astro.config.mjs, vercel.json, meta tags)
+- [x] **BRAND-01**: Site URL updated to identitate.md in all configs (astro.config.mjs, vercel.json, meta tags)
 - [ ] **BRAND-02**: All page titles, descriptions, and OG tags reference Republic of Moldova (not Romania)
-- [ ] **BRAND-03**: Package name updated from `@identitate-ro/logos` to `@identitate-md/logos` in all references
-- [ ] **BRAND-04**: CDN version/package references updated to match new package name
+- [x] **BRAND-03**: Package name updated from `@identitate-ro/logos` to `@identitate-md/logos` in all references
+- [x] **BRAND-04**: CDN version/package references updated to match new package name
 
 ### Typography
 
@@ -63,10 +63,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BRAND-01 | Phase 1 | Pending |
+| BRAND-01 | Phase 1 | Complete |
 | BRAND-02 | Phase 1 | Pending |
-| BRAND-03 | Phase 1 | Pending |
-| BRAND-04 | Phase 1 | Pending |
+| BRAND-03 | Phase 1 | Complete |
+| BRAND-04 | Phase 1 | Complete |
 | TYPO-01 | Phase 1 | Pending |
 | TYPO-02 | Phase 1 | Pending |
 | TYPO-03 | Phase 1 | Pending |

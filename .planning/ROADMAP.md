@@ -3,7 +3,7 @@
 **Project:** Any developer can find and use the official logo of any Moldovan public institution in seconds.
 
 **Current Date:** 2026-03-04
-**Status:** Not started
+**Status:** In progress
 
 ---
 
@@ -34,7 +34,7 @@
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Update config files and package references (astro.config, vercel.json, package.json, cdn-helpers.ts)
+- [x] 01-01-PLAN.md — Update config files and package references (astro.config, vercel.json, package.json, cdn-helpers.ts)
 - [ ] 01-02-PLAN.md — Update layout meta tags, replace Public Sans with Onest, rebrand components (BaseLayout, Tailwind, global.css, Header, Footer, 404)
 
 ---
@@ -79,7 +79,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Branding & Typography | 0/2 | Not started | — |
+| 1. Branding & Typography | 1/2 | In progress | — |
 | 2. Data Architecture | 0/5 | Not started | — |
 | 3. Content Localization | 0/8 | Not started | — |
 

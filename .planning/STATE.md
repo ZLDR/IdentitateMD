@@ -1,7 +1,7 @@
 # Project State: IdentitateMD
 
 **Last Updated:** 2026-03-04
-**Current Phase:** None (roadmap complete, awaiting planning)
+**Current Phase:** 01-branding-typography (Plan 1/2 complete)
 
 ---
 
@@ -20,14 +20,14 @@
 
 ## Current Position
 
-**Roadmap Status:** Complete (3 phases identified, success criteria derived)
+**Roadmap Status:** In progress (Phase 1 of 3, Plan 1 complete)
 
 **Phases:**
-1. Branding & Typography — Rebrand site + update typography (Onest font)
+1. Branding & Typography — Rebrand site + update typography (Onest font) — In progress (1/2 plans done)
 2. Data Architecture — Migrate institution IDs from `ro-` to `md-` prefix
 3. Content Localization — Adapt all pages for Moldova context
 
-**Next Step:** `/gsd:plan-phase 1`
+**Next Step:** Execute plan 01-02 (layout meta tags, font replacement, component rebranding)
 
 ---
 
@@ -40,6 +40,8 @@
 | Romanian only (v1) | Moldova's official language; simplifies scope | Confirmed |
 | No npm package (v1) | Focus on website; can add v2 | Confirmed |
 | Linear phase structure | Branding → Data → Content (natural dependency) | Confirmed |
+| @identitate-md/logos is source of truth for CDN package name | Consistent across vercel.json rewrites and cdn-helpers.ts CDN_PATTERNS | Confirmed (01-01) |
+| Placeholder repo URL in packages/logos/package.json | github.com/identitate-md/identitate-md used; owner updates when org created | Confirmed (01-01) |
 
 ---
 
@@ -107,8 +109,9 @@
 
 ## Blockers
 
-None currently. Roadmap complete; ready for planning.
+None currently.
 
 ---
 
 *State initialized: 2026-03-04*
+*Last session: 2026-03-04 — Completed 01-01-PLAN.md (config & CDN package references)*
