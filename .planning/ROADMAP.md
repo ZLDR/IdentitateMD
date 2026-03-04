@@ -53,7 +53,13 @@ Plans:
 4. institutions-index.json regenerated and exports valid empty or initial Moldovan institution records; file is ready for owner to add institutions
 5. README updated with Moldova-specific setup instructions and build validation guidance
 
-**Plans:** TBD
+**Plans:** 4/4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Update Institution type guards and generate-index.js validation for md- prefix (DATA-01)
+- [ ] 02-02-PLAN.md — Delete Romanian institution JSON files from src/data/institutions/ (DATA-02)
+- [ ] 02-03-PLAN.md — Delete Romanian logo directories from public/logos/ (DATA-03)
+- [ ] 02-04-PLAN.md — Regenerate institutions-index.json and update README (DATA-04, DX-02)
 
 ---
 
@@ -80,10 +86,10 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Branding & Typography | 2/2 | Complete    | 2026-03-04 |
-| 2. Data Architecture | 0/5 | Not started | — |
-| 3. Content Localization | 0/8 | Not started | — |
+| 2. Data Architecture | 0/4 | Planning    | — |
+| 3. Content Localization | 0/? | Not started | — |
 
-**Total Work Items:** 15 (2 + 5 + 8)
+**Total Work Items:** 2 + 4 + ? (phase 3 TBD)
 
 ---
 
@@ -99,3 +105,4 @@ Every requirement is assigned to exactly one phase. No orphans.
 
 *Roadmap created: 2026-03-04*
 *Phase 1 planned: 2026-03-04*
+*Phase 2 planned: 2026-03-04*
