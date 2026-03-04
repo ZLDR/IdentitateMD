@@ -8,15 +8,15 @@
 ### Branding & Identity
 
 - [x] **BRAND-01**: Site URL updated to identitate.md in all configs (astro.config.mjs, vercel.json, meta tags)
-- [ ] **BRAND-02**: All page titles, descriptions, and OG tags reference Republic of Moldova (not Romania)
+- [x] **BRAND-02**: All page titles, descriptions, and OG tags reference Republic of Moldova (not Romania)
 - [x] **BRAND-03**: Package name updated from `@identitate-ro/logos` to `@identitate-md/logos` in all references
 - [x] **BRAND-04**: CDN version/package references updated to match new package name
 
 ### Typography
 
-- [ ] **TYPO-01**: Public Sans font removed and replaced with Onest (Google Fonts)
-- [ ] **TYPO-02**: Font preload/preconnect tags updated for Google Fonts (Onest)
-- [ ] **TYPO-03**: Tailwind font config updated to use Onest as primary font
+- [x] **TYPO-01**: Public Sans font removed and replaced with Onest (Google Fonts)
+- [x] **TYPO-02**: Font preload/preconnect tags updated for Google Fonts (Onest)
+- [x] **TYPO-03**: Tailwind font config updated to use Onest as primary font
 
 ### Data & Schema
 
@@ -64,12 +64,12 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | BRAND-01 | Phase 1 | Complete |
-| BRAND-02 | Phase 1 | Pending |
+| BRAND-02 | Phase 1 | Complete |
 | BRAND-03 | Phase 1 | Complete |
 | BRAND-04 | Phase 1 | Complete |
-| TYPO-01 | Phase 1 | Pending |
-| TYPO-02 | Phase 1 | Pending |
-| TYPO-03 | Phase 1 | Pending |
+| TYPO-01 | Phase 1 | Complete |
+| TYPO-02 | Phase 1 | Complete |
+| TYPO-03 | Phase 1 | Complete |
 | DATA-01 | Phase 2 | Pending |
 | DATA-02 | Phase 2 | Pending |
 | DATA-03 | Phase 2 | Pending |

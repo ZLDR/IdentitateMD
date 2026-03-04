@@ -9,7 +9,7 @@
 
 ## Phases
 
-- [ ] **Phase 1: Branding & Typography** - Rebrand site identity from Romania to Moldova and replace typography system
+- [x] **Phase 1: Branding & Typography** - Rebrand site identity from Romania to Moldova and replace typography system
 - [ ] **Phase 2: Data Architecture** - Migrate institution data layer from `ro-` to `md-` prefix and prepare schema validation
 - [ ] **Phase 3: Content Localization** - Adapt all user-facing content and pages for Moldova context
 
@@ -35,7 +35,7 @@
 
 Plans:
 - [x] 01-01-PLAN.md — Update config files and package references (astro.config, vercel.json, package.json, cdn-helpers.ts)
-- [ ] 01-02-PLAN.md — Update layout meta tags, replace Public Sans with Onest, rebrand components (BaseLayout, Tailwind, global.css, Header, Footer, 404)
+- [x] 01-02-PLAN.md — Update layout meta tags, replace Public Sans with Onest, rebrand components (BaseLayout, Tailwind, global.css, Header, Footer, 404)
 
 ---
 
@@ -79,7 +79,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Branding & Typography | 1/2 | In progress | — |
+| 1. Branding & Typography | 2/2 | Complete | 2026-03-04 |
 | 2. Data Architecture | 0/5 | Not started | — |
 | 3. Content Localization | 0/8 | Not started | — |
 
