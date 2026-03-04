@@ -1,0 +1,55 @@
+{
+  "id": "md-mec",
+  "slug": "md-mec",
+  "name": "Ministerul Educației și Cercetării al Republicii Moldova",
+  "shortname": "mec",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-04",
+    "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul responsabil pentru educație și cercetare în Republica Moldova",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Onest",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mec/horizontal-color.svg",
+      "white": "/logos/md-mec/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mec/horizontal-color.svg",
+      "white": "/logos/md-mec/horizontal-white.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mec/vertical-color.svg",
+      "white": "/logos/md-mec/vertical-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://mec.gov.md/",
+    "social_media": {
+      "facebook": "https://www.facebook.com/mec.gov.md/"
+    }
+  }
+}

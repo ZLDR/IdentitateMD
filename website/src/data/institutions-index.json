@@ -1,19 +1,25 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-04T16:27:28.139Z",
-  "total": 2,
+  "generatedAt": "2026-03-04T20:56:56.028Z",
+  "total": 3,
   "stats": {
     "byCategory": {
       "altele": 1,
-      "guvern": 1
+      "guvern": 1,
+      "minister": 1
     },
     "withManual": 0,
-    "withSvg": 2
+    "withSvg": 3
   },
   "categories": [
     {
       "id": "guvern",
       "label": "Guvern",
+      "count": 1
+    },
+    {
+      "id": "minister",
+      "label": "Ministere",
       "count": 1
     },
     {
@@ -32,43 +38,130 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "guvern", "executiv"],
+        "keywords": [
+          "moldova",
+          "guvern",
+          "executiv"
+        ],
         "quality": "draft"
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Guvernul Republicii Moldovaeste autoritatea publică supremă a puterii executive, responsabilă de implementarea politicii interne și externe a țării.",
+      "description": "Autoritatea centrală de execuție a Republicii Moldova",
       "colors": [
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-guvern/symbol/color.svg"
+        },
         "symbol": {
           "type": "symbol",
-          "color": "/logos/md-guvernul-moldovei/symbol/color.svg"
-        }
+          "color": "/logos/md-guvern/symbol/color.svg"
+        },
+        "favicon": null
       },
       "resources": {
         "website": "https://www.gov.md",
         "social_media": {
           "facebook": "https://www.facebook.com/guvernulrepubliciimodova",
           "twitter": "https://twitter.com/GovMD"
+        }
+      }
+    },
+    {
+      "id": "md-mec",
+      "slug": "md-mec",
+      "name": "Ministerul Educației și Cercetării al Republicii Moldova",
+      "shortname": "mec",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-04",
+        "keywords": [
+          "moldova",
+          "educație",
+          "cercetare",
+          "minister",
+          "mec"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil pentru educație și cercetare în Republica Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mec/horizontal-color.svg",
+          "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mec/horizontal-color.svg",
+          "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mec/vertical-color.svg",
+          "white": "/logos/md-mec/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mec.gov.md/",
+        "social_media": {
+          "facebook": "https://www.facebook.com/mec.gov.md/"
         }
       }
     },
@@ -91,7 +184,7 @@
         "quality": "draft"
       },
       "location": {
-        "country_code": "MD",
+        "country_code": "RO",
         "county": null,
         "city": null
       },
@@ -101,7 +194,11 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [255, 204, 0],
+          "rgb": [
+            255,
+            204,
+            0
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -109,7 +206,11 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [0, 51, 153],
+          "rgb": [
+            0,
+            51,
+            153
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"
