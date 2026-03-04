@@ -1,17 +1,17 @@
 {
-  "name": "@identitate-ro/logos",
+  "name": "@identitate-md/logos",
   "version": "1.3.4",
-  "description": "Logo-uri oficiale ale instituțiilor publice din România — Official logos of Romanian public institutions",
+  "description": "Logo-uri oficiale ale instituțiilor publice din Republica Moldova — Official logos of Moldovan public institutions",
   "license": "MIT",
-  "author": "IdentitateRO Contributors",
+  "author": "IdentitateMD Contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/laurentiucotet/IdentitateRO",
+    "url": "https://github.com/identitate-md/identitate-md",
     "directory": "packages/logos"
   },
-  "homepage": "https://identitate.eu",
+  "homepage": "https://identitate.md",
   "keywords": [
-    "romania",
+    "moldova",
     "logos",
     "institutions",
     "government",

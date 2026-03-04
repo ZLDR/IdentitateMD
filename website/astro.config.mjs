@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://identitate.eu',
+  site: 'https://identitate.md',
   integrations: [tailwind(), sitemap()],
   output: 'static',
   adapter: vercel({

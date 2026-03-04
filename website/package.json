@@ -1,9 +1,9 @@
 {
-  "name": "identitate-ro",
+  "name": "identitate-md",
   "type": "module",
   "version": "0.1.0",
-  "description": "Registru digital open-source pentru identitatea vizuală a instituțiilor publice din România",
-  "author": "IdentitateRO Contributors",
+  "description": "Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova",
+  "author": "IdentitateMD Contributors",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
