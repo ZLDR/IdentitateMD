@@ -1,6 +1,6 @@
 /**
- * CDN Helpers for IdentitateRO
- * 
+ * CDN Helpers for IdentitateMD
+ *
  * Funcții pentru gestionarea URL-urilor CDN și fallback-uri
  */
 
@@ -29,10 +29,10 @@ export const CDN_VERSION: string = readLogosVersion();
  * Pattern-uri CDN
  */
 export const CDN_PATTERNS = {
-  jsdelivr: (version: string, path: string) => 
-    `https://cdn.jsdelivr.net/npm/@identitate-ro/logos@${version}${path}`,
-  unpkg: (version: string, path: string) => 
-    `https://unpkg.com/@identitate-ro/logos@${version}${path}`,
+  jsdelivr: (version: string, path: string) =>
+    `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${version}${path}`,
+  unpkg: (version: string, path: string) =>
+    `https://unpkg.com/@identitate-md/logos@${version}${path}`,
 };
 
 /**
