@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-04T19:53:14.315Z",
-  "count": 2,
-  "totalLogos": 6,
+  "generated": "2026-03-04T23:00:00.000Z",
+  "count": 3,
+  "totalLogos": 10,
   "institutions": [
     {
       "id": "eu-flag",
@@ -36,6 +36,26 @@
         },
         "symbol": {
           "color": "/logos/md-guvernul-moldovei/symbol/simbol-moldovei.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mec",
+      "slug": "md-mec",
+      "name": "Ministerul Educației și Cercetării",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-mec/horizontal-color.svg",
+          "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-mec/vertical-color.svg",
+          "white": "/logos/md-mec/vertical-white.svg"
         }
       }
     }
