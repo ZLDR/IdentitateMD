@@ -1,14 +1,14 @@
-# @identitate-ro/logos
+# @identitate-md/logos
 
-> Logo-uri oficiale ale instituțiilor publice din România — Official logos of Romanian public institutions
+> Logo-uri oficiale ale instituțiilor publice din Moldova — Official logos of Romanian public institutions
 
-[![npm version](https://img.shields.io/npm/v/@identitate-ro/logos.svg)](https://www.npmjs.com/package/@identitate-ro/logos)
+[![npm version](https://img.shields.io/npm/v/@identitate-md/logos.svg)](https://www.npmjs.com/package/@identitate-md/logos)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 📦 Instalare
 
 ```bash
-npm install @identitate-ro/logos
+npm install @identitate-md/logos
 ```
 
 ## 🚀 Utilizare
@@ -21,42 +21,57 @@ Logo-urile sunt disponibile automat prin CDN-uri gratuite:
 
 ```html
 <!-- Logo complet -->
-<img src="https://identitate.eu/logos/anaf/anaf.svg" alt="ANAF">
+<img src="https://identitate.eu/logos/anaf/anaf.svg" alt="ANAF" />
 
 <!-- Simbol -->
-<img src="https://identitate.eu/logos/anaf/simbol-anaf.svg" alt="ANAF Simbol">
+<img src="https://identitate.eu/logos/anaf/simbol-anaf.svg" alt="ANAF Simbol" />
 
 <!-- Alte instituții -->
-<img src="https://identitate.eu/logos/guvernul-romaniei/guvernul-romaniei.svg" alt="Guvernul României">
-<img src="https://identitate.eu/logos/pnrr/pnrr.svg" alt="PNRR">
+<img
+  src="https://identitate.eu/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+  alt="Guvernul Republicii Moldova"
+/>
+<img src="https://identitate.eu/logos/pnrr/pnrr.svg" alt="PNRR" />
 ```
 
 #### jsDelivr (CDN Primară)
 
 ```html
 <!-- Logo complet -->
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/anaf/anaf.svg" alt="ANAF">
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg"
+  alt="ANAF"
+/>
 
 <!-- Simbol -->
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/anaf/simbol-anaf.svg" alt="ANAF Simbol">
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/simbol-anaf.svg"
+  alt="ANAF Simbol"
+/>
 
 <!-- Versiunea latest (se actualizează automat) -->
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/guvernul-romaniei/guvernul-romaniei.svg" alt="Guvernul României">
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+  alt="Guvernul Republicii Moldova"
+/>
 ```
 
 #### unpkg (CDN Fallback)
 
 ```html
-<img src="https://unpkg.com/@identitate-ro/logos@1.3.1/logos/pnrr/pnrr.svg" alt="PNRR">
+<img
+  src="https://unpkg.com/@identitate-md/logos@1.3.1/logos/pnrr/pnrr.svg"
+  alt="PNRR"
+/>
 ```
 
 ### Via npm Package
 
-După instalare, logo-urile sunt disponibile în `node_modules/@identitate-ro/logos/logos/`:
+După instalare, logo-urile sunt disponibile în `node_modules/@identitate-md/logos/logos/`:
 
 ```javascript
 // În React, Vue, etc.
-import logoPath from '@identitate-ro/logos/logos/anaf/anaf.svg';
+import logoPath from "@identitate-md/logos/logos/anaf/anaf.svg";
 
 function MyComponent() {
   return <img src={logoPath} alt="ANAF" />;
@@ -65,14 +80,14 @@ function MyComponent() {
 
 ```javascript
 // În Node.js
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { readFileSync } from "fs";
+import { join } from "path";
 
 const logoPath = join(
-  process.cwd(), 
-  'node_modules/@identitate-ro/logos/logos/anaf/anaf.svg'
+  process.cwd(),
+  "node_modules/@identitate-md/logos/logos/anaf/anaf.svg",
 );
-const logoContent = readFileSync(logoPath, 'utf8');
+const logoContent = readFileSync(logoPath, "utf8");
 ```
 
 ### 🎯 Web Component (Recomandat pentru Aplicații Moderne)
@@ -82,6 +97,7 @@ const logoContent = readFileSync(logoPath, 'utf8');
 #### Cum funcționează?
 
 Web Component-ul `<identity-icon>` este un element HTML custom care:
+
 - ✅ Descarcă automat SVG-ul din CDN
 - ✅ Include caching inteligent (descarcă o singură dată)
 - ✅ Permite stilizare CSS (`color`, `width`, `height`, etc.)
@@ -93,28 +109,26 @@ Web Component-ul `<identity-icon>` este un element HTML custom care:
 **Pas 1: Instalează pachetul**
 
 ```bash
-npm install @identitate-ro/logos
+npm install @identitate-md/logos
 ```
 
 **Pas 2: Importă loader-ul** (o singură dată în aplicație)
 
 ```javascript
 // În index.js, main.js, App.js, etc.
-import '@identitate-ro/logos/loader';
+import "@identitate-md/logos/loader";
 ```
 
 Sau în HTML:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/identity-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/identity-loader.js"></script>
 ```
 
 **Pas 3: Folosește tag-ul `<identity-icon>`**
 
 ```html
-<identity-icon 
-  src="https://identitate.eu/logos/anaf/anaf.svg">
-</identity-icon>
+<identity-icon src="https://identitate.eu/logos/anaf/anaf.svg"> </identity-icon>
 ```
 
 #### Exemple Complete
@@ -124,29 +138,30 @@ Sau în HTML:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Logo Instituții</title>
-  <script src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/identity-loader.js"></script>
-  <style>
-    .logo-guvern {
-      width: 64px;
-      height: 64px;
-      color: #003399; /* Albastru */
-      transition: color 0.3s;
-    }
-    
-    .logo-guvern:hover {
-      color: #ffcc00; /* Galben la hover */
-      filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
-    }
-  </style>
-</head>
-<body>
-  <identity-icon 
-    src="https://identitate.eu/logos/guvernul-romaniei/guvernul-romaniei.svg" 
-    class="logo-guvern">
-  </identity-icon>
-</body>
+  <head>
+    <title>Logo Instituții</title>
+    <script src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/identity-loader.js"></script>
+    <style>
+      .logo-guvern {
+        width: 64px;
+        height: 64px;
+        color: #003399; /* Albastru */
+        transition: color 0.3s;
+      }
+
+      .logo-guvern:hover {
+        color: #ffcc00; /* Galben la hover */
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+      }
+    </style>
+  </head>
+  <body>
+    <identity-icon
+      src="https://identitate.eu/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+      class="logo-guvern"
+    >
+    </identity-icon>
+  </body>
 </html>
 ```
 
@@ -154,11 +169,11 @@ Sau în HTML:
 
 ```jsx
 // App.js sau index.js
-import '@identitate-ro/logos/loader';
+import "@identitate-md/logos/loader";
 
 function InstitutionLogo({ slug }) {
   return (
-    <identity-icon 
+    <identity-icon
       src={`https://identitate.eu/logos/${slug}/${slug}.svg`}
       className="w-16 h-16 text-blue-600"
     />
@@ -166,7 +181,7 @@ function InstitutionLogo({ slug }) {
 }
 
 // Folosire
-<InstitutionLogo slug="anaf" />
+<InstitutionLogo slug="anaf" />;
 ```
 
 ##### Vue
@@ -174,13 +189,13 @@ function InstitutionLogo({ slug }) {
 ```vue
 <script setup>
 // În main.js sau App.vue
-import '@identitate-ro/logos/loader';
+import "@identitate-md/logos/loader";
 
-const props = defineProps(['institution']);
+const props = defineProps(["institution"]);
 </script>
 
 <template>
-  <identity-icon 
+  <identity-icon
     :src="`https://identitate.eu/logos/${institution}/${institution}.svg`"
     class="logo-icon"
   />
@@ -199,29 +214,29 @@ const props = defineProps(['institution']);
 
 ```typescript
 // app.component.ts
-import '@identitate-ro/logos/loader';
+import "@identitate-md/logos/loader";
 
 @Component({
-  selector: 'app-institution-logo',
+  selector: "app-institution-logo",
   template: `
-    <identity-icon 
-      [attr.src]="logoUrl"
-      class="institution-logo">
+    <identity-icon [attr.src]="logoUrl" class="institution-logo">
     </identity-icon>
   `,
-  styles: [`
-    .institution-logo {
-      width: 64px;
-      height: 64px;
-      color: #003399;
-    }
-  `]
+  styles: [
+    `
+      .institution-logo {
+        width: 64px;
+        height: 64px;
+        color: #003399;
+      }
+    `,
+  ],
 })
 export class InstitutionLogoComponent {
   @Input() slug!: string;
-  
+
   get logoUrl() {
-    return `https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/${this.slug}/${this.slug}.svg`;
+    return `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${this.slug}/${this.slug}.svg`;
   }
 }
 ```
@@ -234,7 +249,7 @@ export class InstitutionLogoComponent {
 function enqueue_identity_loader() {
     wp_enqueue_script(
         'identity-loader',
-        'https://cdn.jsdelivr.net/npm/@identitate-ro/logos/identity-loader.js',
+        'https://cdn.jsdelivr.net/npm/@identitate-md/logos/identity-loader.js',
         array(),
         '1.0.0',
         true
@@ -244,8 +259,8 @@ add_action('wp_enqueue_scripts', 'enqueue_identity_loader');
 ?>
 
 <!-- În template (page.php, single.php, etc.) -->
-<identity-icon 
-  src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/primaria-cluj-napoca/primaria-cluj-napoca.svg"
+<identity-icon
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/primaria-cluj-napoca/primaria-cluj-napoca.svg"
   style="width: 100px; height: 100px; color: #2c5aa0;">
 </identity-icon>
 ```
@@ -272,7 +287,7 @@ identity-icon:hover {
 
 /* Efecte */
 identity-icon {
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
 }
 
@@ -288,13 +303,14 @@ identity-icon {
 #### Atribute Suportate
 
 - `src` **(obligatoriu)** — URL-ul către logo-ul SVG
-- `size` *(opțional)* — Shortcut pentru width/height (ex: `size="64px"`)
+- `size` _(opțional)_ — Shortcut pentru width/height (ex: `size="64px"`)
 
 ```html
 <!-- Cu size attribute -->
-<identity-icon 
-  src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/anaf/anaf.svg"
-  size="128px">
+<identity-icon
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
+  size="128px"
+>
 </identity-icon>
 ```
 
@@ -312,7 +328,7 @@ identity-icon {
 Pachetul include `index.json` cu metadata despre toate logo-urile:
 
 ```javascript
-import metadata from '@identitate-ro/logos/index.json';
+import metadata from "@identitate-md/logos/index.json";
 
 console.log(metadata.institutions);
 // [
@@ -336,15 +352,15 @@ console.log(metadata.institutions);
 ## 📁 Structură
 
 ```
-@identitate-ro/logos/
+@identitate-md/logos/
 ├── logos/
 │   ├── anaf/
 │   │   ├── anaf.svg
 │   │   └── simbol-anaf.svg
-│   ├── guvernul-romaniei/
-│   │   ├── guvernul-romaniei.svg
-│   │   ├── guvernul-romaniei-alb.svg
-│   │   └── guvernul-romaniei-mono.svg
+│   ├── guvernul-republicii-moldova/
+│   │   ├── guvernul-republicii-moldova.svg
+│   │   ├── guvernul-republicii-moldova-alb.svg
+│   │   └── guvernul-republicii-moldova-mono.svg
 │   ├── ministerul-educatiei/
 │   ├── pnrr/
 │   ├── primaria-cluj-napoca/
@@ -372,20 +388,20 @@ Pentru fiecare instituție, logo-urile sunt disponibile în mai multe variante:
 ## 🔗 CDN URLs Pattern
 
 ```
-https://cdn.jsdelivr.net/npm/@identitate-ro/logos@{version}/logos/{slug}/{filename}.svg
+https://cdn.jsdelivr.net/npm/@identitate-md/logos@{version}/logos/{slug}/{filename}.svg
 ```
 
 **Exemple:**
 
 ```
 # Versiune specifică (recomandată pentru producție)
-https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg
+https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg
 
 # Latest version (se actualizează automat)
-https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/anaf/anaf.svg
+https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg
 
 # Specific major version
-https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1/logos/anaf/anaf.svg
+https://cdn.jsdelivr.net/npm/@identitate-md/logos@1/logos/anaf/anaf.svg
 ```
 
 ## 📋 Lista Instituțiilor
@@ -393,7 +409,7 @@ https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1/logos/anaf/anaf.svg
 Instituțiile disponibile în v1.0.0:
 
 - `anaf` — Agenția Națională de Administrare Fiscală
-- `guvernul-romaniei` — Guvernul României
+- `guvernul-republicii-moldova` — Guvernul Republicii Moldova
 - `ministerul-educatiei` — Ministerul Educației
 - `pnrr` — Plan Național de Redresare și Reziliență
 - `primaria-cluj-napoca` — Primăria Cluj-Napoca
@@ -407,32 +423,26 @@ Pentru lista completă și actualizată, consultă [identitatero.vercel.app](htt
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Logo-uri Instituții</title>
-</head>
-<body>
-  <img 
-    src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/anaf/anaf.svg" 
-    alt="ANAF"
-    width="200"
-  >
-</body>
+  <head>
+    <title>Logo-uri Instituții</title>
+  </head>
+  <body>
+    <img
+      src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
+      alt="ANAF"
+      width="200"
+    />
+  </body>
 </html>
 ```
 
 ### React/Next.js
 
 ```jsx
-export default function InstitutionLogo({ slug, variant = 'color' }) {
-  const cdnUrl = `https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/${slug}/${slug}.svg`;
-  
-  return (
-    <img 
-      src={cdnUrl}
-      alt={slug}
-      loading="lazy"
-    />
-  );
+export default function InstitutionLogo({ slug, variant = "color" }) {
+  const cdnUrl = `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${slug}/${slug}.svg`;
+
+  return <img src={cdnUrl} alt={slug} loading="lazy" />;
 }
 ```
 
@@ -440,20 +450,17 @@ export default function InstitutionLogo({ slug, variant = 'color' }) {
 
 ```vue
 <template>
-  <img 
-    :src="logoUrl" 
-    :alt="institution"
-    loading="lazy"
-  />
+  <img :src="logoUrl" :alt="institution" loading="lazy" />
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed } from "vue";
 
-const props = defineProps(['institution', 'variant']);
+const props = defineProps(["institution", "variant"]);
 
-const logoUrl = computed(() => 
-  `https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/${props.institution}/${props.institution}.svg`
+const logoUrl = computed(
+  () =>
+    `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${props.institution}/${props.institution}.svg`,
 );
 </script>
 ```
@@ -462,7 +469,7 @@ const logoUrl = computed(() =>
 
 ```css
 .anaf-logo {
-  background-image: url('https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/anaf/anaf.svg');
+  background-image: url("https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 200px;
@@ -476,49 +483,53 @@ const logoUrl = computed(() =>
 
 ```html
 <!-- ✅ Bine - versiune fixată -->
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.0.0/logos/anaf/anaf.svg">
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg"
+/>
 
 <!-- ⚠️ Evită în producție - poate schimba -->
-<img src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos@1.3.1/logos/anaf/anaf.svg">
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg"
+/>
 ```
 
 ### 2. Optimizare Performanță
 
 ```html
 <!-- Lazy loading -->
-<img 
-  src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/anaf/anaf.svg"
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
   loading="lazy"
   alt="ANAF"
->
+/>
 
 <!-- Preload pentru logo-uri critice -->
-<link 
-  rel="preload" 
-  href="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/guvernul-romaniei/guvernul-romaniei.svg"
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
   as="image"
->
+/>
 ```
 
 ### 3. Fallback Strategy
 
 ```html
-<img 
-  src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/anaf/anaf.svg"
-  onerror="this.src='https://unpkg.com/@identitate-ro/logos/logos/anaf/anaf.svg'"
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
+  onerror="this.src='https://unpkg.com/@identitate-md/logos/logos/anaf/anaf.svg'"
   alt="ANAF"
->
+/>
 ```
 
 ### 4. Accesibilitate
 
 ```html
 <!-- ✅ Include întotdeauna alt text descriptiv -->
-<img 
-  src="https://cdn.jsdelivr.net/npm/@identitate-ro/logos/logos/anaf/anaf.svg"
+<img
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
   alt="Logo Agenția Națională de Administrare Fiscală"
   role="img"
->
+/>
 ```
 
 ## 📄 Licență
@@ -542,13 +553,13 @@ Pentru a adăuga logo-uri noi sau pentru a raporta probleme:
 - **Website**: [identitatero.vercel.app](https://identitatero.vercel.app)
 - **Documentație**: [identitatero.vercel.app/utilizare](https://identitatero.vercel.app/utilizare)
 - **GitHub**: [github.com/laurentiucotet/IdentitateRO](https://github.com/laurentiucotet/IdentitateRO)
-- **npm Package**: [@identitate-ro/logos](https://www.npmjs.com/package/@identitate-ro/logos)
-- **jsDelivr CDN**: [cdn.jsdelivr.net/npm/@identitate-ro/logos](https://cdn.jsdelivr.net/npm/@identitate-ro/logos/)
-- **unpkg CDN**: [unpkg.com/@identitate-ro/logos](https://unpkg.com/@identitate-ro/logos/)
+- **npm Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
+- **jsDelivr CDN**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
+- **unpkg CDN**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
 
 ## 📊 Stats
 
-![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/@identitate-ro/logos/badge)
+![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/@identitate-md/logos/badge)
 
 ---
 

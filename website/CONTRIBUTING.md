@@ -1,4 +1,4 @@
-# Ghid de Contribuire — IdentitateRO
+# Ghid de Contribuire — IdentitateMD
 
 Mulțumim că vrei să contribui! Acest document descrie procesul.
 
@@ -11,13 +11,13 @@ Mulțumim că vrei să contribui! Acest document descrie procesul.
 #### Pași:
 
 1. **Fork** repository-ul
-2. Creează un folder nou în pachetul npm: `packages/logos/logos/ro-{slug}/`
+2. Creează un folder nou în pachetul npm: `packages/logos/logos/md-{slug}/`
 3. Adaugă fișierele SVG pe layout-uri:
    - `horizontal/color.svg` — logo-ul principal orizontal
    - `symbol/color.svg` — simbol / icon
    - (Opțional) `vertical/color.svg`, variante `white.svg`, `black.svg`
-4. Creează fișierul de metadate: `packages/logos/logos/ro-{slug}/metadata.md`
-5. Creează datele pentru website: `website/src/data/institutions/ro-{slug}.json`
+4. Creează fișierul de metadate: `packages/logos/logos/md-{slug}/metadata.md`
+5. Creează datele pentru website: `website/src/data/institutions/md-{slug}.json`
 6. Regenerează indexul: `cd packages/logos && node scripts/generate-index.js`
 7. Regenerează indexul website: `cd website && npm run data:generate`
 8. Verifică local cu `cd website && npm run dev`
@@ -26,7 +26,7 @@ Mulțumim că vrei să contribui! Acest document descrie procesul.
 #### Structura fișierelor per instituție:
 
 ```
-packages/logos/logos/ro-{slug}/
+packages/logos/logos/md-{slug}/
   metadata.md
   horizontal/
     color.svg
@@ -42,13 +42,13 @@ packages/logos/logos/ro-{slug}/
 #### Convenția de numire (slug):
 
 ```
-ro-primaria-timisoara     ✅ Corect (prefix ro-)
-primaria-timisoara        ❌ Lipsește prefixul ro-
+md-primaria-timisoara     ✅ Corect (prefix md-)
+primaria-timisoara        ❌ Lipsește prefixul md-
 Primaria_Timisoara        ❌ Greșit
-ro-primăria-timișoara     ❌ Fără diacritice în slug
+md-primăria-timișoara     ❌ Fără diacritice în slug
 ```
 
-- Prefix `ro-` obligatoriu
+- Prefix `md-` obligatoriu
 - Litere mici
 - Fără diacritice
 - Cuvinte separate prin `-`
@@ -76,7 +76,8 @@ ro-primăria-timișoara     ❌ Fără diacritice în slug
 Consultă `src/types/institution.ts` pentru definiția completă.
 
 Câmpuri obligatorii:
-- `id` — format `ro-{slug}` (ex: `ro-anaf`)
+
+- `id` — format `md-{slug}` (ex: `md-anaf`)
 - `slug` — slug URL (ex: `anaf`)
 - `name` — numele complet oficial
 - `category` — una din: `guvern`, `minister`, `agentie`, `autoritate`, `primarie`, `consiliu-judetean`, `prefectura`, `proiect-ue`, `institutie-cultura`, `altele`
@@ -86,6 +87,7 @@ Câmpuri obligatorii:
 - `assets.main` — obiect cu logo-ul principal (trebuie să conțină cel puțin `type` și `color`)
 
 Câmpuri opționale:
+
 - `shortname` — nume scurt / acronim
 - `description` — scurtă descriere
 - `location` — `{ country_code, county?, city? }`
@@ -97,7 +99,7 @@ Câmpuri opționale:
 
 ```json
 {
-  "id": "ro-exemplu",
+  "id": "md-exemplu",
   "slug": "exemplu",
   "name": "Instituția Exemplu",
   "category": "agentie",
@@ -109,7 +111,7 @@ Câmpuri opționale:
   "assets": {
     "main": {
       "type": "horizontal",
-      "color": "/logos/ro-exemplu/horizontal/color.svg"
+      "color": "/logos/md-exemplu/horizontal/color.svg"
     }
   }
 }
