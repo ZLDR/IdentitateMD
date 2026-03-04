@@ -35,18 +35,12 @@
   },
   "assets": {
     "main": {
-      "type": "horizontal",
-      "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
-      "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
-    },
-    "horizontal": {
-      "type": "horizontal",
-      "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
-      "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
+      "type": "symbol",
+      "color": "/logos/md-guvern/symbol/color.svg"
     },
     "symbol": {
       "type": "symbol",
-      "color": "/logos/md-guvernul-moldovei/symbol/color.svg"
+      "color": "/logos/md-guvern/symbol/color.svg"
     }
   },
   "resources": {
