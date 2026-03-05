@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-04T23:00:00.000Z",
+  "generated": "2026-03-04T21:00:16.712Z",
   "count": 3,
-  "totalLogos": 10,
+  "totalLogos": 8,
   "institutions": [
     {
       "id": "eu-flag",
@@ -21,28 +21,23 @@
       }
     },
     {
-      "id": "md-guvernul-moldovei",
-      "slug": "md-guvernul-moldovei",
-      "name": "Md Guvernul Moldovei",
+      "id": "md-guvern",
+      "slug": "md-guvern",
+      "name": "Md Guvern",
       "layouts": [
-        "horizontal",
         "symbol"
       ],
-      "logoCount": 3,
+      "logoCount": 1,
       "logos": {
-        "horizontal": {
-          "color": "/logos/md-guvernul-moldovei/horizontal/color.svg",
-          "white": "/logos/md-guvernul-moldovei/horizontal/white.svg"
-        },
         "symbol": {
-          "color": "/logos/md-guvernul-moldovei/symbol/simbol-moldovei.svg"
+          "color": "/logos/md-guvern/symbol/color.svg"
         }
       }
     },
     {
       "id": "md-mec",
       "slug": "md-mec",
-      "name": "Ministerul Educației și Cercetării",
+      "name": "Ministerul Educației și Cercetării al Republicii Moldova",
       "layouts": [
         "horizontal",
         "vertical"

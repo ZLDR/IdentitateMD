@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://identitate.eu/schemas/institution-v3.json",
-  "title": "IdentitateRO Institution v3",
-  "description": "Schema for a Romanian public institution visual identity record (v3.0)",
+  "title": "IdentitateMD Institution v3",
+  "description": "Schema for a the Republic of Moldova public institution visual identity record (v3.0)",
   "type": "object",
   "required": ["id", "slug", "name", "category", "meta", "assets"],
   "additionalProperties": false,
@@ -29,9 +29,16 @@
     "category": {
       "type": "string",
       "enum": [
-        "guvern", "minister", "primarie", "consiliu-judetean",
-        "prefectura", "agentie", "autoritate", "proiect-ue",
-        "institutie-cultura", "altele"
+        "guvern",
+        "minister",
+        "primarie",
+        "consiliu-judetean",
+        "prefectura",
+        "agentie",
+        "autoritate",
+        "proiect-ue",
+        "institutie-cultura",
+        "altele"
       ]
     },
     "meta": {
@@ -200,7 +207,10 @@
       "required": ["type"],
       "additionalProperties": false,
       "properties": {
-        "type": { "type": "string", "enum": ["horizontal", "vertical", "symbol"] },
+        "type": {
+          "type": "string",
+          "enum": ["horizontal", "vertical", "symbol"]
+        },
         "color": { "$ref": "#/$defs/assetPath" },
         "dark_mode": { "$ref": "#/$defs/assetPath" },
         "white": { "$ref": "#/$defs/assetPath" },
@@ -210,10 +220,7 @@
       }
     },
     "logoAssetGroupOrNull": {
-      "oneOf": [
-        { "$ref": "#/$defs/logoAssetGroup" },
-        { "type": "null" }
-      ]
+      "oneOf": [{ "$ref": "#/$defs/logoAssetGroup" }, { "type": "null" }]
     }
   }
 }

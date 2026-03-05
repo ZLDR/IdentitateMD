@@ -38,11 +38,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "guvern",
-          "executiv"
-        ],
+        "keywords": ["moldova", "guvern", "executiv"],
         "quality": "draft"
       },
       "location": {
@@ -54,28 +50,18 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 600]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 600]
         }
       },
       "assets": {
@@ -106,13 +92,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "educație",
-          "cercetare",
-          "minister",
-          "mec"
-        ],
+        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
         "quality": "verified"
       },
       "location": {
@@ -124,21 +104,24 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
-          "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "family": "Segoe UI",
+          "weights": [400, 600]
+        },
+        "secondary": {
+          "family": "Trajan Pro",
+          "weights": [400, 600]
         }
       },
       "assets": {
@@ -194,11 +177,7 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [
-            255,
-            204,
-            0
-          ],
+          "rgb": [255, 204, 0],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -206,11 +185,7 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [
-            0,
-            51,
-            153
-          ],
+          "rgb": [0, 51, 153],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

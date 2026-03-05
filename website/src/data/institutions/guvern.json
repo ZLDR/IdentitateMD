@@ -41,7 +41,8 @@
     "symbol": {
       "type": "symbol",
       "color": "/logos/md-guvern/symbol/color.svg"
-    }
+    },
+    "favicon": null
   },
   "resources": {
     "website": "https://www.gov.md",
