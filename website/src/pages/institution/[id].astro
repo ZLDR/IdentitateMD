@@ -4,7 +4,7 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
 import LogoVariantCard from '../../components/LogoVariantCard.astro';
 import institutionIndex from '../../data/institutions-index.json';
 import { getAllDownloadableAssets, getPrimaryLogoPath, getLogoVariants, getCdnLogoUrl } from '../../lib/helpers';
-import { resolveAssetPath } from '../../lib/cdn-helpers';
+import { resolveAssetPath, toLocalLogosPath } from '../../lib/cdn-helpers';
 import {
   CATEGORY_LABELS_SINGULAR,
   LOGO_LAYOUT_LABELS,
@@ -30,7 +30,10 @@ const downloadables = getAllDownloadableAssets(inst);
 // ── SEO ────────────────────────────────────────────────────────────────
 const siteUrl = Astro.site?.origin || 'https://identitate.eu';
 const canonicalUrl = `${siteUrl}/institution/${inst.slug}`;
-const absoluteLogo = primaryLogo ? `${siteUrl}${primaryLogo}` : undefined;
+const absoluteLogo = primaryLogo
+  ? (primaryLogo.startsWith('http') ? primaryLogo : `${siteUrl}${primaryLogo}`)
+  : undefined;
+const primaryLogoLocalFallback = toLocalLogosPath(primaryLogo);
 
 // Dynamic, keyword-rich title & description (overrideable from JSON)
 const descParts: string[] = [];
@@ -154,7 +157,17 @@ const cdnLogoPath = getCdnLogoUrl(inst) ?? undefined;
         {/* Mini preview în header */}
         {primaryLogo && (
           <div class="shrink-0 w-20 h-20 sm:w-24 sm:h-24 bg-white border border-surface-200 rounded p-3 flex items-center justify-center">
-            <img src={primaryLogo} alt={`Logo ${inst.name}`} class="max-w-full max-h-full object-contain" itemprop="logo" loading="eager" width="96" height="96" />
+            <img
+              src={primaryLogo}
+              data-local-fallback={primaryLogoLocalFallback ?? undefined}
+              alt={`Logo ${inst.name}`}
+              class="max-w-full max-h-full object-contain"
+              itemprop="logo"
+              loading="eager"
+              width="96"
+              height="96"
+              onerror="const fb=this.dataset.localFallback; if (fb && this.src !== window.location.origin + fb && this.src !== fb) { this.src=fb; return; } this.style.display='none';"
+            />
           </div>
         )}
       </div>
@@ -205,16 +218,19 @@ const cdnLogoPath = getCdnLogoUrl(inst) ?? undefined;
               {/* PNG variant */}
               {group.png && (() => {
                 const pngPath = resolveAssetPath(group.png.path, true);
+                const pngLocalFallback = toLocalLogosPath(pngPath);
                 if (!pngPath) return null;
                 return (
                   <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
                     <div class="checkerboard aspect-[3/2] flex items-center justify-center p-6">
                       <img
                         src={pngPath}
+                        data-local-fallback={pngLocalFallback ?? undefined}
                         alt={`Logo ${inst.name} — ${layoutLabel} PNG`}
                         class="max-w-full max-h-full object-contain"
                         loading="lazy"
                         decoding="async"
+                        onerror="const fb=this.dataset.localFallback; if (fb && this.src !== window.location.origin + fb && this.src !== fb) { this.src=fb; return; } this.style.display='none';"
                       />
                     </div>
                     <div class="p-2 bg-white flex items-center justify-between">
@@ -717,5 +733,4 @@ const cdnLogoPath = getCdnLogoUrl(inst) ?? undefined;
     }
   });
 </script>
-
 

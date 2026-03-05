@@ -135,3 +135,24 @@ export function pathToAssetUrls(localPath: string | undefined, version: string =
   
   return getCdnUrls(localPath, version);
 }
+
+/**
+ * Convertește un URL CDN al pachetului la calea locală din /public/logos.
+ * Returnează null dacă valoarea nu este un path logos recunoscut.
+ */
+export function toLocalLogosPath(urlOrPath: string | null | undefined): string | null {
+  if (!urlOrPath) return null;
+  if (urlOrPath.startsWith('/logos/')) return urlOrPath;
+
+  const patterns = [
+    /^https?:\/\/cdn\.jsdelivr\.net\/npm\/@identitate-md\/logos@[^/]+(\/logos\/.+)$/i,
+    /^https?:\/\/unpkg\.com\/@identitate-md\/logos@[^/]+(\/logos\/.+)$/i,
+  ];
+
+  for (const pattern of patterns) {
+    const match = urlOrPath.match(pattern);
+    if (match?.[1]) return match[1];
+  }
+
+  return null;
+}
