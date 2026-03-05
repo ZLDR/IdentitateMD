@@ -1,0 +1,35 @@
+{
+  "id": "md-primaria-chisinau",
+  "slug": "md-primaria-chisinau",
+  "name": "Primăria Municipiului Chișinău",
+  "shortname": "Primaria Chișinău",
+  "category": "primarie",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-05",
+    "keywords": ["moldova", "chișinău", "primărie", "administrație locală", "municipiu"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Autoritatea administrației publice locale a municipiului Chișinău.",
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/md-primaria-chisinau/symbol.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "white": "/logos/md-primaria-chisinau/horizontal-white.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-primaria-chisinau/symbol.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.chisinau.md/"
+  }
+}

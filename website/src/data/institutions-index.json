@@ -1,15 +1,16 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-05T13:31:27.701Z",
-  "total": 4,
+  "generatedAt": "2026-03-05T14:56:05.145Z",
+  "total": 5,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
-      "minister": 2
+      "minister": 2,
+      "primarie": 1
     },
     "withManual": 0,
-    "withSvg": 4
+    "withSvg": 5
   },
   "categories": [
     {
@@ -21,6 +22,11 @@
       "id": "minister",
       "label": "Ministere",
       "count": 2
+    },
+    {
+      "id": "primarie",
+      "label": "Primării",
+      "count": 1
     },
     {
       "id": "altele",
@@ -38,7 +44,11 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "guvern", "executiv"],
+        "keywords": [
+          "moldova",
+          "guvern",
+          "executiv"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -50,18 +60,28 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -110,24 +130,38 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [63, 200, 244],
+          "rgb": [
+            63,
+            200,
+            244
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -185,7 +219,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
+        "keywords": [
+          "moldova",
+          "educație",
+          "cercetare",
+          "minister",
+          "mec"
+        ],
         "quality": "verified"
       },
       "location": {
@@ -197,14 +237,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -229,6 +276,47 @@
         "social_media": {
           "facebook": "https://www.facebook.com/mec.gov.md/"
         }
+      }
+    },
+    {
+      "id": "md-primaria-chisinau",
+      "slug": "md-primaria-chisinau",
+      "name": "Primăria Municipiului Chișinău",
+      "shortname": "Primaria Chișinău",
+      "category": "primarie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "primărie",
+          "administrație locală",
+          "municipiu"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Autoritatea administrației publice locale a municipiului Chișinău.",
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-primaria-chisinau/symbol.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "white": "/logos/md-primaria-chisinau/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-primaria-chisinau/symbol.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.chisinau.md/"
       }
     },
     {
@@ -260,7 +348,11 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [255, 204, 0],
+          "rgb": [
+            255,
+            204,
+            0
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -268,7 +360,11 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [0, 51, 153],
+          "rgb": [
+            0,
+            51,
+            153
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"
