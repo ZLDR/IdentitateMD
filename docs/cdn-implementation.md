@@ -389,4 +389,4 @@ A: Nu, jsDelivr și unpkg sunt gratuite pentru open-source projects.
 
 **Documentație completă:** https://identitate.md  
 **Pachet npm:** https://www.npmjs.com/package/@identitate-md/logos  
-**GitHub:** https://github.com/laurentiucotet/IdentitateRO
+**GitHub:** https://github.com/ZLDR/IdentitateMD

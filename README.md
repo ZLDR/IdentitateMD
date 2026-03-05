@@ -132,4 +132,4 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 
 ---
 
-Made with ❤️ by [Contributors](https://github.com/laurentiucotet/IdentitateRO/graphs/contributors)
+Made with ❤️ by [Contributors](https://github.com/ZLDR/IdentitateMD/graphs/contributors)

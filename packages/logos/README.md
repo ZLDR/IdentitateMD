@@ -540,19 +540,19 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 
 ## 🤝 Contribuții
 
-Acest pachet face parte din proiectul [IdentitateRO](https://github.com/laurentiucotet/IdentitateRO).
+Acest pachet face parte din proiectul [IdentitateRO](https://github.com/ZLDR/IdentitateMD).
 
 Pentru a adăuga logo-uri noi sau pentru a raporta probleme:
 
-1. Vizitează [github.com/laurentiucotet/IdentitateRO](https://github.com/laurentiucotet/IdentitateRO)
-2. Consultă [CONTRIBUTING.md](https://github.com/laurentiucotet/IdentitateRO/blob/main/website/CONTRIBUTING.md)
+1. Vizitează [github.com/laurentiucotet/IdentitateRO](https://github.com/ZLDR/IdentitateMD)
+2. Consultă [CONTRIBUTING.md](https://github.com/ZLDR/IdentitateMD/blob/main/website/CONTRIBUTING.md)
 3. Deschide un Pull Request sau Issue
 
 ## 🔗 Link-uri Utile
 
 - **Website**: [identitatero.vercel.app](https://identitatero.vercel.app)
 - **Documentație**: [identitatero.vercel.app/utilizare](https://identitatero.vercel.app/utilizare)
-- **GitHub**: [github.com/laurentiucotet/IdentitateRO](https://github.com/laurentiucotet/IdentitateRO)
+- **GitHub**: [github.com/laurentiucotet/IdentitateRO](https://github.com/ZLDR/IdentitateMD)
 - **npm Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 - **jsDelivr CDN**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
 - **unpkg CDN**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
@@ -563,4 +563,4 @@ Pentru a adăuga logo-uri noi sau pentru a raporta probleme:
 
 ---
 
-Made with ❤️ by [IdentitateRO Contributors](https://github.com/laurentiucotet/IdentitateRO/graphs/contributors)
+Made with ❤️ by [IdentitateRO Contributors](https://github.com/ZLDR/IdentitateMD/graphs/contributors)
