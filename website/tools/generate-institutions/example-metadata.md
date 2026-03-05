@@ -17,7 +17,7 @@ category: "agentie"
 #   agentie, autoritate, proiect-ue, institutie-cultura, altele
 
 # Locație
-county: "B"          # Cod județ (B = București, CJ = Cluj, etc.)
+county: "B" # Cod județ (B = București, CJ = Cluj, etc.)
 city: "București"
 
 # Website și resurse
@@ -43,7 +43,7 @@ quality: "draft"
 
 ## Descriere
 
-Autoritatea responsabilă cu colectarea veniturilor bugetare și administrarea fiscală din România.
+Autoritatea responsabilă cu colectarea veniturilor bugetare și administrarea fiscală din Republica Moldova.
 
 ## Note de utilizare
 

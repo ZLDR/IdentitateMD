@@ -2,9 +2,14 @@
  * IdentitateRO — Funcții helper
  */
 
-import type { Institution, LogoLayout, LogoColorVariant, LogoAssetGroup } from '../types/institution';
-import { LOGO_LAYOUT_LABELS, LOGO_VARIANT_LABELS } from './labels';
-import { resolveAssetPath } from './cdn-helpers';
+import type {
+  Institution,
+  LogoLayout,
+  LogoColorVariant,
+  LogoAssetGroup,
+} from "../types/institution";
+import { LOGO_LAYOUT_LABELS, LOGO_VARIANT_LABELS } from "./labels";
+import { resolveAssetPath } from "./cdn-helpers";
 
 // ─── Tipuri helper ───────────────────────────────
 
@@ -12,13 +17,13 @@ export interface DownloadableAsset {
   /** Eticheta afișată (ex: "Orizontal — Color") */
   label: string;
   /** Format fișier */
-  format: 'svg' | 'png';
+  format: "svg" | "png";
   /** Cale relativă față de /public */
   path: string;
   /** Layout-ul logo-ului */
   layout: LogoLayout;
   /** Varianta cromatică */
-  variant: LogoColorVariant | 'png' | 'custom';
+  variant: LogoColorVariant | "png" | "custom";
   /** Dimensiuni (doar PNG) */
   width?: number;
   height?: number;
@@ -28,10 +33,10 @@ export interface LogoVariantView {
   key: string;
   label: string;
   path: string;
-  preview: 'checkerboard' | 'dark';
+  preview: "checkerboard" | "dark";
 }
 
-type InstitutionPathFields = Pick<Institution, 'slug' | 'shortname'>;
+type InstitutionPathFields = Pick<Institution, "slug" | "shortname">;
 
 // ─── Funcții ─────────────────────────────────────
 
@@ -41,9 +46,9 @@ type InstitutionPathFields = Pick<Institution, 'slug' | 'shortname'>;
  */
 export function getPrimaryLogoPath(inst: Institution): string | null {
   const main = inst.assets.main;
-  
+
   if (!main) return null;
-  
+
   // Priority: color → dark_mode → black → white → monochrome → png
   // Rezolvă AssetUrls la string folosind CDN sau local
   if (main.color) return resolveAssetPath(main.color, true);
@@ -52,7 +57,7 @@ export function getPrimaryLogoPath(inst: Institution): string | null {
   if (main.white) return resolveAssetPath(main.white, true);
   if (main.monochrome) return resolveAssetPath(main.monochrome, true);
   if (main.png) return resolveAssetPath(main.png.path, true);
-  
+
   return null;
 }
 
@@ -62,9 +67,15 @@ export function getPrimaryLogoPath(inst: Institution): string | null {
 export function hasSvg(inst: Institution): boolean {
   const { main, horizontal, vertical, symbol } = inst.assets;
   const groups = [main, horizontal, vertical, symbol].filter(Boolean);
-  
-  return groups.some(group => 
-    group && (group.color || group.dark_mode || group.white || group.black || group.monochrome)
+
+  return groups.some(
+    (group) =>
+      group &&
+      (group.color ||
+        group.dark_mode ||
+        group.white ||
+        group.black ||
+        group.monochrome),
   );
 }
 
@@ -72,31 +83,46 @@ export function hasSvg(inst: Institution): boolean {
  * Extrage toate asset-urile descărcabile din structura de logo-uri.
  * Returnează o listă plată cu etichetă, format și cale.
  */
-export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[] {
+export function getAllDownloadableAssets(
+  inst: Institution,
+): DownloadableAsset[] {
   const assets: DownloadableAsset[] = [];
   const { main, horizontal, vertical, symbol } = inst.assets;
-  
+
   // Process each layout type
-  const layouts: Array<{ key: string; group: typeof main; layout: LogoLayout }> = [];
-  
-  if (horizontal) layouts.push({ key: 'horizontal', group: horizontal, layout: 'horizontal' });
-  if (vertical) layouts.push({ key: 'vertical', group: vertical, layout: 'vertical' });
-  if (symbol) layouts.push({ key: 'symbol', group: symbol, layout: 'symbol' });
-  
+  const layouts: Array<{
+    key: string;
+    group: typeof main;
+    layout: LogoLayout;
+  }> = [];
+
+  if (horizontal)
+    layouts.push({
+      key: "horizontal",
+      group: horizontal,
+      layout: "horizontal",
+    });
+  if (vertical)
+    layouts.push({ key: "vertical", group: vertical, layout: "vertical" });
+  if (symbol) layouts.push({ key: "symbol", group: symbol, layout: "symbol" });
+
   for (const { key, group, layout } of layouts) {
     if (!group) continue;
-    
+
     const layoutLabel = LOGO_LAYOUT_LABELS[key] || key;
-    
+
     // SVG variants
-    const variants: Array<{ variant: LogoColorVariant; asset: typeof group.color }> = [
-      { variant: 'color', asset: group.color },
-      { variant: 'dark_mode', asset: group.dark_mode },
-      { variant: 'white', asset: group.white },
-      { variant: 'black', asset: group.black },
-      { variant: 'monochrome', asset: group.monochrome },
+    const variants: Array<{
+      variant: LogoColorVariant;
+      asset: typeof group.color;
+    }> = [
+      { variant: "color", asset: group.color },
+      { variant: "dark_mode", asset: group.dark_mode },
+      { variant: "white", asset: group.white },
+      { variant: "black", asset: group.black },
+      { variant: "monochrome", asset: group.monochrome },
     ];
-    
+
     for (const { variant, asset } of variants) {
       if (!asset) continue;
       const path = resolveAssetPath(asset, true);
@@ -104,7 +130,7 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
       const variantLabel = LOGO_VARIANT_LABELS[variant] || variant;
       assets.push({
         label: `${layoutLabel} — ${variantLabel}`,
-        format: 'svg',
+        format: "svg",
         path,
         layout,
         variant,
@@ -117,30 +143,30 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
       if (!altPath) continue;
       assets.push({
         label: `${layoutLabel} — ${alt.label}`,
-        format: 'svg',
+        format: "svg",
         path: altPath,
         layout,
-        variant: 'custom',
+        variant: "custom",
       });
     }
-    
+
     // PNG
     if (group.png) {
       const pngPath = resolveAssetPath(group.png.path, true);
       if (pngPath) {
         assets.push({
           label: `${layoutLabel} — PNG`,
-          format: 'png',
+          format: "png",
           path: pngPath,
           layout,
-          variant: 'png',
+          variant: "png",
           width: group.png.width,
           height: group.png.height,
         });
       }
     }
   }
-  
+
   return assets;
 }
 
@@ -148,17 +174,19 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
  * Extrage variantele disponibile dintr-un grup de asset-uri logo.
  * Returnează un array de [variantKey, resolvedPath] pentru afișare.
  */
-export function getLogoVariants(group: LogoAssetGroup | undefined): LogoVariantView[] {
+export function getLogoVariants(
+  group: LogoAssetGroup | undefined,
+): LogoVariantView[] {
   if (!group) return [];
-  
+
   const variantKeys: Array<{ key: string; asset: typeof group.color }> = [
-    { key: 'color', asset: group.color },
-    { key: 'dark_mode', asset: group.dark_mode },
-    { key: 'white', asset: group.white },
-    { key: 'black', asset: group.black },
-    { key: 'monochrome', asset: group.monochrome },
+    { key: "color", asset: group.color },
+    { key: "dark_mode", asset: group.dark_mode },
+    { key: "white", asset: group.white },
+    { key: "black", asset: group.black },
+    { key: "monochrome", asset: group.monochrome },
   ];
-  
+
   const baseVariants: LogoVariantView[] = variantKeys
     .filter(({ asset }) => asset)
     .map(({ key, asset }) => {
@@ -168,7 +196,7 @@ export function getLogoVariants(group: LogoAssetGroup | undefined): LogoVariantV
         key,
         label: LOGO_VARIANT_LABELS[key] || key,
         path,
-        preview: key === 'white' ? 'dark' : 'checkerboard',
+        preview: key === "white" ? "dark" : "checkerboard",
       } as LogoVariantView;
     })
     .filter((item): item is LogoVariantView => item !== null);
@@ -181,7 +209,7 @@ export function getLogoVariants(group: LogoAssetGroup | undefined): LogoVariantV
         key: `alt-${index}`,
         label: alt.label,
         path,
-        preview: alt.preview || 'checkerboard',
+        preview: alt.preview || "checkerboard",
       } as LogoVariantView;
     })
     .filter((item): item is LogoVariantView => item !== null);
@@ -193,29 +221,32 @@ export function getLogoVariants(group: LogoAssetGroup | undefined): LogoVariantV
  * Construiește URL-ul CDN pentru un logo cu verificare.
  * Returnează null dacă varianta specificată nu există.
  */
-export function getCdnLogoUrl(inst: Institution, preferredVariant: string = 'color'): string | null {
+export function getCdnLogoUrl(
+  inst: Institution,
+  preferredVariant: string = "color",
+): string | null {
   const cdnBase = `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${inst.id}`;
-  const mainLayout = inst.assets.main?.type || 'horizontal';
-  
+  const mainLayout = inst.assets.main?.type || "horizontal";
+
   // Verificăm dacă varianta există în assets.main
   const main = inst.assets.main;
   if (!main) return null;
-  
+
   // Găsim variantele disponibile
   const availableVariants: string[] = [];
-  if (main.color) availableVariants.push('color');
-  if (main.dark_mode) availableVariants.push('dark_mode');
-  if (main.white) availableVariants.push('white');
-  if (main.black) availableVariants.push('black');
-  if (main.monochrome) availableVariants.push('monochrome');
-  
+  if (main.color) availableVariants.push("color");
+  if (main.dark_mode) availableVariants.push("dark_mode");
+  if (main.white) availableVariants.push("white");
+  if (main.black) availableVariants.push("black");
+  if (main.monochrome) availableVariants.push("monochrome");
+
   if (availableVariants.length === 0) return null;
-  
+
   // Folosim varianta preferată sau prima disponibilă
-  const variant = availableVariants.includes(preferredVariant) 
-    ? preferredVariant 
+  const variant = availableVariants.includes(preferredVariant)
+    ? preferredVariant
     : availableVariants[0];
-  
+
   return `${cdnBase}/${mainLayout}/${variant}.svg`;
 }
 
@@ -224,13 +255,15 @@ export function getCdnLogoUrl(inst: Institution, preferredVariant: string = 'col
  * Preferă shortname când este disponibil (ex: MAE -> mae), apoi fallback pe slug.
  */
 export function getPreferredCatalogKey(inst: InstitutionPathFields): string {
-  const raw = String(inst.shortname || '').trim().toLowerCase();
+  const raw = String(inst.shortname || "")
+    .trim()
+    .toLowerCase();
   const normalized = raw
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9-]+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 
   return normalized || inst.slug;
 }
@@ -238,7 +271,9 @@ export function getPreferredCatalogKey(inst: InstitutionPathFields): string {
 /**
  * Returnează o mapare unică slug -> segment URL pentru rutele /catalog/:id.
  */
-export function buildCatalogPathMap(institutions: InstitutionPathFields[]): Record<string, string> {
+export function buildCatalogPathMap(
+  institutions: InstitutionPathFields[],
+): Record<string, string> {
   const map: Record<string, string> = {};
   const used = new Set<string>();
 
@@ -328,9 +363,9 @@ export function getBrandManualUrl(inst: Institution): string | undefined {
  */
 export function getSiteUrl(siteConfig?: string): string {
   if (siteConfig) {
-    return siteConfig.replace(/\/$/, '');
+    return siteConfig.replace(/\/$/, "");
   }
-  return 'https://identitate.eu';
+  return "https://identitate.md";
 }
 
 /**

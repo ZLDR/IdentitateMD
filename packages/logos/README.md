@@ -21,17 +21,17 @@ Logo-urile sunt disponibile automat prin CDN-uri gratuite:
 
 ```html
 <!-- Logo complet -->
-<img src="https://identitate.eu/logos/anaf/anaf.svg" alt="ANAF" />
+<img src="https://identitate.md/logos/anaf/anaf.svg" alt="ANAF" />
 
 <!-- Simbol -->
-<img src="https://identitate.eu/logos/anaf/simbol-anaf.svg" alt="ANAF Simbol" />
+<img src="https://identitate.md/logos/anaf/simbol-anaf.svg" alt="ANAF Simbol" />
 
 <!-- Alte instituții -->
 <img
-  src="https://identitate.eu/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+  src="https://identitate.md/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
   alt="Guvernul Republicii Moldova"
 />
-<img src="https://identitate.eu/logos/pnrr/pnrr.svg" alt="PNRR" />
+<img src="https://identitate.md/logos/pnrr/pnrr.svg" alt="PNRR" />
 ```
 
 #### jsDelivr (CDN Primară)
@@ -128,7 +128,7 @@ Sau în HTML:
 **Pas 3: Folosește tag-ul `<identity-icon>`**
 
 ```html
-<identity-icon src="https://identitate.eu/logos/anaf/anaf.svg"> </identity-icon>
+<identity-icon src="https://identitate.md/logos/anaf/anaf.svg"> </identity-icon>
 ```
 
 #### Exemple Complete
@@ -157,7 +157,7 @@ Sau în HTML:
   </head>
   <body>
     <identity-icon
-      src="https://identitate.eu/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+      src="https://identitate.md/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
       class="logo-guvern"
     >
     </identity-icon>
@@ -174,7 +174,7 @@ import "@identitate-md/logos/loader";
 function InstitutionLogo({ slug }) {
   return (
     <identity-icon
-      src={`https://identitate.eu/logos/${slug}/${slug}.svg`}
+      src={`https://identitate.md/logos/${slug}/${slug}.svg`}
       className="w-16 h-16 text-blue-600"
     />
   );
@@ -196,7 +196,7 @@ const props = defineProps(["institution"]);
 
 <template>
   <identity-icon
-    :src="`https://identitate.eu/logos/${institution}/${institution}.svg`"
+    :src="`https://identitate.md/logos/${institution}/${institution}.svg`"
     class="logo-icon"
   />
 </template>

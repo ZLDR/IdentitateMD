@@ -10,7 +10,7 @@ provides:
   - BaseLayout loads Onest font via Google Fonts (preconnect + preload + non-blocking + noscript)
   - Tailwind fontFamily.sans configured to Onest
   - global.css base font-family set to Onest
-  - All 6 site files free of Public Sans, IdentitateRO, identitate.eu, and Romania references
+  - All 6 site files free of Public Sans, IdentitateRO, identitate.md, and Romania references
   - Header and Footer GitHub links pointing to Moldova repo placeholder
   - Footer copyright and disclaimer reference Moldova/IdentitateMD
   - 404 page title references IdentitateMD
@@ -19,7 +19,10 @@ affects: [02-data-architecture, 03-content-localization]
 # Tech tracking
 tech-stack:
   added: [Onest (Google Fonts)]
-  patterns: [Non-blocking font loading via preconnect + preload + media=print onload + noscript fallback]
+  patterns:
+    [
+      Non-blocking font loading via preconnect + preload + media=print onload + noscript fallback,
+    ]
 
 key-files:
   created: []
@@ -102,13 +105,14 @@ None — no external service configuration required.
 
 ## Next Phase Readiness
 
-- All six branding/typography files are clean: zero Public Sans, IdentitateRO, identitate.eu, or Romania references
+- All six branding/typography files are clean: zero Public Sans, IdentitateRO, identitate.md, or Romania references
 - Onest font loads correctly via Google Fonts non-blocking pattern
-- Ready for Phase 2 (Data Architecture): institution ID migration from ro-* to md-* prefix
+- Ready for Phase 2 (Data Architecture): institution ID migration from ro-_ to md-_ prefix
 
 ---
-*Phase: 01-branding-typography*
-*Completed: 2026-03-04*
+
+_Phase: 01-branding-typography_
+_Completed: 2026-03-04_
 
 ## Self-Check: PASSED
 

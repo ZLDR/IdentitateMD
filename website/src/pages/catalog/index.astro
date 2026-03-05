@@ -42,7 +42,7 @@ const institutionsByCategory = categories.reduce((acc, cat) => {
 }, {} as Record<string, Institution[]>);
 
 const title = "Catalog — IdentitateRO";
-const description = "Explorează toate logo-urile instituțiilor publice din România";
+const description = "Explorează toate logo-urile instituțiilor publice din Republica Moldova";
 
 const institutionsJson = JSON.stringify(allInstitutions);
 const categoryLabelsSingularJson = JSON.stringify(CATEGORY_LABELS_SINGULAR);
@@ -126,9 +126,13 @@ const cdnVersion = CDN_VERSION;
               {cat.label}
             </div>
             {institutionsByCategory[cat.value].map((inst: Institution) => {
-              const logoSrc = inst.assets?.main?.color
-                ? resolveAssetPath(inst.assets.main.color, false)
-                : null;
+              const mainAsset =
+                inst.assets?.main?.color
+                || inst.assets?.main?.dark_mode
+                || inst.assets?.main?.black
+                || inst.assets?.main?.white
+                || inst.assets?.main?.monochrome;
+              const logoSrc = mainAsset ? resolveAssetPath(mainAsset, false) : null;
               return (
                 <a
                   href={`/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`}
@@ -192,7 +196,7 @@ const PATH_BY_SLUG   = JSON.parse(catalogPathBySlugJson);
 const SLUG_BY_PATH   = JSON.parse(slugByCatalogPathJson);
 
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}`;
-const SITE = 'https://identitate.eu';
+const SITE = 'https://identitate.md';
 
 /** Build an index map by slug */
 const bySlug = {};
@@ -225,11 +229,11 @@ function escHtml(str) {
 
 function resolveUrl(path) {
   if (!path) return '';
-  if (typeof path === 'object') path = path.cdn_primary || path.local || '';
+  if (typeof path === 'object') path = path.local || path.cdn_primary || path.cdn_fallback || '';
   if (!path) return '';
   if (path.startsWith('http')) return path;
-  if (path.startsWith('/logos/')) return `${CDN_BASE}${path}`;
-  return `${SITE}${path}`;
+  if (path.startsWith('/')) return path;
+  return `${SITE}/${path.replace(/^\/+/, '')}`;
 }
 
 function toLocalLogosPath(path) {
@@ -253,10 +257,20 @@ function shouldUseDarkPreview(inst, layout, variant, path) {
 function getCdnLogoUrl(inst) {
   const main = inst.assets?.main;
   if (!main) return null;
-  const layout = main.type || 'horizontal';
-  const variant = main.color ? 'color' : main.dark_mode ? 'dark_mode' : main.black ? 'black' : main.white ? 'white' : null;
-  if (!variant) return null;
-  return `${CDN_BASE}/logos/${inst.id}/${layout}/${variant}.svg`;
+  const selected = main.color || main.dark_mode || main.black || main.white || main.monochrome || main.png?.path;
+  if (!selected) return null;
+
+  if (typeof selected === 'object') {
+    if (selected.cdn_primary) return selected.cdn_primary;
+    if (selected.cdn_fallback) return selected.cdn_fallback;
+    if (selected.local?.startsWith('/logos/')) return `${CDN_BASE}${selected.local}`;
+    return selected.local || null;
+  }
+
+  if (selected.startsWith('http')) return selected;
+  if (selected.startsWith('/logos/')) return `${CDN_BASE}${selected}`;
+  if (selected.startsWith('/')) return `${SITE}${selected}`;
+  return `${SITE}/${selected}`;
 }
 
 function getPrimaryLogo(inst) {
@@ -464,7 +478,8 @@ function buildDetail(inst) {
     for (const variant of ['color', 'dark_mode', 'white', 'black', 'monochrome']) {
       const p = group[variant];
       if (!p) continue;
-      cards += buildVariantCard(inst, layout, variant, resolveUrl(p), layoutLabel);
+      const groupPreview = variant === 'color' ? (group.preview || '') : '';
+      cards += buildVariantCard(inst, layout, variant, resolveUrl(p), layoutLabel, '', groupPreview);
     }
     if (Array.isArray(group.alternatives)) {
       for (const alt of group.alternatives) {

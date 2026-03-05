@@ -1,0 +1,77 @@
+{
+  "id": "md-mnam",
+  "slug": "md-mnam",
+  "name": "Muzeul Național de Artă Moldovei",
+  "shortname": "Muzeul de artă",
+  "category": "institutie-cultura",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-06",
+    "keywords": [
+      "moldova",
+      "chișinău",
+      "muzeu",
+      "artă",
+      "mnam",
+      "cultură"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Muzeul Național de Artă al Moldovei, una dintre cele mai prestigioase instituții muzeale din Moldova.",
+  "colors": [
+    {
+      "name": "Green Primary",
+      "hex": "#466838",
+      "usage": "primary"
+    },
+    {
+      "name": "Ivory Secondary",
+      "hex": "#FFFAF6",
+      "usage": "secondary"
+    },
+    {
+      "name": "Charcoal Tertiary",
+      "hex": "#1A1C1F",
+      "usage": "accent"
+    },
+    {
+      "name": "White Tertiary",
+      "hex": "#FFFFFF",
+      "usage": "neutral"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Cinzel"
+    },
+    "secondary": {
+      "family": "DM Sans"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mnam/Horizontal Color.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mnam/Horizontal Color.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-mnam/Symbol color.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.mnam.md/",
+    "contact": {
+      "address": "31 August 1989 nr. 115, Chișinău, Republica Moldova",
+      "phone": "+373 22 24 13 12",
+      "email": "artmuseum_md@yahoo.com"
+    }
+  }
+}

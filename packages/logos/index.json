@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-05T15:25:44.767Z",
-  "count": 6,
-  "totalLogos": 18,
+  "generated": "2026-03-05T23:21:14.827Z",
+  "count": 9,
+  "totalLogos": 26,
   "institutions": [
     {
       "id": "eu-flag",
@@ -77,6 +77,24 @@
       }
     },
     {
+      "id": "md-mc",
+      "slug": "md-mc",
+      "name": "Md Mc",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-mc/Horizontal Color.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-mc/Vertical Color.svg"
+        }
+      }
+    },
+    {
       "id": "md-mec",
       "slug": "md-mec",
       "name": "Ministerul Educației și Cercetării al Republicii Moldova",
@@ -97,6 +115,44 @@
         "vertical": {
           "color": "/logos/md-mec/vertical-color.svg",
           "white": "/logos/md-mec/vertical-white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mioc",
+      "slug": "md-mioc",
+      "name": "Muzeul de Istorie a Orașului Chișinău",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-mioc/Horizontal black.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-mioc/Symbol Black.svg",
+          "black": "/logos/md-mioc/symbol-black.svg",
+          "white": "/logos/md-mioc/symbol-white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mnam",
+      "slug": "md-mnam",
+      "name": "Muzeul Național de Artă Moldovei",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-mnam/Horizontal Color.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-mnam/Symbol color.svg"
         }
       }
     },

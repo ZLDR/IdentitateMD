@@ -57,7 +57,7 @@ completed: 2026-03-04
 
 ## Accomplishments
 
-- astro.config.mjs site URL updated to https://identitate.md (was identitate.eu)
+- astro.config.mjs site URL updated to https://identitate.md (was identitate.md)
 - vercel.json CDN rewrites now deliver from @identitate-md/logos@1.3.4 (was @identitate-ro)
 - website/package.json name/description/author reference Moldova
 - packages/logos/package.json fully rebranded: name, description, author, homepage, repository, keywords
@@ -74,7 +74,7 @@ Each task was committed atomically:
 
 ## Files Created/Modified
 
-- `website/astro.config.mjs` - site field: https://identitate.eu → https://identitate.md
+- `website/astro.config.mjs` - site field: https://identitate.md → https://identitate.md
 - `vercel.json` - CDN rewrite destinations: @identitate-md/logos → @identitate-md/logos
 - `website/package.json` - name, description, author updated for Moldova
 - `packages/logos/package.json` - name, description, author, homepage, repository, keywords updated for Moldova

@@ -1,14 +1,14 @@
 # IdentitateRO
 
-[![Website](https://img.shields.io/badge/website-identitate.eu-blue)](https://identitate.eu)
+[![Website](https://img.shields.io/badge/website-identitate.md-blue)](https://identitate.md)
 [![npm version](https://img.shields.io/npm/v/@identitate-md/logos.svg)](https://www.npmjs.com/package/@identitate-md/logos)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-Registru digital open-source pentru identitatea vizuală a instituțiilor publice din România.
+Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova.
 
 Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o singură sursă de adevăr.
 
-🌐 **Website**: [identitate.eu](https://identitate.eu)  
+🌐 **Website**: [identitate.md](https://identitate.md)  
 📦 **NPM Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 
 ## 🚀 Utilizare Rapidă
@@ -32,7 +32,7 @@ npm install @identitate-md/logos
 import logoPath from "@identitate-md/logos/logos/anaf/anaf.svg";
 ```
 
-📖 **Documentație completă**: [identitate.eu/utilizare](https://identitate.eu/utilizare)
+📖 **Documentație completă**: [identitate.md/utilizare](https://identitate.md/utilizare)
 
 ## 📁 Structură Proiect
 
@@ -43,7 +43,7 @@ IdentitateRO/
 │   ├── index.json          # Metadata pentru toate logo-urile
 │   └── package.json
 │
-├── website/                # Site-ul Astro (identitate.eu)
+├── website/                # Site-ul Astro (identitate.md)
 │   ├── src/
 │   │   ├── data/          # Date JSON per instituție
 │   │   ├── pages/         # Pagini Astro (index, utilizare, despre, etc.)
@@ -94,7 +94,7 @@ Pachetul `@identitate-md/logos` include:
 ### Instituții Disponibile
 
 - ANAF (Agenția Națională de Administrare Fiscală)
-- Guvernul României
+- Guvernul Republicii Moldova
 - Ministerul Educației
 - PNRR (Plan Național de Redresare și Reziliență)
 - Primăria Cluj-Napoca
@@ -124,11 +124,11 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 
 ## 🔗 Link-uri Utile
 
-- **Website**: [identitate.eu](https://identitate.eu)
+- **Website**: [identitate.md](https://identitate.md)
 - **NPM Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 - **CDN (jsDelivr)**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
 - **CDN (unpkg)**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
-- **Documentație**: [identitate.eu/utilizare](https://identitate.eu/utilizare)
+- **Documentație**: [identitate.md/utilizare](https://identitate.md/utilizare)
 
 ---
 

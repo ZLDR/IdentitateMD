@@ -46,7 +46,7 @@ IdentitateRO/
     │       ├── anaf/
     │       │   ├── anaf.svg
     │       │   └── simbol-anaf.svg
-    │       ├── guvernul-romaniei/
+    │       ├── guvernul-republicii-moldova/
     │       ├── ministerul-educatiei/
     │       ├── pnrr/
     │       └── primaria-cluj-napoca/
@@ -77,7 +77,7 @@ IdentitateRO/
         │   ├── institutions-index.json    # Generated aggregate index
         │   └── institutions/          # Individual institution data
         │       ├── anaf.json
-        │       ├── guvernul-romaniei.json
+        │       ├── guvernul-republicii-moldova.json
         │       ├── ministerul-educatiei.json
         │       ├── pnrr.json
         │       └── primaria-cluj-napoca.json
@@ -150,7 +150,7 @@ Located in: `src/types/institution-v3.ts` (v3.0) and `src/types/institution.ts` 
 ```typescript
 interface InstitutionV3 {
   // Top-level identification (flattened from v2)
-  id: string; // Unique ID: "ro-{slug}" format (e.g., "ro-anaf")
+  id: string; // Unique ID: "{country}-{slug}" (e.g., "md-mioc", "ro-anaf")
   slug: string; // URL slug (e.g., "anaf")
   name: string; // Full official name
   shortname?: string; // Short name (lowercase)
@@ -402,7 +402,7 @@ npm run data:generate # Generate institutions-index.json
 
 **Key v3.0 requirements:**
 
-- `id` must be in format `ro-{slug}`
+- `id` must include country prefix: `{country}-{slug}` (for this project use `md-{slug}`)
 - Use `keywords` (array) instead of `tags`
 - Use `last_updated` (snake_case) instead of `lastUpdated`
 - Assets must include `main` object with primary logo

@@ -170,7 +170,7 @@ const urls = getCdnUrls("/logos/anaf/anaf.svg", "1.0.0");
     ├── anaf/
     │   ├── anaf.svg
     │   └── simbol-anaf.svg
-    ├── guvernul-romaniei/
+    ├── guvernul-republicii-moldova/
     └── ...
 ```
 
@@ -216,7 +216,7 @@ Output:
 📦 Versiune CDN: 1.0.0
 
 ✅ anaf.json - migrat cu succes
-✅ guvernul-romaniei.json - migrat cu succes
+✅ guvernul-republicii-moldova.json - migrat cu succes
 ...
 
 📊 Rezultate:
@@ -387,6 +387,6 @@ A: Nu, jsDelivr și unpkg sunt gratuite pentru open-source projects.
 
 ---
 
-**Documentație completă:** https://identitate.eu  
+**Documentație completă:** https://identitate.md  
 **Pachet npm:** https://www.npmjs.com/package/@identitate-md/logos  
 **GitHub:** https://github.com/laurentiucotet/IdentitateRO

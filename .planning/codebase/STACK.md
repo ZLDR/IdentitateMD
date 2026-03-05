@@ -78,7 +78,7 @@
 
 - `website/astro.config.mjs` - Main Astro configuration
   - Output: `static` (pure static site generation)
-  - Site URL: `https://identitate.eu`
+  - Site URL: `https://identitate.md`
   - Build asset path: `_assets/` with hashed filenames
   - Vite rollup config for asset naming: `_assets/[name].[hash][extname]`
 

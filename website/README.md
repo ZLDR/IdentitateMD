@@ -33,10 +33,10 @@ IdentitateRO/
 ├── website/                     # Astro static site
 │   ├── public/
 │   │   ├── logos/               # Fișierele de logo (SVG, PNG)
-│   │   │   ├── guvernul-romaniei/
-│   │   │   │   ├── guvernul-romaniei.svg
-│   │   │   │   ├── guvernul-romaniei-mono.svg
-│   │   │   │   └── guvernul-romaniei-alb.svg
+│   │   │   ├── guvernul-republicii-moldova/
+│   │   │   │   ├── guvernul-republicii-moldova.svg
+│   │   │   │   ├── guvernul-republicii-moldova-mono.svg
+│   │   │   │   └── guvernul-republicii-moldova-alb.svg
 │   │   │   ├── pnrr/
 │   │   │   └── ...
 │   │   └── favicon.svg
@@ -47,7 +47,7 @@ IdentitateRO/
 │   │   │   └── LogoCard.astro
 │   │   ├── data/
 │   │   │   ├── institutions/    # Fișierele JSON per instituție
-│   │   │   │   ├── guvernul-romaniei.json
+│   │   │   │   ├── guvernul-republicii-moldova.json
 │   │   │   │   ├── primaria-cluj-napoca.json
 │   │   │   │   └── ...
 │   │   │   └── institutions-index.json  # Index centralizat (generat)
@@ -114,17 +114,17 @@ Fiecare instituție are un fișier JSON în `src/data/institutions/`:
 
 ### Categorii disponibile
 
-| Categorie            | Descriere                                      |
-| -------------------- | ---------------------------------------------- |
-| `guvern`             | Guvernul României, Administrația Prezidențială |
-| `minister`           | Ministere                                      |
-| `agentie`            | Agenții guvernamentale (ANAF, ANM, etc.)       |
-| `autoritate`         | Autorități independente                        |
-| `primarie`           | Primării municipale și orășenești              |
-| `consiliu-judetean`  | Consilii Județene                              |
-| `prefectura`         | Prefecturi                                     |
-| `proiect-ue`         | Proiecte UE (PNRR, POCU, etc.)                 |
-| `institutie-cultura` | Instituții de cultură                          |
+| Categorie            | Descriere                                                |
+| -------------------- | -------------------------------------------------------- |
+| `guvern`             | Guvernul Republicii Moldova, Administrația Prezidențială |
+| `minister`           | Ministere                                                |
+| `agentie`            | Agenții guvernamentale (ANAF, ANM, etc.)                 |
+| `autoritate`         | Autorități independente                                  |
+| `primarie`           | Primării municipale și orășenești                        |
+| `consiliu-judetean`  | Consilii Județene                                        |
+| `prefectura`         | Prefecturi                                               |
+| `proiect-ue`         | Proiecte UE (PNRR, POCU, etc.)                           |
+| `institutie-cultura` | Instituții de cultură                                    |
 
 ### Variante de logo
 
@@ -145,13 +145,13 @@ Logo-urile se accesează direct ca fișiere statice:
 ```html
 <!-- SVG direct -->
 <img
-  src="https://identitate.eu/logos/guvernul-romaniei/guvernul-romaniei.svg"
-  alt="Guvernul României"
+  src="https://identitate.md/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+  alt="Guvernul Republicii Moldova"
   width="200"
 />
 
 <!-- PNG -->
-<img src="https://identitate.eu/logos/pnrr/pnrr.png" alt="PNRR" width="400" />
+<img src="https://identitate.md/logos/pnrr/pnrr.png" alt="PNRR" width="400" />
 ```
 
 ## Cum Contribui
@@ -201,4 +201,4 @@ MIT — vezi [LICENSE](LICENSE) pentru detalii.
 
 ## Avertisment Legal
 
-Acest proiect **nu este afiliat oficial** niciunei instituții publice din România. Logo-urile sunt proprietatea instituțiilor respective. Informațiile sunt de interes public și scopul proiectului este pur civic — facilitarea accesului la materiale vizuale oficiale în formate corecte.
+Acest proiect **nu este afiliat oficial** niciunei instituții publice din Republica Moldova. Logo-urile sunt proprietatea instituțiilor respective. Informațiile sunt de interes public și scopul proiectului este pur civic — facilitarea accesului la materiale vizuale oficiale în formate corecte.

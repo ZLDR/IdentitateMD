@@ -1,0 +1,64 @@
+{
+  "id": "md-mc",
+  "slug": "md-mc",
+  "name": "Ministerul Culturii al Republicii Moldova",
+  "shortname": "Ministerul Culturii",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-06",
+    "keywords": ["moldova", "minister", "cultură", "arte", "patrimoniu", "mc"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Culturii are în subordine instituții publice concertistice și teatrale, biblioteci, muzee și alte instituții publice.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Times New Roman"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mc/horizontal-color.svg",
+      "white": "/logos/md-mc/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mc/horizontal-color.svg",
+      "white": "/logos/md-mc/horizontal-white.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mc/vertical-color.svg",
+      "white": "/logos/md-mc/vertical-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.mc.gov.md/",
+    "contact": {
+      "phone": "+373 (22) 823 801 (Anticamera)",
+      "email": "cancelaria@mc.gov.md"
+    }
+  }
+}

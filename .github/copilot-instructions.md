@@ -7,7 +7,7 @@ Welcome to the IdentitateRO codebase! This document provides essential context a
 IdentitateRO is a monorepo consisting of two main parts:
 
 1. **`packages/logos/`**: An NPM package (`@identitate-md/logos`) containing the source of truth for all logos (SVGs) and their metadata (`index.json`). It also includes a framework-agnostic web component (`identity-loader.js`).
-2. **`website/`**: An Astro 5 static site (`identitate.eu`) that serves as the public registry and search interface.
+2. **`website/`**: An Astro 5 static site (`identitate.md`) that serves as the public registry and search interface.
 
 **Data Flow**:
 Raw SVGs and `metadata.md` files in `packages/logos/logos/[slug]/` -> AI Generator -> `website/src/data/institutions/[slug].json` -> Index Generator -> `website/src/data/institutions-index.json` -> Astro Pages.

@@ -86,7 +86,7 @@
 **Hosting:**
 
 - **Vercel** - Fully managed deployment platform
-  - Site URL: `https://identitate.eu`
+  - Site URL: `https://identitate.md`
   - Deployment type: Static site
   - Build output: `website/dist/`
 

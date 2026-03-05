@@ -17,11 +17,13 @@
   "assets": {
     "main": {
       "type": "horizontal",
-      "color": "/logos/md-dgcpc/Horizontal Color.svg"
+      "color": "/logos/md-dgcpc/Horizontal Color.svg",
+      "preview": "dark"
     },
     "horizontal": {
       "type": "horizontal",
-      "color": "/logos/md-dgcpc/Horizontal Color.svg"
+      "color": "/logos/md-dgcpc/Horizontal Color.svg",
+      "preview": "dark"
     }
   }
 }

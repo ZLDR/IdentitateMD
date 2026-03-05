@@ -1,17 +1,18 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-05T15:19:55.630Z",
-  "total": 6,
+  "generatedAt": "2026-03-05T23:27:45.253Z",
+  "total": 9,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
       "directie": 1,
-      "minister": 2,
+      "minister": 3,
+      "institutie-cultura": 2,
       "primarie": 1
     },
-    "withManual": 0,
-    "withSvg": 6
+    "withManual": 1,
+    "withSvg": 9
   },
   "categories": [
     {
@@ -22,7 +23,7 @@
     {
       "id": "minister",
       "label": "Ministere",
-      "count": 2
+      "count": 3
     },
     {
       "id": "directie",
@@ -33,6 +34,11 @@
       "id": "primarie",
       "label": "Primării",
       "count": 1
+    },
+    {
+      "id": "institutie-cultura",
+      "label": "Cultură",
+      "count": 2
     },
     {
       "id": "altele",
@@ -50,13 +56,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-05",
-        "keywords": [
-          "moldova",
-          "direcție",
-          "cultură",
-          "patrimoniu",
-          "dgcpc"
-        ],
+        "keywords": ["moldova", "direcție", "cultură", "patrimoniu", "dgcpc"],
         "quality": "draft"
       },
       "location": {
@@ -66,11 +66,13 @@
       "assets": {
         "main": {
           "type": "horizontal",
-          "color": "/logos/md-dgcpc/Horizontal Color.svg"
+          "color": "/logos/md-dgcpc/Horizontal Color.svg",
+          "preview": "dark"
         },
         "horizontal": {
           "type": "horizontal",
-          "color": "/logos/md-dgcpc/Horizontal Color.svg"
+          "color": "/logos/md-dgcpc/Horizontal Color.svg",
+          "preview": "dark"
         }
       }
     },
@@ -83,11 +85,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "guvern",
-          "executiv"
-        ],
+        "keywords": ["moldova", "guvern", "executiv"],
         "quality": "draft"
       },
       "location": {
@@ -99,28 +97,18 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -169,38 +157,24 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [
-            63,
-            200,
-            244
-          ],
+          "rgb": [63, 200, 244],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -250,6 +224,77 @@
       }
     },
     {
+      "id": "md-mc",
+      "slug": "md-mc",
+      "name": "Ministerul Culturii al Republicii Moldova",
+      "shortname": "Ministerul Culturii",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "minister",
+          "cultură",
+          "arte",
+          "patrimoniu",
+          "mc"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Culturii are în subordine instituții publice concertistice și teatrale, biblioteci, muzee și alte instituții publice.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [14, 76, 144],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mc/horizontal-color.svg",
+          "white": "/logos/md-mc/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mc/horizontal-color.svg",
+          "white": "/logos/md-mc/horizontal-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mc/vertical-color.svg",
+          "white": "/logos/md-mc/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.mc.gov.md/",
+        "contact": {
+          "phone": "+373 (22) 823 801 (Anticamera)",
+          "email": "cancelaria@mc.gov.md"
+        }
+      }
+    },
+    {
       "id": "md-mec",
       "slug": "md-mec",
       "name": "Ministerul Educației și Cercetării al Republicii Moldova",
@@ -258,13 +303,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "educație",
-          "cercetare",
-          "minister",
-          "mec"
-        ],
+        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
         "quality": "verified"
       },
       "location": {
@@ -276,21 +315,14 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -314,6 +346,191 @@
         "website": "https://mec.gov.md/",
         "social_media": {
           "facebook": "https://www.facebook.com/mec.gov.md/"
+        }
+      }
+    },
+    {
+      "id": "md-mioc",
+      "slug": "muzeul-de-istorie-al-orașului-chișinău",
+      "name": "Muzeul de Istorie a Orașului Chișinău",
+      "shortname": "MIOC",
+      "category": "institutie-cultura",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "muzee",
+          "mioc",
+          "turnul de apă",
+          "patrimoniu"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+      "colors": [
+        {
+          "name": "Bronze Pantone 875 C",
+          "hex": "#C49463",
+          "pantone": "875 C",
+          "usage": "primary"
+        },
+        {
+          "name": "Pantone 157 C",
+          "hex": "#E89E5B",
+          "pantone": "157 C",
+          "usage": "secondary"
+        },
+        {
+          "name": "Pantone 7419 C",
+          "hex": "#A45F53",
+          "pantone": "7419 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone 1817 C",
+          "hex": "#642A31",
+          "pantone": "1817 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone WarmGray 3 C",
+          "hex": "#B8B1AA",
+          "pantone": "WarmGray 3 C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Pantone Black C",
+          "hex": "#1A1A1A",
+          "pantone": "Black C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Grey Process Black 25%",
+          "hex": "#AFAFAF",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Process Black 100%",
+          "hex": "#18181B",
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Proxima Nova",
+          "weights": [400, 600, 700]
+        },
+        "secondary": {
+          "family": "Franklin Gothic",
+          "weights": [400, 700]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-mioc/symbol-black.svg",
+          "black": "/logos/md-mioc/symbol-black.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "white": "/logos/md-mioc/Horizontal white.svg",
+          "black": "/logos/md-mioc/Horizontal black.svg",
+          "alternatives": [
+            {
+              "label": "Horizontal White Alternative",
+              "path": "/logos/md-mioc/Horizontal white alternative.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "symbol": {
+          "type": "symbol",
+          "white": "/logos/md-mioc/symbol-white.svg",
+          "black": "/logos/md-mioc/symbol-black.svg"
+        }
+      },
+      "resources": {
+        "branding_manual": "/brandbooks/md-mioc/brandbook-mioc-2025.pdf",
+        "contact": {
+          "phone": "022 241 648",
+          "email": "muzeul.chisinau@gmail.com"
+        }
+      }
+    },
+    {
+      "id": "md-mnam",
+      "slug": "md-mnam",
+      "name": "Muzeul Național de Artă Moldovei",
+      "shortname": "Muzeul de artă",
+      "category": "institutie-cultura",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": ["moldova", "chișinău", "muzeu", "artă", "mnam", "cultură"],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Muzeul Național de Artă al Moldovei, una dintre cele mai prestigioase instituții muzeale din Moldova.",
+      "colors": [
+        {
+          "name": "Green Primary",
+          "hex": "#466838",
+          "usage": "primary"
+        },
+        {
+          "name": "Ivory Secondary",
+          "hex": "#FFFAF6",
+          "usage": "secondary"
+        },
+        {
+          "name": "Charcoal Tertiary",
+          "hex": "#1A1C1F",
+          "usage": "accent"
+        },
+        {
+          "name": "White Tertiary",
+          "hex": "#FFFFFF",
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Cinzel"
+        },
+        "secondary": {
+          "family": "DM Sans"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mnam/Horizontal Color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mnam/Horizontal Color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mnam/Symbol color.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.mnam.md/",
+        "contact": {
+          "address": "31 August 1989 nr. 115, Chișinău, Republica Moldova",
+          "phone": "+373 22 24 13 12",
+          "email": "artmuseum_md@yahoo.com"
         }
       }
     },
@@ -426,11 +643,7 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [
-            255,
-            204,
-            0
-          ],
+          "rgb": [255, 204, 0],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -438,11 +651,7 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [
-            0,
-            51,
-            153
-          ],
+          "rgb": [0, 51, 153],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

@@ -53,7 +53,7 @@ Plans:
 **Success Criteria** (what must be TRUE when complete):
 
 1. All institution ID references in codebase (type guards, validation scripts, generate-index.js) validate and enforce `md-` prefix (not `ro-`)
-2. Existing Romanian institution JSON files removed from data directory; logo directory structure uses `md-{slug}` pattern only
+2. Existing institution JSON files removed from data directory; logo directory structure uses `md-{slug}` pattern only
 3. Institution build validation passes: generate-index.js checks that all institutions match `md-*` pattern; build fails if `ro-` prefix detected
 4. institutions-index.json regenerated and exports valid empty or initial Moldovan institution records; file is ready for owner to add institutions
 5. README updated with Moldova-specific setup instructions and build validation guidance
@@ -63,8 +63,8 @@ Plans:
 Plans:
 
 - [ ] 02-01-PLAN.md — Update Institution type guards and generate-index.js validation for md- prefix (DATA-01)
-- [ ] 02-02-PLAN.md — Delete Romanian institution JSON files from src/data/institutions/ (DATA-02)
-- [ ] 02-03-PLAN.md — Delete Romanian logo directories from public/logos/ (DATA-03)
+- [ ] 02-02-PLAN.md — Delete institution JSON files from src/data/institutions/ (DATA-02)
+- [ ] 02-03-PLAN.md — Delete logo directories from public/logos/ (DATA-03)
 - [ ] 02-04-PLAN.md — Regenerate institutions-index.json and update README (DATA-04, DX-02)
 
 ---

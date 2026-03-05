@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A public open-source platform for easy access to logos of Moldovan public institutions, hosted at identitate.md. Adapted from the Romanian identitate.eu platform, it gives developers and designers a single place to find official SVG logos for government bodies in the Republic of Moldova.
+A public open-source platform for easy access to logos of Moldovan public institutions, hosted at identitate.md. Adapted from the Romanian identitate.md platform, it gives developers and designers a single place to find official SVG logos for government bodies in the Republic of Moldova.
 
 ## Core Value
 
@@ -41,7 +41,7 @@ Any developer can find and use the official logo of any Moldovan public institut
 
 ## Context
 
-Forked from identitate.eu (identitate-ro), a mature Astro 5 + Tailwind + Fuse.js static site. The codebase is well-structured with a clear data layer (JSON institution files), library layer (helpers, cdn-helpers, labels), and page layer (Astro routes). All institution logos will be added manually by the project owner — the platform just needs to be correctly branded and wired for Moldova.
+Forked from identitate.md (identitate-ro), a mature Astro 5 + Tailwind + Fuse.js static site. The codebase is well-structured with a clear data layer (JSON institution files), library layer (helpers, cdn-helpers, labels), and page layer (Astro routes). All institution logos will be added manually by the project owner — the platform just needs to be correctly branded and wired for Moldova.
 
 Current codebase has 33 Romanian institutions that need to be replaced. All IDs follow the `ro-{slug}` pattern which must be updated to `md-{slug}`. Font is currently Public Sans loaded from a local public/ directory; Onest should be loaded from Google Fonts instead.
 
