@@ -23,6 +23,7 @@ const OUTPUT_FILE = join(__dirname, '../src/data/institutions-index.json');
 const CATEGORY_LABELS = {
   'guvern': 'Guvern',
   'minister': 'Ministere',
+  'directie': 'Direcții',
   'primarie': 'Primării',
   'consiliu-judetean': 'Consilii Județene',
   'prefectura': 'Prefecturi',
@@ -34,7 +35,7 @@ const CATEGORY_LABELS = {
 };
 
 const CATEGORY_ORDER = [
-  'guvern', 'minister', 'agentie', 'autoritate',
+  'guvern', 'minister', 'directie', 'agentie', 'autoritate',
   'primarie', 'consiliu-judetean', 'prefectura',
   'proiect-ue', 'institutie-cultura', 'altele',
 ];

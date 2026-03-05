@@ -21,9 +21,9 @@ const __dirname = dirname(__filename);
 
 const LOGOS_DIR = join(__dirname, "../logos");
 const OUTPUT_FILE = join(__dirname, "../index.json");
+const WEBSITE_INSTITUTIONS_DIR = join(__dirname, "../../../website/src/data/institutions");
 
 const VALID_LAYOUTS = ["horizontal", "vertical", "symbol"];
-const VALID_VARIANTS = ["color", "white", "black", "monochrome", "dark_mode"];
 
 // Map variant aliases to canonical names
 const VARIANT_ALIASES = {
@@ -71,19 +71,92 @@ function detectLayout(filename) {
   return "horizontal";
 }
 
+function getCandidateScore(file, layout, variant, source) {
+  const name = file.replace(/\.(svg|png)$/i, "").toLowerCase();
+  let score = source === "layoutDir" ? 100 : 0;
+
+  if (name === variant) score += 100;
+  if (variant === "color" && name === layout) score += 95;
+
+  if (
+    name === `${layout}-${variant}` ||
+    name === `${layout}_${variant}` ||
+    name === `${layout} ${variant}`
+  ) {
+    score += 90;
+  }
+
+  if (
+    name.endsWith(`-${variant}`) ||
+    name.endsWith(`_${variant}`) ||
+    name.endsWith(` ${variant}`)
+  ) {
+    score += 35;
+  }
+
+  if (name.includes(variant)) score += 10;
+  if (name.includes("alternative") || name.includes("alternativ")) score -= 80;
+  if (/(?:-|_| )\d+$/.test(name)) score -= 30;
+
+  return score;
+}
+
 function generateIndex() {
   const institutions = [];
+  const institutionNameMap = new Map();
+
+  // Încarcă nume instituții din website/src/data/institutions/*.json
+  if (existsSync(WEBSITE_INSTITUTIONS_DIR)) {
+    const jsonFiles = readdirSync(WEBSITE_INSTITUTIONS_DIR)
+      .filter((f) => f.endsWith(".json"))
+      .sort((a, b) => a.localeCompare(b));
+
+    for (const file of jsonFiles) {
+      try {
+        const fileBase = file.replace(/\.json$/i, "");
+        const jsonPath = join(WEBSITE_INSTITUTIONS_DIR, file);
+        const data = JSON.parse(readFileSync(jsonPath, "utf8"));
+        const officialName = data?.name;
+        if (!officialName) continue;
+
+        institutionNameMap.set(fileBase, officialName);
+        if (data.id) institutionNameMap.set(data.id, officialName);
+        if (data.slug) institutionNameMap.set(data.slug, officialName);
+      } catch (_err) {
+        // Ignorăm fișierele invalide, păstrăm fallback-ul din slug
+      }
+    }
+  }
 
   // Citește toate directoarele din logos/
-  const slugs = readdirSync(LOGOS_DIR).filter((item) => {
-    const itemPath = join(LOGOS_DIR, item);
-    return statSync(itemPath).isDirectory();
-  });
+  const slugs = readdirSync(LOGOS_DIR)
+    .filter((item) => {
+      const itemPath = join(LOGOS_DIR, item);
+      return statSync(itemPath).isDirectory();
+    })
+    .sort((a, b) => a.localeCompare(b));
 
   for (const slug of slugs) {
     const institutionDir = join(LOGOS_DIR, slug);
-    const entries = readdirSync(institutionDir);
+    const entries = readdirSync(institutionDir).sort((a, b) => a.localeCompare(b));
     const logos = {};
+    const selected = {};
+
+    const setBestLogo = (layout, variant, file, outputPath, source) => {
+      const score = getCandidateScore(file, layout, variant, source);
+      const key = `${layout}:${variant}`;
+      const current = selected[key];
+      const shouldReplace =
+        !current ||
+        score > current.score ||
+        (score === current.score && file.localeCompare(current.file) < 0);
+
+      if (!shouldReplace) return;
+
+      selected[key] = { score, file };
+      if (!logos[layout]) logos[layout] = {};
+      logos[layout][variant] = outputPath;
+    };
 
     // 1. Scanează subdirectoare layout (horizontal/, vertical/, symbol/)
     for (const layout of VALID_LAYOUTS) {
@@ -91,15 +164,19 @@ function generateIndex() {
       if (!existsSync(layoutDir) || !statSync(layoutDir).isDirectory())
         continue;
 
-      const files = readdirSync(layoutDir).filter(
-        (f) => f.endsWith(".svg") || f.endsWith(".png"),
-      );
+      const files = readdirSync(layoutDir)
+        .filter((f) => f.endsWith(".svg") || f.endsWith(".png"))
+        .sort((a, b) => a.localeCompare(b));
       if (files.length === 0) continue;
-
-      logos[layout] = {};
       for (const file of files) {
         const variant = detectVariant(file);
-        logos[layout][variant] = `/logos/${slug}/${layout}/${file}`;
+        setBestLogo(
+          layout,
+          variant,
+          file,
+          `/logos/${slug}/${layout}/${file}`,
+          "layoutDir",
+        );
       }
     }
 
@@ -112,29 +189,17 @@ function generateIndex() {
     for (const file of flatFiles) {
       const layout = detectLayout(file);
       const variant = detectVariant(file);
-      if (!logos[layout]) logos[layout] = {};
-      // Nu suprascrie dacă deja avem din subdirectoare
-      if (!logos[layout][variant]) {
-        logos[layout][variant] = `/logos/${slug}/${file}`;
-      }
+      setBestLogo(layout, variant, file, `/logos/${slug}/${file}`, "flat");
     }
 
-    // Încarcă numele din JSON dacă există
-    let name = slug
+    // Încarcă numele oficial din datele website; fallback la slug
+    let name =
+      institutionNameMap.get(slug) ||
+      slug
       .replace(/^ro-/, "")
       .split("-")
       .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
       .join(" ");
-    try {
-      const jsonPath = join(
-        __dirname,
-        `../../../website/src/data/institutions/${slug}.json`,
-      );
-      const data = JSON.parse(readFileSync(jsonPath, "utf8"));
-      name = data.name;
-    } catch (err) {
-      // Fallback la numele generat din slug
-    }
 
     const logoCount = Object.values(logos).reduce(
       (sum, layout) => sum + Object.keys(layout).length,

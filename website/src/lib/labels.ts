@@ -7,6 +7,7 @@
 export const CATEGORY_LABELS: Record<string, string> = {
   'guvern': 'Guvern',
   'minister': 'Ministere',
+  'directie': 'Direcții',
   'primarie': 'Primării',
   'consiliu-judetean': 'Consilii Județene',
   'prefectura': 'Prefecturi',
@@ -21,6 +22,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
 export const CATEGORY_LABELS_SINGULAR: Record<string, string> = {
   'guvern': 'Guvern',
   'minister': 'Minister',
+  'directie': 'Direcție',
   'primarie': 'Primărie',
   'consiliu-judetean': 'Consiliu Județean',
   'prefectura': 'Prefectură',
@@ -34,6 +36,7 @@ export const CATEGORY_LABELS_SINGULAR: Record<string, string> = {
 export const CATEGORY_ORDER = [
   'guvern',
   'minister',
+  'directie',
   'agentie',
   'autoritate',
   'primarie',

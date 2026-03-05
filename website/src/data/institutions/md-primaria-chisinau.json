@@ -15,6 +15,41 @@
     "city": "Chișinău"
   },
   "description": "Autoritatea administrației publice locale a municipiului Chișinău.",
+  "colors": [
+    {
+      "name": "Primary Color",
+      "hex": "#D5CEC3",
+      "usage": "primary"
+    },
+    {
+      "name": "Secondary Color (Blue)",
+      "hex": "#4756B4",
+      "usage": "secondary"
+    },
+    {
+      "name": "Secondary Color (Black)",
+      "hex": "#000000",
+      "usage": "secondary"
+    },
+    {
+      "name": "Tertiary Color (Red)",
+      "hex": "#C8243B",
+      "usage": "accent"
+    },
+    {
+      "name": "Tertiary Color (Yellow)",
+      "hex": "#F6DB16",
+      "usage": "accent"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Georgia"
+    },
+    "secondary": {
+      "family": "Railway"
+    }
+  },
   "assets": {
     "main": {
       "type": "symbol",
@@ -22,7 +57,7 @@
     },
     "horizontal": {
       "type": "horizontal",
-      "white": "/logos/md-primaria-chisinau/horizontal-white.svg"
+      "color": "/logos/md-primaria-chisinau/horizontal-white.svg"
     },
     "symbol": {
       "type": "symbol",
@@ -30,6 +65,10 @@
     }
   },
   "resources": {
-    "website": "https://www.chisinau.md/"
+    "website": "https://www.chisinau.md/",
+    "contact": {
+      "phone": "022 201 515",
+      "email": "primaria@pmc.md"
+    }
   }
 }

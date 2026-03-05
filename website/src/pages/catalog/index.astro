@@ -14,7 +14,7 @@ import {
 import type { Institution } from '../../types/institution';
 
 const CATEGORY_ORDER = [
-  'guvern', 'minister', 'agentie', 'autoritate', 'primarie',
+  'guvern', 'minister', 'directie', 'agentie', 'autoritate', 'primarie',
   'consiliu-judetean', 'prefectura', 'proiect-ue', 'institutie-cultura', 'altele',
 ];
 
@@ -239,6 +239,17 @@ function toLocalLogosPath(path) {
   return m?.[1] || '';
 }
 
+function shouldUseDarkPreview(inst, layout, variant, path) {
+  if (variant === 'white') return true;
+  const localPath = toLocalLogosPath(path);
+  return (
+    inst?.slug === 'md-primaria-chisinau' &&
+    layout === 'horizontal' &&
+    variant === 'color' &&
+    localPath === '/logos/md-primaria-chisinau/horizontal-white.svg'
+  );
+}
+
 function getCdnLogoUrl(inst) {
   const main = inst.assets?.main;
   if (!main) return null;
@@ -322,15 +333,15 @@ const ICONS = {
 };
 
 // ─── HTML Builders ────────────────────────────────────────────────────────────
-function buildVariantCard(inst, variant, path, layoutLabel, customLabel = '', customPreview = '') {
-  const isWhite = variant === 'white';
+function buildVariantCard(inst, layout, variant, path, layoutLabel, customLabel = '', customPreview = '') {
+  const useDarkPreview = shouldUseDarkPreview(inst, layout, variant, path);
   const isDark = variant === 'dark_mode';
   const label = customLabel || VARIANT_LABELS[variant] || variant;
   const bg = customPreview === 'dark'
     ? 'bg-gray-800'
     : customPreview === 'checkerboard-dark'
       ? 'checkerboard-dark'
-      : isWhite
+      : useDarkPreview
         ? 'bg-gray-800'
         : isDark
           ? 'checkerboard-dark'
@@ -453,13 +464,14 @@ function buildDetail(inst) {
     for (const variant of ['color', 'dark_mode', 'white', 'black', 'monochrome']) {
       const p = group[variant];
       if (!p) continue;
-      cards += buildVariantCard(inst, variant, resolveUrl(p), layoutLabel);
+      cards += buildVariantCard(inst, layout, variant, resolveUrl(p), layoutLabel);
     }
     if (Array.isArray(group.alternatives)) {
       for (const alt of group.alternatives) {
         if (!alt?.path) continue;
         alternativeCards += buildVariantCard(
           inst,
+          layout,
           'custom',
           resolveUrl(alt.path),
           layoutLabel,

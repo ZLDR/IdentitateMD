@@ -1,16 +1,17 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-05T14:56:05.145Z",
-  "total": 5,
+  "generatedAt": "2026-03-05T15:19:55.630Z",
+  "total": 6,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
+      "directie": 1,
       "minister": 2,
       "primarie": 1
     },
     "withManual": 0,
-    "withSvg": 5
+    "withSvg": 6
   },
   "categories": [
     {
@@ -24,6 +25,11 @@
       "count": 2
     },
     {
+      "id": "directie",
+      "label": "Direcții",
+      "count": 1
+    },
+    {
       "id": "primarie",
       "label": "Primării",
       "count": 1
@@ -35,6 +41,39 @@
     }
   ],
   "institutions": [
+    {
+      "id": "md-dgcpc",
+      "slug": "md-dgcpc",
+      "name": "Direcția Generală Cultură și Patrimoniu Cultural",
+      "shortname": "dgcpc",
+      "category": "directie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "direcție",
+          "cultură",
+          "patrimoniu",
+          "dgcpc"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD"
+      },
+      "description": "Direcție responsabilă de coordonarea domeniilor culturii și patrimoniului cultural.",
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-dgcpc/Horizontal Color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-dgcpc/Horizontal Color.svg"
+        }
+      }
+    },
     {
       "id": "md-guvern",
       "slug": "guvern",
@@ -301,6 +340,41 @@
         "city": "Chișinău"
       },
       "description": "Autoritatea administrației publice locale a municipiului Chișinău.",
+      "colors": [
+        {
+          "name": "Primary Color",
+          "hex": "#D5CEC3",
+          "usage": "primary"
+        },
+        {
+          "name": "Secondary Color (Blue)",
+          "hex": "#4756B4",
+          "usage": "secondary"
+        },
+        {
+          "name": "Secondary Color (Black)",
+          "hex": "#000000",
+          "usage": "secondary"
+        },
+        {
+          "name": "Tertiary Color (Red)",
+          "hex": "#C8243B",
+          "usage": "accent"
+        },
+        {
+          "name": "Tertiary Color (Yellow)",
+          "hex": "#F6DB16",
+          "usage": "accent"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Georgia"
+        },
+        "secondary": {
+          "family": "Railway"
+        }
+      },
       "assets": {
         "main": {
           "type": "symbol",
@@ -308,7 +382,7 @@
         },
         "horizontal": {
           "type": "horizontal",
-          "white": "/logos/md-primaria-chisinau/horizontal-white.svg"
+          "color": "/logos/md-primaria-chisinau/horizontal-white.svg"
         },
         "symbol": {
           "type": "symbol",
@@ -316,7 +390,11 @@
         }
       },
       "resources": {
-        "website": "https://www.chisinau.md/"
+        "website": "https://www.chisinau.md/",
+        "contact": {
+          "phone": "022 201 515",
+          "email": "primaria@pmc.md"
+        }
       }
     },
     {

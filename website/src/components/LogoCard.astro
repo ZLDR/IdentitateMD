@@ -22,6 +22,8 @@ const { slug, catalogPath, name, shortname, category, logoPath, hasSvg, keywords
 
 const displayName = name;
 const localFallbackPath = toLocalLogosPath(logoPath);
+const imageSrc = localFallbackPath || logoPath;
+const remoteFallbackPath = localFallbackPath && logoPath !== localFallbackPath ? logoPath : null;
 ---
 
 <a
@@ -34,12 +36,12 @@ const localFallbackPath = toLocalLogosPath(logoPath);
   <div class="checkerboard aspect-square rounded-t flex items-center justify-center p-4 sm:p-6 overflow-hidden relative">
 
     <img
-      src={logoPath}
-      data-local-fallback={localFallbackPath ?? undefined}
+      src={imageSrc}
+      data-remote-fallback={remoteFallbackPath ?? undefined}
       alt={`Logo ${name}`}
       class="max-w-full max-h-full object-contain transition-transform duration-200 group-hover:scale-105"
       loading="lazy"
-      onerror="const fb=this.dataset.localFallback; if (fb) { try { const target = new URL(fb, window.location.origin).href; if (this.src !== target) { this.src = target; return; } } catch {} } this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      onerror="const fb=this.dataset.remoteFallback; if (fb && this.src !== fb) { this.src = fb; return; } this.style.display='none'; this.nextElementSibling.style.display='flex';"
     />
     <!-- Fallback -->
     <div 

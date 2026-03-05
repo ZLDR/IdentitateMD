@@ -20,6 +20,7 @@
 export type InstitutionCategory =
   | 'guvern'
   | 'minister'
+  | 'directie'
   | 'primarie'
   | 'consiliu-judetean'
   | 'prefectura'
