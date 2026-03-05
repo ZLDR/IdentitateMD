@@ -1,7 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import institutionIndex from '../data/institutions-index.json';
-import { resolveAssetPath, CDN_VERSION } from '../lib/cdn-helpers';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import institutionIndex from '../../data/institutions-index.json';
+import { resolveAssetPath, CDN_VERSION } from '../../lib/cdn-helpers';
+import { buildCatalogPathMap } from '../../lib/helpers';
 import {
   CATEGORY_LABELS,
   CATEGORY_LABELS_SINGULAR,
@@ -9,8 +10,8 @@ import {
   LOGO_VARIANT_LABELS,
   COLOR_USAGE_LABELS,
   QUALITY_LABELS,
-} from '../lib/labels';
-import type { Institution } from '../types/institution';
+} from '../../lib/labels';
+import type { Institution } from '../../types/institution';
 
 const CATEGORY_ORDER = [
   'guvern', 'minister', 'agentie', 'autoritate', 'primarie',
@@ -18,6 +19,14 @@ const CATEGORY_ORDER = [
 ];
 
 const allInstitutions = institutionIndex.institutions as unknown as Institution[];
+const catalogPathBySlug = buildCatalogPathMap(allInstitutions);
+const slugByCatalogPath = Object.fromEntries(
+  Object.entries(catalogPathBySlug).map(([slug, pathId]) => [pathId, slug])
+);
+for (const inst of allInstitutions) {
+  slugByCatalogPath[inst.slug] = inst.slug;
+}
+const { initialPathId = '' } = Astro.props;
 
 const categories = CATEGORY_ORDER
   .map(value => ({
@@ -41,6 +50,8 @@ const logoLayoutLabelsJson = JSON.stringify(LOGO_LAYOUT_LABELS);
 const logoVariantLabelsJson = JSON.stringify(LOGO_VARIANT_LABELS);
 const colorUsageLabelsJson = JSON.stringify(COLOR_USAGE_LABELS);
 const qualityLabelsJson = JSON.stringify(QUALITY_LABELS);
+const catalogPathBySlugJson = JSON.stringify(catalogPathBySlug);
+const slugByCatalogPathJson = JSON.stringify(slugByCatalogPath);
 const cdnVersion = CDN_VERSION;
 ---
 
@@ -116,13 +127,13 @@ const cdnVersion = CDN_VERSION;
             </div>
             {institutionsByCategory[cat.value].map((inst: Institution) => {
               const logoSrc = inst.assets?.main?.color
-                ? `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}${inst.assets.main.color}`
+                ? resolveAssetPath(inst.assets.main.color, false)
                 : null;
               return (
-                <button
-                  type="button"
+                <a
+                  href={`/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`}
                   data-institution-btn={inst.slug}
-                  class="institution-btn w-full text-left px-3 py-2 hover:bg-surface-50 transition-colors flex items-center gap-2 group"
+                  class="institution-btn block w-full text-left px-3 py-2 hover:bg-surface-50 transition-colors flex items-center gap-2 group"
                   data-name={`${inst.name} ${inst.shortname || ''}`}
                   data-category={inst.category}
                 >
@@ -135,7 +146,7 @@ const cdnVersion = CDN_VERSION;
                   <span class="truncate text-sm text-surface-700 group-hover:text-primary-700">
                     {inst.shortname?.toUpperCase() || inst.name}
                   </span>
-                </button>
+                </a>
               );
             })}
           </div>
@@ -165,6 +176,9 @@ const cdnVersion = CDN_VERSION;
   logoVariantLabelsJson,
   colorUsageLabelsJson,
   qualityLabelsJson,
+  catalogPathBySlugJson,
+  slugByCatalogPathJson,
+  initialPathId,
   cdnVersion,
 }}>
 // ─── Bootstrap ──────────────────────────────────────────────────────────────
@@ -174,6 +188,8 @@ const LAYOUT_LABELS  = JSON.parse(logoLayoutLabelsJson);
 const VARIANT_LABELS = JSON.parse(logoVariantLabelsJson);
 const USAGE_LABELS   = JSON.parse(colorUsageLabelsJson);
 const QUALITY_LABELS = JSON.parse(qualityLabelsJson);
+const PATH_BY_SLUG   = JSON.parse(catalogPathBySlugJson);
+const SLUG_BY_PATH   = JSON.parse(slugByCatalogPathJson);
 
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}`;
 const SITE = 'https://identitate.eu';
@@ -216,6 +232,13 @@ function resolveUrl(path) {
   return `${SITE}${path}`;
 }
 
+function toLocalLogosPath(path) {
+  if (!path) return '';
+  if (path.startsWith('/logos/')) return path;
+  const m = String(path).match(/^https?:\/\/(?:cdn\.jsdelivr\.net\/npm\/@identitate-md\/logos@[^/]+|unpkg\.com\/@identitate-md\/logos@[^/]+)(\/logos\/.+)$/i);
+  return m?.[1] || '';
+}
+
 function getCdnLogoUrl(inst) {
   const main = inst.assets?.main;
   if (!main) return null;
@@ -246,6 +269,18 @@ function getDownloadables(inst) {
       const p = group[variant];
       if (!p) continue;
       assets.push({ label: `${layout}-${variant}`, format: 'svg', path: resolveUrl(p), layout, variant });
+    }
+    if (Array.isArray(group.alternatives)) {
+      for (const alt of group.alternatives) {
+        if (!alt?.path) continue;
+        assets.push({
+          label: `${layout}-${alt.label || 'alternative'}`,
+          format: 'svg',
+          path: resolveUrl(alt.path),
+          layout,
+          variant: 'custom',
+        });
+      }
     }
     if (group.png?.path) {
       assets.push({ label: `${layout}-png`, format: 'png', path: resolveUrl(group.png.path), layout, variant: 'png', width: group.png.width, height: group.png.height });
@@ -287,16 +322,27 @@ const ICONS = {
 };
 
 // ─── HTML Builders ────────────────────────────────────────────────────────────
-function buildVariantCard(inst, variant, path, layoutLabel) {
+function buildVariantCard(inst, variant, path, layoutLabel, customLabel = '', customPreview = '') {
   const isWhite = variant === 'white';
-  const isDark  = variant === 'dark_mode';
-  const label   = VARIANT_LABELS[variant] || variant;
-  const bg      = isWhite ? 'bg-gray-800' : isDark ? 'checkerboard-dark' : 'checkerboard';
+  const isDark = variant === 'dark_mode';
+  const label = customLabel || VARIANT_LABELS[variant] || variant;
+  const bg = customPreview === 'dark'
+    ? 'bg-gray-800'
+    : customPreview === 'checkerboard-dark'
+      ? 'checkerboard-dark'
+      : isWhite
+        ? 'bg-gray-800'
+        : isDark
+          ? 'checkerboard-dark'
+          : 'checkerboard';
+  const fallbackPath = toLocalLogosPath(path);
   return `
     <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
       <div class="aspect-[3/2] flex items-center justify-center p-6 ${bg}">
         <img src="${escHtml(path)}" alt="Logo ${escHtml(inst.name)} — ${escHtml(layoutLabel)} ${escHtml(label)}"
-             class="max-w-full max-h-full object-contain" loading="lazy" decoding="async" />
+             class="max-w-full max-h-full object-contain" loading="lazy" decoding="async"
+             data-local-fallback="${escHtml(fallbackPath)}"
+             onerror="const fb=this.dataset.localFallback; if (fb && this.src !== window.location.origin + fb && this.src !== fb) { this.src=fb; return; } this.style.display='none';" />
       </div>
       <div class="p-2 bg-white flex items-center justify-between">
         <div>
@@ -374,6 +420,27 @@ function buildDetail(inst) {
   const downloadables = getDownloadables(inst);
   const catLabel    = CATEGORY_LABELS_SINGULAR[inst.category] || inst.category;
   const qualityInfo = inst.meta?.quality ? QUALITY_LABELS[inst.meta.quality] : null;
+  const locationLabel = [inst.location?.city, inst.location?.county].filter(Boolean).join(', ');
+
+  const contactLineHtml = (locationLabel || inst.resources?.contact?.phone || inst.resources?.contact?.email) ? `
+    <div class="text-xs text-surface-400 flex flex-wrap items-center gap-3">
+      ${locationLabel ? `
+      <span class="inline-flex items-center gap-1">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        ${escHtml(locationLabel)}
+      </span>` : ''}
+      ${inst.resources?.contact?.phone ? `
+      <button type="button" class="copy-contact-btn inline-flex items-center gap-1 hover:text-primary-600 transition-colors" data-value="${escHtml(inst.resources.contact.phone)}" title="Copiază numărul de telefon">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.684l1.5 4.5a1 1 0 01-.502 1.21l-2.257 1.128a11.042 11.042 0 005.266 5.266l1.128-2.257a1 1 0 011.21-.502l4.5 1.5A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        ${escHtml(inst.resources.contact.phone)}
+      </button>` : ''}
+      ${inst.resources?.contact?.email ? `
+      <button type="button" class="copy-contact-btn inline-flex items-center gap-1 hover:text-primary-600 transition-colors" data-value="${escHtml(inst.resources.contact.email)}" title="Copiază adresa email">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-16 8h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+        ${escHtml(inst.resources.contact.email)}
+      </button>` : ''}
+    </div>
+  ` : '';
 
   // ── Logo sections ──────────────────────────────────────────────────────────
   let logoSectionsHtml = '';
@@ -382,17 +449,35 @@ function buildDetail(inst) {
     if (!group) continue;
     const layoutLabel = LAYOUT_LABELS[layout] || layout;
     let cards = '';
+    let alternativeCards = '';
     for (const variant of ['color', 'dark_mode', 'white', 'black', 'monochrome']) {
       const p = group[variant];
       if (!p) continue;
       cards += buildVariantCard(inst, variant, resolveUrl(p), layoutLabel);
     }
+    if (Array.isArray(group.alternatives)) {
+      for (const alt of group.alternatives) {
+        if (!alt?.path) continue;
+        alternativeCards += buildVariantCard(
+          inst,
+          'custom',
+          resolveUrl(alt.path),
+          layoutLabel,
+          alt.label || 'Alternative',
+          alt.preview || ''
+        );
+      }
+    }
     if (group.png?.path) cards += buildPngCard(inst, group, layoutLabel);
-    if (!cards) continue;
+    if (!cards && !alternativeCards) continue;
     logoSectionsHtml += `
       <div class="mb-6">
         <h3 class="text-sm font-medium text-primary-800 mb-3">${escHtml(layoutLabel)}</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">${cards}</div>
+        ${cards ? `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">${cards}</div>` : ''}
+        ${alternativeCards ? `
+          <h4 class="text-xs font-semibold uppercase tracking-wide text-surface-500 mt-4 mb-2">Alternative</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">${alternativeCards}</div>
+        ` : ''}
       </div>`;
   }
 
@@ -537,11 +622,7 @@ function buildDetail(inst) {
               ${qualityInfo ? `<span class="px-2 py-0.5 rounded text-xs" style="background:${qualityInfo.bg || '#f1f5f9'};color:${qualityInfo.color || '#64748b'}">${escHtml(qualityInfo.label || inst.meta.quality)}</span>` : ''}
             </div>
             ${inst.description ? `<p class="text-sm text-surface-500 mb-2">${escHtml(inst.description)}</p>` : ''}
-            ${inst.location?.city || inst.location?.county ? `
-              <p class="text-xs text-surface-400 flex items-center gap-1">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                ${escHtml([inst.location.city, inst.location.county].filter(Boolean).join(', '))}
-              </p>` : ''}
+            ${contactLineHtml}
             ${inst.usage_notes ? `<div class="mt-3 p-3 bg-amber-50 border border-amber-200 rounded text-xs text-amber-800"><strong>Note de utilizare:</strong> ${escHtml(inst.usage_notes)}</div>` : ''}
           </div>
           ${primaryLogo ? `
@@ -618,11 +699,30 @@ function setActiveInstitution(slug) {
   activeBtn?.scrollIntoView({ block: 'nearest' });
 }
 
+function getPathIdFromUrl() {
+  const m = window.location.pathname.match(/^\/catalog\/([^/?#]+)/);
+  return m?.[1] ? decodeURIComponent(m[1]) : '';
+}
+
+function resolveSlugFromPathId(pathId) {
+  if (!pathId) return null;
+  return SLUG_BY_PATH[pathId] || (bySlug[pathId] ? pathId : null);
+}
+
+function syncUrlForSlug(slug, replace = false) {
+  if (!slug) return;
+  const pathId = PATH_BY_SLUG[slug] || slug;
+  const nextPath = `/catalog/${encodeURIComponent(pathId)}`;
+  if (window.location.pathname === nextPath) return;
+  window.history[replace ? 'replaceState' : 'pushState']({ slug }, '', nextPath);
+}
+
 // ─── Load institution detail ──────────────────────────────────────────────────
-function loadInstitution(slug) {
+function loadInstitution(slug, options = { updateUrl: false, replace: false }) {
   const inst = bySlug[slug];
   if (!inst || !detail) return;
   setActiveInstitution(slug);
+  if (options.updateUrl) syncUrlForSlug(slug, options.replace);
   detail.innerHTML = buildDetail(inst);
   if (placeholder) placeholder.classList.add('hidden');
   detail.classList.remove('hidden');
@@ -647,7 +747,7 @@ function wireDetail() {
     });
   });
   // Copy: color / code snippets
-  detail.querySelectorAll('.copy-color-btn, .copy-code-btn').forEach(btn => {
+  detail.querySelectorAll('.copy-color-btn, .copy-code-btn, .copy-contact-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
       const val = btn.dataset.value || '';
       // decode HTML entities back to plain text
@@ -756,12 +856,22 @@ categoryBtns.forEach(btn => {
     // Auto-load first visible institution in selected category
     const firstVisible = [...document.querySelectorAll('.institution-btn')]
       .find(b => !b.classList.contains('hidden'));
-    if (firstVisible) loadInstitution(firstVisible.dataset.institutionBtn);
+    if (firstVisible) loadInstitution(firstVisible.dataset.institutionBtn, { updateUrl: true, replace: false });
   });
 });
 
 institutionBtns.forEach(btn => {
-  btn.addEventListener('click', () => loadInstitution(btn.dataset.institutionBtn));
+  btn.addEventListener('click', (event) => {
+    const isPlainLeftClick = event.button === 0
+      && !event.metaKey
+      && !event.ctrlKey
+      && !event.shiftKey
+      && !event.altKey;
+    if (isPlainLeftClick) {
+      event.preventDefault();
+      loadInstitution(btn.dataset.institutionBtn, { updateUrl: true, replace: false });
+    }
+  });
 });
 
 if (searchInput) {
@@ -796,8 +906,9 @@ if (searchClear) {
 // ─── Initialise ───────────────────────────────────────────────────────────────
 (function init() {
   const params = new URLSearchParams(window.location.search);
-  const startSlug = params.get('institution');
-  const startCat  = params.get('categorie');
+  const slugFromPath = resolveSlugFromPathId(initialPathId || getPathIdFromUrl());
+  const startSlug = slugFromPath || params.get('institution');
+  const startCat  = params.get('categorie') || (startSlug ? bySlug[startSlug]?.category : null);
 
   // Activate first category or requested one
   const firstCat = startCat
@@ -810,8 +921,19 @@ if (searchClear) {
   // Load starting institution
   const slugToLoad = startSlug
     || document.querySelector('.institution-btn:not(.hidden)')?.dataset.institutionBtn;
-  if (slugToLoad) loadInstitution(slugToLoad);
+  if (slugToLoad) loadInstitution(slugToLoad, { updateUrl: false, replace: false });
   else if (placeholder) { placeholder.classList.remove('hidden'); placeholder.style.display = 'flex'; }
+
+  window.addEventListener('popstate', () => {
+    const popSlug = resolveSlugFromPathId(getPathIdFromUrl());
+    if (popSlug && bySlug[popSlug]) {
+      if (bySlug[popSlug]?.category !== currentCategory) {
+        setActiveCategory(bySlug[popSlug].category);
+        applySortAndFilter(searchInput?.value);
+      }
+      loadInstitution(popSlug, { updateUrl: false, replace: false });
+    }
+  });
 })();
 </script>
 

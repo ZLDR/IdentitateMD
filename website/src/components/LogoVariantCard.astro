@@ -6,30 +6,42 @@ import { LOGO_VARIANT_LABELS } from '../lib/labels';
 import { toLocalLogosPath } from '../lib/cdn-helpers';
 
 interface Props {
-  variant: string;
+  variantKey?: string;
+  label?: string;
   path: string;
   layoutLabel: string;
   institutionName: string;
+  preview?: 'checkerboard' | 'dark';
   isPng?: boolean;
   width?: number;
   height?: number;
 }
 
-const { variant, path, layoutLabel, institutionName, isPng = false, width, height } = Astro.props;
+const {
+  variantKey,
+  label,
+  path,
+  layoutLabel,
+  institutionName,
+  preview = 'checkerboard',
+  isPng = false,
+  width,
+  height,
+} = Astro.props;
 
-const isWhiteVariant = variant === 'white';
+const effectiveLabel = label || (variantKey ? (LOGO_VARIANT_LABELS[variantKey] || variantKey) : '');
 const localFallbackPath = toLocalLogosPath(path);
 ---
 
 <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
   <div class:list={[
     "aspect-[3/2] flex items-center justify-center p-6",
-    isWhiteVariant ? 'bg-gray-800' : 'checkerboard'
+    preview === 'dark' ? 'bg-gray-800' : 'checkerboard'
   ]}>
     <img
       src={path}
       data-local-fallback={localFallbackPath ?? undefined}
-      alt={`Logo ${institutionName} — ${layoutLabel} ${isPng ? 'PNG' : LOGO_VARIANT_LABELS[variant] || variant}`}
+      alt={`Logo ${institutionName} — ${layoutLabel} ${isPng ? 'PNG' : effectiveLabel}`}
       class="max-w-full max-h-full object-contain"
       loading="lazy"
       decoding="async"
@@ -39,7 +51,7 @@ const localFallbackPath = toLocalLogosPath(path);
   <div class="p-2 bg-white flex items-center justify-between">
     <div>
       <span class="text-xs font-medium text-primary-900">
-        {isPng ? 'PNG' : LOGO_VARIANT_LABELS[variant] || variant}
+        {isPng ? 'PNG' : effectiveLabel}
       </span>
       {isPng && width && height && (
         <span class="text-[11px] text-surface-400 ml-1">{width} × {height}px</span>

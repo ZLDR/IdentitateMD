@@ -1,4 +1,5 @@
 ---
+import CatalogPage from './index.astro';
 import institutionIndex from '../../data/institutions-index.json';
 import { buildCatalogPathMap } from '../../lib/helpers';
 import type { Institution } from '../../types/institution';
@@ -6,14 +7,20 @@ import type { Institution } from '../../types/institution';
 export async function getStaticPaths() {
   const institutions = institutionIndex.institutions as unknown as Institution[];
   const catalogPathBySlug = buildCatalogPathMap(institutions);
+  const ids = new Set<string>();
 
-  return institutions.map((inst) => ({
-    params: { id: inst.slug },
-    props: { redirectTo: `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}` },
+  for (const inst of institutions) {
+    ids.add(catalogPathBySlug[inst.slug] || inst.slug);
+    ids.add(inst.slug);
+  }
+
+  return [...ids].map((id) => ({
+    params: { id },
+    props: { initialPathId: id },
   }));
 }
 
-const { redirectTo } = Astro.props;
-
-return Astro.redirect(redirectTo, 301);
+const { initialPathId } = Astro.props;
 ---
+
+<CatalogPage initialPathId={initialPathId} />

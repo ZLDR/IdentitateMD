@@ -9,6 +9,7 @@ import { toLocalLogosPath } from '../lib/cdn-helpers';
 
 export interface Props {
   slug: string;
+  catalogPath?: string;
   name: string;
   shortname?: string;
   category: string;
@@ -17,14 +18,14 @@ export interface Props {
   keywords?: string[];
 }
 
-const { slug, name, shortname, category, logoPath, hasSvg, keywords } = Astro.props;
+const { slug, catalogPath, name, shortname, category, logoPath, hasSvg, keywords } = Astro.props;
 
 const displayName = name;
 const localFallbackPath = toLocalLogosPath(logoPath);
 ---
 
 <a
-  href={`/institution/${slug}`}
+  href={`/catalog/${catalogPath || slug}`}
   class="logo-card text-left group"
   aria-label={`Vezi detalii pentru ${name}`}
   data-institution-id={slug}

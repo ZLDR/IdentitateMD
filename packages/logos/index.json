@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-05T12:55:49.913Z",
+  "generated": "2026-03-05T13:17:29.947Z",
   "count": 4,
   "totalLogos": 14,
   "institutions": [
@@ -46,7 +46,7 @@
       "logoCount": 5,
       "logos": {
         "horizontal": {
-          "color": "/logos/md-mae/horizontal-color.svg",
+          "color": "/logos/md-mae/Horizontal Alternative Color.svg",
           "white": "/logos/md-mae/horizontal-white.svg"
         },
         "symbol": {

@@ -18,11 +18,20 @@ export interface DownloadableAsset {
   /** Layout-ul logo-ului */
   layout: LogoLayout;
   /** Varianta cromatică */
-  variant: LogoColorVariant | 'png';
+  variant: LogoColorVariant | 'png' | 'custom';
   /** Dimensiuni (doar PNG) */
   width?: number;
   height?: number;
 }
+
+export interface LogoVariantView {
+  key: string;
+  label: string;
+  path: string;
+  preview: 'checkerboard' | 'dark';
+}
+
+type InstitutionPathFields = Pick<Institution, 'slug' | 'shortname'>;
 
 // ─── Funcții ─────────────────────────────────────
 
@@ -101,6 +110,19 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
         variant,
       });
     }
+
+    // Custom alternatives
+    for (const alt of group.alternatives || []) {
+      const altPath = resolveAssetPath(alt.path, true);
+      if (!altPath) continue;
+      assets.push({
+        label: `${layoutLabel} — ${alt.label}`,
+        format: 'svg',
+        path: altPath,
+        layout,
+        variant: 'custom',
+      });
+    }
     
     // PNG
     if (group.png) {
@@ -126,7 +148,7 @@ export function getAllDownloadableAssets(inst: Institution): DownloadableAsset[]
  * Extrage variantele disponibile dintr-un grup de asset-uri logo.
  * Returnează un array de [variantKey, resolvedPath] pentru afișare.
  */
-export function getLogoVariants(group: LogoAssetGroup | undefined): Array<[string, string]> {
+export function getLogoVariants(group: LogoAssetGroup | undefined): LogoVariantView[] {
   if (!group) return [];
   
   const variantKeys: Array<{ key: string; asset: typeof group.color }> = [
@@ -137,13 +159,34 @@ export function getLogoVariants(group: LogoAssetGroup | undefined): Array<[strin
     { key: 'monochrome', asset: group.monochrome },
   ];
   
-  return variantKeys
+  const baseVariants: LogoVariantView[] = variantKeys
     .filter(({ asset }) => asset)
     .map(({ key, asset }) => {
       const path = resolveAssetPath(asset, true);
-      return path ? [key, path] as [string, string] : null;
+      if (!path) return null;
+      return {
+        key,
+        label: LOGO_VARIANT_LABELS[key] || key,
+        path,
+        preview: key === 'white' ? 'dark' : 'checkerboard',
+      } as LogoVariantView;
     })
-    .filter((item): item is [string, string] => item !== null);
+    .filter((item): item is LogoVariantView => item !== null);
+
+  const alternativeVariants: LogoVariantView[] = (group.alternatives || [])
+    .map((alt, index) => {
+      const path = resolveAssetPath(alt.path, true);
+      if (!path) return null;
+      return {
+        key: `alt-${index}`,
+        label: alt.label,
+        path,
+        preview: alt.preview || 'checkerboard',
+      } as LogoVariantView;
+    })
+    .filter((item): item is LogoVariantView => item !== null);
+
+  return [...baseVariants, ...alternativeVariants];
 }
 
 /**
@@ -174,6 +217,52 @@ export function getCdnLogoUrl(inst: Institution, preferredVariant: string = 'col
     : availableVariants[0];
   
   return `${cdnBase}/${mainLayout}/${variant}.svg`;
+}
+
+/**
+ * Construiește un segment URL sigur pentru catalog.
+ * Preferă shortname când este disponibil (ex: MAE -> mae), apoi fallback pe slug.
+ */
+export function getPreferredCatalogKey(inst: InstitutionPathFields): string {
+  const raw = String(inst.shortname || '').trim().toLowerCase();
+  const normalized = raw
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  return normalized || inst.slug;
+}
+
+/**
+ * Returnează o mapare unică slug -> segment URL pentru rutele /catalog/:id.
+ */
+export function buildCatalogPathMap(institutions: InstitutionPathFields[]): Record<string, string> {
+  const map: Record<string, string> = {};
+  const used = new Set<string>();
+
+  for (const inst of institutions) {
+    const preferred = getPreferredCatalogKey(inst);
+    const slugFallback = inst.slug;
+    let key = preferred;
+
+    if (used.has(key) && !used.has(slugFallback)) {
+      key = slugFallback;
+    }
+
+    if (used.has(key)) {
+      const base = key;
+      let index = 2;
+      while (used.has(`${base}-${index}`)) index += 1;
+      key = `${base}-${index}`;
+    }
+
+    used.add(key);
+    map[inst.slug] = key;
+  }
+
+  return map;
 }
 
 /**

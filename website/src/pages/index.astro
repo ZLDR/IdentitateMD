@@ -2,11 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LogoCard from '../components/LogoCard.astro';
 import institutionIndex from '../data/institutions-index.json';
-import { getPrimaryLogoPath, hasSvg, getDisplayName } from '../lib/helpers';
+import { getPrimaryLogoPath, hasSvg, getDisplayName, buildCatalogPathMap } from '../lib/helpers';
 import { CATEGORY_LABELS, CATEGORY_ORDER } from '../lib/labels';
 import type { Institution } from '../types/institution';
 
 const institutions = institutionIndex.institutions as unknown as Institution[];
+const catalogPathBySlug = buildCatalogPathMap(institutions);
 
 // Grupare pe categorii cu ordine prestabilită
 const grouped = new Map<string, typeof institutions>();
@@ -150,6 +151,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
               return (
                 <LogoCard
                   slug={inst.slug}
+                  catalogPath={catalogPathBySlug[inst.slug]}
                   name={inst.name}
                   shortname={inst.shortname}
                   category={inst.category}

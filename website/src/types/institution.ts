@@ -107,6 +107,11 @@ export interface LogoAssetGroup {
   white?: AssetUrls;                             // Path to white variant
   black?: AssetUrls;                             // Path to black variant
   monochrome?: AssetUrls;                        // Path to monochrome variant
+  alternatives?: Array<{                         // Extra variants (e.g. "Alternative White")
+    label: string;
+    path: AssetUrls;
+    preview?: 'checkerboard' | 'dark';
+  }>;
   png?: {                                        // Optional PNG version
     path: AssetUrls;
     width: number;
@@ -131,6 +136,10 @@ export interface Assets {
 export interface Resources {
   website?: string;                              // Official website
   branding_manual?: string;                      // Brand manual PDF/URL
+  contact?: {
+    phone?: string;
+    email?: string;
+  };
   social_media?: {
     facebook?: string;
     twitter?: string;

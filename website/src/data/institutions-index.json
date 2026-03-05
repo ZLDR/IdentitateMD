@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-05T12:44:59.380Z",
+  "generatedAt": "2026-03-05T13:31:27.701Z",
   "total": 4,
   "stats": {
     "byCategory": {
@@ -38,11 +38,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "guvern",
-          "executiv"
-        ],
+        "keywords": ["moldova", "guvern", "executiv"],
         "quality": "draft"
       },
       "location": {
@@ -54,28 +50,18 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -120,6 +106,30 @@
         "city": "Chișinău"
       },
       "description": "Ministerul responsabil de politica externă și relațiile diplomatice ale Republicii Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [14, 76, 144],
+          "usage": "primary"
+        },
+        {
+          "name": "Albastru Secundar",
+          "hex": "#3FC8F4",
+          "rgb": [63, 200, 244],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro",
+          "weights": [400, 700]
+        },
+        "secondary": {
+          "family": "Open Sans",
+          "weights": [400, 700]
+        }
+      },
       "assets": {
         "main": {
           "type": "horizontal",
@@ -129,7 +139,24 @@
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-mae/horizontal-color.svg",
-          "white": "/logos/md-mae/horizontal-white.svg"
+          "white": "/logos/md-mae/horizontal-white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-mae/Horizontal Alternative Color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alternative White",
+              "path": "/logos/md-mae/Horizontal Alternative White.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "horizontalAlternative": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color-alternative.svg",
+          "white": "/logos/md-mae/horizontal-white-alternative.svg"
         },
         "vertical": {
           "type": "vertical",
@@ -139,6 +166,13 @@
         "symbol": {
           "type": "symbol",
           "color": "/logos/md-mae/symbol.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mfa.gov.md/",
+        "contact": {
+          "phone": "+373 22 57-83-04",
+          "email": "secretariat@mfa.gov.md"
         }
       }
     },
@@ -151,13 +185,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "educație",
-          "cercetare",
-          "minister",
-          "mec"
-        ],
+        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
         "quality": "verified"
       },
       "location": {
@@ -169,21 +197,14 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -239,11 +260,7 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [
-            255,
-            204,
-            0
-          ],
+          "rgb": [255, 204, 0],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -251,11 +268,7 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [
-            0,
-            51,
-            153
-          ],
+          "rgb": [0, 51, 153],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"
