@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-06T15:53:38.430Z",
+  "generatedAt": "2026-03-06T15:58:35.956Z",
   "total": 10,
   "stats": {
     "byCategory": {
@@ -9,7 +9,7 @@
       "directie": 1,
       "minister": 3,
       "institutie-cultura": 2,
-      "Parlament": 1,
+      "parlament": 1,
       "primarie": 1
     },
     "withManual": 1,
@@ -609,7 +609,7 @@
       "slug": "md-parlament",
       "name": "Parlamentul Republicii Moldova",
       "shortname": "Parlament",
-      "category": "Parlament",
+      "category": "parlament",
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
