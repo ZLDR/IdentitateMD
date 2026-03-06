@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-06T15:58:35.956Z",
+  "generatedAt": "2026-03-06T16:02:33.974Z",
   "total": 10,
   "stats": {
     "byCategory": {
@@ -629,16 +629,16 @@
       "assets": {
         "main": {
           "type": "vertical",
-          "color": "/logos/md-parlament/Vertical Color.svg"
+          "color": "/logos/md-parlament/vertical-color.svg"
         },
         "vertical": {
           "type": "vertical",
-          "color": "/logos/md-parlament/Vertical Color.svg",
-          "black": "/logos/md-parlament/Vertical Black.svg"
+          "color": "/logos/md-parlament/vertical-color.svg",
+          "black": "/logos/md-parlament/vertical-black.svg"
         },
         "symbol": {
           "type": "symbol",
-          "color": "/logos/md-parlament/Symbol.svg"
+          "color": "/logos/md-parlament/symbol.svg"
         }
       },
       "resources": {

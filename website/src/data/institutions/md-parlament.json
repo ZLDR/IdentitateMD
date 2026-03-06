@@ -18,16 +18,16 @@
   "assets": {
     "main": {
       "type": "vertical",
-      "color": "/logos/md-parlament/Vertical Color.svg"
+      "color": "/logos/md-parlament/vertical-color.svg"
     },
     "vertical": {
       "type": "vertical",
-      "color": "/logos/md-parlament/Vertical Color.svg",
-      "black": "/logos/md-parlament/Vertical Black.svg"
+      "color": "/logos/md-parlament/vertical-color.svg",
+      "black": "/logos/md-parlament/vertical-black.svg"
     },
     "symbol": {
       "type": "symbol",
-      "color": "/logos/md-parlament/Symbol.svg"
+      "color": "/logos/md-parlament/symbol.svg"
     }
   },
   "resources": {
