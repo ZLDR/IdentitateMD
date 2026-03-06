@@ -86,5 +86,11 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
       <slot />
     </main>
     <Footer />
+
+    <script>
+      if (import.meta.env.DEV) {
+        import('react-grab');
+      }
+    </script>
   </body>
 </html>

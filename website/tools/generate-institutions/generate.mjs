@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * IdentitateRO  Generate institution JSON from metadata.md + SVG files
+ * IdentitateMD  Generate institution JSON from metadata.md + SVG files
  *
  * Workflow:
  *   1. Scans packages/logos/logos/[slug]/ for SVG files in layout subdirs
@@ -199,7 +199,7 @@ async function callOpenRouter(apiKey, systemPrompt, userPrompt, attempt = 1) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
       "HTTP-Referer": "https://identitate.md",
-      "X-Title": "IdentitateRO Generator",
+      "X-Title": "IdentitateMD Generator",
     },
     body: JSON.stringify({
       model: MODEL,
@@ -781,7 +781,7 @@ function buildSystemPrompt() {
     "  2. Available logo layouts and their SVG/PNG variant files\n" +
     "  3. Optional metadata from a markdown file (frontmatter + body text)\n" +
     "\n" +
-    "Your task: produce a SINGLE valid JSON object for this institution following the IdentitateRO v3 schema. Respond in Romanian where appropriate.\n" +
+    "Your task: produce a SINGLE valid JSON object for this institution following the IdentitateMD v3 schema. Respond in Romanian where appropriate.\n" +
     "\n" +
     'IMPORTANT: Do NOT include the "assets" field — it will be built automatically from the file structure.\n' +
     "\n" +
@@ -1107,7 +1107,7 @@ async function processSlug(slug, apiKey) {
 async function main() {
   console.log("");
   log("");
-  log("  IdentitateRO  Institution JSON Generator");
+  log("  IdentitateMD  Institution JSON Generator");
   log("");
   console.log("");
 

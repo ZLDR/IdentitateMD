@@ -3,6 +3,7 @@
 ## Executive Summary
 
 Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu focus pe:
+
 1. Asset URLs absolute (CDN-ready)
 2. Shortcut `main` pentru developer experience
 3. Keywords pentru search îmbunătățit
@@ -60,24 +61,24 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
   "name": "Agenția Națională de Administrare Fiscală",
   "shortname": "ANAF",
   "category": "agency",
-  
+
   "meta": {
     "version": "1.2.0",
     "last_updated": "2024-03-15",
     "keywords": ["taxe", "impozite", "fisc", "anaf"]
   },
-  
+
   "location": {
     "country_code": "RO",
     "county": "B",
     "city": "București"
   },
-  
+
   "description": "Instituția specializată...",
-  
+
   "colors": [...],
   "typography": {...},
-  
+
   "assets": {
     "main": {
       "type": "horizontal",
@@ -90,7 +91,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
     "vertical": {...},
     "symbol": {...}
   },
-  
+
   "resources": {
     "website": "https://www.anaf.ro",
     "branding_manual": "https://..."
@@ -104,26 +105,26 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 
 ### 1. **Top-Level Restructuring**
 
-| v2.0 Path | v3.0 Path | Notes |
-|-----------|-----------|-------|
-| `id` | `slug` | ID becomes `ro-{slug}` |
-| - | `id` | New: `ro-{slug}` format |
-| `institution.name` | `name` | Moved to top level |
-| `institution.shortName` | `shortname` | Moved to top level, lowercase |
-| `institution.acronym` | Removed | Redundant with shortname |
-| `institution.description` | `description` | Moved to top level |
-| `institution.website` | `resources.website` | Moved to resources |
-| `institution.manualUrl` | `resources.branding_manual` | Renamed |
+| v2.0 Path                 | v3.0 Path                   | Notes                         |
+| ------------------------- | --------------------------- | ----------------------------- |
+| `id`                      | `slug`                      | ID becomes `ro-{slug}`        |
+| -                         | `id`                        | New: `ro-{slug}` format       |
+| `institution.name`        | `name`                      | Moved to top level            |
+| `institution.shortName`   | `shortname`                 | Moved to top level, lowercase |
+| `institution.acronym`     | Removed                     | Redundant with shortname      |
+| `institution.description` | `description`               | Moved to top level            |
+| `institution.website`     | `resources.website`         | Moved to resources            |
+| `institution.manualUrl`   | `resources.branding_manual` | Renamed                       |
 
 ### 2. **Meta Changes**
 
-| v2.0 | v3.0 | Change Type |
-|------|------|-------------|
-| `lastUpdated` | `last_updated` | Snake case |
-| `tags` | `keywords` | Renamed for clarity |
-| `internalId` | Removed | Not needed |
-| `source` | Removed | Not needed for public API |
-| `quality` | Removed | Can be inferred or separate |
+| v2.0          | v3.0           | Change Type                 |
+| ------------- | -------------- | --------------------------- |
+| `lastUpdated` | `last_updated` | Snake case                  |
+| `tags`        | `keywords`     | Renamed for clarity         |
+| `internalId`  | Removed        | Not needed                  |
+| `source`      | Removed        | Not needed for public API   |
+| `quality`     | Removed        | Can be inferred or separate |
 
 ### 3. **Location Simplification**
 
@@ -161,6 +162,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ### 5. **Assets Revolution** ⭐ MAJOR CHANGE
 
 #### Current v2.0 Structure:
+
 ```json
 "assets": {
   "logos": {
@@ -175,6 +177,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ```
 
 #### New v3.0 Structure:
+
 ```json
 "assets": {
   "main": {
@@ -195,6 +198,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ```
 
 **Benefits:**
+
 1. ✅ `main` shortcut - developers get the "standard" logo immediately
 2. ✅ CDN URLs - ready for production CDN deployment
 3. ✅ Flatter structure - easier to access
@@ -206,11 +210,13 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ## Migration Strategy
 
 ### Option A: Big Bang Migration (NOT RECOMMENDED)
+
 - Convert all files at once
 - High risk, difficult to rollback
 - Testing nightmare
 
 ### Option B: Parallel Schema Support (RECOMMENDED) ⭐
+
 1. Create v3 types alongside v2
 2. Add migration utilities
 3. Support both formats temporarily
@@ -218,6 +224,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 5. Remove v2 support once complete
 
 ### Option C: Hybrid Approach
+
 - Keep v2 for storage
 - Transform to v3 on read
 - Allows gradual frontend migration
@@ -227,6 +234,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ## Recommended Implementation Plan
 
 ### Phase 1: Foundation (Week 1)
+
 **Goal:** Set up v3 schema without breaking v2
 
 - [ ] Create `src/types/institution-v3.ts` with new schema
@@ -238,6 +246,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 - [ ] Document CDN strategy (local vs prod URLs)
 
 ### Phase 2: Data Layer (Week 1-2)
+
 **Goal:** Support reading both formats
 
 - [ ] Update `helpers.ts`:
@@ -251,6 +260,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 - [ ] Create migration script: `npm run migrate:v2-to-v3`
 
 ### Phase 3: Component Updates (Week 2)
+
 **Goal:** Components work with v3 format
 
 - [ ] Update `LogoCard.astro` to handle v3 assets
@@ -259,6 +269,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 - [ ] Test with mixed v2/v3 data
 
 ### Phase 4: Data Migration (Week 2-3)
+
 **Goal:** Convert all institution files to v3
 
 - [ ] Run automated migration on all JSON files
@@ -268,6 +279,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 - [ ] Regenerate index
 
 ### Phase 5: Cleanup (Week 3)
+
 **Goal:** Remove v2 support
 
 - [ ] Remove v2 types and helpers
@@ -287,6 +299,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 **Options:**
 
 **A) Local paths in dev, CDN in prod** (RECOMMENDED)
+
 ```json
 "assets": {
   "main": {
@@ -296,10 +309,12 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
   }
 }
 ```
+
 - Pros: Works locally, CDN-ready
 - Cons: Need build-time URL rewriting
 
 **B) Always use CDN URLs**
+
 ```json
 "assets": {
   "main": {
@@ -307,10 +322,12 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
   }
 }
 ```
+
 - Pros: Simpler, explicit
 - Cons: Doesn't work locally without CDN setup
 
 **C) Hybrid: relative + absolute**
+
 ```json
 "assets": {
   "main": {
@@ -319,6 +336,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
   }
 }
 ```
+
 - Pros: Works everywhere
 - Cons: More verbose, duplication
 
@@ -329,6 +347,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 **Question:** Support v2 files during transition?
 
 **Recommendation:** YES
+
 - Use schema version detector
 - Auto-convert v2 to v3 on read
 - Allows gradual migration
@@ -337,6 +356,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ### 3. Typography Structure
 
 **Current v2:**
+
 ```json
 "typography": [
   {
@@ -348,6 +368,7 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ```
 
 **Proposed v3:**
+
 ```json
 "typography": {
   "font": "Roboto",
@@ -358,11 +379,13 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 **Question:** Single font or keep array?
 
 **Options:**
+
 - A) Single object (proposed) - simpler, most institutions use 1 font
 - B) Keep array - more flexible, handles multi-font brands
 - C) Hybrid: `primary` + `secondary?` objects
 
 **Recommendation:** Option C (hybrid)
+
 ```json
 "typography": {
   "primary": {
@@ -379,19 +402,23 @@ Migrarea de la schema ierarhică v2.0 la noua schemă v3.0 simplificată, cu foc
 ### 4. Category Naming
 
 **v2 categories (Romanian):**
+
 - `guvern`, `minister`, `primarie`, `agentie`, etc.
 
 **v3 categories (English - proposed):**
+
 - `government`, `ministry`, `city_hall`, `agency`, etc.
 
 **Question:** Keep Romanian or switch to English?
 
 **Options:**
+
 - A) Keep Romanian - consistency, no migration needed
 - B) Switch to English - international standard
 - C) Support both with mapping
 
 **Recommendation:** Option A (keep Romanian)
+
 - Schema internals can stay Romanian
 - Labels already translated via CATEGORY_LABELS
 - Avoid unnecessary complexity
@@ -428,18 +455,21 @@ website/
 ## Testing Strategy
 
 ### Unit Tests
+
 - [ ] V2 to V3 conversion accuracy
 - [ ] V3 to V2 conversion (if needed)
 - [ ] Helper functions with both schemas
 - [ ] CDN URL resolution
 
 ### Integration Tests
+
 - [ ] Index generation with mixed schemas
 - [ ] Component rendering with v3 data
 - [ ] Search functionality with keywords
 - [ ] Download links (CDN vs local)
 
 ### Manual Testing
+
 - [ ] All pages render correctly
 - [ ] Search works with new keywords
 - [ ] Logo previews load
@@ -461,14 +491,14 @@ If migration fails:
 
 ## Timeline Estimate
 
-| Phase | Duration | Effort | Risk |
-|-------|----------|--------|------|
-| **Phase 1: Foundation** | 2-3 days | Medium | Low |
-| **Phase 2: Data Layer** | 3-4 days | High | Medium |
-| **Phase 3: Components** | 2-3 days | Medium | Medium |
-| **Phase 4: Migration** | 3-5 days | Low | Low |
-| **Phase 5: Cleanup** | 1-2 days | Low | Low |
-| **Total** | ~2-3 weeks | - | - |
+| Phase                   | Duration   | Effort | Risk   |
+| ----------------------- | ---------- | ------ | ------ |
+| **Phase 1: Foundation** | 2-3 days   | Medium | Low    |
+| **Phase 2: Data Layer** | 3-4 days   | High   | Medium |
+| **Phase 3: Components** | 2-3 days   | Medium | Medium |
+| **Phase 4: Migration**  | 3-5 days   | Low    | Low    |
+| **Phase 5: Cleanup**    | 1-2 days   | Low    | Low    |
+| **Total**               | ~2-3 weeks | -      | -      |
 
 ### Milestones
 
@@ -481,7 +511,8 @@ If migration fails:
 ## Risk Assessment
 
 ### High Risks
-1. **Breaking changes in production** 
+
+1. **Breaking changes in production**
    - Mitigation: Use feature branch, preview deployments
 2. **Data loss during migration**
    - Mitigation: Git backups, validation scripts
@@ -489,6 +520,7 @@ If migration fails:
    - Mitigation: Start with local paths, CDN later
 
 ### Medium Risks
+
 1. **Search performance with keywords**
    - Mitigation: Test with Fuse.js, optimize if needed
 2. **Component rendering issues**
@@ -497,6 +529,7 @@ If migration fails:
    - Mitigation: Automated validation
 
 ### Low Risks
+
 1. **Type errors**
    - Mitigation: TypeScript strict mode
 2. **Documentation outdated**
@@ -508,15 +541,16 @@ If migration fails:
 
 Before starting implementation, these decisions need to be made:
 
-| Decision | Options | Impact | Urgency |
-|----------|---------|--------|---------|
-| **CDN Strategy** | Local/Prod/Hybrid | High | High |
-| **Category naming** | RO/EN/Both | Medium | Low |
-| **Typography structure** | Single/Array/Hybrid | Low | Medium |
-| **Backward compat** | Yes/No | High | High |
-| **Migration approach** | Big Bang/Parallel/Hybrid | High | High |
+| Decision                 | Options                  | Impact | Urgency |
+| ------------------------ | ------------------------ | ------ | ------- |
+| **CDN Strategy**         | Local/Prod/Hybrid        | High   | High    |
+| **Category naming**      | RO/EN/Both               | Medium | Low     |
+| **Typography structure** | Single/Array/Hybrid      | Low    | Medium  |
+| **Backward compat**      | Yes/No                   | High   | High    |
+| **Migration approach**   | Big Bang/Parallel/Hybrid | High   | High    |
 
 **Recommended Decisions:**
+
 1. ✅ CDN Strategy: **Local in dev, CDN in prod** (Option A)
 2. ✅ Category naming: **Keep Romanian** (Option A)
 3. ✅ Typography: **Hybrid with primary/secondary** (Option C)
@@ -537,11 +571,13 @@ If full migration is too complex, consider a **simplified hybrid approach**:
 4. Gradually add v3-specific features (keywords, main shortcut)
 
 **Pros:**
+
 - No file migration needed
 - Lower risk
 - Can add features incrementally
 
 **Cons:**
+
 - Performance overhead (transformation on every request)
 - Complexity in codebase (two formats)
 - Technical debt
@@ -580,13 +616,14 @@ Before proceeding, clarify:
 ✅ No console errors  
 ✅ Performance maintained or improved  
 ✅ Documentation updated  
-✅ Zero data loss  
+✅ Zero data loss
 
 ---
 
 ## Conclusion
 
 Schema v3.0 offers significant improvements:
+
 - **Developer Experience:** `main` shortcut, flatter structure
 - **Search:** Keywords for better discoverability
 - **CDN-Ready:** Absolute URLs for production scaling
@@ -602,4 +639,4 @@ The recommended **parallel support approach** balances safety with progress, all
 
 **Document Version:** 1.0  
 **Last Updated:** 2026-02-09  
-**Author:** IdentitateRO Development Team
+**Author:** IdentitateMD Development Team

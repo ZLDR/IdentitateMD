@@ -1,4 +1,4 @@
-# IdentitateRO
+# IdentitateMD
 
 [![Website](https://img.shields.io/badge/website-identitate.md-blue)](https://identitate.md)
 [![npm version](https://img.shields.io/npm/v/@identitate-md/logos.svg)](https://www.npmjs.com/package/@identitate-md/logos)
@@ -37,7 +37,7 @@ import logoPath from "@identitate-md/logos/logos/anaf/anaf.svg";
 ## 📁 Structură Proiect
 
 ```
-IdentitateRO/
+IdentitateMD/
 ├── packages/logos/          # NPM package cu logo-uri
 │   ├── logos/              # Fișiere SVG organizate pe instituții
 │   ├── index.json          # Metadata pentru toate logo-urile

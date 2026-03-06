@@ -414,7 +414,7 @@ Instituțiile disponibile în v1.0.0:
 - `pnrr` — Plan Național de Redresare și Reziliență
 - `primaria-cluj-napoca` — Primăria Cluj-Napoca
 
-Pentru lista completă și actualizată, consultă [identitatero.vercel.app](https://identitatero.vercel.app).
+Pentru lista completă și actualizată, consultă [IdentitateMD.vercel.app](https://IdentitateMD.vercel.app).
 
 ## 💡 Exemple de Utilizare
 
@@ -540,19 +540,19 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 
 ## 🤝 Contribuții
 
-Acest pachet face parte din proiectul [IdentitateRO](https://github.com/ZLDR/IdentitateMD).
+Acest pachet face parte din proiectul [IdentitateMD](https://github.com/ZLDR/IdentitateMD).
 
 Pentru a adăuga logo-uri noi sau pentru a raporta probleme:
 
-1. Vizitează [github.com/laurentiucotet/IdentitateRO](https://github.com/ZLDR/IdentitateMD)
+1. Vizitează [github.com/laurentiucotet/IdentitateMD](https://github.com/ZLDR/IdentitateMD)
 2. Consultă [CONTRIBUTING.md](https://github.com/ZLDR/IdentitateMD/blob/main/website/CONTRIBUTING.md)
 3. Deschide un Pull Request sau Issue
 
 ## 🔗 Link-uri Utile
 
-- **Website**: [identitatero.vercel.app](https://identitatero.vercel.app)
-- **Documentație**: [identitatero.vercel.app/utilizare](https://identitatero.vercel.app/utilizare)
-- **GitHub**: [github.com/laurentiucotet/IdentitateRO](https://github.com/ZLDR/IdentitateMD)
+- **Website**: [IdentitateMD.vercel.app](https://IdentitateMD.vercel.app)
+- **Documentație**: [IdentitateMD.vercel.app/utilizare](https://IdentitateMD.vercel.app/utilizare)
+- **GitHub**: [github.com/laurentiucotet/IdentitateMD](https://github.com/ZLDR/IdentitateMD)
 - **npm Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 - **jsDelivr CDN**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
 - **unpkg CDN**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
@@ -563,4 +563,4 @@ Pentru a adăuga logo-uri noi sau pentru a raporta probleme:
 
 ---
 
-Made with ❤️ by [IdentitateRO Contributors](https://github.com/ZLDR/IdentitateMD/graphs/contributors)
+Made with ❤️ by [IdentitateMD Contributors](https://github.com/ZLDR/IdentitateMD/graphs/contributors)

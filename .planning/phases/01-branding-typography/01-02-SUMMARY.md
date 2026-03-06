@@ -10,7 +10,7 @@ provides:
   - BaseLayout loads Onest font via Google Fonts (preconnect + preload + non-blocking + noscript)
   - Tailwind fontFamily.sans configured to Onest
   - global.css base font-family set to Onest
-  - All 6 site files free of Public Sans, IdentitateRO, identitate.md, and Romania references
+  - All 6 site files free of Public Sans, IdentitateMD, identitate.md, and Romania references
   - Header and Footer GitHub links pointing to Moldova repo placeholder
   - Footer copyright and disclaimer reference Moldova/IdentitateMD
   - 404 page title references IdentitateMD
@@ -52,7 +52,7 @@ completed: 2026-03-04
 
 # Phase 1 Plan 02: Branding Typography Summary
 
-**Replaced Public Sans with Onest (Google Fonts) across BaseLayout, Tailwind config, and global CSS; updated all six files to remove Romania/IdentitateRO references and substitute Moldova/IdentitateMD branding.**
+**Replaced Public Sans with Onest (Google Fonts) across BaseLayout, Tailwind config, and global CSS; updated all six files to remove Romania/IdentitateMD references and substitute Moldova/IdentitateMD branding.**
 
 ## Performance
 
@@ -66,7 +66,7 @@ completed: 2026-03-04
 
 - BaseLayout.astro now loads Onest via non-blocking Google Fonts pattern (preconnect + preload + noscript)
 - Tailwind fontFamily.sans and global.css html font-family both set to Onest; Public Sans removed
-- Header, Footer, and 404 page all reference Moldova/IdentitateMD; old Romania/IdentitateRO text purged
+- Header, Footer, and 404 page all reference Moldova/IdentitateMD; old Romania/IdentitateMD text purged
 
 ## Task Commits
 
@@ -83,7 +83,7 @@ Each task was committed atomically:
 - `website/src/styles/global.css` - html font-family changed from Public Sans to Onest
 - `website/src/components/Header.astro` - Both GitHub links (desktop + mobile) updated to identitate-md/identitate-md
 - `website/src/components/Footer.astro` - Brand description, GitHub link, legal disclaimer, and copyright updated to Moldova/IdentitateMD
-- `website/src/pages/404.astro` - Page title updated from IdentitateRO to IdentitateMD
+- `website/src/pages/404.astro` - Page title updated from IdentitateMD to IdentitateMD
 
 ## Decisions Made
 
@@ -105,7 +105,7 @@ None — no external service configuration required.
 
 ## Next Phase Readiness
 
-- All six branding/typography files are clean: zero Public Sans, IdentitateRO, identitate.md, or Romania references
+- All six branding/typography files are clean: zero Public Sans, IdentitateMD, identitate.md, or Romania references
 - Onest font loads correctly via Google Fonts non-blocking pattern
 - Ready for Phase 2 (Data Architecture): institution ID migration from ro-_ to md-_ prefix
 

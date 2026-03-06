@@ -2,7 +2,7 @@
 
 Script care scanează folderele de logo-uri din `packages/logos/logos/[slug]/`,
 citește opțional un `metadata.md` și folosește **OpenRouter AI** pentru a genera
-fișierele JSON ale instituțiilor conform schemei v3 IdentitateRO.
+fișierele JSON ale instituțiilor conform schemei v3 IdentitateMD.
 
 ## Cerințe
 
@@ -34,19 +34,19 @@ packages/logos/logos/
 
 ### Structura directoare
 
-| Director      | Descriere                  |
-|---------------|----------------------------|
-| `horizontal/` | Logo orizontal (complet)   |
-| `vertical/`   | Logo vertical (complet)    |
-| `symbol/`     | Simbol / icon              |
+| Director      | Descriere                |
+| ------------- | ------------------------ |
+| `horizontal/` | Logo orizontal (complet) |
+| `vertical/`   | Logo vertical (complet)  |
+| `symbol/`     | Simbol / icon            |
 
 ### Variante fișiere
 
-| Fișier      | Câmp JSON   | Descriere                      |
-|-------------|-------------|--------------------------------|
-| `color.svg` | `color`     | Variantă color (principală)    |
-| `white.svg` | `white`     | Variantă albă (fundal închis)  |
-| `dark.svg`  | `dark_mode` | Variantă dark mode             |
+| Fișier      | Câmp JSON   | Descriere                     |
+| ----------- | ----------- | ----------------------------- |
+| `color.svg` | `color`     | Variantă color (principală)   |
+| `white.svg` | `white`     | Variantă albă (fundal închis) |
+| `dark.svg`  | `dark_mode` | Variantă dark mode            |
 
 Nu toate layout-urile sau variantele sunt obligatorii — scriptul detectează
 automat ce fișiere există și construiește obiectul `assets` corespunzător.
@@ -68,7 +68,6 @@ colors: |
 font_primary: "Source Sans Pro"
 quality: "draft"
 ---
-
 ## Descriere
 
 Autoritatea responsabilă cu administrarea fiscală.
@@ -133,10 +132,10 @@ npm run dev
 
 ## Fișiere
 
-| Fișier                    | Scop                                |
-|---------------------------|-------------------------------------|
-| `generate.mjs`           | Script principal                     |
-| `institution.schema.json`| JSON Schema AJV (v3)               |
-| `example-metadata.md`    | Template metadata.md                |
-| `.gitignore`             | Ignoră secrets & cache              |
-| `ai-cache/`              | Cache răspunsuri AI (ignorat)       |
+| Fișier                    | Scop                          |
+| ------------------------- | ----------------------------- |
+| `generate.mjs`            | Script principal              |
+| `institution.schema.json` | JSON Schema AJV (v3)          |
+| `example-metadata.md`     | Template metadata.md          |
+| `.gitignore`              | Ignoră secrets & cache        |
+| `ai-cache/`               | Cache răspunsuri AI (ignorat) |

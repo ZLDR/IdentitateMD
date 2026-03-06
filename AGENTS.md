@@ -1,4 +1,4 @@
-# IdentitateRO - Agent Documentation
+# IdentitateMD - Agent Documentation
 
 ## Project Overview
 
@@ -28,7 +28,7 @@
 ## Project Structure
 
 ```
-IdentitateRO/
+IdentitateMD/
 ├── README.md                          # Project overview
 ├── vercel.json                        # Deployment config for Vercel
 ├── AGENTS.md                          # This file

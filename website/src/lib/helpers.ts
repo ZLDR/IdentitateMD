@@ -1,5 +1,5 @@
 /**
- * IdentitateRO — Funcții helper
+ * IdentitateMD — Funcții helper
  */
 
 import type {

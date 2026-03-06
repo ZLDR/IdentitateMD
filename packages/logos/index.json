@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-05T23:21:14.827Z",
-  "count": 9,
-  "totalLogos": 26,
+  "generated": "2026-03-06T15:53:23.452Z",
+  "count": 10,
+  "totalLogos": 28,
   "institutions": [
     {
       "id": "eu-flag",
@@ -79,7 +79,7 @@
     {
       "id": "md-mc",
       "slug": "md-mc",
-      "name": "Md Mc",
+      "name": "Ministerul Culturii al Republicii Moldova",
       "layouts": [
         "horizontal",
         "vertical"
@@ -153,6 +153,24 @@
         },
         "symbol": {
           "color": "/logos/md-mnam/Symbol color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-parlament",
+      "slug": "md-parlament",
+      "name": "Parlamentul Republicii Moldova",
+      "layouts": [
+        "symbol",
+        "vertical"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-parlament/Symbol.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-parlament/Vertical Color.svg"
         }
       }
     },

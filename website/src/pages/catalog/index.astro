@@ -14,7 +14,7 @@ import {
 import type { Institution } from '../../types/institution';
 
 const CATEGORY_ORDER = [
-  'guvern', 'minister', 'directie', 'agentie', 'autoritate', 'primarie',
+  'guvern', 'minister', 'parlament', 'directie', 'agentie', 'autoritate', 'primarie',
   'consiliu-judetean', 'prefectura', 'proiect-ue', 'institutie-cultura', 'altele',
 ];
 
@@ -41,7 +41,7 @@ const institutionsByCategory = categories.reduce((acc, cat) => {
   return acc;
 }, {} as Record<string, Institution[]>);
 
-const title = "Catalog — IdentitateRO";
+const title = "Catalog — IdentitateMD";
 const description = "Explorează toate logo-urile instituțiilor publice din Republica Moldova";
 
 const institutionsJson = JSON.stringify(allInstitutions);

@@ -1,4 +1,4 @@
-# IdentitateRO - Comprehensive Improvement Roadmap
+# IdentitateMD - Comprehensive Improvement Roadmap
 
 ## Project Status Summary
 
@@ -344,7 +344,7 @@ export async function GET(context) {
   const institutions = await getCollection("institutions");
 
   return rss({
-    title: "IdentitateRO - Noutăți",
+    title: "IdentitateMD - Noutăți",
     description:
       "Actualizări ale identităților vizuale ale instituțiilor publice",
     site: context.site,

@@ -1,0 +1,40 @@
+{
+  "id": "md-parlament",
+  "slug": "md-parlament",
+  "name": "Parlamentul Republicii Moldova",
+  "shortname": "Parlament",
+  "category": "parlament",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-06",
+    "keywords": ["moldova", "parlament", "legiferare", "legislativ"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Parlamentul Republicii Moldova este organul suprem de putere legislativă al statului.",
+  "assets": {
+    "main": {
+      "type": "vertical",
+      "color": "/logos/md-parlament/Vertical Color.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-parlament/Vertical Color.svg",
+      "black": "/logos/md-parlament/Vertical Black.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-parlament/Symbol.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.parlament.md/",
+    "contact": {
+      "phone": "+373-22-820-126",
+      "email": "info@parlament.md"
+    }
+  }
+}

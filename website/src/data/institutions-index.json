@@ -1,7 +1,7 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-05T23:27:45.253Z",
-  "total": 9,
+  "generatedAt": "2026-03-06T15:53:38.430Z",
+  "total": 10,
   "stats": {
     "byCategory": {
       "altele": 1,
@@ -9,10 +9,11 @@
       "directie": 1,
       "minister": 3,
       "institutie-cultura": 2,
+      "Parlament": 1,
       "primarie": 1
     },
     "withManual": 1,
-    "withSvg": 9
+    "withSvg": 10
   },
   "categories": [
     {
@@ -56,7 +57,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-05",
-        "keywords": ["moldova", "direcție", "cultură", "patrimoniu", "dgcpc"],
+        "keywords": [
+          "moldova",
+          "direcție",
+          "cultură",
+          "patrimoniu",
+          "dgcpc"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -85,7 +92,11 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "guvern", "executiv"],
+        "keywords": [
+          "moldova",
+          "guvern",
+          "executiv"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -97,18 +108,28 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -157,24 +178,38 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [63, 200, 244],
+          "rgb": [
+            63,
+            200,
+            244
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -251,13 +286,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -303,7 +346,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
+        "keywords": [
+          "moldova",
+          "educație",
+          "cercetare",
+          "minister",
+          "mec"
+        ],
         "quality": "verified"
       },
       "location": {
@@ -315,14 +364,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -425,11 +481,18 @@
       "typography": {
         "primary": {
           "family": "Proxima Nova",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Franklin Gothic",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -473,7 +536,14 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": ["moldova", "chișinău", "muzeu", "artă", "mnam", "cultură"],
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "artă",
+          "mnam",
+          "cultură"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -531,6 +601,51 @@
           "address": "31 August 1989 nr. 115, Chișinău, Republica Moldova",
           "phone": "+373 22 24 13 12",
           "email": "artmuseum_md@yahoo.com"
+        }
+      }
+    },
+    {
+      "id": "md-parlament",
+      "slug": "md-parlament",
+      "name": "Parlamentul Republicii Moldova",
+      "shortname": "Parlament",
+      "category": "Parlament",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "parlament",
+          "legiferare",
+          "legislativ"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Parlamentul Republicii Moldova este organul suprem de putere legislativă al statului.",
+      "assets": {
+        "main": {
+          "type": "vertical",
+          "color": "/logos/md-parlament/Vertical Color.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-parlament/Vertical Color.svg",
+          "black": "/logos/md-parlament/Vertical Black.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-parlament/Symbol.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.parlament.md/",
+        "contact": {
+          "phone": "+373-22-820-126",
+          "email": "info@parlament.md"
         }
       }
     },
@@ -643,7 +758,11 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [255, 204, 0],
+          "rgb": [
+            255,
+            204,
+            0
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -651,7 +770,11 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [0, 51, 153],
+          "rgb": [
+            0,
+            51,
+            153
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

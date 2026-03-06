@@ -1,8 +1,8 @@
-# Implementare CDN pentru Logo-uri — IdentitateRO
+# Implementare CDN pentru Logo-uri — IdentitateMD
 
 ## Overview
 
-Logo-urile IdentitateRO sunt disponibile prin:
+Logo-urile IdentitateMD sunt disponibile prin:
 
 1. **Pachet npm** `@identitate-md/logos` - Pentru instalare în proiecte
 2. **CDN gratuit** - jsDelivr (primary) și unpkg (fallback)

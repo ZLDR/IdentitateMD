@@ -1,5 +1,5 @@
 /**
- * IdentitateRO Web Component Loader
+ * IdentitateMD Web Component Loader
  *
  * A custom HTML element for loading Romanian institution logos
  * Framework-agnostic, works with React, Vue, Angular, vanilla HTML, etc.
@@ -113,7 +113,7 @@ class IdentityIcon extends HTMLElement {
       // Inject into DOM
       this.injectSvg(cleanedSvg);
     } catch (error) {
-      console.error("[IdentitateRO] Failed to load logo:", url, error);
+      console.error("[IdentitateMD] Failed to load logo:", url, error);
       this.showError(error.message);
     } finally {
       this._isLoading = false;

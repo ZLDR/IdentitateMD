@@ -29,7 +29,7 @@ Website-ul rulează pe `http://localhost:4321`.
 ## Structura Proiectului
 
 ```
-IdentitateRO/
+IdentitateMD/
 ├── website/                     # Astro static site
 │   ├── public/
 │   │   ├── logos/               # Fișierele de logo (SVG, PNG)
@@ -183,7 +183,7 @@ Logo-urile se accesează direct ca fișiere statice:
 
 Proiectul este _inspirat conceptual_ de [LogoHub](https://github.com/saeedreza/logohub), dar complet diferit:
 
-| Aspect             | LogoHub                       | IdentitateRO                                      |
+| Aspect             | LogoHub                       | IdentitateMD                                      |
 | ------------------ | ----------------------------- | ------------------------------------------------- |
 | Target             | Companii tech                 | Instituții publice RO                             |
 | Framework          | VitePress (Vue)               | Astro                                             |
