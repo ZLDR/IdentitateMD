@@ -36,11 +36,16 @@
   "assets": {
     "main": {
       "type": "symbol",
-      "color": "/logos/md-guvern/symbol/color.svg"
+      "color": "/logos/md-guvern/color.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-guvern/horizontal-color.svg"
     },
     "symbol": {
       "type": "symbol",
-      "color": "/logos/md-guvern/symbol/color.svg"
+      "color": "/logos/md-guvern/color.svg",
+      "white": "/logos/md-guvern/white.svg"
     },
     "favicon": null
   },

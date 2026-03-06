@@ -25,5 +25,11 @@
       "color": "/logos/md-dgcpc/Horizontal Color.svg",
       "preview": "dark"
     }
+  },
+  "resources": {
+    "website": "https://cultura.chisinau.md/",
+    "social_media": {
+      "facebook": "https://www.facebook.com/www.directiacultura.md"
+    }
   }
 }
