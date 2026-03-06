@@ -541,7 +541,7 @@ function buildDetail(inst) {
   }
 
   let resourcesHtml = '';
-  if (inst.resources?.website || inst.resources?.branding_manual) {
+  if (inst.resources?.website || inst.resources?.branding_manual || inst.resources?.social_media) {
     resourcesHtml = `
       <section class="mb-8">
         <h2 class="text-lg font-semibold text-primary-900 mb-4 flex items-center gap-2">
@@ -558,6 +558,31 @@ function buildDetail(inst) {
             <a href="${escHtml(inst.resources.branding_manual)}" target="_blank" rel="noopener"
                class="flex items-center gap-2 p-3 bg-white border border-surface-200 rounded hover:border-primary-300 transition-colors text-sm text-primary-600">
               ${ICONS.book} Manual de Identitate Vizuală
+            </a>` : ''}
+          ${inst.resources.social_media?.facebook ? `
+            <a href="${escHtml(inst.resources.social_media.facebook)}" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-2 p-3 bg-white border border-surface-200 rounded hover:border-primary-300 transition-colors text-sm text-primary-600">
+              📘 Facebook
+            </a>` : ''}
+          ${inst.resources.social_media?.twitter ? `
+            <a href="${escHtml(inst.resources.social_media.twitter)}" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-2 p-3 bg-white border border-surface-200 rounded hover:border-primary-300 transition-colors text-sm text-primary-600">
+              𝕏 Twitter
+            </a>` : ''}
+          ${inst.resources.social_media?.instagram ? `
+            <a href="${escHtml(inst.resources.social_media.instagram)}" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-2 p-3 bg-white border border-surface-200 rounded hover:border-primary-300 transition-colors text-sm text-primary-600">
+              📷 Instagram
+            </a>` : ''}
+          ${inst.resources.social_media?.linkedin ? `
+            <a href="${escHtml(inst.resources.social_media.linkedin)}" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-2 p-3 bg-white border border-surface-200 rounded hover:border-primary-300 transition-colors text-sm text-primary-600">
+              💼 LinkedIn
+            </a>` : ''}
+          ${inst.resources.social_media?.youtube ? `
+            <a href="${escHtml(inst.resources.social_media.youtube)}" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-2 p-3 bg-white border border-surface-200 rounded hover:border-primary-300 transition-colors text-sm text-primary-600">
+              ▶️ YouTube
             </a>` : ''}
         </div>
       </section>`;
