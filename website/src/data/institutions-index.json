@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-08T01:37:50.486Z",
+  "generatedAt": "2026-03-08T01:38:37.805Z",
   "total": 12,
   "stats": {
     "byCategory": {
@@ -57,13 +57,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-05",
-        "keywords": [
-          "moldova",
-          "direcție",
-          "cultură",
-          "patrimoniu",
-          "dgcpc"
-        ],
+        "keywords": ["moldova", "direcție", "cultură", "patrimoniu", "dgcpc"],
         "quality": "draft"
       },
       "location": {
@@ -98,11 +92,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "guvern",
-          "executiv"
-        ],
+        "keywords": ["moldova", "guvern", "executiv"],
         "quality": "draft"
       },
       "location": {
@@ -114,28 +104,18 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -189,45 +169,30 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [
-            63,
-            200,
-            244
-          ],
+          "rgb": [63, 200, 244],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
         "main": {
-          "type": "horizontal",
-          "color": "/logos/md-mae/horizontal-color.svg",
-          "white": "/logos/md-mae/horizontal-white.svg"
+          "type": "symbol",
+          "color": "/logos/md-mae/symbol.svg"
         },
         "horizontal": {
           "type": "horizontal",
@@ -297,21 +262,13 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
+          "rgb": [255, 255, 255],
           "usage": "secondary"
         }
       ],
@@ -357,13 +314,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "educație",
-          "cercetare",
-          "minister",
-          "mec"
-        ],
+        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
         "quality": "verified"
       },
       "location": {
@@ -375,21 +326,14 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -425,13 +369,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": [
-          "moldova",
-          "finanțe",
-          "minister",
-          "economie",
-          "mf"
-        ],
+        "keywords": ["moldova", "finanțe", "minister", "economie", "mf"],
         "quality": "draft"
       },
       "location": {
@@ -443,21 +381,13 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
+          "rgb": [255, 255, 255],
           "usage": "secondary"
         }
       ],
@@ -472,13 +402,13 @@
       "assets": {
         "main": {
           "type": "vertical",
-          "color": "/logos/md-mf/Vertical Color.svg",
-          "white": "/logos/md-mf/Vertical White.svg"
+          "color": "/logos/md-mf/vertical-color.svg",
+          "white": "/logos/md-mf/vertical-white.svg"
         },
         "vertical": {
           "type": "vertical",
-          "color": "/logos/md-mf/Vertical Color.svg",
-          "white": "/logos/md-mf/Vertical White.svg"
+          "color": "/logos/md-mf/vertical-color.svg",
+          "white": "/logos/md-mf/vertical-white.svg"
         }
       },
       "resources": {
@@ -501,13 +431,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": [
-          "moldova",
-          "justiție",
-          "minister",
-          "drept",
-          "mj"
-        ],
+        "keywords": ["moldova", "justiție", "minister", "drept", "mj"],
         "quality": "draft"
       },
       "location": {
@@ -519,21 +443,14 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -640,18 +557,11 @@
       "typography": {
         "primary": {
           "family": "Proxima Nova",
-          "weights": [
-            400,
-            600,
-            700
-          ]
+          "weights": [400, 600, 700]
         },
         "secondary": {
           "family": "Franklin Gothic",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -695,14 +605,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": [
-          "moldova",
-          "chișinău",
-          "muzeu",
-          "artă",
-          "mnam",
-          "cultură"
-        ],
+        "keywords": ["moldova", "chișinău", "muzeu", "artă", "mnam", "cultură"],
         "quality": "draft"
       },
       "location": {
@@ -772,12 +675,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": [
-          "moldova",
-          "parlament",
-          "legiferare",
-          "legislativ"
-        ],
+        "keywords": ["moldova", "parlament", "legiferare", "legislativ"],
         "quality": "draft"
       },
       "location": {
@@ -917,11 +815,7 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [
-            255,
-            204,
-            0
-          ],
+          "rgb": [255, 204, 0],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -929,11 +823,7 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [
-            0,
-            51,
-            153
-          ],
+          "rgb": [0, 51, 153],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

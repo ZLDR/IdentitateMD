@@ -41,9 +41,8 @@
   },
   "assets": {
     "main": {
-      "type": "horizontal",
-      "color": "/logos/md-mae/horizontal-color.svg",
-      "white": "/logos/md-mae/horizontal-white.svg"
+      "type": "symbol",
+      "color": "/logos/md-mae/symbol.svg"
     },
     "horizontal": {
       "type": "horizontal",
