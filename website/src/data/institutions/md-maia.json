@@ -1,0 +1,84 @@
+{
+  "id": "md-maia",
+  "slug": "maia",
+  "name": "Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova",
+  "shortname": "MAIA",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": ["moldova", "minister", "agricultură", "industrie alimentară", "maia"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Agriculturii și Industriei Alimentare este responsabil de politicile și strategiile în domeniul agriculturii și industriei alimentare din Republica Moldova.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Times New Roman"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-maia/horizontal/color.svg",
+      "white": "/logos/md-maia/horizontal/white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-maia/horizontal/color.svg",
+      "white": "/logos/md-maia/horizontal/white.svg",
+      "alternatives": [
+        {
+          "label": "Alternative Color",
+          "path": "/logos/md-maia/horizontal/alternative-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Alternative White",
+          "path": "/logos/md-maia/horizontal/alternative-white.svg",
+          "preview": "dark"
+        }
+      ]
+    },
+    "horizontalAlternative": {
+      "type": "horizontal",
+      "color": "/logos/md-maia/horizontal/alternative-color.svg",
+      "white": "/logos/md-maia/horizontal/alternative-white.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-maia/vertical/color.svg",
+      "white": "/logos/md-maia/vertical/white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.maia.gov.md/",
+    "contact": {
+      "phone": "022 204 512",
+      "email": "cancelaria@maia.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/minister.agricultura.industrie.alimentara"
+    }
+  }
+}

@@ -40,13 +40,13 @@
   "assets": {
     "main": {
       "type": "vertical",
-      "color": "/logos/md-mf/Vertical Color.svg",
-      "white": "/logos/md-mf/Vertical White.svg"
+      "color": "/logos/md-mf/vertical-color.svg",
+      "white": "/logos/md-mf/vertical-white.svg"
     },
     "vertical": {
       "type": "vertical",
-      "color": "/logos/md-mf/Vertical Color.svg",
-      "white": "/logos/md-mf/Vertical White.svg"
+      "color": "/logos/md-mf/vertical-color.svg",
+      "white": "/logos/md-mf/vertical-white.svg"
     }
   },
   "resources": {

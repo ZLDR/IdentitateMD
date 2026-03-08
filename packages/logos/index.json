@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T01:41:56.145Z",
-  "count": 12,
-  "totalLogos": 37,
+  "generated": "2026-03-08T02:27:12.520Z",
+  "count": 14,
+  "totalLogos": 47,
   "institutions": [
     {
       "id": "eu-flag",
@@ -74,6 +74,28 @@
       }
     },
     {
+      "id": "md-maia",
+      "slug": "md-maia",
+      "name": "Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 6,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-maia/horizontal/alternative-color.svg",
+          "alternative-white": "/logos/md-maia/horizontal/alternative-white.svg",
+          "color": "/logos/md-maia/horizontal/color.svg",
+          "white": "/logos/md-maia/horizontal/white.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-maia/vertical/color.svg",
+          "white": "/logos/md-maia/vertical/white.svg"
+        }
+      }
+    },
+    {
       "id": "md-mc",
       "slug": "md-mc",
       "name": "Ministerul Culturii al Republicii Moldova",
@@ -112,6 +134,26 @@
         "vertical": {
           "color": "/logos/md-mec/vertical-color.svg",
           "white": "/logos/md-mec/vertical-white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mediu",
+      "slug": "md-mediu",
+      "name": "Ministerul Mediului al Republicii Moldova",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-mediu/horizontal-color.svg",
+          "white": "/logos/md-mediu/horizontal-white.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-mediu/vertical-color.svg",
+          "white": "/logos/md-mediu/vertical-white.svg"
         }
       }
     },

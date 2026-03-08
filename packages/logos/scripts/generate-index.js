@@ -36,6 +36,8 @@ const VARIANT_ALIASES = {
   monochrome: "monochrome",
   dark: "dark_mode",
   dark_mode: "dark_mode",
+  "alternative-color": "alternative-color",
+  "alternative-white": "alternative-white",
 };
 
 /**
@@ -46,6 +48,9 @@ function detectVariant(filename) {
   const name = filename.replace(/\.(svg|png)$/, "").toLowerCase();
   // Try exact match first (for subdirectory files like "color.svg")
   if (VARIANT_ALIASES[name]) return VARIANT_ALIASES[name];
+  // Check for alternative variants before generic suffix matching
+  if (name === "alternative-color" || name.endsWith("-alternative-color")) return "alternative-color";
+  if (name === "alternative-white" || name.endsWith("-alternative-white")) return "alternative-white";
   // Try suffix match (for legacy flat files like "symbol_black.svg")
   for (const [alias, canonical] of Object.entries(VARIANT_ALIASES)) {
     if (name.endsWith(`_${alias}`) || name.endsWith(`-${alias}`))
@@ -95,7 +100,8 @@ function getCandidateScore(file, layout, variant, source) {
   }
 
   if (name.includes(variant)) score += 10;
-  if (name.includes("alternative") || name.includes("alternativ")) score -= 80;
+  // Only penalize "alternative" if it's NOT a recognized alternative variant
+  if ((name.includes("alternative") || name.includes("alternativ")) && !variant.startsWith("alternative")) score -= 80;
   if (/(?:-|_| )\d+$/.test(name)) score -= 30;
 
   return score;

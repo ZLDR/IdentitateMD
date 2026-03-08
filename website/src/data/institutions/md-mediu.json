@@ -1,0 +1,67 @@
+{
+  "id": "md-mediu",
+  "slug": "md-mediu",
+  "name": "Ministerul Mediului al Republicii Moldova",
+  "shortname": "Ministerul Mediului",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": ["moldova", "minister", "mediu", "apă", "păduri", "protecție", "mediu"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Mediului al Republicii Moldova este responsabil de politicile și programele de protecție a mediului, conservării naturii și gestionării resurselor naturale.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Times New Roman"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mediu/horizontal-color.svg",
+      "white": "/logos/md-mediu/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mediu/horizontal-color.svg",
+      "white": "/logos/md-mediu/horizontal-white.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mediu/vertical-color.svg",
+      "white": "/logos/md-mediu/vertical-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://mediu.gov.md",
+    "contact": {
+      "phone": "+373 (22) 204 587",
+      "email": "cancelaria@mediu.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/MinisterulMediuluiMoldova"
+    }
+  }
+}
