@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-08T01:35:58.193Z",
+  "generatedAt": "2026-03-08T01:37:50.486Z",
   "total": 12,
   "stats": {
     "byCategory": {
@@ -538,9 +538,9 @@
       },
       "assets": {
         "main": {
-          "type": "horizontal",
-          "color": "/logos/md-mj/horizontal-color.svg",
-          "white": "/logos/md-mj/horizontal-white.svg"
+          "type": "symbol",
+          "color": "/logos/md-mj/symbol-color.svg",
+          "white": "/logos/md-mj/symbol-white.svg"
         },
         "horizontal": {
           "type": "horizontal",
