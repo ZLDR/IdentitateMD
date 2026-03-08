@@ -1,0 +1,54 @@
+{
+  "id": "md-mj",
+  "slug": "ministerul-justiției",
+  "name": "Ministerul Justiției",
+  "shortname": "ministerul justiției",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": ["moldova", "justiție", "minister", "drept", "mj"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul responsabil pentru politica judiciară și administrația justiției din Republica Moldova",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Onest",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mj/horizontal-color.svg",
+      "white": "/logos/md-mj/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mj/horizontal-color.svg",
+      "white": "/logos/md-mj/horizontal-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://justice.gov.md/ro",
+    "contact": {
+      "phone": "(+373 22) 201420",
+      "email": "secretariat@justice.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/ministeruljustitieimd"
+    }
+  }
+}

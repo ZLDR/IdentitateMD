@@ -1,19 +1,19 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-06T16:43:31.925Z",
-  "total": 10,
+  "generatedAt": "2026-03-08T00:29:46.696Z",
+  "total": 11,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
       "directie": 1,
-      "minister": 3,
+      "minister": 4,
       "institutie-cultura": 2,
       "parlament": 1,
       "primarie": 1
     },
     "withManual": 1,
-    "withSvg": 10
+    "withSvg": 11
   },
   "categories": [
     {
@@ -24,7 +24,7 @@
     {
       "id": "minister",
       "label": "Ministere",
-      "count": 3
+      "count": 4
     },
     {
       "id": "directie",
@@ -413,6 +413,73 @@
         "website": "https://mec.gov.md/",
         "social_media": {
           "facebook": "https://www.facebook.com/mec.gov.md/"
+        }
+      }
+    },
+    {
+      "id": "md-mj",
+      "slug": "ministerul-justiției",
+      "name": "Ministerul Justiției",
+      "shortname": "ministerul justiției",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "justiție",
+          "minister",
+          "drept",
+          "mj"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil pentru politica judiciară și administrația justiției din Republica Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mj/horizontal-color.svg",
+          "white": "/logos/md-mj/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mj/horizontal-color.svg",
+          "white": "/logos/md-mj/horizontal-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://justice.gov.md/ro",
+        "contact": {
+          "phone": "(+373 22) 201420",
+          "email": "secretariat@justice.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/ministeruljustitieimd"
         }
       }
     },
