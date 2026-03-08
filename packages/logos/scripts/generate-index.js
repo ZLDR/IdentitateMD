@@ -45,19 +45,24 @@ const VARIANT_ALIASES = {
 
 /**
  * Detectează varianta dintr-un nume de fișier
- * e.g. "color.svg" → "color", "symbol_black.svg" → "black"
+ * e.g. "color.svg" → "color", "symbol_black.svg" → "black", "Horizontal White.svg" → "white"
  */
 function detectVariant(filename) {
   const name = filename.replace(/\.(svg|png)$/, "").toLowerCase();
   // Try exact match first (for subdirectory files like "color.svg")
   if (VARIANT_ALIASES[name]) return VARIANT_ALIASES[name];
-  // Check for alternative variants before generic suffix matching
+  // Check for alternative variants (before generic suffix matching)
   if (name === "alternative-color" || name.endsWith("-alternative-color")) return "alternative-color";
   if (name === "alternative-white" || name.endsWith("-alternative-white")) return "alternative-white";
+  // Handle alternative with space + color/white ("alternative color", "alternative white")
+  if (name.includes("alternative")) {
+    if (name.includes("white")) return "alternative-white";
+    return "alternative-color";
+  }
   if (name.endsWith("-alternative")) return "alternative-color";
-  // Try suffix match (for legacy flat files like "symbol_black.svg")
+  // Try suffix match (for legacy flat files like "symbol_black.svg" or "Horizontal White.svg")
   for (const [alias, canonical] of Object.entries(VARIANT_ALIASES)) {
-    if (name.endsWith(`_${alias}`) || name.endsWith(`-${alias}`))
+    if (name.endsWith(`_${alias}`) || name.endsWith(`-${alias}`) || name.endsWith(` ${alias}`))
       return canonical;
   }
   // Default: treat as color variant
@@ -66,7 +71,7 @@ function detectVariant(filename) {
 
 /**
  * Detectează layout-ul dintr-un nume de fișier legacy
- * e.g. "symbol_black.svg" → "symbol"
+ * e.g. "symbol_black.svg" → "symbol", "Horizontal White.svg" → "horizontal"
  */
 function detectLayout(filename) {
   const name = filename.toLowerCase();
@@ -76,7 +81,8 @@ function detectLayout(filename) {
     name.startsWith("icon")
   )
     return "symbol";
-  if (name.startsWith("vertical")) return "vertical";
+  if (name.startsWith("vertical") || name.includes("vertical")) return "vertical";
+  if (name.startsWith("horizontal") || name.includes("horizontal")) return "horizontal";
   return "horizontal";
 }
 

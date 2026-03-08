@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T03:56:47.761Z",
+  "generated": "2026-03-08T04:04:15.753Z",
   "count": 17,
-  "totalLogos": 66,
+  "totalLogos": 71,
   "institutions": [
     {
       "id": "eu-flag",
@@ -87,11 +87,12 @@
         "symbol",
         "vertical"
       ],
-      "logoCount": 6,
+      "logoCount": 7,
       "logos": {
         "horizontal": {
+          "alternative-color": "/logos/md-mae/Horizontal Alternative Color.svg",
+          "alternative-white": "/logos/md-mae/Horizontal Alternative White.svg",
           "color": "/logos/md-mae/horizontal-color.svg",
-          "alternative-color": "/logos/md-mae/horizontal-color-alternative.svg",
           "white": "/logos/md-mae/horizontal-white.svg"
         },
         "symbol": {
@@ -133,13 +134,15 @@
         "horizontal",
         "vertical"
       ],
-      "logoCount": 2,
+      "logoCount": 4,
       "logos": {
         "horizontal": {
-          "color": "/logos/md-mc/Horizontal Color.svg"
+          "color": "/logos/md-mc/Horizontal Color.svg",
+          "white": "/logos/md-mc/Horizontal White.svg"
         },
         "vertical": {
-          "color": "/logos/md-mc/Vertical Color.svg"
+          "color": "/logos/md-mc/Vertical Color.svg",
+          "white": "/logos/md-mc/Vertical White.svg"
         }
       }
     },
@@ -230,15 +233,17 @@
         "horizontal",
         "symbol"
       ],
-      "logoCount": 4,
+      "logoCount": 6,
       "logos": {
         "horizontal": {
-          "color": "/logos/md-mioc/Horizontal black.svg"
+          "alternative-color": "/logos/md-mioc/Horizontal alternative.svg",
+          "black": "/logos/md-mioc/Horizontal black.svg",
+          "alternative-white": "/logos/md-mioc/Horizontal white alternative.svg",
+          "white": "/logos/md-mioc/Horizontal white.svg"
         },
         "symbol": {
-          "color": "/logos/md-mioc/Symbol Black.svg",
-          "black": "/logos/md-mioc/symbol-black.svg",
-          "white": "/logos/md-mioc/symbol-white.svg"
+          "black": "/logos/md-mioc/Symbol Black.svg",
+          "white": "/logos/md-mioc/Symbol White.svg"
         }
       }
     },
