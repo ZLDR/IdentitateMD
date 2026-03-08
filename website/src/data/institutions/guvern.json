@@ -36,18 +36,26 @@
   "assets": {
     "main": {
       "type": "symbol",
-      "color": "/logos/md-guvern/color.svg"
+      "color": "/logos/md-guvern/symbol-color.svg",
+      "white": "/logos/md-guvern/symbol-white.svg"
     },
     "horizontal": {
       "type": "horizontal",
-      "color": "/logos/md-guvern/horizontal-color.svg"
+      "color": "/logos/md-guvern/horizontal-color.svg",
+      "white": "/logos/md-guvern/horizontal-white.svg"
     },
     "symbol": {
       "type": "symbol",
-      "color": "/logos/md-guvern/color.svg",
-      "white": "/logos/md-guvern/white.svg"
-    },
-    "favicon": null
+      "color": "/logos/md-guvern/symbol-color.svg",
+      "white": "/logos/md-guvern/symbol-white.svg",
+      "alternatives": [
+        {
+          "label": "Alternative Color",
+          "path": "/logos/md-guvern/symbol-color-alternative.svg",
+          "preview": "checkerboard"
+        }
+      ]
+    }
   },
   "resources": {
     "website": "https://www.gov.md",
