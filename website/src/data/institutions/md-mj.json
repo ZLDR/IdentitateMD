@@ -39,6 +39,11 @@
       "type": "horizontal",
       "color": "/logos/md-mj/horizontal-color.svg",
       "white": "/logos/md-mj/horizontal-white.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-mj/symbol-color.svg",
+      "white": "/logos/md-mj/symbol-white.svg"
     }
   },
   "resources": {

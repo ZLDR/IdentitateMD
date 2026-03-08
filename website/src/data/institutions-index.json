@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-08T00:29:46.696Z",
+  "generatedAt": "2026-03-08T01:03:10.823Z",
   "total": 11,
   "stats": {
     "byCategory": {
@@ -470,6 +470,11 @@
           "type": "horizontal",
           "color": "/logos/md-mj/horizontal-color.svg",
           "white": "/logos/md-mj/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mj/symbol-color.svg",
+          "white": "/logos/md-mj/symbol-white.svg"
         }
       },
       "resources": {
