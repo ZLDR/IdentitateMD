@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T04:04:15.753Z",
-  "count": 17,
-  "totalLogos": 71,
+  "generated": "2026-03-08T06:39:42.909Z",
+  "count": 18,
+  "totalLogos": 76,
   "institutions": [
     {
       "id": "eu-flag",
@@ -222,6 +222,27 @@
         "vertical": {
           "color": "/logos/md-midr/vertical/color.svg",
           "white": "/logos/md-midr/vertical/white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-ministerul-energiei",
+      "slug": "md-ministerul-energiei",
+      "name": "Md Ministerul Energiei",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 5,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-ministerul-energiei/horizontal-color.svg",
+          "white": "/logos/md-ministerul-energiei/horizontal-white.svg"
+        },
+        "vertical": {
+          "alternative-color": "/logos/md-ministerul-energiei/vertical-color-alternative.svg",
+          "color": "/logos/md-ministerul-energiei/vertical-color.svg",
+          "white": "/logos/md-ministerul-energiei/vertical-white.svg"
         }
       }
     },

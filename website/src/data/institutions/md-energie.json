@@ -1,0 +1,75 @@
+{
+  "id": "md-energie",
+  "slug": "ministerul-energiei",
+  "name": "Ministerul Energiei",
+  "shortname": "ME",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": ["moldova", "minister", "energie", "energetică", "me"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Energiei al Republicii Moldova este responsabil de politicile și programele în domeniul energiei și energeticii.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Onest",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-energie/horizontal-color.svg",
+      "white": "/logos/md-energie/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-energie/horizontal-color.svg",
+      "white": "/logos/md-energie/horizontal-white.svg",
+      "alternatives": [
+        {
+          "label": "Alternative Color",
+          "path": "/logos/md-energie/vertical-color-alternative.svg",
+          "preview": "checkerboard"
+        }
+      ]
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-energie/vertical-color.svg",
+      "white": "/logos/md-energie/vertical-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.energie.gov.md/ro",
+    "contact": {
+      "phone": "022 250 131",
+      "email": "secretariat@energie.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/eGovernanceAgency.Moldova"
+    }
+  }
+}
