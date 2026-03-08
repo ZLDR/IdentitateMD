@@ -54,6 +54,7 @@ function detectVariant(filename) {
   // Check for alternative variants before generic suffix matching
   if (name === "alternative-color" || name.endsWith("-alternative-color")) return "alternative-color";
   if (name === "alternative-white" || name.endsWith("-alternative-white")) return "alternative-white";
+  if (name.endsWith("-alternative")) return "alternative-color";
   // Try suffix match (for legacy flat files like "symbol_black.svg")
   for (const [alias, canonical] of Object.entries(VARIANT_ALIASES)) {
     if (name.endsWith(`_${alias}`) || name.endsWith(`-${alias}`))
