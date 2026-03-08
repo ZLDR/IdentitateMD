@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T00:29:58.904Z",
-  "count": 11,
-  "totalLogos": 33,
+  "generated": "2026-03-08T01:41:56.145Z",
+  "count": 12,
+  "totalLogos": 37,
   "institutions": [
     {
       "id": "eu-flag",
@@ -116,6 +116,21 @@
       }
     },
     {
+      "id": "md-mf",
+      "slug": "md-mf",
+      "name": "Ministerul Finanțelor",
+      "layouts": [
+        "vertical"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "vertical": {
+          "color": "/logos/md-mf/vertical-color.svg",
+          "white": "/logos/md-mf/vertical-white.svg"
+        }
+      }
+    },
+    {
       "id": "md-mioc",
       "slug": "md-mioc",
       "name": "Muzeul de Istorie a Orașului Chișinău",
@@ -141,9 +156,10 @@
       "name": "Ministerul Justiției",
       "layouts": [
         "horizontal",
-        "symbol"
+        "symbol",
+        "vertical"
       ],
-      "logoCount": 4,
+      "logoCount": 6,
       "logos": {
         "horizontal": {
           "color": "/logos/md-mj/horizontal-color.svg",
@@ -152,6 +168,10 @@
         "symbol": {
           "color": "/logos/md-mj/symbol-color.svg",
           "white": "/logos/md-mj/symbol-white.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-mj/vertical-color.svg",
+          "white": "/logos/md-mj/vertical-white.svg"
         }
       }
     },

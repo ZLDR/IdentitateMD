@@ -17,7 +17,7 @@ Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o 
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.21/logos/anaf/anaf.svg"
   alt="ANAF"
 />
 ```
