@@ -40,6 +40,10 @@
       "color": "/logos/md-mec/horizontal-color.svg",
       "white": "/logos/md-mec/horizontal-white.svg"
     },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-mec/symbol.svg"
+    },
     "vertical": {
       "type": "vertical",
       "color": "/logos/md-mec/vertical-color.svg",

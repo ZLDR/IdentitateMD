@@ -1,7 +1,7 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-08T03:46:37.051Z",
-  "total": 17,
+  "generatedAt": "2026-03-08T04:12:11.350Z",
+  "total": 18,
   "stats": {
     "byCategory": {
       "altele": 1,
@@ -9,13 +9,13 @@
       "agentie": 1,
       "directie": 1,
       "minister": 8,
-      "institutie-cultura": 2,
+      "institutie-cultura": 3,
       "parlament": 1,
       "primarie": 1,
       "servicii": 1
     },
     "withManual": 1,
-    "withSvg": 17
+    "withSvg": 18
   },
   "categories": [
     {
@@ -46,7 +46,7 @@
     {
       "id": "institutie-cultura",
       "label": "Cultură",
-      "count": 2
+      "count": 3
     },
     {
       "id": "altele",
@@ -82,42 +82,69 @@
         {
           "name": "Teal Oficial",
           "hex": "#22625c",
-          "rgb": [34, 98, 92],
+          "rgb": [
+            34,
+            98,
+            92
+          ],
           "usage": "primary"
         },
         {
           "name": "Violet Oficial",
           "hex": "#4404b7",
-          "rgb": [68, 4, 183],
+          "rgb": [
+            68,
+            4,
+            183
+          ],
           "usage": "primary"
         },
         {
           "name": "Indigo Secundar",
           "hex": "#0a0069",
-          "rgb": [10, 0, 105],
+          "rgb": [
+            10,
+            0,
+            105
+          ],
           "usage": "secondary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         },
         {
           "name": "Negru",
           "hex": "#000000",
-          "rgb": [0, 0, 0],
+          "rgb": [
+            0,
+            0,
+            0
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Open Sans",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -183,7 +210,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-05",
-        "keywords": ["moldova", "direcție", "cultură", "patrimoniu", "dgcpc"],
+        "keywords": [
+          "moldova",
+          "direcție",
+          "cultură",
+          "patrimoniu",
+          "dgcpc"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -218,7 +251,11 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "guvern", "executiv"],
+        "keywords": [
+          "moldova",
+          "guvern",
+          "executiv"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -230,41 +267,43 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
         "main": {
           "type": "symbol",
-          "color": "/logos/md-guvern/symbol-color.svg"
+          "color": "/logos/md-guvern/color.svg"
         },
         "horizontal": {
           "type": "horizontal",
-          "color": "/logos/md-guvern/horizontal-color.svg",
-          "white": "/logos/md-guvern/horizontal-white.svg"
+          "color": "/logos/md-guvern/horizontal-color.svg"
         },
         "symbol": {
           "type": "symbol",
-          "color": "/logos/md-guvern/symbol-color.svg",
-          "white": "/logos/md-guvern/symbol-white.svg",
-          "alternatives": [
-            {
-              "label": "Color",
-              "path": "/logos/md-guvern/symbol-color-alternative.svg",
-              "preview": "checkerboard"
-            }
-          ]
+          "color": "/logos/md-guvern/color.svg",
+          "white": "/logos/md-guvern/white.svg"
         },
         "favicon": null
       },
@@ -303,24 +342,38 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [63, 200, 244],
+          "rgb": [
+            63,
+            200,
+            244
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -395,13 +448,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -486,13 +547,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -507,18 +576,18 @@
       "assets": {
         "main": {
           "type": "horizontal",
-          "color": "/logos/md-mc/horizontal-color.svg",
-          "white": "/logos/md-mc/horizontal-white.svg"
+          "color": "/logos/md-mc/Horizontal Color.svg",
+          "white": "/logos/md-mc/Horizontal White.svg"
         },
         "horizontal": {
           "type": "horizontal",
-          "color": "/logos/md-mc/horizontal-color.svg",
-          "white": "/logos/md-mc/horizontal-white.svg"
+          "color": "/logos/md-mc/Horizontal Color.svg",
+          "white": "/logos/md-mc/Horizontal White.svg"
         },
         "vertical": {
           "type": "vertical",
-          "color": "/logos/md-mc/vertical-color.svg",
-          "white": "/logos/md-mc/vertical-white.svg"
+          "color": "/logos/md-mc/Vertical Color.svg",
+          "white": "/logos/md-mc/Vertical White.svg"
         }
       },
       "resources": {
@@ -538,7 +607,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
+        "keywords": [
+          "moldova",
+          "educație",
+          "cercetare",
+          "minister",
+          "mec"
+        ],
         "quality": "verified"
       },
       "location": {
@@ -550,14 +625,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -570,6 +652,10 @@
           "type": "horizontal",
           "color": "/logos/md-mec/horizontal-color.svg",
           "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mec/symbol.svg"
         },
         "vertical": {
           "type": "vertical",
@@ -593,7 +679,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": ["moldova", "finanțe", "minister", "economie", "mf"],
+        "keywords": [
+          "moldova",
+          "finanțe",
+          "minister",
+          "economie",
+          "mf"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -605,13 +697,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -673,13 +773,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -728,7 +836,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": ["moldova", "justiție", "minister", "drept", "mj"],
+        "keywords": [
+          "moldova",
+          "justiție",
+          "minister",
+          "drept",
+          "mj"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -740,14 +854,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -765,6 +886,11 @@
           "type": "symbol",
           "color": "/logos/md-mj/symbol-color.svg",
           "white": "/logos/md-mj/symbol-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mj/vertical-color.svg",
+          "white": "/logos/md-mj/vertical-white.svg"
         }
       },
       "resources": {
@@ -807,13 +933,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -850,6 +984,132 @@
         },
         "social_media": {
           "facebook": "https://www.facebook.com/MinisterulMediuluiMoldova"
+        }
+      }
+    },
+    {
+      "id": "md-mioc",
+      "slug": "md-mioc",
+      "name": "Muzeul de Istorie a Orașului Chișinău",
+      "shortname": "MIOC",
+      "category": "institutie-cultura",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "muzee",
+          "mioc",
+          "turnul de apă",
+          "patrimoniu"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+      "colors": [
+        {
+          "name": "Bronze Pantone 875 C",
+          "hex": "#C49463",
+          "pantone": "875 C",
+          "usage": "primary"
+        },
+        {
+          "name": "Pantone 157 C",
+          "hex": "#E89E5B",
+          "pantone": "157 C",
+          "usage": "secondary"
+        },
+        {
+          "name": "Pantone 7419 C",
+          "hex": "#A45F53",
+          "pantone": "7419 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone 1817 C",
+          "hex": "#642A31",
+          "pantone": "1817 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone WarmGray 3 C",
+          "hex": "#B8B1AA",
+          "pantone": "WarmGray 3 C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Pantone Black C",
+          "hex": "#1A1A1A",
+          "pantone": "Black C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Grey Process Black 25%",
+          "hex": "#AFAFAF",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Process Black 100%",
+          "hex": "#18181B",
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Proxima Nova",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Franklin Gothic",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "black": "/logos/md-mioc/Horizontal black.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "black": "/logos/md-mioc/Horizontal black.svg",
+          "white": "/logos/md-mioc/Horizontal white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-mioc/Horizontal alternative.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alternative White",
+              "path": "/logos/md-mioc/Horizontal white alternative.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "symbol": {
+          "type": "symbol",
+          "black": "/logos/md-mioc/Symbol Black.svg",
+          "white": "/logos/md-mioc/Symbol White.svg"
+        }
+      },
+      "resources": {
+        "branding_manual": null,
+        "contact": {
+          "phone": "022 241 648",
+          "email": "muzeul.chisinau@gmail.com"
         }
       }
     },
@@ -929,11 +1189,18 @@
       "typography": {
         "primary": {
           "family": "Proxima Nova",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Franklin Gothic",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -977,7 +1244,14 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": ["moldova", "chișinău", "muzeu", "artă", "mnam", "cultură"],
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "artă",
+          "mnam",
+          "cultură"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -1047,7 +1321,12 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": ["moldova", "parlament", "legiferare", "legislativ"],
+        "keywords": [
+          "moldova",
+          "parlament",
+          "legiferare",
+          "legislativ"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -1187,13 +1466,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1203,7 +1490,10 @@
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1268,7 +1558,11 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [255, 204, 0],
+          "rgb": [
+            255,
+            204,
+            0
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -1276,7 +1570,11 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [0, 51, 153],
+          "rgb": [
+            0,
+            51,
+            153
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

@@ -1,0 +1,119 @@
+{
+  "id": "md-mioc",
+  "slug": "md-mioc",
+  "name": "Muzeul de Istorie a Orașului Chișinău",
+  "shortname": "MIOC",
+  "category": "institutie-cultura",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": [
+      "moldova",
+      "chișinău",
+      "muzeu",
+      "muzee",
+      "mioc",
+      "turnul de apă",
+      "patrimoniu"
+    ],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+  "colors": [
+    {
+      "name": "Bronze Pantone 875 C",
+      "hex": "#C49463",
+      "pantone": "875 C",
+      "usage": "primary"
+    },
+    {
+      "name": "Pantone 157 C",
+      "hex": "#E89E5B",
+      "pantone": "157 C",
+      "usage": "secondary"
+    },
+    {
+      "name": "Pantone 7419 C",
+      "hex": "#A45F53",
+      "pantone": "7419 C",
+      "usage": "accent"
+    },
+    {
+      "name": "Pantone 1817 C",
+      "hex": "#642A31",
+      "pantone": "1817 C",
+      "usage": "accent"
+    },
+    {
+      "name": "Pantone WarmGray 3 C",
+      "hex": "#B8B1AA",
+      "pantone": "WarmGray 3 C",
+      "usage": "neutral"
+    },
+    {
+      "name": "Black Pantone Black C",
+      "hex": "#1A1A1A",
+      "pantone": "Black C",
+      "usage": "neutral"
+    },
+    {
+      "name": "Grey Process Black 25%",
+      "hex": "#AFAFAF",
+      "usage": "neutral"
+    },
+    {
+      "name": "Black Process Black 100%",
+      "hex": "#18181B",
+      "usage": "neutral"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Proxima Nova",
+      "weights": [400, 600, 700]
+    },
+    "secondary": {
+      "family": "Franklin Gothic",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "black": "/logos/md-mioc/Horizontal black.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "black": "/logos/md-mioc/Horizontal black.svg",
+      "white": "/logos/md-mioc/Horizontal white.svg",
+      "alternatives": [
+        {
+          "label": "Alternative Color",
+          "path": "/logos/md-mioc/Horizontal alternative.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Alternative White",
+          "path": "/logos/md-mioc/Horizontal white alternative.svg",
+          "preview": "dark"
+        }
+      ]
+    },
+    "symbol": {
+      "type": "symbol",
+      "black": "/logos/md-mioc/Symbol Black.svg",
+      "white": "/logos/md-mioc/Symbol White.svg"
+    }
+  },
+  "resources": {
+    "branding_manual": null,
+    "contact": {
+      "phone": "022 241 648",
+      "email": "muzeul.chisinau@gmail.com"
+    }
+  }
+}

@@ -40,18 +40,18 @@
   "assets": {
     "main": {
       "type": "horizontal",
-      "color": "/logos/md-mc/horizontal-color.svg",
-      "white": "/logos/md-mc/horizontal-white.svg"
+      "color": "/logos/md-mc/Horizontal Color.svg",
+      "white": "/logos/md-mc/Horizontal White.svg"
     },
     "horizontal": {
       "type": "horizontal",
-      "color": "/logos/md-mc/horizontal-color.svg",
-      "white": "/logos/md-mc/horizontal-white.svg"
+      "color": "/logos/md-mc/Horizontal Color.svg",
+      "white": "/logos/md-mc/Horizontal White.svg"
     },
     "vertical": {
       "type": "vertical",
-      "color": "/logos/md-mc/vertical-color.svg",
-      "white": "/logos/md-mc/vertical-white.svg"
+      "color": "/logos/md-mc/Vertical Color.svg",
+      "white": "/logos/md-mc/Vertical White.svg"
     }
   },
   "resources": {
