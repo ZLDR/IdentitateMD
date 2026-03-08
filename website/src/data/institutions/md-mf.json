@@ -1,0 +1,62 @@
+{
+  "id": "md-mf",
+  "slug": "md-mf",
+  "name": "Ministerul Finanțelor",
+  "shortname": "Ministerul Finanțelor",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": ["moldova", "finanțe", "minister", "economie", "mf"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Finanțelor al Republicii Moldova",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Times New Roman"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "vertical",
+      "color": "/logos/md-mf/Vertical Color.svg",
+      "white": "/logos/md-mf/Vertical White.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mf/Vertical Color.svg",
+      "white": "/logos/md-mf/Vertical White.svg"
+    }
+  },
+  "resources": {
+    "website": "https://mf.gov.md/ro",
+    "contact": {
+      "phone": "022 262 523",
+      "email": "cancelaria@mf.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/MinisterulFinantelorRM"
+    }
+  }
+}
