@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T03:47:28.029Z",
+  "generated": "2026-03-08T03:55:29.577Z",
   "count": 17,
-  "totalLogos": 61,
+  "totalLogos": 64,
   "institutions": [
     {
       "id": "eu-flag",
@@ -28,14 +28,17 @@
         "horizontal",
         "symbol"
       ],
-      "logoCount": 4,
+      "logoCount": 7,
       "logos": {
         "horizontal": {
           "alternative-color": "/logos/md-age/horizontal/alternative-color.svg",
+          "english-white": "/logos/md-age/horizontal/english-white.svg",
+          "filled-white": "/logos/md-age/horizontal/filled-white.svg",
           "white": "/logos/md-age/horizontal/white.svg"
         },
         "symbol": {
           "color": "/logos/md-age/symbol/color.svg",
+          "filled": "/logos/md-age/symbol/filled.svg",
           "white": "/logos/md-age/symbol/white.svg"
         }
       }

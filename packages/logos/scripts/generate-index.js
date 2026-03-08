@@ -38,6 +38,9 @@ const VARIANT_ALIASES = {
   dark_mode: "dark_mode",
   "alternative-color": "alternative-color",
   "alternative-white": "alternative-white",
+  filled: "filled",
+  "filled-white": "filled-white",
+  "english-white": "english-white",
 };
 
 /**

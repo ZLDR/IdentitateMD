@@ -93,12 +93,33 @@ Pachetul `@identitate-md/logos` include:
 
 ### Instituții Disponibile
 
-- ANAF (Agenția Națională de Administrare Fiscală)
+**Guvern**
 - Guvernul Republicii Moldova
-- Ministerul Educației
-- PNRR (Plan Național de Redresare și Reziliență)
-- Primăria Cluj-Napoca
-- ...și în continuă creștere!
+
+**Ministere** (8)
+- Ministerul Afacerilor Externe (MAE)
+- Ministerul Agriculturii și Industriei Alimentare (MAIA)
+- Ministerul Culturii (MC)
+- Ministerul Educației și Cercetării (MEC)
+- Ministerul Finanțelor (MF)
+- Ministerul Infrastructurii și Dezvoltării Regionale (MIDR)
+- Ministerul Justiției (MJ)
+- Ministerul Mediului
+
+**Alte Instituții**
+- Agenția De Guvernare Electronică (AGE)
+- Direcția Generală Cultură și Patrimoniu Cultural (DGCPC)
+- Primăria Municipiului Chișinău
+- Serviciul Tehnologia Informației și Securitatea Cibernetică (STISC)
+
+**Cultură**
+- Muzeul Național de Artă Moldovei (MNAM)
+- Muzeul de Istorie a Orașului Chișinău (MIOC)
+
+**Simboluri**
+- Steagul Uniunii Europene
+
+**Total: 17 instituții**
 
 ## 🤝 Contribuții
 
