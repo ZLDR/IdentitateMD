@@ -1,19 +1,21 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-08T02:20:09.815Z",
-  "total": 14,
+  "generatedAt": "2026-03-08T03:46:37.051Z",
+  "total": 17,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
+      "agentie": 1,
       "directie": 1,
-      "minister": 7,
+      "minister": 8,
       "institutie-cultura": 2,
       "parlament": 1,
-      "primarie": 1
+      "primarie": 1,
+      "servicii": 1
     },
     "withManual": 1,
-    "withSvg": 14
+    "withSvg": 17
   },
   "categories": [
     {
@@ -24,11 +26,16 @@
     {
       "id": "minister",
       "label": "Ministere",
-      "count": 7
+      "count": 8
     },
     {
       "id": "directie",
       "label": "Direcții",
+      "count": 1
+    },
+    {
+      "id": "agentie",
+      "label": "Agenții",
       "count": 1
     },
     {
@@ -49,6 +56,125 @@
   ],
   "institutions": [
     {
+      "id": "md-age",
+      "slug": "agentia-de-guvernare-electronica",
+      "name": "Agenția De Guvernare Electronică",
+      "shortname": "AGE",
+      "category": "agentie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "agenție",
+          "guvernare electronică",
+          "e-governance",
+          "age"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Agenția De Guvernare Electronică este responsabilă de dezvoltarea și implementarea soluțiilor de guvernare electronică în Republica Moldova.",
+      "colors": [
+        {
+          "name": "Teal Oficial",
+          "hex": "#22625c",
+          "rgb": [34, 98, 92],
+          "usage": "primary"
+        },
+        {
+          "name": "Violet Oficial",
+          "hex": "#4404b7",
+          "rgb": [68, 4, 183],
+          "usage": "primary"
+        },
+        {
+          "name": "Indigo Secundar",
+          "hex": "#0a0069",
+          "rgb": [10, 0, 105],
+          "usage": "secondary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "usage": "neutral"
+        },
+        {
+          "name": "Negru",
+          "hex": "#000000",
+          "rgb": [0, 0, 0],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Open Sans",
+          "weights": [400, 600, 700]
+        },
+        "secondary": {
+          "family": "Onest",
+          "weights": [400, 700]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-age/symbol/color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "white": "/logos/md-age/horizontal/white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-age/horizontal/alternative-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Filled White",
+              "path": "/logos/md-age/horizontal/filled-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "English White",
+              "path": "/logos/md-age/horizontal/english-white.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "horizontalAlternative": {
+          "type": "horizontal",
+          "color": "/logos/md-age/horizontal/alternative-color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-age/symbol/color.svg",
+          "white": "/logos/md-age/symbol/white.svg",
+          "alternatives": [
+            {
+              "label": "Filled",
+              "path": "/logos/md-age/symbol/filled.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://egov.md",
+        "contact": {
+          "phone": "022 820 026",
+          "email": "office@egov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/eGovernanceAgency.Moldova"
+        }
+      }
+    },
+    {
       "id": "md-dgcpc",
       "slug": "md-dgcpc",
       "name": "Direcția Generală Cultură și Patrimoniu Cultural",
@@ -57,13 +183,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-05",
-        "keywords": [
-          "moldova",
-          "direcție",
-          "cultură",
-          "patrimoniu",
-          "dgcpc"
-        ],
+        "keywords": ["moldova", "direcție", "cultură", "patrimoniu", "dgcpc"],
         "quality": "draft"
       },
       "location": {
@@ -98,11 +218,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "guvern",
-          "executiv"
-        ],
+        "keywords": ["moldova", "guvern", "executiv"],
         "quality": "draft"
       },
       "location": {
@@ -114,43 +230,41 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
         "main": {
           "type": "symbol",
-          "color": "/logos/md-guvern/color.svg"
+          "color": "/logos/md-guvern/symbol-color.svg"
         },
         "horizontal": {
           "type": "horizontal",
-          "color": "/logos/md-guvern/horizontal-color.svg"
+          "color": "/logos/md-guvern/horizontal-color.svg",
+          "white": "/logos/md-guvern/horizontal-white.svg"
         },
         "symbol": {
           "type": "symbol",
-          "color": "/logos/md-guvern/color.svg",
-          "white": "/logos/md-guvern/white.svg"
+          "color": "/logos/md-guvern/symbol-color.svg",
+          "white": "/logos/md-guvern/symbol-white.svg",
+          "alternatives": [
+            {
+              "label": "Color",
+              "path": "/logos/md-guvern/symbol-color-alternative.svg",
+              "preview": "checkerboard"
+            }
+          ]
         },
         "favicon": null
       },
@@ -189,38 +303,24 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [
-            63,
-            200,
-            244
-          ],
+          "rgb": [63, 200, 244],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -295,21 +395,13 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
+          "rgb": [255, 255, 255],
           "usage": "secondary"
         }
       ],
@@ -394,21 +486,13 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
+          "rgb": [255, 255, 255],
           "usage": "secondary"
         }
       ],
@@ -454,13 +538,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": [
-          "moldova",
-          "educație",
-          "cercetare",
-          "minister",
-          "mec"
-        ],
+        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
         "quality": "verified"
       },
       "location": {
@@ -472,21 +550,14 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -522,13 +593,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": [
-          "moldova",
-          "finanțe",
-          "minister",
-          "economie",
-          "mf"
-        ],
+        "keywords": ["moldova", "finanțe", "minister", "economie", "mf"],
         "quality": "draft"
       },
       "location": {
@@ -540,21 +605,13 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
+          "rgb": [255, 255, 255],
           "usage": "secondary"
         }
       ],
@@ -590,6 +647,79 @@
       }
     },
     {
+      "id": "md-midr",
+      "slug": "midr",
+      "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+      "shortname": "MIDR",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "minister",
+          "infrastructură",
+          "dezvoltare regională",
+          "midr"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Infrastructurii și Dezvoltării Regionale este responsabil de politicile și programele de dezvoltare a infrastructurii și a regiunilor din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [14, 76, 144],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-midr/horizontal/color.svg",
+          "white": "/logos/md-midr/horizontal/white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-midr/horizontal/color.svg",
+          "white": "/logos/md-midr/horizontal/white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-midr/vertical/color.svg",
+          "white": "/logos/md-midr/vertical/white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://midr.gov.md/",
+        "contact": {
+          "phone": "022 250 593",
+          "email": "secretariat@midr.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/midr.gov.md"
+        }
+      }
+    },
+    {
       "id": "md-mj",
       "slug": "ministerul-justiției",
       "name": "Ministerul Justiției",
@@ -598,13 +728,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": [
-          "moldova",
-          "justiție",
-          "minister",
-          "drept",
-          "mj"
-        ],
+        "keywords": ["moldova", "justiție", "minister", "drept", "mj"],
         "quality": "draft"
       },
       "location": {
@@ -616,21 +740,14 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -690,21 +807,13 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [
-            14,
-            76,
-            144
-          ],
+          "rgb": [14, 76, 144],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
+          "rgb": [255, 255, 255],
           "usage": "secondary"
         }
       ],
@@ -820,18 +929,11 @@
       "typography": {
         "primary": {
           "family": "Proxima Nova",
-          "weights": [
-            400,
-            600,
-            700
-          ]
+          "weights": [400, 600, 700]
         },
         "secondary": {
           "family": "Franklin Gothic",
-          "weights": [
-            400,
-            700
-          ]
+          "weights": [400, 700]
         }
       },
       "assets": {
@@ -875,14 +977,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": [
-          "moldova",
-          "chișinău",
-          "muzeu",
-          "artă",
-          "mnam",
-          "cultură"
-        ],
+        "keywords": ["moldova", "chișinău", "muzeu", "artă", "mnam", "cultură"],
         "quality": "draft"
       },
       "location": {
@@ -952,12 +1047,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": [
-          "moldova",
-          "parlament",
-          "legiferare",
-          "legislativ"
-        ],
+        "keywords": ["moldova", "parlament", "legiferare", "legislativ"],
         "quality": "draft"
       },
       "location": {
@@ -1069,6 +1159,87 @@
       }
     },
     {
+      "id": "md-stisc",
+      "slug": "stisc",
+      "name": "Serviciul Tehnologia Informației și securitatea cibernetică",
+      "shortname": "STISC",
+      "category": "servicii",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "serviciu",
+          "tehnologie",
+          "informatică",
+          "securitate",
+          "cibernetică",
+          "stisc"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Serviciul Tehnologia Informației și securitatea cibernetică este responsabil de politicile și programele de dezvoltare a tehnologiei informației și securității cibernetice din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [14, 76, 144],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Onest",
+          "weights": [400, 700]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-stisc/symbol/color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-stisc/horizontal/color.svg",
+          "white": "/logos/md-stisc/horizontal/white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-stisc/symbol/color.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-stisc/symbol/alternative-color.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://stisc.gov.md/ro",
+        "contact": {
+          "phone": "022 820 911",
+          "email": "stisc@stisc.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/stisc.gov.md/photos"
+        }
+      }
+    },
+    {
       "id": "md-eu-flag",
       "slug": "eu-flag",
       "name": "Steagul Uniunii Europene",
@@ -1097,11 +1268,7 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [
-            255,
-            204,
-            0
-          ],
+          "rgb": [255, 204, 0],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -1109,11 +1276,7 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [
-            0,
-            51,
-            153
-          ],
+          "rgb": [0, 51, 153],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"

@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T02:27:12.520Z",
-  "count": 14,
-  "totalLogos": 47,
+  "generated": "2026-03-08T03:47:28.029Z",
+  "count": 17,
+  "totalLogos": 61,
   "institutions": [
     {
       "id": "eu-flag",
@@ -17,6 +17,26 @@
           "black": "/logos/eu-flag/symbol/black.svg",
           "color": "/logos/eu-flag/symbol/color.svg",
           "white": "/logos/eu-flag/symbol/white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-age",
+      "slug": "md-age",
+      "name": "Agenția De Guvernare Electronică",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-age/horizontal/alternative-color.svg",
+          "white": "/logos/md-age/horizontal/white.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-age/symbol/color.svg",
+          "white": "/logos/md-age/symbol/white.svg"
         }
       }
     },
@@ -39,13 +59,18 @@
       "slug": "md-guvern",
       "name": "Guvernul Republicii Moldova",
       "layouts": [
-        "horizontal"
+        "horizontal",
+        "symbol"
       ],
-      "logoCount": 2,
+      "logoCount": 4,
       "logos": {
         "horizontal": {
           "color": "/logos/md-guvern/horizontal-color.svg",
-          "white": "/logos/md-guvern/white.svg"
+          "white": "/logos/md-guvern/horizontal-white.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-guvern/symbol-color.svg",
+          "white": "/logos/md-guvern/symbol-white.svg"
         }
       }
     },
@@ -173,6 +198,26 @@
       }
     },
     {
+      "id": "md-midr",
+      "slug": "md-midr",
+      "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-midr/horizontal/color.svg",
+          "white": "/logos/md-midr/horizontal/white.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-midr/vertical/color.svg",
+          "white": "/logos/md-midr/vertical/white.svg"
+        }
+      }
+    },
+    {
       "id": "md-mioc",
       "slug": "md-mioc",
       "name": "Muzeul de Istorie a Orașului Chișinău",
@@ -269,6 +314,26 @@
         },
         "symbol": {
           "color": "/logos/md-primaria-chisinau/symbol.svg"
+        }
+      }
+    },
+    {
+      "id": "md-stisc",
+      "slug": "md-stisc",
+      "name": "Serviciul Tehnologia Informației și securitatea cibernetică",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-stisc/horizontal/color.svg",
+          "white": "/logos/md-stisc/horizontal/white.svg"
+        },
+        "symbol": {
+          "alternative-color": "/logos/md-stisc/symbol/alternative-color.svg",
+          "color": "/logos/md-stisc/symbol/color.svg"
         }
       }
     }

@@ -8,7 +8,7 @@ Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o 
 
 ## Despre
 
-IdentitateMD rezolvă fragmentarea identității vizuale a statului român. Funcționarii, designerii, jurnaliștii și developerii pot accesa instantaneu logo-uri corecte ale instituțiilor publice, în format vectorial.
+IdentitateMD rezolvă fragmentarea identității vizuale a Republicii Moldova. Funcționarii, designerii, jurnaliștii și developerii pot accesa instantaneu logo-uri corecte ale instituțiilor publice, în format vectorial.
 
 ## Quick Start
 
@@ -33,11 +33,15 @@ IdentitateMD/
 ├── website/                     # Astro static site
 │   ├── public/
 │   │   ├── logos/               # Fișierele de logo (SVG, PNG)
-│   │   │   ├── guvernul-republicii-moldova/
-│   │   │   │   ├── guvernul-republicii-moldova.svg
-│   │   │   │   ├── guvernul-republicii-moldova-mono.svg
-│   │   │   │   └── guvernul-republicii-moldova-alb.svg
-│   │   │   ├── pnrr/
+│   │   │   ├── md-guvern/
+│   │   │   │   ├── horizontal/
+│   │   │   │   └── symbol/
+│   │   │   ├── md-mae/
+│   │   │   │   ├── horizontal/
+│   │   │   │   ├── vertical/
+│   │   │   │   └── symbol/
+│   │   │   ├── md-maia/
+│   │   │   ├── md-primaria-chisinau/
 │   │   │   └── ...
 │   │   └── favicon.svg
 │   ├── src/
@@ -47,8 +51,18 @@ IdentitateMD/
 │   │   │   └── LogoCard.astro
 │   │   ├── data/
 │   │   │   ├── institutions/    # Fișierele JSON per instituție
-│   │   │   │   ├── guvernul-republicii-moldova.json
-│   │   │   │   ├── primaria-cluj-napoca.json
+│   │   │   │   ├── md-guvern.json
+│   │   │   │   ├── md-mae.json
+│   │   │   │   ├── md-maia.json
+│   │   │   │   ├── md-mc.json
+│   │   │   │   ├── md-mec.json
+│   │   │   │   ├── md-mediu.json
+│   │   │   │   ├── md-mf.json
+│   │   │   │   ├── md-midr.json
+│   │   │   │   ├── md-mj.json
+│   │   │   │   ├── md-parlament.json
+│   │   │   │   ├── md-primaria-chisinau.json
+│   │   │   │   ├── md-stisc.json
 │   │   │   │   └── ...
 │   │   │   └── institutions-index.json  # Index centralizat (generat)
 │   │   ├── layouts/
@@ -79,79 +93,105 @@ Fiecare instituție are un fișier JSON în `src/data/institutions/`:
 
 ```json
 {
-  "id": "primaria-timisoara",
-  "name": "Primăria Municipiului Timișoara",
-  "shortName": "Primăria Timișoara",
-  "abbreviation": "PMT",
-  "category": "primarie",
-  "region": "Timiș",
-  "description": "Administrația locală a municipiului Timișoara.",
-  "colors": [
-    { "name": "Primary Red", "hex": "#E30613", "pantone": "485 C" },
-    { "name": "Silver", "hex": "#A7A9AC" }
-  ],
-  "assets": [
-    {
-      "variant": "principal",
-      "format": "svg",
-      "path": "/logos/primaria-timisoara/primaria-timisoara.svg"
-    },
-    {
-      "variant": "monocrom-alb",
-      "format": "svg",
-      "path": "/logos/primaria-timisoara/primaria-timisoara-alb.svg"
-    }
-  ],
-  "resources": {
-    "website": "https://www.pfrcluj.ro",
-    "brandManual": "https://...",
-    "fontPrimary": "Roboto"
+  "id": "md-mc",
+  "slug": "md-mc",
+  "name": "Ministerul Culturii al Republicii Moldova",
+  "shortname": "Ministerul Culturii",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-06",
+    "keywords": ["moldova", "minister", "cultură", "arte", "patrimoniu"],
+    "quality": "verified"
   },
-  "updatedAt": "2026-02-08",
-  "quality": "community"
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Culturii are în subordine instituții publice concertistice și teatrale, biblioteci, muzee și alte instituții publice.",
+  "colors": [
+    { "name": "Albastru Oficial", "hex": "#0E4C90", "rgb": [14, 76, 144], "usage": "primary" },
+    { "name": "Alb", "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "secondary" }
+  ],
+  "typography": {
+    "primary": { "family": "Trajan Pro" },
+    "secondary": { "family": "Times New Roman" }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mc/horizontal/color.svg",
+      "white": "/logos/md-mc/horizontal/white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mc/horizontal/color.svg",
+      "white": "/logos/md-mc/horizontal/white.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mc/vertical/color.svg",
+      "white": "/logos/md-mc/vertical/white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.mc.gov.md/",
+    "contact": {
+      "phone": "+373 (22) 823 801",
+      "email": "cancelaria@mc.gov.md"
+    }
+  }
 }
 ```
 
 ### Categorii disponibile
 
-| Categorie            | Descriere                                                |
-| -------------------- | -------------------------------------------------------- |
-| `guvern`             | Guvernul Republicii Moldova, Administrația Prezidențială |
-| `minister`           | Ministere                                                |
-| `agentie`            | Agenții guvernamentale (ANAF, ANM, etc.)                 |
-| `autoritate`         | Autorități independente                                  |
-| `primarie`           | Primării municipale și orășenești                        |
-| `consiliu-judetean`  | Consilii Județene                                        |
-| `prefectura`         | Prefecturi                                               |
-| `proiect-ue`         | Proiecte UE (PNRR, POCU, etc.)                           |
-| `institutie-cultura` | Instituții de cultură                                    |
+| Categorie            | Descriere                                       |
+| -------------------- | ----------------------------------------------- |
+| `guvern`             | Guvernul Republicii Moldova                    |
+| `minister`           | Ministere (8 instituții)                       |
+| `directie`           | Direcții guvernamentale                        |
+| `primarie`           | Primării și administrații locale                |
+| `institutie-cultura` | Instituții de cultură și muzee                  |
+| `parlament`          | Parlamentul Republicii Moldova                 |
+| `servicii`           | Servicii și autorități                         |
+| `altele`             | Alte instituții și simboluri (ex: Steagul UE) |
 
 ### Variante de logo
 
-| Variantă       | Descriere                     |
-| -------------- | ----------------------------- |
-| `principal`    | Logo-ul complet, oficial      |
-| `vertical`     | Layout stivuit vertical       |
-| `horizontal`   | Layout orizontal              |
-| `simbol`       | Doar stema/simbolul           |
-| `monocrom`     | Varianta monocromă (negru)    |
-| `monocrom-alb` | Varianta albă (fundal închis) |
-| `inversata`    | Varianta inversată            |
+| Layout        | Variante                          |
+| ------------- | --------------------------------- |
+| `horizontal`  | color, white, alternative-color* |
+| `vertical`    | color, white                      |
+| `symbol`      | color, alternative-color*         |
+
+*Alternative variants disponibile pentru instituții selectate
 
 ## CDN Usage
 
 Logo-urile se accesează direct ca fișiere statice:
 
 ```html
-<!-- SVG direct -->
+<!-- SVG Ministerul Culturii - horizontal color -->
 <img
-  src="https://identitate.md/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
-  alt="Guvernul Republicii Moldova"
+  src="https://identitate.md/logos/md-mc/horizontal/color.svg"
+  alt="Ministerul Culturii"
   width="200"
 />
 
-<!-- PNG -->
-<img src="https://identitate.md/logos/pnrr/pnrr.png" alt="PNRR" width="400" />
+<!-- SVG Ministerul Afacerilor Externe - symbol color -->
+<img
+  src="https://identitate.md/logos/md-mae/symbol/color.svg"
+  alt="Ministerul Afacerilor Externe"
+  width="100"
+/>
+
+<!-- SVG Parlamentul Republicii Moldova - vertical -->
+<img
+  src="https://identitate.md/logos/md-parlament/vertical/color.svg"
+  alt="Parlamentul Republicii Moldova"
+  width="150"
+/>
 ```
 
 ## Cum Contribui

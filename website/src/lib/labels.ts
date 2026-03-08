@@ -16,6 +16,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   autoritate: "Autorități",
   "proiect-ue": "Proiecte UE / PNRR",
   "institutie-cultura": "Cultură",
+  servicii: "Servicii",
   altele: "Altele",
 };
 
@@ -32,6 +33,7 @@ export const CATEGORY_LABELS_SINGULAR: Record<string, string> = {
   autoritate: "Autoritate",
   "proiect-ue": "Proiect UE",
   "institutie-cultura": "Cultură",
+  servicii: "Serviciu",
   altele: "Altele",
 };
 
@@ -47,6 +49,7 @@ export const CATEGORY_ORDER = [
   "prefectura",
   "proiect-ue",
   "institutie-cultura",
+  "servicii",
   "altele",
 ];
 

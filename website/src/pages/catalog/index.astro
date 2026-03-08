@@ -15,7 +15,7 @@ import type { Institution } from '../../types/institution';
 
 const CATEGORY_ORDER = [
   'guvern', 'minister', 'parlament', 'directie', 'agentie', 'autoritate', 'primarie',
-  'consiliu-judetean', 'prefectura', 'proiect-ue', 'institutie-cultura', 'altele',
+  'consiliu-judetean', 'prefectura', 'proiect-ue', 'institutie-cultura', 'servicii', 'altele',
 ];
 
 const allInstitutions = institutionIndex.institutions as unknown as Institution[];
@@ -138,7 +138,7 @@ const cdnVersion = CDN_VERSION;
                   href={`/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`}
                   data-institution-btn={inst.slug}
                   class="institution-btn block w-full text-left px-3 py-2 hover:bg-surface-50 transition-colors flex items-center gap-2 group"
-                  data-name={`${inst.name} ${inst.shortname || ''}`}
+                  data-name={`${inst.shortname || inst.name} ${inst.name}`}
                   data-category={inst.category}
                 >
                   <span class="w-7 h-7 rounded border border-surface-100 bg-white flex items-center justify-center shrink-0 overflow-hidden">

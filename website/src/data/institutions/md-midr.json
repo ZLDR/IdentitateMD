@@ -1,0 +1,67 @@
+{
+  "id": "md-midr",
+  "slug": "midr",
+  "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+  "shortname": "MIDR",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-08",
+    "keywords": ["moldova", "minister", "infrastructură", "dezvoltare regională", "midr"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Infrastructurii și Dezvoltării Regionale este responsabil de politicile și programele de dezvoltare a infrastructurii și a regiunilor din Republica Moldova.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Times New Roman"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-midr/horizontal/color.svg",
+      "white": "/logos/md-midr/horizontal/white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-midr/horizontal/color.svg",
+      "white": "/logos/md-midr/horizontal/white.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-midr/vertical/color.svg",
+      "white": "/logos/md-midr/vertical/white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://midr.gov.md/",
+    "contact": {
+      "phone": "022 250 593",
+      "email": "secretariat@midr.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/midr.gov.md"
+    }
+  }
+}
