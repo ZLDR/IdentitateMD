@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-09T21:01:24.278Z",
+  "generated": "2026-03-09T21:08:44.415Z",
   "count": 19,
   "totalLogos": 78,
   "institutions": [
@@ -248,14 +248,14 @@
       "logoCount": 6,
       "logos": {
         "horizontal": {
-          "alternative-color": "/logos/md-mioc/Horizontal alternative.svg",
+          "alternative-color": "/logos/md-mioc/Horizontal black alternative.svg",
           "black": "/logos/md-mioc/Horizontal black.svg",
           "alternative-white": "/logos/md-mioc/Horizontal white alternative.svg",
           "white": "/logos/md-mioc/Horizontal white.svg"
         },
         "symbol": {
-          "black": "/logos/md-mioc/Symbol Black.svg",
-          "white": "/logos/md-mioc/Symbol White.svg"
+          "black": "/logos/md-mioc/symbol-black.svg",
+          "white": "/logos/md-mioc/symbol-white.svg"
         }
       }
     },

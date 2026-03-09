@@ -1100,6 +1100,11 @@
               "label": "Alternative White",
               "path": "/logos/md-mioc/Horizontal white alternative.svg",
               "preview": "dark"
+            },
+            {
+              "label": "Alternative Black",
+              "path": "/logos/md-mioc/Horizontal black alternative.svg",
+              "preview": "checkerboard"
             }
           ]
         },
