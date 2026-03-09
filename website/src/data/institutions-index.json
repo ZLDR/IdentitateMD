@@ -1,21 +1,21 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-08T06:51:03.345Z",
-  "total": 19,
+  "generatedAt": "2026-03-09T09:33:03.868Z",
+  "total": 20,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
       "agentie": 1,
       "directie": 1,
-      "minister": 9,
+      "minister": 10,
       "institutie-cultura": 3,
       "parlament": 1,
       "primarie": 1,
       "servicii": 1
     },
     "withManual": 2,
-    "withSvg": 19
+    "withSvg": 20
   },
   "categories": [
     {
@@ -26,7 +26,7 @@
     {
       "id": "minister",
       "label": "Ministere",
-      "count": 9
+      "count": 10
     },
     {
       "id": "directie",
@@ -247,7 +247,7 @@
       "assets": {
         "main": {
           "type": "symbol",
-          "color": "/logos/md-guvern/symbol-color-alternative.svg",
+          "color": "/logos/md-guvern/symbol-color.svg",
           "white": "/logos/md-guvern/symbol-white.svg"
         },
         "horizontal": {
@@ -261,14 +261,9 @@
           "white": "/logos/md-guvern/symbol-white.svg",
           "alternatives": [
             {
-              "label": "Alternative",
+              "label": "Alternative Color",
               "path": "/logos/md-guvern/symbol-color-alternative.svg",
               "preview": "checkerboard"
-            },
-            {
-              "label": "Alternative2",
-              "path": "/logos/md-guvern/symbol-color-alternative2.svg",
-              "preview": "dark"
             }
           ]
         }
@@ -277,7 +272,8 @@
         "website": "https://www.gov.md",
         "branding_manual": "https://1xia3dwdv1.ufs.sh/f/zvXEkxD3opbQ4RymY8SJyFHl30vBgsr24AQJmYdnizjqpV7K",
         "social_media": {
-          "facebook": "https://www.facebook.com/guvernulrepubliciimodova"
+          "facebook": "https://www.facebook.com/guvernulrepubliciimodova",
+          "twitter": "https://twitter.com/GovMD"
         }
       }
     },
@@ -564,12 +560,17 @@
       "assets": {
         "main": {
           "type": "horizontal",
-          "color": "/logos/md-mec/horizontal-color.svg"
+          "color": "/logos/md-mec/horizontal-color.svg",
+          "white": "/logos/md-mec/horizontal-white.svg"
         },
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-mec/horizontal-color.svg",
           "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mec/symbol.svg"
         },
         "vertical": {
           "type": "vertical",
@@ -633,19 +634,19 @@
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-energie/horizontal-color.svg",
-          "white": "/logos/md-energie/horizontal-white.svg"
-        },
-        "vertical": {
-          "type": "vertical",
-          "color": "/logos/md-energie/vertical-color.svg",
-          "white": "/logos/md-energie/vertical-white.svg",
+          "white": "/logos/md-energie/horizontal-white.svg",
           "alternatives": [
             {
-              "label": "Alternative",
+              "label": "Alternative Color",
               "path": "/logos/md-energie/vertical-color-alternative.svg",
               "preview": "checkerboard"
             }
           ]
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-energie/vertical-color.svg",
+          "white": "/logos/md-energie/vertical-white.svg"
         }
       },
       "resources": {
@@ -934,6 +935,74 @@
       }
     },
     {
+      "id": "md-ms",
+      "slug": "ministerul-sanatatii",
+      "name": "Ministerul Sănătății Al Republicii Moldova",
+      "shortname": "MS",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-09",
+        "keywords": ["moldova", "sănătate", "minister", "medicină", "ms"],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Sănătății este autoritatea publică centrală responsabilă de elaborarea și implementarea politicilor în domeniul sănătății în Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [14, 76, 144],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Onest"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-ms/horizontal-color.svg",
+          "white": "/logos/md-ms/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-ms/horizontal-color.svg",
+          "white": "/logos/md-ms/horizontal-white.svg",
+          "color_alternative": "/logos/md-ms/horizontal-color-alternative.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-ms/vertical-color.svg",
+          "white": "/logos/md-ms/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://ms.gov.md/",
+        "contact": {
+          "phone": "022 268 811",
+          "email": "presa@ms.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/sanataterepublicamoldova"
+        }
+      }
+    },
+    {
       "id": "md-mioc",
       "slug": "md-mioc",
       "name": "Muzeul de Istorie a Orașului Chișinău",
@@ -1027,6 +1096,11 @@
           "white": "/logos/md-mioc/Horizontal white.svg",
           "alternatives": [
             {
+              "label": "Alternative Color",
+              "path": "/logos/md-mioc/Horizontal alternative.svg",
+              "preview": "checkerboard"
+            },
+            {
               "label": "Alternative White",
               "path": "/logos/md-mioc/Horizontal white alternative.svg",
               "preview": "dark"
@@ -1041,6 +1115,121 @@
       },
       "resources": {
         "branding_manual": null,
+        "contact": {
+          "phone": "022 241 648",
+          "email": "muzeul.chisinau@gmail.com"
+        }
+      }
+    },
+    {
+      "id": "md-mioc",
+      "slug": "muzeul-de-istorie-al-orașului-chișinău",
+      "name": "Muzeul de Istorie a Orașului Chișinău",
+      "shortname": "MIOC",
+      "category": "institutie-cultura",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "muzee",
+          "mioc",
+          "turnul de apă",
+          "patrimoniu"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+      "colors": [
+        {
+          "name": "Bronze Pantone 875 C",
+          "hex": "#C49463",
+          "pantone": "875 C",
+          "usage": "primary"
+        },
+        {
+          "name": "Pantone 157 C",
+          "hex": "#E89E5B",
+          "pantone": "157 C",
+          "usage": "secondary"
+        },
+        {
+          "name": "Pantone 7419 C",
+          "hex": "#A45F53",
+          "pantone": "7419 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone 1817 C",
+          "hex": "#642A31",
+          "pantone": "1817 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone WarmGray 3 C",
+          "hex": "#B8B1AA",
+          "pantone": "WarmGray 3 C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Pantone Black C",
+          "hex": "#1A1A1A",
+          "pantone": "Black C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Grey Process Black 25%",
+          "hex": "#AFAFAF",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Process Black 100%",
+          "hex": "#18181B",
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Proxima Nova",
+          "weights": [400, 600, 700]
+        },
+        "secondary": {
+          "family": "Franklin Gothic",
+          "weights": [400, 700]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-mioc/symbol-black.svg",
+          "black": "/logos/md-mioc/symbol-black.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "white": "/logos/md-mioc/Horizontal white.svg",
+          "black": "/logos/md-mioc/Horizontal black.svg",
+          "alternatives": [
+            {
+              "label": "Horizontal White Alternative",
+              "path": "/logos/md-mioc/Horizontal white alternative.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "symbol": {
+          "type": "symbol",
+          "white": "/logos/md-mioc/symbol-white.svg",
+          "black": "/logos/md-mioc/symbol-black.svg"
+        }
+      },
+      "resources": {
+        "branding_manual": "/brandbooks/md-mioc/brandbook-mioc-2025.pdf",
         "contact": {
           "phone": "022 241 648",
           "email": "muzeul.chisinau@gmail.com"
@@ -1302,7 +1491,7 @@
             {
               "label": "Alternative Color",
               "path": "/logos/md-stisc/symbol/alternative-color.svg",
-              "preview": "dark"
+              "preview": "checkerboard"
             }
           ]
         }

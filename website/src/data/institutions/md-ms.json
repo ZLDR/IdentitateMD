@@ -1,0 +1,68 @@
+{
+  "id": "md-ms",
+  "slug": "ministerul-sanatatii",
+  "name": "Ministerul Sănătății Al Republicii Moldova",
+  "shortname": "MS",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-09",
+    "keywords": ["moldova", "sănătate", "minister", "medicină", "ms"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul Sănătății este autoritatea publică centrală responsabilă de elaborarea și implementarea politicilor în domeniul sănătății în Republica Moldova.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro"
+    },
+    "secondary": {
+      "family": "Onest"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-ms/horizontal-color.svg",
+      "white": "/logos/md-ms/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-ms/horizontal-color.svg",
+      "white": "/logos/md-ms/horizontal-white.svg",
+      "color_alternative": "/logos/md-ms/horizontal-color-alternative.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-ms/vertical-color.svg",
+      "white": "/logos/md-ms/vertical-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://ms.gov.md/",
+    "contact": {
+      "phone": "022 268 811",
+      "email": "presa@ms.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/sanataterepublicamoldova"
+    }
+  }
+}
