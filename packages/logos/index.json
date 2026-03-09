@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-09T09:12:58.128Z",
-  "count": 18,
-  "totalLogos": 74,
+  "generated": "2026-03-09T21:01:24.278Z",
+  "count": 19,
+  "totalLogos": 78,
   "institutions": [
     {
       "id": "eu-flag",
@@ -86,11 +86,10 @@
         "horizontal",
         "vertical"
       ],
-      "logoCount": 6,
+      "logoCount": 5,
       "logos": {
         "horizontal": {
           "alternative-color": "/logos/md-mae/Horizontal Alternative Color.svg",
-          "alternative-white": "/logos/md-mae/Horizontal Alternative White.svg",
           "color": "/logos/md-mae/horizontal-color.svg",
           "white": "/logos/md-mae/horizontal-white.svg"
         },
@@ -300,6 +299,27 @@
         },
         "symbol": {
           "color": "/logos/md-mnam/Symbol color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-ms",
+      "slug": "md-ms",
+      "name": "Ministerul Sănătății Al Republicii Moldova",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 5,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-ms/horizontal-color-alternative.svg",
+          "color": "/logos/md-ms/horizontal-color.svg",
+          "white": "/logos/md-ms/horizontal-white.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-ms/vertical-color.svg",
+          "white": "/logos/md-ms/vertical-white.svg"
         }
       }
     },

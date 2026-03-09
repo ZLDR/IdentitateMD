@@ -568,10 +568,6 @@
           "color": "/logos/md-mec/horizontal-color.svg",
           "white": "/logos/md-mec/horizontal-white.svg"
         },
-        "symbol": {
-          "type": "symbol",
-          "color": "/logos/md-mec/symbol.svg"
-        },
         "vertical": {
           "type": "vertical",
           "color": "/logos/md-mec/vertical-color.svg",
@@ -976,14 +972,19 @@
       "assets": {
         "main": {
           "type": "horizontal",
-          "color": "/logos/md-ms/horizontal-color.svg",
-          "white": "/logos/md-ms/horizontal-white.svg"
+          "color": "/logos/md-ms/horizontal-color.svg"
         },
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-ms/horizontal-color.svg",
           "white": "/logos/md-ms/horizontal-white.svg",
-          "color_alternative": "/logos/md-ms/horizontal-color-alternative.svg"
+          "alternatives": [
+            {
+              "label": "Alternative",
+              "alternative": "/logos/md-ms/horizontal-color-alternative.svg",
+              "preview": "checkerboard"
+            }
+          ]
         },
         "vertical": {
           "type": "vertical",
