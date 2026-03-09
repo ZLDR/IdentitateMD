@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-08T06:41:41.926Z",
+  "generated": "2026-03-09T09:08:31.018Z",
   "count": 18,
-  "totalLogos": 76,
+  "totalLogos": 74,
   "institutions": [
     {
       "id": "eu-flag",
@@ -84,19 +84,15 @@
       "name": "Ministerul Afacerilor Externe",
       "layouts": [
         "horizontal",
-        "symbol",
         "vertical"
       ],
-      "logoCount": 7,
+      "logoCount": 6,
       "logos": {
         "horizontal": {
           "alternative-color": "/logos/md-mae/Horizontal Alternative Color.svg",
           "alternative-white": "/logos/md-mae/Horizontal Alternative White.svg",
           "color": "/logos/md-mae/horizontal-color.svg",
           "white": "/logos/md-mae/horizontal-white.svg"
-        },
-        "symbol": {
-          "color": "/logos/md-mae/symbol.svg"
         },
         "vertical": {
           "color": "/logos/md-mae/vertical-color.svg",
@@ -152,17 +148,13 @@
       "name": "Ministerul Educației și Cercetării al Republicii Moldova",
       "layouts": [
         "horizontal",
-        "symbol",
         "vertical"
       ],
-      "logoCount": 5,
+      "logoCount": 4,
       "logos": {
         "horizontal": {
           "color": "/logos/md-mec/horizontal-color.svg",
           "white": "/logos/md-mec/horizontal-white.svg"
-        },
-        "symbol": {
-          "color": "/logos/md-mec/symbol.svg"
         },
         "vertical": {
           "color": "/logos/md-mec/vertical-color.svg",
