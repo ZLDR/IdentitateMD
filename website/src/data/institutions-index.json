@@ -266,9 +266,9 @@
               "preview": "checkerboard"
             },
             {
-              "label": "Alternative",
+              "label": "Alternative2",
               "path": "/logos/md-guvern/symbol-color-alternative2.svg",
-              "preview": "checkerboard"
+              "preview": "dark"
             }
           ]
         }
