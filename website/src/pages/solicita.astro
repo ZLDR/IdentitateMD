@@ -25,7 +25,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           id="institution-name"
           name="institution_name"
           required
-          placeholder="ex: Primăria Municipiului Brașov"
+          placeholder="ex: Primăria Orașului Cimișlia"
           class="w-full px-3 py-2 rounded border border-surface-200 text-xs placeholder-surface-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10"
           />
       </div>
@@ -40,7 +40,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           type="url"
           id="institution-website"
           name="website"
-          placeholder="https://www.primaria-brasov.ro"
+          placeholder="https://primaria-cimislia.md"
           class="w-full px-3 py-2 rounded border border-surface-200 text-xs
                  placeholder-surface-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10"
         />
@@ -95,7 +95,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Trimite Solicitarea
         </button>
         <a
-          href="https://github.com/ZLDR/IdentitateMD/issues/new?template=logo-request.md"
+          href="https://github.com/ZLDR/IdentitateMD/issues/new"
           target="_blank"
           rel="noopener"
           class="btn-outline flex-1 justify-center"
@@ -147,7 +147,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     );
 
     window.open(
-      `https://github.com/ZLDR/IdentitateMD/issues/new?title=${title}&body=${body}&labels=logo-request`,
+      `https://github.com/ZLDR/IdentitateMD/issues/new?title=${title}&body=${body}`,
       '_blank'
     );
   });

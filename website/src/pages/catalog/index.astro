@@ -57,7 +57,7 @@ const cdnVersion = CDN_VERSION;
 
 <BaseLayout title={title} description={description} ogType="website">
   <!-- Catalog: three-pane layout: categories | institutions | detail -->
-  <div class="flex h-[calc(100vh-3rem)] overflow-hidden">
+  <div class="flex h-full overflow-hidden">
 
     <!-- ═══ SIDEBAR 1: Categories ═══ -->
     <aside
@@ -461,7 +461,7 @@ function buildDetail(inst) {
       </button>` : ''}
       ${inst.resources?.contact?.email ? `
       <button type="button" class="copy-contact-btn inline-flex items-center gap-1 hover:text-primary-600 transition-colors" data-value="${escHtml(inst.resources.contact.email)}" title="Copiază adresa email">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-16 8h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 7l10 7 10-7"/></svg>
         ${escHtml(inst.resources.contact.email)}
       </button>` : ''}
     </div>
@@ -667,13 +667,12 @@ function buildDetail(inst) {
               <span>&rsaquo;</span>
               <span class="text-surface-600">${escHtml(catLabel)}</span>
             </div>
-            <h1 class="text-xl sm:text-2xl font-bold text-primary-900 mb-2">${escHtml(inst.name)}</h1>
+            <h1 class="text-xl sm:text-2xl font-bold text-primary-900 mb-2" style="text-wrap:pretty">${escHtml(inst.name)}</h1>
             <div class="flex flex-wrap items-center gap-2 mb-2">
               ${inst.shortname ? `<span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded text-xs font-semibold">${escHtml(inst.shortname.toUpperCase())}</span>` : ''}
               <span class="px-2 py-0.5 bg-surface-100 text-surface-600 rounded text-xs">${escHtml(catLabel)}</span>
-              ${qualityInfo ? `<span class="px-2 py-0.5 rounded text-xs" style="background:${qualityInfo.bg || '#f1f5f9'};color:${qualityInfo.color || '#64748b'}">${escHtml(qualityInfo.label || inst.meta.quality)}</span>` : ''}
             </div>
-            ${inst.description ? `<p class="text-sm text-surface-500 mb-2">${escHtml(inst.description)}</p>` : ''}
+            ${inst.description ? `<p class="text-sm text-surface-500 mb-2" style="max-width:600px;text-wrap:pretty">${escHtml(inst.description)}</p>` : ''}
             ${contactLineHtml}
             ${inst.usage_notes ? `<div class="mt-3 p-3 bg-amber-50 border border-amber-200 rounded text-xs text-amber-800"><strong>Note de utilizare:</strong> ${escHtml(inst.usage_notes)}</div>` : ''}
           </div>

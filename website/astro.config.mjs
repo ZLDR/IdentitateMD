@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://identitate.md',
+  devToolbar: { enabled: false },
   integrations: [tailwind(), sitemap()],
   output: 'static',
   build: {
