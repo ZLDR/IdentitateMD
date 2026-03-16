@@ -31,8 +31,6 @@ const svgoConfig = {
       name: "preset-default",
       params: {
         overrides: {
-          // Never remove viewBox — critical for scaling
-          removeViewBox: false,
           // Keep IDs that may be referenced (e.g. gradients, clip paths)
           cleanupIds: false,
           // Do not remove colors or modify fills/strokes
@@ -47,14 +45,6 @@ const svgoConfig = {
     },
     // Remove editor metadata (Adobe, Figma, Inkscape)
     { name: "removeEditorsNSData" },
-    // Remove XML comments
-    { name: "removeComments" },
-    // Remove doctype
-    { name: "removeDoctype" },
-    // Remove XML processing instructions
-    { name: "removeXMLProcInst" },
-    // Remove metadata elements
-    { name: "removeMetadata" },
     // Clean up numeric values
     { name: "cleanupNumericValues", params: { floatPrecision: 3 } },
   ],
