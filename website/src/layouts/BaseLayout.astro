@@ -88,7 +88,9 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
       <slot />
     </main>
     {!noFooter && <Footer />}
-    <Analytics />
+    <Analytics beforeSend={() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('notrack') === '1') return null;
+    }} />
 
     <script>
       if (import.meta.env.DEV) {
