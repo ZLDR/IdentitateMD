@@ -7,20 +7,54 @@ import type { Institution } from '../../types/institution';
 export async function getStaticPaths() {
   const institutions = institutionIndex.institutions as unknown as Institution[];
   const catalogPathBySlug = buildCatalogPathMap(institutions);
-  const ids = new Set<string>();
+  const pathToInst = new Map<string, Institution>();
 
   for (const inst of institutions) {
-    ids.add(catalogPathBySlug[inst.slug] || inst.slug);
-    ids.add(inst.slug);
+    const pathId = catalogPathBySlug[inst.slug] || inst.slug;
+    pathToInst.set(pathId, inst);
   }
 
-  return [...ids].map((id) => ({
+  return [...pathToInst.entries()].map(([id, inst]) => ({
     params: { id },
-    props: { initialPathId: id },
+    props: { initialPathId: id, institution: inst },
   }));
 }
 
-const { initialPathId } = Astro.props;
+const { initialPathId, institution } = Astro.props as { initialPathId: string; institution: Institution };
+
+const pageTitle = institution
+  ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} — Sigla Oficială | Identitate.MD`
+  : undefined;
+
+const pageDescription = institution?.description
+  ? `Descarcă sigla oficială a ${institution.name} în format SVG. Culori HEX, tipografie și identitate vizuală oficială. | Identitate.MD`
+  : undefined;
+
+const institutionJsonLd = institution ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "name": institution.name,
+  ...(institution.shortname && { "alternateName": institution.shortname }),
+  ...(institution.description && { "description": institution.description }),
+  ...(institution.resources?.website && { "url": institution.resources.website }),
+  ...(institution.assets?.main?.color && {
+    "logo": `https://identitate.md${institution.assets.main.color}`
+  }),
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": institution.location?.city || "Chișinău",
+    "addressCountry": institution.location?.country_code || "MD"
+  },
+  "sameAs": [
+    ...(institution.resources?.website ? [institution.resources.website] : []),
+    ...((institution.resources as any)?.social_media?.facebook ? [(institution.resources as any).social_media.facebook] : []),
+  ]
+}) : undefined;
 ---
 
-<CatalogPage initialPathId={initialPathId} />
+<CatalogPage
+  initialPathId={initialPathId}
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  institutionJsonLd={institutionJsonLd}
+/>

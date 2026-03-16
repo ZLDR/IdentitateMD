@@ -1,0 +1,51 @@
+# Identitate.MD
+
+> Identitate.MD este registrul digital al identității vizuale oficiale a instituțiilor publice din Republica Moldova. Oferă acces gratuit la sigle vectoriale (SVG), culori oficiale (HEX/RGB) și tipografie pentru 20+ instituții guvernamentale.
+
+## Ce este Identitate.MD?
+
+Identitate.MD este un proiect civic open-source care centralizează siglele (logo-urile) oficiale ale instituțiilor publice din Republica Moldova. Fiecare instituție are o pagină dedicată cu fișiere vectoriale descărcabile, coduri de culoare exacte și informații despre tipografie.
+
+Proiectul este creat pentru designeri, jurnaliști, ONG-uri, dezvoltatori și oricine lucrează cu identitatea vizuală a statului moldovean.
+
+## Instituții disponibile
+
+- Guvernul Republicii Moldova — https://identitate.md/catalog/guvern
+- Parlamentul Republicii Moldova — https://identitate.md/catalog/parlament
+- Ministerul Afacerilor Externe (MAE) — https://identitate.md/catalog/mae
+- Ministerul Agriculturii și Industriei Alimentare (MAIA) — https://identitate.md/catalog/maia
+- Ministerul Culturii — https://identitate.md/catalog/ministerul-culturii
+- Ministerul Educației și Cercetării (MEC) — https://identitate.md/catalog/mec
+- Ministerul Energiei (ME) — https://identitate.md/catalog/me
+- Ministerul Finanțelor — https://identitate.md/catalog/ministerul-finantelor
+- Ministerul Infrastructurii și Dezvoltării Regionale (MIDR) — https://identitate.md/catalog/midr
+- Ministerul Justiției — https://identitate.md/catalog/ministerul-justitiei
+- Ministerul Mediului — https://identitate.md/catalog/ministerul-mediului
+- Ministerul Sănătății (MS) — https://identitate.md/catalog/ms
+- Agenția de Guvernare Electronică (AGE) — https://identitate.md/catalog/age
+- Direcția Generală Cultură și Patrimoniu Cultural (DGCPC) — https://identitate.md/catalog/dgcpc
+- Muzeul Național de Artă al Moldovei — https://identitate.md/catalog/muzeul-de-arta
+- Muzeul de Istorie a Orașului Chișinău (MIOC) — https://identitate.md/catalog/mioc
+- Primăria Municipiului Chișinău — https://identitate.md/catalog/primaria-chisinau
+- Serviciul Tehnologia Informației și Securitatea Cibernetică (STISC) — https://identitate.md/catalog/stisc
+- Steagul Uniunii Europene — https://identitate.md/catalog/ue
+
+## Ce conține fiecare pagină de instituție?
+
+- Sigle vectoriale (SVG) descărcabile: orizontală, verticală, simbol
+- Variante: color, alb, negru, monocrom
+- Culori oficiale în format HEX și RGB
+- Tipografie oficială (fonturi și greutăți)
+- Link către site-ul oficial al instituției
+
+## Cum se folosesc logo-urile?
+
+Logo-urile sunt disponibile prin CDN sau descărcare directă. Pachetul npm `@identitate.md/logos` permite integrarea programatică în proiecte digitale.
+
+## Pagini principale
+
+- Acasă: https://identitate.md/
+- Catalog complet: https://identitate.md/catalog/
+- Termeni de utilizare: https://identitate.md/utilizare/
+- Despre proiect: https://identitate.md/despre/
+- Solicită o instituție: https://identitate.md/solicita/

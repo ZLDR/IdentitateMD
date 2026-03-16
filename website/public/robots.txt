@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://identitate.md/sitemap-index.xml
+LLMs: https://identitate.md/llms.txt
