@@ -17,8 +17,8 @@ Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o 
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.21/logos/anaf/anaf.svg"
-  alt="ANAF"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.34/logos/md-guvern/horizontal/color.svg"
+  alt="Guvernul Republicii Moldova"
 />
 ```
 
@@ -29,7 +29,7 @@ npm install @identitate-md/logos
 ```
 
 ```javascript
-import logoPath from "@identitate-md/logos/logos/anaf/anaf.svg";
+import logoPath from "@identitate-md/logos/logos/md-guvern/horizontal/color.svg";
 ```
 
 📖 **Documentație completă**: [identitate.md/utilizare](https://identitate.md/utilizare)
@@ -132,10 +132,10 @@ Contribuțiile sunt binevenite! Pentru a contribui:
 
 ### Adaugă un logo nou
 
-1. Plasează fișierele SVG în `packages/logos/logos/[slug-institutie]/`
-2. Rulează `npm run generate` în `packages/logos/`
-3. Actualizează `website/src/data/institutions/[slug].json`
-4. Copiază logo-urile și în `website/public/logos/[slug]/`
+1. Creează `website/src/data/institutions/[slug].json` cu datele instituției
+2. Adaugă logo-urile SVG în `packages/logos/logos/[id]/`
+3. Copiază logo-urile și în `website/public/logos/[id]/`
+4. Rulează `npm run data:generate` în `website/` pentru a regenera indexurile
 
 ## 📄 Licență
 
@@ -154,3 +154,5 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 ---
 
 Made with ❤️ by [Contributors](https://github.com/ZLDR/IdentitateMD/graphs/contributors)
+
+Forked from [IdentitateRO](https://github.com/laurentiucotet/IdentitateRO)
