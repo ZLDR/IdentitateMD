@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-17T18:05:27.630Z",
+  "generatedAt": "2026-03-17T18:14:15.836Z",
   "total": 21,
   "stats": {
     "byCategory": {
@@ -646,6 +646,16 @@
               "label": "Alternativă Color",
               "path": "/logos/md-mded/horizontal-color-1.svg",
               "preview": "checkerboard"
+            },
+            {
+              "label": "Alt Color",
+              "path": "/logos/md-mded/horizontal-alt-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alt Alb",
+              "path": "/logos/md-mded/horizontal-alt-white.svg",
+              "preview": "dark"
             }
           ]
         },

@@ -29,6 +29,16 @@
           "label": "Alternativă Color",
           "path": "/logos/md-mded/horizontal-color-1.svg",
           "preview": "checkerboard"
+        },
+        {
+          "label": "Alt Color",
+          "path": "/logos/md-mded/horizontal-alt-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Alt Alb",
+          "path": "/logos/md-mded/horizontal-alt-white.svg",
+          "preview": "dark"
         }
       ]
     },
