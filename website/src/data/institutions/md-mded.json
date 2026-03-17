@@ -1,0 +1,48 @@
+{
+  "id": "md-mded",
+  "slug": "mded",
+  "name": "Ministerul Dezvoltării Economice și Digitalizării",
+  "shortname": "MDED",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-17",
+    "keywords": ["moldova", "dezvoltare economică", "digitalizare", "minister", "mded", "economic", "digital"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul responsabil pentru politica de dezvoltare economică și digitalizare a Republicii Moldova.",
+  "colors": [],
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mded/horizontal-color.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mded/horizontal-color.svg",
+      "alternatives": [
+        {
+          "label": "Alternativă Color",
+          "path": "/logos/md-mded/horizontal-color-1.svg",
+          "preview": "checkerboard"
+        }
+      ]
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mded/vertical-color.svg",
+      "white": "/logos/md-mded/vertical-white.svg"
+    }
+  },
+  "resources": {
+    "website": "https://mded.gov.md/",
+    "social_media": {
+      "facebook": "https://www.facebook.com/MinisterulDezvoltariiEconomiceSiDigitalizarii",
+      "instagram": "https://www.instagram.com/mded.govmd"
+    }
+  }
+}
