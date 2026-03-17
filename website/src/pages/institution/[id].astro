@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 
   return institutions.map((inst) => ({
     params: { id: inst.slug },
-    props: { redirectTo: `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}` },
+    props: { redirectTo: `/catalog/${encodeURIComponent(catalogPathBySlug[inst.slug] || inst.slug)}` },
   }));
 }
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-17T18:14:15.836Z",
+  "generatedAt": "2026-03-17T18:26:00.627Z",
   "total": 21,
   "stats": {
     "byCategory": {
@@ -1364,7 +1364,7 @@
     },
     {
       "id": "md-mioc",
-      "slug": "muzeul-de-istorie-al-orașului-chișinău",
+      "slug": "mioc",
       "name": "Muzeul de Istorie a Orașului Chișinău",
       "shortname": "MIOC",
       "category": "institutie-cultura",
