@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-09T21:08:44.415Z",
-  "count": 19,
-  "totalLogos": 78,
+  "generated": "2026-03-17T18:07:29.471Z",
+  "count": 20,
+  "totalLogos": 81,
   "institutions": [
     {
       "id": "eu-flag",
@@ -138,6 +138,25 @@
         "vertical": {
           "color": "/logos/md-mc/Vertical Color.svg",
           "white": "/logos/md-mc/Vertical White.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mded",
+      "slug": "md-mded",
+      "name": "Ministerul Dezvoltării Economice și Digitalizării",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-mded/horizontal-color.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-mded/vertical-color.svg",
+          "white": "/logos/md-mded/vertical-white.svg"
         }
       }
     },
