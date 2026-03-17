@@ -15,6 +15,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- Form -->
     <form id="request-form" class="bg-white rounded border border-surface-200 shadow-card p-5 sm:p-6 space-y-5">
+      <input type="hidden" name="access_key" value="181228fc-ca45-4949-98e1-748619d350dc" />
+      <input type="hidden" name="subject" value="Solicitare Logo Nouă — IdentitateMD" />
+      <input type="hidden" name="from_name" value="IdentitateMD" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
       <!-- Institution Name -->
       <div>
         <label for="institution-name" class="block text-xs font-medium text-primary-900 mb-1">
@@ -112,9 +116,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="mt-6 bg-surface-50 border border-surface-200 rounded p-4">
       <p class="text-xs text-surface-500 leading-relaxed">
         <strong class="text-surface-600">Notă privind datele:</strong>
-        Prin trimiterea formularului, datele introduse vor fi publicate ca un
-        <a href="https://github.com/ZLDR/IdentitateMD/issues" target="_blank" rel="noopener" class="text-primary-600 underline">Issue public pe GitHub</a>.
-        Nu stocăm date pe serverele noastre. Consultă
+        Datele introduse vor fi trimise echipei IdentitateMD prin email și folosite exclusiv pentru adăugarea instituției în registru. Consultă
         <a href="/privacy" class="text-primary-600 underline">Politica de Confidențialitate</a> pentru detalii.
       </p>
     </div>
@@ -128,27 +130,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
-  // Simple form handler — in production, connect to a backend or GitHub API
   const form = document.getElementById('request-form') as HTMLFormElement;
-  form.addEventListener('submit', (e) => {
+  const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Se trimite...';
 
-    const data = new FormData(form);
-    const name = data.get('institution_name');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const json = await res.json();
 
-    // For MVP — redirect to GitHub issue
-    const title = encodeURIComponent(`[Solicitare Logo] ${name}`);
-    const body = encodeURIComponent(
-      `## Instituție solicitată\n\n` +
-      `**Nume:** ${name}\n` +
-      `**Website:** ${data.get('website') || 'N/A'}\n` +
-      `**Categorie:** ${data.get('category') || 'N/A'}\n` +
-      `**Mențiuni:** ${data.get('notes') || 'N/A'}\n`
-    );
-
-    window.open(
-      `https://github.com/ZLDR/IdentitateMD/issues/new?title=${title}&body=${body}`,
-      '_blank'
-    );
+      if (json.success) {
+        form.innerHTML = `
+          <div class="text-center py-8">
+            <svg class="w-10 h-10 text-green-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm font-medium text-primary-900">Solicitarea a fost trimisă!</p>
+            <p class="text-xs text-surface-500 mt-1">Vom analiza și adăuga instituția în cel mai scurt timp.</p>
+          </div>`;
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Trimite Solicitarea';
+      alert('A apărut o eroare. Te rugăm să încerci din nou.');
+    }
   });
 </script>
