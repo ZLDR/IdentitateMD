@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-17T18:22:14.448Z",
+  "generated": "2026-03-17T18:53:43.579Z",
   "count": 20,
   "totalLogos": 84,
   "institutions": [
@@ -81,7 +81,7 @@
     {
       "id": "md-mae",
       "slug": "md-mae",
-      "name": "Ministerul Afacerilor Externe",
+      "name": "Md Mae",
       "layouts": [
         "horizontal",
         "vertical"

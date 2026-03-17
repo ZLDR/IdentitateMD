@@ -47,6 +47,9 @@
   },
   "resources": {
     "website": "https://mded.gov.md/",
+    "contact": {
+      "phone": "+373 22 250 107"
+    },
     "social_media": {
       "facebook": "https://www.facebook.com/MinisterulDezvoltariiEconomiceSiDigitalizarii",
       "instagram": "https://www.instagram.com/mded.govmd"

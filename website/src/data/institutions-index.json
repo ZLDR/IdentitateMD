@@ -1,21 +1,21 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-17T18:30:19.055Z",
-  "total": 19,
+  "generatedAt": "2026-03-17T18:53:50.218Z",
+  "total": 20,
   "stats": {
     "byCategory": {
       "altele": 1,
       "guvern": 1,
       "agentie": 1,
       "directie": 1,
-      "minister": 10,
+      "minister": 11,
       "institutie-cultura": 2,
       "parlament": 1,
       "primarie": 1,
       "servicii": 1
     },
     "withManual": 2,
-    "withSvg": 19
+    "withSvg": 20
   },
   "categories": [
     {
@@ -26,7 +26,7 @@
     {
       "id": "minister",
       "label": "Ministere",
-      "count": 10
+      "count": 11
     },
     {
       "id": "directie",
@@ -321,6 +321,109 @@
         "social_media": {
           "facebook": "https://www.facebook.com/guvernulrepubliciimodova",
           "twitter": "https://twitter.com/GovMD"
+        }
+      }
+    },
+    {
+      "id": "md-mae",
+      "slug": "md-mae",
+      "name": "Ministerul Afacerilor Externe",
+      "shortname": "MAE",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "minister",
+          "afaceri externe",
+          "diplomatie",
+          "mae"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil de politica externă și relațiile diplomatice ale Republicii Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Albastru Secundar",
+          "hex": "#3FC8F4",
+          "rgb": [
+            63,
+            200,
+            244
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro",
+          "weights": [
+            400,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Open Sans",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color.svg",
+          "white": "/logos/md-mae/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color.svg",
+          "white": "/logos/md-mae/horizontal-white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-mae/Horizontal Alternative Color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alternative White",
+              "path": "/logos/md-mae/Horizontal Alternative White.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "horizontalAlternative": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color-alternative.svg",
+          "white": "/logos/md-mae/horizontal-white-alternative.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mae/vertical-color.svg",
+          "white": "/logos/md-mae/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mfa.gov.md/",
+        "contact": {
+          "phone": "+373 22 57-83-04",
+          "email": "secretariat@mfa.gov.md"
         }
       }
     },
