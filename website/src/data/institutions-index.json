@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-17T18:26:00.627Z",
+  "generatedAt": "2026-03-17T18:27:16.144Z",
   "total": 21,
   "stats": {
     "byCategory": {
@@ -636,17 +636,14 @@
       "assets": {
         "main": {
           "type": "horizontal",
-          "color": "/logos/md-mded/horizontal-color.svg"
+          "color": "/logos/md-mded/horizontal-color.svg",
+          "white": "/logos/md-mded/horizontal-white.svg"
         },
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-mded/horizontal-color.svg",
+          "white": "/logos/md-mded/horizontal-white.svg",
           "alternatives": [
-            {
-              "label": "Alternativă Color",
-              "path": "/logos/md-mded/horizontal-color-1.svg",
-              "preview": "checkerboard"
-            },
             {
               "label": "Alt Color",
               "path": "/logos/md-mded/horizontal-alt-color.svg",

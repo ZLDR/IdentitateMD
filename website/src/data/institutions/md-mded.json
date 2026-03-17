@@ -19,17 +19,14 @@
   "assets": {
     "main": {
       "type": "horizontal",
-      "color": "/logos/md-mded/horizontal-color.svg"
+      "color": "/logos/md-mded/horizontal-color.svg",
+      "white": "/logos/md-mded/horizontal-white.svg"
     },
     "horizontal": {
       "type": "horizontal",
       "color": "/logos/md-mded/horizontal-color.svg",
+      "white": "/logos/md-mded/horizontal-white.svg",
       "alternatives": [
-        {
-          "label": "Alternativă Color",
-          "path": "/logos/md-mded/horizontal-color-1.svg",
-          "preview": "checkerboard"
-        },
         {
           "label": "Alt Color",
           "path": "/logos/md-mded/horizontal-alt-color.svg",
