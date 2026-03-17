@@ -41,8 +41,9 @@
   },
   "assets": {
     "main": {
-      "type": "symbol",
-      "color": "/logos/md-mae/symbol.svg"
+      "type": "horizontal",
+      "color": "/logos/md-mae/horizontal-color.svg",
+      "white": "/logos/md-mae/horizontal-white.svg"
     },
     "horizontal": {
       "type": "horizontal",
@@ -71,10 +72,6 @@
       "color": "/logos/md-mae/vertical-color.svg",
       "white": "/logos/md-mae/vertical-white.svg"
     },
-    "symbol": {
-      "type": "symbol",
-      "color": "/logos/md-mae/symbol.svg"
-    }
   },
   "resources": {
     "website": "https://mfa.gov.md/",
