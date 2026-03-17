@@ -846,7 +846,7 @@ function wireDetail() {
         const url = URL.createObjectURL(content);
         const a = document.createElement('a');
         a.href = url; a.download = `${slug}-logos.zip`; a.click();
-        window.va?.('event', { name: 'logo_download', data: { institution: slug, format: 'zip', asset: 'all' } });
+        window.va?.('pageview', { url: `/download/${slug}/zip` });
         URL.revokeObjectURL(url);
         zipBtn.innerHTML = `<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ZIP descărcat!`;
         setTimeout(() => { zipBtn.innerHTML = orig; zipBtn.disabled = false; }, 2000);
@@ -961,7 +961,7 @@ if (searchClear) {
 // ─── Download tracking ────────────────────────────────────────────────────────
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-va-dl]');
-  if (a) window.va?.('event', { name: 'logo_download', data: { institution: a.dataset.vaDl, format: a.dataset.vaFmt, asset: a.dataset.vaAsset } });
+  if (a) window.va?.('pageview', { url: `/download/${a.dataset.vaDl}/${a.dataset.vaFmt}` });
 });
 
 // ─── Initialise ───────────────────────────────────────────────────────────────
