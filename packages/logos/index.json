@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-17T18:07:29.471Z",
+  "generated": "2026-03-17T18:20:42.612Z",
   "count": 20,
-  "totalLogos": 81,
+  "totalLogos": 83,
   "institutions": [
     {
       "id": "eu-flag",
@@ -149,9 +149,11 @@
         "horizontal",
         "vertical"
       ],
-      "logoCount": 3,
+      "logoCount": 5,
       "logos": {
         "horizontal": {
+          "alternative-color": "/logos/md-mded/horizontal-alt-color.svg",
+          "alternative-white": "/logos/md-mded/horizontal-alt-white.svg",
           "color": "/logos/md-mded/horizontal-color.svg"
         },
         "vertical": {

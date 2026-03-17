@@ -54,6 +54,11 @@ function detectVariant(filename) {
   // Check for alternative variants (before generic suffix matching)
   if (name === "alternative-color" || name.endsWith("-alternative-color")) return "alternative-color";
   if (name === "alternative-white" || name.endsWith("-alternative-white")) return "alternative-white";
+  // Handle -alt- shorthand (e.g. horizontal-alt-white, horizontal-alt-color)
+  if (name.includes("-alt-")) {
+    if (name.includes("white")) return "alternative-white";
+    return "alternative-color";
+  }
   // Handle alternative with space + color/white ("alternative color", "alternative white")
   if (name.includes("alternative")) {
     if (name.includes("white")) return "alternative-white";
