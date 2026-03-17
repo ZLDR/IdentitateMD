@@ -378,7 +378,7 @@ function buildVariantCard(inst, layout, variant, path, layoutLabel, customLabel 
           <span class="text-[11px] text-surface-400 ml-1">SVG</span>
         </div>
         <div class="flex items-center gap-0.5">
-          <a href="${escHtml(path)}" download class="p-2 rounded hover:bg-primary-50 text-surface-400 hover:text-primary-500 transition-colors" title="Descarcă SVG">${ICONS.download}</a>
+          <a href="${escHtml(path)}" download data-va-dl="${escHtml(inst.slug)}" data-va-fmt="svg" data-va-asset="${escHtml(layout + ':' + (variant || label))}" class="p-2 rounded hover:bg-primary-50 text-surface-400 hover:text-primary-500 transition-colors" title="Descarcă SVG">${ICONS.download}</a>
           <button type="button" class="copy-asset-btn p-2 rounded hover:bg-primary-50 text-surface-400 hover:text-primary-500 transition-colors" data-path="${escHtml(path)}" title="Copiază SVG">${ICONS.copy}</button>
         </div>
       </div>
@@ -398,7 +398,7 @@ function buildPngCard(inst, group, layoutLabel) {
           <span class="text-xs font-medium text-primary-900">PNG</span>
           ${group.png.width ? `<span class="text-[11px] text-surface-400 ml-1">${group.png.width} × ${group.png.height}px</span>` : ''}
         </div>
-        <a href="${escHtml(path)}" download class="p-2 rounded hover:bg-primary-50 text-surface-400 hover:text-primary-500 transition-colors" title="Descarcă PNG">${ICONS.download}</a>
+        <a href="${escHtml(path)}" download data-va-dl="${escHtml(inst.slug)}" data-va-fmt="png" data-va-asset="${escHtml(layoutLabel + ':png')}" class="p-2 rounded hover:bg-primary-50 text-surface-400 hover:text-primary-500 transition-colors" title="Descarcă PNG">${ICONS.download}</a>
       </div>
     </div>`;
 }
@@ -846,6 +846,7 @@ function wireDetail() {
         const url = URL.createObjectURL(content);
         const a = document.createElement('a');
         a.href = url; a.download = `${slug}-logos.zip`; a.click();
+        window.va?.('event', { name: 'logo_download', data: { institution: slug, format: 'zip', asset: 'all' } });
         URL.revokeObjectURL(url);
         zipBtn.innerHTML = `<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ZIP descărcat!`;
         setTimeout(() => { zipBtn.innerHTML = orig; zipBtn.disabled = false; }, 2000);
@@ -955,6 +956,12 @@ if (searchClear) {
     sortZA?.classList.toggle('text-surface-400',  currentSort !== 'za');
     applySortAndFilter(searchInput?.value);
   });
+});
+
+// ─── Download tracking ────────────────────────────────────────────────────────
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-va-dl]');
+  if (a) window.va?.('event', { name: 'logo_download', data: { institution: a.dataset.vaDl, format: a.dataset.vaFmt, asset: a.dataset.vaAsset } });
 });
 
 // ─── Initialise ───────────────────────────────────────────────────────────────
