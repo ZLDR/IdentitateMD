@@ -13,12 +13,12 @@
 
     /* ─── CONFIG — edit these per announcement ─────────────────────── */
     :root {
-      --institution-name:     "Ministerul Dezvoltării\AEconomice și Digitalizării";
-      --institution-shortname:"MDED";
+      --institution-name:     "Ministerul Muncii și\AProtecției Sociale";
+      --institution-shortname:"MMPS";
       --institution-category: "Minister";
-      --logo-path:            "../website/public/logos/md-mded/horizontal-white.svg";
-      --logo-alt-path:        "../website/public/logos/md-mded/vertical-white.svg";
-      --institution-url:      "mded.gov.md";
+      --logo-path:            "../website/public/logos/md-mmps/horizontal-alt-white.svg";
+      --logo-alt-path:        "../website/public/logos/md-mmps/vertical-white.svg";
+      --institution-url:      "social.gov.md";
 
       /* Platform palette */
       --navy:   #01193F;
@@ -87,20 +87,20 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 64px 56px 80px 72px;
+      padding: 64px 56px 64px 56px;
     }
 
     .logo-lockup {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 0;
       width: 100%;
     }
 
     .institution-logo {
       width: 100%;
-      max-width: 380px;
+      max-width: 340px;
       height: auto;
       max-height: 280px;
       object-fit: contain;
@@ -153,8 +153,8 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 52px 60px 60px 60px;
+      justify-content: center;
+      padding: 64px 72px 64px 80px;
     }
 
     /* "NOU" badge */
@@ -162,7 +162,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-top: 60px;
+      margin-bottom: 32px;
     }
 
     .badge-nou {
@@ -189,11 +189,8 @@
 
     /* Main heading */
     .heading-block {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 24px 0;
     }
 
     .overline {
@@ -305,7 +302,7 @@
         <em>Digitalizării</em>
       </div>
       <p class="tagline" id="js-tagline">
-        Logo-urile oficiale și culorile ale <strong id="js-tagline-strong">MDED</strong> sunt acum disponibile pe platforma Identitate.md.
+        Logo-urile oficiale și stilurile <strong id="js-tagline-strong">MDED</strong> sunt acum disponibile pe platforma Identitate.md.
       </p>
     </div>
 
@@ -341,11 +338,11 @@
 
 <script>
   const institution = {
-    logoSrc:   "../website/public/logos/md-mded/vertical-white.svg",
-    name:      "Ministerul Dezvoltării<br/>Economice și<br/>Digitalizării",
-    shortname: "MDED",
+    logoSrc:   "../website/public/logos/md-mmps/vertical-white.svg",
+    name:      "Ministerul Muncii și<br/>Protecției Sociale",
+    shortname: "MMPS",
     category:  "Minister",
-    slug:      "mded",
+    slug:      "mmps",
     tagline:   null, // null = auto-generated
   };
 
@@ -353,7 +350,8 @@
   document.getElementById("js-logo").src        = institution.logoSrc;
   document.getElementById("js-logo").alt        = `Logo ${institution.shortname}`;
   document.getElementById("js-name").innerHTML  = institution.name;
-  document.getElementById("js-category").textContent = institution.category;
+  const catEl = document.getElementById("js-category");
+  if (catEl) catEl.textContent = institution.category;
   document.getElementById("js-watermark").textContent = institution.shortname;
   document.getElementById("js-tagline-strong").textContent = institution.shortname;
 
@@ -361,7 +359,7 @@
     document.getElementById("js-tagline").innerHTML = institution.tagline;
   } else {
     document.getElementById("js-tagline").innerHTML =
-      `Logo-urile oficiale și culorile ale ` +
+      `Logo-urile oficiale și stilurile ` +
       `<strong id="js-tagline-strong">${institution.shortname}</strong> ` +
       `sunt acum disponibile pe platforma Identitate.md.`;
   }

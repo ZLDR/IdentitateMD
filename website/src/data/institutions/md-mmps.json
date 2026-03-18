@@ -1,0 +1,73 @@
+{
+  "id": "md-mmps",
+  "slug": "mmps",
+  "name": "Ministerul Muncii și Protecției Sociale al Republicii Moldova",
+  "shortname": "MMPS",
+  "category": "minister",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-18",
+    "keywords": ["moldova", "muncă", "protecție socială", "minister", "mmps"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Ministerul responsabil pentru politica în domeniul muncii, ocupării forței de muncă și protecției sociale din Republica Moldova",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Onest",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mmps/horizontal-color.svg",
+      "white": "/logos/md-mmps/horizontal-alt-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mmps/horizontal-color.svg",
+      "white": "/logos/md-mmps/horizontal-alt-white.svg",
+      "black": "/logos/md-mmps/horizontal-alt-black.svg"
+    },
+    "horizontal_alt": {
+      "type": "horizontal",
+      "color": "/logos/md-mmps/horizontal-alt-color.svg",
+      "white": "/logos/md-mmps/horizontal-alt-white.svg",
+      "black": "/logos/md-mmps/horizontal-alt-black.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mmps/vertical-color.svg",
+      "white": "/logos/md-mmps/vertical-white.svg"
+    },
+    "vertical_alt": {
+      "type": "vertical",
+      "color": "/logos/md-mmps/vertical-alt-color.svg",
+      "white": "/logos/md-mmps/vertical-alt-white.svg",
+      "black": "/logos/md-mmps/vertical-alt-black.svg"
+    }
+  },
+  "resources": {
+    "website": "https://social.gov.md/",
+    "contact": {
+      "address": "str. V. Alecsandri, 1, Chișinău",
+      "email": "secretariat@social.gov.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/social.gov.md",
+      "instagram": "https://www.instagram.com/social.gov.md"
+    }
+  }
+}
