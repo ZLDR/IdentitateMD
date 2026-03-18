@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-17T18:53:43.579Z",
-  "count": 20,
-  "totalLogos": 84,
+  "generated": "2026-03-18T02:28:10.611Z",
+  "count": 21,
+  "totalLogos": 100,
   "institutions": [
     {
       "id": "eu-flag",
@@ -81,7 +81,7 @@
     {
       "id": "md-mae",
       "slug": "md-mae",
-      "name": "Md Mae",
+      "name": "Ministerul Afacerilor Externe",
       "layouts": [
         "horizontal",
         "vertical"
@@ -208,10 +208,17 @@
       "slug": "md-mf",
       "name": "Ministerul Finanțelor",
       "layouts": [
+        "horizontal",
         "vertical"
       ],
-      "logoCount": 2,
+      "logoCount": 6,
       "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-mf/horizontal-alt-color.svg",
+          "alternative-white": "/logos/md-mf/horizontal-alt-white.svg",
+          "color": "/logos/md-mf/horizontal-color.svg",
+          "white": "/logos/md-mf/horizontal-white.svg"
+        },
         "vertical": {
           "color": "/logos/md-mf/vertical-color.svg",
           "white": "/logos/md-mf/vertical-white.svg"
@@ -290,9 +297,11 @@
         "symbol",
         "vertical"
       ],
-      "logoCount": 6,
+      "logoCount": 8,
       "logos": {
         "horizontal": {
+          "alternative-color": "/logos/md-mj/Horizontal-alt-black.svg",
+          "alternative-white": "/logos/md-mj/Horizontal-alt-white.svg",
           "color": "/logos/md-mj/horizontal-color.svg",
           "white": "/logos/md-mj/horizontal-white.svg"
         },
@@ -303,6 +312,32 @@
         "vertical": {
           "color": "/logos/md-mj/vertical-color.svg",
           "white": "/logos/md-mj/vertical-white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mmps",
+      "slug": "md-mmps",
+      "name": "Ministerul Muncii și Protecției Sociale al Republicii Moldova",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 10,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-mmps/horizontal-alt-black.svg",
+          "alternative-white": "/logos/md-mmps/horizontal-alt-white.svg",
+          "black": "/logos/md-mmps/horizontal-black.svg",
+          "color": "/logos/md-mmps/horizontal-color.svg",
+          "white": "/logos/md-mmps/horizontal-white.svg"
+        },
+        "vertical": {
+          "alternative-color": "/logos/md-mmps/vertical-alt-black.svg",
+          "alternative-white": "/logos/md-mmps/vertical-alt-white.svg",
+          "black": "/logos/md-mmps/vertical-black.svg",
+          "color": "/logos/md-mmps/vertical-color.svg",
+          "white": "/logos/md-mmps/vertical-white.svg"
         }
       }
     },

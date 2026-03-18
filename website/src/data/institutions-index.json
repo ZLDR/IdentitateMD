@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-18T01:59:29.527Z",
+  "generatedAt": "2026-03-18T02:27:35.949Z",
   "total": 21,
   "stats": {
     "byCategory": {
@@ -1189,6 +1189,13 @@
       "typography": {
         "primary": {
           "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Trajan Pro",
           "weights": [
             400,
             700

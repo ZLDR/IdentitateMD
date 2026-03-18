@@ -27,6 +27,10 @@
     "primary": {
       "family": "Onest",
       "weights": [400, 700]
+    },
+    "secondary": {
+      "family": "Trajan Pro",
+      "weights": [400, 700]
     }
   },
   "assets": {
