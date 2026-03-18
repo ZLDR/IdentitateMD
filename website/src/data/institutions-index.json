@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-18T19:59:55.390Z",
+  "generatedAt": "2026-03-18T20:07:33.640Z",
   "total": 23,
   "stats": {
     "byCategory": {
@@ -1982,7 +1982,6 @@
         "symbol": {
           "type": "symbol",
           "color": "/logos/md-stema/stema-color.svg",
-          "white": "/logos/md-stema/stema-white.svg",
           "alternatives": [
             {
               "label": "Variantă alternativă",

@@ -23,7 +23,6 @@
     "symbol": {
       "type": "symbol",
       "color": "/logos/md-stema/stema-color.svg",
-      "white": "/logos/md-stema/stema-white.svg",
       "alternatives": [
         {
           "label": "Variantă alternativă",
