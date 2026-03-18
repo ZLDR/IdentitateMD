@@ -33,30 +33,53 @@
     "main": {
       "type": "horizontal",
       "color": "/logos/md-mmps/horizontal-color.svg",
-      "white": "/logos/md-mmps/horizontal-alt-white.svg"
+      "white": "/logos/md-mmps/horizontal-white.svg"
     },
     "horizontal": {
       "type": "horizontal",
       "color": "/logos/md-mmps/horizontal-color.svg",
-      "white": "/logos/md-mmps/horizontal-alt-white.svg",
-      "black": "/logos/md-mmps/horizontal-alt-black.svg"
-    },
-    "horizontal_alt": {
-      "type": "horizontal",
-      "color": "/logos/md-mmps/horizontal-alt-color.svg",
-      "white": "/logos/md-mmps/horizontal-alt-white.svg",
-      "black": "/logos/md-mmps/horizontal-alt-black.svg"
+      "white": "/logos/md-mmps/horizontal-white.svg",
+      "black": "/logos/md-mmps/horizontal-black.svg",
+      "alternatives": [
+        {
+          "label": "Orizontal Alt Color",
+          "path": "/logos/md-mmps/horizontal-alt-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Orizontal Alt Alb",
+          "path": "/logos/md-mmps/horizontal-alt-white.svg",
+          "preview": "dark"
+        },
+        {
+          "label": "Orizontal Alt Negru",
+          "path": "/logos/md-mmps/horizontal-alt-black.svg",
+          "preview": "checkerboard"
+        }
+      ]
     },
     "vertical": {
       "type": "vertical",
       "color": "/logos/md-mmps/vertical-color.svg",
-      "white": "/logos/md-mmps/vertical-white.svg"
-    },
-    "vertical_alt": {
-      "type": "vertical",
-      "color": "/logos/md-mmps/vertical-alt-color.svg",
-      "white": "/logos/md-mmps/vertical-alt-white.svg",
-      "black": "/logos/md-mmps/vertical-alt-black.svg"
+      "white": "/logos/md-mmps/vertical-white.svg",
+      "black": "/logos/md-mmps/vertical-black.svg",
+      "alternatives": [
+        {
+          "label": "Vertical Alt Color",
+          "path": "/logos/md-mmps/vertical-alt-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Vertical Alt Alb",
+          "path": "/logos/md-mmps/vertical-alt-white.svg",
+          "preview": "dark"
+        },
+        {
+          "label": "Vertical Alt Negru",
+          "path": "/logos/md-mmps/vertical-alt-black.svg",
+          "preview": "checkerboard"
+        }
+      ]
     }
   },
   "resources": {
