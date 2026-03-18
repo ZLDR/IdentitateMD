@@ -28,6 +28,7 @@ export type InstitutionCategory =
   | "autoritate"
   | "proiect-ue"
   | "institutie-cultura"
+  | "consilii"
   | "altele";
 
 /**

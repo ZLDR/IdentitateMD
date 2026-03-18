@@ -106,6 +106,7 @@ const institutionSchema = {
         "institutie-cultura",
         "parlament",
         "servicii",
+        "consilii",
         "altele",
       ],
     },

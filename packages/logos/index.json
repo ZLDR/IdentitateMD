@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-18T02:28:10.611Z",
-  "count": 21,
-  "totalLogos": 100,
+  "generated": "2026-03-18T09:54:16.606Z",
+  "count": 22,
+  "totalLogos": 104,
   "institutions": [
     {
       "id": "eu-flag",
@@ -40,6 +40,26 @@
           "color": "/logos/md-age/symbol/color.svg",
           "filled": "/logos/md-age/symbol/filled.svg",
           "white": "/logos/md-age/symbol/white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-ca",
+      "slug": "md-ca",
+      "name": "Consiliul Audiovizualului",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "black": "/logos/md-ca/horizontal-black.svg"
+        },
+        "symbol": {
+          "black": "/logos/md-ca/symbol-black.svg",
+          "color": "/logos/md-ca/symbol-color.svg",
+          "white": "/logos/md-ca/symbol-white.svg"
         }
       }
     },
