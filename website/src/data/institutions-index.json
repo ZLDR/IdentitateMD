@@ -1,10 +1,10 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-18T09:54:01.480Z",
-  "total": 22,
+  "generatedAt": "2026-03-18T19:59:55.390Z",
+  "total": 23,
   "stats": {
     "byCategory": {
-      "altele": 1,
+      "altele": 2,
       "guvern": 1,
       "agentie": 1,
       "consilii": 1,
@@ -16,7 +16,7 @@
       "servicii": 1
     },
     "withManual": 2,
-    "withSvg": 22
+    "withSvg": 23
   },
   "categories": [
     {
@@ -52,7 +52,7 @@
     {
       "id": "altele",
       "label": "Altele",
-      "count": 1
+      "count": 2
     }
   ],
   "institutions": [
@@ -1947,6 +1947,50 @@
           "png": null
         },
         "favicon": null
+      }
+    },
+    {
+      "id": "md-stema",
+      "slug": "stema-republicii-moldova",
+      "name": "Stema Republicii Moldova",
+      "shortname": "stema",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-18",
+        "keywords": [
+          "moldova",
+          "stema",
+          "stemă",
+          "coat of arms",
+          "heraldry",
+          "statul",
+          "republica moldova"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Stema de Stat a Republicii Moldova este simbolul heraldic oficial al statului, reprezentând un vultur de aur cu scut pe piept.",
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-stema/stema-color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-stema/stema-color.svg",
+          "white": "/logos/md-stema/stema-white.svg",
+          "alternatives": [
+            {
+              "label": "Variantă alternativă",
+              "path": "/logos/md-stema/stema-alt-color.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
       }
     }
   ]
