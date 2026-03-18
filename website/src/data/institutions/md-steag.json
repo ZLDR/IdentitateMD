@@ -1,0 +1,28 @@
+{
+  "id": "md-steag",
+  "slug": "steagul-republicii-moldova",
+  "name": "Steagul Republicii Moldova",
+  "shortname": "steag",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-18",
+    "keywords": ["moldova", "steag", "drapel", "flag", "tricolor", "republica moldova"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Drapelul de Stat al Republicii Moldova este simbolul național oficial, compus din trei fâșii verticale în culorile albastru, galben și roșu, cu stema țării în centru.",
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-steag/horizontal-color.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-steag/horizontal-color.svg"
+    }
+  }
+}
