@@ -1,6 +1,6 @@
 {
   "name": "@identitate-md/mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server for IdentitateMD — query Moldovan government institution logos and brand colors from AI coding assistants",
   "license": "MIT",
   "author": "IdentitateMD Contributors",
@@ -37,7 +37,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@identitate-md/logos": "*",
+    "@identitate-md/logos": "^1.4.3",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^3.25.76"
   },

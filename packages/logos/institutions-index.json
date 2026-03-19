@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-19T20:04:08.652Z",
+  "generatedAt": "2026-03-19T20:51:33.861Z",
   "total": 26,
   "stats": {
     "byCategory": {
@@ -204,8 +204,8 @@
     },
     {
       "id": "md-anre",
-      "slug": "agentia-nationala-pentru-reglementare-in-energie",
-      "name": "Agenția Națională pentru Reglementare în Energie",
+      "slug": "agentia-nationala-pentru-reglementare-in-energetica",
+      "name": "Agenția Națională pentru Reglementare în Energetică",
       "shortname": "ANRE",
       "category": "agentie",
       "meta": {
@@ -214,6 +214,7 @@
         "keywords": [
           "moldova",
           "agenție",
+          "energetică",
           "energie",
           "reglementare",
           "anre",
@@ -226,7 +227,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Agenția Națională pentru Reglementare în Energie este autoritatea publică autonomă responsabilă de reglementarea activităților în sectorul energetic al Republicii Moldova.",
+      "description": "Agenția Națională pentru Reglementare în Energetică este autoritatea publică autonomă responsabilă de reglementarea activităților în sectorul energetic al Republicii Moldova.",
       "colors": [
         {
           "name": "Negru Închis",
