@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="MCP Server — identitate.md"
+  description="Server MCP pentru AI agenți: acces programatic la logourile și elementele de branding ale instituțiilor publice din Republica Moldova."
+  darkChrome={true}
+>
+  <div class="bg-[#0a0a0a] min-h-screen text-white" style="font-family: 'SF Mono', 'Fira Code', monospace;">
+
+    <style is:global>
+      .mcp-page ::selection { background: #fff; color: #000; }
+      .mcp-page *, .mcp-page *::before, .mcp-page *::after { box-sizing: border-box; }
+
+      .carousel-track {
+        display: flex;
+        width: max-content;
+        pointer-events: none;
+      }
+
+      .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 28px;
+        height: 64px;
+        border-right: 1px solid #222;
+        flex-shrink: 0;
+      }
+
+      .logo-item img {
+        height: 26px;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        opacity: 0.85;
+      }
+
+      .logo-item.missing { min-width: 130px; }
+
+      .logo-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        border: 1px dashed #2a2a2a;
+        border-radius: 6px;
+        padding: 8px 14px;
+        height: 44px;
+        min-width: 110px;
+      }
+      .logo-placeholder .ph-label { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #333; }
+      .logo-placeholder .ph-name  { font-size: 9px; color: #3a3a3a; font-family: system-ui, sans-serif; white-space: nowrap; }
+
+      @media (min-width: 640px) {
+        .logo-item { padding: 0 40px; height: 72px; }
+        .logo-item img { height: 32px; max-width: 150px; }
+        .logo-item.missing { min-width: 160px; }
+        .logo-placeholder { padding: 9px 18px; height: 48px; min-width: 130px; }
+        .logo-placeholder .ph-label { font-size: 9px; }
+        .logo-placeholder .ph-name  { font-size: 9px; }
+      }
+
+      @media (min-width: 1024px) {
+        .logo-item { padding: 0 52px; height: 80px; }
+        .logo-item img { height: 38px; max-width: 180px; }
+        .logo-item.missing { min-width: 200px; }
+        .logo-placeholder { padding: 10px 20px; height: 52px; min-width: 160px; }
+        .logo-placeholder .ph-label { font-size: 10px; }
+        .logo-placeholder .ph-name  { font-size: 10px; }
+      }
+
+      .logo-item.missing.resolved .logo-placeholder { display: none; }
+      .logo-item.missing .logo-resolved { display: none; }
+      .logo-item.missing.resolved .logo-resolved { display: block; }
+
+      .logo-resolved img {
+        height: 26px; width: auto; max-width: 120px; object-fit: contain;
+        opacity: 0.85;
+      }
+      @media (min-width: 640px) { .logo-resolved img { height: 32px; max-width: 150px; } }
+      @media (min-width: 1024px) { .logo-resolved img { height: 38px; max-width: 180px; } }
+
+      .t-line { line-height: 1.8; white-space: pre-wrap; word-break: break-all; opacity: 0; }
+      .t-line.visible { opacity: 1; }
+      .t-prompt { color: #444; }
+      .t-cmd    { color: #60a5fa; }
+      .t-key    { color: #a78bfa; }
+      .t-val    { color: #34d399; }
+      .t-str    { color: #fbbf24; }
+      .t-dim    { color: #444; }
+      .t-success{ color: #22c55e; }
+      .t-info   { color: #60a5fa; }
+
+      .cursor {
+        display: inline-block; width: 7px; height: 13px;
+        background: #60a5fa; vertical-align: middle;
+        animation: mcp-blink 1s step-end infinite;
+      }
+      @keyframes mcp-blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+      .badge-pulse {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: #60a5fa; box-shadow: 0 0 6px #60a5fa;
+        animation: mcp-pulse 2s ease-in-out infinite;
+        display: inline-block;
+      }
+      @keyframes mcp-pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+    </style>
+
+    <div class="mcp-page">
+
+      <!-- Header -->
+      <header class="max-w-5xl mx-auto px-6 lg:px-12 pt-16 pb-0">
+        <div class="inline-flex items-center gap-2 bg-blue-950/40 border border-blue-800/30 rounded px-2.5 py-1 mb-7">
+          <span class="badge-pulse"></span>
+          <span class="text-[11px] text-blue-400 tracking-widest uppercase">MCP Server</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-4" style="font-family: system-ui, sans-serif; letter-spacing: -0.02em;">
+          Logourile instituțiilor publice,<br>
+          <span class="text-blue-500">disponibile pentru AI agenți</span>
+        </h1>
+        <p class="text-[#666] text-base leading-snug max-w-xl mb-12" style="font-family: system-ui, sans-serif;">
+          identitate.md pune la dispoziție un server MCP care permite AI agenților să caute,
+          să găsească și să integreze automat logouri și elemente de branding ale instituțiilor
+          din Republica Moldova.
+        </p>
+      </header>
+
+      <!-- Carousel -->
+      <div class="border-t border-b border-[#222] bg-[#111] py-10 overflow-hidden relative">
+        <div class="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style="background: linear-gradient(to right, #111, transparent);"></div>
+        <div class="absolute inset-y-0 right-0 w-28 z-10 pointer-events-none" style="background: linear-gradient(to left, #111, transparent);"></div>
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+
+      <!-- Demo Section -->
+      <div class="max-w-5xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+        <div>
+          <h2 class="text-xl font-semibold mb-3" style="font-family: system-ui, sans-serif;">Logo lipsă? Agentul tău știe ce să facă.</h2>
+          <p class="text-sm text-[#666] leading-relaxed mb-6" style="font-family: system-ui, sans-serif;">
+            Trei instituții din carousel nu au logo încărcat. Cu serverul MCP al
+            identitate.md, orice agent AI poate detecta și rezolva lipsa automat —
+            fără intervenție manuală.
+          </p>
+
+          <div class="flex flex-col gap-2 mb-8" id="missingList">
+            <div class="missing-item flex items-center gap-3 px-3.5 py-2.5 bg-[#111] border border-[#222] rounded-md text-sm" data-id="md-mj" style="font-family: system-ui, sans-serif;">
+              <span class="dot w-1.5 h-1.5 rounded-full bg-[#333] flex-shrink-0"></span>
+              <span class="item-name flex-1 text-[#aaa]">Ministerul Justiției</span>
+              <span class="item-status text-[11px] text-[#444] tracking-wide">lipsă</span>
+            </div>
+            <div class="missing-item flex items-center gap-3 px-3.5 py-2.5 bg-[#111] border border-[#222] rounded-md text-sm" data-id="md-energie" style="font-family: system-ui, sans-serif;">
+              <span class="dot w-1.5 h-1.5 rounded-full bg-[#333] flex-shrink-0"></span>
+              <span class="item-name flex-1 text-[#aaa]">Ministerul Energiei</span>
+              <span class="item-status text-[11px] text-[#444] tracking-wide">lipsă</span>
+            </div>
+            <div class="missing-item flex items-center gap-3 px-3.5 py-2.5 bg-[#111] border border-[#222] rounded-md text-sm" data-id="md-mded" style="font-family: system-ui, sans-serif;">
+              <span class="dot w-1.5 h-1.5 rounded-full bg-[#333] flex-shrink-0"></span>
+              <span class="item-name flex-1 text-[#aaa]">Min. Dezvoltare Economică</span>
+              <span class="item-status text-[11px] text-[#444] tracking-wide">lipsă</span>
+            </div>
+          </div>
+
+          <button
+            id="btnResolve"
+            onclick="runMcpDemo()"
+            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded-md transition-colors cursor-pointer"
+            style="font-family: system-ui, sans-serif; border: none;"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
+            Rulează cu MCP
+          </button>
+        </div>
+
+        <!-- Terminal -->
+        <div class="rounded-lg overflow-hidden border border-[#222] bg-[#0d0d0d] text-[12px]">
+          <div class="flex items-center gap-1.5 px-4 py-2.5 bg-[#111] border-b border-[#222]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+            <span class="ml-2 text-[11px] text-[#444] tracking-wide">agent · identitate-md mcp</span>
+          </div>
+          <div class="p-5 min-h-[280px] flex flex-col gap-0" id="terminalBody">
+            <span class="t-line visible t-dim">// apasă „Rulează cu MCP" pentru a porni demo-ul</span>
+            <span class="t-line visible"><span class="cursor"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- How it works -->
+      <div class="border-t border-[#222] max-w-5xl mx-auto px-6 lg:px-12 py-16">
+        <p class="text-[11px] tracking-widest uppercase text-[#444] mb-8">Cum funcționează</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="p-6 border border-[#222] rounded-lg bg-[#111]">
+            <div class="text-[11px] text-[#333] tracking-wide mb-3">01</div>
+            <h3 class="text-sm font-semibold text-[#ddd] mb-2" style="font-family: system-ui, sans-serif;">Instalează serverul MCP</h3>
+            <p class="text-[13px] text-[#555] leading-relaxed" style="font-family: system-ui, sans-serif;">
+              Adaugă <code class="bg-[#1a1a1a] border border-[#222] rounded px-1 text-[11px] text-blue-400">@identitate-md/mcp</code> în configurația clientului tău AI. Compatibil cu Claude, Cursor, și orice client MCP.
+            </p>
+          </div>
+          <div class="p-6 border border-[#222] rounded-lg bg-[#111]">
+            <div class="text-[11px] text-[#333] tracking-wide mb-3">02</div>
+            <h3 class="text-sm font-semibold text-[#ddd] mb-2" style="font-family: system-ui, sans-serif;">Agentul caută automat</h3>
+            <p class="text-[13px] text-[#555] leading-relaxed" style="font-family: system-ui, sans-serif;">
+              Prin unelte ca <code class="bg-[#1a1a1a] border border-[#222] rounded px-1 text-[11px] text-blue-400">search_institutions</code>, <code class="bg-[#1a1a1a] border border-[#222] rounded px-1 text-[11px] text-blue-400">get_logo</code> și <code class="bg-[#1a1a1a] border border-[#222] rounded px-1 text-[11px] text-blue-400">get_brand_colors</code>, agentul accesează date structurate.
+            </p>
+          </div>
+          <div class="p-6 border border-[#222] rounded-lg bg-[#111]">
+            <div class="text-[11px] text-[#333] tracking-wide mb-3">03</div>
+            <h3 class="text-sm font-semibold text-[#ddd] mb-2" style="font-family: system-ui, sans-serif;">Integrare imediată</h3>
+            <p class="text-[13px] text-[#555] leading-relaxed" style="font-family: system-ui, sans-serif;">
+              URL-uri stabile, SVG-uri optimizate și metadate complete — gata de integrat în orice aplicație sau document.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Installation -->
+      <div class="border-t border-[#222] max-w-5xl mx-auto px-6 lg:px-12 py-16">
+        <h2 class="text-2xl font-bold mb-4" style="font-family: system-ui, sans-serif; letter-spacing: -0.01em;">
+          MCP Server — pentru AI coding assistants
+        </h2>
+        <p class="text-sm text-[#888] leading-relaxed max-w-2xl mb-10" style="font-family: system-ui, sans-serif;">
+          Pachetul <code class="bg-[#1a1a1a] border border-[#2a2a2a] rounded px-1.5 py-0.5 text-[12px] text-blue-400">@identitate-md/mcp</code> este un server
+          <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" class="text-[#aaa] underline underline-offset-2 hover:text-white transition-colors">Model Context Protocol</a>
+          care permite uneltelor AI (Claude Code, Cursor, Windsurf etc.) să caute instituții, obțină logo-uri și culori de brand fără să părăsească editorul. Datele sunt incluse în pachet — nicio cerere de rețea la runtime.
+        </p>
+
+        <!-- npm install -->
+        <p class="text-sm font-semibold text-[#ccc] mb-3" style="font-family: system-ui, sans-serif;">
+          Instalare globală <span class="font-normal text-[#555]">(recomandat):</span>
+        </p>
+        <div class="rounded-lg bg-[#0d1117] border border-[#222] px-6 py-5 mb-10 flex items-center justify-between gap-4 group">
+          <code class="text-[13px] text-[#3fb950]" style="font-family: 'SF Mono', 'Fira Code', monospace;">npm install -g @identitate-md/mcp</code>
+          <button
+            id="copy-npm"
+            class="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded hover:bg-[#1a1a1a] text-[#555] hover:text-[#aaa]"
+            title="Copiază"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+        </div>
+
+        <!-- mcp.json config -->
+        <p class="text-sm font-semibold text-[#ccc] mb-3" style="font-family: system-ui, sans-serif;">
+          Adaugă în <code class="font-normal bg-[#1a1a1a] border border-[#2a2a2a] rounded px-1.5 py-0.5 text-[12px] text-blue-400">.mcp.json</code>
+          <span class="font-normal text-[#555]"> din proiect (sau global):</span>
+        </p>
+        <div class="rounded-lg bg-[#0d1117] border border-[#222] px-6 py-5 relative group">
+          <button
+            id="copy-mcp-json"
+            class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded hover:bg-[#1a1a1a] text-[#555] hover:text-[#aaa]"
+            title="Copiază"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <pre class="text-[13px] leading-relaxed m-0" style="font-family: 'SF Mono', 'Fira Code', monospace;"><span class="text-[#e6edf3]">{</span>
+  <span class="text-[#e6edf3]">"mcpServers"</span><span class="text-[#e6edf3]">: {</span>
+    <span class="text-[#e6edf3]">"identitate-md"</span><span class="text-[#e6edf3]">: {</span>
+      <span class="text-[#79c0ff]">"command"</span><span class="text-[#e6edf3]">: </span><span class="text-[#a5d6ff]">"npx"</span><span class="text-[#e6edf3]">,</span>
+      <span class="text-[#79c0ff]">"args"</span><span class="text-[#e6edf3]">: [</span><span class="text-[#a5d6ff]">"-y"</span><span class="text-[#e6edf3]">, </span><span class="text-[#a5d6ff]">"@identitate-md/mcp"</span><span class="text-[#e6edf3]">]</span>
+    <span class="text-[#e6edf3]">}</span>
+  <span class="text-[#e6edf3]">}</span>
+<span class="text-[#e6edf3]">}</span></pre>
+        </div>
+      </div>
+
+    </div><!-- /mcp-page -->
+  </div><!-- /bg wrapper -->
+</BaseLayout>
+
+<script>
+  const SHOWN = [
+    { id: 'md-guvern',  name: 'Guvernul RM' },
+    { id: 'md-mae',     name: 'Min. Afaceri Externe' },
+    { id: 'md-mf',      name: 'Min. Finanțelor' },
+    { id: 'md-mec',     name: 'Min. Educației' },
+    { id: 'md-ms',      name: 'Min. Sănătății' },
+    { id: 'md-mediu',   name: 'Min. Mediului' },
+    { id: 'md-mmps',    name: 'Min. Muncii' },
+  ];
+
+  const MISSING = [
+    { id: 'md-mj',                  name: 'Min. Justiției' },
+    { id: 'md-energie', name: 'Min. Energiei' },
+    { id: 'md-mded',                name: 'Min. Dezvoltare Ec.' },
+  ];
+
+  function buildCarousel() {
+    const all = [
+      SHOWN[0], MISSING[0],
+      SHOWN[1], SHOWN[2],
+      MISSING[1],
+      SHOWN[3], SHOWN[4],
+      MISSING[2],
+      SHOWN[5], SHOWN[6],
+    ];
+    const track = document.getElementById('carouselTrack');
+    if (!track) return;
+    const items = [...all, ...all];
+    track.innerHTML = items.map(inst => {
+      if (MISSING.find(m => m.id === inst.id)) {
+        return `<div class="logo-item missing" id="carousel-${inst.id}">
+          <div class="logo-placeholder">
+            <span class="ph-label">logo lipsă</span>
+            <span class="ph-name">${inst.name}</span>
+          </div>
+          <div class="logo-resolved">
+            <img src="/logos/${inst.id}/horizontal-white.svg" alt="${inst.name}" />
+          </div>
+        </div>`;
+      }
+      return `<div class="logo-item">
+        <img src="/logos/${inst.id}/horizontal-white.svg" alt="${inst.name}" />
+      </div>`;
+    }).join('');
+  }
+
+  buildCarousel();
+
+  document.getElementById('copy-npm')?.addEventListener('click', () => {
+    navigator.clipboard.writeText('npm install -g @identitate-md/mcp');
+  });
+
+  document.getElementById('copy-mcp-json')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(
+`{
+  "mcpServers": {
+    "identitate-md": {
+      "command": "npx",
+      "args": ["-y", "@identitate-md/mcp"]
+    }
+  }
+}`
+    );
+  });
+
+  // rAF-based scroll — no CSS animation loop reset flash
+  (function startCarousel() {
+    const track = document.getElementById('carouselTrack')!;
+    const speed = 0.4; // px per frame at 60fps
+    let x = 0;
+    const half = track.scrollWidth / 2; // cache once — avoids forced reflow every frame
+
+    function tick() {
+      x -= speed;
+      if (x <= -half) x += half;
+      track.style.transform = `translateX(${x}px)`;
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  })();
+
+  let demoRunning = false;
+
+  const STEPS = [
+    { delay: 0,    html: '<span class="t-prompt">agent → </span><span class="t-cmd">search_institutions</span><span class="t-dim">(</span><span class="t-key">"Ministerul Justiției"</span><span class="t-dim">)</span>' },
+    { delay: 700,  html: '<span class="t-dim">↳ găsit: </span><span class="t-val">md-mj</span><span class="t-dim"> · calitate: verified</span>' },
+    { delay: 1200, html: '<span class="t-prompt">agent → </span><span class="t-cmd">get_logo</span><span class="t-dim">({ id: </span><span class="t-str">"md-mj"</span><span class="t-dim">, layout: </span><span class="t-str">"horizontal"</span><span class="t-dim">, variant: </span><span class="t-str">"white"</span><span class="t-dim"> })</span>' },
+    { delay: 1900, html: '<span class="t-dim">↳ </span><span class="t-success">✓ /logos/md-mj/horizontal-white.svg</span>', resolve: 'md-mj' },
+    { delay: 2500, html: '<span class="t-prompt">agent → </span><span class="t-cmd">search_institutions</span><span class="t-dim">(</span><span class="t-key">"Ministerul Energiei"</span><span class="t-dim">)</span>' },
+    { delay: 3200, html: '<span class="t-dim">↳ găsit: </span><span class="t-val">md-energie</span>' },
+    { delay: 3700, html: '<span class="t-prompt">agent → </span><span class="t-cmd">get_logo</span><span class="t-dim">({ id: </span><span class="t-str">"md-energie"</span><span class="t-dim">, layout: </span><span class="t-str">"horizontal"</span><span class="t-dim">, variant: </span><span class="t-str">"white"</span><span class="t-dim"> })</span>' },
+    { delay: 4400, html: '<span class="t-dim">↳ </span><span class="t-success">✓ /logos/md-energie/horizontal-white.svg</span>', resolve: 'md-energie' },
+    { delay: 5000, html: '<span class="t-prompt">agent → </span><span class="t-cmd">search_institutions</span><span class="t-dim">(</span><span class="t-key">"Ministerul Dezvoltare Economică"</span><span class="t-dim">)</span>' },
+    { delay: 5700, html: '<span class="t-dim">↳ găsit: </span><span class="t-val">md-mded</span>' },
+    { delay: 6200, html: '<span class="t-prompt">agent → </span><span class="t-cmd">get_logo</span><span class="t-dim">({ id: </span><span class="t-str">"md-mded"</span><span class="t-dim">, layout: </span><span class="t-str">"horizontal"</span><span class="t-dim">, variant: </span><span class="t-str">"white"</span><span class="t-dim"> })</span>' },
+    { delay: 6900, html: '<span class="t-dim">↳ </span><span class="t-success">✓ /logos/md-mded/horizontal-white.svg</span>', resolve: 'md-mded' },
+    { delay: 7500, html: '<span class="t-info">── toate logourile au fost adăugate cu succes (3/3) ──</span>', done: true },
+  ];
+
+  (window as any).runMcpDemo = function() {
+    if (demoRunning) return;
+    demoRunning = true;
+
+    const btn = document.getElementById('btnResolve') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg> Se rulează…`;
+
+    const body = document.getElementById('terminalBody')!;
+    body.innerHTML = '';
+
+    STEPS.forEach(step => {
+      setTimeout(() => {
+        const line = document.createElement('span');
+        line.className = 't-line visible';
+        line.innerHTML = step.html;
+        body.appendChild(line);
+        body.scrollTop = body.scrollHeight;
+
+        if ((step as any).resolve) resolveItem((step as any).resolve);
+
+        if ((step as any).done) {
+          setTimeout(() => {
+            btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg> Succes`;
+            btn.style.background = '#16a34a';
+            btn.style.color = '#fff';
+          }, 300);
+        }
+      }, step.delay);
+    });
+  };
+
+  function resolveItem(id: string) {
+    document.querySelectorAll(`#carousel-${id}`).forEach(el => {
+      el.classList.add('resolved');
+      const img = el.querySelector('.logo-resolved img') as HTMLImageElement | null;
+      if (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.5s ease';
+        requestAnimationFrame(() => { img.style.opacity = '0.85'; });
+      }
+    });
+    const listItem = document.querySelector(`.missing-item[data-id="${id}"]`);
+    if (listItem) {
+      listItem.classList.add('resolved');
+      const dot = listItem.querySelector('.dot') as HTMLElement;
+      const status = listItem.querySelector('.item-status') as HTMLElement;
+      const name = listItem.querySelector('.item-name') as HTMLElement;
+      if (dot) { dot.style.background = '#22c55e'; dot.style.boxShadow = '0 0 6px #22c55e'; }
+      if (status) { status.textContent = 'rezolvat'; status.style.color = '#22c55e'; }
+      if (name) name.style.color = '#eee';
+    }
+  }
+</script>

@@ -6,13 +6,14 @@
 interface Props {
   /** Înălțimea logo-ului (default: h-7 pentru header) */
   class?: string;
+  dark?: boolean;
 }
 
-const { class: className = 'h-7' } = Astro.props;
+const { class: className = 'h-7', dark = false } = Astro.props;
 ---
 
 <img
-  src="/logo-identitate.svg"
+  src={dark ? '/logo-identitate-dark.svg' : '/logo-identitate.svg'}
   alt="identitate.md"
   class={className}
   width="950"

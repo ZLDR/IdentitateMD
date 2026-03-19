@@ -3,9 +3,15 @@ import Logo from './Logo.astro';
 // Header component - Navbar-ul aplicației
 const currentPath = Astro.url.pathname;
 
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+
 const navLinks = [
   { href: '/', label: 'Acasă' },
   { href: '/catalog', label: 'Catalog' },
+  { href: '/mcp', label: 'MCP' },
   { href: '/despre', label: 'Despre' },
   { href: '/utilizare', label: 'Documentație' },
 ];
@@ -16,12 +22,17 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-surface-200">
+<header class:list={[
+  'sticky top-0 z-40 backdrop-blur-md border-b',
+  dark
+    ? 'bg-[#0a0a0a]/90 border-[#222]'
+    : 'bg-white/80 border-surface-200',
+]}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <nav class="flex items-center justify-between h-12">
       <!-- Logo -->
       <a href="/" class="flex items-center group">
-        <Logo class="h-7 max-w-[201px]" />
+        <Logo class="h-7 max-w-[201px]" dark={dark} />
       </a>
 
       <!-- Navigation Links (Desktop) -->
@@ -31,7 +42,9 @@ function isActive(href: string): boolean {
             href={link.href}
             class:list={[
               'text-xs font-medium transition-colors',
-              isActive(link.href) ? 'text-primary-600' : 'text-surface-600 hover:text-primary-900',
+              dark
+                ? (isActive(link.href) ? 'text-blue-400' : 'text-white hover:text-[#ccc]')
+                : (isActive(link.href) ? 'text-primary-600' : 'text-surface-600 hover:text-primary-900'),
             ]}
             aria-current={isActive(link.href) ? 'page' : undefined}
           >
@@ -42,7 +55,10 @@ function isActive(href: string): boolean {
           href="https://github.com/identitate-md/identitate-md"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs font-medium text-surface-600 hover:text-primary-900 transition-colors inline-flex items-center gap-1"
+          class:list={[
+            'text-xs font-medium transition-colors inline-flex items-center gap-1',
+            dark ? 'text-white hover:text-[#ccc]' : 'text-surface-600 hover:text-primary-900',
+          ]}
         >
           GitHub
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,14 +69,25 @@ function isActive(href: string): boolean {
 
       <!-- CTA + Mobile Toggle -->
       <div class="flex items-center gap-2">
-        <a href="/solicita" class="btn-outline text-xs sm:text-sm py-2 px-3">
+        <a
+          href="/solicita"
+          class:list={[
+            'text-xs sm:text-sm py-2 px-3 rounded border font-medium transition-colors',
+            dark
+              ? 'border-white bg-white text-black hover:bg-[#e5e5e5] hover:border-[#e5e5e5]'
+              : 'btn-outline',
+          ]}
+        >
           Solicită Logo
         </a>
         <!-- Mobile Hamburger -->
         <button
           type="button"
           id="mobile-menu-btn"
-          class="md:hidden p-2.5 -mr-1 rounded text-surface-600 hover:bg-surface-100 transition-colors"
+          class:list={[
+            'md:hidden p-2.5 -mr-1 rounded transition-colors',
+            dark ? 'text-[#666] hover:bg-[#1a1a1a]' : 'text-surface-600 hover:bg-surface-100',
+          ]}
           aria-label="Deschide meniul"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -77,14 +104,19 @@ function isActive(href: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-200 bg-white">
+  <div id="mobile-menu" class:list={[
+    'hidden md:hidden border-t',
+    dark ? 'border-[#222] bg-[#0a0a0a]' : 'border-surface-200 bg-white',
+  ]}>
     <div class="px-4 py-3 space-y-1">
       {navLinks.map(link => (
         <a
           href={link.href}
           class:list={[
             'block px-3 py-2 rounded text-sm font-medium transition-colors',
-            isActive(link.href) ? 'bg-primary-50 text-primary-600' : 'text-surface-600 hover:bg-surface-50 hover:text-primary-900',
+            dark
+              ? (isActive(link.href) ? 'bg-blue-950/40 text-blue-400' : 'text-[#666] hover:bg-[#1a1a1a] hover:text-[#ccc]')
+              : (isActive(link.href) ? 'bg-primary-50 text-primary-600' : 'text-surface-600 hover:bg-surface-50 hover:text-primary-900'),
           ]}
           aria-current={isActive(link.href) ? 'page' : undefined}
         >
@@ -95,7 +127,10 @@ function isActive(href: string): boolean {
         href="https://github.com/identitate-md/identitate-md"
         target="_blank"
         rel="noopener noreferrer"
-        class="block px-3 py-2 rounded text-sm font-medium text-surface-600 hover:bg-surface-50 hover:text-primary-900 transition-colors"
+        class:list={[
+          'block px-3 py-2 rounded text-sm font-medium transition-colors',
+          dark ? 'text-[#666] hover:bg-[#1a1a1a] hover:text-[#ccc]' : 'text-surface-600 hover:bg-surface-50 hover:text-primary-900',
+        ]}
       >
         GitHub &nearr;
       </a>
