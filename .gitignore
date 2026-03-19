@@ -10,3 +10,5 @@ dist/
 *.bak
 .gstack/
 CLAUDE.md
+marketing/
+.openlogs/
