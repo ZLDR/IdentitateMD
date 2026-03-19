@@ -58,6 +58,14 @@
            hover:border-primary-500/40 hover:text-primary-700;
   }
 
+  /* Install tabs */
+  .install-tab {
+    @apply text-surface-500 hover:text-surface-700;
+  }
+  .install-tab-active {
+    @apply bg-white text-surface-900 shadow-sm;
+  }
+
   /* Buttons */
   .btn {
     @apply inline-flex items-center justify-center gap-1.5 px-4 py-2 

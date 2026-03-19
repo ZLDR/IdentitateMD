@@ -11,7 +11,7 @@ const { dark = false } = Astro.props;
 const navLinks = [
   { href: '/', label: 'Acasă' },
   { href: '/catalog', label: 'Catalog' },
-  { href: '/mcp', label: 'MCP' },
+  { href: '/mcp', label: 'MCP', badge: 'Nou' },
   { href: '/despre', label: 'Despre' },
   { href: '/utilizare', label: 'Documentație' },
 ];
@@ -41,7 +41,7 @@ function isActive(href: string): boolean {
           <a
             href={link.href}
             class:list={[
-              'text-xs font-medium transition-colors',
+              'text-xs font-medium transition-colors inline-flex items-center gap-1.5',
               dark
                 ? (isActive(link.href) ? 'text-blue-400' : 'text-white hover:text-[#ccc]')
                 : (isActive(link.href) ? 'text-primary-600' : 'text-surface-600 hover:text-primary-900'),
@@ -49,6 +49,11 @@ function isActive(href: string): boolean {
             aria-current={isActive(link.href) ? 'page' : undefined}
           >
             {link.label}
+            {link.badge && (
+              <span class="text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-primary-100 text-primary-600 leading-none">
+                {link.badge}
+              </span>
+            )}
           </a>
         ))}
         <a

@@ -30,31 +30,57 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-surface-50 -z-10"></div>
     <Analytics />
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 text-center">
-      <!-- Beta badge -->
-      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-primary-50 border border-primary-100 mb-4">
-        <span class="text-[11px] font-medium text-primary-700">Versiune Beta &middot; Proiect Civic</span>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 text-center">
+      <!-- MCP launch eyebrow -->
+      <div class="mb-6">
+        <a href="/mcp" class="group inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100 hover:bg-primary-200 border border-primary-200 transition-colors">
+          <span class="text-[10px] font-semibold text-primary-600 uppercase tracking-widest">Nou</span>
+          <span class="w-px h-3 bg-primary-300"></span>
+          <span class="text-[12px] text-primary-800">MCP Server disponibil — integrează logourile direct în Claude, Cursor și Windsurf</span>
+          <svg class="w-3.5 h-3.5 text-primary-500 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <!-- Title -->
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-900 leading-tight text-balance mb-4">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-900 leading-tight text-balance mb-3">
         Identitatea Vizuală<br />a Republicii Moldova, <span class="text-primary-500">centralizată.</span>
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-sm sm:text-base text-surface-500 max-w-xl mx-auto mb-8 text-balance">
+      <p class="text-sm text-surface-500 max-w-xl mx-auto mb-5 text-balance">
         Registru cu siglele instituțiilor publice in format vectorial.
       </p>
 
-      <!-- NPM / CDN quick access -->
-      <div class="mb-6 max-w-xl mx-auto">
-        <div class="inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm max-w-full overflow-hidden">
-          <code class="text-green-400 shrink-0">npm i</code>
-          <code class="text-white truncate">@identitate-md/logos</code>
+      <!-- npm / MCP tabs -->
+      <div class="mb-6 flex flex-col items-center gap-2" id="install-tabs">
+        <!-- Tab buttons -->
+        <div class="inline-flex items-center gap-1 bg-surface-100 border border-surface-200 rounded-md p-0.5">
+          <button type="button" data-tab="npm" class="install-tab install-tab-active text-[11px] font-medium px-3 py-1 rounded transition-colors">npm</button>
+          <button type="button" data-tab="mcp" class="install-tab text-[11px] font-medium px-3 py-1 rounded transition-colors">MCP</button>
+        </div>
+
+        <!-- npm panel -->
+        <div data-panel="npm" class="install-panel inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
+          <code class="text-white"><span class="text-green-400">npm i</span> @identitate-md/logos</code>
           <button
             type="button"
             class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
             data-value="npm install @identitate-md/logos"
+            title="Copiază comanda"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- MCP panel -->
+        <div data-panel="mcp" class="install-panel hidden inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
+          <code class="text-white"><span class="text-blue-400">claude mcp add</span> identitate-md -- npx -y @identitate-md/mcp</code>
+          <button
+            type="button"
+            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
+            data-value="claude mcp add identitate-md -- npx -y @identitate-md/mcp"
             title="Copiază comanda"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,6 +439,17 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 </script>
 
 <script>
+  // Tab switching
+  document.querySelectorAll('.install-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = (btn as HTMLElement).dataset.tab!;
+      document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('install-tab-active'));
+      btn.classList.add('install-tab-active');
+      document.querySelectorAll('.install-panel').forEach(p => (p as HTMLElement).classList.add('hidden'));
+      document.querySelector(`[data-panel="${tab}"]`)?.classList.remove('hidden');
+    });
+  });
+
   // Copy functionality for NPM command
   document.addEventListener('DOMContentLoaded', () => {
     const copyNpmBtn = document.querySelector('.copy-npm-btn');
