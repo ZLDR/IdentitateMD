@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080" />
+  <title>IdentitateMD — Instituții noi (Instagram)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:  #01193F;
+      --blue:  #3054D9;
+      --gold:  #F9BD41;
+      --pink:  #DE1A5B;
+      --white: #FFFFFF;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .canvas {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      background: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Backgrounds ──────────────────────────────────────── */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(48,84,217,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48,84,217,0.08) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 20%, transparent 75%);
+    }
+
+    .bg-glow-top {
+      position: absolute;
+      top: -200px;
+      left: -150px;
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(ellipse, rgba(48,84,217,0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .bg-glow-bottom {
+      position: absolute;
+      bottom: -150px;
+      right: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse, rgba(249,189,65,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* ── Accent stripe ────────────────────────────────────── */
+    .accent-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+        var(--blue) 0%,
+        var(--gold) 40%,
+        var(--pink) 70%,
+        transparent 100%
+      );
+      z-index: 2;
+    }
+
+    /* ── Header ───────────────────────────────────────────── */
+    .header {
+      position: relative;
+      z-index: 2;
+      padding: 72px 72px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 1px;
+    }
+
+    .wordmark-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: -0.01em;
+    }
+
+    .wordmark-dot {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .wordmark-tld {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .header-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .headline {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .badge-new-pill {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+
+    .headline-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .headline-main {
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .headline-sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Cards ────────────────────────────────────────────── */
+    .cards {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      padding: 48px 72px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card {
+      flex: 1;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 48px;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    }
+
+    .card-logo {
+      flex-shrink: 0;
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+    }
+
+    .card-logo img.logo-wide {
+      max-width: 280px;
+      width: 280px;
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .card-category {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card-name {
+      font-size: 26px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .card-slug {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.22);
+      letter-spacing: 0.06em;
+      font-family: monospace;
+      margin-top: 4px;
+    }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    .footer {
+      position: relative;
+      z-index: 2;
+      padding: 0 72px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .url-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      color: rgba(255,255,255,0.4);
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .url-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-top"></div>
+  <div class="bg-glow-bottom"></div>
+  <div class="accent-stripe"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="wordmark">
+      <span class="wordmark-name">Identitate</span>
+      <span class="wordmark-dot">.</span>
+      <span class="wordmark-tld">md</span>
+    </div>
+    <div class="header-divider"></div>
+    <div class="headline">
+      <span class="badge-new-pill">New</span>
+      <div class="headline-text">
+        <div class="headline-main">3 institutions added</div>
+        <div class="headline-sub">official vector logos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-logo">
+        <img src="../website/public/logos/md-ca/symbol-color.svg" alt="CA" style="width: 190px; max-height: none;" />
+      </div>
+      <div class="card-info">
+        <div class="card-category">Council</div>
+        <div class="card-name">Consiliul Audiovizualului</div>
+        <div class="card-slug">md-ca</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-logo">
+        <img src="../website/public/logos/md-stema/stema-color.svg" alt="Stema" />
+      </div>
+      <div class="card-info">
+        <div class="card-category">State Symbol</div>
+        <div class="card-name">Stema Republicii Moldova</div>
+        <div class="card-slug">md-stema</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-logo">
+        <img src="../website/public/logos/md-steag/horizontal-color.svg" alt="Steag" class="logo-wide" />
+      </div>
+      <div class="card-info">
+        <div class="card-category">State Symbol</div>
+        <div class="card-name">Steagul Republicii Moldova</div>
+        <div class="card-slug">md-steag</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="url-badge">
+      <div class="url-badge-dot"></div>
+      identitate.md
+    </div>
+  </div>
+
+</div>
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  HOW TO EXPORT
+  ═══════════════════════════════════════════════════════════════
+  B=~/.claude/skills/gstack/browse/dist/browse
+  $B goto "file:///path/to/marketing/instagram-new-institutions.html"
+  $B viewport 1080x1920
+  $B screenshot /tmp/ig-new-institutions.png
+
+  Dimensions: 1080 × 1920 px (Instagram Story 9:16)
+  ═══════════════════════════════════════════════════════════════
+-->
+
+</body>
+</html>

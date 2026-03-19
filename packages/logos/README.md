@@ -1,331 +1,164 @@
 # @identitate-md/logos
 
-> Logo-uri oficiale ale instituțiilor publice din Moldova — Official logos of Romanian public institutions
+> Logo-uri oficiale ale instituțiilor publice din Republica Moldova — Official logos of public institutions from the Republic of Moldova
 
 [![npm version](https://img.shields.io/npm/v/@identitate-md/logos.svg)](https://www.npmjs.com/package/@identitate-md/logos)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## 📦 Instalare
+## Instalare
 
 ```bash
 npm install @identitate-md/logos
 ```
 
-## 🚀 Utilizare
+## Utilizare
 
 ### Via CDN (Recomandat)
 
 Logo-urile sunt disponibile automat prin CDN-uri gratuite:
 
-#### URL-uri Simple (Recomandat)
+#### URL-uri directe
 
 ```html
-<!-- Logo complet -->
-<img src="https://identitate.md/logos/anaf/anaf.svg" alt="ANAF" />
+<!-- Guvernul Republicii Moldova -->
+<img src="https://identitate.md/logos/md-guvern/horizontal-color.svg" alt="Guvernul Republicii Moldova" />
 
-<!-- Simbol -->
-<img src="https://identitate.md/logos/anaf/simbol-anaf.svg" alt="ANAF Simbol" />
+<!-- Parlamentul Republicii Moldova -->
+<img src="https://identitate.md/logos/md-parlament/horizontal-color.svg" alt="Parlamentul Republicii Moldova" />
 
-<!-- Alte instituții -->
-<img
-  src="https://identitate.md/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
-  alt="Guvernul Republicii Moldova"
-/>
-<img src="https://identitate.md/logos/pnrr/pnrr.svg" alt="PNRR" />
+<!-- Ministerul Justiției -->
+<img src="https://identitate.md/logos/md-mj/horizontal-color.svg" alt="Ministerul Justiției" />
 ```
 
-#### jsDelivr (CDN Primară)
+#### jsDelivr
 
 ```html
-<!-- Logo complet -->
+<!-- Versiune specifică (recomandată pentru producție) -->
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg"
-  alt="ANAF"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.4.1/logos/md-guvern/horizontal-color.svg"
+  alt="Guvernul Republicii Moldova"
 />
 
-<!-- Simbol -->
+<!-- Latest (se actualizează automat) -->
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/simbol-anaf.svg"
-  alt="ANAF Simbol"
-/>
-
-<!-- Versiunea latest (se actualizează automat) -->
-<img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/md-guvern/horizontal-color.svg"
   alt="Guvernul Republicii Moldova"
 />
 ```
 
-#### unpkg (CDN Fallback)
+#### unpkg
 
 ```html
 <img
-  src="https://unpkg.com/@identitate-md/logos@1.3.1/logos/pnrr/pnrr.svg"
-  alt="PNRR"
+  src="https://unpkg.com/@identitate-md/logos/logos/md-guvern/horizontal-color.svg"
+  alt="Guvernul Republicii Moldova"
 />
 ```
 
 ### Via npm Package
 
-După instalare, logo-urile sunt disponibile în `node_modules/@identitate-md/logos/logos/`:
-
 ```javascript
-// În React, Vue, etc.
-import logoPath from "@identitate-md/logos/logos/anaf/anaf.svg";
+// React, Vue, etc.
+import logoPath from "@identitate-md/logos/logos/md-guvern/horizontal-color.svg";
 
 function MyComponent() {
-  return <img src={logoPath} alt="ANAF" />;
+  return <img src={logoPath} alt="Guvernul Republicii Moldova" />;
 }
 ```
 
 ```javascript
-// În Node.js
+// Node.js
 import { readFileSync } from "fs";
 import { join } from "path";
 
 const logoPath = join(
   process.cwd(),
-  "node_modules/@identitate-md/logos/logos/anaf/anaf.svg",
+  "node_modules/@identitate-md/logos/logos/md-guvern/horizontal-color.svg",
 );
 const logoContent = readFileSync(logoPath, "utf8");
 ```
 
-### 🎯 Web Component (Recomandat pentru Aplicații Moderne)
+### Web Component
 
-**Metoda profesională, framework-agnostic** — funcționează cu React, Vue, Angular, vanilla HTML, WordPress, etc.
+**Framework-agnostic** — funcționează cu React, Vue, Angular, vanilla HTML, etc.
 
-#### Cum funcționează?
-
-Web Component-ul `<identity-icon>` este un element HTML custom care:
-
-- ✅ Descarcă automat SVG-ul din CDN
-- ✅ Include caching inteligent (descarcă o singură dată)
-- ✅ Permite stilizare CSS (`color`, `width`, `height`, etc.)
-- ✅ Gestionează automat erorile și loading states
-- ✅ Este complet agnostic de framework
-
-#### Instalare și Setup
-
-**Pas 1: Instalează pachetul**
+**Setup**
 
 ```bash
 npm install @identitate-md/logos
 ```
 
-**Pas 2: Importă loader-ul** (o singură dată în aplicație)
-
 ```javascript
-// În index.js, main.js, App.js, etc.
+// În index.js, main.js, App.js — o singură dată
 import "@identitate-md/logos/loader";
 ```
 
-Sau în HTML:
+Sau direct în HTML:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/identity-loader.js"></script>
 ```
 
-**Pas 3: Folosește tag-ul `<identity-icon>`**
+**Utilizare**
 
 ```html
-<identity-icon src="https://identitate.md/logos/anaf/anaf.svg"> </identity-icon>
+<identity-icon src="https://identitate.md/logos/md-guvern/horizontal-color.svg"></identity-icon>
 ```
 
-#### Exemple Complete
-
-##### Vanilla HTML
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Logo Instituții</title>
-    <script src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/identity-loader.js"></script>
-    <style>
-      .logo-guvern {
-        width: 64px;
-        height: 64px;
-        color: #003399; /* Albastru */
-        transition: color 0.3s;
-      }
-
-      .logo-guvern:hover {
-        color: #ffcc00; /* Galben la hover */
-        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-      }
-    </style>
-  </head>
-  <body>
-    <identity-icon
-      src="https://identitate.md/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
-      class="logo-guvern"
-    >
-    </identity-icon>
-  </body>
-</html>
-```
-
-##### React
+**React**
 
 ```jsx
-// App.js sau index.js
 import "@identitate-md/logos/loader";
 
-function InstitutionLogo({ slug }) {
+function InstitutionLogo({ id, layout = "horizontal", variant = "color" }) {
   return (
     <identity-icon
-      src={`https://identitate.md/logos/${slug}/${slug}.svg`}
-      className="w-16 h-16 text-blue-600"
+      src={`https://identitate.md/logos/${id}/${layout}-${variant}.svg`}
+      className="w-16 h-16"
     />
   );
 }
 
-// Folosire
-<InstitutionLogo slug="anaf" />;
+<InstitutionLogo id="md-guvern" />
 ```
 
-##### Vue
+**Vue**
 
 ```vue
 <script setup>
-// În main.js sau App.vue
 import "@identitate-md/logos/loader";
-
-const props = defineProps(["institution"]);
+const props = defineProps(["id"]);
 </script>
 
 <template>
   <identity-icon
-    :src="`https://identitate.md/logos/${institution}/${institution}.svg`"
-    class="logo-icon"
+    :src="`https://identitate.md/logos/${id}/horizontal-color.svg`"
+    style="width: 64px; height: 64px;"
   />
 </template>
-
-<style scoped>
-.logo-icon {
-  width: 64px;
-  height: 64px;
-  color: currentColor;
-}
-</style>
 ```
 
-##### Angular
-
-```typescript
-// app.component.ts
-import "@identitate-md/logos/loader";
-
-@Component({
-  selector: "app-institution-logo",
-  template: `
-    <identity-icon [attr.src]="logoUrl" class="institution-logo">
-    </identity-icon>
-  `,
-  styles: [
-    `
-      .institution-logo {
-        width: 64px;
-        height: 64px;
-        color: #003399;
-      }
-    `,
-  ],
-})
-export class InstitutionLogoComponent {
-  @Input() slug!: string;
-
-  get logoUrl() {
-    return `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${this.slug}/${this.slug}.svg`;
-  }
-}
-```
-
-##### WordPress
-
-```php
-<!-- functions.php -->
-<?php
-function enqueue_identity_loader() {
-    wp_enqueue_script(
-        'identity-loader',
-        'https://cdn.jsdelivr.net/npm/@identitate-md/logos/identity-loader.js',
-        array(),
-        '1.0.0',
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'enqueue_identity_loader');
-?>
-
-<!-- În template (page.php, single.php, etc.) -->
-<identity-icon
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/primaria-cluj-napoca/primaria-cluj-napoca.svg"
-  style="width: 100px; height: 100px; color: #2c5aa0;">
-</identity-icon>
-```
-
-#### Stilizare CSS
-
-Web Component-ul respectă complet CSS-ul:
+**Stilizare CSS**
 
 ```css
-/* Dimensiuni */
 identity-icon {
   width: 64px;
   height: 64px;
-}
-
-/* Culoare (fill: currentColor activat automat) */
-identity-icon {
-  color: #003399;
+  color: #003087; /* SVG-urile cu fill:currentColor vor prelua culoarea */
+  transition: color 0.3s;
 }
 
 identity-icon:hover {
-  color: #ffcc00;
-}
-
-/* Efecte */
-identity-icon {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-  transition: all 0.3s ease;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  identity-icon {
-    width: 48px;
-    height: 48px;
-  }
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 ```
 
-#### Atribute Suportate
+**Atribute**
 
-- `src` **(obligatoriu)** — URL-ul către logo-ul SVG
-- `size` _(opțional)_ — Shortcut pentru width/height (ex: `size="64px"`)
-
-```html
-<!-- Cu size attribute -->
-<identity-icon
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
-  size="128px"
->
-</identity-icon>
-```
-
-#### Avantaje Web Component
-
-1. **Semantic HTML**: `<identity-icon>` comunică clar ce face
-2. **Caching inteligent**: Descarcă fiecare SVG o singură dată, chiar dacă îl folosești în 100 de locuri
-3. **Stilizare ușoară**: Folosește CSS normal (`color`, `width`, `height`, etc.)
-4. **Framework-agnostic**: Funcționează oriunde rulează JavaScript
-5. **Loading states**: Gestionează automat stările de loading și eroare
-6. **Security**: Sanitizare automată a SVG-urilor (remove script tags)
+- `src` **(obligatoriu)** — URL-ul SVG
+- `size` _(opțional)_ — shortcut pentru width/height (ex: `size="64px"`)
 
 ### Metadata
-
-Pachetul include `index.json` cu metadata despre toate logo-urile:
 
 ```javascript
 import metadata from "@identitate-md/logos/index.json";
@@ -333,234 +166,158 @@ import metadata from "@identitate-md/logos/index.json";
 console.log(metadata.institutions);
 // [
 //   {
-//     "id": "ro-anaf",
-//     "slug": "anaf",
-//     "name": "Agenția Națională de Administrare Fiscală",
-//     "logos": {
-//       "horizontal": {
-//         "color": "/logos/anaf/anaf.svg"
-//       },
-//       "symbol": {
-//         "color": "/logos/anaf/simbol-anaf.svg"
-//       }
-//     }
+//     "id": "md-guvern",
+//     "name": "Guvernul Republicii Moldova",
+//     "logos": { "horizontal": { "color": "/logos/md-guvern/horizontal-color.svg" } }
 //   },
 //   ...
 // ]
 ```
 
-## 📁 Structură
+## Structură
 
 ```
 @identitate-md/logos/
 ├── logos/
-│   ├── anaf/
-│   │   ├── anaf.svg
-│   │   └── simbol-anaf.svg
-│   ├── guvernul-republicii-moldova/
-│   │   ├── guvernul-republicii-moldova.svg
-│   │   ├── guvernul-republicii-moldova-alb.svg
-│   │   └── guvernul-republicii-moldova-mono.svg
-│   ├── ministerul-educatiei/
-│   ├── pnrr/
-│   ├── primaria-cluj-napoca/
-│   └── ...
-├── index.json (metadata)
+│   ├── md-guvern/
+│   │   ├── horizontal-color.svg
+│   │   ├── horizontal-white.svg
+│   │   ├── symbol-color.svg
+│   │   └── symbol-white.svg
+│   ├── md-parlament/
+│   ├── md-mj/
+│   ├── md-mec/
+│   └── ... (24 instituții)
+├── index.json
+├── institutions-index.json
+├── identity-loader.js
 └── README.md
 ```
 
-## 🎨 Formate Disponibile
+## Formate disponibile
 
-Pentru fiecare instituție, logo-urile sunt disponibile în mai multe variante:
+**Variante:**
+- `color` — versiunea color completă (recomandată)
+- `white` — pentru fundal întunecat
+- `black` — pentru fundal deschis
+- `monochrome` — versiune monocromă
+- `dark_mode` — optimizată pentru dark mode
 
-- **Color** — Versiunea color completă (recomandată)
-- **Dark Mode** — Optimizată pentru fundal întunecat
-- **White** — Pentru fundal întunecat (versiune albă)
-- **Black** — Pentru fundal deschis (versiune neagră)
-- **Monochrome** — Versiune monocromă
+**Layout-uri:**
+- `horizontal` — logo complet orizontal
+- `vertical` — logo complet vertical
+- `symbol` — doar simbolul/iconița
 
-### Layout-uri
-
-- **Horizontal** — Logo complet orizontal (cel mai comun)
-- **Vertical** — Logo complet vertical
-- **Symbol** — Doar simbolul/iconița (fără text)
-
-## 🔗 CDN URLs Pattern
+**Convenție denumire fișiere:** `{layout}-{variant}.svg`
 
 ```
-https://cdn.jsdelivr.net/npm/@identitate-md/logos@{version}/logos/{slug}/{filename}.svg
+horizontal-color.svg
+horizontal-white.svg
+symbol-color.svg
+symbol-white.svg
+```
+
+## Instituții disponibile
+
+| ID | Instituție |
+|----|-----------|
+| `md-guvern` | Guvernul Republicii Moldova |
+| `md-parlament` | Parlamentul Republicii Moldova |
+| `md-mj` | Ministerul Justiției |
+| `md-mec` | Ministerul Educației și Cercetării |
+| `md-mf` | Ministerul Finanțelor |
+| `md-ms` | Ministerul Sănătății |
+| `md-mae` | Ministerul Afacerilor Externe |
+| `md-maia` | Ministerul Agriculturii |
+| `md-mmps` | Ministerul Muncii și Protecției Sociale |
+| `md-mediu` | Ministerul Mediului |
+| `md-mc` | Ministerul Culturii |
+| `md-mded` | Ministerul Dezvoltării Economice |
+| `md-midr` | Ministerul Infrastructurii |
+| `md-mioc` | Ministerul de Interne |
+| `md-ministerul-energiei` | Ministerul Energiei |
+| `md-mnam` | Muzeul Național de Artă |
+| `md-age` | Agenția de Guvernare Electronică |
+| `md-ca` | Consiliul Audiovizualului |
+| `md-dgcpc` | Direcția Generală pentru Copii |
+| `md-stisc` | STISC |
+| `md-primaria-chisinau` | Primăria Municipiului Chișinău |
+| `md-stema` | Stema Republicii Moldova |
+| `md-steag` | Steagul Republicii Moldova |
+| `eu-flag` | Drapelul Uniunii Europene |
+
+Pentru lista completă și actualizată: [identitate.md](https://identitate.md)
+
+## CDN URL Pattern
+
+```
+https://cdn.jsdelivr.net/npm/@identitate-md/logos@{version}/logos/{id}/{layout}-{variant}.svg
 ```
 
 **Exemple:**
 
 ```
 # Versiune specifică (recomandată pentru producție)
-https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg
+https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.4.1/logos/md-guvern/horizontal-color.svg
 
-# Latest version (se actualizează automat)
-https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg
-
-# Specific major version
-https://cdn.jsdelivr.net/npm/@identitate-md/logos@1/logos/anaf/anaf.svg
+# Latest
+https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/md-guvern/horizontal-color.svg
 ```
 
-## 📋 Lista Instituțiilor
+## Best Practices
 
-Instituțiile disponibile în v1.0.0:
-
-- `anaf` — Agenția Națională de Administrare Fiscală
-- `guvernul-republicii-moldova` — Guvernul Republicii Moldova
-- `ministerul-educatiei` — Ministerul Educației
-- `pnrr` — Plan Național de Redresare și Reziliență
-- `primaria-cluj-napoca` — Primăria Cluj-Napoca
-
-Pentru lista completă și actualizată, consultă [IdentitateMD.vercel.app](https://IdentitateMD.vercel.app).
-
-## 💡 Exemple de Utilizare
-
-### HTML Simplu
+**Versiuni fixate în producție**
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Logo-uri Instituții</title>
-  </head>
-  <body>
-    <img
-      src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
-      alt="ANAF"
-      width="200"
-    />
-  </body>
-</html>
+<!-- Bine — versiune fixată -->
+<img src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.4.1/logos/md-guvern/horizontal-color.svg" />
+
+<!-- Evită în producție — poate schimba -->
+<img src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/md-guvern/horizontal-color.svg" />
 ```
 
-### React/Next.js
-
-```jsx
-export default function InstitutionLogo({ slug, variant = "color" }) {
-  const cdnUrl = `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${slug}/${slug}.svg`;
-
-  return <img src={cdnUrl} alt={slug} loading="lazy" />;
-}
-```
-
-### Vue
-
-```vue
-<template>
-  <img :src="logoUrl" :alt="institution" loading="lazy" />
-</template>
-
-<script setup>
-import { computed } from "vue";
-
-const props = defineProps(["institution", "variant"]);
-
-const logoUrl = computed(
-  () =>
-    `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/${props.institution}/${props.institution}.svg`,
-);
-</script>
-```
-
-### CSS Background
-
-```css
-.anaf-logo {
-  background-image: url("https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 100px;
-}
-```
-
-## 🎯 Best Practices
-
-### 1. Folosește Versiuni Specifice în Producție
+**Lazy loading**
 
 ```html
-<!-- ✅ Bine - versiune fixată -->
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.0.0/logos/anaf/anaf.svg"
-/>
-
-<!-- ⚠️ Evită în producție - poate schimba -->
-<img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.3.1/logos/anaf/anaf.svg"
-/>
-```
-
-### 2. Optimizare Performanță
-
-```html
-<!-- Lazy loading -->
-<img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/md-guvern/horizontal-color.svg"
   loading="lazy"
-  alt="ANAF"
-/>
-
-<!-- Preload pentru logo-uri critice -->
-<link
-  rel="preload"
-  href="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/guvernul-republicii-moldova/guvernul-republicii-moldova.svg"
-  as="image"
+  alt="Guvernul Republicii Moldova"
 />
 ```
 
-### 3. Fallback Strategy
+**Fallback**
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
-  onerror="this.src='https://unpkg.com/@identitate-md/logos/logos/anaf/anaf.svg'"
-  alt="ANAF"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/md-guvern/horizontal-color.svg"
+  onerror="this.src='https://unpkg.com/@identitate-md/logos/logos/md-guvern/horizontal-color.svg'"
+  alt="Guvernul Republicii Moldova"
 />
 ```
 
-### 4. Accesibilitate
+**Accesibilitate**
 
 ```html
-<!-- ✅ Include întotdeauna alt text descriptiv -->
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/anaf/anaf.svg"
-  alt="Logo Agenția Națională de Administrare Fiscală"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/md-guvern/horizontal-color.svg"
+  alt="Logo Guvernul Republicii Moldova"
   role="img"
 />
 ```
 
-## 📄 Licență
+## Licență
 
-MIT License - vezi [LICENSE](./LICENSE) pentru detalii.
+MIT License — toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibile în scopuri informative conform ghidurilor de identitate vizuală ale fiecărei instituții.
 
-Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibile în scopuri informative și de utilizare legală conform ghidurilor de identitate vizuală ale fiecărei instituții.
+## Contribuții
 
-## 🤝 Contribuții
+Parte din proiectul [IdentitateMD](https://github.com/identitate-md/identitate-md).
 
-Acest pachet face parte din proiectul [IdentitateMD](https://github.com/ZLDR/IdentitateMD).
-
-Pentru a adăuga logo-uri noi sau pentru a raporta probleme:
-
-1. Vizitează [github.com/laurentiucotet/IdentitateMD](https://github.com/ZLDR/IdentitateMD)
-2. Consultă [CONTRIBUTING.md](https://github.com/ZLDR/IdentitateMD/blob/main/website/CONTRIBUTING.md)
-3. Deschide un Pull Request sau Issue
-
-## 🔗 Link-uri Utile
-
-- **Website**: [IdentitateMD.vercel.app](https://IdentitateMD.vercel.app)
-- **Documentație**: [IdentitateMD.vercel.app/utilizare](https://IdentitateMD.vercel.app/utilizare)
-- **GitHub**: [github.com/laurentiucotet/IdentitateMD](https://github.com/ZLDR/IdentitateMD)
-- **npm Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
-- **jsDelivr CDN**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
-- **unpkg CDN**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
-
-## 📊 Stats
-
-![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/@identitate-md/logos/badge)
+- **Website**: [identitate.md](https://identitate.md)
+- **GitHub**: [github.com/identitate-md/identitate-md](https://github.com/identitate-md/identitate-md)
+- **npm**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 
 ---
 
-Made with ❤️ by [IdentitateMD Contributors](https://github.com/ZLDR/IdentitateMD/graphs/contributors)
+Made with ❤️ for Moldova

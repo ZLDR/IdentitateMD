@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>IdentitateMD — 12 din 14 Ministere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:  #01193F;
+      --blue:  #3054D9;
+      --gold:  #F9BD41;
+      --pink:  #DE1A5B;
+      --white: #FFFFFF;
+    }
+
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .canvas {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      background: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── Backgrounds ────────────────────────────────────────── */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(48,84,217,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48,84,217,0.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 30%, transparent 80%);
+    }
+
+    .bg-glow-left {
+      position: absolute;
+      top: -80px;
+      left: -120px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(48,84,217,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .bg-glow-right {
+      position: absolute;
+      bottom: -80px;
+      right: -60px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(222,26,91,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* ── Accent stripe ──────────────────────────────────────── */
+    .accent-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg,
+        var(--blue) 0%,
+        var(--gold) 40%,
+        var(--pink) 70%,
+        transparent 100%
+      );
+    }
+
+    /* ── Header bar ─────────────────────────────────────────── */
+    .header {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      right: 0;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 44px;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* Wordmark */
+    .wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 1px;
+      flex-shrink: 0;
+    }
+
+    .wordmark-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: -0.01em;
+    }
+
+    .wordmark-dot {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .wordmark-tld {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* Vertical separator */
+    .sep {
+      width: 1px;
+      height: 32px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 36px;
+      flex-shrink: 0;
+    }
+
+    /* Counter block */
+    .counter-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .count-primary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      padding-bottom: 6px;
+    }
+
+    .count-secondary {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.01em;
+    }
+
+    .count-of {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.3);
+      line-height: 1;
+    }
+
+    /* Sep 2 */
+    .sep2 {
+      width: 1px;
+      height: 32px;
+      background: rgba(255,255,255,0.09);
+      margin: 0 36px;
+      flex-shrink: 0;
+    }
+
+    /* Headline text */
+    .headline-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .headline-main {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .headline-sub {
+      font-size: 12.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.03em;
+    }
+
+    /* Right: identitate.md url badge */
+    .url-badge {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .url-badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    /* ── Logo grid ──────────────────────────────────────────── */
+    .logo-grid {
+      position: absolute;
+      top: 67px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 16px 44px 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    /* Logo cell */
+    .cell {
+      background: rgba(255,255,255,0.032);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      position: relative;
+      transition: none;
+    }
+
+    .cell img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+
+    /* Empty (coming soon) cell */
+    .cell--empty {
+      background: transparent;
+      border: 1.5px dashed rgba(255,255,255,0.10);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cell--empty .soon-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cell--empty .soon-icon svg {
+      opacity: 0.3;
+    }
+
+    .cell--empty .soon-label {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.22);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Position the 2 empty cells in columns 2 & 3 of row 4 (centered) */
+    .cell--empty:nth-of-type(1) {
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    .cell--empty:nth-of-type(2) {
+      grid-column: 3;
+      grid-row: 4;
+    }
+
+    /* Progress indicator stripe inside filled cells */
+    .cell::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--blue), transparent);
+      opacity: 0;
+      border-radius: 0 0 6px 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="canvas">
+  <!-- Backgrounds -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow-left"></div>
+  <div class="bg-glow-right"></div>
+
+  <!-- Accent top stripe -->
+  <div class="accent-stripe"></div>
+
+  <!-- Header bar -->
+  <div class="header">
+
+    <div class="wordmark">
+      <span class="wordmark-name">Identitate</span>
+      <span class="wordmark-dot">.</span>
+      <span class="wordmark-tld">md</span>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="counter-block">
+      <span class="count-primary">12</span>
+      <span class="count-of">/ 14</span>
+    </div>
+
+    <div class="sep2"></div>
+
+    <div class="headline-block">
+      <div class="headline-main">Ministere cu identitate vizuală pe platformă</div>
+      <div class="headline-sub">Logo-uri vectoriale oficiale · Palete de culori · Tipografie</div>
+    </div>
+
+    <div class="url-badge">
+      <div class="url-badge-dot"></div>
+      identitate.md
+    </div>
+
+  </div>
+
+  <!-- Logo grid: 12 filled + 2 empty (centered in row 4) -->
+  <div class="logo-grid">
+
+    <!-- Row 1 -->
+    <div class="cell">
+      <img src="../website/public/logos/md-mae/horizontal-white.svg" alt="MAE" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-maia/horizontal/white.svg" alt="MAIA" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-mc/Horizontal%20White.svg" alt="Ministerul Culturii" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-mded/horizontal-white.svg" alt="MDED" />
+    </div>
+
+    <!-- Row 2 -->
+    <div class="cell">
+      <img src="../website/public/logos/md-energie/horizontal-white.svg" alt="Ministerul Energiei" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-mec/horizontal-white.svg" alt="MEC" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-mf/horizontal-white.svg" alt="Ministerul Finanțelor" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-midr/horizontal/white.svg" alt="MIDR" />
+    </div>
+
+    <!-- Row 3 -->
+    <div class="cell">
+      <img src="../website/public/logos/md-mj/Horizontal-alt-white.svg" alt="Ministerul Justiției" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-mediu/horizontal-white.svg" alt="Ministerul Mediului" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-mmps/horizontal-white.svg" alt="MMPS" />
+    </div>
+    <div class="cell">
+      <img src="../website/public/logos/md-ms/horizontal-white.svg" alt="Ministerul Sănătății" />
+    </div>
+
+    <!-- Row 4: 2 empty "coming soon" cells, positioned at columns 2 & 3 (centered) -->
+    <div class="cell--empty">
+      <div class="soon-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <circle cx="5" cy="5" r="4" stroke="white" stroke-width="1.5"/>
+          <path d="M5 3v2.5L6.5 7" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="soon-label">în curând</span>
+    </div>
+
+    <div class="cell--empty">
+      <div class="soon-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <circle cx="5" cy="5" r="4" stroke="white" stroke-width="1.5"/>
+          <path d="M5 3v2.5L6.5 7" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="soon-label">în curând</span>
+    </div>
+
+  </div><!-- /logo-grid -->
+
+</div><!-- /canvas -->
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  HOW TO EXPORT
+  ═══════════════════════════════════════════════════════════════
+  1. Open in Chrome (file://)
+  2. Right-click the .canvas div → "Capture node screenshot"
+     OR use the /gstack skill:
+       B=~/.claude/skills/gstack/browse/dist/browse
+       $B goto "file:///path/to/marketing/facebook-ministere-grid.html"
+       $B viewport 1200x630
+       $B screenshot /tmp/fb-ministere-grid.png
+
+  Dimensions: 1200 × 630 px (Facebook/LinkedIn recommended ratio)
+  ═══════════════════════════════════════════════════════════════
+-->
+
+</body>
+</html>

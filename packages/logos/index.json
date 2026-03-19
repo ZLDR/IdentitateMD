@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-18T09:54:16.606Z",
-  "count": 22,
-  "totalLogos": 104,
+  "generated": "2026-03-19T00:08:26.261Z",
+  "count": 24,
+  "totalLogos": 107,
   "institutions": [
     {
       "id": "eu-flag",
@@ -434,6 +434,35 @@
         },
         "symbol": {
           "color": "/logos/md-primaria-chisinau/symbol.svg"
+        }
+      }
+    },
+    {
+      "id": "md-steag",
+      "slug": "md-steag",
+      "name": "Steagul Republicii Moldova",
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-steag/horizontal-color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-stema",
+      "slug": "md-stema",
+      "name": "Stema Republicii Moldova",
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-stema/stema-alt-color.svg",
+          "color": "/logos/md-stema/stema-color.svg"
         }
       }
     },

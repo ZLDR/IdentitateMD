@@ -5,6 +5,7 @@ npm-debug.log*
 # Astro
 dist/
 .astro/
+/marketing
 
 # OS
 .DS_Store

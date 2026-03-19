@@ -8,8 +8,9 @@ Registru digital open-source pentru identitatea vizuală a instituțiilor public
 
 Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o singură sursă de adevăr.
 
-🌐 **Website**: [identitate.md](https://identitate.md)  
+🌐 **Website**: [identitate.md](https://identitate.md)
 📦 **NPM Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
+🤖 **MCP Server**: [@identitate-md/mcp](https://www.npmjs.com/package/@identitate-md/mcp)
 
 ## 🚀 Utilizare Rapidă
 
@@ -38,9 +39,19 @@ import logoPath from "@identitate-md/logos/logos/md-guvern/horizontal/color.svg"
 
 ```
 IdentitateMD/
-├── packages/logos/          # NPM package cu logo-uri
+├── packages/logos/          # NPM package cu logo-uri (@identitate-md/logos)
 │   ├── logos/              # Fișiere SVG organizate pe instituții
-│   ├── index.json          # Metadata pentru toate logo-urile
+│   ├── index.json          # Index logo-uri
+│   ├── institutions-index.json  # Index complet cu brand data (culori, tipografie etc.)
+│   └── package.json
+│
+├── packages/mcp/            # MCP server (@identitate-md/mcp)
+│   ├── src/
+│   │   ├── index.ts        # Entry point (stdio transport)
+│   │   ├── data.ts         # Încarcă și cache-uiește datele la startup
+│   │   ├── types.ts        # TypeScript interfaces
+│   │   ├── tools/          # search, get-institution, get-logo, get-brand-colors, list-categories
+│   │   └── resources/      # MCP resources (identitate-md://institutions/*)
 │   └── package.json
 │
 ├── website/                # Site-ul Astro (identitate.md)
@@ -58,8 +69,9 @@ IdentitateMD/
 - ✅ **Logo-uri vectoriale** de înaltă calitate (SVG)
 - ✅ **CDN gratuit** prin jsDelivr și unpkg
 - ✅ **NPM package** pentru integrare ușoară
+- ✅ **MCP server** pentru AI coding assistants (Claude Code, Cursor etc.)
 - ✅ **TypeScript support** cu type definitions
-- ✅ **Metadata completă** (culori, dimensiuni, variante)
+- ✅ **Metadata completă** (culori, tipografie, variante)
 - ✅ **Open-source** și gratuit de folosit
 
 ## 🛠️ Development Setup
@@ -74,22 +86,57 @@ npm run dev
 
 Site-ul va fi disponibil la `http://localhost:4321`
 
-### NPM Package
+### NPM Package (logos)
 
 ```bash
 cd packages/logos
-npm install
-npm run generate  # Generează index.json
+npm run generate  # Generează index.json + institutions-index.json
 ```
 
-## 📦 NPM Package
+### MCP Server
 
-Pachetul `@identitate-md/logos` include:
+```bash
+cd packages/mcp
+npm install
+npm run build
+node dist/index.js  # pornește serverul (stdio)
+```
+
+Sau adaugă în `.mcp.json` pentru Claude Code:
+
+```json
+{
+  "mcpServers": {
+    "identitate-md": {
+      "command": "npx",
+      "args": ["-y", "@identitate-md/mcp"]
+    }
+  }
+}
+```
+
+## 📦 NPM Packages
+
+### `@identitate-md/logos`
 
 - 🖼️ Toate logo-urile în format SVG
-- 📋 `index.json` cu metadata completă
+- 📋 `index.json` cu metadata logo-uri
+- 📋 `institutions-index.json` cu brand data complet (culori, tipografie)
 - 🔄 Actualizări regulate cu logo-uri noi
-- 📚 TypeScript types (coming soon)
+
+### `@identitate-md/mcp`
+
+Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude Code, Cursor și alte unelte AI să caute instituții, obțină logo-uri și culori de brand direct din editor.
+
+**Tools disponibile:**
+
+| Tool | Descriere |
+|---|---|
+| `search_institutions` | Caută după nume, keyword sau categorie |
+| `get_institution` | Date complete de brand pentru o instituție |
+| `get_logo` | URL logo (+ SVG inline opțional) pentru un layout și variantă |
+| `get_brand_colors` | Paleta de culori în format hex, rgb sau CSS custom properties |
+| `list_categories` | Lista categoriilor cu numărul de instituții |
 
 ### Instituții Disponibile
 
@@ -146,7 +193,8 @@ Toate logo-urile sunt proprietatea instituțiilor respective și sunt disponibil
 ## 🔗 Link-uri Utile
 
 - **Website**: [identitate.md](https://identitate.md)
-- **NPM Package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
+- **NPM (logos)**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
+- **NPM (mcp)**: [@identitate-md/mcp](https://www.npmjs.com/package/@identitate-md/mcp)
 - **CDN (jsDelivr)**: [cdn.jsdelivr.net/npm/@identitate-md/logos](https://cdn.jsdelivr.net/npm/@identitate-md/logos/)
 - **CDN (unpkg)**: [unpkg.com/@identitate-md/logos](https://unpkg.com/@identitate-md/logos/)
 - **Documentație**: [identitate.md/utilizare](https://identitate.md/utilizare)

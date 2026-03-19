@@ -1,0 +1,2031 @@
+{
+  "schemaVersion": "3.0.0",
+  "generatedAt": "2026-03-18T20:10:15.574Z",
+  "total": 24,
+  "stats": {
+    "byCategory": {
+      "altele": 3,
+      "guvern": 1,
+      "agentie": 1,
+      "consilii": 1,
+      "directie": 1,
+      "minister": 12,
+      "institutie-cultura": 2,
+      "parlament": 1,
+      "primarie": 1,
+      "servicii": 1
+    },
+    "withManual": 2,
+    "withSvg": 24
+  },
+  "categories": [
+    {
+      "id": "guvern",
+      "label": "Guvern",
+      "count": 1
+    },
+    {
+      "id": "minister",
+      "label": "Ministere",
+      "count": 12
+    },
+    {
+      "id": "directie",
+      "label": "Direcții",
+      "count": 1
+    },
+    {
+      "id": "agentie",
+      "label": "Agenții",
+      "count": 1
+    },
+    {
+      "id": "primarie",
+      "label": "Primării",
+      "count": 1
+    },
+    {
+      "id": "institutie-cultura",
+      "label": "Cultură",
+      "count": 2
+    },
+    {
+      "id": "altele",
+      "label": "Altele",
+      "count": 3
+    }
+  ],
+  "institutions": [
+    {
+      "id": "md-age",
+      "slug": "agentia-de-guvernare-electronica",
+      "name": "Agenția De Guvernare Electronică",
+      "shortname": "AGE",
+      "category": "agentie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "agenție",
+          "guvernare electronică",
+          "e-governance",
+          "age"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Agenția De Guvernare Electronică este responsabilă de dezvoltarea și implementarea soluțiilor de guvernare electronică în Republica Moldova.",
+      "colors": [
+        {
+          "name": "Teal Oficial",
+          "hex": "#22625c",
+          "rgb": [
+            34,
+            98,
+            92
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Violet Oficial",
+          "hex": "#4404b7",
+          "rgb": [
+            68,
+            4,
+            183
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Indigo Secundar",
+          "hex": "#0a0069",
+          "rgb": [
+            10,
+            0,
+            105
+          ],
+          "usage": "secondary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        },
+        {
+          "name": "Negru",
+          "hex": "#000000",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Open Sans",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-age/symbol/color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "white": "/logos/md-age/horizontal/white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-age/horizontal/alternative-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Filled White",
+              "path": "/logos/md-age/horizontal/filled-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "English White",
+              "path": "/logos/md-age/horizontal/english-white.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "horizontalAlternative": {
+          "type": "horizontal",
+          "color": "/logos/md-age/horizontal/alternative-color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-age/symbol/color.svg",
+          "white": "/logos/md-age/symbol/white.svg",
+          "alternatives": [
+            {
+              "label": "Filled",
+              "path": "/logos/md-age/symbol/filled.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://egov.md",
+        "contact": {
+          "phone": "022 820 026",
+          "email": "office@egov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/eGovernanceAgency.Moldova"
+        }
+      }
+    },
+    {
+      "id": "md-ca",
+      "slug": "consiliul-audiovizualului",
+      "name": "Consiliul Audiovizualului",
+      "shortname": "CA",
+      "category": "consilii",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-18",
+        "keywords": [
+          "moldova",
+          "consiliu",
+          "audiovizual",
+          "media",
+          "broadcasting",
+          "reglementare"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Consiliul Audiovizualului este autoritatea publică autonomă responsabilă de reglementarea și supravegherea sectorului audiovizual din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#3064E8",
+          "rgb": [
+            48,
+            100,
+            232
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Negru",
+          "hex": "#000000",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "usage": "neutral"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Red Hat Display",
+          "weights": [
+            400,
+            500,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Open Sans",
+          "weights": [
+            400,
+            600
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-ca/symbol-color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "black": "/logos/md-ca/horizontal-black.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-ca/symbol-color.svg",
+          "white": "/logos/md-ca/symbol-white.svg",
+          "black": "/logos/md-ca/symbol-black.svg"
+        }
+      },
+      "resources": {
+        "website": "https://consiliuaudiovizual.md/",
+        "contact": {
+          "phone": "022 277 551",
+          "email": "office@consiliuaudiovizual.md",
+          "address": "Str. Vlaicu Pârcălab 46, Chișinău, MD-2012"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/CAConsiliulAudiovizualului/photos",
+          "instagram": "https://www.instagram.com/consiliul_audiovizualului/"
+        }
+      }
+    },
+    {
+      "id": "md-dgcpc",
+      "slug": "md-dgcpc",
+      "name": "Direcția Generală Cultură și Patrimoniu Cultural",
+      "shortname": "dgcpc",
+      "category": "directie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "direcție",
+          "cultură",
+          "patrimoniu",
+          "dgcpc"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD"
+      },
+      "description": "Direcție responsabilă de coordonarea domeniilor culturii și patrimoniului cultural.",
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-dgcpc/Horizontal Color.svg",
+          "preview": "dark"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-dgcpc/Horizontal Color.svg",
+          "preview": "dark"
+        }
+      },
+      "resources": {
+        "website": "https://cultura.chisinau.md/",
+        "social_media": {
+          "facebook": "https://www.facebook.com/www.directiacultura.md"
+        }
+      }
+    },
+    {
+      "id": "md-guvern",
+      "slug": "guvern",
+      "name": "Guvernul Republicii Moldova",
+      "shortname": "guvern",
+      "category": "guvern",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-04",
+        "keywords": [
+          "moldova",
+          "guvern",
+          "executiv"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Autoritatea centrală de execuție a Republicii Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro",
+          "weights": [
+            400,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-guvern/symbol-color.svg",
+          "white": "/logos/md-guvern/symbol-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-guvern/horizontal-color.svg",
+          "white": "/logos/md-guvern/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-guvern/symbol-color.svg",
+          "white": "/logos/md-guvern/symbol-white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-guvern/symbol-color-alternative.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://www.gov.md",
+        "branding_manual": "https://1xia3dwdv1.ufs.sh/f/zvXEkxD3opbQ4RymY8SJyFHl30vBgsr24AQJmYdnizjqpV7K",
+        "social_media": {
+          "facebook": "https://www.facebook.com/guvernulrepubliciimodova",
+          "twitter": "https://twitter.com/GovMD"
+        }
+      }
+    },
+    {
+      "id": "md-mae",
+      "slug": "md-mae",
+      "name": "Ministerul Afacerilor Externe",
+      "shortname": "MAE",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "minister",
+          "afaceri externe",
+          "diplomatie",
+          "mae"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil de politica externă și relațiile diplomatice ale Republicii Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Albastru Secundar",
+          "hex": "#3FC8F4",
+          "rgb": [
+            63,
+            200,
+            244
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro",
+          "weights": [
+            400,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Open Sans",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color.svg",
+          "white": "/logos/md-mae/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color.svg",
+          "white": "/logos/md-mae/horizontal-white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-mae/Horizontal Alternative Color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alternative White",
+              "path": "/logos/md-mae/Horizontal Alternative White.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "horizontalAlternative": {
+          "type": "horizontal",
+          "color": "/logos/md-mae/horizontal-color-alternative.svg",
+          "white": "/logos/md-mae/horizontal-white-alternative.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mae/vertical-color.svg",
+          "white": "/logos/md-mae/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mfa.gov.md/",
+        "contact": {
+          "phone": "+373 22 57-83-04",
+          "email": "secretariat@mfa.gov.md"
+        }
+      }
+    },
+    {
+      "id": "md-maia",
+      "slug": "maia",
+      "name": "Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova",
+      "shortname": "MAIA",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "minister",
+          "agricultură",
+          "industrie alimentară",
+          "maia"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Agriculturii și Industriei Alimentare este responsabil de politicile și strategiile în domeniul agriculturii și industriei alimentare din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-maia/horizontal/color.svg",
+          "white": "/logos/md-maia/horizontal/white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-maia/horizontal/color.svg",
+          "white": "/logos/md-maia/horizontal/white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-maia/horizontal/alternative-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alternative White",
+              "path": "/logos/md-maia/horizontal/alternative-white.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "horizontalAlternative": {
+          "type": "horizontal",
+          "color": "/logos/md-maia/horizontal/alternative-color.svg",
+          "white": "/logos/md-maia/horizontal/alternative-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-maia/vertical/color.svg",
+          "white": "/logos/md-maia/vertical/white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.maia.gov.md/",
+        "contact": {
+          "phone": "022 204 512",
+          "email": "cancelaria@maia.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/minister.agricultura.industrie.alimentara"
+        }
+      }
+    },
+    {
+      "id": "md-mc",
+      "slug": "md-mc",
+      "name": "Ministerul Culturii al Republicii Moldova",
+      "shortname": "Ministerul Culturii",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "minister",
+          "cultură",
+          "arte",
+          "patrimoniu",
+          "mc"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Culturii are în subordine instituții publice concertistice și teatrale, biblioteci, muzee și alte instituții publice.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mc/Horizontal Color.svg",
+          "white": "/logos/md-mc/Horizontal White.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mc/Horizontal Color.svg",
+          "white": "/logos/md-mc/Horizontal White.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mc/Vertical Color.svg",
+          "white": "/logos/md-mc/Vertical White.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.mc.gov.md/",
+        "contact": {
+          "phone": "+373 (22) 823 801 (Anticamera)",
+          "email": "cancelaria@mc.gov.md"
+        }
+      }
+    },
+    {
+      "id": "md-mded",
+      "slug": "mded",
+      "name": "Ministerul Dezvoltării Economice și Digitalizării",
+      "shortname": "MDED",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-17",
+        "keywords": [
+          "moldova",
+          "dezvoltare economică",
+          "digitalizare",
+          "minister",
+          "mded",
+          "economic",
+          "digital"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil pentru politica de dezvoltare economică și digitalizare a Republicii Moldova.",
+      "colors": [],
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mded/horizontal-color.svg",
+          "white": "/logos/md-mded/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mded/horizontal-color.svg",
+          "white": "/logos/md-mded/horizontal-white.svg",
+          "alternatives": [
+            {
+              "label": "Alt Color",
+              "path": "/logos/md-mded/horizontal-alt-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Alt Alb",
+              "path": "/logos/md-mded/horizontal-alt-white.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mded/vertical-color.svg",
+          "white": "/logos/md-mded/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mded.gov.md/",
+        "contact": {
+          "phone": "+373 22 250 107"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/MinisterulDezvoltariiEconomiceSiDigitalizarii",
+          "instagram": "https://www.instagram.com/mded.govmd"
+        }
+      }
+    },
+    {
+      "id": "md-mec",
+      "slug": "md-mec",
+      "name": "Ministerul Educației și Cercetării al Republicii Moldova",
+      "shortname": "mec",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-04",
+        "keywords": [
+          "moldova",
+          "educație",
+          "cercetare",
+          "minister",
+          "mec"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil pentru educație și cercetare în Republica Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mec/horizontal-color.svg",
+          "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mec/horizontal-color.svg",
+          "white": "/logos/md-mec/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mec/symbol.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mec/vertical-color.svg",
+          "white": "/logos/md-mec/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mec.gov.md/",
+        "social_media": {
+          "facebook": "https://www.facebook.com/mec.gov.md/"
+        }
+      }
+    },
+    {
+      "id": "md-energie",
+      "slug": "ministerul-energiei",
+      "name": "Ministerul Energiei",
+      "shortname": "ME",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "minister",
+          "energie",
+          "energetică",
+          "me"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Energiei al Republicii Moldova este responsabil de politicile și programele în domeniul energiei și energeticii.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-energie/horizontal-color.svg",
+          "white": "/logos/md-energie/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-energie/horizontal-color.svg",
+          "white": "/logos/md-energie/horizontal-white.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-energie/vertical-color-alternative.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-energie/vertical-color.svg",
+          "white": "/logos/md-energie/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.energie.gov.md/ro",
+        "contact": {
+          "phone": "022 250 131",
+          "email": "secretariat@energie.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/eGovernanceAgency.Moldova"
+        }
+      }
+    },
+    {
+      "id": "md-mf",
+      "slug": "md-mf",
+      "name": "Ministerul Finanțelor",
+      "shortname": "Ministerul Finanțelor",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "finanțe",
+          "minister",
+          "economie",
+          "mf"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Finanțelor al Republicii Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "vertical",
+          "color": "/logos/md-mf/vertical-color.svg",
+          "white": "/logos/md-mf/vertical-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mf/vertical-color.svg",
+          "white": "/logos/md-mf/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mf.gov.md/ro",
+        "contact": {
+          "phone": "022 262 523",
+          "email": "cancelaria@mf.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/MinisterulFinantelorRM"
+        }
+      }
+    },
+    {
+      "id": "md-midr",
+      "slug": "midr",
+      "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+      "shortname": "MIDR",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "minister",
+          "infrastructură",
+          "dezvoltare regională",
+          "midr"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Infrastructurii și Dezvoltării Regionale este responsabil de politicile și programele de dezvoltare a infrastructurii și a regiunilor din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-midr/horizontal/color.svg",
+          "white": "/logos/md-midr/horizontal/white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-midr/horizontal/color.svg",
+          "white": "/logos/md-midr/horizontal/white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-midr/vertical/color.svg",
+          "white": "/logos/md-midr/vertical/white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://midr.gov.md/",
+        "contact": {
+          "phone": "022 250 593",
+          "email": "secretariat@midr.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/midr.gov.md"
+        }
+      }
+    },
+    {
+      "id": "md-mj",
+      "slug": "ministerul-justiției",
+      "name": "Ministerul Justiției",
+      "shortname": "ministerul justiției",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "justiție",
+          "minister",
+          "drept",
+          "mj"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil pentru politica judiciară și administrația justiției din Republica Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-mj/symbol-color.svg",
+          "white": "/logos/md-mj/symbol-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mj/horizontal-color.svg",
+          "white": "/logos/md-mj/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mj/symbol-color.svg",
+          "white": "/logos/md-mj/symbol-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mj/vertical-color.svg",
+          "white": "/logos/md-mj/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://justice.gov.md/ro",
+        "contact": {
+          "phone": "(+373 22) 201420",
+          "email": "secretariat@justice.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/ministeruljustitieimd"
+        }
+      }
+    },
+    {
+      "id": "md-mediu",
+      "slug": "md-mediu",
+      "name": "Ministerul Mediului al Republicii Moldova",
+      "shortname": "Ministerul Mediului",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "minister",
+          "mediu",
+          "apă",
+          "păduri",
+          "protecție",
+          "mediu"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Mediului al Republicii Moldova este responsabil de politicile și programele de protecție a mediului, conservării naturii și gestionării resurselor naturale.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Times New Roman"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mediu/horizontal-color.svg",
+          "white": "/logos/md-mediu/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mediu/horizontal-color.svg",
+          "white": "/logos/md-mediu/horizontal-white.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mediu/vertical-color.svg",
+          "white": "/logos/md-mediu/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mediu.gov.md",
+        "contact": {
+          "phone": "+373 (22) 204 587",
+          "email": "cancelaria@mediu.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/MinisterulMediuluiMoldova"
+        }
+      }
+    },
+    {
+      "id": "md-mmps",
+      "slug": "mmps",
+      "name": "Ministerul Muncii și Protecției Sociale al Republicii Moldova",
+      "shortname": "MMPS",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-18",
+        "keywords": [
+          "moldova",
+          "muncă",
+          "protecție socială",
+          "minister",
+          "mmps"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul responsabil pentru politica în domeniul muncii, ocupării forței de muncă și protecției sociale din Republica Moldova",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Trajan Pro",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mmps/horizontal-color.svg",
+          "white": "/logos/md-mmps/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mmps/horizontal-color.svg",
+          "white": "/logos/md-mmps/horizontal-white.svg",
+          "black": "/logos/md-mmps/horizontal-black.svg",
+          "alternatives": [
+            {
+              "label": "Orizontal Alt Color",
+              "path": "/logos/md-mmps/horizontal-alt-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Orizontal Alt Alb",
+              "path": "/logos/md-mmps/horizontal-alt-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "Orizontal Alt Negru",
+              "path": "/logos/md-mmps/horizontal-alt-black.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mmps/vertical-color.svg",
+          "white": "/logos/md-mmps/vertical-white.svg",
+          "black": "/logos/md-mmps/vertical-black.svg",
+          "alternatives": [
+            {
+              "label": "Vertical Alt Color",
+              "path": "/logos/md-mmps/vertical-alt-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Vertical Alt Alb",
+              "path": "/logos/md-mmps/vertical-alt-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "Vertical Alt Negru",
+              "path": "/logos/md-mmps/vertical-alt-black.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://social.gov.md/",
+        "contact": {
+          "address": "str. V. Alecsandri, 1, Chișinău",
+          "email": "secretariat@social.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/social.gov.md",
+          "instagram": "https://www.instagram.com/social.gov.md"
+        }
+      }
+    },
+    {
+      "id": "md-ms",
+      "slug": "ministerul-sanatatii",
+      "name": "Ministerul Sănătății Al Republicii Moldova",
+      "shortname": "MS",
+      "category": "minister",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-09",
+        "keywords": [
+          "moldova",
+          "sănătate",
+          "minister",
+          "medicină",
+          "ms"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Ministerul Sănătății este autoritatea publică centrală responsabilă de elaborarea și implementarea politicilor în domeniul sănătății în Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Onest"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-ms/horizontal-color.svg",
+          "white": "/logos/md-ms/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-ms/horizontal-color.svg",
+          "white": "/logos/md-ms/horizontal-white.svg",
+          "color_alternative": "/logos/md-ms/horizontal-color-alternative.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-ms/vertical-color.svg",
+          "white": "/logos/md-ms/vertical-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://ms.gov.md/",
+        "contact": {
+          "phone": "022 268 811",
+          "email": "presa@ms.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/sanataterepublicamoldova"
+        }
+      }
+    },
+    {
+      "id": "md-mioc",
+      "slug": "mioc",
+      "name": "Muzeul de Istorie a Orașului Chișinău",
+      "shortname": "MIOC",
+      "category": "institutie-cultura",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "muzee",
+          "mioc",
+          "turnul de apă",
+          "patrimoniu"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+      "colors": [
+        {
+          "name": "Bronze Pantone 875 C",
+          "hex": "#C49463",
+          "pantone": "875 C",
+          "usage": "primary"
+        },
+        {
+          "name": "Pantone 157 C",
+          "hex": "#E89E5B",
+          "pantone": "157 C",
+          "usage": "secondary"
+        },
+        {
+          "name": "Pantone 7419 C",
+          "hex": "#A45F53",
+          "pantone": "7419 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone 1817 C",
+          "hex": "#642A31",
+          "pantone": "1817 C",
+          "usage": "accent"
+        },
+        {
+          "name": "Pantone WarmGray 3 C",
+          "hex": "#B8B1AA",
+          "pantone": "WarmGray 3 C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Pantone Black C",
+          "hex": "#1A1A1A",
+          "pantone": "Black C",
+          "usage": "neutral"
+        },
+        {
+          "name": "Grey Process Black 25%",
+          "hex": "#AFAFAF",
+          "usage": "neutral"
+        },
+        {
+          "name": "Black Process Black 100%",
+          "hex": "#18181B",
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Proxima Nova",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Franklin Gothic",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-mioc/symbol-black.svg",
+          "black": "/logos/md-mioc/symbol-black.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "white": "/logos/md-mioc/Horizontal white.svg",
+          "black": "/logos/md-mioc/Horizontal black.svg",
+          "alternatives": [
+            {
+              "label": "Horizontal White Alternative",
+              "path": "/logos/md-mioc/Horizontal white alternative.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "symbol": {
+          "type": "symbol",
+          "white": "/logos/md-mioc/symbol-white.svg",
+          "black": "/logos/md-mioc/symbol-black.svg"
+        }
+      },
+      "resources": {
+        "branding_manual": "/brandbooks/md-mioc/brandbook-mioc-2025.pdf",
+        "contact": {
+          "phone": "022 241 648",
+          "email": "muzeul.chisinau@gmail.com"
+        }
+      }
+    },
+    {
+      "id": "md-mnam",
+      "slug": "md-mnam",
+      "name": "Muzeul Național de Artă Moldovei",
+      "shortname": "Muzeul de artă",
+      "category": "institutie-cultura",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "artă",
+          "mnam",
+          "cultură"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Muzeul Național de Artă al Moldovei, una dintre cele mai prestigioase instituții muzeale din Moldova.",
+      "colors": [
+        {
+          "name": "Green Primary",
+          "hex": "#466838",
+          "usage": "primary"
+        },
+        {
+          "name": "Ivory Secondary",
+          "hex": "#FFFAF6",
+          "usage": "secondary"
+        },
+        {
+          "name": "Charcoal Tertiary",
+          "hex": "#1A1C1F",
+          "usage": "accent"
+        },
+        {
+          "name": "White Tertiary",
+          "hex": "#FFFFFF",
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Cinzel"
+        },
+        "secondary": {
+          "family": "DM Sans"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mnam/Horizontal Color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mnam/Horizontal Color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mnam/Symbol color.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.mnam.md/",
+        "contact": {
+          "address": "31 August 1989 nr. 115, Chișinău, Republica Moldova",
+          "phone": "+373 22 24 13 12",
+          "email": "artmuseum_md@yahoo.com"
+        }
+      }
+    },
+    {
+      "id": "md-parlament",
+      "slug": "md-parlament",
+      "name": "Parlamentul Republicii Moldova",
+      "shortname": "Parlament",
+      "category": "parlament",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-06",
+        "keywords": [
+          "moldova",
+          "parlament",
+          "legiferare",
+          "legislativ"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Parlamentul Republicii Moldova este organul suprem de putere legislativă al statului.",
+      "assets": {
+        "main": {
+          "type": "vertical",
+          "color": "/logos/md-parlament/vertical-color.svg"
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-parlament/vertical-color.svg",
+          "black": "/logos/md-parlament/vertical-black.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-parlament/symbol.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.parlament.md/",
+        "contact": {
+          "phone": "+373-22-820-126",
+          "email": "info@parlament.md"
+        }
+      }
+    },
+    {
+      "id": "md-primaria-chisinau",
+      "slug": "md-primaria-chisinau",
+      "name": "Primăria Municipiului Chișinău",
+      "shortname": "Primaria Chișinău",
+      "category": "primarie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "primărie",
+          "administrație locală",
+          "municipiu"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Autoritatea administrației publice locale a municipiului Chișinău.",
+      "colors": [
+        {
+          "name": "Primary Color",
+          "hex": "#D5CEC3",
+          "usage": "primary"
+        },
+        {
+          "name": "Secondary Color (Blue)",
+          "hex": "#4756B4",
+          "usage": "secondary"
+        },
+        {
+          "name": "Secondary Color (Black)",
+          "hex": "#000000",
+          "usage": "secondary"
+        },
+        {
+          "name": "Tertiary Color (Red)",
+          "hex": "#C8243B",
+          "usage": "accent"
+        },
+        {
+          "name": "Tertiary Color (Yellow)",
+          "hex": "#F6DB16",
+          "usage": "accent"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Georgia"
+        },
+        "secondary": {
+          "family": "Railway"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-primaria-chisinau/symbol.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-primaria-chisinau/horizontal-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-primaria-chisinau/symbol.svg"
+        }
+      },
+      "resources": {
+        "website": "https://www.chisinau.md/",
+        "contact": {
+          "phone": "022 201 515",
+          "email": "primaria@pmc.md"
+        }
+      }
+    },
+    {
+      "id": "md-stisc",
+      "slug": "stisc",
+      "name": "Serviciul Tehnologia Informației și securitatea cibernetică",
+      "shortname": "STISC",
+      "category": "servicii",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-08",
+        "keywords": [
+          "moldova",
+          "serviciu",
+          "tehnologie",
+          "informatică",
+          "securitate",
+          "cibernetică",
+          "stisc"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Serviciul Tehnologia Informației și securitatea cibernetică este responsabil de politicile și programele de dezvoltare a tehnologiei informației și securității cibernetice din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#0E4C90",
+          "rgb": [
+            14,
+            76,
+            144
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Trajan Pro"
+        },
+        "secondary": {
+          "family": "Onest",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-stisc/symbol/color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-stisc/horizontal/color.svg",
+          "white": "/logos/md-stisc/horizontal/white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-stisc/symbol/color.svg",
+          "alternatives": [
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-stisc/symbol/alternative-color.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://stisc.gov.md/ro",
+        "contact": {
+          "phone": "022 820 911",
+          "email": "stisc@stisc.gov.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/stisc.gov.md/photos"
+        }
+      }
+    },
+    {
+      "id": "md-steag",
+      "slug": "steagul-republicii-moldova",
+      "name": "Steagul Republicii Moldova",
+      "shortname": "steag",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-18",
+        "keywords": [
+          "moldova",
+          "steag",
+          "drapel",
+          "flag",
+          "tricolor",
+          "republica moldova"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Drapelul de Stat al Republicii Moldova este simbolul național oficial, compus din trei fâșii verticale în culorile albastru, galben și roșu, cu stema țării în centru.",
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-steag/horizontal-color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-steag/horizontal-color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-eu-flag",
+      "slug": "eu-flag",
+      "name": "Steagul Uniunii Europene",
+      "shortname": "ue",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-02-15",
+        "keywords": [
+          "uniunea europeană",
+          "steag",
+          "steagul european",
+          "simbol",
+          "ue"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "RO",
+        "county": null,
+        "city": null
+      },
+      "description": "Steagul Uniunii Europene este simbolul oficial al Uniunii, reprezentat printr-un cerc de 12 stele aurii pe un fond albastru. Este utilizat pentru identificarea instituţiilor şi iniţiativelor asociate Uniunii Europene.",
+      "usage_notes": null,
+      "colors": [
+        {
+          "name": "Color #FFCC00",
+          "hex": "#FFCC00",
+          "rgb": [
+            255,
+            204,
+            0
+          ],
+          "cmyk": null,
+          "pantone": null,
+          "usage": "primary"
+        },
+        {
+          "name": "Color #003399",
+          "hex": "#003399",
+          "rgb": [
+            0,
+            51,
+            153
+          ],
+          "cmyk": null,
+          "pantone": null,
+          "usage": "secondary"
+        }
+      ],
+      "typography": null,
+      "resources": {
+        "website": null,
+        "branding_manual": null,
+        "social_media": null
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/eu-flag/symbol/color.svg",
+          "dark_mode": null,
+          "white": "/logos/eu-flag/symbol/white.svg",
+          "black": "/logos/eu-flag/symbol/black.svg",
+          "monochrome": null,
+          "png": null
+        },
+        "horizontal": null,
+        "vertical": null,
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/eu-flag/symbol/color.svg",
+          "dark_mode": null,
+          "white": "/logos/eu-flag/symbol/white.svg",
+          "black": "/logos/eu-flag/symbol/black.svg",
+          "monochrome": null,
+          "png": null
+        },
+        "favicon": null
+      }
+    },
+    {
+      "id": "md-stema",
+      "slug": "stema-republicii-moldova",
+      "name": "Stema Republicii Moldova",
+      "shortname": "stema",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-18",
+        "keywords": [
+          "moldova",
+          "stema",
+          "stemă",
+          "coat of arms",
+          "heraldry",
+          "statul",
+          "republica moldova"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Stema de Stat a Republicii Moldova este simbolul heraldic oficial al statului, reprezentând un vultur de aur cu scut pe piept.",
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-stema/stema-color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-stema/stema-color.svg",
+          "alternatives": [
+            {
+              "label": "Variantă alternativă",
+              "path": "/logos/md-stema/stema-alt-color.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

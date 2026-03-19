@@ -113,13 +113,105 @@ const catalogPathBySlug = buildCatalogPathMap(institutions);
         </p>
       </section>
 
+      <!-- MCP Server -->
+      <section>
+        <h2 class="text-2xl font-bold text-primary-900 mb-4">MCP Server — pentru AI coding assistants</h2>
+        <p class="text-surface-600 mb-4">
+          Pachetul <code class="bg-surface-100 px-1.5 py-0.5 rounded text-sm">@identitate-md/mcp</code> este un server
+          <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 underline">Model Context Protocol</a>
+          care permite uneltelor AI (Claude Code, Cursor, Windsurf etc.) să caute instituții,
+          obțină logo-uri și culori de brand fără să părăsească editorul.
+          Datele sunt incluse în pachet — nicio cerere de rețea la runtime.
+        </p>
+
+        <div class="space-y-6">
+
+          <!-- Instalare globală -->
+          <div>
+            <p class="text-sm font-semibold text-primary-900 mb-2">Instalare globală (recomandat):</p>
+            <div class="bg-surface-900 rounded-lg p-4 overflow-x-auto">
+              <code class="text-green-400 font-mono text-sm">npm install -g @identitate-md/mcp</code>
+            </div>
+          </div>
+
+          <!-- .mcp.json -->
+          <div>
+            <p class="text-sm font-semibold text-primary-900 mb-2">Adaugă în <code class="font-normal bg-surface-100 px-1 rounded">.mcp.json</code> din proiect (sau global):</p>
+            <div class="bg-surface-900 rounded-lg p-4 overflow-x-auto">
+              <pre class="text-white text-xs font-mono">{`{
+  "mcpServers": {
+    "identitate-md": {
+      "command": "npx",
+      "args": ["-y", "@identitate-md/mcp"]
+    }
+  }
+}`}</pre>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div>
+            <p class="text-sm font-semibold text-primary-900 mb-3">Tools disponibile:</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-surface-100">
+                    <th class="text-left p-2 border border-surface-200 font-semibold text-primary-900">Tool</th>
+                    <th class="text-left p-2 border border-surface-200 font-semibold text-primary-900">Descriere</th>
+                  </tr>
+                </thead>
+                <tbody class="text-surface-700">
+                  <tr>
+                    <td class="p-2 border border-surface-200"><code class="text-primary-700 text-xs">search_institutions</code></td>
+                    <td class="p-2 border border-surface-200">Caută după nume, keyword sau categorie</td>
+                  </tr>
+                  <tr class="bg-surface-50">
+                    <td class="p-2 border border-surface-200"><code class="text-primary-700 text-xs">get_institution</code></td>
+                    <td class="p-2 border border-surface-200">Date complete de brand pentru o instituție (culori, tipografie, logo URL-uri)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 border border-surface-200"><code class="text-primary-700 text-xs">get_logo</code></td>
+                    <td class="p-2 border border-surface-200">URL logo + opțional SVG inline pentru un layout și variantă cromatică</td>
+                  </tr>
+                  <tr class="bg-surface-50">
+                    <td class="p-2 border border-surface-200"><code class="text-primary-700 text-xs">get_brand_colors</code></td>
+                    <td class="p-2 border border-surface-200">Paleta de culori în format hex, rgb sau CSS custom properties</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 border border-surface-200"><code class="text-primary-700 text-xs">list_categories</code></td>
+                    <td class="p-2 border border-surface-200">Lista tuturor categoriilor cu numărul de instituții</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Exemplu conversație -->
+          <div>
+            <p class="text-sm font-semibold text-primary-900 mb-2">Exemple de utilizare cu Claude:</p>
+            <div class="bg-surface-50 border border-surface-200 rounded-lg p-4 space-y-2 text-sm text-surface-700">
+              <p>💬 <em>„găsește logo-ul pentru Ministerul Justiției"</em></p>
+              <p>💬 <em>„ce culori de brand folosește md-age?"</em></p>
+              <p>💬 <em>„listează toate instituțiile din categoria minister"</em></p>
+              <p>💬 <em>„dă-mi CSS custom properties pentru culorile Guvernului"</em></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <!-- Link-uri utile -->
       <section>
         <h2 class="text-2xl font-bold text-primary-900 mb-4">Link-uri Utile</h2>
         <ul class="space-y-2 text-surface-600">
           <li>
             <a href="https://www.npmjs.com/package/@identitate-md/logos" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700">
-              NPM Package &rarr;
+              NPM @identitate-md/logos &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="https://www.npmjs.com/package/@identitate-md/mcp" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700">
+              NPM @identitate-md/mcp &rarr;
             </a>
           </li>
           <li>

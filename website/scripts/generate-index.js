@@ -134,7 +134,12 @@ async function generateIndex() {
     institutions,
   };
 
-  await writeFile(OUTPUT_FILE, JSON.stringify(index, null, 2), "utf-8");
+  const indexJson = JSON.stringify(index, null, 2);
+  await writeFile(OUTPUT_FILE, indexJson, "utf-8");
+
+  // Also copy to packages/logos so the MCP server can bundle it
+  const logosIndexPath = join(__dirname, "../../packages/logos/institutions-index.json");
+  await writeFile(logosIndexPath, indexJson, "utf-8");
 
   console.log(`\n📋 REZUMAT`);
   console.log(`   Schema: v3.0.0`);
@@ -143,6 +148,7 @@ async function generateIndex() {
   console.log(`   Cu manual de brand: ${withManual}`);
   console.log(`   Cu SVG: ${withSvg}`);
   console.log(`\n💾 Index salvat: ${OUTPUT_FILE}`);
+  console.log(`💾 Copiat la: ${logosIndexPath}`);
 }
 
 generateIndex().catch(console.error);

@@ -1,6 +1,6 @@
 {
   "name": "@identitate-md/logos",
-  "version": "1.3.40",
+  "version": "1.4.2",
   "description": "Logo-uri oficiale ale instituțiilor publice din Republica Moldova — Official logos of public institutions from the Republic of Moldova",
   "license": "MIT",
   "author": "IdentitateMD Contributors",
@@ -23,6 +23,7 @@
   "files": [
     "logos/**/*",
     "index.json",
+    "institutions-index.json",
     "identity-loader.js",
     "README.md",
     "LICENSE"
@@ -30,6 +31,7 @@
   "main": "index.json",
   "exports": {
     ".": "./index.json",
+    "./institutions-index": "./institutions-index.json",
     "./loader": "./identity-loader.js",
     "./logos/*": "./logos/*"
   },
