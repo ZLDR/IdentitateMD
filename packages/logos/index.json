@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-19T00:50:13.219Z",
-  "count": 24,
-  "totalLogos": 107,
+  "generated": "2026-03-19T20:41:27.001Z",
+  "count": 26,
+  "totalLogos": 114,
   "institutions": [
     {
       "id": "eu-flag",
@@ -40,6 +40,42 @@
           "color": "/logos/md-age/symbol/color.svg",
           "filled": "/logos/md-age/symbol/filled.svg",
           "white": "/logos/md-age/symbol/white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-anre",
+      "slug": "md-anre",
+      "name": "Agenția Națională pentru Reglementare în Energie",
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-anre/horizontal-color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-bns",
+      "slug": "md-bns",
+      "name": "Biroul Național de Statistică Al Republicii Moldova",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 6,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-bns/horizontal-alt-color.svg",
+          "black": "/logos/md-bns/horizontal-black.svg",
+          "color": "/logos/md-bns/horizontal-color.svg",
+          "white": "/logos/md-bns/horizontal-white.svg"
+        },
+        "symbol": {
+          "alternative-color": "/logos/md-bns/symbol-alt-color.svg",
+          "color": "/logos/md-bns/symbol-color.svg"
         }
       }
     },

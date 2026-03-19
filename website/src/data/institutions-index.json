@@ -1,12 +1,12 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-19T00:50:11.934Z",
-  "total": 24,
+  "generatedAt": "2026-03-19T20:04:08.652Z",
+  "total": 26,
   "stats": {
     "byCategory": {
       "altele": 3,
       "guvern": 1,
-      "agentie": 1,
+      "agentie": 3,
       "consilii": 1,
       "directie": 1,
       "minister": 12,
@@ -16,7 +16,7 @@
       "servicii": 1
     },
     "withManual": 2,
-    "withSvg": 24
+    "withSvg": 26
   },
   "categories": [
     {
@@ -37,7 +37,7 @@
     {
       "id": "agentie",
       "label": "Agenții",
-      "count": 1
+      "count": 3
     },
     {
       "id": "primarie",
@@ -199,6 +199,252 @@
         },
         "social_media": {
           "facebook": "https://www.facebook.com/eGovernanceAgency.Moldova"
+        }
+      }
+    },
+    {
+      "id": "md-anre",
+      "slug": "agentia-nationala-pentru-reglementare-in-energie",
+      "name": "Agenția Națională pentru Reglementare în Energie",
+      "shortname": "ANRE",
+      "category": "agentie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-19",
+        "keywords": [
+          "moldova",
+          "agenție",
+          "energie",
+          "reglementare",
+          "anre",
+          "electricitate",
+          "gaze naturale"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Agenția Națională pentru Reglementare în Energie este autoritatea publică autonomă responsabilă de reglementarea activităților în sectorul energetic al Republicii Moldova.",
+      "colors": [
+        {
+          "name": "Negru Închis",
+          "hex": "#27272b",
+          "rgb": [
+            39,
+            39,
+            43
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Galben Oficial",
+          "hex": "#ffd308",
+          "rgb": [
+            255,
+            211,
+            8
+          ],
+          "usage": "secondary"
+        },
+        {
+          "name": "Albastru Oficial",
+          "hex": "#073a93",
+          "rgb": [
+            7,
+            58,
+            147
+          ],
+          "usage": "secondary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Open Sans",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Arial",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-anre/horizontal-color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-anre/horizontal-color.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-anre/stema-color.svg"
+        }
+      },
+      "resources": {
+        "website": "https://anre.md/",
+        "contact": {
+          "phone": "022 852 901",
+          "email": "anre@anre.md",
+          "address": "Strada Alexandr Pușkin 52/A, Chișinău, MD-2005"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/anre.moldova/",
+          "linkedin": "https://www.linkedin.com/company/agen%C8%9Bia-na%C8%9Bional%C4%83-pentru-reglementare-%C3%AEn-energetic%C4%83/"
+        }
+      }
+    },
+    {
+      "id": "md-bns",
+      "slug": "biroul-national-de-statistica",
+      "name": "Biroul Național de Statistică Al Republicii Moldova",
+      "shortname": "Statistica",
+      "category": "agentie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-19",
+        "keywords": [
+          "moldova",
+          "statistică",
+          "birou",
+          "date statistice",
+          "recensamant",
+          "bns"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Biroul Național de Statistică este autoritatea publică centrală responsabilă de colectarea, procesarea și diseminarea datelor statistice oficiale ale Republicii Moldova.",
+      "colors": [
+        {
+          "name": "Negru",
+          "hex": "#000000",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Albastru Pantone 2935",
+          "hex": "#0a57a4",
+          "rgb": [
+            10,
+            87,
+            164
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Galben Pantone 109",
+          "hex": "#ffd100",
+          "rgb": [
+            255,
+            209,
+            0
+          ],
+          "usage": "secondary"
+        },
+        {
+          "name": "Roșu Pantone 1797",
+          "hex": "#c8102e",
+          "rgb": [
+            200,
+            16,
+            46
+          ],
+          "usage": "secondary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Arial",
+          "weights": [
+            400,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Haettenschweiler",
+          "weights": [
+            400
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-bns/horizontal-color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-bns/horizontal-color.svg",
+          "white": "/logos/md-bns/horizontal-white.svg",
+          "black": "/logos/md-bns/horizontal-black.svg",
+          "alternatives": [
+            {
+              "label": "Variantă Alternativă",
+              "path": "/logos/md-bns/horizontal-alt-color.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-bns/symbol-color.svg",
+          "alternatives": [
+            {
+              "label": "Variantă Alternativă",
+              "path": "/logos/md-bns/symbol-alt-color.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://statistica.gov.md/ro",
+        "brandbook": "/brandbooks/Brandbook_Logo_Statistica_Moldovei.pdf",
+        "contact": {
+          "phone": "022 403 000",
+          "email": "moldstat@statistica.gov.md",
+          "address": "str. Grenoble 106, Chișinău, MD-2019"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/statistica.md",
+          "instagram": "https://www.instagram.com/biroul_national_de_statistica"
         }
       }
     },
