@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-19T20:41:27.001Z",
-  "count": 26,
-  "totalLogos": 114,
+  "generated": "2026-03-20T00:00:09.819Z",
+  "count": 28,
+  "totalLogos": 127,
   "institutions": [
     {
       "id": "eu-flag",
@@ -46,7 +46,7 @@
     {
       "id": "md-anre",
       "slug": "md-anre",
-      "name": "Agenția Națională pentru Reglementare în Energie",
+      "name": "Agenția Națională pentru Reglementare în Energetică",
       "layouts": [
         "horizontal"
       ],
@@ -54,6 +54,23 @@
       "logos": {
         "horizontal": {
           "color": "/logos/md-anre/horizontal-color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-bnm",
+      "slug": "md-bnm",
+      "name": "Banca Națională a Moldovei",
+      "layouts": [
+        "horizontal"
+      ],
+      "logoCount": 4,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-bnm/horizontal-alt-color.svg",
+          "alternative-white": "/logos/md-bnm/horizontal-alt-white.svg",
+          "color": "/logos/md-bnm/horizontal-color.svg",
+          "white": "/logos/md-bnm/horizontal-white.svg"
         }
       }
     },
@@ -278,6 +295,34 @@
         "vertical": {
           "color": "/logos/md-mf/vertical-color.svg",
           "white": "/logos/md-mf/vertical-white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-mia",
+      "slug": "md-mia",
+      "name": "MIA Plăți Instant",
+      "layouts": [
+        "horizontal",
+        "symbol",
+        "vertical"
+      ],
+      "logoCount": 9,
+      "logos": {
+        "horizontal": {
+          "alternative-color": "/logos/md-mia/horizontal-alt-black.svg",
+          "alternative-white": "/logos/md-mia/horizontal-alt-white.svg",
+          "color": "/logos/md-mia/horizontal-color.svg",
+          "black": "/logos/md-mia/horizontal-black.svg",
+          "white": "/logos/md-mia/horizontal-white.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-mia/symbol-color.svg"
+        },
+        "vertical": {
+          "alternative-color": "/logos/md-mia/vertical-alt-black.svg",
+          "black": "/logos/md-mia/vertical-black.svg",
+          "color": "/logos/md-mia/vertical-color.svg"
         }
       }
     },

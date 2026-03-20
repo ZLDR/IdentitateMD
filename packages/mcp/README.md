@@ -116,16 +116,19 @@ Show me the SVG content of the Parlamentul Republicii Moldova symbol logo.
 
 ## Institutions
 
-24 Moldovan government institutions are available, including:
+28 Moldovan government institutions are available, including:
 
 - `md-guvern` — Guvernul Republicii Moldova
 - `md-parlament` — Parlamentul Republicii Moldova
+- `md-bnm` — Banca Națională a Moldovei
+- `md-mia` — MIA Plăți Instant
 - `md-mj` — Ministerul Justiției
 - `md-mec` — Ministerul Educației și Cercetării
 - `md-mf` — Ministerul Finanțelor
 - `md-ms` — Ministerul Sănătății
 - `md-mae` — Ministerul Afacerilor Externe
 - `md-age` — Agenția de Guvernare Electronică
+- `md-bns` — Biroul Național de Statistică
 - `md-primaria-chisinau` — Primăria Municipiului Chișinău
 - `md-stema` — Stema Republicii Moldova
 - and more...

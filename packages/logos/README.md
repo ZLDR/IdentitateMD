@@ -187,7 +187,7 @@ console.log(metadata.institutions);
 │   ├── md-parlament/
 │   ├── md-mj/
 │   ├── md-mec/
-│   └── ... (24 instituții)
+│   └── ... (28 instituții)
 ├── index.json
 ├── institutions-index.json
 ├── identity-loader.js
@@ -245,6 +245,8 @@ symbol-white.svg
 | `md-stema` | Stema Republicii Moldova |
 | `md-steag` | Steagul Republicii Moldova |
 | `eu-flag` | Drapelul Uniunii Europene |
+| `md-bnm` | Banca Națională a Moldovei |
+| `md-mia` | MIA Plăți Instant |
 
 Pentru lista completă și actualizată: [identitate.md](https://identitate.md)
 

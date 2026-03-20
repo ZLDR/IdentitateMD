@@ -1,0 +1,135 @@
+{
+  "id": "md-mia",
+  "slug": "mia-plati-instant",
+  "name": "MIA Plăți Instant",
+  "shortname": "MIA",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-20",
+    "keywords": ["moldova", "plăți", "instant", "mia", "bnm", "fintech", "transfer", "banca națională"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "MIA Plăți Instant este platforma națională de plăți instant din Republica Moldova, operată de Banca Națională a Moldovei, care permite transferuri de bani în timp real între persoane și companii.",
+  "colors": [
+    {
+      "name": "Violet",
+      "hex": "#A88FF5",
+      "rgb": [168, 143, 245],
+      "usage": "primary"
+    },
+    {
+      "name": "Teal",
+      "hex": "#669999",
+      "rgb": [102, 153, 153],
+      "usage": "primary"
+    },
+    {
+      "name": "Coral",
+      "hex": "#FF7859",
+      "rgb": [255, 120, 89],
+      "usage": "primary"
+    },
+    {
+      "name": "Portocaliu",
+      "hex": "#B8753B",
+      "rgb": [184, 117, 59],
+      "usage": "primary"
+    },
+    {
+      "name": "Negru",
+      "hex": "#000000",
+      "rgb": [0, 0, 0],
+      "usage": "neutral"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "neutral"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "NaN Metrify B",
+      "weights": [800],
+      "style": "italic"
+    },
+    "secondary": {
+      "family": "Wix Madefor Text",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-mia/horizontal-color.svg",
+      "white": "/logos/md-mia/horizontal-white.svg",
+      "black": "/logos/md-mia/horizontal-black.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-mia/horizontal-color.svg",
+      "white": "/logos/md-mia/horizontal-white.svg",
+      "black": "/logos/md-mia/horizontal-black.svg",
+      "alternatives": [
+        {
+          "label": "Variantă Alternativă Neagră",
+          "path": "/logos/md-mia/horizontal-alt-black.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Variantă Alternativă Albă",
+          "path": "/logos/md-mia/horizontal-alt-white.svg",
+          "preview": "dark"
+        },
+        {
+          "label": "Variantă 1 Neagră",
+          "path": "/logos/md-mia/horizontal-black-1.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Variantă 1 Albă",
+          "path": "/logos/md-mia/horizontal-white-1.svg",
+          "preview": "dark"
+        }
+      ]
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-mia/vertical-color.svg",
+      "black": "/logos/md-mia/vertical-black.svg",
+      "alternatives": [
+        {
+          "label": "Variantă Alternativă Color",
+          "path": "/logos/md-mia/vertical-alt-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Variantă Alternativă Neagră",
+          "path": "/logos/md-mia/vertical-alt-black.svg",
+          "preview": "checkerboard"
+        }
+      ]
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-mia/symbol-color.svg"
+    }
+  },
+  "resources": {
+    "website": "https://mia.bnm.md/en",
+    "brandbook": "/brandbooks/MIA_identityGuideline1.6b.pdf",
+    "contact": {
+      "email": "Fintech@bnm.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/MIAplatiinstant/",
+      "linkedin": "https://www.linkedin.com/company/mia-plati-instant/"
+    }
+  }
+}

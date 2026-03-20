@@ -1,0 +1,82 @@
+{
+  "id": "md-bnm",
+  "slug": "banca-nationala-a-moldovei",
+  "name": "Banca Națională a Moldovei",
+  "shortname": "BNM",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-20",
+    "keywords": ["moldova", "bancă", "banca națională", "bnm", "finanțe", "monetar"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Banca Națională a Moldovei este banca centrală a Republicii Moldova, responsabilă de politica monetară, stabilitatea financiară și reglementarea sistemului bancar.",
+  "colors": [
+    {
+      "name": "Negru Cald",
+      "hex": "#3C3A37",
+      "rgb": [60, 58, 55],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "neutral"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Arial",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-bnm/horizontal-color.svg",
+      "white": "/logos/md-bnm/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-bnm/horizontal-color.svg",
+      "white": "/logos/md-bnm/horizontal-white.svg",
+      "alternatives": [
+        {
+          "label": "Variantă Alternativă",
+          "path": "/logos/md-bnm/horizontal-alt-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Variantă Alternativă Albă",
+          "path": "/logos/md-bnm/horizontal-alt-white.svg",
+          "preview": "dark"
+        },
+        {
+          "label": "Variantă Lungă",
+          "path": "/logos/md-bnm/horizontal-long-color.svg",
+          "preview": "checkerboard"
+        },
+        {
+          "label": "Variantă Lungă Albă",
+          "path": "/logos/md-bnm/horizontal-long-white.svg",
+          "preview": "dark"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "website": "https://bnm.md/",
+    "contact": {
+      "phone": "0606 68 876",
+      "email": "press@bnm.md"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/BNMoficial"
+    }
+  }
+}

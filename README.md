@@ -143,18 +143,28 @@ Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude 
 **Guvern**
 - Guvernul Republicii Moldova
 
-**Ministere** (8)
+**Parlament**
+- Parlamentul Republicii Moldova
+
+**Ministere** (11)
 - Ministerul Afacerilor Externe (MAE)
 - Ministerul Agriculturii și Industriei Alimentare (MAIA)
 - Ministerul Culturii (MC)
+- Ministerul Dezvoltării Economice și Digitalizării (MDED)
 - Ministerul Educației și Cercetării (MEC)
+- Ministerul Energiei
 - Ministerul Finanțelor (MF)
 - Ministerul Infrastructurii și Dezvoltării Regionale (MIDR)
 - Ministerul Justiției (MJ)
 - Ministerul Mediului
+- Ministerul Muncii și Protecției Sociale (MMPS)
+- Ministerul Sănătății (MS)
 
-**Alte Instituții**
+**Agenții & Servicii**
 - Agenția De Guvernare Electronică (AGE)
+- Agenția Națională pentru Reglementare în Energetică (ANRE)
+- Biroul Național de Statistică (BNS)
+- Consiliul Audiovizualului (CA)
 - Direcția Generală Cultură și Patrimoniu Cultural (DGCPC)
 - Primăria Municipiului Chișinău
 - Serviciul Tehnologia Informației și Securitatea Cibernetică (STISC)
@@ -163,10 +173,16 @@ Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude 
 - Muzeul Național de Artă Moldovei (MNAM)
 - Muzeul de Istorie a Orașului Chișinău (MIOC)
 
+**Altele**
+- Banca Națională a Moldovei (BNM)
+- MIA Plăți Instant
+
 **Simboluri**
+- Stema Republicii Moldova
+- Steagul Republicii Moldova
 - Steagul Uniunii Europene
 
-**Total: 17 instituții**
+**Total: 28 instituții**
 
 ## 🤝 Contribuții
 

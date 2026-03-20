@@ -1,10 +1,10 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-19T20:51:33.861Z",
-  "total": 26,
+  "generatedAt": "2026-03-19T23:25:26.280Z",
+  "total": 28,
   "stats": {
     "byCategory": {
-      "altele": 3,
+      "altele": 5,
       "guvern": 1,
       "agentie": 3,
       "consilii": 1,
@@ -16,7 +16,7 @@
       "servicii": 1
     },
     "withManual": 2,
-    "withSvg": 26
+    "withSvg": 28
   },
   "categories": [
     {
@@ -52,7 +52,7 @@
     {
       "id": "altele",
       "label": "Altele",
-      "count": 3
+      "count": 5
     }
   ],
   "institutions": [
@@ -311,6 +311,106 @@
         "social_media": {
           "facebook": "https://www.facebook.com/anre.moldova/",
           "linkedin": "https://www.linkedin.com/company/agen%C8%9Bia-na%C8%9Bional%C4%83-pentru-reglementare-%C3%AEn-energetic%C4%83/"
+        }
+      }
+    },
+    {
+      "id": "md-bnm",
+      "slug": "banca-nationala-a-moldovei",
+      "name": "Banca Națională a Moldovei",
+      "shortname": "BNM",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-20",
+        "keywords": [
+          "moldova",
+          "bancă",
+          "banca națională",
+          "bnm",
+          "finanțe",
+          "monetar"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Banca Națională a Moldovei este banca centrală a Republicii Moldova, responsabilă de politica monetară, stabilitatea financiară și reglementarea sistemului bancar.",
+      "colors": [
+        {
+          "name": "Negru Cald",
+          "hex": "#3C3A37",
+          "rgb": [
+            60,
+            58,
+            55
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Arial",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-bnm/horizontal-color.svg",
+          "white": "/logos/md-bnm/horizontal-white.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-bnm/horizontal-color.svg",
+          "white": "/logos/md-bnm/horizontal-white.svg",
+          "alternatives": [
+            {
+              "label": "Variantă Alternativă",
+              "path": "/logos/md-bnm/horizontal-alt-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Variantă Alternativă Albă",
+              "path": "/logos/md-bnm/horizontal-alt-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "Variantă Lungă",
+              "path": "/logos/md-bnm/horizontal-long-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Variantă Lungă Albă",
+              "path": "/logos/md-bnm/horizontal-long-white.svg",
+              "preview": "dark"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "website": "https://bnm.md/",
+        "contact": {
+          "phone": "0606 68 876",
+          "email": "press@bnm.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/BNMoficial"
         }
       }
     },
@@ -671,6 +771,179 @@
         "social_media": {
           "facebook": "https://www.facebook.com/guvernulrepubliciimodova",
           "twitter": "https://twitter.com/GovMD"
+        }
+      }
+    },
+    {
+      "id": "md-mia",
+      "slug": "mia-plati-instant",
+      "name": "MIA Plăți Instant",
+      "shortname": "MIA",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-20",
+        "keywords": [
+          "moldova",
+          "plăți",
+          "instant",
+          "mia",
+          "bnm",
+          "fintech",
+          "transfer",
+          "banca națională"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "MIA Plăți Instant este platforma națională de plăți instant din Republica Moldova, operată de Banca Națională a Moldovei, care permite transferuri de bani în timp real între persoane și companii.",
+      "colors": [
+        {
+          "name": "Violet",
+          "hex": "#A88FF5",
+          "rgb": [
+            168,
+            143,
+            245
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Teal",
+          "hex": "#669999",
+          "rgb": [
+            102,
+            153,
+            153
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Coral",
+          "hex": "#FF7859",
+          "rgb": [
+            255,
+            120,
+            89
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Portocaliu",
+          "hex": "#B8753B",
+          "rgb": [
+            184,
+            117,
+            59
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Negru",
+          "hex": "#000000",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "usage": "neutral"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "NaN Metrify B",
+          "weights": [
+            800
+          ],
+          "style": "italic"
+        },
+        "secondary": {
+          "family": "Wix Madefor Text",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-mia/horizontal-color.svg",
+          "white": "/logos/md-mia/horizontal-white.svg",
+          "black": "/logos/md-mia/horizontal-black.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-mia/horizontal-color.svg",
+          "white": "/logos/md-mia/horizontal-white.svg",
+          "black": "/logos/md-mia/horizontal-black.svg",
+          "alternatives": [
+            {
+              "label": "Variantă Alternativă Neagră",
+              "path": "/logos/md-mia/horizontal-alt-black.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Variantă Alternativă Albă",
+              "path": "/logos/md-mia/horizontal-alt-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "Variantă 1 Neagră",
+              "path": "/logos/md-mia/horizontal-black-1.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Variantă 1 Albă",
+              "path": "/logos/md-mia/horizontal-white-1.svg",
+              "preview": "dark"
+            }
+          ]
+        },
+        "vertical": {
+          "type": "vertical",
+          "color": "/logos/md-mia/vertical-color.svg",
+          "black": "/logos/md-mia/vertical-black.svg",
+          "alternatives": [
+            {
+              "label": "Variantă Alternativă Color",
+              "path": "/logos/md-mia/vertical-alt-color.svg",
+              "preview": "checkerboard"
+            },
+            {
+              "label": "Variantă Alternativă Neagră",
+              "path": "/logos/md-mia/vertical-alt-black.svg",
+              "preview": "checkerboard"
+            }
+          ]
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-mia/symbol-color.svg"
+        }
+      },
+      "resources": {
+        "website": "https://mia.bnm.md/en",
+        "brandbook": "/brandbooks/MIA_identityGuideline1.6b.pdf",
+        "contact": {
+          "email": "Fintech@bnm.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/MIAplatiinstant/",
+          "linkedin": "https://www.linkedin.com/company/mia-plati-instant/"
         }
       }
     },
