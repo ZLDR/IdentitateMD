@@ -1,51 +1,112 @@
 # Identitate.MD
 
-> Identitate.MD este registrul digital al identității vizuale oficiale a instituțiilor publice din Republica Moldova. Oferă acces gratuit la sigle vectoriale (SVG), culori oficiale (HEX/RGB) și tipografie pentru 20+ instituții guvernamentale.
+> Identitate.MD is the open-source digital registry of official visual identities for public institutions in the Republic of Moldova. It provides free access to vector logos (SVG), official brand colors (HEX/RGB), and typography for 28+ government institutions. The project is civic, community-driven, and freely available for designers, journalists, NGOs, and developers.
 
-## Ce este Identitate.MD?
+Identitate.MD este registrul digital open-source al identității vizuale oficiale a instituțiilor publice din Republica Moldova. Oferă acces gratuit la sigle vectoriale (SVG), culori de brand (HEX/RGB) și tipografie pentru 28+ instituții guvernamentale.
 
-Identitate.MD este un proiect civic open-source care centralizează siglele (logo-urile) oficiale ale instituțiilor publice din Republica Moldova. Fiecare instituție are o pagină dedicată cu fișiere vectoriale descărcabile, coduri de culoare exacte și informații despre tipografie.
+## Key pages
 
-Proiectul este creat pentru designeri, jurnaliști, ONG-uri, dezvoltatori și oricine lucrează cu identitatea vizuală a statului moldovean.
+- Home / Acasă: https://identitate.md/
+- Full catalog / Catalog: https://identitate.md/catalog/
+- Usage guide / Ghid utilizare: https://identitate.md/utilizare/
+- MCP Server (for AI agents): https://identitate.md/mcp/
+- About / Despre: https://identitate.md/despre/
+- Request institution / Solicită: https://identitate.md/solicita/
 
-## Instituții disponibile
+## MCP Server (AI Agent Integration)
+
+Identitate.MD exposes an MCP (Model Context Protocol) server so AI assistants can query institution logos, colors, and branding data directly. Install with:
+
+```
+claude mcp add identitate-md -- npx -y identitate-md-mcp
+```
+
+Tools available: `search_institutions`, `get_institution`, `get_logo`, `get_brand_colors`, `list_categories`
+
+## npm Package
+
+Logos are available as an npm package:
+
+```
+npm install @identitate-md/logos
+```
+
+CDN: `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/{institution-id}/{layout}/{variant}.svg`
+
+## Institutions (28 total)
+
+### Guvern / Government
 
 - Guvernul Republicii Moldova — https://identitate.md/catalog/guvern
+
+### Parlament / Parliament
+
 - Parlamentul Republicii Moldova — https://identitate.md/catalog/parlament
+
+### Ministere / Ministries
+
 - Ministerul Afacerilor Externe (MAE) — https://identitate.md/catalog/mae
 - Ministerul Agriculturii și Industriei Alimentare (MAIA) — https://identitate.md/catalog/maia
 - Ministerul Culturii — https://identitate.md/catalog/ministerul-culturii
+- Ministerul Dezvoltării Economice și Digitalizării (MDED) — https://identitate.md/catalog/mded
 - Ministerul Educației și Cercetării (MEC) — https://identitate.md/catalog/mec
 - Ministerul Energiei (ME) — https://identitate.md/catalog/me
 - Ministerul Finanțelor — https://identitate.md/catalog/ministerul-finantelor
 - Ministerul Infrastructurii și Dezvoltării Regionale (MIDR) — https://identitate.md/catalog/midr
 - Ministerul Justiției — https://identitate.md/catalog/ministerul-justitiei
 - Ministerul Mediului — https://identitate.md/catalog/ministerul-mediului
+- Ministerul Muncii și Protecției Sociale (MMPS) — https://identitate.md/catalog/mmps
 - Ministerul Sănătății (MS) — https://identitate.md/catalog/ms
+
+### Agenții / Agencies
+
 - Agenția de Guvernare Electronică (AGE) — https://identitate.md/catalog/age
-- Direcția Generală Cultură și Patrimoniu Cultural (DGCPC) — https://identitate.md/catalog/dgcpc
-- Muzeul Național de Artă al Moldovei — https://identitate.md/catalog/muzeul-de-arta
-- Muzeul de Istorie a Orașului Chișinău (MIOC) — https://identitate.md/catalog/mioc
-- Primăria Municipiului Chișinău — https://identitate.md/catalog/primaria-chisinau
+- Agenția Națională pentru Reglementare în Energetică (ANRE) — https://identitate.md/catalog/anre
+- Biroul Național de Statistică (Statistica) — https://identitate.md/catalog/statistica
+
+### Consilii / Councils
+
+- Consiliul Audiovizualului (CA) — https://identitate.md/catalog/ca
+
+### Servicii / Services
+
 - Serviciul Tehnologia Informației și Securitatea Cibernetică (STISC) — https://identitate.md/catalog/stisc
+
+### Direcții / Directorates
+
+- Direcția Generală Cultură și Patrimoniu Cultural (DGCPC) — https://identitate.md/catalog/dgcpc
+
+### Instituții de cultură / Cultural institutions
+
+- Muzeul Național de Artă Moldovei — https://identitate.md/catalog/muzeul-de-arta
+- Muzeul de Istorie a Orașului Chișinău (MIOC) — https://identitate.md/catalog/mioc
+
+### Primărie / City hall
+
+- Primăria Municipiului Chișinău — https://identitate.md/catalog/primaria-chisinau
+
+### Simboluri / National symbols
+
+- Steagul Republicii Moldova — https://identitate.md/catalog/steag
+- Stema Republicii Moldova — https://identitate.md/catalog/stema
 - Steagul Uniunii Europene — https://identitate.md/catalog/ue
 
-## Ce conține fiecare pagină de instituție?
+### Altele / Other
 
-- Sigle vectoriale (SVG) descărcabile: orizontală, verticală, simbol
-- Variante: color, alb, negru, monocrom
-- Culori oficiale în format HEX și RGB
-- Tipografie oficială (fonturi și greutăți)
-- Link către site-ul oficial al instituției
+- Banca Națională a Moldovei (BNM) — https://identitate.md/catalog/bnm
+- MIA Plăți Instant (MIA) — https://identitate.md/catalog/mia
 
-## Cum se folosesc logo-urile?
+## What each institution page contains
 
-Logo-urile sunt disponibile prin CDN sau descărcare directă. Pachetul npm `@identitate.md/logos` permite integrarea programatică în proiecte digitale.
+Each catalog page provides:
+- Downloadable SVG logos: horizontal, vertical, symbol layouts
+- Color variants: color, white, black, monochrome
+- Official brand colors in HEX and RGB format
+- Official typography (font families and weights)
+- Link to the institution's official website
+- Contact information
 
-## Pagini principale
+## Data access
 
-- Acasă: https://identitate.md/
-- Catalog complet: https://identitate.md/catalog/
-- Termeni de utilizare: https://identitate.md/utilizare/
-- Despre proiect: https://identitate.md/despre/
-- Solicită o instituție: https://identitate.md/solicita/
+Machine-readable JSON index: https://identitate.md/api/institutions.json
+Full dataset with all institution details: https://identitate.md/llms-full.txt

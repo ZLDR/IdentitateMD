@@ -24,7 +24,10 @@ const activeCategories = [...grouped.keys()];
 const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Identitate.MD — Siglele Oficiale ale Instituțiilor Publice din Moldova"
+  description={`Descarcă gratuit sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${institutionIndex.total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
+>
   <!-- Hero Section -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-surface-50 -z-10"></div>

@@ -26,9 +26,19 @@ const pageTitle = institution
   ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} — Sigla Oficială | Identitate.MD`
   : undefined;
 
-const pageDescription = institution?.description
-  ? `Descarcă sigla oficială a ${institution.name} în format SVG. Culori HEX, tipografie și identitate vizuală oficială. | Identitate.MD`
+const pageDescription = institution
+  ? `Sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} — descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
   : undefined;
+
+const breadcrumbJsonLd = institution ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://identitate.md" },
+    { "@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://identitate.md/catalog" },
+    { "@type": "ListItem", "position": 3, "name": institution.name, "item": `https://identitate.md/catalog/${initialPathId}` }
+  ]
+}) : undefined;
 
 const institutionJsonLd = institution ? JSON.stringify({
   "@context": "https://schema.org",
@@ -45,6 +55,12 @@ const institutionJsonLd = institution ? JSON.stringify({
     "addressLocality": institution.location?.city || "Chișinău",
     "addressCountry": institution.location?.country_code || "MD"
   },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Republic of Moldova",
+    "sameAs": "https://www.wikidata.org/wiki/Q217"
+  },
+  ...(institution.meta?.keywords?.length && { "keywords": institution.meta.keywords.join(', ') }),
   "sameAs": [
     ...(institution.resources?.website ? [institution.resources.website] : []),
     ...((institution.resources as any)?.social_media?.facebook ? [(institution.resources as any).social_media.facebook] : []),
@@ -57,4 +73,5 @@ const institutionJsonLd = institution ? JSON.stringify({
   pageTitle={pageTitle}
   pageDescription={pageDescription}
   institutionJsonLd={institutionJsonLd}
+  breadcrumbJsonLd={breadcrumbJsonLd}
 />

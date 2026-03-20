@@ -26,7 +26,7 @@ const slugByCatalogPath = Object.fromEntries(
 for (const inst of allInstitutions) {
   slugByCatalogPath[inst.slug] = inst.slug;
 }
-const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, institutionJsonLd } = Astro.props;
+const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, institutionJsonLd, breadcrumbJsonLd } = Astro.props;
 
 const categories = CATEGORY_ORDER
   .map(value => ({
@@ -41,8 +41,8 @@ const institutionsByCategory = categories.reduce((acc, cat) => {
   return acc;
 }, {} as Record<string, Institution[]>);
 
-const title = propTitle || "Catalog — Identitate.MD";
-const description = propDesc || "Explorează siglele oficiale ale instituțiilor publice din Republica Moldova. Format SVG, culori HEX și tipografie oficială.";
+const title = propTitle || "Catalog Sigle — Identitate.MD";
+const description = propDesc || `Explorează siglele vectoriale oficiale ale celor ${institutionIndex.total} instituții publice din Republica Moldova. Descarcă gratuit în format SVG, culori HEX/RGB și tipografie.`;
 
 const institutionsJson = JSON.stringify(allInstitutions);
 const categoryLabelsSingularJson = JSON.stringify(CATEGORY_LABELS_SINGULAR);
@@ -58,6 +58,9 @@ const cdnVersion = CDN_VERSION;
 <BaseLayout title={title} description={description} ogType="website">
   {institutionJsonLd && (
     <script slot="head" type="application/ld+json" set:html={institutionJsonLd} />
+  )}
+  {breadcrumbJsonLd && (
+    <script slot="head" type="application/ld+json" set:html={breadcrumbJsonLd} />
   )}
   <!-- Catalog: three-pane layout: categories | institutions | detail -->
   <div class="flex h-full overflow-hidden">
