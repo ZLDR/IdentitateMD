@@ -1,6 +1,6 @@
 {
   "name": "@identitate-md/mcp",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "MCP server for IdentitateMD — query Moldovan government institution logos and brand colors from AI coding assistants",
   "license": "MIT",
   "author": "IdentitateMD Contributors",

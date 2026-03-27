@@ -1,7 +1,7 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-27T16:02:10.895Z",
-  "total": 30,
+  "generatedAt": "2026-03-27T16:20:19.396Z",
+  "total": 31,
   "stats": {
     "byCategory": {
       "altele": 5,
@@ -14,10 +14,10 @@
       "parlament": 1,
       "primarie": 1,
       "servicii": 1,
-      "universitate": 2
+      "universitate": 3
     },
     "withManual": 2,
-    "withSvg": 30
+    "withSvg": 31
   },
   "categories": [
     {
@@ -2720,6 +2720,92 @@
         },
         "social_media": {
           "facebook": "https://www.facebook.com/USMoldova"
+        }
+      }
+    },
+    {
+      "id": "md-utm",
+      "slug": "universitatea-tehnica-a-moldovei",
+      "name": "Universitatea Tehnică a Moldovei",
+      "shortname": "UTM",
+      "category": "universitate",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-27",
+        "keywords": [
+          "moldova",
+          "universitate",
+          "utm",
+          "educație",
+          "tehnică",
+          "inginerie",
+          "chișinău"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Universitatea Tehnică a Moldovei este principala instituție de învățământ superior tehnic din Republica Moldova, formând specialiști în inginerie, tehnologii și științe aplicate.",
+      "colors": [
+        {
+          "name": "Albastru",
+          "hex": "#1d436a",
+          "rgb": [
+            29,
+            67,
+            106
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Exo 2",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Source Sans Pro",
+          "weights": [
+            400,
+            600
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-utm/symbol-color.svg",
+          "white": "/logos/md-utm/symbol-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-utm/symbol-color.svg",
+          "white": "/logos/md-utm/symbol-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://utm.md/",
+        "contact": {
+          "address": "B-dul Ștefan cel Mare nr. 168, Chișinău, Moldova, MD-2004"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/UTMoldova"
         }
       }
     }
