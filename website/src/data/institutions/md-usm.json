@@ -1,0 +1,64 @@
+{
+  "id": "md-usm",
+  "slug": "universitatea-de-stat-din-moldova",
+  "name": "Universitatea de Stat din Moldova",
+  "shortname": "USM",
+  "category": "universitate",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-27",
+    "keywords": ["moldova", "universitate", "usm", "educație", "stat", "chișinău"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Universitatea de Stat din Moldova este cea mai mare instituție de învățământ superior din Republica Moldova, fondată în 1946, oferind programe de licență, masterat și doctorat în diverse domenii.",
+  "colors": [
+    {
+      "name": "Verde Închis",
+      "hex": "#0d2c22",
+      "rgb": [13, 44, 34],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "neutral"
+    },
+    {
+      "name": "Gri Albăstrui",
+      "hex": "#7c8c9f",
+      "rgb": [124, 140, 159],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Open Sans",
+      "weights": [400, 600, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/md-usm/symbol.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-usm/symbol.svg"
+    }
+  },
+  "resources": {
+    "website": "https://usm.md/",
+    "contact": {
+      "phone": "022 577 401",
+      "address": "Str. A. Matievici 60, Chișinău, Moldova"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/USMoldova"
+    }
+  }
+}

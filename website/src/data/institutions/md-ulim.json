@@ -1,0 +1,64 @@
+{
+  "id": "md-ulim",
+  "slug": "universitatea-de-limbi-internationale-din-moldova",
+  "name": "Universitatea de Limbi Internaționale din Moldova",
+  "shortname": "ULIM",
+  "category": "universitate",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-03-27",
+    "keywords": ["moldova", "universitate", "ulim", "educație", "limbi", "internaționale", "chișinău"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Universitatea de Limbi Internaționale din Moldova este o instituție de învățământ superior privată din Republica Moldova, specializată în predarea limbilor străine și domenii conexe.",
+  "colors": [
+    {
+      "name": "Negru",
+      "hex": "#131313",
+      "rgb": [19, 19, 19],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "neutral"
+    },
+    {
+      "name": "Gri Albăstrui",
+      "hex": "#7c8c9f",
+      "rgb": [124, 140, 159],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Inter",
+      "weights": [400, 600, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/md-ulim/symbol.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-ulim/symbol.svg"
+    }
+  },
+  "resources": {
+    "website": "https://ulim.md/",
+    "contact": {
+      "phone": "022 220 029",
+      "address": "Str. Vlaicu Pârcălab nr. 52, Chișinău, Moldova, MD-2012"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/UniversitateaLiberaInternationala"
+    }
+  }
+}

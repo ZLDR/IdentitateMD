@@ -29,6 +29,7 @@ export type InstitutionCategory =
   | "proiect-ue"
   | "institutie-cultura"
   | "consilii"
+  | "universitate"
   | "altele";
 
 /**

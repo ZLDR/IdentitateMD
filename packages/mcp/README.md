@@ -57,7 +57,7 @@ Search institutions by name, keyword, or category.
 | `category` | string (optional) | Filter by category ID (see below) |
 | `limit` | number (default: 10) | Max results (1–50) |
 
-**Category IDs:** `guvern`, `minister`, `directie`, `agentie`, `primarie`, `institutie-cultura`, `consilii`, `servicii`, `parlament`, `altele`
+**Category IDs:** `guvern`, `minister`, `directie`, `agentie`, `primarie`, `institutie-cultura`, `consilii`, `servicii`, `parlament`, `universitate`, `altele`
 
 ---
 
@@ -116,7 +116,7 @@ Show me the SVG content of the Parlamentul Republicii Moldova symbol logo.
 
 ## Institutions
 
-28 Moldovan government institutions are available, including:
+30 Moldovan government institutions are available, including:
 
 - `md-guvern` — Guvernul Republicii Moldova
 - `md-parlament` — Parlamentul Republicii Moldova
@@ -131,6 +131,8 @@ Show me the SVG content of the Parlamentul Republicii Moldova symbol logo.
 - `md-bns` — Biroul Național de Statistică
 - `md-primaria-chisinau` — Primăria Municipiului Chișinău
 - `md-stema` — Stema Republicii Moldova
+- `md-usm` — Universitatea de Stat din Moldova
+- `md-ulim` — Universitatea de Limbi Internaționale din Moldova
 - and more...
 
 Full list: [identitate.md](https://identitate.md)

@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-20T00:00:09.819Z",
-  "count": 28,
-  "totalLogos": 127,
+  "generated": "2026-03-27T16:01:03.368Z",
+  "count": 30,
+  "totalLogos": 129,
   "institutions": [
     {
       "id": "eu-flag",
@@ -564,6 +564,34 @@
         "symbol": {
           "alternative-color": "/logos/md-stisc/symbol/alternative-color.svg",
           "color": "/logos/md-stisc/symbol/color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-ulim",
+      "slug": "md-ulim",
+      "name": "Universitatea de Limbi Internaționale din Moldova",
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-ulim/symbol.svg"
+        }
+      }
+    },
+    {
+      "id": "md-usm",
+      "slug": "md-usm",
+      "name": "Universitatea de Stat din Moldova",
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-usm/symbol.svg"
         }
       }
     }
