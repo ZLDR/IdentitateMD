@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-27T16:20:19.396Z",
+  "generatedAt": "2026-03-28T20:48:05.062Z",
   "total": 31,
   "stats": {
     "byCategory": {
@@ -54,6 +54,11 @@
       "id": "altele",
       "label": "Altele",
       "count": 5
+    },
+    {
+      "id": "universitate",
+      "label": "Universități",
+      "count": 3
     }
   ],
   "institutions": [
