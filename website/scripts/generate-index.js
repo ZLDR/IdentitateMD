@@ -32,6 +32,7 @@ const CATEGORY_LABELS = {
   "proiect-ue": "Proiecte UE / PNRR",
   "institutie-cultura": "Cultură",
   altele: "Altele",
+  universitate: "Universități",
 };
 
 const CATEGORY_ORDER = [
@@ -46,6 +47,7 @@ const CATEGORY_ORDER = [
   "proiect-ue",
   "institutie-cultura",
   "altele",
+  "universitate",
 ];
 
 async function generateIndex() {
@@ -138,7 +140,10 @@ async function generateIndex() {
   await writeFile(OUTPUT_FILE, indexJson, "utf-8");
 
   // Also copy to packages/logos so the MCP server can bundle it
-  const logosIndexPath = join(__dirname, "../../packages/logos/institutions-index.json");
+  const logosIndexPath = join(
+    __dirname,
+    "../../packages/logos/institutions-index.json",
+  );
   await writeFile(logosIndexPath, indexJson, "utf-8");
 
   console.log(`\n📋 REZUMAT`);

@@ -80,7 +80,7 @@ Câmpuri obligatorii:
 - `id` — format `md-{slug}` (ex: `md-anaf`)
 - `slug` — slug URL (ex: `anaf`)
 - `name` — numele complet oficial
-- `category` — una din: `guvern`, `minister`, `agentie`, `autoritate`, `primarie`, `consiliu-judetean`, `prefectura`, `proiect-ue`, `institutie-cultura`, `altele`
+- `category` — una din: `guvern`, `minister`, `agentie`, `autoritate`, `primarie`, `universitate` , `proiect-ue`, `institutie-cultura`, `altele`
 - `meta.version` — versiunea datelor
 - `meta.last_updated` — data ultimei modificări (ISO 8601)
 - `meta.keywords` — array de cuvinte cheie pentru căutare

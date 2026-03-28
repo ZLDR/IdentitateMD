@@ -81,7 +81,16 @@ const logoAssetGroupSchema = {
 
 const institutionSchema = {
   type: "object",
-  required: ["id", "slug", "name", "category", "meta", "location", "description", "assets"],
+  required: [
+    "id",
+    "slug",
+    "name",
+    "category",
+    "meta",
+    "location",
+    "description",
+    "assets",
+  ],
   additionalProperties: true,
   properties: {
     id: {
@@ -108,6 +117,7 @@ const institutionSchema = {
         "servicii",
         "consilii",
         "altele",
+        "universitate",
       ],
     },
     meta: {
@@ -246,7 +256,9 @@ async function validateInstitutions() {
         const path = error.instancePath || "(root)";
         console.error(`      ${path}: ${error.message}`);
         if (error.params?.allowedValues) {
-          console.error(`        Allowed: ${error.params.allowedValues.join(", ")}`);
+          console.error(
+            `        Allowed: ${error.params.allowedValues.join(", ")}`,
+          );
         }
       }
       console.error();
@@ -258,7 +270,9 @@ async function validateInstitutions() {
   console.log(`Results: ${passCount} passed, ${failCount} failed`);
 
   if (failCount > 0) {
-    console.error(`\nValidation failed. Fix the errors above before continuing.`);
+    console.error(
+      `\nValidation failed. Fix the errors above before continuing.`,
+    );
     process.exit(1);
   } else {
     console.log(`\nAll institution files are valid.`);
