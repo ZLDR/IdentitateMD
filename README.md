@@ -1,7 +1,9 @@
 # IdentitateMD
 
 [![Website](https://img.shields.io/badge/website-identitate.md-blue)](https://identitate.md)
-[![npm version](https://img.shields.io/npm/v/@identitate-md/logos.svg)](https://www.npmjs.com/package/@identitate-md/logos)
+[![npm logos](https://img.shields.io/npm/v/@identitate-md/logos.svg?label=npm%20logos)](https://www.npmjs.com/package/@identitate-md/logos)
+[![npm mcp](https://img.shields.io/npm/v/@identitate-md/mcp.svg?label=npm%20mcp)](https://www.npmjs.com/package/@identitate-md/mcp)
+[![Institutions](https://img.shields.io/badge/instituții-32-blue)](https://identitate.md/catalog)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova.
@@ -182,23 +184,17 @@ Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude 
 - Steagul Republicii Moldova
 - Steagul Uniunii Europene
 
-**Total: 28 instituții**
+**Total: 32 instituții** (actualizat automat la fiecare `data:generate`)
 
 ## 🤝 Contribuții
 
-Contribuțiile sunt binevenite! Pentru a contribui:
+Contribuțiile sunt binevenite! Adaugă o instituție nouă în 3 pași:
 
-1. Consultă [CONTRIBUTING.md](website/CONTRIBUTING.md)
-2. Fork repository-ul
-3. Creează un branch pentru feature-ul tău
-4. Trimite un Pull Request
+1. **Creează fișierul de date** — `website/src/data/institutions/{id}.json` cu numele, categoria, culorile și resursele instituției
+2. **Adaugă logo-urile SVG** — în `packages/logos/logos/{id}/` și copiază-le și în `website/public/logos/{id}/`
+3. **Regenerează indexul** — `cd website && npm run data:generate`, apoi deschide un Pull Request
 
-### Adaugă un logo nou
-
-1. Creează `website/src/data/institutions/[slug].json` cu datele instituției
-2. Adaugă logo-urile SVG în `packages/logos/logos/[id]/`
-3. Copiază logo-urile și în `website/public/logos/[id]/`
-4. Rulează `npm run data:generate` în `website/` pentru a regenera indexurile
+Ghid complet: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 📄 Licență
 

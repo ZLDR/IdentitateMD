@@ -30,6 +30,13 @@ const pageDescription = institution
   ? `Sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} — descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
   : undefined;
 
+const primaryLogoPath = institution?.assets?.main?.color
+  ?? institution?.assets?.horizontal?.color
+  ?? institution?.assets?.vertical?.color
+  ?? institution?.assets?.symbol?.color
+  ?? null;
+const ogImage = primaryLogoPath ? `https://identitate.md${primaryLogoPath}` : undefined;
+
 const breadcrumbJsonLd = institution ? JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -72,6 +79,7 @@ const institutionJsonLd = institution ? JSON.stringify({
   initialPathId={initialPathId}
   pageTitle={pageTitle}
   pageDescription={pageDescription}
+  ogImage={ogImage}
   institutionJsonLd={institutionJsonLd}
   breadcrumbJsonLd={breadcrumbJsonLd}
 />

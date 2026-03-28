@@ -11,6 +11,7 @@
  */
 
 import { readdir, readFile, writeFile } from "fs/promises";
+import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -154,6 +155,22 @@ async function generateIndex() {
   console.log(`   Cu SVG: ${withSvg}`);
   console.log(`\n💾 Index salvat: ${OUTPUT_FILE}`);
   console.log(`💾 Copiat la: ${logosIndexPath}`);
+
+  // Auto-update institution count badge in README.md
+  const readmePath = join(__dirname, "../../README.md");
+  try {
+    const readme = readFileSync(readmePath, "utf-8");
+    const updated = readme.replace(
+      /!\[Institutions\]\(https:\/\/img\.shields\.io\/badge\/instituții-\d+-blue\)/,
+      `![Institutions](https://img.shields.io/badge/instituții-${institutions.length}-blue)`
+    );
+    if (updated !== readme) {
+      writeFileSync(readmePath, updated, "utf-8");
+      console.log(`🏷️  README badge actualizat: ${institutions.length} instituții`);
+    }
+  } catch {
+    // README update is non-critical
+  }
 }
 
 generateIndex().catch(console.error);
