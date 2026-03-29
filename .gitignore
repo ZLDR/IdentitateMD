@@ -12,3 +12,5 @@ dist/
 CLAUDE.md
 marketing/
 .openlogs/
+.rtk/
+Search Strategy*.md
