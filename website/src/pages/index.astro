@@ -9,7 +9,7 @@ import type { Institution } from '../types/institution';
 
 const institutions = institutionIndex.institutions as unknown as Institution[];
 const catalogPathBySlug = buildCatalogPathMap(institutions);
-const RECENT_ITEMS_LIMIT = 5;
+const RECENT_ITEMS_LIMIT = 6;
 
 function toTimestamp(value?: string): number {
   if (!value) return 0;
@@ -156,23 +156,29 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
           Adăugate recent
         </h2>
         <p class="text-xs text-surface-500 mb-3">
-          Ultimele {recentInstitutions.length} instituții actualizate în catalog.
+          Cele mai recente instituții actualizate în catalog.
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-          {recentInstitutions.map((inst) => {
+          {recentInstitutions.map((inst, index) => {
+            const visibilityClass =
+              index >= 5 ? 'hidden sm:block lg:hidden' :
+              index >= 3 ? 'hidden sm:block' :
+              '';
             const logoPath = getPrimaryLogoPath(inst) || '';
             const hasSvgFlag = hasSvg(inst);
             return (
-              <LogoCard
-                slug={inst.slug}
-                catalogPath={catalogPathBySlug[inst.slug]}
-                name={inst.name}
-                shortname={inst.shortname}
-                category={inst.category}
-                logoPath={logoPath}
-                hasSvg={hasSvgFlag}
-                keywords={inst.meta.keywords}
-              />
+              <div class={visibilityClass}>
+                <LogoCard
+                  slug={inst.slug}
+                  catalogPath={catalogPathBySlug[inst.slug]}
+                  name={inst.name}
+                  shortname={inst.shortname}
+                  category={inst.category}
+                  logoPath={logoPath}
+                  hasSvg={hasSvgFlag}
+                  keywords={inst.meta.keywords}
+                />
+              </div>
             );
           })}
         </div>
