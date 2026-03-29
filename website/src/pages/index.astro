@@ -29,17 +29,17 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   description={`Descarcă gratuit sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${institutionIndex.total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
 >
   <!-- Hero Section -->
-  <section class="relative overflow-hidden">
+  <section class="relative overflow-hidden min-h-[70vh] flex items-center">
     <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-surface-50 -z-10"></div>
     <Analytics />
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center w-full">
       <!-- MCP launch eyebrow -->
       <div class="mb-6">
         <a href="/mcp" class="group inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100 hover:bg-primary-200 border border-primary-200 transition-colors">
           <span class="text-[10px] font-semibold text-primary-600 uppercase tracking-widest">Nou</span>
           <span class="w-px h-3 bg-primary-300"></span>
-          <span class="text-[12px] text-primary-800">MCP Server disponibil — integrează logourile direct în Claude, Cursor și Windsurf</span>
+          <span class="text-[12px] text-primary-800">MCP Disponibil</span>
           <svg class="w-3.5 h-3.5 text-primary-500 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -50,48 +50,9 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-sm text-surface-500 max-w-xl mx-auto mb-5 text-balance">
-        Registru cu siglele instituțiilor publice in format vectorial.
+      <p class="text-sm text-surface-500 max-w-xl mx-auto mb-12 text-balance">
+        Sigle oficiale ale ministerelor, primăriilor și instituțiilor publice — în format SVG. Pentru designeri, dezvoltatori și agenții care lucrează pe proiecte moldovenești — fără căutat pe zeci de site-uri de ministere.
       </p>
-
-      <!-- npm / MCP tabs -->
-      <div class="mb-6 flex flex-col items-center gap-2" id="install-tabs">
-        <!-- Tab buttons -->
-        <div class="inline-flex items-center gap-1 bg-surface-100 border border-surface-200 rounded-md p-0.5">
-          <button type="button" data-tab="npm" class="install-tab install-tab-active text-[11px] font-medium px-3 py-1 rounded transition-colors">npm</button>
-          <button type="button" data-tab="mcp" class="install-tab text-[11px] font-medium px-3 py-1 rounded transition-colors">MCP</button>
-        </div>
-
-        <!-- npm panel -->
-        <div data-panel="npm" class="install-panel inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
-          <code class="text-white"><span class="text-green-400">npm i</span> @identitate-md/logos</code>
-          <button
-            type="button"
-            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
-            data-value="npm install @identitate-md/logos"
-            title="Copiază comanda"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- MCP panel -->
-        <div data-panel="mcp" class="install-panel hidden inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
-          <code class="text-white"><span class="text-blue-400">claude mcp add</span> identitate-md -- npx -y @identitate-md/mcp</code>
-          <button
-            type="button"
-            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
-            data-value="claude mcp add identitate-md -- npx -y @identitate-md/mcp"
-            title="Copiază comanda"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </button>
-        </div>
-      </div>
 
       <!-- Search Input -->
       <div class="relative max-w-xl mx-auto" id="search-wrapper">
@@ -115,6 +76,27 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         </div>
         <div id="search-hint" class="mt-2 text-xs text-surface-400 hidden">
           <span class="hidden md:inline"><kbd class="px-1.5 py-0.5 bg-surface-100 rounded text-surface-500 font-mono">ESC</kbd> pentru a reseta</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="bg-surface-50 border-y border-surface-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+        <div>
+          <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Sigle oficiale</p>
+          <p class="text-xs text-surface-500">Nu imagini scanate sau recreate. Vectori descărcați direct din sursele instituțiilor sau reconstituiți cu fidelitate.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Actualizat la rebranduri</p>
+          <p class="text-xs text-surface-500">Când o instituție se rebranduiește, catalogul se actualizează. Nu mai trebuie să verifici dacă sigla pe care o ai e în continuare cea curentă.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Menținut de comunitate</p>
+          <p class="text-xs text-surface-500">Oricine poate contribui — adaugă o instituție lipsă, corectează o siglă, îmbunătățește metadatele. Totul e open-source pe GitHub.</p>
         </div>
       </div>
     </div>
@@ -198,6 +180,54 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         <button type="button" id="empty-search-all" class="btn-secondary hidden">Caută în toate categoriile</button>
         <a href="/solicita" class="btn-primary">Solicită adăugarea</a>
       </div>
+    </div>
+  </section>
+
+  <!-- For Developers -->
+  <section class="bg-surface-50 border-t border-surface-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+      <p class="text-[11px] font-medium text-surface-400 uppercase tracking-widest mb-1">Pentru Dezvoltatori</p>
+      <p class="text-xs text-surface-500 mb-6">Integrează siglele direct în proiectul tău via npm sau în AI tools via MCP.</p>
+      <div class="flex flex-col items-center gap-2" id="install-tabs">
+        <!-- Tab buttons -->
+        <div class="inline-flex items-center gap-1 bg-surface-100 border border-surface-200 rounded-md p-0.5">
+          <button type="button" data-tab="npm" class="install-tab install-tab-active text-[11px] font-medium px-3 py-1 rounded transition-colors">npm</button>
+          <button type="button" data-tab="mcp" class="install-tab text-[11px] font-medium px-3 py-1 rounded transition-colors">MCP</button>
+        </div>
+
+        <!-- npm panel -->
+        <div data-panel="npm" class="install-panel inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
+          <code class="text-white"><span class="text-green-400">npm i</span> @identitate-md/logos</code>
+          <button
+            type="button"
+            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
+            data-value="npm install @identitate-md/logos"
+            title="Copiază comanda"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- MCP panel -->
+        <div data-panel="mcp" class="install-panel hidden inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
+          <code class="text-white"><span class="text-blue-400">claude mcp add</span> identitate-md -- npx -y @identitate-md/mcp</code>
+          <button
+            type="button"
+            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
+            data-value="claude mcp add identitate-md -- npx -y @identitate-md/mcp"
+            title="Copiază comanda"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <p class="mt-6 text-xs text-surface-400">
+        <a href="/mcp" class="underline underline-offset-2 hover:text-surface-600 transition-colors">Documentație completă MCP →</a>
+      </p>
     </div>
   </section>
 </BaseLayout>
