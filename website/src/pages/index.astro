@@ -9,6 +9,22 @@ import type { Institution } from '../types/institution';
 
 const institutions = institutionIndex.institutions as unknown as Institution[];
 const catalogPathBySlug = buildCatalogPathMap(institutions);
+const RECENT_ITEMS_LIMIT = 5;
+
+function toTimestamp(value?: string): number {
+  if (!value) return 0;
+  const timestamp = Date.parse(value);
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+const recentInstitutions = [...institutions]
+  .sort((a, b) => {
+    const bTime = toTimestamp(b.meta?.last_updated);
+    const aTime = toTimestamp(a.meta?.last_updated);
+    if (bTime !== aTime) return bTime - aTime;
+    return a.name.localeCompare(b.name, "ro");
+  })
+  .slice(0, RECENT_ITEMS_LIMIT);
 
 // Grupare pe categorii cu ordine prestabilită
 const grouped = new Map<string, typeof institutions>();
@@ -84,8 +100,8 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
   <!-- Value Proposition -->
   <section class="bg-surface-50 border-y border-surface-200 hidden md:block">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-10 text-center sm:text-left">
         <div>
           <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Sigle oficiale</p>
           <p class="text-xs text-surface-500">Nu imagini scanate sau recreate. Vectori descărcați direct din sursele instituțiilor sau reconstituiți cu fidelitate.</p>
@@ -133,14 +149,36 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
   <!-- Logo Grid -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <!-- Results info -->
-    <div class="flex items-center justify-between mb-4">
-      <p id="results-count" class="text-xs text-surface-500">
-        {institutions.length} instituții disponibile
-      </p>
-    </div>
-
     <!-- Single DOM: Category Sections (cards are shown/hidden in-place) -->
+    {recentInstitutions.length > 0 && (
+      <div id="recent-section" class="mb-8">
+        <h2 class="category-heading text-lg font-semibold text-primary-900 mb-1">
+          Adăugate recent
+        </h2>
+        <p class="text-xs text-surface-500 mb-3">
+          Ultimele {recentInstitutions.length} instituții actualizate în catalog.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+          {recentInstitutions.map((inst) => {
+            const logoPath = getPrimaryLogoPath(inst) || '';
+            const hasSvgFlag = hasSvg(inst);
+            return (
+              <LogoCard
+                slug={inst.slug}
+                catalogPath={catalogPathBySlug[inst.slug]}
+                name={inst.name}
+                shortname={inst.shortname}
+                category={inst.category}
+                logoPath={logoPath}
+                hasSvg={hasSvgFlag}
+                keywords={inst.meta.keywords}
+              />
+            );
+          })}
+        </div>
+      </div>
+    )}
+
     <div id="category-sections">
       {[...grouped.entries()].map(([cat, items]) => (
         <div class="category-section mb-8" data-category-section={cat}>
@@ -268,8 +306,8 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   const searchShortcut = document.getElementById('search-shortcut')!;
   const filterBar = document.getElementById('filter-bar')!;
   const categorySections = document.getElementById('category-sections')!;
+  const recentSection = document.getElementById('recent-section');
   const emptyState = document.getElementById('empty-state')!;
-  const resultsCount = document.getElementById('results-count')!;
   const filterGradient = document.getElementById('filter-gradient');
 
   // Empty state elements
@@ -321,6 +359,8 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   // ── Core filter/search ─────────────────────────────────────────────
   function filterAndSearch() {
     const query = searchQuery.toLowerCase().trim();
+    const showRecentSection = activeCategory === 'all' && !query;
+    recentSection?.classList.toggle('hidden', !showRecentSection);
 
     // Get matching slugs from search
     const matchingSlugs = query
@@ -365,9 +405,6 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
       totalVisible += sectionVisible;
     });
-
-    // Update UI counts
-    resultsCount.textContent = `${totalVisible} ${totalVisible === 1 ? 'instituție disponibilă' : 'instituții disponibile'}`;
 
     // Empty state
     if (totalVisible === 0) {
