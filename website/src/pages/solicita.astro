@@ -34,48 +34,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           />
       </div>
 
-      <!-- Website -->
-      <div>
-        <label for="institution-website" class="block text-xs font-medium text-primary-900 mb-1">
-          Website Oficial
-          <span class="text-surface-400 font-normal">(opțional)</span>
-        </label>
-        <input
-          type="url"
-          id="institution-website"
-          name="website"
-          placeholder="https://primaria-cimislia.md"
-          class="w-full px-3 py-2 rounded border border-surface-200 text-xs
-                 placeholder-surface-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10"
-        />
-      </div>
-
-      <!-- Category -->
-      <div>
-        <label for="institution-category" class="block text-xs font-medium text-primary-900 mb-1">
-          Tip Instituție
-        </label>
-        <select
-          id="institution-category"
-          name="category"
-          class="w-full px-3 py-2 rounded border border-surface-200 text-xs text-primary-900
-                 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10"
-        >
-          <option value="">— Selectează —</option>
-          <option value="guvern">Guvern / Prezidență</option>
-          <option value="minister">Minister</option>
-          <option value="directie">Direcție</option>
-          <option value="agentie">Agenție Guvernamentală</option>
-          <option value="autoritate">Autoritate Independentă</option>
-          <option value="primarie">Primărie</option>
-          <option value="consiliu-judetean">Consiliu Județean</option>
-          <option value="prefectura">Prefectură</option>
-          <option value="proiect-ue">Proiect UE / PNRR</option>
-          <option value="institutie-cultura">Instituție de Cultură</option>
-          <option value="altele">Altele</option>
-        </select>
-      </div>
-
       <!-- Notes -->
       <div>
         <label for="notes" class="block text-xs font-medium text-primary-900 mb-1">
@@ -91,6 +49,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                  placeholder-surface-400 resize-y
                  focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10"
         ></textarea>
+      </div>
+
+      <!-- Notify Email -->
+      <div>
+        <label for="notify-email" class="block text-xs font-medium text-primary-900 mb-1">
+          Email pentru notificare <span class="text-red-500">*</span>
+        </label>
+        <input
+          type="email"
+          id="notify-email"
+          name="notify_email"
+          required
+          placeholder="adresa@email.com"
+          class="w-full px-3 py-2 rounded border border-surface-200 text-xs placeholder-surface-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10"
+        />
+        <p class="mt-1 text-xs text-surface-400">Te vom anunța când instituția și logo-urile sunt publicate.</p>
       </div>
 
       <!-- Submit -->
@@ -116,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="mt-6 bg-surface-50 border border-surface-200 rounded p-4">
       <p class="text-xs text-surface-500 leading-relaxed">
         <strong class="text-surface-600">Notă privind datele:</strong>
-        Datele introduse vor fi trimise echipei IdentitateMD prin email și folosite exclusiv pentru adăugarea instituției în registru. Consultă
+        Datele introduse vor fi trimise echipei IdentitateMD prin email și folosite exclusiv pentru adăugarea instituției în registru. Adresa de email, dacă este furnizată, va fi folosită doar pentru a te notifica când instituția este publicată. Consultă
         <a href="/privacy" class="text-primary-600 underline">Politica de Confidențialitate</a> pentru detalii.
       </p>
     </div>
