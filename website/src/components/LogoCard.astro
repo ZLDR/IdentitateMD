@@ -16,9 +16,10 @@ export interface Props {
   logoPath: string;
   hasSvg: boolean;
   keywords?: string[];
+  className?: string;
 }
 
-const { slug, catalogPath, name, shortname, category, logoPath, hasSvg, keywords } = Astro.props;
+const { slug, catalogPath, name, shortname, category, logoPath, hasSvg, keywords, className } = Astro.props;
 
 const displayName = name;
 const localFallbackPath = toLocalLogosPath(logoPath);
@@ -28,7 +29,7 @@ const remoteFallbackPath = localFallbackPath && logoPath !== localFallbackPath ?
 
 <a
   href={`/catalog/${catalogPath || slug}`}
-  class="logo-card text-left group"
+  class:list={['logo-card text-left group', className]}
   aria-label={`Vezi detalii pentru ${name}`}
   data-institution-id={slug}
 >
