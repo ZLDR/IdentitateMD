@@ -64,10 +64,10 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         <input
           type="search"
           id="search-input"
-          class="search-input pl-12 pr-12"
+          class="search-input pl-12 pr-12 sm:text-[14px] text-sm"
           placeholder="Caută Primăria Municipiului Chișinău, Ministerul Educației..."
           data-placeholder-long={'Caută Primăria Municipiului Chișinău", „Ministerul Educației"...'}
-          data-placeholder-short="Caută instituții..."
+          data-placeholder-short="Ministerul Educației..."
           autocomplete="off"
         />
         <!-- Keyboard shortcut hint — hidden on mobile (no physical keyboard) -->
@@ -83,7 +83,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   </section>
 
   <!-- Value Proposition -->
-  <section class="bg-surface-50 border-y border-surface-200">
+  <section class="bg-surface-50 border-y border-surface-200 hidden md:block">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
         <div>
