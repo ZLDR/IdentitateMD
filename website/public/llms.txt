@@ -1,8 +1,8 @@
-# Identitate.MD
+# identitate.md
 
-> identitate.mdis the open-source digital registry of official visual identities for public institutions in the Republic of Moldova. It provides free access to vector logos (SVG), official brand colors (HEX/RGB), and typography for 28+ government institutions. The project is civic, community-driven, and freely available for designers, journalists, NGOs, and developers.
+> identitate.md is the open-source digital registry of official visual identities for public institutions in the Republic of Moldova. It provides free access to vector logos (SVG), official brand colors (HEX/RGB), and typography for 28+ government institutions. The project is civic, community-driven, and freely available for designers, journalists, NGOs, and developers.
 
-identitate.mdeste registrul digital open-source al identității vizuale oficiale a instituțiilor publice din Republica Moldova. Oferă acces gratuit la sigle vectoriale (SVG), culori de brand (HEX/RGB) și tipografie pentru 28+ instituții guvernamentale.
+identitate.md este registrul digital open-source al identității vizuale oficiale a instituțiilor publice din Republica Moldova. Oferă acces gratuit la sigle vectoriale (SVG), culori de brand (HEX/RGB) și tipografie pentru 28+ instituții guvernamentale.
 
 ## Key pages
 
@@ -15,7 +15,7 @@ identitate.mdeste registrul digital open-source al identității vizuale oficial
 
 ## MCP Server (AI Agent Integration)
 
-identitate.mdexposes an MCP (Model Context Protocol) server so AI assistants can query institution logos, colors, and branding data directly. Install with:
+identitate.md exposes an MCP (Model Context Protocol) server so AI assistants can query institution logos, colors, and branding data directly. Install with:
 
 ```
 claude mcp add identitate-md -- npx -y identitate-md-mcp
