@@ -140,3 +140,35 @@
     display: none;
   }
 }
+
+/* ─── Logo Marquee ───────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-track {
+  width: max-content;
+}
+.marquee-left {
+  animation: marquee-left 45s linear infinite;
+}
+.marquee-right {
+  animation: marquee-right 36s linear infinite;
+}
+/* Pause state applied via JS — no CSS :hover to avoid style
+   recalculation triggering animation restarts */
+.marquee-track.is-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left,
+  .marquee-right {
+    animation: none;
+  }
+}

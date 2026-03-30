@@ -53,7 +53,8 @@
   "assets": {
     "main": {
       "type": "symbol",
-      "color": "/logos/md-primaria-chisinau/symbol.svg"
+      "color": "/logos/md-primaria-chisinau/symbol.svg",
+      "preview": "dark"
     },
     "horizontal": {
       "type": "horizontal",

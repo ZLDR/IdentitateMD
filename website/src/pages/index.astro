@@ -4,6 +4,7 @@ import LogoCard from '../components/LogoCard.astro';
 import Analytics from '@vercel/analytics/astro'
 import institutionIndex from '../data/institutions-index.json';
 import { getPrimaryLogoPath, hasSvg, getDisplayName, buildCatalogPathMap } from '../lib/helpers';
+import { resolveAssetPath } from '../lib/cdn-helpers';
 import { CATEGORY_LABELS, CATEGORY_ORDER } from '../lib/labels';
 import type { Institution } from '../types/institution';
 
@@ -26,6 +27,37 @@ const recentInstitutions = [...institutions]
   })
   .slice(0, RECENT_ITEMS_LIMIT);
 
+// Marquee helpers — use LOCAL paths to avoid CDN lag for recently-added institutions
+function getMarqueeLogoPath(inst: Institution): string | null {
+  const main = inst.assets.main;
+  if (!main) return null;
+  const order = [main.color, main.dark_mode, main.black, main.white, main.monochrome];
+  for (const asset of order) {
+    if (asset) {
+      const p = resolveAssetPath(asset, false); // local, not CDN
+      if (p) return p;
+    }
+  }
+  if (main.png) return resolveAssetPath(main.png.path, false);
+  return null;
+}
+
+function marqueeDarkBg(inst: Institution): boolean {
+  const main = inst.assets.main;
+  if (!main) return false;
+  if (main.preview === 'dark') return true;
+  // Heuristic: color-slot file is actually a white/light logo
+  const colorPath = typeof main.color === 'string' ? main.color : main.color?.local ?? '';
+  if (colorPath.toLowerCase().includes('white')) return true;
+  return false;
+}
+
+// Marquee: pick all institutions that have a logo, spread across two rows
+const withLogos = institutions.filter(i => getMarqueeLogoPath(i) !== null);
+const half = Math.ceil(withLogos.length / 2);
+const marqueeRow1 = withLogos.slice(0, half);
+const marqueeRow2 = withLogos.slice(half);
+
 // Grupare pe categorii cu ordine prestabilită
 const grouped = new Map<string, typeof institutions>();
 for (const cat of CATEGORY_ORDER) {
@@ -45,29 +77,40 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   description={`Descarcă gratuit sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${institutionIndex.total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
 >
   <!-- Hero Section -->
-  <section class="relative overflow-hidden min-h-[70vh] flex items-center">
+  <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-surface-50 -z-10"></div>
     <Analytics />
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center w-full">
-      <!-- MCP launch eyebrow -->
-      <div class="mb-6">
-        <a href="/mcp" class="group inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100 hover:bg-primary-200 border border-primary-200 transition-colors">
-          <span class="text-[10px] font-semibold text-primary-600 uppercase tracking-widest">Nou</span>
-          <span class="w-px h-3 bg-primary-300"></span>
-          <span class="text-[12px] text-primary-800">MCP Disponibil</span>
-          <svg class="w-3.5 h-3.5 text-primary-500 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center w-full">
+
+      <!-- Stats / eyebrow pills -->
+      <div class="mb-6 flex items-center justify-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0"></span>
+          {institutionIndex.total}+ instituții
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
+          SVG vectorial
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
+          Open source
+        </span>
+        <a href="/mcp" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-[11px] font-medium text-primary-700 shadow-sm hover:bg-primary-100 transition-colors">
+          <span class="text-[9px] font-bold uppercase tracking-wider text-primary-500 leading-none">Nou</span>
+          <span class="w-px h-2.5 bg-primary-200"></span>
+          MCP disponibil
         </a>
       </div>
 
       <!-- Title -->
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-900 leading-tight text-balance mb-3">
-        Identitatea Vizuală<br />a Republicii Moldova, <span class="text-primary-500">centralizată.</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-primary-900 leading-tight text-balance mb-4">
+        Sigle oficiale ale<br class="hidden sm:block" />
+        instituțiilor publice din <span class="text-primary-500">Moldova</span>.
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-sm text-surface-500 max-w-xl mx-auto mb-12 text-balance">
-        Sigle oficiale ale ministerelor, primăriilor și instituțiilor publice - în format SVG. Pentru designeri, dezvoltatori și agenții care lucrează pe proiecte moldovenești - fără căutat pe zeci de site-uri de ministere.
+      <p class="text-sm sm:text-[15px] text-surface-500 max-w-[480px] mx-auto mb-8 text-balance leading-relaxed">
+        SVG-uri vectoriale gratuite pentru ministere, primării și instituții de stat — descarcă direct sau integrează în proiect via npm și MCP.
       </p>
 
       <!-- Search Input -->
@@ -95,28 +138,103 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         </div>
       </div>
 
-    </div>
-  </section>
+      <!-- Quick category browse pills -->
+      <div class="flex items-center justify-center gap-1.5 flex-wrap mt-4">
+        <span class="text-[11px] text-surface-400 mr-0.5">Răsfoiește:</span>
+        {(['minister', 'primarie', 'agentie', 'universitate'] as const).map(cat => (
+          <button
+            class="hero-cat-btn px-2.5 py-1 rounded-full border border-surface-200 bg-white hover:border-primary-400 hover:text-primary-700 text-[11px] text-surface-600 transition-colors cursor-pointer"
+            data-category={cat}
+          >
+            {CATEGORY_LABELS[cat]}
+          </button>
+        ))}
+      </div>
 
-  <!-- Value Proposition -->
-  <section class="bg-surface-50 border-y border-surface-200 hidden md:block">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-10 text-center sm:text-left">
-        <div>
-          <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Sigle oficiale</p>
-          <p class="text-xs text-surface-500">Nu imagini scanate sau recreate. Vectori descărcați direct din sursele instituțiilor sau reconstituiți cu fidelitate.</p>
+    </div>
+
+    <!-- Logo marquee strip -->
+    <div class="relative mt-8 pb-14">
+      <!-- Fade edges -->
+      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-surface-50 to-transparent z-10"></div>
+      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-surface-50 to-transparent z-10"></div>
+
+      <!-- Row 1: scrolls left -->
+      <div class="marquee-row overflow-hidden mb-3">
+        <div class="marquee-track marquee-left flex gap-3">
+          {[...marqueeRow1, ...marqueeRow1].map((inst) => {
+            const logoPath = getMarqueeLogoPath(inst);
+            if (!logoPath) return null;
+            const dark = marqueeDarkBg(inst);
+            return (
+              <a
+                href={`/catalog/${catalogPathBySlug[inst.slug]}`}
+                class={`marquee-item shrink-0 w-28 h-[4.5rem] rounded border flex items-center justify-center p-3 transition-colors ${dark ? 'bg-primary-900 border-primary-800 hover:border-primary-600' : 'bg-white border-surface-200 hover:border-primary-400'}`}
+                title={inst.name}
+              >
+                <img
+                  src={logoPath}
+                  alt={inst.shortname || inst.name}
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            );
+          })}
         </div>
-        <div>
-          <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Actualizat la rebranduri</p>
-          <p class="text-xs text-surface-500">Când o instituție se rebranduiește, catalogul se actualizează ca să nu mai verifici dacă sigla pe care o ai este în continuare cea curentă.</p>
-        </div>
-        <div>
-          <p class="text-xs font-semibold text-primary-700 uppercase tracking-widest mb-1">Menținut de comunitate</p>
-          <p class="text-xs text-surface-500">Oricine poate contribui - adaugă o instituție lipsă, corectează o siglă, îmbunătățește metadatele. Totul e open-source pe GitHub.</p>
+      </div>
+
+      <!-- Row 2: scrolls right -->
+      <div class="marquee-row overflow-hidden">
+        <div class="marquee-track marquee-right flex gap-3">
+          {[...marqueeRow2, ...marqueeRow2].map((inst) => {
+            const logoPath = getMarqueeLogoPath(inst);
+            if (!logoPath) return null;
+            const dark = marqueeDarkBg(inst);
+            return (
+              <a
+                href={`/catalog/${catalogPathBySlug[inst.slug]}`}
+                class={`marquee-item shrink-0 w-28 h-[4.5rem] rounded border flex items-center justify-center p-3 transition-colors ${dark ? 'bg-primary-900 border-primary-800 hover:border-primary-600' : 'bg-white border-surface-200 hover:border-primary-400'}`}
+                title={inst.name}
+              >
+                <img
+                  src={logoPath}
+                  alt={inst.shortname || inst.name}
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Developer integration bar -->
+  <div class="border-b border-surface-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 text-center">
+        <span class="text-[11px] font-medium text-surface-500 uppercase tracking-widest shrink-0">Pentru dezvoltatori</span>
+        <div class="flex items-center gap-2.5 flex-wrap justify-center">
+          <div class="inline-flex items-center gap-2 bg-surface-900 rounded px-3 py-1.5">
+            <code class="text-white text-xs font-mono"><span class="text-green-400">npm i</span> @identitate-md/logos</code>
+            <button
+              class="copy-npm-btn p-1 -mr-0.5 rounded hover:bg-gray-700 text-gray-400 hover:text-white transition-colors shrink-0"
+              data-value="npm install @identitate-md/logos"
+              title="Copiază"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+          <span class="text-surface-400 text-[11px]">sau</span>
+          <a href="/mcp" class="text-xs text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2 transition-colors">MCP pentru AI tools →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Filter Bar - sticky on md+, scrolls away on mobile -->
   <section class="md:sticky md:top-12 z-30 bg-white/80 backdrop-blur-md border-b border-surface-200">
@@ -525,10 +643,9 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     });
   });
 
-  // Copy functionality for NPM command
+  // Copy functionality for all copy buttons
   document.addEventListener('DOMContentLoaded', () => {
-    const copyNpmBtn = document.querySelector('.copy-npm-btn');
-    if (copyNpmBtn) {
+    document.querySelectorAll('.copy-npm-btn').forEach(copyNpmBtn => {
       copyNpmBtn.addEventListener('click', async (e) => {
         e.stopPropagation();
         e.preventDefault();
@@ -539,7 +656,6 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         try {
           await navigator.clipboard.writeText(textToCopy);
 
-          // Visual feedback
           const originalIcon = btn.innerHTML;
           btn.innerHTML = `
             <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -559,6 +675,18 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
           setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
         }
       });
-    }
+    });
+
+    // Hero quick-category pills → activate the matching filter chip and scroll to grid
+    document.querySelectorAll('.hero-cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = (btn as HTMLElement).dataset.category!;
+        const filterChip = document.querySelector<HTMLButtonElement>(`#filter-bar [data-category="${cat}"]`);
+        if (filterChip) {
+          filterChip.click();
+          document.getElementById('category-sections')?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
   });
 </script>
