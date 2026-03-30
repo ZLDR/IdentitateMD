@@ -16,7 +16,7 @@ interface Props {
 
 const { title, description, ogImage, ogType, noindex, noFooter, darkChrome = false }: Props = Astro.props;
 
-const pageTitle = title || 'Identitate.MD — Siglele Oficiale ale Instituțiilor Publice din Moldova';
+const pageTitle = title || 'identitate.md- Siglele Oficiale ale Instituțiilor Publice din Moldova';
 const pageDescription = description || 'Registru digital open-source cu sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. Descarcă gratuit logo-uri, culori HEX/RGB și tipografie pentru ministere, agenții și primării.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
@@ -29,7 +29,7 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={pageDescription} />
     <meta name="keywords" content="identitate vizuala, sigle institutii Moldova, logo guvern, SVG logos Moldova, brand colors, Republica Moldova, visual identity, government branding" />
-    <meta name="author" content="Identitate.MD Community" />
+    <meta name="author" content="identitate.mdCommunity" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Canonical -->
@@ -76,7 +76,7 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
       "inLanguage": ["ro", "en"],
       "publisher": {
         "@type": "Organization",
-        "name": "Identitate.MD Community",
+        "name": "identitate.mdCommunity",
         "url": "https://identitate.md"
       },
       "potentialAction": {
@@ -91,13 +91,13 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Dataset",
-      "name": "Identitate.MD — Registry of Moldovan Public Institution Visual Identities",
+      "name": "identitate.md— Registry of Moldovan Public Institution Visual Identities",
       "description": "A comprehensive open dataset of official logos, brand colors, and visual identity assets for public institutions in the Republic of Moldova. Includes SVG vector logos in multiple layouts and color variants, official HEX/RGB color values, and typography specifications.",
       "url": "https://identitate.md",
       "license": "https://identitate.md/legal",
       "creator": {
         "@type": "Organization",
-        "name": "Identitate.MD Community",
+        "name": "identitate.mdCommunity",
         "url": "https://identitate.md"
       },
       "keywords": [
