@@ -252,7 +252,7 @@ async function callOpenRouter(apiKey, systemPrompt, userPrompt, attempt = 1) {
           attempt +
           "/" +
           MAX_RETRIES +
-          " — AI returned invalid JSON, retrying...",
+          " - AI returned invalid JSON, retrying...",
       );
       // Wait a bit before retrying
       await new Promise((r) => setTimeout(r, 2000 * attempt));
@@ -503,7 +503,7 @@ function extractColorsFromSvgFiles(slugDir, discovered, isFlat) {
 
   if (svgPaths.length === 0) return null;
 
-  // Prefer "color.svg" variants — read those first so their colors rank higher
+  // Prefer "color.svg" variants - read those first so their colors rank higher
   svgPaths.sort((a, b) => {
     const aIsColor = path.basename(a, ".svg").toLowerCase() === "color";
     const bIsColor = path.basename(b, ".svg").toLowerCase() === "color";
@@ -741,7 +741,7 @@ function buildAssetsFromFiles(slug, discovered, isFlat = false) {
       const baseName = path.basename(file, path.extname(file)).toLowerCase();
 
       if (isFlat) {
-        // Flat: file is like "symbol_color.svg" — extract variant from compound name
+        // Flat: file is like "symbol_color.svg" - extract variant from compound name
         for (const [variant, fieldName] of Object.entries(VARIANT_TO_FIELD)) {
           if (
             baseName === layout + "_" + variant ||
@@ -783,7 +783,7 @@ function buildSystemPrompt() {
     "\n" +
     "Your task: produce a SINGLE valid JSON object for this institution following the IdentitateMD v3 schema. Respond in Romanian where appropriate.\n" +
     "\n" +
-    'IMPORTANT: Do NOT include the "assets" field — it will be built automatically from the file structure.\n' +
+    'IMPORTANT: Do NOT include the "assets" field - it will be built automatically from the file structure.\n' +
     "\n" +
     "RULES:\n" +
     '- "id" must be "ro-{slug}"\n' +
@@ -799,21 +799,21 @@ function buildSystemPrompt() {
     '- "description": 1-2 sentences in Romanian describing the institution\n' +
     '- "usage_notes": null unless explicitly mentioned\n' +
     "\n" +
-    "COLORS (IMPORTANT — extract carefully):\n" +
+    "COLORS (IMPORTANT - extract carefully):\n" +
     '- Look for lines containing "culori", "culoare", "color", hex codes (#RRGGBB or RRGGBB without #).\n' +
     '- Formats vary:  "culori: #232048 , #C2423A"  or  "culori albastru: 374990 , rosu:E03544"  or  "culoare: gri inchis: 34495E primara"\n' +
     '- Each color object: { "name": string, "hex": "#RRGGBB" (always 6-digit with #), "rgb": [r,g,b], "cmyk": null, "pantone": null, "usage": "primary"|"secondary"|"accent"|"neutral" }\n' +
     "- If hex is provided WITHOUT #, add the # prefix. Always uppercase hex.\n" +
     '- If no colors found at all, set "colors" to null.\n' +
     "\n" +
-    "TYPOGRAPHY (IMPORTANT — extract carefully):\n" +
+    "TYPOGRAPHY (IMPORTANT - extract carefully):\n" +
     '- Look for lines containing "font", "tipografie", "typography", font family names.\n' +
     '- Formats vary:  "font Arial"  or  "font: open sans https://fonts.google.com/..."  or  "font: helvetica neue pro lt url: https://..."\n' +
     '- Structure: { "primary": { "family": "Font Name", "url": "https://..." or null, "weights": [] }, "secondary": null }\n' +
     "- ALWAYS return the typography object if a font name is found, even without a URL.\n" +
     '- If no font/typography info at all, set "typography" to null.\n' +
     "\n" +
-    "RESOURCES (IMPORTANT — extract carefully):\n" +
+    "RESOURCES (IMPORTANT - extract carefully):\n" +
     '- "resources.website": Look for lines containing "website", "site", or standalone https:// URLs that are NOT font URLs.\n' +
     '  Formats:  "website oficial: https://www.anaf.ro/"  or  "site: https://insse.ro/"\n' +
     '  ALWAYS include "https://" protocol. If domain-only found, prepend "https://".\n' +
@@ -928,7 +928,7 @@ function normalizeAiResponse(data, slug) {
     if (!("branding_manual" in d.resources)) d.resources.branding_manual = null;
     if (!("social_media" in d.resources)) d.resources.social_media = null;
 
-    // Normalize website URL — add protocol if missing
+    // Normalize website URL - add protocol if missing
     if (d.resources.website && typeof d.resources.website === "string") {
       let url = d.resources.website.trim();
       if (url && !/^https?:\/\//i.test(url)) {
@@ -1088,7 +1088,7 @@ async function processSlug(slug, apiKey) {
     }
   }
 
-  // SVG color fallback — if no colors from metadata.md or AI, scan SVG files
+  // SVG color fallback - if no colors from metadata.md or AI, scan SVG files
   if (!normalized.colors || normalized.colors.length === 0) {
     const svgColors = extractColorsFromSvgFiles(slugDir, discovered, isFlat);
     if (svgColors) {

@@ -4,22 +4,28 @@
  * Funcții pentru gestionarea URL-urilor CDN și fallback-uri
  */
 
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import type { AssetUrls } from '../types/institution';
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import type { AssetUrls } from "../types/institution";
 
 /**
- * Versiunea pachetului npm — citită automat din packages/logos/package.json la build time.
+ * Versiunea pachetului npm - citită automat din packages/logos/package.json la build time.
  * Nu mai trebuie actualizată manual.
  */
 function readLogosVersion(): string {
   try {
-    const pkgPath = resolve(process.cwd(), '..', 'packages', 'logos', 'package.json');
-    const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+    const pkgPath = resolve(
+      process.cwd(),
+      "..",
+      "packages",
+      "logos",
+      "package.json",
+    );
+    const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"));
     return pkg.version;
   } catch {
     // Fallback dacă fișierul nu e găsit (ex: CI izolat)
-    return 'latest';
+    return "latest";
   }
 }
 
@@ -37,16 +43,19 @@ export const CDN_PATTERNS = {
 
 /**
  * Generează CDN URLs din path local
- * 
+ *
  * @param localPath - Path-ul local (ex: "/logos/anaf/anaf.svg")
  * @param version - Versiunea pachetului (default: CDN_VERSION)
  * @returns Obiect AssetUrls cu CDN URLs
  */
-export function getCdnUrls(localPath: string, version: string = CDN_VERSION): AssetUrls {
+export function getCdnUrls(
+  localPath: string,
+  version: string = CDN_VERSION,
+): AssetUrls {
   return {
     cdn_primary: CDN_PATTERNS.jsdelivr(version, localPath),
     cdn_fallback: CDN_PATTERNS.unpkg(version, localPath),
-    local: localPath
+    local: localPath,
   };
 }
 
@@ -54,85 +63,91 @@ export function getCdnUrls(localPath: string, version: string = CDN_VERSION): As
  * Rezolvă AssetUrls la un string URL
  * Dacă asset e string (path local), generează automat CDN URL dacă preferCdn=true ȘI path începe cu /logos/
  * Dacă asset e object cu cdn_primary/cdn_fallback/local, folosește logica de fallback
- * 
+ *
  * @param asset - AssetUrls sau string
  * @param preferCdn - Dacă true, preferă CDN-ul; altfel folosește local (default: false)
  * @returns String URL
  */
-export function resolveAssetPath(asset: AssetUrls | undefined, preferCdn: boolean = false): string | null {
+export function resolveAssetPath(
+  asset: AssetUrls | undefined,
+  preferCdn: boolean = false,
+): string | null {
   if (!asset) return null;
-  
+
   // String path: generează CDN URL automat dacă e path local de logos
-  if (typeof asset === 'string') {
-    if (preferCdn && asset.startsWith('/logos/')) {
+  if (typeof asset === "string") {
+    if (preferCdn && asset.startsWith("/logos/")) {
       return CDN_PATTERNS.jsdelivr(CDN_VERSION, asset);
     }
     return asset;
   }
-  
+
   // Object cu CDN URLs explicite
   if (preferCdn) {
     return asset.cdn_primary || asset.cdn_fallback || asset.local;
   }
-  
+
   return asset.local;
 }
 
 /**
  * Extrage toate URL-urile disponibile pentru fallback
  * Dacă asset e string (path local), generează automat CDN URLs + local
- * 
+ *
  * @param asset - AssetUrls sau string
  * @returns Array cu toate URL-urile disponibile în ordinea fallback-ului
  */
 export function getAssetFallbackUrls(asset: AssetUrls | undefined): string[] {
   if (!asset) return [];
-  
+
   // String path: generează CDN fallback chain automat
-  if (typeof asset === 'string') {
-    if (asset.startsWith('/logos/')) {
+  if (typeof asset === "string") {
+    if (asset.startsWith("/logos/")) {
       return [
         CDN_PATTERNS.jsdelivr(CDN_VERSION, asset),
         CDN_PATTERNS.unpkg(CDN_VERSION, asset),
-        asset
+        asset,
       ];
     }
     return [asset];
   }
-  
+
   // Object cu CDN URLs explicite
   const urls: string[] = [];
   if (asset.cdn_primary) urls.push(asset.cdn_primary);
   if (asset.cdn_fallback) urls.push(asset.cdn_fallback);
   urls.push(asset.local);
-  
+
   return urls;
 }
 
 /**
  * Verifică dacă un asset are CDN URLs configurate
- * 
+ *
  * @param asset - AssetUrls sau string
  * @returns true dacă are CDN URLs
  */
 export function hasCdnUrls(asset: AssetUrls | undefined): boolean {
-  if (!asset || typeof asset === 'string') return false;
+  if (!asset || typeof asset === "string") return false;
   return !!(asset.cdn_primary || asset.cdn_fallback);
 }
 
 /**
  * Convertește un path local la AssetUrls complet cu CDN
- * 
+ *
  * @param localPath - Path-ul local
  * @param version - Versiunea pachetului
  * @returns AssetUrls complet
  */
-export function pathToAssetUrls(localPath: string | undefined, version: string = CDN_VERSION): AssetUrls | undefined {
+export function pathToAssetUrls(
+  localPath: string | undefined,
+  version: string = CDN_VERSION,
+): AssetUrls | undefined {
   if (!localPath) return undefined;
-  
+
   // Dacă e deja un obiect AssetUrls, returnează direct
-  if (typeof localPath !== 'string') return localPath;
-  
+  if (typeof localPath !== "string") return localPath;
+
   return getCdnUrls(localPath, version);
 }
 
@@ -140,9 +155,11 @@ export function pathToAssetUrls(localPath: string | undefined, version: string =
  * Convertește un URL CDN al pachetului la calea locală din /public/logos.
  * Returnează null dacă valoarea nu este un path logos recunoscut.
  */
-export function toLocalLogosPath(urlOrPath: string | null | undefined): string | null {
+export function toLocalLogosPath(
+  urlOrPath: string | null | undefined,
+): string | null {
   if (!urlOrPath) return null;
-  if (urlOrPath.startsWith('/logos/')) return urlOrPath;
+  if (urlOrPath.startsWith("/logos/")) return urlOrPath;
 
   const patterns = [
     /^https?:\/\/cdn\.jsdelivr\.net\/npm\/@identitate-md\/logos@[^/]+(\/logos\/.+)$/i,

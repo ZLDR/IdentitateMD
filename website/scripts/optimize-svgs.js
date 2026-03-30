@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * IdentitateMD — SVG Optimization (SVGO)
+ * IdentitateMD - SVG Optimization (SVGO)
  *
  * Scans packages/logos/logos/ and website/public/logos/ for SVG files,
  * deduplicates by content hash, and optimizes each with SVGO.
@@ -64,7 +64,7 @@ async function collectSvgFiles(dir) {
     try {
       entries = await readdir(currentDir, { withFileTypes: true });
     } catch {
-      // Directory might not exist — skip silently
+      // Directory might not exist - skip silently
       return;
     }
 
@@ -99,7 +99,7 @@ async function optimizeSvgs() {
     return;
   }
 
-  // Deduplicate by content hash — if two paths have identical content,
+  // Deduplicate by content hash - if two paths have identical content,
   // only process one of them (the first encountered)
   const seenHashes = new Map(); // hash -> first file path
   const uniqueFiles = [];
@@ -115,7 +115,7 @@ async function optimizeSvgs() {
 
     const hash = md5(content);
     if (seenHashes.has(hash)) {
-      // Duplicate content — skip but still track for reporting
+      // Duplicate content - skip but still track for reporting
       continue;
     }
 
@@ -124,7 +124,7 @@ async function optimizeSvgs() {
   }
 
   console.log(
-    `Found ${allFiles.length} SVG files, ${uniqueFiles.length} unique (${allFiles.length - uniqueFiles.length} duplicates skipped)\n`
+    `Found ${allFiles.length} SVG files, ${uniqueFiles.length} unique (${allFiles.length - uniqueFiles.length} duplicates skipped)\n`,
   );
 
   let processed = 0;
@@ -156,9 +156,12 @@ async function optimizeSvgs() {
     if (sizeAfter < sizeBefore) {
       try {
         await writeFile(filePath, optimized, "utf-8");
-        const savedPct = (((sizeBefore - sizeAfter) / sizeBefore) * 100).toFixed(1);
+        const savedPct = (
+          ((sizeBefore - sizeAfter) / sizeBefore) *
+          100
+        ).toFixed(1);
         console.log(
-          `OPT   ${filePath.replace(join(__dirname, "../.."), "")}\n      ${sizeBefore} → ${sizeAfter} bytes (${savedPct}% saved)`
+          `OPT   ${filePath.replace(join(__dirname, "../.."), "")}\n      ${sizeBefore} → ${sizeAfter} bytes (${savedPct}% saved)`,
         );
         processed++;
       } catch (err) {
@@ -166,8 +169,10 @@ async function optimizeSvgs() {
         skipped++;
       }
     } else {
-      // Already optimal — no change needed
-      console.log(`OK    ${filePath.replace(join(__dirname, "../.."), "")} (already optimal)`);
+      // Already optimal - no change needed
+      console.log(
+        `OK    ${filePath.replace(join(__dirname, "../.."), "")} (already optimal)`,
+      );
       processed++;
     }
   }
@@ -183,7 +188,9 @@ async function optimizeSvgs() {
   console.log(`Files skipped   : ${skipped}`);
   console.log(`Total before    : ${(totalBefore / 1024).toFixed(1)} KB`);
   console.log(`Total after     : ${(totalAfter / 1024).toFixed(1)} KB`);
-  console.log(`Total saved     : ${(totalSaved / 1024).toFixed(1)} KB (${totalSavedPct}%)`);
+  console.log(
+    `Total saved     : ${(totalSaved / 1024).toFixed(1)} KB (${totalSavedPct}%)`,
+  );
 }
 
 optimizeSvgs().catch((err) => {

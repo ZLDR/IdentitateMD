@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * IdentitateMD — Generator index instituții (v3.0)
+ * IdentitateMD - Generator index instituții (v3.0)
  *
  * Citește toate fișierele JSON din src/data/institutions/
  * și generează un index central (institutions-index.json)
@@ -162,11 +162,13 @@ async function generateIndex() {
     const readme = readFileSync(readmePath, "utf-8");
     const updated = readme.replace(
       /!\[Institutions\]\(https:\/\/img\.shields\.io\/badge\/instituții-\d+-blue\)/,
-      `![Institutions](https://img.shields.io/badge/instituții-${institutions.length}-blue)`
+      `![Institutions](https://img.shields.io/badge/instituții-${institutions.length}-blue)`,
     );
     if (updated !== readme) {
       writeFileSync(readmePath, updated, "utf-8");
-      console.log(`🏷️  README badge actualizat: ${institutions.length} instituții`);
+      console.log(
+        `🏷️  README badge actualizat: ${institutions.length} instituții`,
+      );
     }
   } catch {
     // README update is non-critical

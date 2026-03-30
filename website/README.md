@@ -2,7 +2,7 @@
 
 **Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova.**
 
-Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand — o singură sursă de adevăr, accesibilă gratuit.
+Logo-uri vectoriale (SVG), palete de culori oficiale și manuale de brand - o singură sursă de adevăr, accesibilă gratuit.
 
 ---
 
@@ -110,8 +110,18 @@ Fiecare instituție are un fișier JSON în `src/data/institutions/`:
   },
   "description": "Ministerul Culturii are în subordine instituții publice concertistice și teatrale, biblioteci, muzee și alte instituții publice.",
   "colors": [
-    { "name": "Albastru Oficial", "hex": "#0E4C90", "rgb": [14, 76, 144], "usage": "primary" },
-    { "name": "Alb", "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "secondary" }
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
   ],
   "typography": {
     "primary": { "family": "Trajan Pro" },
@@ -146,26 +156,26 @@ Fiecare instituție are un fișier JSON în `src/data/institutions/`:
 
 ### Categorii disponibile
 
-| Categorie            | Descriere                                       |
-| -------------------- | ----------------------------------------------- |
-| `guvern`             | Guvernul Republicii Moldova                    |
-| `minister`           | Ministere (8 instituții)                       |
-| `directie`           | Direcții guvernamentale                        |
-| `primarie`           | Primării și administrații locale                |
-| `institutie-cultura` | Instituții de cultură și muzee                  |
-| `parlament`          | Parlamentul Republicii Moldova                 |
-| `servicii`           | Servicii și autorități                         |
+| Categorie            | Descriere                                     |
+| -------------------- | --------------------------------------------- |
+| `guvern`             | Guvernul Republicii Moldova                   |
+| `minister`           | Ministere (8 instituții)                      |
+| `directie`           | Direcții guvernamentale                       |
+| `primarie`           | Primării și administrații locale              |
+| `institutie-cultura` | Instituții de cultură și muzee                |
+| `parlament`          | Parlamentul Republicii Moldova                |
+| `servicii`           | Servicii și autorități                        |
 | `altele`             | Alte instituții și simboluri (ex: Steagul UE) |
 
 ### Variante de logo
 
-| Layout        | Variante                          |
-| ------------- | --------------------------------- |
-| `horizontal`  | color, white, alternative-color* |
-| `vertical`    | color, white                      |
-| `symbol`      | color, alternative-color*         |
+| Layout       | Variante                          |
+| ------------ | --------------------------------- |
+| `horizontal` | color, white, alternative-color\* |
+| `vertical`   | color, white                      |
+| `symbol`     | color, alternative-color\*        |
 
-*Alternative variants disponibile pentru instituții selectate
+\*Alternative variants disponibile pentru instituții selectate
 
 ## CDN Usage
 
@@ -213,11 +223,11 @@ Logo-urile se accesează direct ca fișiere statice:
 
 ## Stack Tehnic
 
-- **[Astro](https://astro.build)** — Static site generator (nu VitePress, nu Next.js)
-- **[Tailwind CSS](https://tailwindcss.com)** — Sistem de design
-- **TypeScript** — Tipuri strict definite pentru schema de date
-- **Vercel** — Hosting & CDN global
-- **GitHub** — Baza de date publică (fișiere JSON + SVG)
+- **[Astro](https://astro.build)** - Static site generator (nu VitePress, nu Next.js)
+- **[Tailwind CSS](https://tailwindcss.com)** - Sistem de design
+- **TypeScript** - Tipuri strict definite pentru schema de date
+- **Vercel** - Hosting & CDN global
+- **GitHub** - Baza de date publică (fișiere JSON + SVG)
 
 ## Diferențe față de LogoHub
 
@@ -237,8 +247,8 @@ Proiectul este _inspirat conceptual_ de [LogoHub](https://github.com/saeedreza/l
 
 ## Licență
 
-MIT — vezi [LICENSE](LICENSE) pentru detalii.
+MIT - vezi [LICENSE](LICENSE) pentru detalii.
 
 ## Avertisment Legal
 
-Acest proiect **nu este afiliat oficial** niciunei instituții publice din Republica Moldova. Logo-urile sunt proprietatea instituțiilor respective. Informațiile sunt de interes public și scopul proiectului este pur civic — facilitarea accesului la materiale vizuale oficiale în formate corecte.
+Acest proiect **nu este afiliat oficial** niciunei instituții publice din Republica Moldova. Logo-urile sunt proprietatea instituțiilor respective. Informațiile sunt de interes public și scopul proiectului este pur civic - facilitarea accesului la materiale vizuale oficiale în formate corecte.

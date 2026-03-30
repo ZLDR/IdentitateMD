@@ -1,12 +1,12 @@
 ---
 # ═══════════════════════════════════════════════════════════════
-# metadata.md — Exemplu template pentru o instituție
+# metadata.md - Exemplu template pentru o instituție
 # ═══════════════════════════════════════════════════════════════
 # Pune acest fișier în folderul logo-ului:
 #   packages/logos/logos/{slug}/metadata.md
 #
 # Câmpuri obligatorii: name, category
-# Restul pot fi lăsate goale — AI-ul va încerca să le completeze.
+# Restul pot fi lăsate goale - AI-ul va încerca să le completeze.
 # ═══════════════════════════════════════════════════════════════
 
 name: "Agenția Națională de Administrare Fiscală"
@@ -27,8 +27,8 @@ branding_manual: ""
 # Cuvinte cheie (separate prin virgulă)
 keywords: "guvernamental, taxe, fiscalitate, anaf, fisc"
 
-# Culori (opțional — AI-ul poate extrage din SVG)
-# Format: "Nume Culoare: #HEX (usage)" — câte una pe linie
+# Culori (opțional - AI-ul poate extrage din SVG)
+# Format: "Nume Culoare: #HEX (usage)" - câte una pe linie
 colors: |
   Albastru Simbol: #2C2C76 (primary)
   Negru Text: #151515 (neutral)

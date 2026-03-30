@@ -8,7 +8,7 @@ fișierele JSON ale instituțiilor conform schemei v3 IdentitateMD.
 
 - Node.js ≥ 18 (necesită `fetch` nativ)
 - `npm install` în `website/` (include `ajv` ca dev dependency)
-- Un API key OpenRouter — <https://openrouter.ai/keys>
+- Un API key OpenRouter - <https://openrouter.ai/keys>
 
 ## Structura folderelor de input
 
@@ -48,7 +48,7 @@ packages/logos/logos/
 | `white.svg` | `white`     | Variantă albă (fundal închis) |
 | `dark.svg`  | `dark_mode` | Variantă dark mode            |
 
-Nu toate layout-urile sau variantele sunt obligatorii — scriptul detectează
+Nu toate layout-urile sau variantele sunt obligatorii - scriptul detectează
 automat ce fișiere există și construiește obiectul `assets` corespunzător.
 
 ### metadata.md (opțional dar recomandat)

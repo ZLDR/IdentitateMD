@@ -1,5 +1,5 @@
 /**
- * IdentitateMD — Etichete și utilități de afișare (v2.0)
+ * IdentitateMD - Etichete și utilități de afișare (v2.0)
  */
 
 // ─── Categorii ───────────────────────────────────

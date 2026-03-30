@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="MCP Server — identitate.md"
+  title="MCP Server - identitate.md"
   description="Server MCP pentru AI agenți: acces programatic la logourile și elementele de branding ale instituțiilor publice din Republica Moldova."
   ogImage="/og-image-mcp.png"
   darkChrome={true}
@@ -144,7 +144,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2 class="text-xl font-semibold mb-3" style="font-family: system-ui, sans-serif;">Logo lipsă? Agentul tău știe ce să facă.</h2>
           <p class="text-sm text-[#666] leading-relaxed mb-6" style="font-family: system-ui, sans-serif;">
             Trei instituții din carousel nu au logo încărcat. Cu serverul MCP al
-            identitate.md, orice agent AI poate detecta și rezolva lipsa automat —
+            identitate.md, orice agent AI poate detecta și rezolva lipsa automat -
             fără intervenție manuală.
           </p>
 
@@ -214,7 +214,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="text-[11px] text-[#333] tracking-wide mb-3">03</div>
             <h3 class="text-sm font-semibold text-[#ddd] mb-2" style="font-family: system-ui, sans-serif;">Integrare imediată</h3>
             <p class="text-[13px] text-[#555] leading-relaxed" style="font-family: system-ui, sans-serif;">
-              URL-uri stabile, SVG-uri optimizate și metadate complete — gata de integrat în orice aplicație sau document.
+              URL-uri stabile, SVG-uri optimizate și metadate complete - gata de integrat în orice aplicație sau document.
             </p>
           </div>
         </div>
@@ -223,12 +223,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Installation -->
       <div class="border-t border-[#222] max-w-5xl mx-auto px-6 lg:px-12 py-16">
         <h2 class="text-2xl font-bold mb-4" style="font-family: system-ui, sans-serif; letter-spacing: -0.01em;">
-          MCP Server — pentru AI coding assistants
+          MCP Server - pentru AI coding assistants
         </h2>
         <p class="text-sm text-[#888] leading-relaxed max-w-2xl mb-10" style="font-family: system-ui, sans-serif;">
           Pachetul <code class="bg-[#1a1a1a] border border-[#2a2a2a] rounded px-1.5 py-0.5 text-[12px] text-blue-400">@identitate-md/mcp</code> este un server
           <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" class="text-[#aaa] underline underline-offset-2 hover:text-white transition-colors">Model Context Protocol</a>
-          care permite uneltelor AI (Claude Code, Cursor, Windsurf etc.) să caute instituții, obțină logo-uri și culori de brand fără să părăsească editorul. Datele sunt incluse în pachet — nicio cerere de rețea la runtime.
+          care permite uneltelor AI (Claude Code, Cursor, Windsurf etc.) să caute instituții, obțină logo-uri și culori de brand fără să părăsească editorul. Datele sunt incluse în pachet - nicio cerere de rețea la runtime.
         </p>
 
         <!-- npm install -->
@@ -340,12 +340,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     );
   });
 
-  // rAF-based scroll — no CSS animation loop reset flash
+  // rAF-based scroll - no CSS animation loop reset flash
   (function startCarousel() {
     const track = document.getElementById('carouselTrack')!;
     const speed = 0.4; // px per frame at 60fps
     let x = 0;
-    const half = track.scrollWidth / 2; // cache once — avoids forced reflow every frame
+    const half = track.scrollWidth / 2; // cache once - avoids forced reflow every frame
 
     function tick() {
       x -= speed;

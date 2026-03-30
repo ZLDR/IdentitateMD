@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * IdentitateMD — Validare JSON Schema (Ajv)
+ * IdentitateMD - Validare JSON Schema (Ajv)
  *
  * Validates all institution JSON files against a strict Ajv schema.
  * Exits with process.exit(1) if any validation fails.
@@ -21,7 +21,7 @@ const INSTITUTIONS_DIR = join(__dirname, "../src/data/institutions");
 
 // ─── Schema ──────────────────────────────────────────────────────────────────
 
-// Nullable helper — allows the value to be null (for optional fields that store explicit nulls)
+// Nullable helper - allows the value to be null (for optional fields that store explicit nulls)
 function nullable(schema) {
   return { oneOf: [schema, { type: "null" }] };
 }

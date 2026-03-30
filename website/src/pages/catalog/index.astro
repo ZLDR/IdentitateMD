@@ -41,7 +41,7 @@ const institutionsByCategory = categories.reduce((acc, cat) => {
   return acc;
 }, {} as Record<string, Institution[]>);
 
-const title = propTitle || "Catalog Sigle — Identitate.MD";
+const title = propTitle || "Catalog Sigle - Identitate.MD";
 const description = propDesc || `Explorează siglele vectoriale oficiale ale celor ${institutionIndex.total} instituții publice din Republica Moldova. Descarcă gratuit în format SVG, culori HEX/RGB și tipografie.`;
 
 const institutionsJson = JSON.stringify(allInstitutions);
@@ -454,7 +454,7 @@ function wcagBadge(hex) {
   const c = contrastVsWhite(hex);
   if (c >= 7)   return { level: 'AAA', cls: 'text-blue-600',  icon: 'info',    title: 'AAA (≥7:1)' };
   if (c >= 4.5) return { level: 'AA',  cls: 'text-green-600', icon: 'info',    title: 'AA (≥4.5:1)' };
-  return             { level: 'N/A', cls: 'text-red-500',   icon: 'warning', title: '<4.5:1 — contrast insuficient' };
+  return             { level: 'N/A', cls: 'text-red-500',   icon: 'warning', title: '<4.5:1 - contrast insuficient' };
 }
 
 const ICONS = {
@@ -483,7 +483,7 @@ function buildVariantCard(inst, layout, variant, path, layoutLabel, customLabel 
   return `
     <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
       <div class="aspect-[3/2] flex items-center justify-center p-6 ${bg}">
-        <img src="${escHtml(path)}" alt="Logo ${escHtml(inst.name)} — ${escHtml(layoutLabel)} ${escHtml(label)}"
+        <img src="${escHtml(path)}" alt="Logo ${escHtml(inst.name)} - ${escHtml(layoutLabel)} ${escHtml(label)}"
              class="max-w-full max-h-full object-contain" loading="lazy" decoding="async"
              data-local-fallback="${escHtml(fallbackPath)}"
              onerror="const fb=this.dataset.localFallback; if (fb && this.src !== window.location.origin + fb && this.src !== fb) { this.src=fb; return; } this.style.display='none';" />
@@ -506,7 +506,7 @@ function buildPngCard(inst, group, layoutLabel) {
   return `
     <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
       <div class="aspect-[3/2] flex items-center justify-center p-6 checkerboard">
-        <img src="${escHtml(path)}" alt="Logo ${escHtml(inst.name)} — ${escHtml(layoutLabel)} PNG"
+        <img src="${escHtml(path)}" alt="Logo ${escHtml(inst.name)} - ${escHtml(layoutLabel)} PNG"
              class="max-w-full max-h-full object-contain" loading="lazy" decoding="async" />
       </div>
       <div class="p-2 bg-white flex items-center justify-between">

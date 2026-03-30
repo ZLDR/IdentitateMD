@@ -1,4 +1,4 @@
-# Ghid de Contribuire — IdentitateMD
+# Ghid de Contribuire - IdentitateMD
 
 Mulțumim că vrei să contribui! Acest document descrie procesul.
 
@@ -13,8 +13,8 @@ Mulțumim că vrei să contribui! Acest document descrie procesul.
 1. **Fork** repository-ul
 2. Creează un folder nou în pachetul npm: `packages/logos/logos/md-{slug}/`
 3. Adaugă fișierele SVG pe layout-uri:
-   - `horizontal/color.svg` — logo-ul principal orizontal
-   - `symbol/color.svg` — simbol / icon
+   - `horizontal/color.svg` - logo-ul principal orizontal
+   - `symbol/color.svg` - simbol / icon
    - (Opțional) `vertical/color.svg`, variante `white.svg`, `black.svg`
 4. Creează fișierul de metadate: `packages/logos/logos/md-{slug}/metadata.md`
 5. Creează datele pentru website: `website/src/data/institutions/md-{slug}.json`
@@ -69,7 +69,7 @@ md-primăria-timișoara     ❌ Fără diacritice în slug
 ### 3. Contribuie la cod
 
 - Bugfix-uri sunt întotdeauna binevenite
-- Feature-uri noi — deschide mai întâi un Issue pentru discuție
+- Feature-uri noi - deschide mai întâi un Issue pentru discuție
 
 ## Schema JSON (v3.0)
 
@@ -77,23 +77,23 @@ Consultă `src/types/institution.ts` pentru definiția completă.
 
 Câmpuri obligatorii:
 
-- `id` — format `md-{slug}` (ex: `md-anaf`)
-- `slug` — slug URL (ex: `anaf`)
-- `name` — numele complet oficial
-- `category` — una din: `guvern`, `minister`, `agentie`, `autoritate`, `primarie`, `universitate` , `proiect-ue`, `institutie-cultura`, `altele`
-- `meta.version` — versiunea datelor
-- `meta.last_updated` — data ultimei modificări (ISO 8601)
-- `meta.keywords` — array de cuvinte cheie pentru căutare
-- `assets.main` — obiect cu logo-ul principal (trebuie să conțină cel puțin `type` și `color`)
+- `id` - format `md-{slug}` (ex: `md-anaf`)
+- `slug` - slug URL (ex: `anaf`)
+- `name` - numele complet oficial
+- `category` - una din: `guvern`, `minister`, `agentie`, `autoritate`, `primarie`, `universitate` , `proiect-ue`, `institutie-cultura`, `altele`
+- `meta.version` - versiunea datelor
+- `meta.last_updated` - data ultimei modificări (ISO 8601)
+- `meta.keywords` - array de cuvinte cheie pentru căutare
+- `assets.main` - obiect cu logo-ul principal (trebuie să conțină cel puțin `type` și `color`)
 
 Câmpuri opționale:
 
-- `shortname` — nume scurt / acronim
-- `description` — scurtă descriere
-- `location` — `{ country_code, county?, city? }`
-- `colors` — array de culori cu `name`, `hex`, opțional `rgb`, `cmyk`, `pantone`, `usage`
-- `typography` — `{ primary: { family, url?, weights? }, secondary?: {...} }`
-- `resources` — `{ website?, branding_manual?, social_media? }`
+- `shortname` - nume scurt / acronim
+- `description` - scurtă descriere
+- `location` - `{ country_code, county?, city? }`
+- `colors` - array de culori cu `name`, `hex`, opțional `rgb`, `cmyk`, `pantone`, `usage`
+- `typography` - `{ primary: { family, url?, weights? }, secondary?: {...} }`
+- `resources` - `{ website?, branding_manual?, social_media? }`
 
 #### Exemplu minimal JSON:
 

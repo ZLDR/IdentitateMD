@@ -1,5 +1,5 @@
 /**
- * IdentitateMD — Funcții helper
+ * IdentitateMD - Funcții helper
  */
 
 import type {
@@ -14,7 +14,7 @@ import { resolveAssetPath } from "./cdn-helpers";
 // ─── Tipuri helper ───────────────────────────────
 
 export interface DownloadableAsset {
-  /** Eticheta afișată (ex: "Orizontal — Color") */
+  /** Eticheta afișată (ex: "Orizontal - Color") */
   label: string;
   /** Format fișier */
   format: "svg" | "png";
@@ -129,7 +129,7 @@ export function getAllDownloadableAssets(
       if (!path) continue;
       const variantLabel = LOGO_VARIANT_LABELS[variant] || variant;
       assets.push({
-        label: `${layoutLabel} — ${variantLabel}`,
+        label: `${layoutLabel} - ${variantLabel}`,
         format: "svg",
         path,
         layout,
@@ -142,7 +142,7 @@ export function getAllDownloadableAssets(
       const altPath = resolveAssetPath(alt.path, true);
       if (!altPath) continue;
       assets.push({
-        label: `${layoutLabel} — ${alt.label}`,
+        label: `${layoutLabel} - ${alt.label}`,
         format: "svg",
         path: altPath,
         layout,
@@ -155,7 +155,7 @@ export function getAllDownloadableAssets(
       const pngPath = resolveAssetPath(group.png.path, true);
       if (pngPath) {
         assets.push({
-          label: `${layoutLabel} — PNG`,
+          label: `${layoutLabel} - PNG`,
           format: "png",
           path: pngPath,
           layout,

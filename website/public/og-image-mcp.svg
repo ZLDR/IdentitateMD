@@ -139,7 +139,7 @@
   <circle cx="674" cy="78" r="6.5" fill="#ff5f57"/>
   <circle cx="698" cy="78" r="6.5" fill="#febc2e"/>
   <circle cx="722" cy="78" r="6.5" fill="#28c840"/>
-  <text x="894" y="83" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="12" fill="#4a6fa0" text-anchor="middle">mcp — identitate-md</text>
+  <text x="894" y="83" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="12" fill="#4a6fa0" text-anchor="middle">mcp - identitate-md</text>
   <rect x="640" y="101" width="508" height="1" fill="#1a3050"/>
 
   <text x="672" y="135" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="13.5" fill="#4a6fa0">$</text>
@@ -182,6 +182,6 @@
 
   <!-- Bottom bar -->
   <rect x="0" y="607" width="1200" height="23" fill="#010f27" fill-opacity="0.8"/>
-  <text x="600" y="623" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#2d4a6e" text-anchor="middle" letter-spacing="2">identitate.md— IDENTITĂȚILE INSTITUȚIILOR MOLDOVEI</text>
+  <text x="600" y="623" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#2d4a6e" text-anchor="middle" letter-spacing="2">identitate.md- IDENTITĂȚILE INSTITUȚIILOR MOLDOVEI</text>
 
 </svg>

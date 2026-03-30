@@ -23,11 +23,11 @@ export async function getStaticPaths() {
 const { initialPathId, institution } = Astro.props as { initialPathId: string; institution: Institution };
 
 const pageTitle = institution
-  ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} — Sigla Oficială | Identitate.MD`
+  ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - Sigla Oficială | Identitate.MD`
   : undefined;
 
 const pageDescription = institution
-  ? `Sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} — descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
+  ? `Sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
   : undefined;
 
 const primaryLogoPath = institution?.assets?.main?.color
