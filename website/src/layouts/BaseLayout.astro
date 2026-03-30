@@ -16,7 +16,7 @@ interface Props {
 
 const { title, description, ogImage, ogType, noindex, noFooter, darkChrome = false }: Props = Astro.props;
 
-const pageTitle = title || 'identitate.md- Siglele Oficiale ale Instituțiilor Publice din Moldova';
+const pageTitle = title || 'identitate.md - Siglele Oficiale ale Instituțiilor Publice din Moldova';
 const pageDescription = description || 'Registru digital open-source cu sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. Descarcă gratuit logo-uri, culori HEX/RGB și tipografie pentru ministere, agenții și primării.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
