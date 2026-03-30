@@ -28,10 +28,10 @@ function isActive(href: string): boolean {
     ? 'bg-[#0a0a0a]/90 border-[#222]'
     : 'bg-white/80 border-surface-200',
 ]}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="flex items-center justify-between h-12">
+  <div class="max-w-7xl mx-auto pl-0 pr-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-start h-12">
       <!-- Logo -->
-      <a href="/" class="flex items-center group">
+      <a href="/" class="flex items-center group shrink-0">
         <Logo class="h-7 max-w-[201px]" dark={dark} />
       </a>
 
@@ -73,7 +73,7 @@ function isActive(href: string): boolean {
       </div>
 
       <!-- CTA + Mobile Toggle -->
-      <div class="flex items-center gap-2">
+      <div class="ml-auto flex items-center gap-2">
         <a
           href="/solicita"
           class:list={[
