@@ -314,10 +314,10 @@ MIT License — toate logo-urile sunt proprietatea instituțiilor respective și
 
 ## Contribuții
 
-Parte din proiectul [IdentitateMD](https://github.com/identitate-md/identitate-md).
+Parte din proiectul [IdentitateMD](https://github.com/ZLDR/IdentitateMD).
 
 - **Website**: [identitate.md](https://identitate.md)
-- **GitHub**: [github.com/identitate-md/identitate-md](https://github.com/identitate-md/identitate-md)
+- **GitHub**: [github.com/identitate-md/identitate-md](https://github.com/ZLDR/IdentitateMD)
 - **npm**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
 
 ---

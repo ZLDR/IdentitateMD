@@ -141,7 +141,7 @@ Full list: [identitate.md](https://identitate.md)
 
 - **Website**: [identitate.md](https://identitate.md)
 - **Logos package**: [@identitate-md/logos](https://www.npmjs.com/package/@identitate-md/logos)
-- **GitHub**: [github.com/identitate-md/identitate-md](https://github.com/identitate-md/identitate-md)
+- **GitHub**: [github.com/ZLDR/IdentitateMD](https://github.com/ZLDR/IdentitateMD)
 
 ## License
 
