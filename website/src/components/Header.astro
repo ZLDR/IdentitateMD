@@ -29,14 +29,14 @@ function isActive(href: string): boolean {
     : 'bg-white/80 border-surface-200',
 ]}>
   <div class="max-w-7xl mx-auto pl-0 pr-4 sm:px-6 lg:px-8">
-    <nav class="flex items-center justify-start h-12">
+    <nav class="h-12 flex items-center justify-start md:grid md:grid-cols-[auto_1fr_auto] md:items-center">
       <!-- Logo -->
       <a href="/" class="flex items-center group shrink-0">
         <Logo class="h-7 max-w-[201px]" dark={dark} />
       </a>
 
       <!-- Navigation Links (Desktop) -->
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-4 justify-self-center">
         {navLinks.map(link => (
           <a
             href={link.href}
@@ -73,7 +73,7 @@ function isActive(href: string): boolean {
       </div>
 
       <!-- CTA + Mobile Toggle -->
-      <div class="ml-auto flex items-center gap-2">
+      <div class="ml-auto flex items-center gap-2 md:ml-0 md:justify-self-end">
         <a
           href="/solicita"
           class:list={[
@@ -114,9 +114,11 @@ function isActive(href: string): boolean {
     dark ? 'border-[#222] bg-[#0a0a0a]' : 'border-surface-200 bg-white',
   ]}>
     <div class="px-4 py-3 space-y-1">
-      {navLinks.map(link => (
+      {navLinks.map(link => {
+        const mobileHref = link.href === '/catalog' ? '/catalog/guvern' : link.href;
+        return (
         <a
-          href={link.href}
+          href={mobileHref}
           class:list={[
             'block px-3 py-2 rounded text-sm font-medium transition-colors',
             dark
@@ -127,7 +129,7 @@ function isActive(href: string): boolean {
         >
           {link.label}
         </a>
-      ))}
+      )})}
       <a
         href="https://github.com/identitate-md/identitate-md"
         target="_blank"
