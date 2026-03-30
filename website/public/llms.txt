@@ -33,7 +33,7 @@ npm install @identitate-md/logos
 
 CDN: `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/{institution-id}/{layout}/{variant}.svg`
 
-## Institutions (28 total)
+## Institutions (33 total)
 
 ### Guvern / Government
 
@@ -62,6 +62,7 @@ CDN: `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/{institution-id}/{
 
 - Agenția de Guvernare Electronică (AGE) — https://identitate.md/catalog/age
 - Agenția Națională pentru Reglementare în Energetică (ANRE) — https://identitate.md/catalog/anre
+- Agenția Servicii Publice (ASP) — https://identitate.md/catalog/asp
 - Biroul Național de Statistică (Statistica) — https://identitate.md/catalog/statistica
 
 ### Consilii / Councils
@@ -90,6 +91,13 @@ CDN: `https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/{institution-id}/{
 - Steagul Republicii Moldova — https://identitate.md/catalog/steag
 - Stema Republicii Moldova — https://identitate.md/catalog/stema
 - Steagul Uniunii Europene — https://identitate.md/catalog/ue
+
+### Universități / Universities
+
+- Universitatea de Studii Economice din Moldova (ASEM) — https://identitate.md/catalog/asem
+- Universitatea de Limbi Internaționale din Moldova (ULIM) — https://identitate.md/catalog/ulim
+- Universitatea de Stat din Moldova (USM) — https://identitate.md/catalog/usm
+- Universitatea Tehnică a Moldovei (UTM) — https://identitate.md/catalog/utm
 
 ### Altele / Other
 

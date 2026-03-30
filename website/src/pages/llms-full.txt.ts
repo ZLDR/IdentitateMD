@@ -43,9 +43,9 @@ export const GET: APIRoute = () => {
   const pathMap = buildCatalogPathMap(institutions);
 
   const lines: string[] = [
-    "# identitate.md— Full Institution Data",
+    "# identitate.md — Full Institution Data",
     "",
-    "> Complete machine-readable dataset of all public institutions in the identitate.mdregistry.",
+    "> Complete machine-readable dataset of all public institutions in the identitate.md registry.",
     "> Includes official brand colors, typography, logo asset paths, and metadata for each institution.",
     "> Data is open-source and freely usable under the project license.",
     "",
