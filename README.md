@@ -5,6 +5,7 @@
 [![npm mcp](https://img.shields.io/npm/v/@identitate-md/mcp.svg?label=npm%20mcp)](https://www.npmjs.com/package/@identitate-md/mcp)
 [![Institutions](https://img.shields.io/badge/instituții-33-blue)](https://identitate.md/catalog)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Protected by Socket](https://socket.dev/images/badge/socket-badge.svg)](https://socket.dev)
 
 Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova.
 

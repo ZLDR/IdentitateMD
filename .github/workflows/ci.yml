@@ -15,6 +15,10 @@ jobs:
         working-directory: website
 
     steps:
+      - uses: socketdev/action@v1
+        with:
+          mode: firewall
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -27,7 +31,7 @@ jobs:
           run_install: false
 
       - name: Install dependencies
-        run: pnpm install
+        run: sfw pnpm install
 
       - name: Validate institution JSON schemas
         run: node scripts/validate-institutions.js
@@ -45,6 +49,10 @@ jobs:
         working-directory: website
 
     steps:
+      - uses: socketdev/action@v1
+        with:
+          mode: firewall
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -57,7 +65,7 @@ jobs:
           run_install: false
 
       - name: Install dependencies
-        run: pnpm install
+        run: sfw pnpm install
 
       - name: Build site
         run: pnpm build
