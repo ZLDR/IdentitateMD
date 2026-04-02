@@ -86,6 +86,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
       <!-- Stats / eyebrow pills -->
       <div class="mb-6 flex items-center justify-center gap-2 flex-wrap">
         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0"></span>
           {institutionIndex.total}+ instituții
         </span>
         <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
@@ -95,7 +96,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
           Open source
         </span>
         <a href="/mcp" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-[11px] font-medium text-primary-700 shadow-sm hover:bg-primary-100 transition-colors">
-          <span class="text-[9px] font-bold uppercase tracking-wider text-primary-500 leading-none">Nou</span>
+          <span class="text-[9px] font-bold uppercase tracking-wider text-primary-500">Nou</span>
           <span class="w-px h-2.5 bg-primary-200"></span>
           MCP disponibil
         </a>
@@ -108,7 +109,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-sm sm:text-[15px] text-surface-500 max-w-[480px] mx-auto mb-8 text-balance leading-relaxed">
+      <p class="text-sm sm:text-[15px] text-surface-500 max-w-[520px] mx-auto mb-8 text-balance leading-relaxed">
         SVG-uri vectoriale gratuite pentru ministere, primării și instituții de stat — descarcă direct sau integrează în proiect via npm și MCP.
       </p>
 
@@ -123,8 +124,8 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
           type="search"
           id="search-input"
           class="search-input pl-12 pr-12 sm:text-[14px] text-sm"
-          placeholder="Caută Primăria Municipiului Chișinău, Ministerul Educației..."
-          data-placeholder-long={'Caută Primăria Municipiului Chișinău", „Ministerul Educației"...'}
+          placeholder="Caută Primăria Municipiului Chișinău, Ministerul Educației...""
+          data-placeholder-long={'Caută "Primăria Municipiului Chișinău", „Ministerul Educației"...'}
           data-placeholder-short="Ministerul Educației..."
           autocomplete="off"
         />
@@ -159,16 +160,15 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
       <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-surface-50 to-transparent z-10"></div>
 
       <!-- Row 1: scrolls left -->
-      <div class="marquee-row overflow-hidden mb-3">
+      <div class="overflow-hidden mb-3">
         <div class="marquee-track marquee-left flex gap-3">
           {[...marqueeRow1, ...marqueeRow1].map((inst) => {
-            const logoPath = getMarqueeLogoPath(inst);
+            const logoPath = getPrimaryLogoPath(inst);
             if (!logoPath) return null;
-            const dark = marqueeDarkBg(inst);
             return (
               <a
                 href={`/catalog/${catalogPathBySlug[inst.slug]}`}
-                class={`marquee-item shrink-0 w-28 h-[4.5rem] rounded border flex items-center justify-center p-3 transition-colors ${dark ? 'bg-primary-900 border-primary-800 hover:border-primary-600' : 'bg-white border-surface-200 hover:border-primary-400'}`}
+                class="marquee-item shrink-0 w-28 h-[4.5rem] bg-white rounded border border-surface-200 flex items-center justify-center p-3 hover:border-primary-400 hover:shadow-card transition-all"
                 title={inst.name}
               >
                 <img
@@ -185,16 +185,15 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
       </div>
 
       <!-- Row 2: scrolls right -->
-      <div class="marquee-row overflow-hidden">
+      <div class="overflow-hidden">
         <div class="marquee-track marquee-right flex gap-3">
           {[...marqueeRow2, ...marqueeRow2].map((inst) => {
-            const logoPath = getMarqueeLogoPath(inst);
+            const logoPath = getPrimaryLogoPath(inst);
             if (!logoPath) return null;
-            const dark = marqueeDarkBg(inst);
             return (
               <a
                 href={`/catalog/${catalogPathBySlug[inst.slug]}`}
-                class={`marquee-item shrink-0 w-28 h-[4.5rem] rounded border flex items-center justify-center p-3 transition-colors ${dark ? 'bg-primary-900 border-primary-800 hover:border-primary-600' : 'bg-white border-surface-200 hover:border-primary-400'}`}
+                class="marquee-item shrink-0 w-28 h-[4.5rem] bg-white rounded border border-surface-200 flex items-center justify-center p-3 hover:border-primary-400 hover:shadow-card transition-all"
                 title={inst.name}
               >
                 <img
@@ -213,7 +212,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   </section>
 
   <!-- Developer integration bar -->
-  <div class="border-b border-surface-200">
+  <div class="bg-surface-100 border-b border-surface-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
       <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 text-center">
         <span class="text-[11px] font-medium text-surface-500 uppercase tracking-widest shrink-0">Pentru dezvoltatori</span>
