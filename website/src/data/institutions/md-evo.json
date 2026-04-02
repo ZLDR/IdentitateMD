@@ -1,0 +1,87 @@
+{
+  "id": "md-evo",
+  "slug": "md-evo",
+  "name": "EVO",
+  "shortname": "evo",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-04-02",
+    "keywords": ["evo", "stat", "portal guvernamental unic", "simbol", "ue"],
+    "quality": "live"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "EVO este portalul guvernamental unic al Republicii Moldova, destinat pentru furnizarea de informații și servicii cetățenilor și organizațiilor.",
+  "colors": [
+    {
+      "name": "Color #000000",
+      "hex": "#000000",
+      "rgb": [0, 0, 0],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "primary"
+    },
+    {
+      "name": "Color #0740c8",
+      "hex": "#0740c8",
+      "rgb": [7, 64, 200],
+      "cmyk": null,
+      "pantone": null,
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "family": "Onest",
+    "weights": [400, 700]
+  },
+  "resources": {
+    "website": "https://evo.gov.md",
+    "branding_manual": null,
+    "social_media": {
+      "facebook": {
+        "url": "https://www.facebook.com/evo.app.moldova"
+      },
+
+      "linkedin": {
+        "url": "https://www.linkedin.com/company/evo-moldova/"
+      },
+      "instagram": {
+        "url": "http://instagram.com/evo.moldova"
+      }
+    },
+    "contact": {
+      "phone": "0(22) 820 026",
+      "email": "office@egov.md"
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/md-evo/symbol.svg",
+      "dark_mode": null,
+      "monochrome": null,
+      "png": null
+    },
+    "horizontal": null,
+    "vertical": null,
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-evo/symbol.svg",
+      "dark_mode": null,
+      "white": null,
+      "black": null,
+      "monochrome": null,
+      "png": null
+    },
+    "resources": {
+      "website": "https://evo.gov.md/",
+      "contact": {
+        "phone": "0(22) 820 026",
+        "email": "office@egov.md"
+      }
+    }
+  }
+}
