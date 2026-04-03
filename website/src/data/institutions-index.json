@@ -135,10 +135,12 @@
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-age/horizontal/alternative-color.svg",
-          "white": {
-            "path": "/logos/md-age/horizontal/white.svg",
-            "preview": "light"
-          },
+          "white": [
+            {
+              "path": "/logos/md-age/horizontal/white.svg",
+              "preview": "light"
+            }
+          ],
           "alternatives": [
             {
               "label": "Alternative White",
