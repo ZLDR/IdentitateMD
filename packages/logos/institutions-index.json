@@ -1,10 +1,10 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-30T16:28:02.459Z",
-  "total": 33,
+  "generatedAt": "2026-04-03T20:33:50.177Z",
+  "total": 34,
   "stats": {
     "byCategory": {
-      "altele": 5,
+      "altele": 6,
       "guvern": 1,
       "agentie": 4,
       "universitate": 4,
@@ -16,8 +16,8 @@
       "primarie": 1,
       "servicii": 1
     },
-    "withManual": 2,
-    "withSvg": 33
+    "withManual": 3,
+    "withSvg": 34
   },
   "categories": [
     {
@@ -53,7 +53,7 @@
     {
       "id": "altele",
       "label": "Altele",
-      "count": 5
+      "count": 6
     },
     {
       "id": "universitate",
@@ -161,22 +161,19 @@
         },
         "horizontal": {
           "type": "horizontal",
+          "color": "/logos/md-age/horizontal/alternative-color.svg",
           "white": "/logos/md-age/horizontal/white.svg",
+          "black": "/logos/md-age/horizontal/black.svg",
           "alternatives": [
             {
-              "label": "Alternative Color",
-              "path": "/logos/md-age/horizontal/alternative-color.svg",
-              "preview": "checkerboard"
-            },
-            {
-              "label": "Filled White",
-              "path": "/logos/md-age/horizontal/filled-white.svg",
+              "label": "Alternative White",
+              "path": "/logos/md-age/horizontal/alt-white.svg",
               "preview": "dark"
             },
             {
-              "label": "English White",
-              "path": "/logos/md-age/horizontal/english-white.svg",
-              "preview": "dark"
+              "label": "Alternative Black",
+              "path": "/logos/md-age/horizontal/alt-black.svg",
+              "preview": "light"
             }
           ]
         },
@@ -188,11 +185,17 @@
           "type": "symbol",
           "color": "/logos/md-age/symbol/color.svg",
           "white": "/logos/md-age/symbol/white.svg",
+          "black": "/logos/md-age/symbol/black.svg",
           "alternatives": [
             {
-              "label": "Filled",
-              "path": "/logos/md-age/symbol/filled.svg",
-              "preview": "checkerboard"
+              "label": "Alternative White",
+              "path": "/logos/md-age/symbol/alt-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "Alternative Black",
+              "path": "/logos/md-age/symbol/alt-black.svg",
+              "preview": "light"
             }
           ]
         }
@@ -783,6 +786,109 @@
         "website": "https://cultura.chisinau.md/",
         "social_media": {
           "facebook": "https://www.facebook.com/www.directiacultura.md"
+        }
+      }
+    },
+    {
+      "id": "md-evo",
+      "slug": "md-evo",
+      "name": "EVO",
+      "shortname": "evo",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-04-02",
+        "keywords": [
+          "evo",
+          "stat",
+          "portal guvernamental unic",
+          "simbol",
+          "ue"
+        ],
+        "quality": "live"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "EVO este portalul guvernamental unic al Republicii Moldova, destinat pentru furnizarea de informații și servicii cetățenilor și organizațiilor.",
+      "colors": [
+        {
+          "name": "Color #000000",
+          "hex": "#000000",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "cmyk": null,
+          "pantone": null,
+          "usage": "primary"
+        },
+        {
+          "name": "Color #0740c8",
+          "hex": "#0740c8",
+          "rgb": [
+            7,
+            64,
+            200
+          ],
+          "cmyk": null,
+          "pantone": null,
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "family": "Onest",
+        "weights": [
+          400,
+          700
+        ]
+      },
+      "resources": {
+        "website": "https://evo.gov.md",
+        "branding_manual": "https://drive.google.com/file/d/1mR7vn7czNvScYV_P04N4Ce-KFLzxQoCI/view?usp=drive_link",
+        "social_media": {
+          "facebook": {
+            "url": "https://www.facebook.com/evo.app.moldova"
+          },
+          "linkedin": {
+            "url": "https://www.linkedin.com/company/evo-moldova/"
+          },
+          "instagram": {
+            "url": "http://instagram.com/evo.moldova"
+          }
+        },
+        "contact": {
+          "phone": "0(22) 820 026",
+          "email": "office@egov.md"
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-evo/symbol.svg",
+          "dark_mode": null,
+          "monochrome": null,
+          "png": null
+        },
+        "horizontal": null,
+        "vertical": null,
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-evo/symbol.svg",
+          "dark_mode": null,
+          "white": null,
+          "black": null,
+          "monochrome": null,
+          "png": null
+        },
+        "resources": {
+          "website": "https://evo.gov.md/",
+          "contact": {
+            "phone": "0(22) 820 026",
+            "email": "office@egov.md"
+          }
         }
       }
     },

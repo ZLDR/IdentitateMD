@@ -1,10 +1,10 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-03-30T16:28:02.459Z",
-  "total": 33,
+  "generatedAt": "2026-04-03T20:33:50.177Z",
+  "total": 34,
   "stats": {
     "byCategory": {
-      "altele": 5,
+      "altele": 6,
       "guvern": 1,
       "agentie": 4,
       "universitate": 4,
@@ -16,8 +16,8 @@
       "primarie": 1,
       "servicii": 1
     },
-    "withManual": 2,
-    "withSvg": 33
+    "withManual": 3,
+    "withSvg": 34
   },
   "categories": [
     {
@@ -53,7 +53,7 @@
     {
       "id": "altele",
       "label": "Altele",
-      "count": 5
+      "count": 6
     },
     {
       "id": "universitate",
@@ -89,42 +89,69 @@
         {
           "name": "Teal Oficial",
           "hex": "#22625c",
-          "rgb": [34, 98, 92],
+          "rgb": [
+            34,
+            98,
+            92
+          ],
           "usage": "primary"
         },
         {
           "name": "Violet Oficial",
           "hex": "#4404b7",
-          "rgb": [68, 4, 183],
+          "rgb": [
+            68,
+            4,
+            183
+          ],
           "usage": "primary"
         },
         {
           "name": "Indigo Secundar",
           "hex": "#0a0069",
-          "rgb": [10, 0, 105],
+          "rgb": [
+            10,
+            0,
+            105
+          ],
           "usage": "secondary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         },
         {
           "name": "Negru",
           "hex": "#000000",
-          "rgb": [0, 0, 0],
+          "rgb": [
+            0,
+            0,
+            0
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Open Sans",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -134,22 +161,19 @@
         },
         "horizontal": {
           "type": "horizontal",
+          "color": "/logos/md-age/horizontal/alternative-color.svg",
           "white": "/logos/md-age/horizontal/white.svg",
+          "black": "/logos/md-age/horizontal/black.svg",
           "alternatives": [
             {
-              "label": "Alternative Color",
-              "path": "/logos/md-age/horizontal/alternative-color.svg",
-              "preview": "checkerboard"
-            },
-            {
-              "label": "Filled White",
-              "path": "/logos/md-age/horizontal/filled-white.svg",
+              "label": "Alternative White",
+              "path": "/logos/md-age/horizontal/alt-white.svg",
               "preview": "dark"
             },
             {
-              "label": "English White",
-              "path": "/logos/md-age/horizontal/english-white.svg",
-              "preview": "dark"
+              "label": "Alternative Black",
+              "path": "/logos/md-age/horizontal/alt-black.svg",
+              "preview": "light"
             }
           ]
         },
@@ -161,11 +185,17 @@
           "type": "symbol",
           "color": "/logos/md-age/symbol/color.svg",
           "white": "/logos/md-age/symbol/white.svg",
+          "black": "/logos/md-age/symbol/black.svg",
           "alternatives": [
             {
-              "label": "Filled",
-              "path": "/logos/md-age/symbol/filled.svg",
-              "preview": "checkerboard"
+              "label": "Alternative White",
+              "path": "/logos/md-age/symbol/alt-white.svg",
+              "preview": "dark"
+            },
+            {
+              "label": "Alternative Black",
+              "path": "/logos/md-age/symbol/alt-black.svg",
+              "preview": "light"
             }
           ]
         }
@@ -211,36 +241,59 @@
         {
           "name": "Negru Închis",
           "hex": "#27272b",
-          "rgb": [39, 39, 43],
+          "rgb": [
+            39,
+            39,
+            43
+          ],
           "usage": "primary"
         },
         {
           "name": "Galben Oficial",
           "hex": "#ffd308",
-          "rgb": [255, 211, 8],
+          "rgb": [
+            255,
+            211,
+            8
+          ],
           "usage": "secondary"
         },
         {
           "name": "Albastru Oficial",
           "hex": "#073a93",
-          "rgb": [7, 58, 147],
+          "rgb": [
+            7,
+            58,
+            147
+          ],
           "usage": "secondary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Open Sans",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Arial",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -297,26 +350,42 @@
         {
           "name": "Albastru",
           "hex": "#2a66a8",
-          "rgb": [42, 102, 168],
+          "rgb": [
+            42,
+            102,
+            168
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         },
         {
           "name": "Negru",
           "hex": "#000000",
-          "rgb": [0, 0, 0],
+          "rgb": [
+            0,
+            0,
+            0
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Roboto",
-          "weights": [400, 500, 700]
+          "weights": [
+            400,
+            500,
+            700
+          ]
         }
       },
       "assets": {
@@ -370,20 +439,31 @@
         {
           "name": "Negru Cald",
           "hex": "#3C3A37",
-          "rgb": [60, 58, 55],
+          "rgb": [
+            60,
+            58,
+            55
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Arial",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -459,42 +539,67 @@
         {
           "name": "Negru",
           "hex": "#000000",
-          "rgb": [0, 0, 0],
+          "rgb": [
+            0,
+            0,
+            0
+          ],
           "usage": "primary"
         },
         {
           "name": "Albastru Pantone 2935",
           "hex": "#0a57a4",
-          "rgb": [10, 87, 164],
+          "rgb": [
+            10,
+            87,
+            164
+          ],
           "usage": "primary"
         },
         {
           "name": "Galben Pantone 109",
           "hex": "#ffd100",
-          "rgb": [255, 209, 0],
+          "rgb": [
+            255,
+            209,
+            0
+          ],
           "usage": "secondary"
         },
         {
           "name": "Roșu Pantone 1797",
           "hex": "#c8102e",
-          "rgb": [200, 16, 46],
+          "rgb": [
+            200,
+            16,
+            46
+          ],
           "usage": "secondary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Arial",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Haettenschweiler",
-          "weights": [400]
+          "weights": [
+            400
+          ]
         }
       },
       "assets": {
@@ -542,6 +647,149 @@
       }
     },
     {
+      "id": "md-ca",
+      "slug": "consiliul-audiovizualului",
+      "name": "Consiliul Audiovizualului",
+      "shortname": "CA",
+      "category": "consilii",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-18",
+        "keywords": [
+          "moldova",
+          "consiliu",
+          "audiovizual",
+          "media",
+          "broadcasting",
+          "reglementare"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Consiliul Audiovizualului este autoritatea publică autonomă responsabilă de reglementarea și supravegherea sectorului audiovizual din Republica Moldova.",
+      "colors": [
+        {
+          "name": "Albastru Oficial",
+          "hex": "#3064E8",
+          "rgb": [
+            48,
+            100,
+            232
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Negru",
+          "hex": "#000000",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "usage": "neutral"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Red Hat Display",
+          "weights": [
+            400,
+            500,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Open Sans",
+          "weights": [
+            400,
+            600
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-ca/symbol-color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "black": "/logos/md-ca/horizontal-black.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-ca/symbol-color.svg",
+          "white": "/logos/md-ca/symbol-white.svg",
+          "black": "/logos/md-ca/symbol-black.svg"
+        }
+      },
+      "resources": {
+        "website": "https://consiliuaudiovizual.md/",
+        "contact": {
+          "phone": "022 277 551",
+          "email": "office@consiliuaudiovizual.md",
+          "address": "Str. Vlaicu Pârcălab 46, Chișinău, MD-2012"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/CAConsiliulAudiovizualului/photos",
+          "instagram": "https://www.instagram.com/consiliul_audiovizualului/"
+        }
+      }
+    },
+    {
+      "id": "md-dgcpc",
+      "slug": "md-dgcpc",
+      "name": "Direcția Generală Cultură și Patrimoniu Cultural",
+      "shortname": "dgcpc",
+      "category": "directie",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-05",
+        "keywords": [
+          "moldova",
+          "direcție",
+          "cultură",
+          "patrimoniu",
+          "dgcpc"
+        ],
+        "quality": "draft"
+      },
+      "location": {
+        "country_code": "MD"
+      },
+      "description": "Direcție responsabilă de coordonarea domeniilor culturii și patrimoniului cultural.",
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-dgcpc/Horizontal Color.svg",
+          "preview": "dark"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-dgcpc/Horizontal Color.svg",
+          "preview": "dark"
+        }
+      },
+      "resources": {
+        "website": "https://cultura.chisinau.md/",
+        "social_media": {
+          "facebook": "https://www.facebook.com/www.directiacultura.md"
+        }
+      }
+    },
+    {
       "id": "md-evo",
       "slug": "md-evo",
       "name": "EVO",
@@ -568,7 +816,11 @@
         {
           "name": "Color #000000",
           "hex": "#000000",
-          "rgb": [0, 0, 0],
+          "rgb": [
+            0,
+            0,
+            0
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -576,7 +828,11 @@
         {
           "name": "Color #0740c8",
           "hex": "#0740c8",
-          "rgb": [7, 64, 200],
+          "rgb": [
+            7,
+            64,
+            200
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"
@@ -584,16 +840,18 @@
       ],
       "typography": {
         "family": "Onest",
-        "weights": [400, 700]
+        "weights": [
+          400,
+          700
+        ]
       },
       "resources": {
         "website": "https://evo.gov.md",
-        "branding_manual": null,
+        "branding_manual": "https://drive.google.com/file/d/1mR7vn7czNvScYV_P04N4Ce-KFLzxQoCI/view?usp=drive_link",
         "social_media": {
           "facebook": {
             "url": "https://www.facebook.com/evo.app.moldova"
           },
-
           "linkedin": {
             "url": "https://www.linkedin.com/company/evo-moldova/"
           },
@@ -635,124 +893,6 @@
       }
     },
     {
-      "id": "md-ca",
-      "slug": "consiliul-audiovizualului",
-      "name": "Consiliul Audiovizualului",
-      "shortname": "CA",
-      "category": "consilii",
-      "meta": {
-        "version": "1.0",
-        "last_updated": "2026-03-18",
-        "keywords": [
-          "moldova",
-          "consiliu",
-          "audiovizual",
-          "media",
-          "broadcasting",
-          "reglementare"
-        ],
-        "quality": "verified"
-      },
-      "location": {
-        "country_code": "MD",
-        "city": "Chișinău"
-      },
-      "description": "Consiliul Audiovizualului este autoritatea publică autonomă responsabilă de reglementarea și supravegherea sectorului audiovizual din Republica Moldova.",
-      "colors": [
-        {
-          "name": "Albastru Oficial",
-          "hex": "#3064E8",
-          "rgb": [48, 100, 232],
-          "usage": "primary"
-        },
-        {
-          "name": "Negru",
-          "hex": "#000000",
-          "rgb": [0, 0, 0],
-          "usage": "neutral"
-        },
-        {
-          "name": "Alb",
-          "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
-          "usage": "neutral"
-        }
-      ],
-      "typography": {
-        "primary": {
-          "family": "Red Hat Display",
-          "weights": [400, 500, 700]
-        },
-        "secondary": {
-          "family": "Open Sans",
-          "weights": [400, 600]
-        }
-      },
-      "assets": {
-        "main": {
-          "type": "symbol",
-          "color": "/logos/md-ca/symbol-color.svg"
-        },
-        "horizontal": {
-          "type": "horizontal",
-          "black": "/logos/md-ca/horizontal-black.svg"
-        },
-        "symbol": {
-          "type": "symbol",
-          "color": "/logos/md-ca/symbol-color.svg",
-          "white": "/logos/md-ca/symbol-white.svg",
-          "black": "/logos/md-ca/symbol-black.svg"
-        }
-      },
-      "resources": {
-        "website": "https://consiliuaudiovizual.md/",
-        "contact": {
-          "phone": "022 277 551",
-          "email": "office@consiliuaudiovizual.md",
-          "address": "Str. Vlaicu Pârcălab 46, Chișinău, MD-2012"
-        },
-        "social_media": {
-          "facebook": "https://www.facebook.com/CAConsiliulAudiovizualului/photos",
-          "instagram": "https://www.instagram.com/consiliul_audiovizualului/"
-        }
-      }
-    },
-    {
-      "id": "md-dgcpc",
-      "slug": "md-dgcpc",
-      "name": "Direcția Generală Cultură și Patrimoniu Cultural",
-      "shortname": "dgcpc",
-      "category": "directie",
-      "meta": {
-        "version": "1.0",
-        "last_updated": "2026-03-05",
-        "keywords": ["moldova", "direcție", "cultură", "patrimoniu", "dgcpc"],
-        "quality": "draft"
-      },
-      "location": {
-        "country_code": "MD"
-      },
-      "description": "Direcție responsabilă de coordonarea domeniilor culturii și patrimoniului cultural.",
-      "assets": {
-        "main": {
-          "type": "horizontal",
-          "color": "/logos/md-dgcpc/Horizontal Color.svg",
-          "preview": "dark"
-        },
-        "horizontal": {
-          "type": "horizontal",
-          "color": "/logos/md-dgcpc/Horizontal Color.svg",
-          "preview": "dark"
-        }
-      },
-      "resources": {
-        "website": "https://cultura.chisinau.md/",
-        "social_media": {
-          "facebook": "https://www.facebook.com/www.directiacultura.md"
-        }
-      }
-    },
-    {
       "id": "md-guvern",
       "slug": "guvern",
       "name": "Guvernul Republicii Moldova",
@@ -761,7 +901,11 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "guvern", "executiv"],
+        "keywords": [
+          "moldova",
+          "guvern",
+          "executiv"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -773,18 +917,28 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -850,49 +1004,78 @@
         {
           "name": "Violet",
           "hex": "#A88FF5",
-          "rgb": [168, 143, 245],
+          "rgb": [
+            168,
+            143,
+            245
+          ],
           "usage": "primary"
         },
         {
           "name": "Teal",
           "hex": "#669999",
-          "rgb": [102, 153, 153],
+          "rgb": [
+            102,
+            153,
+            153
+          ],
           "usage": "primary"
         },
         {
           "name": "Coral",
           "hex": "#FF7859",
-          "rgb": [255, 120, 89],
+          "rgb": [
+            255,
+            120,
+            89
+          ],
           "usage": "primary"
         },
         {
           "name": "Portocaliu",
           "hex": "#B8753B",
-          "rgb": [184, 117, 59],
+          "rgb": [
+            184,
+            117,
+            59
+          ],
           "usage": "primary"
         },
         {
           "name": "Negru",
           "hex": "#000000",
-          "rgb": [0, 0, 0],
+          "rgb": [
+            0,
+            0,
+            0
+          ],
           "usage": "neutral"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "NaN Metrify B",
-          "weights": [800],
+          "weights": [
+            800
+          ],
           "style": "italic"
         },
         "secondary": {
           "family": "Wix Madefor Text",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -991,24 +1174,38 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Albastru Secundar",
           "hex": "#3FC8F4",
-          "rgb": [63, 200, 244],
+          "rgb": [
+            63,
+            200,
+            244
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Open Sans",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1080,13 +1277,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1171,13 +1376,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1289,7 +1502,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-04",
-        "keywords": ["moldova", "educație", "cercetare", "minister", "mec"],
+        "keywords": [
+          "moldova",
+          "educație",
+          "cercetare",
+          "minister",
+          "mec"
+        ],
         "quality": "verified"
       },
       "location": {
@@ -1301,14 +1520,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1348,7 +1574,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": ["moldova", "minister", "energie", "energetică", "me"],
+        "keywords": [
+          "moldova",
+          "minister",
+          "energie",
+          "energetică",
+          "me"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -1360,13 +1592,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1376,7 +1616,10 @@
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1423,7 +1666,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": ["moldova", "finanțe", "minister", "economie", "mf"],
+        "keywords": [
+          "moldova",
+          "finanțe",
+          "minister",
+          "economie",
+          "mf"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -1435,13 +1684,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1503,13 +1760,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1558,7 +1823,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-08",
-        "keywords": ["moldova", "justiție", "minister", "drept", "mj"],
+        "keywords": [
+          "moldova",
+          "justiție",
+          "minister",
+          "drept",
+          "mj"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -1570,14 +1841,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1642,13 +1920,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1715,18 +2001,28 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         },
         "secondary": {
           "family": "Trajan Pro",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1803,7 +2099,13 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-09",
-        "keywords": ["moldova", "sănătate", "minister", "medicină", "ms"],
+        "keywords": [
+          "moldova",
+          "sănătate",
+          "minister",
+          "medicină",
+          "ms"
+        ],
         "quality": "verified"
       },
       "location": {
@@ -1815,13 +2117,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -1938,11 +2248,18 @@
       "typography": {
         "primary": {
           "family": "Proxima Nova",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Franklin Gothic",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -1986,7 +2303,14 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": ["moldova", "chișinău", "muzeu", "artă", "mnam", "cultură"],
+        "keywords": [
+          "moldova",
+          "chișinău",
+          "muzeu",
+          "artă",
+          "mnam",
+          "cultură"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -2056,7 +2380,12 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-03-06",
-        "keywords": ["moldova", "parlament", "legiferare", "legislativ"],
+        "keywords": [
+          "moldova",
+          "parlament",
+          "legiferare",
+          "legislativ"
+        ],
         "quality": "draft"
       },
       "location": {
@@ -2197,13 +2526,21 @@
         {
           "name": "Albastru Oficial",
           "hex": "#0E4C90",
-          "rgb": [14, 76, 144],
+          "rgb": [
+            14,
+            76,
+            144
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "secondary"
         }
       ],
@@ -2213,7 +2550,10 @@
         },
         "secondary": {
           "family": "Onest",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -2313,7 +2653,11 @@
         {
           "name": "Color #FFCC00",
           "hex": "#FFCC00",
-          "rgb": [255, 204, 0],
+          "rgb": [
+            255,
+            204,
+            0
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "primary"
@@ -2321,7 +2665,11 @@
         {
           "name": "Color #003399",
           "hex": "#003399",
-          "rgb": [0, 51, 153],
+          "rgb": [
+            0,
+            51,
+            153
+          ],
           "cmyk": null,
           "pantone": null,
           "usage": "secondary"
@@ -2429,26 +2777,42 @@
         {
           "name": "Negru",
           "hex": "#131313",
-          "rgb": [19, 19, 19],
+          "rgb": [
+            19,
+            19,
+            19
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         },
         {
           "name": "Gri Albăstrui",
           "hex": "#7c8c9f",
-          "rgb": [124, 140, 159],
+          "rgb": [
+            124,
+            140,
+            159
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Inter",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         }
       },
       "assets": {
@@ -2500,26 +2864,42 @@
         {
           "name": "Verde Închis",
           "hex": "#0d2c22",
-          "rgb": [13, 44, 34],
+          "rgb": [
+            13,
+            44,
+            34
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         },
         {
           "name": "Gri Albăstrui",
           "hex": "#7c8c9f",
-          "rgb": [124, 140, 159],
+          "rgb": [
+            124,
+            140,
+            159
+          ],
           "usage": "secondary"
         }
       ],
       "typography": {
         "primary": {
           "family": "Open Sans",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         }
       },
       "assets": {
@@ -2571,24 +2951,39 @@
         {
           "name": "Albastru Închis",
           "hex": "#170c9a",
-          "rgb": [23, 12, 154],
+          "rgb": [
+            23,
+            12,
+            154
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Poppins",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Arial",
-          "weights": [400, 700]
+          "weights": [
+            400,
+            700
+          ]
         }
       },
       "assets": {
@@ -2645,24 +3040,39 @@
         {
           "name": "Albastru",
           "hex": "#1d436a",
-          "rgb": [29, 67, 106],
+          "rgb": [
+            29,
+            67,
+            106
+          ],
           "usage": "primary"
         },
         {
           "name": "Alb",
           "hex": "#FFFFFF",
-          "rgb": [255, 255, 255],
+          "rgb": [
+            255,
+            255,
+            255
+          ],
           "usage": "neutral"
         }
       ],
       "typography": {
         "primary": {
           "family": "Exo 2",
-          "weights": [400, 600, 700]
+          "weights": [
+            400,
+            600,
+            700
+          ]
         },
         "secondary": {
           "family": "Source Sans Pro",
-          "weights": [400, 600]
+          "weights": [
+            400,
+            600
+          ]
         }
       },
       "assets": {

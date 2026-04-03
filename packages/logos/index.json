@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-03-27T16:34:28.184Z",
-  "count": 31,
-  "totalLogos": 131,
+  "generated": "2026-04-02T14:37:21.978Z",
+  "count": 34,
+  "totalLogos": 136,
   "institutions": [
     {
       "id": "eu-flag",
@@ -54,6 +54,36 @@
       "logos": {
         "horizontal": {
           "color": "/logos/md-anre/horizontal-color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-asem",
+      "slug": "md-asem",
+      "name": "Universitatea de Studii Economice din Moldova",
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-asem/symbol-color.svg",
+          "white": "/logos/md-asem/symbol-white.svg"
+        }
+      }
+    },
+    {
+      "id": "md-asp",
+      "slug": "md-asp",
+      "name": "Agenția Servicii Publice",
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-asp/symbol-color.svg",
+          "white": "/logos/md-asp/symbol-white.svg"
         }
       }
     },
@@ -127,6 +157,20 @@
       "logos": {
         "horizontal": {
           "color": "/logos/md-dgcpc/Horizontal Color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-evo",
+      "slug": "md-evo",
+      "name": "EVO",
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-evo/symbol.svg"
         }
       }
     },

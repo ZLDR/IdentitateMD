@@ -64,22 +64,19 @@
     },
     "horizontal": {
       "type": "horizontal",
+      "color": "/logos/md-age/horizontal/alternative-color.svg",
       "white": "/logos/md-age/horizontal/white.svg",
+      "black": "/logos/md-age/horizontal/black.svg",
       "alternatives": [
         {
-          "label": "Alternative Color",
-          "path": "/logos/md-age/horizontal/alternative-color.svg",
-          "preview": "checkerboard"
-        },
-        {
-          "label": "Filled White",
-          "path": "/logos/md-age/horizontal/filled-white.svg",
+          "label": "Alternative White",
+          "path": "/logos/md-age/horizontal/alt-white.svg",
           "preview": "dark"
         },
         {
-          "label": "English White",
-          "path": "/logos/md-age/horizontal/english-white.svg",
-          "preview": "dark"
+          "label": "Alternative Black",
+          "path": "/logos/md-age/horizontal/alt-black.svg",
+          "preview": "light"
         }
       ]
     },
@@ -91,11 +88,17 @@
       "type": "symbol",
       "color": "/logos/md-age/symbol/color.svg",
       "white": "/logos/md-age/symbol/white.svg",
+      "black": "/logos/md-age/symbol/black.svg",
       "alternatives": [
         {
-          "label": "Filled",
-          "path": "/logos/md-age/symbol/filled.svg",
-          "preview": "checkerboard"
+          "label": "Alternative White",
+          "path": "/logos/md-age/symbol/alt-white.svg",
+          "preview": "dark"
+        },
+        {
+          "label": "Alternative Black",
+          "path": "/logos/md-age/symbol/alt-black.svg",
+          "preview": "light"
         }
       ]
     }
