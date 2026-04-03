@@ -66,7 +66,6 @@
       "type": "horizontal",
       "color": "/logos/md-age/horizontal/alternative-color.svg",
       "white": "/logos/md-age/horizontal/white.svg",
-      "black": "/logos/md-age/horizontal/black.svg",
       "alternatives": [
         {
           "label": "Alternative White",
@@ -74,8 +73,13 @@
           "preview": "dark"
         },
         {
-          "label": "Alternative Black",
+          "label": "Alt Black Filled",
           "path": "/logos/md-age/horizontal/alt-black.svg",
+          "preview": "light"
+        },
+        {
+          "label": "Alt Black Outline",
+          "path": "/logos/md-age/horizontal/black.svg",
           "preview": "light"
         }
       ]
@@ -88,7 +92,6 @@
       "type": "symbol",
       "color": "/logos/md-age/symbol/color.svg",
       "white": "/logos/md-age/symbol/white.svg",
-      "black": "/logos/md-age/symbol/black.svg",
       "alternatives": [
         {
           "label": "Alternative White",
@@ -96,8 +99,13 @@
           "preview": "dark"
         },
         {
-          "label": "Alternative Black",
+          "label": "Alt Black Filled",
           "path": "/logos/md-age/symbol/alt-black.svg",
+          "preview": "light"
+        },
+        {
+          "label": "Alt Black Outline",
+          "path": "/logos/md-age/symbol/black.svg",
           "preview": "light"
         }
       ]

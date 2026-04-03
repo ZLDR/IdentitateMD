@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-04-03T20:33:50.177Z",
+  "generatedAt": "2026-04-03T20:37:44.901Z",
   "total": 34,
   "stats": {
     "byCategory": {
@@ -163,7 +163,6 @@
           "type": "horizontal",
           "color": "/logos/md-age/horizontal/alternative-color.svg",
           "white": "/logos/md-age/horizontal/white.svg",
-          "black": "/logos/md-age/horizontal/black.svg",
           "alternatives": [
             {
               "label": "Alternative White",
@@ -171,8 +170,13 @@
               "preview": "dark"
             },
             {
-              "label": "Alternative Black",
+              "label": "Alt Black Filled",
               "path": "/logos/md-age/horizontal/alt-black.svg",
+              "preview": "light"
+            },
+            {
+              "label": "Alt Black Outline",
+              "path": "/logos/md-age/horizontal/black.svg",
               "preview": "light"
             }
           ]
@@ -185,7 +189,6 @@
           "type": "symbol",
           "color": "/logos/md-age/symbol/color.svg",
           "white": "/logos/md-age/symbol/white.svg",
-          "black": "/logos/md-age/symbol/black.svg",
           "alternatives": [
             {
               "label": "Alternative White",
@@ -193,8 +196,13 @@
               "preview": "dark"
             },
             {
-              "label": "Alternative Black",
+              "label": "Alt Black Filled",
               "path": "/logos/md-age/symbol/alt-black.svg",
+              "preview": "light"
+            },
+            {
+              "label": "Alt Black Outline",
+              "path": "/logos/md-age/symbol/black.svg",
               "preview": "light"
             }
           ]
