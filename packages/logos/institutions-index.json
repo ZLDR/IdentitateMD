@@ -141,13 +141,13 @@
           },
           "alternatives": [
             {
-              "label": "Alternative White",
+              "label": "Alternative Black",
               "path": "/logos/md-age/horizontal/alt-white.svg",
               "preview": "light"
             },
             {
               "label": "Negru Outline",
-              "path": "/logos/md-age/horizontal/alt-black.svg",
+              "path": "/logos/md-age/horizontal/alt-black-outline.svg",
               "preview": "light"
             },
             {
