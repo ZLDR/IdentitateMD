@@ -134,7 +134,6 @@
         },
         "horizontal": {
           "type": "horizontal",
-          "color": "/logos/md-age/horizontal/alternative-color.svg",
           "white": "/logos/md-age/horizontal/white.svg",
           "black": "/logos/md-age/horizontal/black.svg",
           "variantPreviews": {
@@ -149,6 +148,11 @@
             {
               "label": "Negru Outline",
               "path": "/logos/md-age/horizontal/alt-black.svg",
+              "preview": "light"
+            },
+            {
+              "label": "Alternative Color",
+              "path": "/logos/md-age/horizontal/alternative-color.svg",
               "preview": "light"
             }
           ]
