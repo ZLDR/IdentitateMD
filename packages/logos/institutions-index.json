@@ -146,13 +146,13 @@
               "preview": "light"
             },
             {
-              "label": "Alternative Color",
-              "path": "/logos/md-age/horizontal/alternative-color.svg",
+              "label": "Negru Hollow",
+              "path": "/logos/md-age/horizontal/alt-white.svg",
               "preview": "light"
             },
             {
-              "label": "Negru Filled",
-              "path": "/logos/md-age/horizontal/alt-white.svg",
+              "label": "Alternative Color",
+              "path": "/logos/md-age/horizontal/alternative-color.svg",
               "preview": "light"
             }
           ]
@@ -164,16 +164,16 @@
         "symbol": {
           "type": "symbol",
           "color": "/logos/md-age/symbol/color.svg",
+          "black": "/logos/md-age/symbol/black.svg",
           "white": "/logos/md-age/symbol/white.svg",
-          "dark": "/logos/md-age/symbol/black.svg",
           "alternatives": [
             {
-              "label": "Alternative White",
+              "label": "Alternative Hollow",
               "path": "/logos/md-age/symbol/alt-white.svg",
               "preview": "light"
             },
             {
-              "label": "Alt Black Outline",
+              "label": "Alt Black",
               "path": "/logos/md-age/symbol/alt-black.svg",
               "preview": "light"
             }
