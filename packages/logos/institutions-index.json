@@ -141,18 +141,18 @@
           },
           "alternatives": [
             {
-              "label": "Alternative Black",
-              "path": "/logos/md-age/horizontal/alt-white.svg",
-              "preview": "light"
-            },
-            {
-              "label": "Negru Outline",
+              "label": "Alternative Outline",
               "path": "/logos/md-age/horizontal/alt-black-outline.svg",
               "preview": "light"
             },
             {
               "label": "Alternative Color",
               "path": "/logos/md-age/horizontal/alternative-color.svg",
+              "preview": "light"
+            },
+            {
+              "label": "Negru Filled",
+              "path": "/logos/md-age/horizontal/alt-white.svg",
               "preview": "light"
             }
           ]
@@ -165,6 +165,7 @@
           "type": "symbol",
           "color": "/logos/md-age/symbol/color.svg",
           "white": "/logos/md-age/symbol/white.svg",
+          "dark": "/logos/md-age/symbol/black.svg",
           "alternatives": [
             {
               "label": "Alternative White",
@@ -172,13 +173,8 @@
               "preview": "light"
             },
             {
-              "label": "Alt Black Filled",
-              "path": "/logos/md-age/symbol/alt-black.svg",
-              "preview": "light"
-            },
-            {
               "label": "Alt Black Outline",
-              "path": "/logos/md-age/symbol/black.svg",
+              "path": "/logos/md-age/symbol/alt-black.svg",
               "preview": "light"
             }
           ]
