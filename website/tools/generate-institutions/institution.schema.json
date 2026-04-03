@@ -155,6 +155,7 @@
       "properties": {
         "main": { "$ref": "#/$defs/logoAssetGroup" },
         "horizontal": { "$ref": "#/$defs/logoAssetGroupOrNull" },
+        "horizontalAlternative": { "$ref": "#/$defs/logoAssetGroupOrNull" },
         "vertical": { "$ref": "#/$defs/logoAssetGroupOrNull" },
         "symbol": { "$ref": "#/$defs/logoAssetGroupOrNull" },
         "favicon": { "type": ["string", "null"] }
@@ -217,7 +218,34 @@
         "white": { "$ref": "#/$defs/assetPath" },
         "black": { "$ref": "#/$defs/assetPath" },
         "monochrome": { "$ref": "#/$defs/assetPath" },
-        "png": { "$ref": "#/$defs/pngAsset" }
+        "png": { "$ref": "#/$defs/pngAsset" },
+        "preview": {
+          "type": ["string", "null"],
+          "enum": ["checkerboard", "dark", "light", "checkerboard-dark", null]
+        },
+        "variantPreviews": {
+          "type": ["object", "null"],
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["checkerboard", "dark", "light", "checkerboard-dark"]
+          }
+        },
+        "alternatives": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["label", "path"],
+            "additionalProperties": false,
+            "properties": {
+              "label": { "type": "string" },
+              "path": { "$ref": "#/$defs/assetPath" },
+              "preview": {
+                "type": ["string", "null"],
+                "enum": ["checkerboard", "dark", "light", "checkerboard-dark", null]
+              }
+            }
+          }
+        }
       }
     },
     "logoAssetGroupOrNull": {

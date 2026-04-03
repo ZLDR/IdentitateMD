@@ -8,7 +8,7 @@
     "version": "1.0",
     "last_updated": "2026-04-02",
     "keywords": ["evo", "stat", "portal guvernamental unic", "simbol", "ue"],
-    "quality": "live"
+    "quality": "verified"
   },
   "location": {
     "country_code": "MD",
@@ -41,16 +41,9 @@
     "website": "https://evo.gov.md",
     "branding_manual": "https://drive.google.com/file/d/1mR7vn7czNvScYV_P04N4Ce-KFLzxQoCI/view?usp=drive_link",
     "social_media": {
-      "facebook": {
-        "url": "https://www.facebook.com/evo.app.moldova"
-      },
-
-      "linkedin": {
-        "url": "https://www.linkedin.com/company/evo-moldova/"
-      },
-      "instagram": {
-        "url": "http://instagram.com/evo.moldova"
-      }
+      "facebook": "https://www.facebook.com/evo.app.moldova",
+      "linkedin": "https://www.linkedin.com/company/evo-moldova/",
+      "instagram": "http://instagram.com/evo.moldova"
     },
     "contact": {
       "phone": "0(22) 820 026",
