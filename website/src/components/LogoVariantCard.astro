@@ -11,7 +11,7 @@ interface Props {
   path: string;
   layoutLabel: string;
   institutionName: string;
-  preview?: 'checkerboard' | 'dark';
+  preview?: 'checkerboard' | 'dark' | 'light';
   isPng?: boolean;
   width?: number;
   height?: number;
@@ -36,7 +36,7 @@ const localFallbackPath = toLocalLogosPath(path);
 <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
   <div class:list={[
     "aspect-[3/2] flex items-center justify-center p-6",
-    preview === 'dark' ? 'bg-gray-800' : 'checkerboard'
+    preview === 'dark' ? 'bg-gray-800' : preview === 'light' ? 'bg-gray-50' : 'checkerboard'
   ]}>
     <img
       src={path}

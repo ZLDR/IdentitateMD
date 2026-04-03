@@ -121,8 +121,9 @@ export interface LogoAssetGroup {
     // Extra variants (e.g. "Alternative White")
     label: string;
     path: AssetUrls;
-    preview?: "checkerboard" | "dark";
+    preview?: "checkerboard" | "dark" | "light";
   }>;
+  variantPreviews?: Partial<Record<LogoColorVariant, "checkerboard" | "dark" | "light">>; // Per-variant preview override
   png?: {
     // Optional PNG version
     path: AssetUrls;

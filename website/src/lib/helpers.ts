@@ -33,7 +33,7 @@ export interface LogoVariantView {
   key: string;
   label: string;
   path: string;
-  preview: "checkerboard" | "dark";
+  preview: "checkerboard" | "dark" | "light";
 }
 
 type InstitutionPathFields = Pick<Institution, "slug" | "shortname">;
@@ -196,7 +196,7 @@ export function getLogoVariants(
         key,
         label: LOGO_VARIANT_LABELS[key] || key,
         path,
-        preview: key === "white" ? "dark" : "checkerboard",
+        preview: group.variantPreviews?.[key as import("../types/institution").LogoColorVariant] ?? (key === "white" ? "dark" : "checkerboard"),
       } as LogoVariantView;
     })
     .filter((item): item is LogoVariantView => item !== null);

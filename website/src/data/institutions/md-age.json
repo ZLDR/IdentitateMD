@@ -66,6 +66,7 @@
       "type": "horizontal",
       "color": "/logos/md-age/horizontal/alternative-color.svg",
       "white": "/logos/md-age/horizontal/white.svg",
+      "variantPreviews": { "white": "light" },
       "alternatives": [
         {
           "label": "Alternative White",
