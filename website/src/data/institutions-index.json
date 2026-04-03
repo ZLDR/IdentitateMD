@@ -717,8 +717,10 @@
         }
       ],
       "typography": {
-        "family": "Onest",
-        "weights": [400, 700]
+        "primary": {
+          "family": "Onest",
+          "weights": [400, 600, 700]
+        }
       },
       "resources": {
         "website": "https://evo.gov.md",
