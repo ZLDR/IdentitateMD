@@ -168,12 +168,12 @@
           "dark": "/logos/md-age/symbol/black.svg",
           "alternatives": [
             {
-              "label": "Alternative White",
+              "label": "Alternative Hollow",
               "path": "/logos/md-age/symbol/alt-white.svg",
               "preview": "light"
             },
             {
-              "label": "Alt Black Outline",
+              "label": "Alt Black",
               "path": "/logos/md-age/symbol/alt-black.svg",
               "preview": "light"
             }
