@@ -136,7 +136,7 @@
           "type": "horizontal",
           "color": "/logos/md-age/horizontal/alternative-color.svg",
           "white": "/logos/md-age/horizontal/white.svg",
-          "black": "/logos/md-age/horizontal/black.svg",
+          "dark": "/logos/md-age/horizontal/black.svg",
           "variantPreviews": {
             "white": "light"
           },
