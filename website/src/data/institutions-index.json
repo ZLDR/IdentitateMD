@@ -136,21 +136,25 @@
           "type": "horizontal",
           "white": "/logos/md-age/horizontal/white.svg",
           "black": "/logos/md-age/horizontal/black.svg",
+          "variantPreviews": {
+            "white": "light",
+            "black": "light"
+          },
           "alternatives": [
             {
-              "label": "Alternative White",
+              "label": "Alb",
               "path": "/logos/md-age/horizontal/alt-white.svg",
-              "preview": "light"
+              "preview": "checkboard"
             },
             {
-              "label": "Alternative Black",
+              "label": "Negru",
               "path": "/logos/md-age/horizontal/alt-black.svg",
               "preview": "checkerboard"
             },
             {
               "label": "Variantă Lungă",
               "path": "/logos/md-age/horizontal/alternative-color.svg",
-              "preview": "checkerboard"
+              "preview": "light"
             }
           ]
         },
@@ -163,6 +167,11 @@
           "color": "/logos/md-age/symbol/color.svg",
           "white": "/logos/md-age/symbol/white.svg",
           "black": "/logos/md-age/symbol/black.svg",
+          "variantPreviews": {
+            "white": "light",
+            "black": "light",
+            "color": "light"
+          },
           "alternatives": [
             {
               "label": "Alternative White",
