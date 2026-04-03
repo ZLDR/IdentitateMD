@@ -63,10 +63,15 @@ const logoAssetGroupSchema = {
         properties: {
           label: { type: "string" },
           path: assetUrlsSchema,
-          preview: { type: "string", enum: ["checkerboard", "dark"] },
+          preview: { type: "string", enum: ["checkerboard", "dark", "light", "checkerboard-dark"] },
         },
       },
     }),
+    preview: { type: "string", enum: ["checkerboard", "dark", "light", "checkerboard-dark"] },
+    variantPreviews: {
+      type: "object",
+      additionalProperties: { type: "string", enum: ["checkerboard", "dark", "light", "checkerboard-dark"] },
+    },
     png: nullable({
       type: "object",
       required: ["path", "width", "height"],
