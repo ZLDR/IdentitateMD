@@ -684,13 +684,7 @@
       "meta": {
         "version": "1.0",
         "last_updated": "2026-04-02",
-        "keywords": [
-          "evo",
-          "stat",
-          "portal guvernamental unic",
-          "simbol",
-          "ue"
-        ],
+        "keywords": ["evo", "stat", "portal guvernamental unic", "ue"],
         "quality": "verified"
       },
       "location": {
@@ -848,7 +842,8 @@
           "bnm",
           "fintech",
           "transfer",
-          "banca națională"
+          "banca națională",
+          "MIA"
         ],
         "quality": "verified"
       },

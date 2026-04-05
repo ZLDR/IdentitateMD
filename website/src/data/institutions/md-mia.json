@@ -7,7 +7,17 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-20",
-    "keywords": ["moldova", "plăți", "instant", "mia", "bnm", "fintech", "transfer", "banca națională"],
+    "keywords": [
+      "moldova",
+      "plăți",
+      "instant",
+      "mia",
+      "bnm",
+      "fintech",
+      "transfer",
+      "banca națională",
+      "MIA"
+    ],
     "quality": "verified"
   },
   "location": {
