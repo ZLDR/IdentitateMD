@@ -3,320 +3,227 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import LogoCard from '../components/LogoCard.astro';
 import Analytics from '@vercel/analytics/astro'
 import institutionIndex from '../data/institutions-index.json';
-import { getPrimaryLogoPath, hasSvg, getDisplayName, buildCatalogPathMap } from '../lib/helpers';
-import { resolveAssetPath } from '../lib/cdn-helpers';
+import { getPrimaryLogoPath, hasSvg, buildCatalogPathMap } from '../lib/helpers';
 import { CATEGORY_LABELS, CATEGORY_ORDER } from '../lib/labels';
 import type { Institution } from '../types/institution';
 
 const institutions = institutionIndex.institutions as unknown as Institution[];
 const catalogPathBySlug = buildCatalogPathMap(institutions);
-const RECENT_ITEMS_LIMIT = 6;
 
-function toTimestamp(value?: string): number {
-  if (!value) return 0;
-  const timestamp = Date.parse(value);
-  return Number.isNaN(timestamp) ? 0 : timestamp;
+// Flat sorted list: by category order, then alphabetically within category
+const sortedInstitutions = [...institutions].sort((a, b) => {
+  const aIdx = CATEGORY_ORDER.indexOf(a.category as any);
+  const bIdx = CATEGORY_ORDER.indexOf(b.category as any);
+  if (aIdx !== bIdx) return (aIdx === -1 ? 99 : aIdx) - (bIdx === -1 ? 99 : bIdx);
+  return a.name.localeCompare(b.name, 'ro');
+});
+
+// Category counts for sidebar
+const categoryCounts = new Map<string, number>();
+for (const inst of institutions) {
+  categoryCounts.set(inst.category, (categoryCounts.get(inst.category) || 0) + 1);
 }
+const activeCategories = CATEGORY_ORDER.filter(cat => (categoryCounts.get(cat) || 0) > 0);
 
-const recentInstitutions = [...institutions]
-  .sort((a, b) => {
-    const bTime = toTimestamp(b.meta?.last_updated);
-    const aTime = toTimestamp(a.meta?.last_updated);
-    if (bTime !== aTime) return bTime - aTime;
-    return a.name.localeCompare(b.name, "ro");
-  })
-  .slice(0, RECENT_ITEMS_LIMIT);
-
-// Marquee helpers — use LOCAL paths to avoid CDN lag for recently-added institutions
-function getMarqueeLogoPath(inst: Institution): string | null {
-  const main = inst.assets.main;
-  if (!main) return null;
-  const order = [main.color, main.dark_mode, main.black, main.white, main.monochrome];
-  for (const asset of order) {
-    if (asset) {
-      const p = resolveAssetPath(asset, false); // local, not CDN
-      if (p) return p;
-    }
-  }
-  if (main.png) return resolveAssetPath(main.png.path, false);
-  return null;
-}
-
-function marqueeDarkBg(inst: Institution): boolean {
-  const main = inst.assets.main;
-  if (!main) return false;
-  if (main.preview === 'dark') return true;
-  // Heuristic: color-slot file is actually a white/light logo
-  const colorPath = typeof main.color === 'string' ? main.color : main.color?.local ?? '';
-  if (colorPath.toLowerCase().includes('white')) return true;
-  return false;
-}
-
-// Marquee: pick all institutions that have a logo, spread across two rows
-const withLogos = institutions.filter(i => getMarqueeLogoPath(i) !== null);
-const half = Math.ceil(withLogos.length / 2);
-const marqueeRow1 = withLogos.slice(0, half);
-const marqueeRow2 = withLogos.slice(half);
-
-// Grupare pe categorii cu ordine prestabilită
-const grouped = new Map<string, typeof institutions>();
-for (const cat of CATEGORY_ORDER) {
-  const items = institutions.filter(i => i.category === cat);
-  if (items.length > 0) grouped.set(cat, items);
-}
-
-// Categoriile active (cele care au cel puțin o instituție)
-const activeCategories = [...grouped.keys()];
-
-// Build category labels map for JS
 const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
+const total = institutions.length;
 ---
 
 <BaseLayout
   title="identitate.md - Siglele Oficiale ale Instituțiilor Publice din Moldova"
-  description={`Descarcă gratuit sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${institutionIndex.total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
+  description={`Descarcă gratuit sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
+  noHeader={true}
+  noFooter={true}
 >
-  <!-- Hero Section -->
-  <section class="relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-surface-50 -z-10"></div>
-    <Analytics />
+  <Analytics />
 
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center w-full">
+  <div class="flex flex-col lg:flex-row min-h-screen bg-white">
 
-      <!-- Stats / eyebrow pills -->
-      <div class="mb-6 flex items-center justify-center gap-2 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0"></span>
-          {institutionIndex.total}+ instituții
-        </span>
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
-          SVG vectorial
-        </span>
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-surface-200 text-[11px] font-medium text-surface-600 shadow-sm">
-          Open source
-        </span>
-        <a href="/mcp" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-[11px] font-medium text-primary-700 shadow-sm hover:bg-primary-100 transition-colors">
-          <span class="text-[9px] font-bold uppercase tracking-wider text-primary-500">Nou</span>
-          <span class="w-px h-2.5 bg-primary-200"></span>
-          MCP disponibil
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SIDEBAR (desktop only)                              -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <aside class="hidden lg:flex flex-col w-[220px] shrink-0 border-r border-surface-200 bg-white sticky top-0 h-screen overflow-hidden">
+
+      <!-- Brand -->
+      <div class="px-4 pt-5 pb-3.5 border-b border-surface-100">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/logo-identitate.svg" alt="identitate.md" class="h-[22px]" />
         </a>
       </div>
 
-      <!-- Title -->
-      <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-primary-900 leading-tight text-balance mb-4">
-        Sigle oficiale ale<br class="hidden sm:block" />
-        instituțiilor publice din <span class="text-primary-500">Moldova</span>.
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="text-sm sm:text-[15px] text-surface-500 max-w-[520px] mx-auto mb-8 text-balance leading-relaxed">
-        SVG-uri vectoriale gratuite pentru ministere, primării și instituții de stat — descarcă direct sau integrează în proiect via npm și MCP.
-      </p>
-
-      <!-- Search Input -->
-      <div class="relative max-w-xl mx-auto z-10" id="search-wrapper">
-        <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-          <svg class="w-5 h-5 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      <!-- Navigation -->
+      <nav class="px-2 pt-2.5 pb-2 space-y-0.5 border-b border-surface-100">
+        <a href="/" class="sidebar-nav-item font-medium text-primary-900 bg-surface-100" aria-current="page">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
           </svg>
-        </div>
-        <input
-          type="search"
-          id="search-input"
-          class="search-input pl-12 pr-12 sm:text-[14px] text-sm"
-          placeholder="Caută Primăria Municipiului Chișinău, Ministerul Educației...""
-          data-placeholder-long={'Caută "Primăria Municipiului Chișinău", „Ministerul Educației"...'}
-          data-placeholder-short="Ministerul Educației..."
-          autocomplete="off"
-        />
-        <!-- Keyboard shortcut hint - hidden on mobile (no physical keyboard) -->
-        <div class="absolute inset-y-0 right-0 pr-4 hidden md:flex items-center pointer-events-none" id="search-shortcut">
-          <kbd class="px-1.5 py-0.5 bg-surface-100 border border-surface-200 rounded text-[11px] text-surface-400 font-mono">/</kbd>
-        </div>
-        <div id="search-hint" class="mt-2 text-xs text-surface-400 hidden">
-          <span class="hidden md:inline"><kbd class="px-1.5 py-0.5 bg-surface-100 rounded text-surface-500 font-mono">ESC</kbd> pentru a reseta</span>
-        </div>
+          Acasă
+        </a>
+        <a href="/mcp" class="sidebar-nav-item">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+          </svg>
+          MCP
+          <span class="ml-auto text-[9px] font-bold uppercase tracking-wide bg-primary-100 text-primary-600 px-1.5 py-0.5 rounded">Nou</span>
+        </a>
+        <a href="/utilizare" class="sidebar-nav-item">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          Documentație
+        </a>
+        <a href="https://github.com/ZLDR/IdentitateMD" target="_blank" rel="noopener noreferrer" class="sidebar-nav-item">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          GitHub
+        </a>
+      </nav>
 
-        <!-- Search Dropdown Results -->
-        <div id="search-dropdown" class="absolute top-full left-0 mt-2 bg-white border border-surface-200 rounded-lg shadow-xl hidden z-[100] max-h-[400px] overflow-y-auto w-full max-w-xl">
-          <div id="search-dropdown-results" class="py-2"></div>
-          <div id="search-dropdown-footer" class="px-4 py-2 border-t border-surface-100 text-xs text-surface-400 flex items-center justify-between">
-            <span id="search-dropdown-count"></span>
-            <span class="hidden md:inline">Folosește <kbd class="px-1.5 py-0.5 bg-surface-100 rounded font-mono">↑</kbd> <kbd class="px-1.5 py-0.5 bg-surface-100 rounded font-mono">↓</kbd> pentru a naviga, <kbd class="px-1.5 py-0.5 bg-surface-100 rounded font-mono">Enter</kbd> pentru a selecta</span>
-          </div>
-        </div>
+      <!-- Solicită logo CTA -->
+      <div class="px-2 py-2.5 border-b border-surface-100">
+        <a
+          href="/solicita"
+          class="flex items-center justify-center gap-1.5 w-full py-1.5 px-3 rounded border border-surface-200 text-[12px] font-medium text-surface-600 hover:bg-surface-50 hover:border-surface-300 transition-colors"
+        >
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
+          </svg>
+          Solicită logo
+        </a>
       </div>
 
-      <!-- Quick category browse pills -->
-      <div class="flex items-center justify-center gap-1.5 flex-wrap mt-4 overflow-x-auto max-w-full">
-        <span class="text-[11px] text-surface-400 mr-0.5 shrink-0">Răsfoiește:</span>
-        {(['minister', 'primarie', 'agentie', 'universitate'] as const).map(cat => (
-          <button
-            class="hero-cat-btn px-2.5 py-1 rounded-full border border-surface-200 bg-white hover:border-primary-400 hover:text-primary-700 text-[11px] text-surface-600 transition-colors cursor-pointer shrink-0"
-            data-category={cat}
-          >
-            {CATEGORY_LABELS[cat]}
+      <!-- Categories list (scrollable) -->
+      <div class="flex-1 overflow-y-auto py-2 px-2 scrollbar-hide">
+        <p class="px-1 pt-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-surface-400">
+          Categorii
+        </p>
+
+        <button class="sidebar-cat-item sidebar-cat-active" data-sidebar-cat="all" type="button">
+          <span>Toate</span>
+          <span class="text-[11px] text-surface-400 shrink-0 tabular-nums">{total}</span>
+        </button>
+
+        {activeCategories.map(cat => (
+          <button class="sidebar-cat-item" data-sidebar-cat={cat} type="button">
+            <span class="truncate">{CATEGORY_LABELS[cat]}</span>
+            <span class="text-[11px] text-surface-400 shrink-0 tabular-nums">{categoryCounts.get(cat)}</span>
           </button>
         ))}
       </div>
 
-    </div>
+    </aside>
 
-    <!-- Logo marquee strip -->
-    <div class="relative mt-8 pb-14">
-      <!-- Fade edges -->
-      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-surface-50 to-transparent z-10"></div>
-      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-surface-50 to-transparent z-10"></div>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- MAIN AREA                                           -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="flex-1 flex flex-col min-w-0">
 
-      <!-- Row 1: scrolls left -->
-      <div class="overflow-hidden mb-3">
-        <div class="marquee-track marquee-left flex gap-3">
-          {[...marqueeRow1, ...marqueeRow1].map((inst) => {
-            const logoPath = getMarqueeLogoPath(inst);
-            if (!logoPath) return null;
-            return (
-              <a
-                href={`/catalog/${catalogPathBySlug[inst.slug]}`}
-                class="marquee-item shrink-0 w-28 h-[4.5rem] bg-white rounded border border-surface-200 flex items-center justify-center p-3 hover:border-primary-400 hover:shadow-card transition-all"
-                title={inst.name}
-              >
-                <img
-                  src={logoPath}
-                  alt={inst.shortname || inst.name}
-                  class="max-w-full max-h-full object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-            );
-          })}
-        </div>
-      </div>
-
-      <!-- Row 2: scrolls right -->
-      <div class="overflow-hidden">
-        <div class="marquee-track marquee-right flex gap-3">
-          {[...marqueeRow2, ...marqueeRow2].map((inst) => {
-            const logoPath = getMarqueeLogoPath(inst);
-            if (!logoPath) return null;
-            return (
-              <a
-                href={`/catalog/${catalogPathBySlug[inst.slug]}`}
-                class="marquee-item shrink-0 w-28 h-[4.5rem] bg-white rounded border border-surface-200 flex items-center justify-center p-3 hover:border-primary-400 hover:shadow-card transition-all"
-                title={inst.name}
-              >
-                <img
-                  src={logoPath}
-                  alt={inst.shortname || inst.name}
-                  class="max-w-full max-h-full object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Developer integration bar -->
-  <div class="bg-surface-100 border-b border-surface-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 text-center">
-        <span class="text-[11px] font-medium text-surface-500 uppercase tracking-widest shrink-0">Pentru dezvoltatori</span>
-        <div class="flex items-center gap-2.5 flex-wrap justify-center">
-          <div class="inline-flex items-center gap-2 bg-surface-900 rounded px-3 py-1.5">
-            <code class="text-white text-xs font-mono"><span class="text-green-400">npm i</span> @identitate-md/logos</code>
-            <button
-              class="copy-npm-btn p-1 -mr-0.5 rounded hover:bg-gray-700 text-gray-400 hover:text-white transition-colors shrink-0"
-              data-value="npm install @identitate-md/logos"
-              title="Copiază"
-            >
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-            </button>
+      <!-- Mobile: compact top bar -->
+      <div class="lg:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-surface-200 px-4 py-3 flex items-center gap-3">
+        <a href="/" class="flex items-center shrink-0">
+          <img src="/logo-identitate.svg" alt="identitate.md" class="h-5" />
+        </a>
+        <div class="flex-1 relative">
+          <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+            <svg class="w-3.5 h-3.5 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
           </div>
-          <span class="text-surface-400 text-[11px]">sau</span>
-          <a href="/mcp" class="text-xs text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2 transition-colors">MCP pentru AI tools →</a>
+          <input
+            type="search"
+            id="search-input-mobile"
+            class="search-input-field w-full pl-8 pr-3 py-1.5 text-sm bg-surface-50 border border-surface-200 rounded-md placeholder-surface-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/20 transition-all"
+            placeholder="Caută..."
+            autocomplete="off"
+          />
         </div>
+        <a href="/solicita" class="shrink-0 text-[11px] font-medium border border-surface-200 rounded px-2 py-1 text-surface-600 hover:bg-surface-50 transition-colors">
+          Solicită logo
+        </a>
       </div>
-    </div>
-  </div>
 
-  <!-- Filter Bar - sticky on md+, scrolls away on mobile -->
-  <section class="md:sticky md:top-12 z-30 bg-white/80 backdrop-blur-md border-b border-surface-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-      <!-- Overflow container with gradient hint -->
-      <div class="relative">
-        <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide" id="filter-bar" role="tablist" aria-label="Filtrare după categorie">
-          <button
-            class="category-chip category-chip--active shrink-0"
-            data-category="all"
-          >
-            Toate ({institutions.length})
+      <!-- Mobile: category chips scroll -->
+      <div class="lg:hidden border-b border-surface-200 bg-white">
+        <!-- Nav links row -->
+        <div class="flex items-center gap-4 px-4 pt-2 pb-1.5 text-[11px] text-surface-500">
+          <a href="/mcp" class="hover:text-primary-700 flex items-center gap-1 transition-colors">
+            MCP
+            <span class="text-[9px] font-bold uppercase bg-primary-100 text-primary-600 px-1 py-0.5 rounded">Nou</span>
+          </a>
+          <a href="/utilizare" class="hover:text-primary-700 transition-colors">Documentație</a>
+          <a href="https://github.com/ZLDR/IdentitateMD" target="_blank" rel="noopener" class="hover:text-primary-700 transition-colors">GitHub</a>
+        </div>
+        <!-- Category chips -->
+        <div class="flex items-center gap-1.5 px-4 pb-3 overflow-x-auto scrollbar-hide">
+          <button class="category-chip category-chip--active shrink-0" data-mobile-cat="all" type="button">
+            Toate ({total})
           </button>
           {activeCategories.map(cat => (
-            <button
-              class="category-chip category-chip--inactive shrink-0"
-              data-category={cat}
-            >
-              {CATEGORY_LABELS[cat] || cat} ({grouped.get(cat)?.length || 0})
+            <button class="category-chip category-chip--inactive shrink-0" data-mobile-cat={cat} type="button">
+              {CATEGORY_LABELS[cat]} ({categoryCounts.get(cat)})
             </button>
           ))}
         </div>
-        <!-- Right gradient overlay to signal more chips -->
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white/90 to-transparent md:hidden" id="filter-gradient"></div>
       </div>
-    </div>
-  </section>
 
-  <!-- Active Filters Summary - removed: duplicates the filter chips bar above -->
+      <!-- Desktop: search bar -->
+      <div class="hidden lg:block border-b border-surface-200 bg-white" id="search-wrapper">
+        <div class="px-6 py-3 relative">
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="w-4 h-4 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="search-input-desktop"
+              class="search-input-field w-full pl-9 pr-20 py-2 text-sm bg-white border border-surface-200 rounded-md placeholder-surface-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/20 transition-all"
+              placeholder="Caută instituție..."
+              autocomplete="off"
+            />
+            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none gap-0.5">
+              <kbd class="px-1.5 py-0.5 bg-surface-100 border border-surface-200 rounded text-[10px] text-surface-400 font-mono">⌘</kbd>
+              <kbd class="px-1.5 py-0.5 bg-surface-100 border border-surface-200 rounded text-[10px] text-surface-400 font-mono">K</kbd>
+            </div>
 
-  <!-- Logo Grid -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <!-- Single DOM: Category Sections (cards are shown/hidden in-place) -->
-    {recentInstitutions.length > 0 && (
-      <div id="recent-section" class="mb-8">
-        <h2 class="category-heading text-lg font-semibold text-primary-900 mb-1">
-          Adăugate recent
-        </h2>
-        <p class="text-xs text-surface-500 mb-3">
-          Cele mai recente instituții actualizate în catalog.
-        </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-          {recentInstitutions.map((inst, index) => {
-            const visibilityClass =
-              index >= 5 ? 'hidden sm:block lg:hidden' :
-              index >= 3 ? 'hidden sm:block' :
-              '';
-            const logoPath = getPrimaryLogoPath(inst) || '';
-            const hasSvgFlag = hasSvg(inst);
-            return (
-              <LogoCard
-                slug={inst.slug}
-                catalogPath={catalogPathBySlug[inst.slug]}
-                name={inst.name}
-                shortname={inst.shortname}
-                category={inst.category}
-                logoPath={logoPath}
-                hasSvg={hasSvgFlag}
-                keywords={inst.meta.keywords}
-                className={visibilityClass}
-              />
-            );
-          })}
+            <!-- Search dropdown -->
+            <div id="search-dropdown" class="absolute top-full left-0 right-0 mt-1 bg-white border border-surface-200 rounded-lg shadow-xl hidden z-[100] max-h-[380px] overflow-y-auto">
+              <div id="search-dropdown-results" class="py-1.5"></div>
+              <div id="search-dropdown-footer" class="px-4 py-2 border-t border-surface-100 text-[11px] text-surface-400 flex items-center justify-between">
+                <span id="search-dropdown-count"></span>
+                <span>
+                  <kbd class="px-1 py-0.5 bg-surface-100 rounded font-mono text-[10px]">↑↓</kbd> navigare ·
+                  <kbd class="px-1 py-0.5 bg-surface-100 rounded font-mono text-[10px]">Enter</kbd> selectare ·
+                  <kbd class="px-1 py-0.5 bg-surface-100 rounded font-mono text-[10px]">Esc</kbd> închide
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    )}
 
-    <div id="category-sections">
-      {[...grouped.entries()].map(([cat, items]) => (
-        <div class="category-section mb-8" data-category-section={cat}>
-          <h2 class="category-heading text-lg font-semibold text-primary-900 mb-3">
-            {CATEGORY_LABELS[cat] || cat}
-          </h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-            {items.map((inst) => {
+      <!-- Scrollable content -->
+      <div class="flex-1 bg-surface-50">
+        <div class="px-4 lg:px-6 py-5">
+
+          <!-- Count row -->
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-[13px] text-surface-500 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+              </svg>
+              <span id="count-display">{total} instituții</span>
+            </p>
+          </div>
+
+          <!-- Logo grid (flat) -->
+          <div
+            id="main-grid"
+            class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4"
+          >
+            {sortedInstitutions.map((inst) => {
               const logoPath = getPrimaryLogoPath(inst) || '';
               const hasSvgFlag = hasSvg(inst);
               return (
@@ -329,78 +236,35 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
                   logoPath={logoPath}
                   hasSvg={hasSvgFlag}
                   keywords={inst.meta.keywords}
+                  websiteUrl={inst.resources?.website}
+                  brandingManualUrl={inst.resources?.branding_manual}
                 />
               );
             })}
           </div>
-        </div>
-      ))}
-    </div>
 
-    <!-- Empty state (dynamic content set via JS) -->
-    <div id="empty-state" class="hidden py-20 text-center">
-      <svg class="w-16 h-16 mx-auto mb-4 text-surface-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <h3 class="text-sm font-semibold text-primary-900 mb-2" id="empty-title">Niciun rezultat</h3>
-      <p class="text-surface-500 text-xs mb-4" id="empty-message">Nu am găsit nicio instituție care să corespundă căutării tale.</p>
-      <div id="empty-actions" class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <button type="button" id="empty-search-all" class="btn-secondary hidden">Caută în toate categoriile</button>
-        <a href="/solicita" class="btn-primary">Solicită adăugarea</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- For Developers -->
-  <section class="bg-surface-50 border-t border-surface-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-      <p class="text-[11px] font-medium text-surface-400 uppercase tracking-widest mb-1">Pentru Dezvoltatori</p>
-      <p class="text-xs text-surface-500 mb-6">Integrează siglele direct în proiectul tău via npm sau în AI tools via MCP.</p>
-      <div class="flex flex-col items-center gap-2" id="install-tabs">
-        <!-- Tab buttons -->
-        <div class="inline-flex items-center gap-1 bg-surface-100 border border-surface-200 rounded-md p-0.5">
-          <button type="button" data-tab="npm" class="install-tab install-tab-active text-[11px] font-medium px-3 py-1 rounded transition-colors">npm</button>
-          <button type="button" data-tab="mcp" class="install-tab text-[11px] font-medium px-3 py-1 rounded transition-colors">MCP</button>
-        </div>
-
-        <!-- npm panel -->
-        <div data-panel="npm" class="install-panel inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
-          <code class="text-white"><span class="text-green-400">npm i</span> @identitate-md/logos</code>
-          <button
-            type="button"
-            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
-            data-value="npm install @identitate-md/logos"
-            title="Copiază comanda"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          <!-- Empty state -->
+          <div id="empty-state" class="hidden py-20 text-center">
+            <svg class="w-14 h-14 mx-auto mb-4 text-surface-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-          </button>
-        </div>
+            <h3 class="text-sm font-semibold text-primary-900 mb-2">Niciun rezultat</h3>
+            <p class="text-surface-500 text-xs mb-4" id="empty-message">Nu am găsit nicio instituție care să corespundă căutării tale.</p>
+            <a href="/solicita" class="btn-primary">Solicită adăugarea</a>
+          </div>
 
-        <!-- MCP panel -->
-        <div data-panel="mcp" class="install-panel hidden inline-flex items-center gap-2 sm:gap-3 bg-surface-900 rounded-lg px-3 sm:px-4 py-2.5 font-mono text-xs sm:text-sm">
-          <code class="text-white"><span class="text-blue-400">claude mcp add</span> identitate-md -- npx -y @identitate-md/mcp</code>
-          <button
-            type="button"
-            class="copy-npm-btn p-2 -mr-1 rounded hover:bg-gray-700 text-gray-400 hover:text-gray-200 transition-colors shrink-0"
-            data-value="claude mcp add identitate-md -- npx -y @identitate-md/mcp"
-            title="Copiază comanda"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </button>
         </div>
       </div>
-      <p class="mt-6 text-xs text-surface-400">
-        <a href="/mcp" class="underline underline-offset-2 hover:text-surface-600 transition-colors">Documentație completă MCP →</a>
-      </p>
+
     </div>
-  </section>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast-container" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 pointer-events-none"></div>
+
 </BaseLayout>
 
-<!-- Inline JSON data for client-side search & filter -->
+<!-- Pass data to client -->
 <script define:vars={{ institutions: institutionIndex.institutions, categoryLabelsJson, catalogPathBySlug }}>
   window.__IDENTITATE_DATA__ = institutions;
   window.__CATEGORY_LABELS__ = JSON.parse(categoryLabelsJson);
@@ -408,459 +272,313 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 </script>
 
 <script>
-  /**
-   * IdentitateMD - Client-side interactivity (v4.0 - Mobile-first rewrite)
-   * Single DOM, active filter pills, URL persistence, smart empty state
-   */
   import Fuse from 'fuse.js';
 
   document.addEventListener('DOMContentLoaded', () => {
 
-  const data = window.__IDENTITATE_DATA__;
-  const LABELS: Record<string, string> = window.__CATEGORY_LABELS__;
-  const catalogPathBySlug: Record<string, string> = window.__CATALOG_PATHS__;
+    const data: any[] = (window as any).__IDENTITATE_DATA__;
+    const LABELS: Record<string, string> = (window as any).__CATEGORY_LABELS__;
+    const catalogPaths: Record<string, string> = (window as any).__CATALOG_PATHS__;
 
-  // Helper to get logo path for dropdown items
-  function getMarqueeLogoPath(inst: typeof data[0]): string | null {
-    const main = inst.assets.main;
-    if (!main) return null;
-    const order = [main.color, main.dark_mode, main.black, main.white, main.monochrome];
-    for (const asset of order) {
-      if (asset) {
-        const p = typeof asset === 'string' ? asset : asset?.local || asset?.cdn || '';
-        if (p) return p;
+    // ── Fuse.js ──────────────────────────────────────────
+    const fuse = new Fuse(data, {
+      keys: [
+        { name: 'name', weight: 0.4 },
+        { name: 'shortname', weight: 0.3 },
+        { name: 'meta.keywords', weight: 0.2 },
+        { name: 'description', weight: 0.1 },
+      ],
+      threshold: 0.35,
+      ignoreLocation: true,
+    });
+
+    // ── State ────────────────────────────────────────────
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    // ── DOM refs ─────────────────────────────────────────
+    const mainGrid = document.getElementById('main-grid')!;
+    const emptyState = document.getElementById('empty-state')!;
+    const emptyMessage = document.getElementById('empty-message')!;
+    const countDisplay = document.getElementById('count-display')!;
+    const allCards = document.querySelectorAll<HTMLElement>('[data-institution-id]');
+    const searchDropdown = document.getElementById('search-dropdown')!;
+    const searchDropdownResults = document.getElementById('search-dropdown-results')!;
+    const searchDropdownCount = document.getElementById('search-dropdown-count')!;
+
+    let highlightedIdx = -1;
+    let dropdownResults: any[] = [];
+
+    // ── Logo path helper (for dropdown thumbnails) ───────
+    function getLogoPath(inst: any): string {
+      const main = inst.assets?.main;
+      if (!main) return '';
+      for (const asset of [main.color, main.dark_mode, main.black, main.white, main.monochrome]) {
+        if (asset) {
+          const p = typeof asset === 'string' ? asset : (asset?.local || asset?.cdn_primary || '');
+          if (p) return p;
+        }
+      }
+      return main.png?.path || '';
+    }
+
+    // ── Toast ────────────────────────────────────────────
+    function showToast(message: string, type: 'success' | 'error' = 'success') {
+      const container = document.getElementById('toast-container')!;
+      const el = document.createElement('div');
+      el.className = `px-4 py-2.5 rounded-lg text-sm font-medium shadow-lg ${
+        type === 'success' ? 'bg-surface-900 text-white' : 'bg-red-600 text-white'
+      }`;
+      el.textContent = message;
+      container.appendChild(el);
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.25s';
+        el.style.opacity = '0';
+        setTimeout(() => el.remove(), 260);
+      }, 2000);
+    }
+
+    // ── URL state ────────────────────────────────────────
+    function readUrlState() {
+      const p = new URLSearchParams(window.location.search);
+      const cat = p.get('categorie') || p.get('cat');
+      const q = p.get('q');
+      if (cat && cat !== 'all') activeCategory = cat;
+      if (q) {
+        searchQuery = q;
+        document.querySelectorAll<HTMLInputElement>('.search-input-field').forEach(el => { el.value = q; });
       }
     }
-    if (main.png) return main.png.path;
-    return null;
-  }
 
-  // Initialize Fuse.js for fuzzy search
-  const fuse = new Fuse(data, {
-    keys: [
-      { name: 'name', weight: 0.4 },
-      { name: 'shortname', weight: 0.3 },
-      { name: 'meta.keywords', weight: 0.2 },
-      { name: 'description', weight: 0.1 },
-    ],
-    threshold: 0.35,
-    ignoreLocation: true,
-    useExtendedSearch: false,
-  });
-
-  // DOM elements
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
-  const searchShortcut = document.getElementById('search-shortcut')!;
-  const searchDropdown = document.getElementById('search-dropdown')!;
-  const searchDropdownResults = document.getElementById('search-dropdown-results')!;
-  const searchDropdownCount = document.getElementById('search-dropdown-count')!;
-  const filterBar = document.getElementById('filter-bar')!;
-  const categorySections = document.getElementById('category-sections')!;
-  const recentSection = document.getElementById('recent-section');
-  const emptyState = document.getElementById('empty-state')!;
-  const filterGradient = document.getElementById('filter-gradient');
-
-  // Empty state elements
-  const emptyTitle = document.getElementById('empty-title')!;
-  const emptyMessage = document.getElementById('empty-message')!;
-  const emptySearchAll = document.getElementById('empty-search-all')!;
-
-  // Search dropdown state
-  let highlightedIndex = -1;
-  let currentResults: typeof data = [];
-
-  // Responsive placeholder
-  function updatePlaceholder() {
-    const isWide = window.innerWidth >= 640;
-    searchInput.placeholder = isWide
-      ? (searchInput.dataset.placeholderLong || searchInput.placeholder)
-      : (searchInput.dataset.placeholderShort || searchInput.placeholder);
-  }
-  updatePlaceholder();
-  window.addEventListener('resize', updatePlaceholder);
-
-  // Blur handler for shortcut indicator (don't hide dropdown immediately)
-  searchInput.addEventListener('blur', () => {
-    // Small delay to allow click events on dropdown to fire
-    setTimeout(() => {
-      if (!searchInput.value) searchShortcut.classList.remove('hidden');
-    }, 150);
-  });
-
-  // State
-  let activeCategory = 'all';
-  let searchQuery = '';
-
-  // ── Search Dropdown ──────────────────────────────────────────────────
-  function showDropdown() {
-    searchDropdown.classList.remove('hidden');
-  }
-
-  function hideDropdown() {
-    searchDropdown.classList.add('hidden');
-    highlightedIndex = -1;
-    currentResults = [];
-  }
-
-  function updateDropdown(query: string) {
-    if (!query) {
-      hideDropdown();
-      return;
+    function writeUrlState() {
+      const p = new URLSearchParams();
+      if (activeCategory !== 'all') p.set('categorie', activeCategory);
+      if (searchQuery.trim()) p.set('q', searchQuery.trim());
+      const qs = p.toString();
+      history.replaceState(null, '', qs ? `${location.pathname}?${qs}` : location.pathname);
     }
 
-    const results = fuse.search(query).map(r => r.item);
-    currentResults = results;
+    // ── Filter & search ──────────────────────────────────
+    function filterAndSearch() {
+      const query = searchQuery.toLowerCase().trim();
+      const hits = query ? new Set(fuse.search(query).map((r: any) => r.item.slug)) : null;
+      let visible = 0;
 
-    if (results.length === 0) {
-      searchDropdownResults.innerHTML = `
-        <div class="px-4 py-8 text-center text-surface-500">
-          <svg class="w-10 h-10 mx-auto mb-2 text-surface-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p class="text-sm">Niciun rezultat pentru "${query}"</p>
-        </div>
-      `;
-      searchDropdownCount.textContent = '';
-      showDropdown();
-      return;
+      allCards.forEach(card => {
+        const slug = card.dataset.institutionId!;
+        const cat = card.dataset.cardCategory!;
+        const matchCat = activeCategory === 'all' || cat === activeCategory;
+        const matchSearch = !hits || hits.has(slug);
+        const show = matchCat && matchSearch;
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+
+      // Update count label
+      countDisplay.textContent = `${visible} ${visible === 1 ? 'instituție' : 'instituții'}`;
+
+      // Empty state
+      const isEmpty = visible === 0;
+      emptyState.classList.toggle('hidden', !isEmpty);
+      mainGrid.classList.toggle('hidden', isEmpty);
+      if (isEmpty && query) {
+        emptyMessage.textContent = `Nu am găsit nicio instituție pentru „${searchQuery.trim()}".`;
+      } else if (isEmpty) {
+        emptyMessage.textContent = 'Nu am găsit nicio instituție în această categorie.';
+      }
+
+      updateActiveButtons();
+      writeUrlState();
     }
 
-    const maxResults = 4;
-    const displayResults = results.slice(0, maxResults);
+    function updateActiveButtons() {
+      document.querySelectorAll<HTMLElement>('[data-sidebar-cat]').forEach(btn => {
+        btn.classList.toggle('sidebar-cat-active', btn.dataset.sidebarCat === activeCategory);
+      });
+      document.querySelectorAll<HTMLElement>('[data-mobile-cat]').forEach(btn => {
+        const isActive = btn.dataset.mobileCat === activeCategory;
+        btn.classList.toggle('category-chip--active', isActive);
+        btn.classList.toggle('category-chip--inactive', !isActive);
+      });
+    }
 
-    searchDropdownResults.innerHTML = displayResults.map((inst, idx) => {
-      const catLabel = LABELS[inst.category] || inst.category;
-      return `
+    // ── Search dropdown ───────────────────────────────────
+    function showDropdown() { searchDropdown.classList.remove('hidden'); }
+    function hideDropdown() {
+      searchDropdown.classList.add('hidden');
+      highlightedIdx = -1;
+      dropdownResults = [];
+    }
+
+    function updateDropdown(query: string) {
+      if (!query.trim()) { hideDropdown(); return; }
+
+      const results = fuse.search(query).map((r: any) => r.item);
+      dropdownResults = results;
+
+      if (results.length === 0) {
+        searchDropdownResults.innerHTML = `<div class="px-4 py-8 text-center text-sm text-surface-500">Niciun rezultat pentru „${query}"</div>`;
+        searchDropdownCount.textContent = '';
+        showDropdown();
+        return;
+      }
+
+      const max = 5;
+      const shown = results.slice(0, max);
+
+      searchDropdownResults.innerHTML = shown.map((inst: any, idx: number) => `
         <a
-          href="/catalog/${catalogPathBySlug[inst.slug]}"
-          class="search-result-item flex items-center gap-2.5 px-3 py-2 hover:bg-primary-50 transition-colors ${idx === highlightedIndex ? 'bg-primary-50' : ''}"
+          href="/catalog/${catalogPaths[inst.slug]}"
+          class="search-result-item flex items-center gap-2.5 px-3 py-2 hover:bg-surface-50 transition-colors ${idx === highlightedIdx ? 'bg-surface-50' : ''}"
           data-index="${idx}"
-          data-slug="${inst.slug}"
         >
-          <div class="w-9 h-9 shrink-0 rounded bg-surface-50 border border-surface-200 flex items-center justify-center p-1">
-            <img
-              src="${getMarqueeLogoPath(inst) || ''}"
-              alt="${inst.name}"
-              class="max-w-full max-h-full object-contain"
-              loading="lazy"
-            />
+          <div class="w-8 h-8 shrink-0 rounded bg-surface-100 border border-surface-200 flex items-center justify-center p-1 overflow-hidden">
+            <img src="${getLogoPath(inst)}" alt="${inst.name}" class="max-w-full max-h-full object-contain" loading="lazy" />
           </div>
-          <div class="min-w-0 flex-1 text-left">
+          <div class="min-w-0 flex-1">
             <div class="font-medium text-sm text-primary-900 truncate">${inst.name}</div>
-            <div class="text-xs text-surface-500 truncate">${catLabel}</div>
+            <div class="text-[11px] text-surface-500">${LABELS[inst.category] || inst.category}</div>
           </div>
-          <svg class="w-4 h-4 text-surface-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-3.5 h-3.5 text-surface-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </a>
-      `;
-    }).join('');
+      `).join('');
 
-    searchDropdownCount.textContent = `${results.length} rezultat${results.length === 1 ? '' : 'e'}${results.length > maxResults ? ` (se afișează ${maxResults})` : ''}`;
+      searchDropdownCount.textContent = `${results.length} rezultat${results.length === 1 ? '' : 'e'}`;
 
-    if (results.length > maxResults) {
-      searchDropdownResults.innerHTML += `
-        <div class="px-4 py-2 text-center border-t border-surface-100">
-          <button type="button" class="search-view-all text-xs text-primary-600 hover:text-primary-700 font-medium">
-            Vezi toate ${results.length} rezultate
-          </button>
-        </div>
-      `;
-    }
-
-    showDropdown();
-  }
-
-  function setHighlightedIndex(index: number) {
-    highlightedIndex = index;
-    const items = searchDropdownResults.querySelectorAll('.search-result-item');
-    items.forEach((item, idx) => {
-      item.classList.toggle('bg-primary-50', idx === index);
-    });
-
-    // Scroll into view if needed
-    const highlighted = items[index];
-    if (highlighted) {
-      highlighted.scrollIntoView({ block: 'nearest' });
-    }
-  }
-
-  // ── URL State ───────────────────────────────────────────────────────
-  function readUrlState() {
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get('categorie') || params.get('cat');
-    const q = params.get('q');
-    if (cat && cat !== 'all') activeCategory = cat;
-    if (q) {
-      searchQuery = q;
-      searchInput.value = q;
-    }
-  }
-
-  function writeUrlState() {
-    const params = new URLSearchParams();
-    if (activeCategory !== 'all') params.set('categorie', activeCategory);
-    if (searchQuery.trim()) params.set('q', searchQuery.trim());
-    const qs = params.toString();
-    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
-    history.replaceState(null, '', url);
-  }
-
-  // ── Core filter/search ─────────────────────────────────────────────
-  function filterAndSearch() {
-    const query = searchQuery.toLowerCase().trim();
-    const showRecentSection = activeCategory === 'all' && !query;
-    recentSection?.classList.toggle('hidden', !showRecentSection);
-
-    // Get matching slugs from search
-    const matchingSlugs = query
-      ? new Set(fuse.search(query).map(r => r.item.slug))
-      : null;
-
-    let totalVisible = 0;
-
-    // Iterate over each category section
-    categorySections.querySelectorAll<HTMLElement>('[data-category-section]').forEach(section => {
-      const sectionCat = section.dataset.categorySection!;
-      const cards = section.querySelectorAll<HTMLElement>('[data-institution-id]');
-      const heading = section.querySelector('.category-heading') as HTMLElement;
-
-      // If a specific category is selected and this isn't it, hide entire section
-      if (activeCategory !== 'all' && sectionCat !== activeCategory) {
-        section.classList.add('hidden');
-        return;
+      if (results.length > max) {
+        searchDropdownResults.innerHTML += `
+          <div class="px-4 py-2 border-t border-surface-100 text-center text-[11px] text-surface-400">
+            +${results.length - max} mai multe rezultate
+          </div>
+        `;
       }
 
-      let sectionVisible = 0;
+      showDropdown();
+    }
 
-      cards.forEach(card => {
-        const slug = card.dataset.institutionId!;
-        const matchesSearch = !query || (matchingSlugs && matchingSlugs.has(slug));
-
-        if (matchesSearch) {
-          card.classList.remove('hidden');
-          sectionVisible++;
-        } else {
-          card.classList.add('hidden');
-        }
+    function setHighlight(idx: number) {
+      highlightedIdx = idx;
+      searchDropdownResults.querySelectorAll('.search-result-item').forEach((el, i) => {
+        el.classList.toggle('bg-surface-50', i === idx);
       });
-
-      // Hide section if no visible cards, show otherwise
-      section.classList.toggle('hidden', sectionVisible === 0);
-
-      // Hide category headings when a specific category is selected (no need to show heading for only one category)
-      if (heading) {
-        heading.classList.toggle('hidden', activeCategory !== 'all');
-      }
-
-      totalVisible += sectionVisible;
-    });
-
-    // Empty state
-    if (totalVisible === 0) {
-      emptyState.classList.remove('hidden');
-      categorySections.classList.add('hidden');
-
-      // Smart empty state message
-      const hasCategory = activeCategory !== 'all';
-      const catLabel = LABELS[activeCategory] || activeCategory;
-      if (hasCategory && query) {
-        emptyTitle.textContent = 'Niciun rezultat';
-        emptyMessage.textContent = `Nu am găsit „${searchQuery.trim()}" în categoria ${catLabel}.`;
-        emptySearchAll.classList.remove('hidden');
-        emptySearchAll.textContent = 'Caută în toate categoriile';
-      } else if (query) {
-        emptyTitle.textContent = 'Niciun rezultat';
-        emptyMessage.textContent = `Nu am găsit nicio instituție pentru „${searchQuery.trim()}".`;
-        emptySearchAll.classList.add('hidden');
-      } else {
-        emptyTitle.textContent = 'Niciun rezultat';
-        emptyMessage.textContent = 'Nu am găsit nicio instituție care să corespundă căutării tale.';
-        emptySearchAll.classList.add('hidden');
-      }
-    } else {
-      emptyState.classList.add('hidden');
-      categorySections.classList.remove('hidden');
+      const el = searchDropdownResults.querySelectorAll('.search-result-item')[idx];
+      if (el) (el as HTMLElement).scrollIntoView({ block: 'nearest' });
     }
 
-    // Update filter pills and URL
-    writeUrlState();
+    // ── Desktop search input ──────────────────────────────
+    const desktopInput = document.getElementById('search-input-desktop') as HTMLInputElement;
+    const mobileInput = document.getElementById('search-input-mobile') as HTMLInputElement;
 
-    // Update filter bar active chip
-    filterBar.querySelectorAll<HTMLElement>('[data-category]').forEach(chip => {
-      if (chip.dataset.category === activeCategory) {
-        chip.classList.remove('category-chip--inactive');
-        chip.classList.add('category-chip--active');
-      } else {
-        chip.classList.remove('category-chip--active');
-        chip.classList.add('category-chip--inactive');
-      }
-    });
-  }
-
-  // ── Event listeners ────────────────────────────────────────────────
-
-  // Search input
-  searchInput.addEventListener('input', (e) => {
-    searchQuery = (e.target as HTMLInputElement).value;
-    searchShortcut.classList.toggle('hidden', !!searchQuery);
-    updateDropdown(searchQuery);
-    filterAndSearch();
-  });
-
-  searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (!searchDropdown.classList.contains('hidden')) {
-        hideDropdown();
-        return;
-      }
-      searchInput.value = '';
-      searchQuery = '';
-      activeCategory = 'all';
-      filterAndSearch();
-      searchInput.blur();
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (searchDropdown.classList.contains('hidden') && searchQuery) {
-        updateDropdown(searchQuery);
-      } else if (currentResults.length > 0) {
-        const newIndex = highlightedIndex < currentResults.length - 1 ? highlightedIndex + 1 : 0;
-        setHighlightedIndex(newIndex);
-      }
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (currentResults.length > 0) {
-        const newIndex = highlightedIndex > 0 ? highlightedIndex - 1 : currentResults.length - 1;
-        setHighlightedIndex(newIndex);
-      }
-    } else if (e.key === 'Enter') {
-      if (highlightedIndex >= 0 && currentResults[highlightedIndex]) {
-        const item = currentResults[highlightedIndex];
-        window.location.href = `/catalog/${catalogPathBySlug[item.slug]}`;
-      }
+    function syncInputs(value: string, source: HTMLInputElement) {
+      [desktopInput, mobileInput].forEach(el => {
+        if (el && el !== source) el.value = value;
+      });
     }
-  });
 
-  searchInput.addEventListener('focus', () => {
-    searchShortcut.classList.add('hidden');
-    if (searchQuery) {
+    desktopInput?.addEventListener('input', e => {
+      searchQuery = (e.target as HTMLInputElement).value;
+      syncInputs(searchQuery, e.target as HTMLInputElement);
       updateDropdown(searchQuery);
-    }
-  });
-
-  // Click outside to close dropdown
-  document.addEventListener('click', (e) => {
-    const searchWrapper = document.getElementById('search-wrapper');
-    if (searchWrapper && !searchWrapper.contains(e.target as Node)) {
-      hideDropdown();
-    }
-  });
-
-  // Dropdown click handling (for "view all" button)
-  searchDropdown.addEventListener('click', (e) => {
-    const viewAllBtn = (e.target as HTMLElement).closest('.search-view-all');
-    if (viewAllBtn) {
-      hideDropdown();
-    }
-  });
-
-  // Category filter buttons
-  filterBar.addEventListener('click', (e) => {
-    const btn = (e.target as HTMLElement).closest('[data-category]') as HTMLElement;
-    if (!btn) return;
-    activeCategory = btn.dataset.category!;
-    filterAndSearch();
-  });
-
-  // "Search in all categories" from empty state
-  emptySearchAll.addEventListener('click', () => {
-    activeCategory = 'all';
-    filterAndSearch();
-  });
-
-  // Keyboard shortcut: focus search with /
-  document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== searchInput) {
-      e.preventDefault();
-      searchInput.focus();
-    }
-  });
-
-  // Filter bar gradient visibility (hide when scrolled to end)
-  if (filterGradient) {
-    const filterScroll = filterBar;
-    function checkGradient() {
-      if (!filterScroll) return;
-      const atEnd = filterScroll.scrollLeft + filterScroll.clientWidth >= filterScroll.scrollWidth - 4;
-      filterGradient!.classList.toggle('hidden', atEnd);
-    }
-    filterScroll.addEventListener('scroll', checkGradient, { passive: true });
-    checkGradient();
-  }
-
-  // Read initial state from URL and apply
-  readUrlState();
-  filterAndSearch();
-
-  });
-</script>
-
-<script>
-  // Tab switching
-  document.querySelectorAll('.install-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = (btn as HTMLElement).dataset.tab!;
-      document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('install-tab-active'));
-      btn.classList.add('install-tab-active');
-      document.querySelectorAll('.install-panel').forEach(p => (p as HTMLElement).classList.add('hidden'));
-      document.querySelector(`[data-panel="${tab}"]`)?.classList.remove('hidden');
+      filterAndSearch();
     });
-  });
 
-  // Copy functionality for all copy buttons
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.copy-npm-btn').forEach(copyNpmBtn => {
-      copyNpmBtn.addEventListener('click', async (e) => {
-        e.stopPropagation();
+    desktopInput?.addEventListener('focus', () => {
+      if (searchQuery) updateDropdown(searchQuery);
+    });
+
+    desktopInput?.addEventListener('keydown', e => {
+      const max = Math.min(dropdownResults.length, 5);
+      if (e.key === 'Escape') {
+        if (!searchDropdown.classList.contains('hidden')) {
+          hideDropdown();
+        } else {
+          desktopInput.value = '';
+          searchQuery = '';
+          activeCategory = 'all';
+          filterAndSearch();
+        }
+      } else if (e.key === 'ArrowDown') {
         e.preventDefault();
+        if (searchDropdown.classList.contains('hidden') && searchQuery) updateDropdown(searchQuery);
+        else setHighlight(highlightedIdx < max - 1 ? highlightedIdx + 1 : 0);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setHighlight(highlightedIdx > 0 ? highlightedIdx - 1 : max - 1);
+      } else if (e.key === 'Enter' && highlightedIdx >= 0 && dropdownResults[highlightedIdx]) {
+        window.location.href = `/catalog/${catalogPaths[dropdownResults[highlightedIdx].slug]}`;
+      }
+    });
 
-        const btn = e.currentTarget as HTMLButtonElement;
-        const textToCopy = btn.dataset.value!;
+    mobileInput?.addEventListener('input', e => {
+      searchQuery = (e.target as HTMLInputElement).value;
+      syncInputs(searchQuery, e.target as HTMLInputElement);
+      filterAndSearch();
+    });
 
+    // ── Keyboard shortcuts ────────────────────────────────
+    document.addEventListener('keydown', e => {
+      if (
+        (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key === 'k')) &&
+        document.activeElement !== desktopInput &&
+        document.activeElement !== mobileInput
+      ) {
+        e.preventDefault();
+        (window.innerWidth >= 1024 ? desktopInput : mobileInput)?.focus();
+      }
+    });
+
+    // ── Global click delegation ───────────────────────────
+    document.addEventListener('click', async e => {
+      const target = e.target as HTMLElement;
+
+      // Sidebar category button
+      const sidebarBtn = target.closest<HTMLElement>('[data-sidebar-cat]');
+      if (sidebarBtn) {
+        activeCategory = sidebarBtn.dataset.sidebarCat!;
+        filterAndSearch();
+        return;
+      }
+
+      // Mobile category chip
+      const mobileChip = target.closest<HTMLElement>('[data-mobile-cat]');
+      if (mobileChip) {
+        activeCategory = mobileChip.dataset.mobileCat!;
+        filterAndSearch();
+        return;
+      }
+
+      // Copy SVG action button
+      const copyBtn = target.closest<HTMLElement>('[data-action="copy-svg"]');
+      if (copyBtn) {
+        e.preventDefault();
+        const logoPath = copyBtn.dataset.logoPath!;
         try {
-          await navigator.clipboard.writeText(textToCopy);
-
-          const originalIcon = btn.innerHTML;
-          btn.innerHTML = `
-            <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          `;
-          setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
-
-        } catch (err) {
-          console.error('Failed to copy:', err);
-          const originalIcon = btn.innerHTML;
-          btn.innerHTML = `
-            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          `;
-          setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+          const res = await fetch(logoPath);
+          if (!res.ok) throw new Error();
+          const svg = await res.text();
+          await navigator.clipboard.writeText(svg);
+          showToast('SVG copiat în clipboard!');
+          const orig = copyBtn.innerHTML;
+          copyBtn.innerHTML = `<svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`;
+          setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
+        } catch {
+          showToast('Eroare la copiere', 'error');
         }
-      });
+        return;
+      }
+
+      // Close dropdown on outside click
+      const searchWrapper = document.getElementById('search-wrapper');
+      if (searchWrapper && !searchWrapper.contains(target)) {
+        hideDropdown();
+      }
     });
 
-    // Hero quick-category pills → activate the matching filter chip and scroll to grid
-    document.querySelectorAll('.hero-cat-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const cat = (btn as HTMLElement).dataset.category!;
-        const filterChip = document.querySelector<HTMLButtonElement>(`#filter-bar [data-category="${cat}"]`);
-        if (filterChip) {
-          filterChip.click();
-          document.getElementById('category-sections')?.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
+    // ── Init ──────────────────────────────────────────────
+    readUrlState();
+    filterAndSearch();
+
   });
 </script>
