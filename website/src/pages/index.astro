@@ -156,11 +156,11 @@ const total = institutions.length;
         </div>
         <!-- Category chips -->
         <div class="flex items-center gap-1.5 px-4 pb-3 overflow-x-auto scrollbar-hide">
-          <button class="category-chip category-chip--active shrink-0" data-mobile-cat="all" type="button">
+          <button class="category-chip category-chip--active shrink-0 !min-h-0 !py-1.5 !px-3 !text-[11px]" data-mobile-cat="all" type="button">
             Toate ({total})
           </button>
           {activeCategories.map(cat => (
-            <button class="category-chip category-chip--inactive shrink-0" data-mobile-cat={cat} type="button">
+            <button class="category-chip category-chip--inactive shrink-0 !min-h-0 !py-1.5 !px-3 !text-[11px]" data-mobile-cat={cat} type="button">
               {CATEGORY_LABELS[cat]} ({categoryCounts.get(cat)})
             </button>
           ))}
