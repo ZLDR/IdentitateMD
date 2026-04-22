@@ -554,15 +554,28 @@ const total = institutions.length;
       if (copyBtn) {
         e.preventDefault();
         const logoPath = copyBtn.dataset.logoPath!;
-        try {
-          const res = await fetch(logoPath);
-          if (!res.ok) throw new Error();
-          const svg = await res.text();
-          await navigator.clipboard.writeText(svg);
+        const orig = copyBtn.innerHTML;
+        const showSuccess = () => {
           showToast('SVG copiat în clipboard!');
-          const orig = copyBtn.innerHTML;
           copyBtn.innerHTML = `<svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`;
           setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
+        };
+        try {
+          // Safari iOS drops the user-gesture context across await, blocking clipboard.
+          // ClipboardItem accepts a Promise so the write call itself stays synchronous.
+          if (typeof ClipboardItem !== 'undefined') {
+            await navigator.clipboard.write([
+              new ClipboardItem({
+                'text/plain': fetch(logoPath).then(r => r.ok ? r.blob() : Promise.reject()),
+              }),
+            ]);
+            showSuccess();
+          } else {
+            const res = await fetch(logoPath);
+            if (!res.ok) throw new Error();
+            await navigator.clipboard.writeText(await res.text());
+            showSuccess();
+          }
         } catch {
           showToast('Eroare la copiere', 'error');
         }
