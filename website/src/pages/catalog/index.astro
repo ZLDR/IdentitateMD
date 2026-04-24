@@ -214,7 +214,7 @@ const cdnVersion = CDN_VERSION;
     style="max-height: 85vh"
     role="dialog"
     aria-modal="true"
-    aria-label="Caută instituții"
+    aria-labelledby="mobile-sheet-title"
   >
     <!-- Drag handle -->
     <div class="flex justify-center pt-3 pb-2 shrink-0">
@@ -222,7 +222,7 @@ const cdnVersion = CDN_VERSION;
     </div>
     <!-- Sheet header -->
     <div class="flex items-center justify-between px-4 pb-2 shrink-0">
-      <span class="font-semibold text-primary-900">Instituții</span>
+      <span id="mobile-sheet-title" class="font-semibold text-primary-900">Instituții</span>
       <button id="mobile-sheet-close" type="button" class="p-1.5 rounded-full hover:bg-surface-100 text-surface-400 hover:text-surface-600 transition-colors" aria-label="Închide">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
