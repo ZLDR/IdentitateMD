@@ -1,0 +1,51 @@
+{
+  "id": "md-cm",
+  "slug": "md-cm",
+  "name": "Președinția Comitetului de Miniștri al Consiliului Europei",
+  "shortname": "COEMoldova",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-04-25",
+    "keywords": ["consiliul europei", "comitetul de ministri", "presedintie", "coe", "moldova", "europa"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Președinția Republicii Moldova la Comitetul de Miniștri al Consiliului Europei",
+  "colors": [
+    {
+      "name": "Albastru COE",
+      "hex": "#003F87",
+      "rgb": [0, 63, 135],
+      "usage": "primary"
+    },
+    {
+      "name": "Galben COE",
+      "hex": "#F7C400",
+      "rgb": [247, 196, 0],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Source Sans Pro",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "symbol",
+      "color": "/logos/md-cm/symbol.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-cm/symbol.svg"
+    }
+  },
+  "resources": {
+    "website": "https://www.coe.int/en/web/presidency"
+  }
+}
