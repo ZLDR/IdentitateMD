@@ -3,7 +3,7 @@
 [![Website](https://img.shields.io/badge/website-identitate.md-blue)](https://identitate.md)
 [![npm logos](https://img.shields.io/npm/v/@identitate-md/logos.svg?label=npm%20logos)](https://www.npmjs.com/package/@identitate-md/logos)
 [![npm mcp](https://img.shields.io/npm/v/@identitate-md/mcp.svg?label=npm%20mcp)](https://www.npmjs.com/package/@identitate-md/mcp)
-[![Institutions](https://img.shields.io/badge/instituții-34-blue)](https://identitate.md/catalog)
+[![Institutions](https://img.shields.io/badge/instituții-35-blue)](https://identitate.md/catalog)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova.
