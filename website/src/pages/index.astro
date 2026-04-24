@@ -273,6 +273,7 @@ const total = institutions.length;
 
 <script>
   import Fuse from 'fuse.js';
+  import posthog from 'posthog-js';
 
   document.addEventListener('DOMContentLoaded', () => {
 
@@ -308,6 +309,7 @@ const total = institutions.length;
 
     let highlightedIdx = -1;
     let dropdownResults: any[] = [];
+    let searchDebounce: ReturnType<typeof setTimeout> | null = null;
 
     // ── Logo path helper (for dropdown thumbnails) ───────
     function getLogoPath(inst: any): string {
@@ -482,6 +484,12 @@ const total = institutions.length;
       syncInputs(searchQuery, e.target as HTMLInputElement);
       updateDropdown(searchQuery);
       filterAndSearch();
+      if (searchQuery.trim()) {
+        if (searchDebounce) clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+          posthog.capture('catalog_searched', { query: searchQuery.trim() });
+        }, 600);
+      }
     });
 
     desktopInput?.addEventListener('focus', () => {
@@ -515,6 +523,12 @@ const total = institutions.length;
       searchQuery = (e.target as HTMLInputElement).value;
       syncInputs(searchQuery, e.target as HTMLInputElement);
       filterAndSearch();
+      if (searchQuery.trim()) {
+        if (searchDebounce) clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+          posthog.capture('catalog_searched', { query: searchQuery.trim() });
+        }, 600);
+      }
     });
 
     // ── Keyboard shortcuts ────────────────────────────────
@@ -538,6 +552,7 @@ const total = institutions.length;
       if (sidebarBtn) {
         activeCategory = sidebarBtn.dataset.sidebarCat!;
         filterAndSearch();
+        posthog.capture('category_filtered', { category: activeCategory, category_label: LABELS[activeCategory] || activeCategory });
         return;
       }
 
@@ -546,6 +561,7 @@ const total = institutions.length;
       if (mobileChip) {
         activeCategory = mobileChip.dataset.mobileCat!;
         filterAndSearch();
+        posthog.capture('category_filtered', { category: activeCategory, category_label: LABELS[activeCategory] || activeCategory });
         return;
       }
 
@@ -556,6 +572,11 @@ const total = institutions.length;
         const logoPath = copyBtn.dataset.logoPath!;
         const orig = copyBtn.innerHTML;
         const showSuccess = () => {
+          const card = copyBtn.closest<HTMLElement>('[data-institution-id]');
+          posthog.capture('logo_svg_copied', {
+            institution_slug: card?.dataset.institutionId || '',
+            logo_path: logoPath,
+          });
           showToast('SVG copiat în clipboard!');
           copyBtn.innerHTML = `<svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`;
           setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
