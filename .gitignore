@@ -14,3 +14,5 @@ marketing/
 .openlogs/
 .rtk/
 Search Strategy*.md
+.pnpm-store/
+.claude/settings.local.json

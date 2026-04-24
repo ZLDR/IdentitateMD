@@ -104,6 +104,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
+  import posthog from 'posthog-js';
+
   const form = document.getElementById('request-form') as HTMLFormElement;
   const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 
@@ -112,14 +114,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     submitBtn.disabled = true;
     submitBtn.textContent = 'Se trimite...';
 
+    const formData = new FormData(form);
+    const institutionName = (formData.get('institution_name') as string) || '';
+
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: new FormData(form),
+        body: formData,
       });
       const json = await res.json();
 
       if (json.success) {
+        posthog.capture('institution_request_submitted', { institution_name: institutionName });
         form.innerHTML = `
           <div class="text-center py-8">
             <svg class="w-10 h-10 text-green-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,6 +138,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         throw new Error('Failed');
       }
     } catch {
+      posthog.capture('institution_request_failed', { institution_name: institutionName });
       submitBtn.disabled = false;
       submitBtn.textContent = 'Trimite Solicitarea';
       alert('A apărut o eroare. Te rugăm să încerci din nou.');

@@ -135,6 +135,16 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
     <Analytics />
 
     <script>
+      import posthog from 'posthog-js';
+      posthog.init(import.meta.env.PUBLIC_POSTHOG_KEY, {
+        api_host: import.meta.env.PUBLIC_POSTHOG_HOST,
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+      });
+    </script>
+
+    <script>
       if (import.meta.env.DEV) {
         Promise.all([
           import('react'),
