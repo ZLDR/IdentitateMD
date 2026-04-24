@@ -566,7 +566,7 @@ const total = institutions.length;
           if (typeof ClipboardItem !== 'undefined') {
             await navigator.clipboard.write([
               new ClipboardItem({
-                'text/plain': fetch(logoPath).then(r => r.ok ? r.blob() : Promise.reject()),
+                'text/plain': fetch(logoPath).then(r => r.ok ? r.text() : Promise.reject()).then(t => new Blob([t], { type: 'text/plain' })),
               }),
             ]);
             showSuccess();
