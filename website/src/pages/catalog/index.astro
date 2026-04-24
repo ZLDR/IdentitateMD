@@ -292,27 +292,24 @@ const cdnVersion = CDN_VERSION;
 
 </BaseLayout>
 
-<script define:vars={{
-  institutionsJson,
-  categoryLabelsSingularJson,
-  logoLayoutLabelsJson,
-  logoVariantLabelsJson,
-  colorUsageLabelsJson,
-  qualityLabelsJson,
-  catalogPathBySlugJson,
-  slugByCatalogPathJson,
+<script define:vars={{ institutionsJson, categoryLabelsSingularJson, logoLayoutLabelsJson, logoVariantLabelsJson, colorUsageLabelsJson, qualityLabelsJson, catalogPathBySlugJson, slugByCatalogPathJson, initialPathId, cdnVersion }} is:inline>
+window.__catalogData = {
+  institutions: JSON.parse(institutionsJson),
+  CATEGORY_LABELS_SINGULAR: JSON.parse(categoryLabelsSingularJson),
+  LAYOUT_LABELS: JSON.parse(logoLayoutLabelsJson),
+  VARIANT_LABELS: JSON.parse(logoVariantLabelsJson),
+  USAGE_LABELS: JSON.parse(colorUsageLabelsJson),
+  QUALITY_LABELS: JSON.parse(qualityLabelsJson),
+  PATH_BY_SLUG: JSON.parse(catalogPathBySlugJson),
+  SLUG_BY_PATH: JSON.parse(slugByCatalogPathJson),
   initialPathId,
   cdnVersion,
-}}>
+};
+</script>
+
+<script>
 // ─── Bootstrap ──────────────────────────────────────────────────────────────
-const institutions = JSON.parse(institutionsJson);
-const CATEGORY_LABELS_SINGULAR = JSON.parse(categoryLabelsSingularJson);
-const LAYOUT_LABELS  = JSON.parse(logoLayoutLabelsJson);
-const VARIANT_LABELS = JSON.parse(logoVariantLabelsJson);
-const USAGE_LABELS   = JSON.parse(colorUsageLabelsJson);
-const QUALITY_LABELS = JSON.parse(qualityLabelsJson);
-const PATH_BY_SLUG   = JSON.parse(catalogPathBySlugJson);
-const SLUG_BY_PATH   = JSON.parse(slugByCatalogPathJson);
+const { institutions, CATEGORY_LABELS_SINGULAR, LAYOUT_LABELS, VARIANT_LABELS, USAGE_LABELS, QUALITY_LABELS, PATH_BY_SLUG, SLUG_BY_PATH, initialPathId, cdnVersion } = (window as any).__catalogData;
 
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}`;
 const SITE = 'https://identitate.md';
