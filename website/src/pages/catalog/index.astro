@@ -214,7 +214,7 @@ const cdnVersion = CDN_VERSION;
     style="max-height: 85vh"
     role="dialog"
     aria-modal="true"
-    aria-label="Caută instituții"
+    aria-labelledby="mobile-sheet-title"
   >
     <!-- Drag handle -->
     <div class="flex justify-center pt-3 pb-2 shrink-0">
@@ -222,7 +222,7 @@ const cdnVersion = CDN_VERSION;
     </div>
     <!-- Sheet header -->
     <div class="flex items-center justify-between px-4 pb-2 shrink-0">
-      <span class="font-semibold text-primary-900">Instituții</span>
+      <span id="mobile-sheet-title" class="font-semibold text-primary-900">Instituții</span>
       <button id="mobile-sheet-close" type="button" class="p-1.5 rounded-full hover:bg-surface-100 text-surface-400 hover:text-surface-600 transition-colors" aria-label="Închide">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -292,27 +292,24 @@ const cdnVersion = CDN_VERSION;
 
 </BaseLayout>
 
-<script define:vars={{
-  institutionsJson,
-  categoryLabelsSingularJson,
-  logoLayoutLabelsJson,
-  logoVariantLabelsJson,
-  colorUsageLabelsJson,
-  qualityLabelsJson,
-  catalogPathBySlugJson,
-  slugByCatalogPathJson,
+<script define:vars={{ institutionsJson, categoryLabelsSingularJson, logoLayoutLabelsJson, logoVariantLabelsJson, colorUsageLabelsJson, qualityLabelsJson, catalogPathBySlugJson, slugByCatalogPathJson, initialPathId, cdnVersion }} is:inline>
+window.__catalogData = {
+  institutions: JSON.parse(institutionsJson),
+  CATEGORY_LABELS_SINGULAR: JSON.parse(categoryLabelsSingularJson),
+  LAYOUT_LABELS: JSON.parse(logoLayoutLabelsJson),
+  VARIANT_LABELS: JSON.parse(logoVariantLabelsJson),
+  USAGE_LABELS: JSON.parse(colorUsageLabelsJson),
+  QUALITY_LABELS: JSON.parse(qualityLabelsJson),
+  PATH_BY_SLUG: JSON.parse(catalogPathBySlugJson),
+  SLUG_BY_PATH: JSON.parse(slugByCatalogPathJson),
   initialPathId,
   cdnVersion,
-}}>
+};
+</script>
+
+<script>
 // ─── Bootstrap ──────────────────────────────────────────────────────────────
-const institutions = JSON.parse(institutionsJson);
-const CATEGORY_LABELS_SINGULAR = JSON.parse(categoryLabelsSingularJson);
-const LAYOUT_LABELS  = JSON.parse(logoLayoutLabelsJson);
-const VARIANT_LABELS = JSON.parse(logoVariantLabelsJson);
-const USAGE_LABELS   = JSON.parse(colorUsageLabelsJson);
-const QUALITY_LABELS = JSON.parse(qualityLabelsJson);
-const PATH_BY_SLUG   = JSON.parse(catalogPathBySlugJson);
-const SLUG_BY_PATH   = JSON.parse(slugByCatalogPathJson);
+const { institutions, CATEGORY_LABELS_SINGULAR, LAYOUT_LABELS, VARIANT_LABELS, USAGE_LABELS, QUALITY_LABELS, PATH_BY_SLUG, SLUG_BY_PATH, initialPathId, cdnVersion } = (window as any).__catalogData;
 
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}`;
 const SITE = 'https://identitate.md';

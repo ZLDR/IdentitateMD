@@ -1,3 +1,5 @@
+@import "@fontsource-variable/onest";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,7 @@
 @layer base {
   html {
     font-family:
+      "Onest Variable",
       "Onest",
       system-ui,
       -apple-system,
