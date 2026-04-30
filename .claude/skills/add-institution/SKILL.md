@@ -27,35 +27,46 @@ The project root is: `/Users/dorianzlatan/Dev/IdentitateMD`
 
 ## Step 1 — Gather institution data
 
-Use `AskUserQuestion` to collect **all** fields in a single message.
-Ask exactly these questions:
+Print the following block **verbatim** as a plain text message to the user, then wait for their reply.
+Do NOT use `AskUserQuestion` here — these are free-form fields that need typed answers.
+
+---
+
+Please fill in all fields and reply with the completed form:
 
 ```
-1. ID (e.g. md-ansp) — prefix with country code, kebab-case
-2. Slug (URL-friendly name, e.g. "agentia-nationala-pentru-sanatate-publica")
-3. Full name (e.g. "Agenția Națională pentru Sănătate Publică")
-4. Shortname / abbreviation (e.g. "ANSP")
-5. Category — pick one:
-   agentie | altele | consilii | directie | guvern |
-   institutie-cultura | minister | parlament | primarie | servicii | universitate
-6. Description (1-2 sentences in Romanian)
-7. Website URL
-8. Branding manual URL (or "none")
-9. Colors: for each color → Name, HEX, usage (primary | secondary | accent | neutral)
-   (can list multiple, comma-separated)
-10. Typography: primary font family + weights (e.g. "Onest 400,700"), secondary font (optional)
-11. Logo variants available (check what SVGs exist or what user has):
-    Does it have: horizontal-color.svg, horizontal-white.svg, symbol-color.svg, symbol-white.svg, vertical-color.svg, vertical-white.svg?
-    Which is the "main" variant? (horizontal | symbol | vertical)
-12. Facebook URL (or "none")
-13. Twitter/X URL (or "none")
-14. Contact email (or "none")
-15. Contact phone (or "none")
-16. Keywords for search (comma-separated, e.g. "moldova, sănătate, publică")
-17. Quality: draft | verified
+1.  ID (e.g. md-ansp — country prefix + kebab-case):
+2.  Slug (URL-friendly, e.g. agentia-nationala-pentru-sanatate-publica):
+3.  Full name (e.g. Agenția Națională pentru Sănătate Publică):
+4.  Shortname / abbreviation (e.g. ANSP):
+5.  Category (pick one):
+      agentie | altele | consilii | directie | guvern |
+      institutie-cultura | minister | parlament | primarie | servicii | universitate
+6.  Description (1-2 sentences in Romanian):
+7.  Website URL:
+8.  Branding manual URL (or "none"):
+9.  Colors — one per line, format: Name | #HEX | usage
+      usage = primary | secondary | accent | neutral
+      e.g.  Albastru | #003DA5 | primary
+10. Typography:
+      Primary font + weights (e.g. Onest 400,700):
+      Secondary font (optional):
+11. Logo variants available (check which SVGs exist):
+      [ ] horizontal   (horizontal-color.svg + horizontal-white.svg)
+      [ ] vertical     (vertical-color.svg + vertical-white.svg)
+      [ ] symbol       (symbol-color.svg + symbol-white.svg)
+      Main variant (horizontal | vertical | symbol):
+12. Facebook URL (or "none"):
+13. Twitter/X URL (or "none"):
+14. Contact email (or "none"):
+15. Contact phone (or "none"):
+16. Keywords (comma-separated, e.g. moldova, sănătate, publică):
+17. Quality (draft | verified):
 ```
 
-Store all answers before proceeding.
+---
+
+Wait for the user to reply with the completed form. Store all answers before proceeding.
 
 ---
 
