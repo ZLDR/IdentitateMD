@@ -1,0 +1,58 @@
+{
+  "id": "md-dgets",
+  "slug": "directia-generala-educatie-tineret-si-sport",
+  "name": "Direcția Generală Educație, Tineret și Sport",
+  "shortname": "DGETS",
+  "category": "directie",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-05-01",
+    "keywords": ["educatie", "tineret", "sport", "dgets", "directie"],
+    "quality": "verified"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău"
+  },
+  "description": "Direcția Generală Educație, Tineret și Sport a municipiului Chișinău coordonează și dezvoltă sistemul educațional, activitățile de tineret și sport.",
+  "colors": [
+    {
+      "name": "Albastru",
+      "hex": "#12105d",
+      "rgb": [18, 16, 93],
+      "usage": "secondary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#ffffff",
+      "rgb": [255, 255, 255],
+      "usage": "primary"
+    }
+  ],
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-dgets/horizontal-color.svg",
+      "white": "/logos/md-dgets/horizontal-white.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-dgets/horizontal-color.svg",
+      "white": "/logos/md-dgets/horizontal-white.svg"
+    },
+    "symbol": {
+      "type": "symbol",
+      "color": "/logos/md-dgets/symbol.svg"
+    }
+  },
+  "resources": {
+    "website": "https://chisinauedu.dgets.md/",
+    "social_media": {
+      "facebook": "https://www.facebook.com/dgets.dgets.7"
+    },
+    "contact": {
+      "email": "dgetsmun@gmail.com",
+      "phone": "022-20-16-01"
+    }
+  }
+}
