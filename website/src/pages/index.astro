@@ -273,7 +273,6 @@ const total = institutions.length;
 
 <script>
   import Fuse from 'fuse.js';
-  import posthog from 'posthog-js';
 
   document.addEventListener('DOMContentLoaded', () => {
 
@@ -486,9 +485,7 @@ const total = institutions.length;
       filterAndSearch();
       if (searchQuery.trim()) {
         if (searchDebounce) clearTimeout(searchDebounce);
-        searchDebounce = setTimeout(() => {
-          posthog.capture('catalog_searched', { query: searchQuery.trim() });
-        }, 600);
+        searchDebounce = setTimeout(() => {}, 600);
       }
     });
 
@@ -525,9 +522,7 @@ const total = institutions.length;
       filterAndSearch();
       if (searchQuery.trim()) {
         if (searchDebounce) clearTimeout(searchDebounce);
-        searchDebounce = setTimeout(() => {
-          posthog.capture('catalog_searched', { query: searchQuery.trim() });
-        }, 600);
+        searchDebounce = setTimeout(() => {}, 600);
       }
     });
 
@@ -552,7 +547,6 @@ const total = institutions.length;
       if (sidebarBtn) {
         activeCategory = sidebarBtn.dataset.sidebarCat!;
         filterAndSearch();
-        posthog.capture('category_filtered', { category: activeCategory, category_label: LABELS[activeCategory] || activeCategory });
         return;
       }
 
@@ -561,7 +555,6 @@ const total = institutions.length;
       if (mobileChip) {
         activeCategory = mobileChip.dataset.mobileCat!;
         filterAndSearch();
-        posthog.capture('category_filtered', { category: activeCategory, category_label: LABELS[activeCategory] || activeCategory });
         return;
       }
 
@@ -572,11 +565,6 @@ const total = institutions.length;
         const logoPath = copyBtn.dataset.logoPath!;
         const orig = copyBtn.innerHTML;
         const showSuccess = () => {
-          const card = copyBtn.closest<HTMLElement>('[data-institution-id]');
-          posthog.capture('logo_svg_copied', {
-            institution_slug: card?.dataset.institutionId || '',
-            logo_path: logoPath,
-          });
           showToast('SVG copiat în clipboard!');
           copyBtn.innerHTML = `<svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`;
           setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);

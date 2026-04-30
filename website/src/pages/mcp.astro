@@ -275,8 +275,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
-  import posthog from 'posthog-js';
-
   const SHOWN = [
     { id: 'md-guvern',  name: 'Guvernul RM' },
     { id: 'md-mae',     name: 'Min. Afaceri Externe' },
@@ -327,11 +325,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   document.getElementById('copy-npm')?.addEventListener('click', () => {
     navigator.clipboard.writeText('npm install -g @identitate-md/mcp');
-    posthog.capture('mcp_install_copied', { type: 'npm_command' });
   });
 
   document.getElementById('copy-mcp-json')?.addEventListener('click', () => {
-    posthog.capture('mcp_install_copied', { type: 'mcp_json' });
     navigator.clipboard.writeText(
 `{
   "mcpServers": {
@@ -382,7 +378,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   (window as any).runMcpDemo = function() {
     if (demoRunning) return;
     demoRunning = true;
-    posthog.capture('mcp_demo_run');
 
     const btn = document.getElementById('btnResolve') as HTMLButtonElement;
     btn.disabled = true;
