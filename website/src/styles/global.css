@@ -10,13 +10,15 @@
       system-ui,
       -apple-system,
       sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: gray transparent;
   }
 
   body {
-    @apply bg-surface-50 text-primary-900 antialiased;
+    @apply bg-surface-50 text-primary-900;
   }
 }
 
