@@ -933,7 +933,7 @@ function wireDetail() {
   detail.querySelectorAll('.copy-asset-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
       const path = btn.dataset.path;
-      window.posthog?.capture('logo copied', { institution: currentSlug, asset_path: path });
+      window.posthog?.capture('Logo Copied', { institution: currentSlug, asset_path: path });
       try {
         const text = await fetch(path).then(r => r.text());
         await navigator.clipboard.writeText(text);
@@ -988,7 +988,7 @@ function wireDetail() {
         const a = document.createElement('a');
         a.href = url; a.download = `${slug}-logos.zip`; a.click();
         window.va?.('pageview', { route: '/download/[slug]/[format]', path: `/download/${slug}/zip` });
-        window.posthog?.capture('zip downloaded', { institution: slug, file_count: items.length });
+        window.posthog?.capture('ZIP Downloaded', { institution: slug, file_count: items.length });
         URL.revokeObjectURL(url);
         zipBtn.innerHTML = `<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ZIP descărcat!`;
         setTimeout(() => { zipBtn.innerHTML = orig; zipBtn.disabled = false; }, 2000);
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e => {
   const a = e.target.closest('[data-va-dl]');
   if (a) {
     window.va?.('pageview', { route: '/download/[slug]/[format]', path: `/download/${a.dataset.vaDl}/${a.dataset.vaFmt}` });
-    window.posthog?.capture('logo downloaded', {
+    window.posthog?.capture('Logo Downloaded', {
       institution: a.dataset.vaDl,
       format: a.dataset.vaFmt,
       asset: a.dataset.vaAsset,
