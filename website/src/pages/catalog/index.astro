@@ -931,7 +931,10 @@ function wireDetail() {
   });
   // Copy: svg assets
   detail.querySelectorAll('.copy-asset-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      if (btn.dataset.copying) return;
+      btn.dataset.copying = '1';
       const path = btn.dataset.path;
       window.posthog?.capture('logo_copied', { institution: currentSlug, asset_path: path });
       try {
@@ -939,6 +942,7 @@ function wireDetail() {
         await navigator.clipboard.writeText(text);
         flashCheck(btn);
       } catch { flashX(btn); }
+      delete btn.dataset.copying;
     });
   });
   // Copy: color / code snippets
