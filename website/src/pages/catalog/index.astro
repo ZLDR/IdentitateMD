@@ -791,7 +791,7 @@ function buildDetail(inst) {
                 Distribuie
               </button>
             </div>
-            <h1 class="text-xl sm:text-2xl font-bold text-primary-900 mb-2" style="text-wrap:pretty">${escHtml(inst.name)}</h1>
+            <h1 class="text-xl sm:text-2xl font-medium text-primary-900 mb-2" style="text-wrap:pretty">${escHtml(inst.name)}</h1>
             <div class="flex flex-wrap items-center gap-2 mb-2">
               ${inst.shortname ? `<span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded text-xs font-semibold">${escHtml(inst.shortname.toUpperCase())}</span>` : ''}
               <span class="px-2 py-0.5 bg-surface-100 text-surface-600 rounded text-xs">${escHtml(catLabel)}</span>
