@@ -6,8 +6,13 @@
   "description": "Registru digital open-source pentru identitatea vizuală a instituțiilor publice din Republica Moldova",
   "author": "IdentitateMD Contributors",
   "license": "MIT",
+  "portless": {
+    "name": "identitate",
+    "script": "dev"
+  },
   "scripts": {
     "dev": "astro dev",
+    "dev:portless": "portless",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -33,6 +38,7 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "ajv": "^8.17.1",
+    "portless": "^0.12.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.4",
     "svgo": "^4.0.1",
