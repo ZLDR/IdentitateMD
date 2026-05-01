@@ -178,6 +178,14 @@ cd /Users/dorianzlatan/Dev/IdentitateMD/website && npm run data:generate
 
 If it errors, show the error to the user and stop.
 
+Then regenerate the npm package logo index:
+
+```bash
+cd /Users/dorianzlatan/Dev/IdentitateMD/packages/logos && npm run generate
+```
+
+If it errors, show the error to the user and stop.
+
 ---
 
 ## Step 5 — Update Facebook announcement
@@ -238,6 +246,8 @@ rtk git add website/src/data/institutions/{ID}.json \
             packages/logos/logos/{ID}/ \
             website/public/logos/{ID}/ \
             website/src/data/institutions-index.json \
+            packages/logos/institutions-index.json \
+            packages/logos/index.json \
             marketing/facebook-announcement.html
 rtk git commit -m "add: {SHORTNAME} — {FULL_NAME}"
 rtk git push
@@ -254,7 +264,7 @@ Print a summary:
 
   JSON:     website/src/data/institutions/{ID}.json
   Logos:    website/public/logos/{ID}/
-  Preview:  http://localhost:4321/institutii/{SLUG}
+  Preview:  https://identitate.localhost/institutii/{SLUG}
   FB image: /tmp/fb-{ID}.png
 
 Next: share the FB announcement on the IdentitateMD social channels 🚀
