@@ -54,8 +54,10 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Font preload -->
-    <link rel="preload" href="/fonts/onest-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

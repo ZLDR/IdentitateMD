@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Onest Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url('/fonts/onest-variable.woff2') format('woff2-variations');
-}
 
 @tailwind base;
 @tailwind components;
@@ -13,7 +6,6 @@
 @layer base {
   html {
     font-family:
-      "Onest Variable",
       "Onest",
       system-ui,
       -apple-system,

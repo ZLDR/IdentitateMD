@@ -27,7 +27,6 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "6.0.2",
-    "@fontsource-variable/onest": "^5.2.11",
     "@vercel/analytics": "^1.6.1",
     "agentation": "^2.3.3",
     "agentation-mcp": "^1.2.0",
