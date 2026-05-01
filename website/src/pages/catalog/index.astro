@@ -933,11 +933,11 @@ function wireDetail() {
   detail.querySelectorAll('.copy-asset-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
       const path = btn.dataset.path;
+      window.posthog?.capture('logo copied', { institution: currentSlug, asset_path: path });
       try {
         const text = await fetch(path).then(r => r.text());
         await navigator.clipboard.writeText(text);
         flashCheck(btn);
-        window.posthog?.capture('logo copied', { institution: currentSlug, asset_path: path });
       } catch { flashX(btn); }
     });
   });
