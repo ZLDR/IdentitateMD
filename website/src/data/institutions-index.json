@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-04-30T22:50:03.656Z",
+  "generatedAt": "2026-05-01T12:39:47.765Z",
   "total": 36,
   "stats": {
     "byCategory": {
@@ -168,9 +168,9 @@
           },
           "alternatives": [
             {
-              "label": "Alternative White",
+              "label": "Alternative Black",
               "path": "/logos/md-age/horizontal/alt-white.svg",
-              "preview": "dark"
+              "preview": "light"
             },
             {
               "label": "Alt Black Filled",
@@ -192,11 +192,14 @@
           "type": "symbol",
           "color": "/logos/md-age/symbol/color.svg",
           "white": "/logos/md-age/symbol/white.svg",
+          "variantPreviews": {
+            "white": "light"
+          },
           "alternatives": [
             {
-              "label": "Alternative White",
+              "label": "Alternative Black",
               "path": "/logos/md-age/symbol/alt-white.svg",
-              "preview": "dark"
+              "preview": "light"
             },
             {
               "label": "Alt Black Filled",
@@ -847,9 +850,8 @@
       ],
       "assets": {
         "main": {
-          "type": "horizontal",
-          "color": "/logos/md-dgets/horizontal-color.svg",
-          "white": "/logos/md-dgets/horizontal-white.svg"
+          "type": "symbol",
+          "color": "/logos/md-dgets/symbol-color.svg"
         },
         "horizontal": {
           "type": "horizontal",
@@ -858,7 +860,11 @@
         },
         "symbol": {
           "type": "symbol",
-          "color": "/logos/md-dgets/symbol.svg"
+          "color": "/logos/md-dgets/symbol-color.svg",
+          "white": "/logos/md-dgets/symbol.svg",
+          "variantPreviews": {
+            "white": "dark"
+          }
         }
       },
       "resources": {
