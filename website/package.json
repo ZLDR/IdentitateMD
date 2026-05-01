@@ -33,6 +33,7 @@
     "agentation-mcp": "^1.2.0",
     "astro": "^6.1.9",
     "fuse.js": "^7.0.0",
+    "posthog-js": "^1.372.5",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
