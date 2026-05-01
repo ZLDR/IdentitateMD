@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-01T12:39:47.765Z",
+  "generatedAt": "2026-05-01T12:41:03.401Z",
   "total": 36,
   "stats": {
     "byCategory": {
@@ -2489,7 +2489,7 @@
         },
         "symbol": {
           "type": "symbol",
-          "color": "/logos/md-parlament/symbol.svg"
+          "color": "/logos/md-parlament/Symbol.svg"
         }
       },
       "resources": {
