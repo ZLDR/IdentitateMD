@@ -41,7 +41,7 @@ function isActive(href: string): boolean {
           <a
             href={link.href}
             class:list={[
-              'text-xs font-medium transition-colors inline-flex items-center gap-1.5',
+              'text-xs font-normal transition-colors inline-flex items-center gap-1.5',
               dark
                 ? (isActive(link.href) ? 'text-blue-400' : 'text-white hover:text-[#ccc]')
                 : (isActive(link.href) ? 'text-primary-600' : 'text-surface-600 hover:text-primary-900'),
@@ -61,7 +61,7 @@ function isActive(href: string): boolean {
           target="_blank"
           rel="noopener noreferrer"
           class:list={[
-            'text-xs font-medium transition-colors inline-flex items-center gap-1',
+            'text-xs font-normal transition-colors inline-flex items-center gap-1',
             dark ? 'text-white hover:text-[#ccc]' : 'text-surface-600 hover:text-primary-900',
           ]}
         >
