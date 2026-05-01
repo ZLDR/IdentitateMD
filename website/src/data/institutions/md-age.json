@@ -69,9 +69,9 @@
       "variantPreviews": { "white": "light" },
       "alternatives": [
         {
-          "label": "Alternative White",
+          "label": "Alternative Black",
           "path": "/logos/md-age/horizontal/alt-white.svg",
-          "preview": "dark"
+          "preview": "light"
         },
         {
           "label": "Alt Black Filled",
@@ -93,11 +93,12 @@
       "type": "symbol",
       "color": "/logos/md-age/symbol/color.svg",
       "white": "/logos/md-age/symbol/white.svg",
+      "variantPreviews": { "white": "light" },
       "alternatives": [
         {
-          "label": "Alternative White",
+          "label": "Alternative Black",
           "path": "/logos/md-age/symbol/alt-white.svg",
-          "preview": "dark"
+          "preview": "light"
         },
         {
           "label": "Alt Black Filled",
