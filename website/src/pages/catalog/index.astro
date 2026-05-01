@@ -796,7 +796,7 @@ function buildDetail(inst) {
               ${inst.shortname ? `<span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded text-xs font-semibold">${escHtml(inst.shortname.toUpperCase())}</span>` : ''}
               <span class="px-2 py-0.5 bg-surface-100 text-surface-600 rounded text-xs">${escHtml(catLabel)}</span>
             </div>
-            ${inst.description ? `<p class="text-sm text-surface-500 mb-2" style="max-width:600px;text-wrap:pretty">${escHtml(inst.description)}</p>` : ''}
+            ${inst.description ? `<p class="text-sm text-surface-500 mb-2" style="max-width:600px;text-wrap:pretty;font-weight:360">${escHtml(inst.description)}</p>` : ''}
             ${contactLineHtml}
             ${inst.usage_notes ? `<div class="mt-3 p-3 bg-amber-50 border border-amber-200 rounded text-xs text-amber-800"><strong>Note de utilizare:</strong> ${escHtml(inst.usage_notes)}</div>` : ''}
           </div>
