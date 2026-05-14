@@ -41,7 +41,7 @@ const institutionsByCategory = categories.reduce((acc, cat) => {
   return acc;
 }, {} as Record<string, Institution[]>);
 
-const title = propTitle || "Catalog Sigle - Identitate.MD";
+const title = propTitle || "Catalog Sigle | identitate.md";
 const description = propDesc || `Explorează siglele vectoriale oficiale ale celor ${institutionIndex.total} instituții publice din Republica Moldova. Descarcă gratuit în format SVG, culori HEX/RGB și tipografie.`;
 
 const institutionsJson = JSON.stringify(allInstitutions);

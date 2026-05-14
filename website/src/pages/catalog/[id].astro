@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const { initialPathId, institution } = Astro.props as { initialPathId: string; institution: Institution };
 
 const pageTitle = institution
-  ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - Sigla Oficială | Identitate.MD`
+  ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - Sigla Oficială | identitate.md`
   : undefined;
 
 const pageDescription = institution
