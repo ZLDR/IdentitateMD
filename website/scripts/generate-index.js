@@ -15,6 +15,37 @@ import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
+function getPreferredCatalogKey(inst) {
+  const raw = String(inst.shortname || "").trim().toLowerCase();
+  const normalized = raw
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+  return normalized || inst.slug;
+}
+
+function buildCatalogPathMap(institutions) {
+  const map = {};
+  const used = new Set();
+  for (const inst of institutions) {
+    const preferred = getPreferredCatalogKey(inst);
+    const slugFallback = inst.slug;
+    let key = preferred;
+    if (used.has(key) && !used.has(slugFallback)) key = slugFallback;
+    if (used.has(key)) {
+      const base = key;
+      let index = 2;
+      while (used.has(`${base}-${index}`)) index += 1;
+      key = `${base}-${index}`;
+    }
+    used.add(key);
+    map[inst.slug] = key;
+  }
+  return map;
+}
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -155,6 +186,20 @@ async function generateIndex() {
   console.log(`   Cu SVG: ${withSvg}`);
   console.log(`\n💾 Index salvat: ${OUTPUT_FILE}`);
   console.log(`💾 Copiat la: ${logosIndexPath}`);
+
+  // Generate vercel.json with HTTP 301 redirects for /institution/* → /catalog/*
+  const catalogPathBySlug = buildCatalogPathMap(institutions);
+  const redirects = institutions.flatMap((inst) => {
+    const dest = `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`;
+    return [
+      { source: `/institution/${inst.slug}`, destination: dest, permanent: true },
+      { source: `/institution/${inst.slug}/`, destination: dest, permanent: true },
+    ];
+  });
+  const vercelConfig = { redirects };
+  const vercelConfigPath = join(__dirname, "../vercel.json");
+  writeFileSync(vercelConfigPath, JSON.stringify(vercelConfig, null, 2) + "\n", "utf-8");
+  console.log(`🔀 vercel.json actualizat cu ${redirects.length / 2} redirecționări`);
 
   // Auto-update institution count badge in README.md
   const readmePath = join(__dirname, "../../README.md");
