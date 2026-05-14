@@ -52,7 +52,7 @@ const institutionRedirects = Object.fromEntries(
 export default defineConfig({
   site: 'https://identitate.md',
   devToolbar: { enabled: false },
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap({ filter: (page) => !page.includes('/privacy') })],
   server: {
     port: process.env.PORT ? parseInt(process.env.PORT) : 4321,
     host: process.env.HOST || 'localhost',
