@@ -1,0 +1,17 @@
+name: IdentitateMD
+icon: null
+processes:
+  push:
+    command: git add * && git commit -m "updates" && git push
+    working_dir: null
+    auto_start: true
+    auto_restart: false
+    restart_when_changed: []
+    env: {}
+  Run dev:
+    command: pnpm run dev
+    working_dir: /Users/dorianzlatan/Dev/IdentitateMD/website
+    auto_start: true
+    auto_restart: false
+    restart_when_changed: []
+    env: {}
