@@ -1,7 +1,7 @@
 {
   "id": "md-asem",
-  "slug": "universitatea-de-studii-economice-din-moldova",
-  "name": "Universitatea de Studii Economice din Moldova",
+  "slug": "academia-de-studii-economice-din-moldova",
+  "name": "Academia de Studii Economice din Moldova",
   "shortname": "ASEM",
   "category": "universitate",
   "meta": {
@@ -21,7 +21,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Universitatea de Studii Economice din Moldova este principala instituție de învățământ superior economic din Republica Moldova, formând specialiști în domenii economice, financiare și de afaceri.",
+  "description": "Academia de Studii Economice din Moldova este principala instituție de învățământ superior economic din Republica Moldova, formând specialiști în domenii economice, financiare și de afaceri.",
   "colors": [
     {
       "name": "Albastru Închis",

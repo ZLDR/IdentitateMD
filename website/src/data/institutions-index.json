@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-01T12:41:03.401Z",
+  "generatedAt": "2026-05-14T17:31:42.050Z",
   "total": 36,
   "stats": {
     "byCategory": {
@@ -62,6 +62,94 @@
     }
   ],
   "institutions": [
+    {
+      "id": "md-asem",
+      "slug": "academia-de-studii-economice-din-moldova",
+      "name": "Academia de Studii Economice din Moldova",
+      "shortname": "ASEM",
+      "category": "universitate",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-03-28",
+        "keywords": [
+          "moldova",
+          "universitate",
+          "asem",
+          "economie",
+          "studii economice",
+          "chișinău"
+        ],
+        "quality": "verified"
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Academia de Studii Economice din Moldova este principala instituție de învățământ superior economic din Republica Moldova, formând specialiști în domenii economice, financiare și de afaceri.",
+      "colors": [
+        {
+          "name": "Albastru Închis",
+          "hex": "#170c9a",
+          "rgb": [
+            23,
+            12,
+            154
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Poppins",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        },
+        "secondary": {
+          "family": "Arial",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-asem/symbol-color.svg",
+          "white": "/logos/md-asem/symbol-white.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-asem/symbol-color.svg",
+          "white": "/logos/md-asem/symbol-white.svg"
+        }
+      },
+      "resources": {
+        "website": "https://ase.md/",
+        "contact": {
+          "address": "Str. Mitropolit Gavriil Bănulescu-Bodoni, 61, Chișinău, Moldova, MD-2005",
+          "phone": "+373 604 34 344",
+          "email": "rectorat@ase.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/ASEMoficial",
+          "instagram": "https://www.instagram.com/asem_moldova"
+        }
+      }
+    },
     {
       "id": "md-age",
       "slug": "agentia-de-guvernare-electronica",
@@ -3073,94 +3161,6 @@
         },
         "social_media": {
           "facebook": "https://www.facebook.com/USMoldova"
-        }
-      }
-    },
-    {
-      "id": "md-asem",
-      "slug": "universitatea-de-studii-economice-din-moldova",
-      "name": "Universitatea de Studii Economice din Moldova",
-      "shortname": "ASEM",
-      "category": "universitate",
-      "meta": {
-        "version": "1.0",
-        "last_updated": "2026-03-28",
-        "keywords": [
-          "moldova",
-          "universitate",
-          "asem",
-          "economie",
-          "studii economice",
-          "chișinău"
-        ],
-        "quality": "verified"
-      },
-      "location": {
-        "country_code": "MD",
-        "city": "Chișinău"
-      },
-      "description": "Universitatea de Studii Economice din Moldova este principala instituție de învățământ superior economic din Republica Moldova, formând specialiști în domenii economice, financiare și de afaceri.",
-      "colors": [
-        {
-          "name": "Albastru Închis",
-          "hex": "#170c9a",
-          "rgb": [
-            23,
-            12,
-            154
-          ],
-          "usage": "primary"
-        },
-        {
-          "name": "Alb",
-          "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
-          "usage": "neutral"
-        }
-      ],
-      "typography": {
-        "primary": {
-          "family": "Poppins",
-          "weights": [
-            400,
-            600,
-            700
-          ]
-        },
-        "secondary": {
-          "family": "Arial",
-          "weights": [
-            400,
-            700
-          ]
-        }
-      },
-      "assets": {
-        "main": {
-          "type": "symbol",
-          "color": "/logos/md-asem/symbol-color.svg",
-          "white": "/logos/md-asem/symbol-white.svg"
-        },
-        "symbol": {
-          "type": "symbol",
-          "color": "/logos/md-asem/symbol-color.svg",
-          "white": "/logos/md-asem/symbol-white.svg"
-        }
-      },
-      "resources": {
-        "website": "https://ase.md/",
-        "contact": {
-          "address": "Str. Mitropolit Gavriil Bănulescu-Bodoni, 61, Chișinău, Moldova, MD-2005",
-          "phone": "+373 604 34 344",
-          "email": "rectorat@ase.md"
-        },
-        "social_media": {
-          "facebook": "https://www.facebook.com/ASEMoficial",
-          "instagram": "https://www.instagram.com/asem_moldova"
         }
       }
     },
