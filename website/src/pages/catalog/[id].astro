@@ -27,7 +27,7 @@ const pageTitle = institution
   : undefined;
 
 const pageDescription = institution
-  ? `Sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
+  ? `Logo și sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
   : undefined;
 
 const primaryLogoPath = institution?.assets?.main?.color
@@ -47,15 +47,24 @@ const breadcrumbJsonLd = institution ? JSON.stringify({
   ]
 }) : undefined;
 
+const schemaType = institution?.category === 'universitate' ? 'CollegeOrUniversity' : 'GovernmentOrganization';
+
 const institutionJsonLd = institution ? JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "GovernmentOrganization",
+  "@type": schemaType,
   "name": institution.name,
   ...(institution.shortname && { "alternateName": institution.shortname }),
   ...(institution.description && { "description": institution.description }),
   ...(institution.resources?.website && { "url": institution.resources.website }),
   ...(institution.assets?.main?.color && {
-    "logo": `https://identitate.md${institution.assets.main.color}`
+    "logo": {
+      "@type": "ImageObject",
+      "url": `https://identitate.md${institution.assets.main.color}`,
+      "name": `Logo ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''}`,
+      "description": `Sigla vectorială oficială a ${institution.name}`,
+      "encodingFormat": "image/svg+xml",
+      "contentUrl": `https://identitate.md${institution.assets.main.color}`
+    }
   }),
   "address": {
     "@type": "PostalAddress",
