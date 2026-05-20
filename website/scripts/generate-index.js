@@ -14,37 +14,7 @@ import { readdir, readFile, writeFile } from "fs/promises";
 import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-
-function getPreferredCatalogKey(inst) {
-  const raw = String(inst.shortname || "").trim().toLowerCase();
-  const normalized = raw
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9-]+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-  return normalized || inst.slug;
-}
-
-function buildCatalogPathMap(institutions) {
-  const map = {};
-  const used = new Set();
-  for (const inst of institutions) {
-    const preferred = getPreferredCatalogKey(inst);
-    const slugFallback = inst.slug;
-    let key = preferred;
-    if (used.has(key) && !used.has(slugFallback)) key = slugFallback;
-    if (used.has(key)) {
-      const base = key;
-      let index = 2;
-      while (used.has(`${base}-${index}`)) index += 1;
-      key = `${base}-${index}`;
-    }
-    used.add(key);
-    map[inst.slug] = key;
-  }
-  return map;
-}
+import { buildCatalogPathMap } from "../src/lib/catalog-paths.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

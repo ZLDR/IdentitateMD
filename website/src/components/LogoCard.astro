@@ -1,6 +1,7 @@
 ---
 import { CATEGORY_LABELS_SINGULAR } from '../lib/labels';
 import { toLocalLogosPath } from '../lib/cdn-helpers';
+import { buildRemoteImageOnError } from '../lib/image-fallback';
 
 export interface Props {
   slug: string;
@@ -51,7 +52,7 @@ const downloadPath = localPath || logoPath;
         class="max-w-full max-h-full object-contain transition-transform duration-200 group-hover:scale-[1.04]"
         loading="lazy"
         decoding="async"
-        onerror="const fb=this.dataset.remoteFallback; if(fb&&this.src!==fb){this.src=fb;return;} this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        onerror={buildRemoteImageOnError(remoteFallbackPath)}
       />
       <div class="hidden flex-col items-center justify-center text-surface-400" role="img" aria-label="Logo indisponibil">
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

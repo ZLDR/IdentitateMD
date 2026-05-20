@@ -4,6 +4,7 @@
  */
 import { LOGO_VARIANT_LABELS } from '../lib/labels';
 import { toLocalLogosPath } from '../lib/cdn-helpers';
+import { buildLocalImageOnError } from '../lib/image-fallback';
 
 interface Props {
   variantKey?: string;
@@ -45,7 +46,7 @@ const localFallbackPath = toLocalLogosPath(path);
       class="max-w-full max-h-full object-contain"
       loading="lazy"
       decoding="async"
-      onerror="const fb=this.dataset.localFallback; if (fb && this.src !== window.location.origin + fb && this.src !== fb) { this.src=fb; return; } this.style.display='none';"
+      onerror={buildLocalImageOnError(localFallbackPath)}
     />
   </div>
   <div class="p-2 bg-white flex items-center justify-between">

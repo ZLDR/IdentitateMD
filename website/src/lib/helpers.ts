@@ -10,6 +10,7 @@ import type {
 } from "../types/institution";
 import { LOGO_LAYOUT_LABELS, LOGO_VARIANT_LABELS } from "./labels";
 import { resolveAssetPath } from "./cdn-helpers";
+export { buildCatalogPathMap, getPreferredCatalogKey } from "./catalog-paths.js";
 
 // ─── Tipuri helper ───────────────────────────────
 
@@ -35,8 +36,6 @@ export interface LogoVariantView {
   path: string;
   preview: "checkerboard" | "dark" | "light";
 }
-
-type InstitutionPathFields = Pick<Institution, "slug" | "shortname">;
 
 // ─── Funcții ─────────────────────────────────────
 
@@ -248,56 +247,6 @@ export function getCdnLogoUrl(
     : availableVariants[0];
 
   return `${cdnBase}/${mainLayout}/${variant}.svg`;
-}
-
-/**
- * Construiește un segment URL sigur pentru catalog.
- * Preferă shortname când este disponibil (ex: MAE -> mae), apoi fallback pe slug.
- */
-export function getPreferredCatalogKey(inst: InstitutionPathFields): string {
-  const raw = String(inst.shortname || "")
-    .trim()
-    .toLowerCase();
-  const normalized = raw
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9-]+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-
-  return normalized || inst.slug;
-}
-
-/**
- * Returnează o mapare unică slug -> segment URL pentru rutele /catalog/:id.
- */
-export function buildCatalogPathMap(
-  institutions: InstitutionPathFields[],
-): Record<string, string> {
-  const map: Record<string, string> = {};
-  const used = new Set<string>();
-
-  for (const inst of institutions) {
-    const preferred = getPreferredCatalogKey(inst);
-    const slugFallback = inst.slug;
-    let key = preferred;
-
-    if (used.has(key) && !used.has(slugFallback)) {
-      key = slugFallback;
-    }
-
-    if (used.has(key)) {
-      const base = key;
-      let index = 2;
-      while (used.has(`${base}-${index}`)) index += 1;
-      key = `${base}-${index}`;
-    }
-
-    used.add(key);
-    map[inst.slug] = key;
-  }
-
-  return map;
 }
 
 /**

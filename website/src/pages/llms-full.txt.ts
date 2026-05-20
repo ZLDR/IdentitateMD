@@ -1,41 +1,7 @@
 import type { APIRoute } from "astro";
 import institutionsIndex from "../data/institutions-index.json";
+import { buildCatalogPathMap } from "../lib/catalog-paths.js";
 import type { Institution } from "../types/institution";
-
-function buildCatalogPath(inst: Institution): string {
-  const raw = String(inst.shortname || "")
-    .trim()
-    .toLowerCase();
-  const normalized = raw
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9-]+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-  return normalized || inst.slug;
-}
-
-// Build unique path map (mirrors helpers.ts buildCatalogPathMap)
-function buildCatalogPathMap(
-  institutions: Institution[],
-): Record<string, string> {
-  const map: Record<string, string> = {};
-  const used = new Set<string>();
-  for (const inst of institutions) {
-    const preferred = buildCatalogPath(inst);
-    const slugFallback = inst.slug;
-    let key = preferred;
-    if (used.has(key) && !used.has(slugFallback)) key = slugFallback;
-    if (used.has(key)) {
-      let index = 2;
-      while (used.has(`${key}-${index}`)) index++;
-      key = `${key}-${index}`;
-    }
-    used.add(key);
-    map[inst.slug] = key;
-  }
-  return map;
-}
 
 export const GET: APIRoute = () => {
   const institutions =
