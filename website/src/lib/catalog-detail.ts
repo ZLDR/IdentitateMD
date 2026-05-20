@@ -37,6 +37,25 @@ function resolveUrl(path: any, cdnVersion: string): string {
   return `${SITE}/${path.replace(/^\/+/, '')}`;
 }
 
+function resolveLocalAsset(asset: any): string {
+  if (!asset) return '';
+  if (typeof asset === 'string') return asset;
+  return asset.local || '';
+}
+
+function getPrimaryLogoPath(inst: any): string {
+  const main = inst.assets?.main;
+  if (!main) return '';
+  return (
+    resolveLocalAsset(main.color) ||
+    resolveLocalAsset(main.dark_mode) ||
+    resolveLocalAsset(main.black) ||
+    resolveLocalAsset(main.white) ||
+    resolveLocalAsset(main.monochrome) ||
+    resolveLocalAsset(main.png?.path)
+  );
+}
+
 function getCdnLogoUrl(inst: any, cdnVersion: string): string {
   const main = inst.assets?.main;
   if (!main) return '';
@@ -220,7 +239,8 @@ function buildColorsSection(colors: any[], usageLabels: Record<string, string>) 
 }
 
 export function buildCatalogDetail(inst: any, ctx: CatalogDetailContext) {
-  const cdnLogo = getCdnLogoUrl(inst) || '';
+  const primaryLogo = getPrimaryLogoPath(inst);
+  const cdnLogo = getCdnLogoUrl(inst, ctx.cdnVersion) || '';
   const downloadables = getDownloadables(inst, ctx.cdnVersion);
   const catLabel = ctx.categoryLabels[inst.category] || inst.category;
   const locationLabel = [inst.location?.city, inst.location?.county].filter(Boolean).join(', ');
@@ -446,9 +466,9 @@ export function buildCatalogDetail(inst: any, ctx: CatalogDetailContext) {
             ${contactLineHtml}
             ${inst.usage_notes ? `<div class="mt-3 p-3 bg-amber-50 border border-amber-200 rounded text-xs text-amber-800"><strong>Note de utilizare:</strong> ${escHtml(inst.usage_notes)}</div>` : ''}
           </div>
-          ${cdnLogo ? `
+          ${primaryLogo ? `
           <div class="shrink-0 w-20 h-20 sm:w-24 sm:h-24 bg-white border border-surface-200 rounded p-3 flex items-center justify-center">
-            <img src="${escHtml(cdnLogo)}" alt="Logo ${escHtml(inst.name)}" class="max-w-full max-h-full object-contain" loading="eager" />
+            <img src="${escHtml(primaryLogo)}" alt="Logo ${escHtml(inst.name)}" class="max-w-full max-h-full object-contain" loading="eager" />
           </div>` : ''}
         </div>
         ${keywordsHtml}
