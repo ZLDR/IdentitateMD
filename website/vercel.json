@@ -1,12 +1,22 @@
 {
   "redirects": [
     {
+      "source": "/catalog/",
+      "destination": "/catalog",
+      "permanent": true
+    },
+    {
       "source": "/institution/academia-de-studii-economice-din-moldova",
       "destination": "/catalog/asem",
       "permanent": true
     },
     {
       "source": "/institution/academia-de-studii-economice-din-moldova/",
+      "destination": "/catalog/asem",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/asem/",
       "destination": "/catalog/asem",
       "permanent": true
     },
@@ -21,12 +31,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/age/",
+      "destination": "/catalog/age",
+      "permanent": true
+    },
+    {
       "source": "/institution/agentia-nationala-pentru-reglementare-in-energetica",
       "destination": "/catalog/anre",
       "permanent": true
     },
     {
       "source": "/institution/agentia-nationala-pentru-reglementare-in-energetica/",
+      "destination": "/catalog/anre",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/anre/",
       "destination": "/catalog/anre",
       "permanent": true
     },
@@ -41,12 +61,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/asp/",
+      "destination": "/catalog/asp",
+      "permanent": true
+    },
+    {
       "source": "/institution/banca-nationala-a-moldovei",
       "destination": "/catalog/bnm",
       "permanent": true
     },
     {
       "source": "/institution/banca-nationala-a-moldovei/",
+      "destination": "/catalog/bnm",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/bnm/",
       "destination": "/catalog/bnm",
       "permanent": true
     },
@@ -61,12 +91,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/statistica/",
+      "destination": "/catalog/statistica",
+      "permanent": true
+    },
+    {
       "source": "/institution/consiliul-audiovizualului",
       "destination": "/catalog/ca",
       "permanent": true
     },
     {
       "source": "/institution/consiliul-audiovizualului/",
+      "destination": "/catalog/ca",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/ca/",
       "destination": "/catalog/ca",
       "permanent": true
     },
@@ -81,12 +121,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/dgcpc/",
+      "destination": "/catalog/dgcpc",
+      "permanent": true
+    },
+    {
       "source": "/institution/directia-generala-educatie-tineret-si-sport",
       "destination": "/catalog/dgets",
       "permanent": true
     },
     {
       "source": "/institution/directia-generala-educatie-tineret-si-sport/",
+      "destination": "/catalog/dgets",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/dgets/",
       "destination": "/catalog/dgets",
       "permanent": true
     },
@@ -101,12 +151,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/evo/",
+      "destination": "/catalog/evo",
+      "permanent": true
+    },
+    {
       "source": "/institution/guvern",
       "destination": "/catalog/guvern",
       "permanent": true
     },
     {
       "source": "/institution/guvern/",
+      "destination": "/catalog/guvern",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/guvern/",
       "destination": "/catalog/guvern",
       "permanent": true
     },
@@ -121,12 +181,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/mia/",
+      "destination": "/catalog/mia",
+      "permanent": true
+    },
+    {
       "source": "/institution/md-mae",
       "destination": "/catalog/mae",
       "permanent": true
     },
     {
       "source": "/institution/md-mae/",
+      "destination": "/catalog/mae",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/mae/",
       "destination": "/catalog/mae",
       "permanent": true
     },
@@ -141,12 +211,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/maia/",
+      "destination": "/catalog/maia",
+      "permanent": true
+    },
+    {
       "source": "/institution/md-mc",
       "destination": "/catalog/ministerul-culturii",
       "permanent": true
     },
     {
       "source": "/institution/md-mc/",
+      "destination": "/catalog/ministerul-culturii",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/ministerul-culturii/",
       "destination": "/catalog/ministerul-culturii",
       "permanent": true
     },
@@ -161,12 +241,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/mded/",
+      "destination": "/catalog/mded",
+      "permanent": true
+    },
+    {
       "source": "/institution/md-mec",
       "destination": "/catalog/mec",
       "permanent": true
     },
     {
       "source": "/institution/md-mec/",
+      "destination": "/catalog/mec",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/mec/",
       "destination": "/catalog/mec",
       "permanent": true
     },
@@ -181,12 +271,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/me/",
+      "destination": "/catalog/me",
+      "permanent": true
+    },
+    {
       "source": "/institution/md-mf",
       "destination": "/catalog/ministerul-finantelor",
       "permanent": true
     },
     {
       "source": "/institution/md-mf/",
+      "destination": "/catalog/ministerul-finantelor",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/ministerul-finantelor/",
       "destination": "/catalog/ministerul-finantelor",
       "permanent": true
     },
@@ -201,12 +301,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/midr/",
+      "destination": "/catalog/midr",
+      "permanent": true
+    },
+    {
       "source": "/institution/ministerul-justiției",
       "destination": "/catalog/ministerul-justitiei",
       "permanent": true
     },
     {
       "source": "/institution/ministerul-justiției/",
+      "destination": "/catalog/ministerul-justitiei",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/ministerul-justitiei/",
       "destination": "/catalog/ministerul-justitiei",
       "permanent": true
     },
@@ -221,12 +331,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/ministerul-mediului/",
+      "destination": "/catalog/ministerul-mediului",
+      "permanent": true
+    },
+    {
       "source": "/institution/mmps",
       "destination": "/catalog/mmps",
       "permanent": true
     },
     {
       "source": "/institution/mmps/",
+      "destination": "/catalog/mmps",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/mmps/",
       "destination": "/catalog/mmps",
       "permanent": true
     },
@@ -241,12 +361,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/ms/",
+      "destination": "/catalog/ms",
+      "permanent": true
+    },
+    {
       "source": "/institution/mioc",
       "destination": "/catalog/mioc",
       "permanent": true
     },
     {
       "source": "/institution/mioc/",
+      "destination": "/catalog/mioc",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/mioc/",
       "destination": "/catalog/mioc",
       "permanent": true
     },
@@ -261,12 +391,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/muzeul-de-arta/",
+      "destination": "/catalog/muzeul-de-arta",
+      "permanent": true
+    },
+    {
       "source": "/institution/md-parlament",
       "destination": "/catalog/parlament",
       "permanent": true
     },
     {
       "source": "/institution/md-parlament/",
+      "destination": "/catalog/parlament",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/parlament/",
       "destination": "/catalog/parlament",
       "permanent": true
     },
@@ -281,12 +421,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/coemoldova/",
+      "destination": "/catalog/coemoldova",
+      "permanent": true
+    },
+    {
       "source": "/institution/md-primaria-chisinau",
       "destination": "/catalog/primaria-chisinau",
       "permanent": true
     },
     {
       "source": "/institution/md-primaria-chisinau/",
+      "destination": "/catalog/primaria-chisinau",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/primaria-chisinau/",
       "destination": "/catalog/primaria-chisinau",
       "permanent": true
     },
@@ -301,12 +451,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/stisc/",
+      "destination": "/catalog/stisc",
+      "permanent": true
+    },
+    {
       "source": "/institution/steagul-republicii-moldova",
       "destination": "/catalog/steag",
       "permanent": true
     },
     {
       "source": "/institution/steagul-republicii-moldova/",
+      "destination": "/catalog/steag",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/steag/",
       "destination": "/catalog/steag",
       "permanent": true
     },
@@ -321,12 +481,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/ue/",
+      "destination": "/catalog/ue",
+      "permanent": true
+    },
+    {
       "source": "/institution/stema-republicii-moldova",
       "destination": "/catalog/stema",
       "permanent": true
     },
     {
       "source": "/institution/stema-republicii-moldova/",
+      "destination": "/catalog/stema",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/stema/",
       "destination": "/catalog/stema",
       "permanent": true
     },
@@ -341,6 +511,11 @@
       "permanent": true
     },
     {
+      "source": "/catalog/ulim/",
+      "destination": "/catalog/ulim",
+      "permanent": true
+    },
+    {
       "source": "/institution/universitatea-de-stat-din-moldova",
       "destination": "/catalog/usm",
       "permanent": true
@@ -351,12 +526,22 @@
       "permanent": true
     },
     {
+      "source": "/catalog/usm/",
+      "destination": "/catalog/usm",
+      "permanent": true
+    },
+    {
       "source": "/institution/universitatea-tehnica-a-moldovei",
       "destination": "/catalog/utm",
       "permanent": true
     },
     {
       "source": "/institution/universitatea-tehnica-a-moldovei/",
+      "destination": "/catalog/utm",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/utm/",
       "destination": "/catalog/utm",
       "permanent": true
     }

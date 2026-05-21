@@ -159,17 +159,21 @@ async function generateIndex() {
 
   // Generate vercel.json with HTTP 301 redirects for /institution/* → /catalog/*
   const catalogPathBySlug = buildCatalogPathMap(institutions);
-  const redirects = institutions.flatMap((inst) => {
-    const dest = `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`;
-    return [
-      { source: `/institution/${inst.slug}`, destination: dest, permanent: true },
-      { source: `/institution/${inst.slug}/`, destination: dest, permanent: true },
-    ];
-  });
+  const redirects = [
+    { source: '/catalog/', destination: '/catalog', permanent: true },
+    ...institutions.flatMap((inst) => {
+      const dest = `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`;
+      return [
+        { source: `/institution/${inst.slug}`, destination: dest, permanent: true },
+        { source: `/institution/${inst.slug}/`, destination: dest, permanent: true },
+        { source: `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}/`, destination: dest, permanent: true },
+      ];
+    }),
+  ];
   const vercelConfig = { redirects };
   const vercelConfigPath = join(__dirname, "../vercel.json");
   writeFileSync(vercelConfigPath, JSON.stringify(vercelConfig, null, 2) + "\n", "utf-8");
-  console.log(`🔀 vercel.json actualizat cu ${redirects.length / 2} redirecționări`);
+  console.log(`🔀 vercel.json actualizat cu ${Math.round(redirects.length / 2)} redirecționări`);
 
   // Auto-update institution count badge in README.md
   const readmePath = join(__dirname, "../../README.md");
