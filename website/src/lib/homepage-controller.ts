@@ -8,7 +8,7 @@ interface HomepageControllerOptions {
 }
 
 export function attachHomepageController({ data, labels, catalogPaths }: HomepageControllerOptions) {
-  document.addEventListener('DOMContentLoaded', () => {
+  const init = () => {
     const fuse = new Fuse(data, {
       keys: [
         { name: 'name', weight: 0.4 },
@@ -298,5 +298,11 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
 
     readUrlState();
     filterAndSearch();
-  });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
 }

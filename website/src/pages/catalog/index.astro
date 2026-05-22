@@ -41,8 +41,8 @@ const institutionsByCategory = categories.reduce((acc, cat) => {
   return acc;
 }, {} as Record<string, Institution[]>);
 
-const title = propTitle || "Catalog Sigle | identitate.md";
-const description = propDesc || `Explorează siglele vectoriale oficiale ale celor ${institutionIndex.total} instituții publice din Republica Moldova. Descarcă gratuit în format SVG, culori HEX/RGB și tipografie.`;
+const title = propTitle || "Catalog logo-uri și sigle oficiale | identitate.md";
+const description = propDesc || `Explorează logo-urile și siglele vectoriale oficiale ale celor ${institutionIndex.total} instituții publice din Republica Moldova. Descarcă gratuit în format SVG, culori HEX/RGB și tipografie.`;
 
 const institutionsJson = JSON.stringify(allInstitutions);
 const categoryLabelsSingularJson = JSON.stringify(CATEGORY_LABELS_SINGULAR);

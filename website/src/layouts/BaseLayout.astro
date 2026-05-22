@@ -18,8 +18,8 @@ interface Props {
 
 const { title, description, ogImage, ogType, noindex, noFooter, noHeader, darkChrome = false }: Props = Astro.props;
 
-const pageTitle = title || 'Siglele Oficiale ale Instituțiilor Publice din Moldova | identitate.md';
-const pageDescription = description || 'Registru digital open-source cu sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. Descarcă gratuit logo-uri, culori HEX/RGB și tipografie pentru ministere, agenții și primării.';
+const pageTitle = title || 'Logo-uri și sigle oficiale ale instituțiilor publice din Moldova | identitate.md';
+const pageDescription = description || 'Registru digital open-source cu logo-uri și sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. Descarcă gratuit culori HEX/RGB și tipografie pentru ministere, agenții și primării.';
 const rawPath = Astro.url.pathname;
 const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
 const canonicalUrl = new URL(normalizedPath, Astro.site).href;
@@ -75,11 +75,11 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
       "name": "identitate.md",
       "alternateName": "IdentitateMD",
       "url": "https://identitate.md",
-      "description": "Open-source digital registry of official visual identities for public institutions in the Republic of Moldova. Provides free SVG logos, brand colors (HEX/RGB), and typography for 28+ government institutions.",
+      "description": "Open-source digital registry of official visual identities for public institutions in the Republic of Moldova. Provides free SVG logos, brand colors (HEX/RGB), and typography for government institutions.",
       "inLanguage": ["ro", "en"],
       "publisher": {
         "@type": "Organization",
-        "name": "identitate.mdCommunity",
+        "name": "identitate.md Community",
         "url": "https://identitate.md"
       },
       "potentialAction": {

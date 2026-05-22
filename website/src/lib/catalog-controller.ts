@@ -16,6 +16,7 @@ institutions.forEach(i => { bySlug[i.slug] = i; });
 const categoryBtns   = document.querySelectorAll('.category-btn');
 const institutionBtns = document.querySelectorAll('.institution-btn');
 const institutionGroups = document.querySelectorAll('.institution-group');
+const logoCards = document.querySelectorAll<HTMLElement>('[data-institution-id]');
 const searchInput    = document.getElementById('catalog-search');
 const searchClear    = document.getElementById('search-clear');
 const sortAZ         = document.getElementById('sort-az');
@@ -245,6 +246,16 @@ function applySortAndFilter(query) {
     const hdr = group.querySelector('div');
     if (hdr) hdr.classList.toggle('hidden', !groupVisible);
     group.classList.toggle('hidden', !groupVisible);
+  });
+  logoCards.forEach(card => {
+    const slug = card.dataset.institutionId || '';
+    const cat = card.dataset.cardCategory || '';
+    const inst = bySlug[slug];
+    const name = (inst?.name || '').toLowerCase();
+    const shortname = (inst?.shortname || '').toLowerCase();
+    const matchCategory = !currentCategory || cat === currentCategory;
+    const matchSearch = !q || name.includes(q) || shortname.includes(q) || slug.includes(q);
+    card.classList.toggle('hidden', !(matchCategory && matchSearch));
   });
   updateSidebarCount();
 }

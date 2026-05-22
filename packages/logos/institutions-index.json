@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-22T08:16:54.114Z",
+  "generatedAt": "2026-05-22T12:33:41.451Z",
   "total": 36,
   "stats": {
     "byCategory": {
@@ -1703,7 +1703,9 @@
           "sigla",
           "emblema"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "MEC logo și sigla oficială | identitate.md",
+        "seo_description": "Descarcă sigla MEC (Ministerul Educației și Cercetării al Republicii Moldova) în format SVG și vezi logo-ul, emblema și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -3128,7 +3130,9 @@
           "sigla",
           "emblema"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "USM logo și sigla oficială | identitate.md",
+        "seo_description": "Descarcă sigla USM (Universitatea de Stat din Moldova) în format SVG și vezi logo-ul, emblema și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",

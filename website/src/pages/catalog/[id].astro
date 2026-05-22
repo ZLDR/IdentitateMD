@@ -22,12 +22,17 @@ export async function getStaticPaths() {
 
 const { initialPathId, institution } = Astro.props as { initialPathId: string; institution: Institution };
 
+const shortLabel = institution.shortname?.trim() || '';
+const seoLabel = shortLabel && shortLabel.length <= 8 && /^[A-Za-z0-9]+$/.test(shortLabel)
+  ? shortLabel.toUpperCase()
+  : shortLabel;
+
 const pageTitle = institution
-  ? institution.meta?.seo_title || `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} | identitate.md - Sigla Oficială`
+  ? institution.meta?.seo_title || `${seoLabel || institution.name} logo și sigla oficială | identitate.md`
   : undefined;
 
 const pageDescription = institution
-  ? institution.meta?.seo_description || `Logo și sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
+  ? institution.meta?.seo_description || `Descarcă logo-ul și sigla oficială a ${institution.name}${seoLabel ? ` (${seoLabel})` : ''} în format SVG. Variante cromatice, culori HEX/RGB și tipografie.`
   : undefined;
 
 const primaryLogoPath = institution?.assets?.main?.color

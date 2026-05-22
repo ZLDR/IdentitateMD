@@ -30,8 +30,8 @@ const total = institutions.length;
 ---
 
 <BaseLayout
-  title="Siglele Oficiale ale Instituțiilor Publice din Moldova | identitate.md"
-  description={`Descarcă gratuit sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
+  title="Logo-uri și sigle oficiale ale instituțiilor publice din Moldova | identitate.md"
+  description={`Descarcă gratuit logo-uri și sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
   noHeader={true}
   noFooter={true}
 >
@@ -266,11 +266,17 @@ const total = institutions.length;
 
 <!-- Pass data to client -->
 <script define:vars={{ institutions: institutionIndex.institutions, categoryLabelsJson, catalogPathBySlug }}>
+  window.__IDENTITATE_DATA__ = institutions;
+  window.__CATEGORY_LABELS__ = JSON.parse(categoryLabelsJson);
+  window.__CATALOG_PATHS__ = catalogPathBySlug;
+</script>
+
+<script type="module">
   import { attachHomepageController } from '../lib/homepage-controller';
 
   attachHomepageController({
-    data: institutions,
-    labels: JSON.parse(categoryLabelsJson),
-    catalogPaths: catalogPathBySlug,
+    data: window.__IDENTITATE_DATA__,
+    labels: window.__CATEGORY_LABELS__,
+    catalogPaths: window.__CATALOG_PATHS__,
   });
 </script>

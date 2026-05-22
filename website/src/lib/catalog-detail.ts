@@ -244,6 +244,10 @@ export function buildCatalogDetail(inst: any, ctx: CatalogDetailContext) {
   const downloadables = getDownloadables(inst, ctx.cdnVersion);
   const catLabel = ctx.categoryLabels[inst.category] || inst.category;
   const locationLabel = [inst.location?.city, inst.location?.county].filter(Boolean).join(', ');
+  const shortLabel = inst.shortname?.trim() || '';
+  const seoLabel = shortLabel && shortLabel.length <= 8 && /^[A-Za-z0-9]+$/.test(shortLabel)
+    ? shortLabel.toUpperCase()
+    : shortLabel;
 
   const contactLineHtml = (locationLabel || inst.resources?.contact?.phone || inst.resources?.contact?.email) ? `
     <div class="text-xs text-surface-400 flex flex-wrap items-center gap-3">
@@ -457,7 +461,8 @@ export function buildCatalogDetail(inst: any, ctx: CatalogDetailContext) {
                 Distribuie
               </button>
             </div>
-            <h1 class="text-xl sm:text-2xl font-medium text-primary-900 mb-2" style="text-wrap:pretty">${escHtml(inst.name)}</h1>
+            <h1 class="text-xl sm:text-2xl font-medium text-primary-900 mb-2" style="text-wrap:pretty">${escHtml(seoLabel ? `${seoLabel} logo oficial` : `Logo oficial ${inst.name}`)}</h1>
+            <p class="text-xs text-surface-500 mb-2" style="text-wrap:pretty">${escHtml(inst.name)}</p>
             <div class="flex flex-wrap items-center gap-2 mb-2">
               ${inst.shortname ? `<span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded text-xs font-semibold">${escHtml(inst.shortname.toUpperCase())}</span>` : ''}
               <span class="px-2 py-0.5 bg-surface-100 text-surface-600 rounded text-xs">${escHtml(catLabel)}</span>
@@ -502,4 +507,3 @@ export function buildCatalogDetail(inst: any, ctx: CatalogDetailContext) {
       </section>
     </article>`;
 }
-
