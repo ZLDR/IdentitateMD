@@ -148,13 +148,13 @@ Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude 
 **Parlament**
 - Parlamentul Republicii Moldova
 
-**Ministere** (11)
+**Ministere** (12)
 - Ministerul Afacerilor Externe (MAE)
 - Ministerul Agriculturii și Industriei Alimentare (MAIA)
 - Ministerul Culturii (MC)
 - Ministerul Dezvoltării Economice și Digitalizării (MDED)
 - Ministerul Educației și Cercetării (MEC)
-- Ministerul Energiei
+- Ministerul Energiei (ME)
 - Ministerul Finanțelor (MF)
 - Ministerul Infrastructurii și Dezvoltării Regionale (MIDR)
 - Ministerul Justiției (MJ)
@@ -162,12 +162,18 @@ Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude 
 - Ministerul Muncii și Protecției Sociale (MMPS)
 - Ministerul Sănătății (MS)
 
-**Agenții & Servicii**
+**Agenții**
 - Agenția De Guvernare Electronică (AGE)
 - Agenția Națională pentru Reglementare în Energetică (ANRE)
+- Agenția Servicii Publice (ASP)
 - Biroul Național de Statistică (BNS)
+
+**Consilii & Direcții**
 - Consiliul Audiovizualului (CA)
 - Direcția Generală Cultură și Patrimoniu Cultural (DGCPC)
+- Direcția Generală Educație, Tineret și Sport (DGETS)
+
+**Servicii & Primării**
 - Primăria Municipiului Chișinău
 - Serviciul Tehnologia Informației și Securitatea Cibernetică (STISC)
 
@@ -175,16 +181,25 @@ Server MCP (Model Context Protocol) pentru AI coding assistants. Permite Claude 
 - Muzeul Național de Artă Moldovei (MNAM)
 - Muzeul de Istorie a Orașului Chișinău (MIOC)
 
+**Universități**
+- Academia de Studii Economice din Moldova (ASEM)
+- Universitatea de Limbi Internaționale din Moldova (ULIM)
+- Universitatea de Stat din Moldova (USM)
+- Universitatea Tehnică a Moldovei (UTM)
+
 **Altele**
 - Banca Națională a Moldovei (BNM)
+- Centrul Național de Management al Crizelor (CNMC)
+- EVO
 - MIA Plăți Instant
+- Președinția Comitetului de Miniștri al Consiliului Europei
 
 **Simboluri**
 - Stema Republicii Moldova
 - Steagul Republicii Moldova
 - Steagul Uniunii Europene
 
-**Total: 32 instituții** (actualizat automat la fiecare `data:generate`)
+**Total: 37 instituții** (actualizat automat la fiecare `data:generate`)
 
 ## 🤝 Contribuții
 
