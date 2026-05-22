@@ -3,9 +3,7 @@ import { attachCatalogMobileSheet } from './catalog-mobile-sheet';
 
 export function attachCatalogController() {
 // ─── Bootstrap ──────────────────────────────────────────────────────────────
-const { institutions, CATEGORY_LABELS_SINGULAR, LAYOUT_LABELS, VARIANT_LABELS, USAGE_LABELS, QUALITY_LABELS, PATH_BY_SLUG, SLUG_BY_PATH, initialPathId, cdnVersion, routeBase = 'catalog' } = (window as any).__catalogData;
-
-const normalizedRouteBase = String(routeBase || 'catalog').replace(/^\/+|\/+$/g, '') || 'catalog';
+const { institutions, CATEGORY_LABELS_SINGULAR, LAYOUT_LABELS, VARIANT_LABELS, USAGE_LABELS, QUALITY_LABELS, PATH_BY_SLUG, SLUG_BY_PATH, initialPathId, cdnVersion } = (window as any).__catalogData;
 
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@identitate-md/logos@${cdnVersion}`;
 const SITE = 'https://identitate.md';
@@ -79,7 +77,7 @@ function setActiveInstitution(slug) {
 }
 
 function getPathIdFromUrl() {
-  const m = window.location.pathname.match(new RegExp(`^/${normalizedRouteBase}/([^/?#]+)`));
+  const m = window.location.pathname.match(/^\/catalog\/([^/?#]+)/);
   return m?.[1] ? decodeURIComponent(m[1]) : '';
 }
 
@@ -90,8 +88,8 @@ function resolveSlugFromPathId(pathId) {
 
 function syncUrlForSlug(slug, replace = false) {
   if (!slug) return;
-  const pathId = normalizedRouteBase === 'institution' ? slug : (PATH_BY_SLUG[slug] || slug);
-  const nextPath = `/${normalizedRouteBase}/${encodeURIComponent(pathId)}`;
+  const pathId = PATH_BY_SLUG[slug] || slug;
+  const nextPath = `/catalog/${encodeURIComponent(pathId)}`;
   if (window.location.pathname === nextPath) return;
   window.history[replace ? 'replaceState' : 'pushState']({ slug }, '', nextPath);
 }

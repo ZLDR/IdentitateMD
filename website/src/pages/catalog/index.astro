@@ -26,8 +26,7 @@ const slugByCatalogPath = Object.fromEntries(
 for (const inst of allInstitutions) {
   slugByCatalogPath[inst.slug] = inst.slug;
 }
-const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, ogImage: propOgImage, institutionJsonLd, breadcrumbJsonLd, routeBase: propRouteBase = 'catalog' } = Astro.props;
-const routeBase = String(propRouteBase || 'catalog').replace(/^\/+|\/+$/g, '') || 'catalog';
+const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, ogImage: propOgImage, institutionJsonLd, breadcrumbJsonLd } = Astro.props;
 
 const categories = CATEGORY_ORDER
   .map(value => ({
@@ -142,7 +141,7 @@ const cdnVersion = CDN_VERSION;
               const logoSrc = mainAsset ? resolveAssetPath(mainAsset, false) : null;
               return (
                 <a
-                  href={`/${routeBase}/${routeBase === 'institution' ? inst.slug : (catalogPathBySlug[inst.slug] || inst.slug)}`}
+                  href={`/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`}
                   data-institution-btn={inst.slug}
                   class="institution-btn block w-full text-left px-3 py-2 hover:bg-surface-50 transition-colors flex items-center gap-2 group"
                   data-name={`${inst.shortname || inst.name} ${inst.name}`}
@@ -293,7 +292,7 @@ const cdnVersion = CDN_VERSION;
 
 </BaseLayout>
 
-<script define:vars={{ institutionsJson, categoryLabelsSingularJson, logoLayoutLabelsJson, logoVariantLabelsJson, colorUsageLabelsJson, qualityLabelsJson, catalogPathBySlugJson, slugByCatalogPathJson, initialPathId, cdnVersion, routeBase }} is:inline>
+<script define:vars={{ institutionsJson, categoryLabelsSingularJson, logoLayoutLabelsJson, logoVariantLabelsJson, colorUsageLabelsJson, qualityLabelsJson, catalogPathBySlugJson, slugByCatalogPathJson, initialPathId, cdnVersion }} is:inline>
   window.__catalogData = {
     institutions: JSON.parse(institutionsJson),
     CATEGORY_LABELS_SINGULAR: JSON.parse(categoryLabelsSingularJson),
@@ -305,7 +304,6 @@ const cdnVersion = CDN_VERSION;
     SLUG_BY_PATH: JSON.parse(slugByCatalogPathJson),
     initialPathId,
     cdnVersion,
-    routeBase,
   };
 </script>
 
