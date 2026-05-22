@@ -37,7 +37,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@identitate-md/logos": "^1.4.8",
+    "@identitate-md/logos": "^1.5.5",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^3.25.76"
   },
