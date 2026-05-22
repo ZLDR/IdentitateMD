@@ -41,13 +41,6 @@ function buildCatalogPathMap(institutions) {
 const { institutions } = JSON.parse(
   readFileSync(join(__dirname, 'src/data/institutions-index.json'), 'utf-8')
 );
-const catalogPathBySlug = buildCatalogPathMap(institutions);
-const institutionRedirects = Object.fromEntries(
-  institutions.map((inst) => [
-    `/institution/${inst.slug}`,
-    `/catalog/${catalogPathBySlug[inst.slug] || inst.slug}`,
-  ])
-);
 
 export default defineConfig({
   site: 'https://identitate.md',
@@ -58,7 +51,6 @@ export default defineConfig({
     host: process.env.HOST || 'localhost',
   },
   output: 'static',
-  redirects: institutionRedirects,
   build: {
     assets: '_assets',
   },

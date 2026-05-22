@@ -1,40 +1,26 @@
 ---
-import CatalogPage from './index.astro';
+import CatalogPage from '../catalog/index.astro';
 import institutionIndex from '../../data/institutions-index.json';
-import { buildCatalogPathMap } from '../../lib/helpers';
 import type { Institution } from '../../types/institution';
 
 export async function getStaticPaths() {
   const institutions = institutionIndex.institutions as unknown as Institution[];
-  const catalogPathBySlug = buildCatalogPathMap(institutions);
-  const pathToInst = new Map<string, Institution>();
 
-  for (const inst of institutions) {
-    const pathId = catalogPathBySlug[inst.slug] || inst.slug;
-    pathToInst.set(pathId, inst);
-  }
-
-  return [...pathToInst.entries()].map(([id, inst]) => ({
-    params: { id },
-    props: { initialPathId: id, institution: inst },
+  return institutions.map((institution) => ({
+    params: { id: institution.slug },
+    props: { institution },
   }));
 }
 
-const { initialPathId, institution } = Astro.props as { initialPathId: string; institution: Institution };
-const routeBase = 'catalog';
+const { institution } = Astro.props as { institution: Institution };
 
 const shortLabel = institution.shortname?.trim() || '';
 const seoLabel = shortLabel && shortLabel.length <= 8 && /^[A-Za-z0-9]+$/.test(shortLabel)
   ? shortLabel.toUpperCase()
   : shortLabel;
 
-const pageTitle = institution
-  ? institution.meta?.seo_title || `${seoLabel || institution.name} logo și sigla oficială | identitate.md`
-  : undefined;
-
-const pageDescription = institution
-  ? institution.meta?.seo_description || `Descarcă logo-ul și sigla oficială a ${institution.name}${seoLabel ? ` (${seoLabel})` : ''} în format SVG. Variante cromatice, culori HEX/RGB și tipografie.`
-  : undefined;
+const pageTitle = institution.meta?.seo_title || `${seoLabel || institution.name} logo și sigla oficială | identitate.md`;
+const pageDescription = institution.meta?.seo_description || `Descarcă logo-ul și sigla oficială a ${institution.name}${seoLabel ? ` (${seoLabel})` : ''} în format SVG. Variante cromatice, culori HEX/RGB și tipografie.`;
 
 const primaryLogoPath = institution?.assets?.main?.color
   ?? institution?.assets?.horizontal?.color
@@ -43,19 +29,19 @@ const primaryLogoPath = institution?.assets?.main?.color
   ?? null;
 const ogImage = primaryLogoPath ? `https://identitate.md${primaryLogoPath}` : undefined;
 
-const breadcrumbJsonLd = institution ? JSON.stringify({
+const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://identitate.md" },
     { "@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://identitate.md/catalog" },
-    { "@type": "ListItem", "position": 3, "name": institution.name, "item": `https://identitate.md/${routeBase}/${initialPathId}` }
+    { "@type": "ListItem", "position": 3, "name": institution.name, "item": `https://identitate.md/institution/${institution.slug}` }
   ]
-}) : undefined;
+});
 
-const schemaType = institution?.category === 'universitate' ? 'CollegeOrUniversity' : 'GovernmentOrganization';
+const schemaType = institution.category === 'universitate' ? 'CollegeOrUniversity' : 'GovernmentOrganization';
 
-const institutionJsonLd = institution ? JSON.stringify({
+const institutionJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": schemaType,
   "name": institution.name,
@@ -91,15 +77,15 @@ const institutionJsonLd = institution ? JSON.stringify({
     ...((institution.resources as any)?.social_media?.twitter ? [(institution.resources as any).social_media.twitter] : []),
     ...((institution.resources as any)?.social_media?.youtube ? [(institution.resources as any).social_media.youtube] : []),
   ]
-}) : undefined;
+});
 ---
 
 <CatalogPage
-  initialPathId={initialPathId}
+  initialPathId={institution.slug}
   pageTitle={pageTitle}
   pageDescription={pageDescription}
   ogImage={ogImage}
   institutionJsonLd={institutionJsonLd}
   breadcrumbJsonLd={breadcrumbJsonLd}
-  routeBase={routeBase}
+  routeBase="institution"
 />
