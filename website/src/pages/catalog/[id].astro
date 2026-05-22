@@ -23,11 +23,11 @@ export async function getStaticPaths() {
 const { initialPathId, institution } = Astro.props as { initialPathId: string; institution: Institution };
 
 const pageTitle = institution
-  ? `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} | identitate.md - Sigla Oficială`
+  ? institution.meta?.seo_title || `${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} | identitate.md - Sigla Oficială`
   : undefined;
 
 const pageDescription = institution
-  ? `Logo și sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
+  ? institution.meta?.seo_description || `Logo și sigla vectorială oficială a ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''} - descărcabilă gratuit în format SVG. Variante cromatice, culori HEX/RGB și tipografie. | Identitate.MD`
   : undefined;
 
 const primaryLogoPath = institution?.assets?.main?.color
@@ -80,6 +80,10 @@ const institutionJsonLd = institution ? JSON.stringify({
   "sameAs": [
     ...(institution.resources?.website ? [institution.resources.website] : []),
     ...((institution.resources as any)?.social_media?.facebook ? [(institution.resources as any).social_media.facebook] : []),
+    ...((institution.resources as any)?.social_media?.instagram ? [(institution.resources as any).social_media.instagram] : []),
+    ...((institution.resources as any)?.social_media?.linkedin ? [(institution.resources as any).social_media.linkedin] : []),
+    ...((institution.resources as any)?.social_media?.twitter ? [(institution.resources as any).social_media.twitter] : []),
+    ...((institution.resources as any)?.social_media?.youtube ? [(institution.resources as any).social_media.youtube] : []),
   ]
 }) : undefined;
 ---

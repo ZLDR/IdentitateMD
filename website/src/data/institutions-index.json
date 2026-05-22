@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-21T08:29:03.625Z",
+  "generatedAt": "2026-05-22T08:16:54.114Z",
   "total": 36,
   "stats": {
     "byCategory": {
@@ -81,11 +81,21 @@
           "logo asem",
           "sigla asem",
           "emblema asem",
+          "logo ase",
+          "sigla ase",
+          "emblema ase",
+          "logo oficial asem",
+          "sigla oficială asem",
+          "identitate vizuală",
+          "brand assets",
+          "descărcare siglă",
           "logo",
           "sigla",
           "emblema"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "ASEM logo și sigla oficială | identitate.md",
+        "seo_description": "Descarcă sigla oficială ASEM (Academia de Studii Economice din Moldova) în format SVG și vezi logo-ul, emblema și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -3212,7 +3222,9 @@
           "sigla",
           "emblema"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "UTM logo și sigla oficială | identitate.md",
+        "seo_description": "Descarcă sigla UTM (Universitatea Tehnică a Moldovei) în format SVG și vezi logo-ul, emblema și variantele oficiale."
       },
       "location": {
         "country_code": "MD",
