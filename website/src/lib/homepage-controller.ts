@@ -1,5 +1,4 @@
 import Fuse from 'fuse.js';
-import { getPreviewLogoPath } from './logo-paths';
 
 interface HomepageControllerOptions {
   data: any[];
@@ -16,7 +15,7 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
         { name: 'meta.keywords', weight: 0.2 },
         { name: 'description', weight: 0.1 },
       ],
-      threshold: 0.35,
+      threshold: 0.2,
       ignoreLocation: true,
     });
 
@@ -28,17 +27,6 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
     const emptyMessage = document.getElementById('empty-message')!;
     const countDisplay = document.getElementById('count-display')!;
     const allCards = document.querySelectorAll<HTMLElement>('[data-institution-id]');
-    const searchDropdown = document.getElementById('search-dropdown')!;
-    const searchDropdownResults = document.getElementById('search-dropdown-results')!;
-    const searchDropdownCount = document.getElementById('search-dropdown-count')!;
-
-    let highlightedIdx = -1;
-    let dropdownResults: any[] = [];
-    let searchDebounce: ReturnType<typeof setTimeout> | null = null;
-
-    function getLogoPath(inst: any): string {
-      return getPreviewLogoPath(inst);
-    }
 
     function showToast(message: string, type: 'success' | 'error' = 'success') {
       const container = document.getElementById('toast-container')!;
@@ -115,66 +103,6 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
       });
     }
 
-    function showDropdown() { searchDropdown.classList.remove('hidden'); }
-    function hideDropdown() {
-      searchDropdown.classList.add('hidden');
-      highlightedIdx = -1;
-      dropdownResults = [];
-    }
-
-    function updateDropdown(query: string) {
-      if (!query.trim()) { hideDropdown(); return; }
-
-      const results = fuse.search(query).map((r: any) => r.item);
-      dropdownResults = results;
-
-      if (results.length === 0) {
-        searchDropdownResults.innerHTML = `<div class="px-4 py-8 text-center text-sm text-surface-500">Niciun rezultat pentru „${query}"</div>`;
-        searchDropdownCount.textContent = '';
-        showDropdown();
-        return;
-      }
-
-      const max = 5;
-      const shown = results.slice(0, max);
-
-      searchDropdownResults.innerHTML = shown.map((inst: any, idx: number) => `
-        <a href="/catalog/${catalogPaths[inst.slug]}" class="search-result-item flex items-center gap-2.5 px-3 py-2 hover:bg-surface-50 transition-colors ${idx === highlightedIdx ? 'bg-surface-50' : ''}" data-index="${idx}">
-          <div class="w-8 h-8 shrink-0 rounded bg-surface-100 border border-surface-200 flex items-center justify-center p-1 overflow-hidden">
-            <img src="${getLogoPath(inst)}" alt="${inst.name}" class="max-w-full max-h-full object-contain" loading="lazy" />
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="font-medium text-sm text-primary-900 truncate">${inst.name}</div>
-            <div class="text-[11px] text-surface-500">${labels[inst.category] || inst.category}</div>
-          </div>
-          <svg class="w-3.5 h-3.5 text-surface-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      `).join('');
-
-      searchDropdownCount.textContent = `${results.length} rezultat${results.length === 1 ? '' : 'e'}`;
-
-      if (results.length > max) {
-        searchDropdownResults.innerHTML += `
-          <div class="px-4 py-2 border-t border-surface-100 text-center text-[11px] text-surface-400">
-            +${results.length - max} mai multe rezultate
-          </div>
-        `;
-      }
-
-      showDropdown();
-    }
-
-    function setHighlight(idx: number) {
-      highlightedIdx = idx;
-      searchDropdownResults.querySelectorAll('.search-result-item').forEach((el, i) => {
-        el.classList.toggle('bg-surface-50', i === idx);
-      });
-      const el = searchDropdownResults.querySelectorAll('.search-result-item')[idx];
-      if (el) (el as HTMLElement).scrollIntoView({ block: 'nearest' });
-    }
-
     const desktopInput = document.getElementById('search-input-desktop') as HTMLInputElement;
     const mobileInput = document.getElementById('search-input-mobile') as HTMLInputElement;
 
@@ -187,38 +115,15 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
     desktopInput?.addEventListener('input', e => {
       searchQuery = (e.target as HTMLInputElement).value;
       syncInputs(searchQuery, e.target as HTMLInputElement);
-      updateDropdown(searchQuery);
       filterAndSearch();
-      if (searchQuery.trim()) {
-        if (searchDebounce) clearTimeout(searchDebounce);
-        searchDebounce = setTimeout(() => {}, 600);
-      }
-    });
-
-    desktopInput?.addEventListener('focus', () => {
-      if (searchQuery) updateDropdown(searchQuery);
     });
 
     desktopInput?.addEventListener('keydown', e => {
-      const max = Math.min(dropdownResults.length, 5);
       if (e.key === 'Escape') {
-        if (!searchDropdown.classList.contains('hidden')) {
-          hideDropdown();
-        } else {
-          desktopInput.value = '';
-          searchQuery = '';
-          activeCategory = 'all';
-          filterAndSearch();
-        }
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (searchDropdown.classList.contains('hidden') && searchQuery) updateDropdown(searchQuery);
-        else setHighlight(highlightedIdx < max - 1 ? highlightedIdx + 1 : 0);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setHighlight(highlightedIdx > 0 ? highlightedIdx - 1 : max - 1);
-      } else if (e.key === 'Enter' && highlightedIdx >= 0 && dropdownResults[highlightedIdx]) {
-        window.location.href = `/catalog/${catalogPaths[dropdownResults[highlightedIdx].slug]}`;
+        desktopInput.value = '';
+        searchQuery = '';
+        activeCategory = 'all';
+        filterAndSearch();
       }
     });
 
@@ -226,10 +131,6 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
       searchQuery = (e.target as HTMLInputElement).value;
       syncInputs(searchQuery, e.target as HTMLInputElement);
       filterAndSearch();
-      if (searchQuery.trim()) {
-        if (searchDebounce) clearTimeout(searchDebounce);
-        searchDebounce = setTimeout(() => {}, 600);
-      }
     });
 
     document.addEventListener('keydown', e => {
@@ -290,10 +191,6 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
         return;
       }
 
-      const searchWrapper = document.getElementById('search-wrapper');
-      if (searchWrapper && !searchWrapper.contains(target)) {
-        hideDropdown();
-      }
     });
 
     readUrlState();
