@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-04-02T14:37:21.978Z",
-  "count": 34,
-  "totalLogos": 136,
+  "generated": "2026-05-22T22:08:32.290Z",
+  "count": 37,
+  "totalLogos": 141,
   "institutions": [
     {
       "id": "eu-flag",
@@ -28,18 +28,17 @@
         "horizontal",
         "symbol"
       ],
-      "logoCount": 7,
+      "logoCount": 6,
       "logos": {
         "horizontal": {
-          "alternative-color": "/logos/md-age/horizontal/alternative-color.svg",
-          "english-white": "/logos/md-age/horizontal/english-white.svg",
-          "filled-white": "/logos/md-age/horizontal/filled-white.svg",
-          "white": "/logos/md-age/horizontal/white.svg"
+          "black": "/logos/md-age/horizontal/black.svg",
+          "white": "/logos/md-age/horizontal/white.svg",
+          "alternative-color": "/logos/md-age/horizontal/alternative-color.svg"
         },
         "symbol": {
-          "color": "/logos/md-age/symbol/color.svg",
-          "filled": "/logos/md-age/symbol/filled.svg",
-          "white": "/logos/md-age/symbol/white.svg"
+          "black": "/logos/md-age/symbol/black.svg",
+          "white": "/logos/md-age/symbol/white.svg",
+          "color": "/logos/md-age/symbol/color.svg"
         }
       }
     },
@@ -60,7 +59,7 @@
     {
       "id": "md-asem",
       "slug": "md-asem",
-      "name": "Universitatea de Studii Economice din Moldova",
+      "name": "Academia de Studii Economice din Moldova",
       "layouts": [
         "symbol"
       ],
@@ -147,6 +146,38 @@
       }
     },
     {
+      "id": "md-cm",
+      "slug": "md-cm",
+      "name": "Președinția Comitetului de Miniștri al Consiliului Europei",
+      "layouts": [
+        "symbol"
+      ],
+      "logoCount": 1,
+      "logos": {
+        "symbol": {
+          "color": "/logos/md-cm/symbol.svg"
+        }
+      }
+    },
+    {
+      "id": "md-cnmc",
+      "slug": "md-cnmc",
+      "name": "Centrul Național de Management al Crizelor",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "logoCount": 2,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-cnmc/horizontal-color.svg"
+        },
+        "vertical": {
+          "color": "/logos/md-cnmc/vertical-color.svg"
+        }
+      }
+    },
+    {
       "id": "md-dgcpc",
       "slug": "md-dgcpc",
       "name": "Direcția Generală Cultură și Patrimoniu Cultural",
@@ -157,6 +188,25 @@
       "logos": {
         "horizontal": {
           "color": "/logos/md-dgcpc/Horizontal Color.svg"
+        }
+      }
+    },
+    {
+      "id": "md-dgets",
+      "slug": "md-dgets",
+      "name": "Direcția Generală Educație, Tineret și Sport",
+      "layouts": [
+        "horizontal",
+        "symbol"
+      ],
+      "logoCount": 3,
+      "logos": {
+        "horizontal": {
+          "color": "/logos/md-dgets/horizontal-color.svg",
+          "white": "/logos/md-dgets/horizontal-white.svg"
+        },
+        "symbol": {
+          "color": "/logos/md-dgets/symbol-color.svg"
         }
       }
     },

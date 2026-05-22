@@ -1,0 +1,69 @@
+{
+  "id": "md-cnmc",
+  "slug": "md-cnmc",
+  "name": "Centrul Național de Management al Crizelor",
+  "shortname": "CNMC",
+  "category": "altele",
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-05-23",
+    "keywords": ["moldova", "cnmc", "crize", "management", "urgente", "securitate", "centru national"],
+    "quality": "draft"
+  },
+  "location": {
+    "country_code": "MD",
+    "city": "Chișinău",
+    "address": "Republica Moldova, MD-2012 mun. Chișinău, Piața Marii Adunări Naționale, 1"
+  },
+  "description": "Centrul Național de Management al Crizelor este instituția responsabilă de coordonarea și gestionarea situațiilor de criză la nivel național în Republica Moldova.",
+  "colors": [
+    {
+      "name": "Albastru Oficial",
+      "hex": "#0E4C90",
+      "rgb": [14, 76, 144],
+      "usage": "primary"
+    },
+    {
+      "name": "Alb",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "secondary"
+    }
+  ],
+  "typography": {
+    "primary": {
+      "family": "Trajan Pro",
+      "weights": [400, 700]
+    }
+  },
+  "assets": {
+    "main": {
+      "type": "horizontal",
+      "color": "/logos/md-cnmc/horizontal-color.svg"
+    },
+    "horizontal": {
+      "type": "horizontal",
+      "color": "/logos/md-cnmc/horizontal-color.svg"
+    },
+    "vertical": {
+      "type": "vertical",
+      "color": "/logos/md-cnmc/vertical-color.svg",
+      "alternatives": [
+        {
+          "label": "Vertical Alternativ",
+          "path": "/logos/md-cnmc/vertical-alt.svg",
+          "preview": "checkerboard"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "website": "https://cnmc.gov.md/ro",
+    "social_media": {
+      "facebook": "https://www.facebook.com/cnmcgov"
+    },
+    "contact": {
+      "email": "secretariat@cnmc.gov.md"
+    }
+  }
+}
