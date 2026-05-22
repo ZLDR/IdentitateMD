@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-22T23:10:26.300Z",
+  "generatedAt": "2026-05-22T23:12:08.550Z",
   "total": 37,
   "stats": {
     "byCategory": {
@@ -182,7 +182,9 @@
           "e-governance",
           "age"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "AGE | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Agenția De Guvernare Electronică (AGE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -348,7 +350,9 @@
           "electricitate",
           "gaze naturale"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "ANRE | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Agenția Națională pentru Reglementare în Energetică (ANRE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -457,7 +461,9 @@
           "servicii publice",
           "chișinău"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "ASP | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Agenția Servicii Publice (ASP) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -546,7 +552,9 @@
           "finanțe",
           "monetar"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "BNM | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Banca Națională a Moldovei (BNM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -646,7 +654,9 @@
           "recensamant",
           "bns"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "BNS | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Biroului Național de Statistică al Republicii Moldova (BNS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -871,7 +881,9 @@
           "broadcasting",
           "reglementare"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "CA | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Consiliul Audiovizualului (CA) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -972,7 +984,9 @@
           "patrimoniu",
           "dgcpc"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "DGCPC | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Direcția Generală Cultură și Patrimoniu Cultural (DGCPC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD"
@@ -1013,7 +1027,9 @@
           "dgets",
           "directie"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "DGETS | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Direcția Generală Educație, Tineret și Sport (DGETS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1185,7 +1201,9 @@
           "guvern",
           "executiv"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "Guvernul Republicii Moldova | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Guvernului Republicii Moldova în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1273,7 +1291,9 @@
           "banca națională",
           "MIA"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "MIA | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a MIA Plăți Instant (MIA) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1443,7 +1463,9 @@
           "diplomatie",
           "mae"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MAE | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Afacerilor Externe (MAE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1546,7 +1568,9 @@
           "industrie alimentară",
           "maia"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "MAIA | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova (MAIA) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1645,7 +1669,9 @@
           "patrimoniu",
           "mc"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "MC | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerului Culturii al Republicii Moldova (MC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1725,7 +1751,9 @@
           "economic",
           "digital"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MDED | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Dezvoltării Economice și Digitalizării (MDED) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1869,7 +1897,9 @@
           "energetică",
           "me"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "ME | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Energiei (ME) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -1961,7 +1991,9 @@
           "economie",
           "mf"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MF | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerului Finanțelor (MF) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2037,7 +2069,9 @@
           "dezvoltare regională",
           "midr"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "MIDR | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova (MIDR) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2118,7 +2152,9 @@
           "drept",
           "mj"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MJ | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerului Justiției (MJ) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2197,7 +2233,9 @@
           "protecție",
           "mediu"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "Ministerul Mediului | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerului Mediului al Republicii Moldova în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2278,7 +2316,9 @@
           "minister",
           "mmps"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MMPS | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Muncii și Protecției Sociale al Republicii Moldova (MMPS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2394,7 +2434,9 @@
           "medicină",
           "ms"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "MS | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Ministerul Sănătății Al Republicii Moldova (MS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2478,7 +2520,9 @@
           "turnul de apă",
           "patrimoniu"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MIOC | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Muzeul de Istorie a Orașului Chișinău (MIOC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2599,7 +2643,9 @@
           "mnam",
           "cultură"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "MNAM | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Muzeului Național de Artă Moldovei (MNAM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2674,7 +2720,9 @@
           "legiferare",
           "legislativ"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "Parlamentul Republicii Moldova | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Parlamentului Republicii Moldova în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2721,7 +2769,9 @@
           "moldova",
           "europa"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "Consiliul Europei Moldova | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Președinției Comitetului de Miniștri al Consiliului Europei în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2789,7 +2839,9 @@
           "administrație locală",
           "municipiu"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "Primăria Chișinău | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Primăriei Municipiului Chișinău în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2872,7 +2924,9 @@
           "cibernetică",
           "stisc"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "STISC | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Serviciul Tehnologia Informației și securitatea cibernetică (STISC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2963,7 +3017,9 @@
           "tricolor",
           "republica moldova"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "Steagul Republicii Moldova | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Steagului Republicii Moldova în format SVG. Culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -2997,7 +3053,9 @@
           "simbol",
           "ue"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "Steagul UE | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Steagului Uniunii Europene în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "RO",
@@ -3080,7 +3138,9 @@
           "statul",
           "republica moldova"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "Stema Republicii Moldova | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Stemei Republicii Moldova în format SVG. Culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
@@ -3129,7 +3189,9 @@
           "sigla",
           "emblema"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "ULIM | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Universitatea de Limbi Internaționale din Moldova (ULIM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",

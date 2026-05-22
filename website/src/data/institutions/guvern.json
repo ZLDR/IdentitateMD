@@ -7,8 +7,14 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-04",
-    "keywords": ["moldova", "guvern", "executiv"],
-    "quality": "draft"
+    "keywords": [
+      "moldova",
+      "guvern",
+      "executiv"
+    ],
+    "quality": "draft",
+    "seo_title": "Guvernul Republicii Moldova | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Guvernului Republicii Moldova în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,18 +25,28 @@
     {
       "name": "Albastru Oficial",
       "hex": "#0E4C90",
-      "rgb": [14, 76, 144],
+      "rgb": [
+        14,
+        76,
+        144
+      ],
       "usage": "primary"
     }
   ],
   "typography": {
     "primary": {
       "family": "Trajan Pro",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     },
     "secondary": {
       "family": "Onest",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

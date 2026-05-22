@@ -7,8 +7,17 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-18",
-    "keywords": ["moldova", "consiliu", "audiovizual", "media", "broadcasting", "reglementare"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "consiliu",
+      "audiovizual",
+      "media",
+      "broadcasting",
+      "reglementare"
+    ],
+    "quality": "verified",
+    "seo_title": "CA | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Consiliul Audiovizualului (CA) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,30 +28,49 @@
     {
       "name": "Albastru Oficial",
       "hex": "#3064E8",
-      "rgb": [48, 100, 232],
+      "rgb": [
+        48,
+        100,
+        232
+      ],
       "usage": "primary"
     },
     {
       "name": "Negru",
       "hex": "#000000",
-      "rgb": [0, 0, 0],
+      "rgb": [
+        0,
+        0,
+        0
+      ],
       "usage": "neutral"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
       "family": "Red Hat Display",
-      "weights": [400, 500, 700]
+      "weights": [
+        400,
+        500,
+        700
+      ]
     },
     "secondary": {
       "family": "Open Sans",
-      "weights": [400, 600]
+      "weights": [
+        400,
+        600
+      ]
     }
   },
   "assets": {

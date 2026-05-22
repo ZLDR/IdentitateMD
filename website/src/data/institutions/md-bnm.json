@@ -7,8 +7,17 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-20",
-    "keywords": ["moldova", "bancă", "banca națională", "bnm", "finanțe", "monetar"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "bancă",
+      "banca națională",
+      "bnm",
+      "finanțe",
+      "monetar"
+    ],
+    "quality": "verified",
+    "seo_title": "BNM | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Banca Națională a Moldovei (BNM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,20 +28,31 @@
     {
       "name": "Negru Cald",
       "hex": "#3C3A37",
-      "rgb": [60, 58, 55],
+      "rgb": [
+        60,
+        58,
+        55
+      ],
       "usage": "primary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
       "family": "Arial",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

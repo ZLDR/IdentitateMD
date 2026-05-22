@@ -7,8 +7,17 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-04-25",
-    "keywords": ["consiliul europei", "comitetul de ministri", "presedintie", "coe", "moldova", "europa"],
-    "quality": "draft"
+    "keywords": [
+      "consiliul europei",
+      "comitetul de ministri",
+      "presedintie",
+      "coe",
+      "moldova",
+      "europa"
+    ],
+    "quality": "draft",
+    "seo_title": "Consiliul Europei Moldova | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Președinției Comitetului de Miniștri al Consiliului Europei în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,20 +28,31 @@
     {
       "name": "Albastru COE",
       "hex": "#003F87",
-      "rgb": [0, 63, 135],
+      "rgb": [
+        0,
+        63,
+        135
+      ],
       "usage": "primary"
     },
     {
       "name": "Galben COE",
       "hex": "#F7C400",
-      "rgb": [247, 196, 0],
+      "rgb": [
+        247,
+        196,
+        0
+      ],
       "usage": "secondary"
     }
   ],
   "typography": {
     "primary": {
       "family": "Source Sans Pro",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

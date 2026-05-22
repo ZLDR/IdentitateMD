@@ -7,8 +7,17 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-19",
-    "keywords": ["moldova", "statistică", "birou", "date statistice", "recensamant", "bns"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "statistică",
+      "birou",
+      "date statistice",
+      "recensamant",
+      "bns"
+    ],
+    "quality": "verified",
+    "seo_title": "BNS | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Biroului Național de Statistică al Republicii Moldova (BNS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,42 +28,67 @@
     {
       "name": "Negru",
       "hex": "#000000",
-      "rgb": [0, 0, 0],
+      "rgb": [
+        0,
+        0,
+        0
+      ],
       "usage": "primary"
     },
     {
       "name": "Albastru Pantone 2935",
       "hex": "#0a57a4",
-      "rgb": [10, 87, 164],
+      "rgb": [
+        10,
+        87,
+        164
+      ],
       "usage": "primary"
     },
     {
       "name": "Galben Pantone 109",
       "hex": "#ffd100",
-      "rgb": [255, 209, 0],
+      "rgb": [
+        255,
+        209,
+        0
+      ],
       "usage": "secondary"
     },
     {
       "name": "Roșu Pantone 1797",
       "hex": "#c8102e",
-      "rgb": [200, 16, 46],
+      "rgb": [
+        200,
+        16,
+        46
+      ],
       "usage": "secondary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
       "family": "Arial",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     },
     "secondary": {
       "family": "Haettenschweiler",
-      "weights": [400]
+      "weights": [
+        400
+      ]
     }
   },
   "assets": {

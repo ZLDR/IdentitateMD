@@ -7,8 +7,24 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-27",
-    "keywords": ["moldova", "universitate", "ulim", "educație", "limbi", "internaționale", "chișinău", "logo ulim", "sigla ulim", "emblema ulim", "logo", "sigla", "emblema"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "universitate",
+      "ulim",
+      "educație",
+      "limbi",
+      "internaționale",
+      "chișinău",
+      "logo ulim",
+      "sigla ulim",
+      "emblema ulim",
+      "logo",
+      "sigla",
+      "emblema"
+    ],
+    "quality": "verified",
+    "seo_title": "ULIM | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Universitatea de Limbi Internaționale din Moldova (ULIM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,26 +35,42 @@
     {
       "name": "Negru",
       "hex": "#131313",
-      "rgb": [19, 19, 19],
+      "rgb": [
+        19,
+        19,
+        19
+      ],
       "usage": "primary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     },
     {
       "name": "Gri Albăstrui",
       "hex": "#7c8c9f",
-      "rgb": [124, 140, 159],
+      "rgb": [
+        124,
+        140,
+        159
+      ],
       "usage": "secondary"
     }
   ],
   "typography": {
     "primary": {
       "family": "Inter",
-      "weights": [400, 600, 700]
+      "weights": [
+        400,
+        600,
+        700
+      ]
     }
   },
   "assets": {

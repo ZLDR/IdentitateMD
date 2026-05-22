@@ -7,8 +7,19 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-19",
-    "keywords": ["moldova", "agenție", "energetică", "energie", "reglementare", "anre", "electricitate", "gaze naturale"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "agenție",
+      "energetică",
+      "energie",
+      "reglementare",
+      "anre",
+      "electricitate",
+      "gaze naturale"
+    ],
+    "quality": "verified",
+    "seo_title": "ANRE | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Agenția Națională pentru Reglementare în Energetică (ANRE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,36 +30,59 @@
     {
       "name": "Negru Închis",
       "hex": "#27272b",
-      "rgb": [39, 39, 43],
+      "rgb": [
+        39,
+        39,
+        43
+      ],
       "usage": "primary"
     },
     {
       "name": "Galben Oficial",
       "hex": "#ffd308",
-      "rgb": [255, 211, 8],
+      "rgb": [
+        255,
+        211,
+        8
+      ],
       "usage": "secondary"
     },
     {
       "name": "Albastru Oficial",
       "hex": "#073a93",
-      "rgb": [7, 58, 147],
+      "rgb": [
+        7,
+        58,
+        147
+      ],
       "usage": "secondary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
       "family": "Open Sans",
-      "weights": [400, 600, 700]
+      "weights": [
+        400,
+        600,
+        700
+      ]
     },
     "secondary": {
       "family": "Arial",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

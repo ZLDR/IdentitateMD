@@ -14,7 +14,9 @@
       "servicii publice",
       "chișinău"
     ],
-    "quality": "verified"
+    "quality": "verified",
+    "seo_title": "ASP | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Agenția Servicii Publice (ASP) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -25,26 +27,42 @@
     {
       "name": "Albastru",
       "hex": "#2a66a8",
-      "rgb": [42, 102, 168],
+      "rgb": [
+        42,
+        102,
+        168
+      ],
       "usage": "primary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     },
     {
       "name": "Negru",
       "hex": "#000000",
-      "rgb": [0, 0, 0],
+      "rgb": [
+        0,
+        0,
+        0
+      ],
       "usage": "secondary"
     }
   ],
   "typography": {
     "primary": {
       "family": "Roboto",
-      "weights": [400, 500, 700]
+      "weights": [
+        400,
+        500,
+        700
+      ]
     }
   },
   "assets": {

@@ -7,8 +7,16 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-05-01",
-    "keywords": ["educatie", "tineret", "sport", "dgets", "directie"],
-    "quality": "verified"
+    "keywords": [
+      "educatie",
+      "tineret",
+      "sport",
+      "dgets",
+      "directie"
+    ],
+    "quality": "verified",
+    "seo_title": "DGETS | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Direcția Generală Educație, Tineret și Sport (DGETS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,13 +27,21 @@
     {
       "name": "Albastru",
       "hex": "#12105d",
-      "rgb": [18, 16, 93],
+      "rgb": [
+        18,
+        16,
+        93
+      ],
       "usage": "secondary"
     },
     {
       "name": "Alb",
       "hex": "#ffffff",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "primary"
     }
   ],
@@ -43,7 +59,9 @@
       "type": "symbol",
       "color": "/logos/md-dgets/symbol-color.svg",
       "white": "/logos/md-dgets/symbol.svg",
-      "variantPreviews": { "white": "dark" }
+      "variantPreviews": {
+        "white": "dark"
+      }
     }
   },
   "resources": {

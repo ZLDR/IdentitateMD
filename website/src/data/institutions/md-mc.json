@@ -7,8 +7,17 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-06",
-    "keywords": ["moldova", "minister", "cultură", "arte", "patrimoniu", "mc"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "minister",
+      "cultură",
+      "arte",
+      "patrimoniu",
+      "mc"
+    ],
+    "quality": "verified",
+    "seo_title": "MC | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Ministerului Culturii al Republicii Moldova (MC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,13 +28,21 @@
     {
       "name": "Albastru Oficial",
       "hex": "#0E4C90",
-      "rgb": [14, 76, 144],
+      "rgb": [
+        14,
+        76,
+        144
+      ],
       "usage": "primary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "secondary"
     }
   ],

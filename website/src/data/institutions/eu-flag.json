@@ -14,7 +14,9 @@
       "simbol",
       "ue"
     ],
-    "quality": "draft"
+    "quality": "draft",
+    "seo_title": "Steagul UE | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Steagului Uniunii Europene în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "RO",
@@ -27,7 +29,11 @@
     {
       "name": "Color #FFCC00",
       "hex": "#FFCC00",
-      "rgb": [255, 204, 0],
+      "rgb": [
+        255,
+        204,
+        0
+      ],
       "cmyk": null,
       "pantone": null,
       "usage": "primary"
@@ -35,7 +41,11 @@
     {
       "name": "Color #003399",
       "hex": "#003399",
-      "rgb": [0, 51, 153],
+      "rgb": [
+        0,
+        51,
+        153
+      ],
       "cmyk": null,
       "pantone": null,
       "usage": "secondary"

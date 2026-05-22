@@ -7,8 +7,16 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-08",
-    "keywords": ["moldova", "minister", "energie", "energetică", "me"],
-    "quality": "draft"
+    "keywords": [
+      "moldova",
+      "minister",
+      "energie",
+      "energetică",
+      "me"
+    ],
+    "quality": "draft",
+    "seo_title": "ME | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Ministerul Energiei (ME) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,13 +27,21 @@
     {
       "name": "Albastru Oficial",
       "hex": "#0E4C90",
-      "rgb": [14, 76, 144],
+      "rgb": [
+        14,
+        76,
+        144
+      ],
       "usage": "primary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "secondary"
     }
   ],
@@ -35,7 +51,10 @@
     },
     "secondary": {
       "family": "Onest",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

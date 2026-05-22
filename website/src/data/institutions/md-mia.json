@@ -18,7 +18,9 @@
       "banca națională",
       "MIA"
     ],
-    "quality": "verified"
+    "quality": "verified",
+    "seo_title": "MIA | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a MIA Plăți Instant (MIA) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -29,49 +31,78 @@
     {
       "name": "Violet",
       "hex": "#A88FF5",
-      "rgb": [168, 143, 245],
+      "rgb": [
+        168,
+        143,
+        245
+      ],
       "usage": "primary"
     },
     {
       "name": "Teal",
       "hex": "#669999",
-      "rgb": [102, 153, 153],
+      "rgb": [
+        102,
+        153,
+        153
+      ],
       "usage": "primary"
     },
     {
       "name": "Coral",
       "hex": "#FF7859",
-      "rgb": [255, 120, 89],
+      "rgb": [
+        255,
+        120,
+        89
+      ],
       "usage": "primary"
     },
     {
       "name": "Portocaliu",
       "hex": "#B8753B",
-      "rgb": [184, 117, 59],
+      "rgb": [
+        184,
+        117,
+        59
+      ],
       "usage": "primary"
     },
     {
       "name": "Negru",
       "hex": "#000000",
-      "rgb": [0, 0, 0],
+      "rgb": [
+        0,
+        0,
+        0
+      ],
       "usage": "neutral"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
       "family": "NaN Metrify B",
-      "weights": [800],
+      "weights": [
+        800
+      ],
       "style": "italic"
     },
     "secondary": {
       "family": "Wix Madefor Text",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

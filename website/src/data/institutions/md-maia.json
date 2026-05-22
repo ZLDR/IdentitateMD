@@ -7,8 +7,16 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-08",
-    "keywords": ["moldova", "minister", "agricultură", "industrie alimentară", "maia"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "minister",
+      "agricultură",
+      "industrie alimentară",
+      "maia"
+    ],
+    "quality": "verified",
+    "seo_title": "MAIA | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova (MAIA) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,13 +27,21 @@
     {
       "name": "Albastru Oficial",
       "hex": "#0E4C90",
-      "rgb": [14, 76, 144],
+      "rgb": [
+        14,
+        76,
+        144
+      ],
       "usage": "primary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "secondary"
     }
   ],

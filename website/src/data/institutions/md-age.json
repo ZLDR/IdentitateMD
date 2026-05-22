@@ -7,8 +7,16 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-08",
-    "keywords": ["moldova", "agenție", "guvernare electronică", "e-governance", "age"],
-    "quality": "verified"
+    "keywords": [
+      "moldova",
+      "agenție",
+      "guvernare electronică",
+      "e-governance",
+      "age"
+    ],
+    "quality": "verified",
+    "seo_title": "AGE | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Agenția De Guvernare Electronică (AGE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,42 +27,69 @@
     {
       "name": "Teal Oficial",
       "hex": "#22625c",
-      "rgb": [34, 98, 92],
+      "rgb": [
+        34,
+        98,
+        92
+      ],
       "usage": "primary"
     },
     {
       "name": "Violet Oficial",
       "hex": "#4404b7",
-      "rgb": [68, 4, 183],
+      "rgb": [
+        68,
+        4,
+        183
+      ],
       "usage": "primary"
     },
     {
       "name": "Indigo Secundar",
       "hex": "#0a0069",
-      "rgb": [10, 0, 105],
+      "rgb": [
+        10,
+        0,
+        105
+      ],
       "usage": "secondary"
     },
     {
       "name": "Alb",
       "hex": "#FFFFFF",
-      "rgb": [255, 255, 255],
+      "rgb": [
+        255,
+        255,
+        255
+      ],
       "usage": "neutral"
     },
     {
       "name": "Negru",
       "hex": "#000000",
-      "rgb": [0, 0, 0],
+      "rgb": [
+        0,
+        0,
+        0
+      ],
       "usage": "neutral"
     }
   ],
   "typography": {
     "primary": {
       "family": "Open Sans",
-      "weights": [400, 600, 700]
+      "weights": [
+        400,
+        600,
+        700
+      ]
     },
     "secondary": {
       "family": "Onest",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {
@@ -66,7 +101,9 @@
       "type": "horizontal",
       "color": "/logos/md-age/horizontal/alternative-color.svg",
       "white": "/logos/md-age/horizontal/white.svg",
-      "variantPreviews": { "white": "light" },
+      "variantPreviews": {
+        "white": "light"
+      },
       "alternatives": [
         {
           "label": "Alternative Black",
@@ -93,7 +130,9 @@
       "type": "symbol",
       "color": "/logos/md-age/symbol/color.svg",
       "white": "/logos/md-age/symbol/white.svg",
-      "variantPreviews": { "white": "light" },
+      "variantPreviews": {
+        "white": "light"
+      },
       "alternatives": [
         {
           "label": "Alternative Black",

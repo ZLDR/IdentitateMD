@@ -7,8 +7,16 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-05",
-    "keywords": ["moldova", "minister", "afaceri externe", "diplomatie", "mae"],
-    "quality": "draft"
+    "keywords": [
+      "moldova",
+      "minister",
+      "afaceri externe",
+      "diplomatie",
+      "mae"
+    ],
+    "quality": "draft",
+    "seo_title": "MAE | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Ministerul Afacerilor Externe (MAE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -19,24 +27,38 @@
     {
       "name": "Albastru Oficial",
       "hex": "#0E4C90",
-      "rgb": [14, 76, 144],
+      "rgb": [
+        14,
+        76,
+        144
+      ],
       "usage": "primary"
     },
     {
       "name": "Albastru Secundar",
       "hex": "#3FC8F4",
-      "rgb": [63, 200, 244],
+      "rgb": [
+        63,
+        200,
+        244
+      ],
       "usage": "secondary"
     }
   ],
   "typography": {
     "primary": {
       "family": "Trajan Pro",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     },
     "secondary": {
       "family": "Open Sans",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

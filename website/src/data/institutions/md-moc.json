@@ -16,7 +16,9 @@
       "turnul de apă",
       "patrimoniu"
     ],
-    "quality": "draft"
+    "quality": "draft",
+    "seo_title": "MIOC | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Muzeul de Istorie a Orașului Chișinău (MIOC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
@@ -74,11 +76,18 @@
   "typography": {
     "primary": {
       "family": "Proxima Nova",
-      "weights": [400, 600, 700]
+      "weights": [
+        400,
+        600,
+        700
+      ]
     },
     "secondary": {
       "family": "Franklin Gothic",
-      "weights": [400, 700]
+      "weights": [
+        400,
+        700
+      ]
     }
   },
   "assets": {

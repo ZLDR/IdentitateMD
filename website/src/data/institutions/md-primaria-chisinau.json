@@ -7,8 +7,16 @@
   "meta": {
     "version": "1.0",
     "last_updated": "2026-03-05",
-    "keywords": ["moldova", "chișinău", "primărie", "administrație locală", "municipiu"],
-    "quality": "draft"
+    "keywords": [
+      "moldova",
+      "chișinău",
+      "primărie",
+      "administrație locală",
+      "municipiu"
+    ],
+    "quality": "draft",
+    "seo_title": "Primăria Chișinău | Sigla Oficială | Identitate.md",
+    "seo_description": "Descarcă sigla oficială a Primăriei Municipiului Chișinău în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
   },
   "location": {
     "country_code": "MD",
