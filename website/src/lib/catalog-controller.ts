@@ -316,17 +316,37 @@ if (searchClear) {
   });
 });
 
-// ─── Download tracking ────────────────────────────────────────────────────────
+// ─── Download ────────────────────────────────────────────────────────────────
+// The download attribute doesn't work for cross-origin URLs (CDN), so we fetch
+// the file and trigger a blob download instead.
 document.addEventListener('click', e => {
-  const a = e.target.closest('[data-va-dl]');
-  if (a) {
-    window.va?.('pageview', { route: '/download/[slug]/[format]', path: `/download/${a.dataset.vaDl}/${a.dataset.vaFmt}` });
-    window.posthog?.capture('logo_downloaded', {
-      institution: a.dataset.vaDl,
-      format: a.dataset.vaFmt,
-      asset: a.dataset.vaAsset,
+  const a = e.target.closest('[data-va-dl]') as HTMLAnchorElement | null;
+  if (!a) return;
+
+  const href = a.getAttribute('href');
+  if (!href) return;
+
+  e.preventDefault();
+
+  const filename = href.split('/').pop() || `logo.${a.dataset.vaFmt || 'svg'}`;
+
+  fetch(href)
+    .then(r => r.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const tmp = document.createElement('a');
+      tmp.href = url;
+      tmp.download = filename;
+      tmp.click();
+      URL.revokeObjectURL(url);
     });
-  }
+
+  window.va?.('pageview', { route: '/download/[slug]/[format]', path: `/download/${a.dataset.vaDl}/${a.dataset.vaFmt}` });
+  window.posthog?.capture('logo_downloaded', {
+    institution: a.dataset.vaDl,
+    format: a.dataset.vaFmt,
+    asset: a.dataset.vaAsset,
+  });
 });
 
 const mobileSheet = attachCatalogMobileSheet((slug) => loadInstitution(slug, { updateUrl: true, replace: false }));
