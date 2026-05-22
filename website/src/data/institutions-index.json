@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-22T22:50:56.153Z",
+  "generatedAt": "2026-05-22T23:10:26.300Z",
   "total": 37,
   "stats": {
     "byCategory": {
@@ -1088,7 +1088,9 @@
           "simbol",
           "ue"
         ],
-        "quality": "verified"
+        "quality": "verified",
+        "seo_title": "EVO | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a portalului guvernamental EVO al Republicii Moldova în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
