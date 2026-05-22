@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-22T22:08:29.945Z",
+  "generatedAt": "2026-05-22T22:50:56.153Z",
   "total": 37,
   "stats": {
     "byCategory": {
@@ -782,7 +782,9 @@
           "securitate",
           "centru national"
         ],
-        "quality": "draft"
+        "quality": "draft",
+        "seo_title": "CNMC | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Centrului Național de Management al Crizelor (CNMC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
       },
       "location": {
         "country_code": "MD",
