@@ -1,8 +1,8 @@
 {
   "id": "md-mj",
-  "slug": "ministerul-justiției",
+  "slug": "md-mj",
   "name": "Ministerul Justiției",
-  "shortname": "ministerul justiției",
+  "shortname": "MJ",
   "category": "minister",
   "meta": {
     "version": "1.0",

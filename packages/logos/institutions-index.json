@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-22T23:12:08.550Z",
+  "generatedAt": "2026-05-23T17:12:04.456Z",
   "total": 37,
   "stats": {
     "byCategory": {
@@ -1656,7 +1656,7 @@
       "id": "md-mc",
       "slug": "md-mc",
       "name": "Ministerul Culturii al Republicii Moldova",
-      "shortname": "Ministerul Culturii",
+      "shortname": "MC",
       "category": "minister",
       "meta": {
         "version": "1.0",
@@ -1979,7 +1979,7 @@
       "id": "md-mf",
       "slug": "md-mf",
       "name": "Ministerul Finanțelor",
-      "shortname": "Ministerul Finanțelor",
+      "shortname": "MF",
       "category": "minister",
       "meta": {
         "version": "1.0",
@@ -2138,9 +2138,9 @@
     },
     {
       "id": "md-mj",
-      "slug": "ministerul-justiției",
+      "slug": "md-mj",
       "name": "Ministerul Justiției",
-      "shortname": "ministerul justiției",
+      "shortname": "MJ",
       "category": "minister",
       "meta": {
         "version": "1.0",
@@ -2630,7 +2630,7 @@
       "id": "md-mnam",
       "slug": "md-mnam",
       "name": "Muzeul Național de Artă Moldovei",
-      "shortname": "Muzeul de artă",
+      "shortname": "MNAM",
       "category": "institutie-cultura",
       "meta": {
         "version": "1.0",
