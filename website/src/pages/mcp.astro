@@ -8,6 +8,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ogImage="/og-image-mcp.png"
   darkChrome={true}
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "identitate.md MCP Server",
+    "description": "Server MCP care permite AI agenților să caute, să găsească și să integreze logourile și elementele de branding ale instituțiilor publice din Republica Moldova.",
+    "url": "https://identitate.md/mcp",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "ro",
+    "isPartOf": { "@type": "WebSite", "url": "https://identitate.md" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "provider": { "@type": "Organization", "name": "identitate.md Community", "url": "https://identitate.md" }
+  })} />
   <div class="bg-[#0a0a0a] min-h-screen text-white" style="font-family: 'SF Mono', 'Fira Code', monospace;">
 
     <style is:global>

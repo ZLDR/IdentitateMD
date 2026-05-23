@@ -3,6 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Solicită un Logo sau o Siglă | identitate.md" description="Nu găsești sigla unei instituții publice din Moldova? Solicită adăugarea ei în registrul identitate.md și o vom include în cel mai scurt timp.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Solicită adăugarea unui logo | identitate.md",
+    "description": "Nu găsești sigla unei instituții publice din Moldova? Solicită adăugarea ei în registrul identitate.md.",
+    "url": "https://identitate.md/solicita",
+    "isPartOf": { "@type": "WebSite", "url": "https://identitate.md" },
+    "inLanguage": "ro"
+  })} />
   <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Page Header -->
     <header class="text-center mb-8">

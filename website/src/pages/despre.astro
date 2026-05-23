@@ -3,6 +3,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Despre Proiect | identitate.md" description="identitate.md este un proiect civic open-source care centralizează identitatea vizuală a instituțiilor publice din Republica Moldova. Află cum poți contribui.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Despre identitate.md",
+    "description": "identitate.md este un proiect civic open-source care centralizează identitatea vizuală a instituțiilor publice din Republica Moldova.",
+    "url": "https://identitate.md/despre",
+    "isPartOf": { "@type": "WebSite", "url": "https://identitate.md" },
+    "inLanguage": "ro",
+    "about": {
+      "@type": "Organization",
+      "name": "identitate.md Community",
+      "url": "https://identitate.md",
+      "description": "Comunitate open-source ce construiește registrul identității vizuale a instituțiilor publice din Republica Moldova."
+    }
+  })} />
   <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Page Header -->
     <header class="mb-8">

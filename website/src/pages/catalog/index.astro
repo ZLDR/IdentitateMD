@@ -26,7 +26,7 @@ const slugByCatalogPath = Object.fromEntries(
 for (const inst of allInstitutions) {
   slugByCatalogPath[inst.slug] = inst.slug;
 }
-const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, ogImage: propOgImage, institutionJsonLd, breadcrumbJsonLd } = Astro.props;
+const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, ogImage: propOgImage, institutionJsonLd, breadcrumbJsonLd, institutionName } = Astro.props;
 
 const categories = CATEGORY_ORDER
   .map(value => ({
@@ -62,6 +62,18 @@ const cdnVersion = CDN_VERSION;
   {breadcrumbJsonLd && (
     <script slot="head" type="application/ld+json" set:html={breadcrumbJsonLd} />
   )}
+  {!institutionJsonLd && (
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Catalog logo-uri și sigle oficiale ale instituțiilor publice din Moldova",
+      "description": `Registru cu ${allInstitutions.length} instituții publice din Republica Moldova. Logo-uri vectoriale (SVG), culori HEX/RGB și tipografie oficială.`,
+      "url": "https://identitate.md/catalog",
+      "isPartOf": { "@type": "WebSite", "url": "https://identitate.md" },
+      "inLanguage": "ro"
+    })} />
+  )}
+  <h1 class="sr-only">{institutionName ?? 'Catalog logo-uri și sigle oficiale ale instituțiilor publice din Moldova'}</h1>
   <!-- Catalog: three-pane layout: categories | institutions | detail -->
   <div class="flex h-full overflow-hidden">
 
