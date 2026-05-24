@@ -56,11 +56,13 @@
   "assets": {
     "main": {
       "type": "horizontal",
-      "color": "/logos/md-cnos/horizontal-color.svg"
+      "color": "/logos/md-cnos/horizontal-color.svg",
+      "white": "/logos/md-cnos/horizontal-white.svg"
     },
     "horizontal": {
       "type": "horizontal",
-      "color": "/logos/md-cnos/horizontal-color.svg"
+      "color": "/logos/md-cnos/horizontal-color.svg",
+      "white": "/logos/md-cnos/horizontal-white.svg"
     }
   },
   "resources": {

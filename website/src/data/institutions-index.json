@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-24T22:20:02.084Z",
+  "generatedAt": "2026-05-24T22:21:01.613Z",
   "total": 38,
   "stats": {
     "byCategory": {
@@ -937,11 +937,13 @@
       "assets": {
         "main": {
           "type": "horizontal",
-          "color": "/logos/md-cnos/horizontal-color.svg"
+          "color": "/logos/md-cnos/horizontal-color.svg",
+          "white": "/logos/md-cnos/horizontal-white.svg"
         },
         "horizontal": {
           "type": "horizontal",
-          "color": "/logos/md-cnos/horizontal-color.svg"
+          "color": "/logos/md-cnos/horizontal-color.svg",
+          "white": "/logos/md-cnos/horizontal-white.svg"
         }
       },
       "resources": {
