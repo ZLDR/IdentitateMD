@@ -1,10 +1,10 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-23T17:12:04.456Z",
-  "total": 37,
+  "generatedAt": "2026-05-24T20:08:13.353Z",
+  "total": 38,
   "stats": {
     "byCategory": {
-      "altele": 8,
+      "altele": 9,
       "guvern": 1,
       "agentie": 4,
       "universitate": 4,
@@ -17,7 +17,7 @@
       "servicii": 1
     },
     "withManual": 3,
-    "withSvg": 37
+    "withSvg": 38
   },
   "categories": [
     {
@@ -53,7 +53,7 @@
     {
       "id": "altele",
       "label": "Altele",
-      "count": 8
+      "count": 9
     },
     {
       "id": "universitate",
@@ -861,6 +861,87 @@
         },
         "contact": {
           "email": "secretariat@cnmc.gov.md"
+        }
+      }
+    },
+    {
+      "id": "md-cnos",
+      "slug": "comitetul-national-olimpic-sportiv",
+      "name": "Comitetul Național Olimpic și Sportiv din Republica Moldova",
+      "shortname": "CNOS",
+      "category": "altele",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-05-24",
+        "keywords": [
+          "moldova",
+          "olimpic",
+          "sportiv",
+          "cnos",
+          "comitet olimpic",
+          "sport",
+          "jocuri olimpice",
+          "logo cnos",
+          "sigla cnos"
+        ],
+        "quality": "verified",
+        "seo_title": "CNOS | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Comitetului Național Olimpic și Sportiv din Republica Moldova (CNOS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Comitetul Național Olimpic și Sportiv din Republica Moldova este o organizație sportivă care își desfășoară activitatea în baza prevederilor Chartei Olimpice și ale statutului propriu. El acționează pentru dezvoltarea și sprijinirea mișcării olimpice în Republica Moldova, pentru cultivarea în rândul tineretului a interesului pentru sport și a idealurilor olimpice.",
+      "colors": [
+        {
+          "name": "Albastru Olimpic",
+          "hex": "#3673ee",
+          "rgb": [
+            54,
+            115,
+            238
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "TT Firs Neue",
+          "weights": [
+            400,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "horizontal",
+          "color": "/logos/md-cnos/horizontal-color.svg"
+        },
+        "horizontal": {
+          "type": "horizontal",
+          "color": "/logos/md-cnos/horizontal-color.svg"
+        }
+      },
+      "resources": {
+        "website": "https://olympic.md/",
+        "contact": {
+          "phone": "+373 (22) 22-31-83",
+          "email": "office@olympic.md"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/olympicmoldova"
         }
       }
     },
