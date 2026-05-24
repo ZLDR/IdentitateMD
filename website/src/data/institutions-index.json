@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-24T22:23:07.264Z",
+  "generatedAt": "2026-05-24T22:26:00.755Z",
   "total": 38,
   "stats": {
     "byCategory": {
@@ -943,7 +943,10 @@
         "horizontal": {
           "type": "horizontal",
           "color": "/logos/md-cnos/horizontal-color.svg",
-          "white": "/logos/md-cnos/horizontal-white.svg"
+          "white": "/logos/md-cnos/horizontal-white.svg",
+          "variantPreviews": {
+            "white": "#080425"
+          }
         }
       },
       "resources": {

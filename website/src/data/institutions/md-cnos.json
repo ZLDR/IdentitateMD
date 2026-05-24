@@ -62,7 +62,10 @@
     "horizontal": {
       "type": "horizontal",
       "color": "/logos/md-cnos/horizontal-color.svg",
-      "white": "/logos/md-cnos/horizontal-white.svg"
+      "white": "/logos/md-cnos/horizontal-white.svg",
+      "variantPreviews": {
+        "white": "#080425"
+      }
     }
   },
   "resources": {

@@ -148,21 +148,25 @@ function buildVariantCard(inst: any, layout: string, variant: string, path: stri
   const useDarkPreview = shouldUseDarkPreview(inst, layout, variant, path);
   const isDark = variant === 'dark_mode';
   const label = customLabel || variantLabels[variant] || variant;
-  const bg = customPreview === 'light'
-    ? 'bg-gray-50'
-    : customPreview === 'dark'
-      ? 'bg-gray-800'
-      : customPreview === 'checkerboard-dark'
-        ? 'checkerboard-dark'
-        : useDarkPreview
-          ? 'bg-gray-800'
-          : isDark
-            ? 'checkerboard-dark'
-            : 'checkerboard';
+  const isHexPreview = customPreview.startsWith('#');
+  const bg = isHexPreview
+    ? ''
+    : customPreview === 'light'
+      ? 'bg-gray-50'
+      : customPreview === 'dark'
+        ? 'bg-gray-800'
+        : customPreview === 'checkerboard-dark'
+          ? 'checkerboard-dark'
+          : useDarkPreview
+            ? 'bg-gray-800'
+            : isDark
+              ? 'checkerboard-dark'
+              : 'checkerboard';
+  const bgStyle = isHexPreview ? ` style="background-color:${escHtml(customPreview)}"` : '';
   const fallbackPath = toLocalLogosPath(path);
   return `
     <div class="border border-surface-200 rounded overflow-hidden hover:shadow-md hover:border-surface-300 transition-all duration-200">
-      <div class="aspect-[3/2] flex items-center justify-center p-6 ${bg}">
+      <div class="aspect-[3/2] flex items-center justify-center p-6 ${bg}"${bgStyle}>
         <img src="${escHtml(path)}" alt="Logo ${escHtml(inst.name)} - ${escHtml(layoutLabel)} ${escHtml(label)}"
              class="max-w-full max-h-full object-contain" loading="lazy" decoding="async"
              data-local-fallback="${escHtml(fallbackPath)}"
