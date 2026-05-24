@@ -39,6 +39,12 @@
       "hex": "#FFFFFF",
       "rgb": [255, 255, 255],
       "usage": "secondary"
+    },
+    {
+      "name": "Antracit",
+      "hex": "#242629",
+      "rgb": [36, 38, 41],
+      "usage": "secondary"
     }
   ],
   "typography": {
