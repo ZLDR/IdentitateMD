@@ -1,6 +1,6 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-24T22:21:01.613Z",
+  "generatedAt": "2026-05-24T22:23:07.264Z",
   "total": 38,
   "stats": {
     "byCategory": {
@@ -16,7 +16,7 @@
       "primarie": 1,
       "servicii": 1
     },
-    "withManual": 3,
+    "withManual": 4,
     "withSvg": 38
   },
   "categories": [
@@ -948,6 +948,7 @@
       },
       "resources": {
         "website": "https://olympic.md/",
+        "branding_manual": "https://tagme.group/ro/cases/cnos",
         "contact": {
           "phone": "+373 (22) 22-31-83",
           "email": "office@olympic.md"
