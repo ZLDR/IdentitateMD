@@ -7,10 +7,6 @@ import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const { institutions } = JSON.parse(
-  readFileSync(join(__dirname, 'src/data/institutions-index.json'), 'utf-8')
-);
-
 export default defineConfig({
   site: 'https://identitate.md',
   devToolbar: { enabled: false },
