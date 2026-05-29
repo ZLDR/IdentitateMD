@@ -11,6 +11,9 @@ declare global {
     __IDENTITATE_DATA__: Institution[];
     /** Category labels injected from server */
     __CATEGORY_LABELS__: Record<string, string>;
+    posthog?: {
+      capture: (eventName: string, properties?: Record<string, unknown>) => void;
+    };
   }
 }
 

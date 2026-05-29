@@ -100,6 +100,12 @@ function loadInstitution(slug, options = { updateUrl: false, replace: false }) {
   if (!inst || !detail) return;
   setActiveInstitution(slug);
   if (options.updateUrl) syncUrlForSlug(slug, options.replace);
+  window.posthog?.capture('institution_viewed', {
+    institution: slug,
+    institution_name: inst.name,
+    category: inst.category,
+    path: window.location.pathname,
+  });
   detail.innerHTML = buildDetail(inst);
   if (placeholder) placeholder.classList.add('hidden');
   detail.classList.remove('hidden');
@@ -138,10 +144,10 @@ function wireDetail() {
       if (btn.dataset.copying) return;
       btn.dataset.copying = '1';
       const path = btn.dataset.path;
-      window.posthog?.capture('logo_copied', { institution: currentSlug, asset_path: path });
       try {
         const text = await fetch(path).then(r => r.text());
         await navigator.clipboard.writeText(text);
+        window.posthog?.capture('logo_copied', { institution: currentSlug, asset_path: path });
         flashCheck(btn);
       } catch { flashX(btn); }
       delete btn.dataset.copying;
