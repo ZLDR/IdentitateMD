@@ -6,6 +6,41 @@
       "permanent": true
     },
     {
+      "source": "/catalog/:id/",
+      "destination": "/catalog/:id",
+      "permanent": true
+    },
+    {
+      "source": "/despre/",
+      "destination": "/despre",
+      "permanent": true
+    },
+    {
+      "source": "/legal/",
+      "destination": "/legal",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/",
+      "destination": "/mcp",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/solicita/",
+      "destination": "/solicita",
+      "permanent": true
+    },
+    {
+      "source": "/utilizare/",
+      "destination": "/utilizare",
+      "permanent": true
+    },
+    {
       "source": "/catalog/asem/",
       "destination": "/catalog/asem",
       "permanent": true

@@ -9,6 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   site: 'https://identitate.md',
+  trailingSlash: 'never',
   devToolbar: { enabled: false },
   integrations: [tailwind(), sitemap({ filter: (page) => !page.includes('/privacy') })],
   server: {
