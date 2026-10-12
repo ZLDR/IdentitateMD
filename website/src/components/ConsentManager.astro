@@ -81,6 +81,10 @@
 
   type SavedChoice = { version: 1; analytics: boolean; savedAt: string };
 
+  function setHidden(element: HTMLElement | null, hidden: boolean) {
+    element?.classList.toggle('hidden', hidden);
+  }
+
   function readChoice(): SavedChoice | null {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -203,42 +207,42 @@
       clearPostHogStorage();
     }
 
-    if (banner) banner.hidden = true;
-    if (reopenButton) reopenButton.hidden = false;
+    setHidden(banner, true);
+    setHidden(reopenButton, false);
     if (analytics) void enableAnalytics();
   }
 
   function showPreferences() {
     if (!banner || !summary || !preferences || !analyticsToggle) return;
     analyticsToggle.checked = hasAnalyticsConsent();
-    summary.hidden = true;
-    preferences.hidden = false;
-    banner.hidden = false;
-    if (reopenButton) reopenButton.hidden = true;
+    setHidden(summary, true);
+    setHidden(preferences, false);
+    setHidden(banner, false);
+    setHidden(reopenButton, true);
     analyticsToggle.focus();
   }
 
   function showBanner() {
     if (!banner || !summary || !preferences) return;
-    summary.hidden = true;
-    preferences.hidden = false;
-    banner.hidden = false;
-    if (reopenButton) reopenButton.hidden = true;
+    setHidden(summary, true);
+    setHidden(preferences, false);
+    setHidden(banner, false);
+    setHidden(reopenButton, true);
   }
 
   if (banner && summary && preferences) {
     const choice = readChoice();
     if (!choice?.analytics) clearPostHogStorage();
     if (!choice) {
-      summary.hidden = false;
-      preferences.hidden = true;
-      banner.hidden = false;
-      if (reopenButton) reopenButton.hidden = true;
+      setHidden(summary, false);
+      setHidden(preferences, true);
+      setHidden(banner, false);
+      setHidden(reopenButton, true);
     } else if (choice.analytics) {
-      if (reopenButton) reopenButton.hidden = false;
+      setHidden(reopenButton, false);
       void enableAnalytics();
     } else {
-      if (reopenButton) reopenButton.hidden = false;
+      setHidden(reopenButton, false);
     }
 
     banner.addEventListener('click', (event) => {
@@ -248,8 +252,8 @@
       if (target.closest('[data-consent-reject]')) saveChoice(false);
       if (target.closest('[data-consent-open]')) showPreferences();
       if (target.closest('[data-consent-back]')) {
-        summary.hidden = false;
-        preferences.hidden = true;
+        setHidden(summary, false);
+        setHidden(preferences, true);
       }
       if (target.closest('[data-consent-save]')) saveChoice(analyticsToggle?.checked === true);
     });
