@@ -1,15 +1,16 @@
 {
   "id": "md-ulim",
   "slug": "universitatea-de-limbi-internationale-din-moldova",
-  "name": "Universitatea de Limbi Internaționale din Moldova",
+  "name": "Universitatea Liberă Internațională din Moldova",
   "shortname": "ULIM",
   "category": "universitate",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-27",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "universitate",
+      "universitatea liberă internațională din moldova",
       "ulim",
       "educație",
       "limbi",
@@ -24,13 +25,13 @@
     ],
     "quality": "verified",
     "seo_title": "ULIM | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Universitatea de Limbi Internaționale din Moldova (ULIM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla oficială a Universității Libere Internaționale din Moldova (ULIM) în format SVG și vezi variantele disponibile."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Universitatea de Limbi Internaționale din Moldova este o instituție de învățământ superior privată din Republica Moldova, specializată în predarea limbilor străine și domenii conexe.",
+  "description": "Universitatea Liberă Internațională din Moldova (ULIM) este o instituție de învățământ superior fondată în 1992, cu programe de studii în drept, economie, științe sociale, educație, informatică, inginerie, design și relații internaționale.",
   "colors": [
     {
       "name": "Negru",

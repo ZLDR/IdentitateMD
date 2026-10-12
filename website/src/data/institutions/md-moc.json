@@ -6,7 +6,7 @@
   "category": "institutie-cultura",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "chișinău",
@@ -18,13 +18,13 @@
     ],
     "quality": "draft",
     "seo_title": "MIOC | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Muzeul de Istorie a Orașului Chișinău (MIOC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla Muzeului de Istorie a Orașului Chișinău (MIOC), cunoscut ca Turnul de Apă, în format SVG."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+  "description": "Muzeul de Istorie a Orașului Chișinău, cunoscut și ca Turnul de Apă, prezintă istoria capitalei într-o clădire istorică de pe strada Alexei Mateevici.",
   "colors": [
     {
       "name": "Bronze Pantone 875 C",

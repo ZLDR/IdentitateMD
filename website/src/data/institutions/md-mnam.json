@@ -1,12 +1,12 @@
 {
   "id": "md-mnam",
   "slug": "md-mnam",
-  "name": "Muzeul Național de Artă Moldovei",
+  "name": "Muzeul Național de Artă al Moldovei",
   "shortname": "MNAM",
   "category": "institutie-cultura",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "chișinău",
@@ -17,13 +17,13 @@
     ],
     "quality": "draft",
     "seo_title": "MNAM | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Muzeului Național de Artă Moldovei (MNAM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla oficială a Muzeului Național de Artă al Moldovei (MNAM) în format SVG și vezi variantele disponibile."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Muzeul Național de Artă al Moldovei, una dintre cele mai prestigioase instituții muzeale din Moldova.",
+  "description": "Muzeul Național de Artă al Moldovei păstrează și prezintă colecții de artă națională și universală. Fondat în 1939, muzeul găzduiește peste 40.000 de lucrări.",
   "colors": [
     {
       "name": "Green Primary",

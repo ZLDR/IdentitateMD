@@ -1,12 +1,12 @@
 {
   "id": "md-bns",
   "slug": "biroul-national-de-statistica",
-  "name": "Biroul Național de Statistică Al Republicii Moldova",
+  "name": "Biroul Național de Statistică al Republicii Moldova",
   "shortname": "Statistica",
   "category": "agentie",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-19",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "statistică",
@@ -23,7 +23,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Biroul Național de Statistică este autoritatea publică centrală responsabilă de colectarea, procesarea și diseminarea datelor statistice oficiale ale Republicii Moldova.",
+  "description": "Biroul Național de Statistică (BNS) este o autoritate administrativă independentă instituțional și profesional, care coordonează sistemul statistic național și produce statistica oficială.",
   "colors": [
     {
       "name": "Negru",

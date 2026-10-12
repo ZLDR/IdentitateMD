@@ -6,7 +6,7 @@
   "category": "parlament",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "parlament",
@@ -21,7 +21,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Parlamentul Republicii Moldova este organul suprem de putere legislativă al statului.",
+  "description": "Parlamentul Republicii Moldova este organul reprezentativ suprem al poporului și unica autoritate legislativă a statului.",
   "assets": {
     "main": {
       "type": "vertical",

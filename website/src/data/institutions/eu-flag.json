@@ -6,7 +6,7 @@
   "category": "altele",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-02-15",
+    "last_updated": "2026-10-10",
     "keywords": [
       "uniunea europeană",
       "steag",
@@ -23,7 +23,7 @@
     "county": null,
     "city": null
   },
-  "description": "Steagul Uniunii Europene este simbolul oficial al Uniunii, reprezentat printr-un cerc de 12 stele aurii pe un fond albastru. Este utilizat pentru identificarea instituţiilor şi iniţiativelor asociate Uniunii Europene.",
+  "description": "Drapelul european simbolizează Uniunea Europeană și, mai larg, unitatea Europei. Are 12 stele aurii dispuse în cerc pe un fond albastru; numărul stelelor nu reprezintă numărul statelor membre.",
   "usage_notes": null,
   "colors": [
     {
@@ -53,7 +53,7 @@
   ],
   "typography": null,
   "resources": {
-    "website": null,
+    "website": "https://european-union.europa.eu/principles-countries-history/symbols/european-flag_ro",
     "branding_manual": null,
     "social_media": null
   },

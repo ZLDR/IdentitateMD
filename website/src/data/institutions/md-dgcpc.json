@@ -1,12 +1,12 @@
 {
   "id": "md-dgcpc",
   "slug": "md-dgcpc",
-  "name": "Direcția Generală Cultură și Patrimoniu Cultural",
-  "shortname": "dgcpc",
+  "name": "Direcția Generală Cultură și Patrimoniu Cultural a municipiului Chișinău",
+  "shortname": "DGCPC",
   "category": "directie",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-05",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "direcție",
@@ -21,7 +21,7 @@
   "location": {
     "country_code": "MD"
   },
-  "description": "Direcție responsabilă de coordonarea domeniilor culturii și patrimoniului cultural.",
+  "description": "Direcția Generală Cultură și Patrimoniu Cultural a municipiului Chișinău promovează și protejează patrimoniul cultural și artistic al orașului.",
   "assets": {
     "main": {
       "type": "horizontal",

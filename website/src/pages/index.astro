@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LogoCard from '../components/LogoCard.astro';
-import Analytics from '@vercel/analytics/astro'
 import institutionIndex from '../data/institutions-index.json';
 import { getPrimaryLogoPath, hasSvg, buildCatalogPathMap } from '../lib/helpers';
 import { CATEGORY_LABELS, CATEGORY_ORDER } from '../lib/labels';
@@ -31,14 +30,10 @@ const total = institutions.length;
 
 <BaseLayout
   title="Logo-uri și sigle oficiale ale instituțiilor publice din Moldova | identitate.md"
-  description={`Descarcă gratuit logo-uri și sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${total}+ instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
+  description={`Descarcă gratuit logo-uri și sigle vectoriale (SVG) ale instituțiilor publice din Republica Moldova. ${total} instituții: ministere, agenții, primării. Culori HEX/RGB și tipografie oficială.`}
   noHeader={true}
   noFooter={true}
 >
-  <Analytics />
-
-  <h1 class="sr-only">Logo-uri și sigle oficiale ale instituțiilor publice din Republica Moldova</h1>
-
   <div class="flex flex-col lg:flex-row min-h-screen bg-white">
 
     <!-- ═══════════════════════════════════════════════════ -->
@@ -196,6 +191,14 @@ const total = institutions.length;
       <!-- Scrollable content -->
       <div class="flex-1 bg-surface-50">
         <div class="px-4 lg:px-6 py-5">
+
+          <header class="mb-5">
+            <h1 class="text-xl font-semibold tracking-tight text-primary-900">Logo-uri și sigle oficiale ale instituțiilor publice din Republica Moldova</h1>
+            <p class="mt-1 max-w-3xl text-sm leading-6 text-surface-600">
+              Găsește și descarcă identități vizuale în format SVG, cu variante de logo, culori și date despre fiecare instituție.
+              Catalogul include {total} instituții și poate fi căutat după nume, acronim sau cuvinte-cheie.
+            </p>
+          </header>
 
           <!-- Count row -->
           <div class="flex items-center justify-between mb-4">

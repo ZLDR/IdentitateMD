@@ -6,7 +6,7 @@
   "category": "minister",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-08",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "finanțe",
@@ -22,7 +22,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Ministerul Finanțelor al Republicii Moldova",
+  "description": "Ministerul Finanțelor elaborează și promovează politica statului în domeniul finanțelor publice și coordonează managementul finanțelor publice.",
   "colors": [
     {
       "name": "Albastru Oficial",

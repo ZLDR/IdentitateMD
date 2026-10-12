@@ -5,6 +5,10 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT Search crawler (separate from GPTBot training crawler)
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 

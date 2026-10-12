@@ -1,9 +1,9 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ConsentManager from '../components/ConsentManager.astro';
 import '../styles/global.css';
-import Analytics from '@vercel/analytics/astro';
-import PostHog from '../components/posthog.astro';
+import institutionIndex from '../data/institutions-index.json';
 
 interface Props {
   title?: string;
@@ -31,6 +31,7 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin" />
     <meta name="description" content={pageDescription} />
     <meta name="keywords" content="identitate vizuala, sigle institutii Moldova, logo guvern, SVG logos Moldova, brand colors, Republica Moldova, visual identity, government branding" />
     <meta name="author" content="identitate.md Community" />
@@ -38,6 +39,9 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Agent guide" />
+    <link rel="alternate" type="application/json" href="/api/manifest.json" title="Machine-readable manifest" />
+    <link rel="alternate" type="application/json" href="/api/institutions.json" title="Institution data API" />
 
     {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
 
@@ -94,13 +98,14 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Dataset",
-      "name": "identitate.md- Registry of Moldovan Public Institution Visual Identities",
-      "description": "A comprehensive open dataset of official logos, brand colors, and visual identity assets for public institutions in the Republic of Moldova. Includes SVG vector logos in multiple layouts and color variants, official HEX/RGB color values, and typography specifications.",
+      "name": "IdentitateMD — registrul identităților vizuale ale instituțiilor publice",
+      "description": `Setul de date publică înregistrările disponibile pentru ${institutionIndex.total} instituții din Republica Moldova: logo-uri SVG, variante de utilizare, culori și tipografie, acolo unde aceste date sunt documentate.`,
       "url": "https://identitate.md",
       "license": "https://identitate.md/legal",
+      "dateModified": institutionIndex.generatedAt,
       "creator": {
         "@type": "Organization",
-        "name": "identitate.mdCommunity",
+        "name": "identitate.md Community",
         "url": "https://identitate.md"
       },
       "keywords": [
@@ -108,6 +113,11 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
         "sigle institutii", "identitate vizuala", "logo vectorial", "Republica Moldova"
       ],
       "inLanguage": "ro",
+      "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "identitate.md",
+        "url": "https://identitate.md"
+      },
       "isAccessibleForFree": true,
       "distribution": [
         {
@@ -119,6 +129,11 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
           "@type": "DataDownload",
           "encodingFormat": "text/plain",
           "contentUrl": "https://identitate.md/llms-full.txt"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://identitate.md/api/manifest.json"
         }
       ]
     })} />
@@ -134,14 +149,7 @@ const ogImageUrl = ogImage || new URL('/og-image.png', Astro.site).href;
       <slot />
     </main>
     {!noFooter && <Footer dark={darkChrome} />}
-    <script is:inline>
-      window.webAnalyticsBeforeSend = function(event) {
-        if (localStorage.getItem('notrack') === '1') return null;
-        return event;
-      };
-    </script>
-    <Analytics />
-    <PostHog />
+    <ConsentManager />
 
     <script>
       if (import.meta.env.DEV) {

@@ -1,14 +1,15 @@
 {
   "schemaVersion": "3.0.0",
-  "generatedAt": "2026-05-24T22:26:00.755Z",
+  "generatedAt": "2026-10-09T21:59:34.563Z",
   "total": 38,
   "stats": {
     "byCategory": {
-      "altele": 9,
+      "altele": 8,
       "guvern": 1,
       "agentie": 4,
       "universitate": 4,
       "consilii": 1,
+      "autoritate": 1,
       "directie": 2,
       "minister": 12,
       "institutie-cultura": 2,
@@ -41,6 +42,11 @@
       "count": 4
     },
     {
+      "id": "autoritate",
+      "label": "Autorități",
+      "count": 1
+    },
+    {
       "id": "primarie",
       "label": "Primării",
       "count": 1
@@ -53,7 +59,7 @@
     {
       "id": "altele",
       "label": "Altele",
-      "count": 9
+      "count": 8
     },
     {
       "id": "universitate",
@@ -70,7 +76,7 @@
       "category": "universitate",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-28",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "universitate",
@@ -101,7 +107,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Academia de Studii Economice din Moldova este principala instituție de învățământ superior economic din Republica Moldova, formând specialiști în domenii economice, financiare și de afaceri.",
+      "description": "Academia de Studii Economice din Moldova (ASEM) este o universitate publică fondată în 1991, cu programe de studii în domenii economice și conexe.",
       "colors": [
         {
           "name": "Albastru Închis",
@@ -169,12 +175,12 @@
     {
       "id": "md-age",
       "slug": "agentia-de-guvernare-electronica",
-      "name": "Agenția De Guvernare Electronică",
+      "name": "Agenția de Guvernare Electronică",
       "shortname": "AGE",
       "category": "agentie",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "agenție",
@@ -184,13 +190,13 @@
         ],
         "quality": "verified",
         "seo_title": "AGE | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Agenția De Guvernare Electronică (AGE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla AGE, Agenția de Guvernare Electronică din Republica Moldova, în format SVG și consultă variantele de logo din catalog."
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Agenția De Guvernare Electronică este responsabilă de dezvoltarea și implementarea soluțiilor de guvernare electronică în Republica Moldova.",
+      "description": "Agenția de Guvernare Electronică (AGE) promovează și implementează inițiativele de digitalizare a serviciilor publice în Republica Moldova.",
       "colors": [
         {
           "name": "Teal Oficial",
@@ -334,12 +340,12 @@
     {
       "id": "md-anre",
       "slug": "agentia-nationala-pentru-reglementare-in-energetica",
-      "name": "Agenția Națională pentru Reglementare în Energetică",
+      "name": "Agenția Națională pentru Reglementare în Energetică a Republicii Moldova",
       "shortname": "ANRE",
       "category": "agentie",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-19",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "agenție",
@@ -352,13 +358,13 @@
         ],
         "quality": "verified",
         "seo_title": "ANRE | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Agenția Națională pentru Reglementare în Energetică (ANRE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla ANRE, Agenția Națională pentru Reglementare în Energetică a Republicii Moldova, în format SVG și consultă variantele de logo din catalog."
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Agenția Națională pentru Reglementare în Energetică este autoritatea publică autonomă responsabilă de reglementarea activităților în sectorul energetic al Republicii Moldova.",
+      "description": "ANRE implementează politica statului privind reglementarea sectoarelor energetice și monitorizează funcționarea piețelor de energie din Republica Moldova.",
       "colors": [
         {
           "name": "Negru Închis",
@@ -453,7 +459,7 @@
       "category": "agentie",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-29",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "agentie",
@@ -463,7 +469,7 @@
         ],
         "quality": "verified",
         "seo_title": "ASP | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Agenția Servicii Publice (ASP) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla Agenției Servicii Publice (ASP) a Republicii Moldova în format SVG și consultă variantele de logo din catalog."
       },
       "location": {
         "country_code": "MD",
@@ -525,9 +531,9 @@
         }
       },
       "resources": {
-        "website": "http://asp.gov.md/",
+        "website": "https://www.asp.gov.md/ro",
         "contact": {
-          "phone": "022 257 070",
+          "phone": "14 909",
           "email": "asp@asp.gov.md"
         },
         "social_media": {
@@ -640,12 +646,12 @@
     {
       "id": "md-bns",
       "slug": "biroul-national-de-statistica",
-      "name": "Biroul Național de Statistică Al Republicii Moldova",
+      "name": "Biroul Național de Statistică al Republicii Moldova",
       "shortname": "Statistica",
       "category": "agentie",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-19",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "statistică",
@@ -662,7 +668,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Biroul Național de Statistică este autoritatea publică centrală responsabilă de colectarea, procesarea și diseminarea datelor statistice oficiale ale Republicii Moldova.",
+      "description": "Biroul Național de Statistică (BNS) este o autoritate administrativă independentă instituțional și profesional, care coordonează sistemul statistic național și produce statistica oficială.",
       "colors": [
         {
           "name": "Negru",
@@ -779,10 +785,10 @@
       "slug": "md-cnmc",
       "name": "Centrul Național de Management al Crizelor",
       "shortname": "CNMC",
-      "category": "altele",
+      "category": "autoritate",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-05-23",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "cnmc",
@@ -801,7 +807,7 @@
         "city": "Chișinău",
         "address": "Republica Moldova, MD-2012 mun. Chișinău, Piața Marii Adunări Naționale, 1"
       },
-      "description": "Centrul Național de Management al Crizelor este instituția responsabilă de coordonarea și gestionarea situațiilor de criză la nivel național în Republica Moldova.",
+      "description": "Centrul Național de Management al Crizelor este autoritatea administrativă centrală din subordinea Guvernului care coordonează managementul situațiilor de criză în Republica Moldova.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -1068,12 +1074,12 @@
     {
       "id": "md-dgcpc",
       "slug": "md-dgcpc",
-      "name": "Direcția Generală Cultură și Patrimoniu Cultural",
-      "shortname": "dgcpc",
+      "name": "Direcția Generală Cultură și Patrimoniu Cultural a municipiului Chișinău",
+      "shortname": "DGCPC",
       "category": "directie",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-05",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "direcție",
@@ -1088,7 +1094,7 @@
       "location": {
         "country_code": "MD"
       },
-      "description": "Direcție responsabilă de coordonarea domeniilor culturii și patrimoniului cultural.",
+      "description": "Direcția Generală Cultură și Patrimoniu Cultural a municipiului Chișinău promovează și protejează patrimoniul cultural și artistic al orașului.",
       "assets": {
         "main": {
           "type": "horizontal",
@@ -1111,12 +1117,12 @@
     {
       "id": "md-dgets",
       "slug": "directia-generala-educatie-tineret-si-sport",
-      "name": "Direcția Generală Educație, Tineret și Sport",
+      "name": "Direcția Generală Educație, Tineret și Sport a municipiului Chișinău",
       "shortname": "DGETS",
       "category": "directie",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-05-01",
+        "last_updated": "2026-10-10",
         "keywords": [
           "educatie",
           "tineret",
@@ -1292,7 +1298,7 @@
       "category": "guvern",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-04",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "guvern",
@@ -1306,7 +1312,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Autoritatea centrală de execuție a Republicii Moldova",
+      "description": "Guvernul Republicii Moldova este autoritatea executivă care asigură realizarea politicii interne și externe a statului și conduce administrația publică.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -1376,7 +1382,7 @@
       "category": "altele",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-20",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "plăți",
@@ -1396,7 +1402,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "MIA Plăți Instant este platforma națională de plăți instant din Republica Moldova, operată de Banca Națională a Moldovei, care permite transferuri de bani în timp real între persoane și companii.",
+      "description": "MIA Plăți Instant este sistemul de plăți dezvoltat de Banca Națională a Moldovei. Acesta permite transferuri instant între persoane, iar din martie 2026 și transferuri B2B între companii.",
       "colors": [
         {
           "name": "Violet",
@@ -1533,7 +1539,7 @@
         }
       },
       "resources": {
-        "website": "https://mia.bnm.md/en",
+        "website": "https://mia.bnm.md/ro",
         "brandbook": "/brandbooks/MIA_identityGuideline1.6b.pdf",
         "contact": {
           "email": "Fintech@bnm.md"
@@ -1547,12 +1553,12 @@
     {
       "id": "md-mae",
       "slug": "md-mae",
-      "name": "Ministerul Afacerilor Externe",
+      "name": "Ministerul Afacerilor Externe al Republicii Moldova",
       "shortname": "MAE",
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-05",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "minister",
@@ -1568,7 +1574,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul responsabil de politica externă și relațiile diplomatice ale Republicii Moldova",
+      "description": "Ministerul Afacerilor Externe promovează politica externă a Republicii Moldova și coordonează relațiile țării cu alte state și organizații internaționale.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -1652,12 +1658,12 @@
     {
       "id": "md-maia",
       "slug": "maia",
-      "name": "Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova",
+      "name": "Ministerul Agriculturii și Industriei Alimentare al Republicii Moldova",
       "shortname": "MAIA",
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "minister",
@@ -1838,7 +1844,7 @@
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-17",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "dezvoltare economică",
@@ -1856,7 +1862,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul responsabil pentru politica de dezvoltare economică și digitalizare a Republicii Moldova.",
+      "description": "Ministerul Dezvoltării Economice și Digitalizării promovează politica de stat în domeniul economiei și coordonează dezvoltarea economică a Republicii Moldova.",
       "colors": [],
       "assets": {
         "main": {
@@ -1902,11 +1908,11 @@
       "id": "md-mec",
       "slug": "md-mec",
       "name": "Ministerul Educației și Cercetării al Republicii Moldova",
-      "shortname": "mec",
+      "shortname": "MEC",
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-04",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "educație",
@@ -1928,7 +1934,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul responsabil pentru educație și cercetare în Republica Moldova",
+      "description": "Ministerul Educației și Cercetării elaborează și monitorizează politici publice în domeniile educației, cercetării și inovării, tineretului, culturii fizice și sportului, precum și al relațiilor interetnice și funcționării limbilor vorbite în Republica Moldova.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -1986,7 +1992,7 @@
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "minister",
@@ -2002,7 +2008,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul Energiei al Republicii Moldova este responsabil de politicile și programele în domeniul energiei și energeticii.",
+      "description": "Ministerul Energiei din Republica Moldova este organul central responsabil de politica energetică a statului și de implementarea acesteia, inclusiv pentru securitatea energetică și tranziția către o economie verde.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -2080,7 +2086,7 @@
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "finanțe",
@@ -2096,7 +2102,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul Finanțelor al Republicii Moldova",
+      "description": "Ministerul Finanțelor elaborează și promovează politica statului în domeniul finanțelor publice și coordonează managementul finanțelor publice.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -2153,12 +2159,12 @@
     {
       "id": "md-midr",
       "slug": "midr",
-      "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+      "name": "Ministerul Infrastructurii și Dezvoltării Regionale al Republicii Moldova",
       "shortname": "MIDR",
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "minister",
@@ -2168,13 +2174,13 @@
         ],
         "quality": "verified",
         "seo_title": "MIDR | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova (MIDR) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla oficială a Ministerului Infrastructurii și Dezvoltării Regionale al Republicii Moldova (MIDR) în format SVG și vezi variantele disponibile."
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul Infrastructurii și Dezvoltării Regionale este responsabil de politicile și programele de dezvoltare a infrastructurii și a regiunilor din Republica Moldova.",
+      "description": "Ministerul Infrastructurii și Dezvoltării Regionale elaborează și promovează politici pentru dezvoltarea durabilă și incluzivă în domeniile de infrastructură și dezvoltare regională.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -2241,7 +2247,7 @@
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "justiție",
@@ -2257,7 +2263,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul responsabil pentru politica judiciară și administrația justiției din Republica Moldova",
+      "description": "Ministerul Justiției contribuie la buna funcționare a sistemului de justiție, la înfăptuirea justiției ca serviciu de interes public și la apărarea ordinii de drept și a drepturilor și libertăților persoanei.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -2320,7 +2326,7 @@
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "minister",
@@ -2328,7 +2334,8 @@
           "apă",
           "păduri",
           "protecție",
-          "mediu"
+          "schimbări climatice",
+          "resurse naturale"
         ],
         "quality": "verified",
         "seo_title": "Ministerul Mediului | Sigla Oficială | Identitate.md",
@@ -2338,7 +2345,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul Mediului al Republicii Moldova este responsabil de politicile și programele de protecție a mediului, conservării naturii și gestionării resurselor naturale.",
+      "description": "Ministerul Mediului elaborează și promovează politici publice în domeniile protecției mediului, schimbărilor climatice și gestionării durabile a resurselor naturale.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -2405,7 +2412,7 @@
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-18",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "muncă",
@@ -2421,7 +2428,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Ministerul responsabil pentru politica în domeniul muncii, ocupării forței de muncă și protecției sociale din Republica Moldova",
+      "description": "Ministerul Muncii și Protecției Sociale elaborează politici publice în domeniile muncii, protecției sociale, demografiei și egalității de gen.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -2518,12 +2525,12 @@
     {
       "id": "md-ms",
       "slug": "ministerul-sanatatii",
-      "name": "Ministerul Sănătății Al Republicii Moldova",
+      "name": "Ministerul Sănătății al Republicii Moldova",
       "shortname": "MS",
       "category": "minister",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-09",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "sănătate",
@@ -2533,7 +2540,7 @@
         ],
         "quality": "verified",
         "seo_title": "MS | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Ministerul Sănătății Al Republicii Moldova (MS) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla oficială a Ministerului Sănătății al Republicii Moldova (MS) în format SVG și vezi variantele disponibile."
       },
       "location": {
         "country_code": "MD",
@@ -2607,7 +2614,7 @@
       "category": "institutie-cultura",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-06",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "chișinău",
@@ -2619,13 +2626,13 @@
         ],
         "quality": "draft",
         "seo_title": "MIOC | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Muzeul de Istorie a Orașului Chișinău (MIOC) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla Muzeului de Istorie a Orașului Chișinău (MIOC), cunoscut ca Turnul de Apă, în format SVG."
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Muzeu al municipiului Chișinău, cunoscut și ca Turnul de Apă.",
+      "description": "Muzeul de Istorie a Orașului Chișinău, cunoscut și ca Turnul de Apă, prezintă istoria capitalei într-o clădire istorică de pe strada Alexei Mateevici.",
       "colors": [
         {
           "name": "Bronze Pantone 875 C",
@@ -2726,12 +2733,12 @@
     {
       "id": "md-mnam",
       "slug": "md-mnam",
-      "name": "Muzeul Național de Artă Moldovei",
+      "name": "Muzeul Național de Artă al Moldovei",
       "shortname": "MNAM",
       "category": "institutie-cultura",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-06",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "chișinău",
@@ -2742,13 +2749,13 @@
         ],
         "quality": "draft",
         "seo_title": "MNAM | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Muzeului Național de Artă Moldovei (MNAM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_description": "Descarcă sigla oficială a Muzeului Național de Artă al Moldovei (MNAM) în format SVG și vezi variantele disponibile."
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Muzeul Național de Artă al Moldovei, una dintre cele mai prestigioase instituții muzeale din Moldova.",
+      "description": "Muzeul Național de Artă al Moldovei păstrează și prezintă colecții de artă națională și universală. Fondat în 1939, muzeul găzduiește peste 40.000 de lucrări.",
       "colors": [
         {
           "name": "Green Primary",
@@ -2810,7 +2817,7 @@
       "category": "parlament",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-06",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "parlament",
@@ -2825,7 +2832,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Parlamentul Republicii Moldova este organul suprem de putere legislativă al statului.",
+      "description": "Parlamentul Republicii Moldova este organul reprezentativ suprem al poporului și unica autoritate legislativă a statului.",
       "assets": {
         "main": {
           "type": "vertical",
@@ -2852,12 +2859,12 @@
     {
       "id": "md-cm",
       "slug": "md-cm",
-      "name": "Președinția Comitetului de Miniștri al Consiliului Europei",
+      "name": "Președinția Republicii Moldova la Comitetul de Miniștri al Consiliului Europei",
       "shortname": "COEMoldova",
       "category": "altele",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-04-25",
+        "last_updated": "2026-10-10",
         "keywords": [
           "consiliul europei",
           "comitetul de ministri",
@@ -2867,14 +2874,14 @@
           "europa"
         ],
         "quality": "draft",
-        "seo_title": "Consiliul Europei Moldova | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Președinției Comitetului de Miniștri al Consiliului Europei în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+        "seo_title": "Președinția Republicii Moldova la Consiliul Europei | identitate.md",
+        "seo_description": "Identitatea vizuală a Președinției Republicii Moldova la Comitetul de Miniștri al Consiliului Europei, exercitată între 14 noiembrie 2025 și 15 mai 2026."
       },
       "location": {
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Președinția Republicii Moldova la Comitetul de Miniștri al Consiliului Europei",
+      "description": "Republica Moldova a deținut Președinția Comitetului de Miniștri al Consiliului Europei în perioada 14 noiembrie 2025–15 mai 2026.",
       "colors": [
         {
           "name": "Albastru COE",
@@ -2917,7 +2924,7 @@
         }
       },
       "resources": {
-        "website": "https://www.coe.int/en/web/presidency"
+        "website": "https://www.coe.int/en/web/cm/cm-135-session"
       }
     },
     {
@@ -3006,12 +3013,12 @@
     {
       "id": "md-stisc",
       "slug": "stisc",
-      "name": "Serviciul Tehnologia Informației și securitatea cibernetică",
+      "name": "Serviciul Tehnologia Informației și Securitate Cibernetică",
       "shortname": "STISC",
       "category": "servicii",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-08",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "serviciu",
@@ -3029,7 +3036,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Serviciul Tehnologia Informației și securitatea cibernetică este responsabil de politicile și programele de dezvoltare a tehnologiei informației și securității cibernetice din Republica Moldova.",
+      "description": "STISC administrează și menține infrastructura IT și sistemele informaționale de stat, gestionează infrastructura unică a cheii publice a Guvernului și implementează politica statului în domeniul securității cibernetice.",
       "colors": [
         {
           "name": "Albastru Oficial",
@@ -3105,7 +3112,7 @@
       "category": "altele",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-18",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "steag",
@@ -3122,7 +3129,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Drapelul de Stat al Republicii Moldova este simbolul național oficial, compus din trei fâșii verticale în culorile albastru, galben și roșu, cu stema țării în centru.",
+      "description": "Drapelul de Stat al Republicii Moldova este un tricolor dreptunghiular cu trei benzi verticale egale, în ordinea albastru, galben și roșu de la hampă. În centrul benzii galbene este Stema de Stat; proporția drapelului este 1:2.",
       "assets": {
         "main": {
           "type": "horizontal",
@@ -3142,7 +3149,7 @@
       "category": "altele",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-02-15",
+        "last_updated": "2026-10-10",
         "keywords": [
           "uniunea europeană",
           "steag",
@@ -3159,7 +3166,7 @@
         "county": null,
         "city": null
       },
-      "description": "Steagul Uniunii Europene este simbolul oficial al Uniunii, reprezentat printr-un cerc de 12 stele aurii pe un fond albastru. Este utilizat pentru identificarea instituţiilor şi iniţiativelor asociate Uniunii Europene.",
+      "description": "Drapelul european simbolizează Uniunea Europeană și, mai larg, unitatea Europei. Are 12 stele aurii dispuse în cerc pe un fond albastru; numărul stelelor nu reprezintă numărul statelor membre.",
       "usage_notes": null,
       "colors": [
         {
@@ -3189,7 +3196,7 @@
       ],
       "typography": null,
       "resources": {
-        "website": null,
+        "website": "https://european-union.europa.eu/principles-countries-history/symbols/european-flag_ro",
         "branding_manual": null,
         "social_media": null
       },
@@ -3225,7 +3232,7 @@
       "category": "altele",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-18",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "stema",
@@ -3243,7 +3250,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Stema de Stat a Republicii Moldova este simbolul heraldic oficial al statului, reprezentând un vultur de aur cu scut pe piept.",
+      "description": "Stema de Stat a Republicii Moldova înfățișează un vultur care poartă pe piept un scut cu capul de bour și o stea între coarne; în cioc ține o cruce, iar în gheare o ramură de măslin și un sceptru.",
       "assets": {
         "main": {
           "type": "symbol",
@@ -3259,102 +3266,6 @@
               "preview": "checkerboard"
             }
           ]
-        }
-      }
-    },
-    {
-      "id": "md-ulim",
-      "slug": "universitatea-de-limbi-internationale-din-moldova",
-      "name": "Universitatea de Limbi Internaționale din Moldova",
-      "shortname": "ULIM",
-      "category": "universitate",
-      "meta": {
-        "version": "1.0",
-        "last_updated": "2026-03-27",
-        "keywords": [
-          "moldova",
-          "universitate",
-          "ulim",
-          "educație",
-          "limbi",
-          "internaționale",
-          "chișinău",
-          "logo ulim",
-          "sigla ulim",
-          "emblema ulim",
-          "logo",
-          "sigla",
-          "emblema"
-        ],
-        "quality": "verified",
-        "seo_title": "ULIM | Sigla Oficială | Identitate.md",
-        "seo_description": "Descarcă sigla oficială a Universitatea de Limbi Internaționale din Moldova (ULIM) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
-      },
-      "location": {
-        "country_code": "MD",
-        "city": "Chișinău"
-      },
-      "description": "Universitatea de Limbi Internaționale din Moldova este o instituție de învățământ superior privată din Republica Moldova, specializată în predarea limbilor străine și domenii conexe.",
-      "colors": [
-        {
-          "name": "Negru",
-          "hex": "#131313",
-          "rgb": [
-            19,
-            19,
-            19
-          ],
-          "usage": "primary"
-        },
-        {
-          "name": "Alb",
-          "hex": "#FFFFFF",
-          "rgb": [
-            255,
-            255,
-            255
-          ],
-          "usage": "neutral"
-        },
-        {
-          "name": "Gri Albăstrui",
-          "hex": "#7c8c9f",
-          "rgb": [
-            124,
-            140,
-            159
-          ],
-          "usage": "secondary"
-        }
-      ],
-      "typography": {
-        "primary": {
-          "family": "Inter",
-          "weights": [
-            400,
-            600,
-            700
-          ]
-        }
-      },
-      "assets": {
-        "main": {
-          "type": "symbol",
-          "color": "/logos/md-ulim/symbol.svg"
-        },
-        "symbol": {
-          "type": "symbol",
-          "color": "/logos/md-ulim/symbol.svg"
-        }
-      },
-      "resources": {
-        "website": "https://ulim.md/",
-        "contact": {
-          "phone": "022 220 029",
-          "address": "Str. Vlaicu Pârcălab nr. 52, Chișinău, Moldova, MD-2012"
-        },
-        "social_media": {
-          "facebook": "https://www.facebook.com/UniversitateaLiberaInternationala"
         }
       }
     },
@@ -3454,6 +3365,103 @@
       }
     },
     {
+      "id": "md-ulim",
+      "slug": "universitatea-de-limbi-internationale-din-moldova",
+      "name": "Universitatea Liberă Internațională din Moldova",
+      "shortname": "ULIM",
+      "category": "universitate",
+      "meta": {
+        "version": "1.0",
+        "last_updated": "2026-10-10",
+        "keywords": [
+          "moldova",
+          "universitate",
+          "universitatea liberă internațională din moldova",
+          "ulim",
+          "educație",
+          "limbi",
+          "internaționale",
+          "chișinău",
+          "logo ulim",
+          "sigla ulim",
+          "emblema ulim",
+          "logo",
+          "sigla",
+          "emblema"
+        ],
+        "quality": "verified",
+        "seo_title": "ULIM | Sigla Oficială | Identitate.md",
+        "seo_description": "Descarcă sigla oficială a Universității Libere Internaționale din Moldova (ULIM) în format SVG și vezi variantele disponibile."
+      },
+      "location": {
+        "country_code": "MD",
+        "city": "Chișinău"
+      },
+      "description": "Universitatea Liberă Internațională din Moldova (ULIM) este o instituție de învățământ superior fondată în 1992, cu programe de studii în drept, economie, științe sociale, educație, informatică, inginerie, design și relații internaționale.",
+      "colors": [
+        {
+          "name": "Negru",
+          "hex": "#131313",
+          "rgb": [
+            19,
+            19,
+            19
+          ],
+          "usage": "primary"
+        },
+        {
+          "name": "Alb",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "usage": "neutral"
+        },
+        {
+          "name": "Gri Albăstrui",
+          "hex": "#7c8c9f",
+          "rgb": [
+            124,
+            140,
+            159
+          ],
+          "usage": "secondary"
+        }
+      ],
+      "typography": {
+        "primary": {
+          "family": "Inter",
+          "weights": [
+            400,
+            600,
+            700
+          ]
+        }
+      },
+      "assets": {
+        "main": {
+          "type": "symbol",
+          "color": "/logos/md-ulim/symbol.svg"
+        },
+        "symbol": {
+          "type": "symbol",
+          "color": "/logos/md-ulim/symbol.svg"
+        }
+      },
+      "resources": {
+        "website": "https://ulim.md/",
+        "contact": {
+          "phone": "022 220 029",
+          "address": "Str. Vlaicu Pârcălab nr. 52, Chișinău, Moldova, MD-2012"
+        },
+        "social_media": {
+          "facebook": "https://www.facebook.com/UniversitateaLiberaInternationala"
+        }
+      }
+    },
+    {
       "id": "md-utm",
       "slug": "universitatea-tehnica-a-moldovei",
       "name": "Universitatea Tehnică a Moldovei",
@@ -3461,7 +3469,7 @@
       "category": "universitate",
       "meta": {
         "version": "1.0",
-        "last_updated": "2026-03-27",
+        "last_updated": "2026-10-10",
         "keywords": [
           "moldova",
           "universitate",
@@ -3485,7 +3493,7 @@
         "country_code": "MD",
         "city": "Chișinău"
       },
-      "description": "Universitatea Tehnică a Moldovei este principala instituție de învățământ superior tehnic din Republica Moldova, formând specialiști în inginerie, tehnologii și științe aplicate.",
+      "description": "Universitatea Tehnică a Moldovei (UTM), fondată în 1964, oferă studii inginerești și tehnice și desfășoară activități de cercetare și inovare.",
       "colors": [
         {
           "name": "Albastru",

@@ -70,7 +70,15 @@ const logoAssetGroupSchema = {
     preview: { type: "string", enum: ["checkerboard", "dark", "light", "checkerboard-dark"] },
     variantPreviews: {
       type: "object",
-      additionalProperties: { type: "string", enum: ["checkerboard", "dark", "light", "checkerboard-dark"] },
+      additionalProperties: {
+        anyOf: [
+          {
+            type: "string",
+            enum: ["checkerboard", "dark", "light", "checkerboard-dark"],
+          },
+          { type: "string", pattern: "^#[0-9A-Fa-f]{6}$" },
+        ],
+      },
     },
     png: nullable({
       type: "object",

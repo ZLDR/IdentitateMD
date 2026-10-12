@@ -47,6 +47,8 @@ const { dark = false } = Astro.props;
         <ul class="space-y-0.5 text-xs mb-3">
           <li><a href="/legal" class:list={['transition-colors inline-block py-1.5', dark ? 'text-[#555] hover:text-[#aaa]' : 'text-surface-500 hover:text-primary-500']}>Drepturi de Autor & Termeni</a></li>
           <li><a href="/privacy" class:list={['transition-colors inline-block py-1.5', dark ? 'text-[#555] hover:text-[#aaa]' : 'text-surface-500 hover:text-primary-500']}>Politica de Confidențialitate</a></li>
+          <li><a href="/cookies" class:list={['transition-colors inline-block py-1.5', dark ? 'text-[#555] hover:text-[#aaa]' : 'text-surface-500 hover:text-primary-500']}>Politica de cookie-uri</a></li>
+          <li><button type="button" data-open-consent-settings class:list={['transition-colors inline-block py-1.5 text-left', dark ? 'text-[#555] hover:text-[#aaa]' : 'text-surface-500 hover:text-primary-500']}>Preferințe de consimțământ</button></li>
         </ul>
         <div class:list={[
           'rounded p-2.5 border',

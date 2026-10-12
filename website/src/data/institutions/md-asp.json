@@ -6,7 +6,7 @@
   "category": "agentie",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-29",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "agentie",
@@ -16,7 +16,7 @@
     ],
     "quality": "verified",
     "seo_title": "ASP | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Agenția Servicii Publice (ASP) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla Agenției Servicii Publice (ASP) a Republicii Moldova în format SVG și consultă variantele de logo din catalog."
   },
   "location": {
     "country_code": "MD",
@@ -78,9 +78,9 @@
     }
   },
   "resources": {
-    "website": "http://asp.gov.md/",
+    "website": "https://www.asp.gov.md/ro",
     "contact": {
-      "phone": "022 257 070",
+      "phone": "14 909",
       "email": "asp@asp.gov.md"
     },
     "social_media": {

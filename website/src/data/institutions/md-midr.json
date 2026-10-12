@@ -1,12 +1,12 @@
 {
   "id": "md-midr",
   "slug": "midr",
-  "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+  "name": "Ministerul Infrastructurii și Dezvoltării Regionale al Republicii Moldova",
   "shortname": "MIDR",
   "category": "minister",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-08",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "minister",
@@ -16,13 +16,13 @@
     ],
     "quality": "verified",
     "seo_title": "MIDR | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova (MIDR) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla oficială a Ministerului Infrastructurii și Dezvoltării Regionale al Republicii Moldova (MIDR) în format SVG și vezi variantele disponibile."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Ministerul Infrastructurii și Dezvoltării Regionale este responsabil de politicile și programele de dezvoltare a infrastructurii și a regiunilor din Republica Moldova.",
+  "description": "Ministerul Infrastructurii și Dezvoltării Regionale elaborează și promovează politici pentru dezvoltarea durabilă și incluzivă în domeniile de infrastructură și dezvoltare regională.",
   "colors": [
     {
       "name": "Albastru Oficial",

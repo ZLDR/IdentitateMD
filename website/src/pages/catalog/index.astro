@@ -26,7 +26,7 @@ const slugByCatalogPath = Object.fromEntries(
 for (const inst of allInstitutions) {
   slugByCatalogPath[inst.slug] = inst.slug;
 }
-const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, ogImage: propOgImage, institutionJsonLd, breadcrumbJsonLd, institutionName } = Astro.props;
+const { initialPathId = '', pageTitle: propTitle, pageDescription: propDesc, ogImage: propOgImage, institutionJsonLd, breadcrumbJsonLd, isInstitutionPage = false, institutionName } = Astro.props;
 
 const categories = CATEGORY_ORDER
   .map(value => ({
@@ -62,7 +62,7 @@ const cdnVersion = CDN_VERSION;
   {breadcrumbJsonLd && (
     <script slot="head" type="application/ld+json" set:html={breadcrumbJsonLd} />
   )}
-  {!institutionJsonLd && (
+  {!isInstitutionPage && (
     <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",

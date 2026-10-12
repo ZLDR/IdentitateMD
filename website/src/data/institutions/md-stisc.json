@@ -1,12 +1,12 @@
 {
   "id": "md-stisc",
   "slug": "stisc",
-  "name": "Serviciul Tehnologia Informației și securitatea cibernetică",
+  "name": "Serviciul Tehnologia Informației și Securitate Cibernetică",
   "shortname": "STISC",
   "category": "servicii",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-08",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "serviciu",
@@ -24,7 +24,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Serviciul Tehnologia Informației și securitatea cibernetică este responsabil de politicile și programele de dezvoltare a tehnologiei informației și securității cibernetice din Republica Moldova.",
+  "description": "STISC administrează și menține infrastructura IT și sistemele informaționale de stat, gestionează infrastructura unică a cheii publice a Guvernului și implementează politica statului în domeniul securității cibernetice.",
   "colors": [
     {
       "name": "Albastru Oficial",

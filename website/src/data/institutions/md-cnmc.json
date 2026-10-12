@@ -3,10 +3,10 @@
   "slug": "md-cnmc",
   "name": "Centrul Național de Management al Crizelor",
   "shortname": "CNMC",
-  "category": "altele",
+  "category": "autoritate",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-05-23",
+    "last_updated": "2026-10-10",
     "keywords": ["moldova", "cnmc", "crize", "management", "urgente", "securitate", "centru national"],
     "quality": "draft",
     "seo_title": "CNMC | Sigla Oficială | Identitate.md",
@@ -17,7 +17,7 @@
     "city": "Chișinău",
     "address": "Republica Moldova, MD-2012 mun. Chișinău, Piața Marii Adunări Naționale, 1"
   },
-  "description": "Centrul Național de Management al Crizelor este instituția responsabilă de coordonarea și gestionarea situațiilor de criză la nivel național în Republica Moldova.",
+  "description": "Centrul Național de Management al Crizelor este autoritatea administrativă centrală din subordinea Guvernului care coordonează managementul situațiilor de criză în Republica Moldova.",
   "colors": [
     {
       "name": "Albastru Oficial",

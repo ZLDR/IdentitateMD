@@ -32,6 +32,9 @@ export const GET: APIRoute = () => {
     lines.push("");
     lines.push(`- **ID:** ${inst.id}`);
     lines.push(`- **Catalog page:** ${url}`);
+    lines.push(
+      `- **JSON record:** https://identitate.md/api/institutions/${encodeURIComponent(inst.id)}.json`,
+    );
     lines.push(`- **Category:** ${inst.category}`);
     lines.push(`- **Quality:** ${inst.meta?.quality || "unknown"}`);
 
@@ -112,12 +115,14 @@ export const GET: APIRoute = () => {
 
   lines.push("## Data Access");
   lines.push("");
+  lines.push("- Agent guide: https://identitate.md/llms.txt");
+  lines.push("- Discovery manifest: https://identitate.md/api/manifest.json");
   lines.push("- JSON API: https://identitate.md/api/institutions.json");
   lines.push("- npm package: @identitate-md/logos");
   lines.push(
     "- CDN: https://cdn.jsdelivr.net/npm/@identitate-md/logos/logos/{id}/{layout}/{variant}.svg",
   );
-  lines.push("- MCP server: npx -y identitate-md-mcp");
+  lines.push("- MCP server: npx -y @identitate-md/mcp");
 
   return new Response(lines.join("\n"), {
     headers: {

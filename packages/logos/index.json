@@ -1,8 +1,8 @@
 {
   "version": "1.1.0",
-  "generated": "2026-05-24T20:08:20.097Z",
+  "generated": "2026-10-09T22:00:09.209Z",
   "count": 38,
-  "totalLogos": 142,
+  "totalLogos": 143,
   "institutions": [
     {
       "id": "eu-flag",
@@ -23,7 +23,7 @@
     {
       "id": "md-age",
       "slug": "md-age",
-      "name": "Agenția De Guvernare Electronică",
+      "name": "Agenția de Guvernare Electronică",
       "layouts": [
         "horizontal",
         "symbol"
@@ -45,7 +45,7 @@
     {
       "id": "md-anre",
       "slug": "md-anre",
-      "name": "Agenția Națională pentru Reglementare în Energetică",
+      "name": "Agenția Națională pentru Reglementare în Energetică a Republicii Moldova",
       "layouts": [
         "horizontal"
       ],
@@ -106,7 +106,7 @@
     {
       "id": "md-bns",
       "slug": "md-bns",
-      "name": "Biroul Național de Statistică Al Republicii Moldova",
+      "name": "Biroul Național de Statistică al Republicii Moldova",
       "layouts": [
         "horizontal",
         "symbol"
@@ -148,7 +148,7 @@
     {
       "id": "md-cm",
       "slug": "md-cm",
-      "name": "Președinția Comitetului de Miniștri al Consiliului Europei",
+      "name": "Președinția Republicii Moldova la Comitetul de Miniștri al Consiliului Europei",
       "layouts": [
         "symbol"
       ],
@@ -184,17 +184,18 @@
       "layouts": [
         "horizontal"
       ],
-      "logoCount": 1,
+      "logoCount": 2,
       "logos": {
         "horizontal": {
-          "color": "/logos/md-cnos/horizontal-color.svg"
+          "color": "/logos/md-cnos/horizontal-color.svg",
+          "white": "/logos/md-cnos/horizontal-white.svg"
         }
       }
     },
     {
       "id": "md-dgcpc",
       "slug": "md-dgcpc",
-      "name": "Direcția Generală Cultură și Patrimoniu Cultural",
+      "name": "Direcția Generală Cultură și Patrimoniu Cultural a municipiului Chișinău",
       "layouts": [
         "horizontal"
       ],
@@ -208,7 +209,7 @@
     {
       "id": "md-dgets",
       "slug": "md-dgets",
-      "name": "Direcția Generală Educație, Tineret și Sport",
+      "name": "Direcția Generală Educație, Tineret și Sport a municipiului Chișinău",
       "layouts": [
         "horizontal",
         "symbol"
@@ -262,7 +263,7 @@
     {
       "id": "md-mae",
       "slug": "md-mae",
-      "name": "Ministerul Afacerilor Externe",
+      "name": "Ministerul Afacerilor Externe al Republicii Moldova",
       "layouts": [
         "horizontal",
         "vertical"
@@ -283,7 +284,7 @@
     {
       "id": "md-maia",
       "slug": "md-maia",
-      "name": "Ministerul Agriculturii și Industriei Alimentare Al Republicii Moldova",
+      "name": "Ministerul Agriculturii și Industriei Alimentare al Republicii Moldova",
       "layouts": [
         "horizontal",
         "vertical"
@@ -437,7 +438,7 @@
     {
       "id": "md-midr",
       "slug": "md-midr",
-      "name": "Ministerul Infrastructurii și Dezvoltării Regionale Al Republicii Moldova",
+      "name": "Ministerul Infrastructurii și Dezvoltării Regionale al Republicii Moldova",
       "layouts": [
         "horizontal",
         "vertical"
@@ -553,7 +554,7 @@
     {
       "id": "md-mnam",
       "slug": "md-mnam",
-      "name": "Muzeul Național de Artă Moldovei",
+      "name": "Muzeul Național de Artă al Moldovei",
       "layouts": [
         "horizontal",
         "symbol"
@@ -571,7 +572,7 @@
     {
       "id": "md-ms",
       "slug": "md-ms",
-      "name": "Ministerul Sănătății Al Republicii Moldova",
+      "name": "Ministerul Sănătății al Republicii Moldova",
       "layouts": [
         "horizontal",
         "vertical"
@@ -658,7 +659,7 @@
     {
       "id": "md-stisc",
       "slug": "md-stisc",
-      "name": "Serviciul Tehnologia Informației și securitatea cibernetică",
+      "name": "Serviciul Tehnologia Informației și Securitate Cibernetică",
       "layouts": [
         "horizontal",
         "symbol"
@@ -678,7 +679,7 @@
     {
       "id": "md-ulim",
       "slug": "md-ulim",
-      "name": "Universitatea de Limbi Internaționale din Moldova",
+      "name": "Universitatea Liberă Internațională din Moldova",
       "layouts": [
         "symbol"
       ],

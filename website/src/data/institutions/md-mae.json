@@ -1,12 +1,12 @@
 {
   "id": "md-mae",
   "slug": "md-mae",
-  "name": "Ministerul Afacerilor Externe",
+  "name": "Ministerul Afacerilor Externe al Republicii Moldova",
   "shortname": "MAE",
   "category": "minister",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-05",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "minister",
@@ -22,7 +22,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Ministerul responsabil de politica externă și relațiile diplomatice ale Republicii Moldova",
+  "description": "Ministerul Afacerilor Externe promovează politica externă a Republicii Moldova și coordonează relațiile țării cu alte state și organizații internaționale.",
   "colors": [
     {
       "name": "Albastru Oficial",

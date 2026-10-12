@@ -1,8 +1,8 @@
 ---
 import CatalogPage from './index.astro';
 import institutionIndex from '../../data/institutions-index.json';
-import { buildCatalogPathMap } from '../../lib/helpers';
-import type { Institution } from '../../types/institution';
+import { buildCatalogPathMap, getPrimaryLogoPath } from '../../lib/helpers';
+import type { Institution, InstitutionCategory } from '../../types/institution';
 
 export async function getStaticPaths() {
   const institutions = institutionIndex.institutions as unknown as Institution[];
@@ -35,12 +35,12 @@ const pageDescription = institution
   ? institution.meta?.seo_description || `Descarcă logo-ul și sigla oficială a ${institution.name}${seoLabel ? ` (${seoLabel})` : ''} în format SVG. Variante cromatice, culori HEX/RGB și tipografie.`
   : undefined;
 
-const primaryLogoPath = institution?.assets?.main?.color
-  ?? institution?.assets?.horizontal?.color
-  ?? institution?.assets?.vertical?.color
-  ?? institution?.assets?.symbol?.color
-  ?? null;
-const ogImage = primaryLogoPath ? `https://identitate.md${primaryLogoPath}` : undefined;
+const primaryLogoPath = institution ? getPrimaryLogoPath(institution) : null;
+const ogImage = primaryLogoPath
+  ? primaryLogoPath.startsWith('http')
+    ? primaryLogoPath
+    : `https://identitate.md${primaryLogoPath}`
+  : undefined;
 
 const breadcrumbJsonLd = institution ? JSON.stringify({
   "@context": "https://schema.org",
@@ -52,44 +52,61 @@ const breadcrumbJsonLd = institution ? JSON.stringify({
   ]
 }) : undefined;
 
-const schemaType = institution?.category === 'universitate' ? 'CollegeOrUniversity' : 'GovernmentOrganization';
+const organizationSchemaTypes: Partial<Record<InstitutionCategory, string>> = {
+  guvern: 'GovernmentOrganization',
+  minister: 'GovernmentOrganization',
+  parlament: 'GovernmentOrganization',
+  directie: 'GovernmentOrganization',
+  agentie: 'GovernmentOrganization',
+  autoritate: 'GovernmentOrganization',
+  primarie: 'GovernmentOrganization',
+  'consiliu-judetean': 'GovernmentOrganization',
+  prefectura: 'GovernmentOrganization',
+  servicii: 'GovernmentOrganization',
+  consilii: 'GovernmentOrganization',
+  universitate: 'CollegeOrUniversity',
+  'institutie-cultura': 'Organization',
+};
 
-const institutionJsonLd = institution ? JSON.stringify({
+const schemaType = institution ? organizationSchemaTypes[institution.category] : undefined;
+const logoPath = institution ? getPrimaryLogoPath(institution) : null;
+const logoUrl = logoPath
+  ? logoPath.startsWith('http')
+    ? logoPath
+    : `https://identitate.md${logoPath}`
+  : undefined;
+const socialProfiles = institution?.resources?.social_media
+  ? Object.values(institution.resources.social_media).filter((url): url is string => Boolean(url))
+  : [];
+const sameAs = [
+  ...(institution?.resources?.website ? [institution.resources.website] : []),
+  ...socialProfiles,
+];
+const institutionJsonLd = institution && schemaType ? JSON.stringify({
   "@context": "https://schema.org",
   "@type": schemaType,
+  "@id": `https://identitate.md/catalog/${initialPathId}#organization`,
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "identitate.md institution ID",
+    "value": institution.id,
+  },
   "name": institution.name,
   ...(institution.shortname && { "alternateName": institution.shortname }),
   ...(institution.description && { "description": institution.description }),
   ...(institution.resources?.website && { "url": institution.resources.website }),
-  ...(institution.assets?.main?.color && {
+  ...(logoUrl && {
     "logo": {
       "@type": "ImageObject",
-      "url": `https://identitate.md${institution.assets.main.color}`,
+      "url": logoUrl,
       "name": `Logo ${institution.name}${institution.shortname ? ` (${institution.shortname})` : ''}`,
-      "description": `Sigla vectorială oficială a ${institution.name}`,
-      "encodingFormat": "image/svg+xml",
-      "contentUrl": `https://identitate.md${institution.assets.main.color}`
+      "description": `Logo asociat instituției în registrul identitate.md: ${institution.name}`,
+      ...(/\.svg(?:$|[?#])/i.test(logoUrl) && { "encodingFormat": "image/svg+xml" }),
+      "contentUrl": logoUrl
     }
   }),
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": institution.location?.city || "Chișinău",
-    "addressCountry": institution.location?.country_code || "MD"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Republic of Moldova",
-    "sameAs": "https://www.wikidata.org/wiki/Q217"
-  },
   ...(institution.meta?.keywords?.length && { "keywords": institution.meta.keywords.join(', ') }),
-  "sameAs": [
-    ...(institution.resources?.website ? [institution.resources.website] : []),
-    ...((institution.resources as any)?.social_media?.facebook ? [(institution.resources as any).social_media.facebook] : []),
-    ...((institution.resources as any)?.social_media?.instagram ? [(institution.resources as any).social_media.instagram] : []),
-    ...((institution.resources as any)?.social_media?.linkedin ? [(institution.resources as any).social_media.linkedin] : []),
-    ...((institution.resources as any)?.social_media?.twitter ? [(institution.resources as any).social_media.twitter] : []),
-    ...((institution.resources as any)?.social_media?.youtube ? [(institution.resources as any).social_media.youtube] : []),
-  ]
+  ...(sameAs.length > 0 && { "sameAs": sameAs }),
 }) : undefined;
 ---
 
@@ -100,5 +117,6 @@ const institutionJsonLd = institution ? JSON.stringify({
   ogImage={ogImage}
   institutionJsonLd={institutionJsonLd}
   breadcrumbJsonLd={breadcrumbJsonLd}
+  isInstitutionPage={Boolean(institution)}
   institutionName={institution?.name}
 />

@@ -1,12 +1,12 @@
 {
   "id": "md-age",
   "slug": "agentia-de-guvernare-electronica",
-  "name": "Agenția De Guvernare Electronică",
+  "name": "Agenția de Guvernare Electronică",
   "shortname": "AGE",
   "category": "agentie",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-08",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "agenție",
@@ -16,13 +16,13 @@
     ],
     "quality": "verified",
     "seo_title": "AGE | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Agenția De Guvernare Electronică (AGE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla AGE, Agenția de Guvernare Electronică din Republica Moldova, în format SVG și consultă variantele de logo din catalog."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Agenția De Guvernare Electronică este responsabilă de dezvoltarea și implementarea soluțiilor de guvernare electronică în Republica Moldova.",
+  "description": "Agenția de Guvernare Electronică (AGE) promovează și implementează inițiativele de digitalizare a serviciilor publice în Republica Moldova.",
   "colors": [
     {
       "name": "Teal Oficial",

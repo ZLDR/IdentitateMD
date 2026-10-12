@@ -1,21 +1,17 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { getCategories } from "../data.js";
+import { readOnlyToolConfig, toolResponse } from "./tool-response.js";
 
 export function registerListCategories(server: McpServer): void {
-  server.tool(
+  server.registerTool(
     "list_categories",
-    "List all institution categories with their labels and institution counts.",
-    {},
+    readOnlyToolConfig(
+      "List institution categories",
+      "List the current category IDs, Romanian labels, and institution counts. Use an ID as the category filter in search_institutions.",
+      {},
+    ),
     () => {
-      const categories = getCategories();
-      return {
-        content: [
-          {
-            type: "text",
-            text: JSON.stringify(categories, null, 2),
-          },
-        ],
-      };
+      return toolResponse(getCategories());
     }
   );
 }

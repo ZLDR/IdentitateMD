@@ -2,80 +2,139 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Politica de Confidențialitate | identitate.md" description="Informații privind colectarea și prelucrarea datelor cu caracter personal pe identitate.md. Site-ul nu colectează date personale fără consimțământul tău." noindex={true}>
+<BaseLayout
+  title="Politica de Confidențialitate | identitate.md"
+  description="Află ce date prelucrează identitate.md, în ce scop, prin ce furnizori și cum îți poți exercita drepturile."
+  noindex={true}
+>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Politica de Confidențialitate | identitate.md",
-    "description": "Informații privind colectarea și prelucrarea datelor cu caracter personal pe identitate.md.",
+    "description": "Informații despre datele personale prelucrate de identitate.md și drepturile persoanelor vizate.",
     "url": "https://identitate.md/privacy",
     "isPartOf": { "@type": "WebSite", "url": "https://identitate.md" },
     "inLanguage": "ro"
   })} />
-  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 prose-sm">
+
+  <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
     <header class="mb-8">
-      <h1 class="text-2xl sm:text-3xl font-bold text-primary-900 mb-3">Politica de Confidențialitate</h1>
-      <p class="text-sm text-surface-500">Ultima actualizare: Ianuarie 2026</p>
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-primary-600">Confidențialitate</p>
+      <h1 class="text-2xl font-bold text-primary-900 sm:text-3xl">Politica de Confidențialitate</h1>
+      <p class="mt-3 text-sm text-surface-500">Ultima actualizare: 10 octombrie 2026</p>
     </header>
 
-    <section class="space-y-6 text-sm text-surface-700 leading-relaxed">
-
-      <div>
-        <h2 class="text-lg font-bold text-primary-900 mb-2">1. Informații Generale</h2>
+    <div class="space-y-7 text-sm leading-relaxed text-surface-700">
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">1. Cine răspunde de date</h2>
         <p>
-          IdentitateMD (<a href="https://identitate.md" class="text-primary-600 hover:text-primary-700">identitate.md</a>)
-          este un proiect civic open-source care funcționează ca un registru digital pentru identitățile vizuale
-          ale instituțiilor publice din Republica Moldova. Acest site nu colectează, nu stochează și nu procesează date personale
-          în scopuri comerciale.
+          IdentitateMD este un registru civic open-source dezvoltat și menținut de
+          <a href="https://shrift.md" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Shrift Design Studio</a>.
+          Pentru întrebări și cereri privind datele personale, contactează-ne la
+          <a href="mailto:salut@shrift.md" class="text-primary-700 underline">salut@shrift.md</a>.
         </p>
-      </div>
+        <p class="mt-3">
+          IdentitateMD nu este afiliat Guvernului Republicii Moldova sau instituțiilor ale căror identități vizuale sunt prezentate.
+        </p>
+      </section>
 
-      <div>
-        <h2 class="text-lg font-bold text-primary-900 mb-2">2. Date Colectate</h2>
-        <p>Site-ul <strong>nu folosește cookie-uri</strong> proprii și <strong>nu colectează date personale</strong> prin formulare stocate pe serverele noastre.</p>
-        <ul class="list-disc list-inside space-y-1 mt-2 text-surface-600">
-          <li><strong>Formularul „Solicită un Logo"</strong> - datele introduse sunt trimise direct către GitHub Issues (serviciu terț operat de GitHub, Inc.). Nu stocăm aceste date pe serverele noastre.</li>
-          <li><strong>Analiză trafic</strong> - serviciul de hosting (Vercel) poate colecta date anonime de trafic (se aplică <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 underline">Politica Vercel</a>).</li>
-          <li><strong>CDN</strong> - fișierele logo sunt distribuite prin jsDelivr și unpkg, care pot înregistra solicitări HTTP conform politicilor proprii.</li>
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">2. Date și scopuri</h2>
+        <ul class="list-disc space-y-2 pl-5">
+          <li>
+            <strong>Solicitări de logo:</strong> numele instituției, mesajul și adresa de email pe care alegi să o furnizezi.
+            Le folosim pentru a analiza solicitarea și, dacă ai cerut, pentru a te anunța despre rezultat. Formularul transmite
+            datele prin Web3Forms (Web3Creative), care le prelucrează pentru a le livra prin email. Nu păstrăm formularul într-o
+            bază de date proprie. Web3Forms descrie în politica sa o retenție de până la trei ani pentru datele trimise prin formulare.
+          </li>
+          <li>
+            <strong>Analitică opțională:</strong> numai după alegerea ta, Vercel Web Analytics înregistrează statistici agregate
+            despre pagini, referințe, locație aproximativă și caracteristicile browserului/dispozitivului; PostHog înregistrează
+            evenimente funcționale, precum vizualizarea unei instituții, copierea sau descărcarea unui logo. Nu activăm
+            înregistrarea sesiunii, capturarea automată a interacțiunilor sau profiluri pentru persoane identificate.
+            URL-urile analitice sunt trimise fără parametri de interogare.
+          </li>
+          <li>
+            <strong>Livrarea și securitatea site-ului:</strong> furnizorul de hosting poate prelucra date tehnice ale cererilor,
+            precum adresa IP, data și ora, browserul și pagina solicitată, pentru a livra și proteja site-ul.
+          </li>
+          <li>
+            <strong>Resurse externe:</strong> Google Fonts și serviciile externe pe care alegi să le deschizi pot primi datele
+            tehnice necesare conexiunii, inclusiv adresa IP. Aceste servicii își aplică propriile politici.
+          </li>
         </ul>
-      </div>
+      </section>
 
-      <div>
-        <h2 class="text-lg font-bold text-primary-900 mb-2">3. Servicii Terțe</h2>
-        <p>Site-ul utilizează următoarele servicii terțe care pot procesa date tehnice (adresă IP, user agent):</p>
-        <ul class="list-disc list-inside space-y-1 mt-2 text-surface-600">
-          <li><a href="https://vercel.com" target="_blank" rel="noopener" class="text-primary-600 underline">Vercel</a> - găzduire și CDN proxy</li>
-          <li><a href="https://www.jsdelivr.com" target="_blank" rel="noopener" class="text-primary-600 underline">jsDelivr</a> - distribuție fișiere logo (CDN)</li>
-          <li><a href="https://fonts.google.com" target="_blank" rel="noopener" class="text-primary-600 underline">Google Fonts</a> - încărcarea fontului Public Sans</li>
-          <li><a href="https://github.com" target="_blank" rel="noopener" class="text-primary-600 underline">GitHub</a> - procesarea solicitărilor de logo-uri (Issues)</li>
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">3. Temeiuri juridice</h2>
+        <ul class="list-disc space-y-2 pl-5">
+          <li>Răspunsul la solicitarea trimisă de tine: prelucrarea necesară pentru a da curs cererii tale.</li>
+          <li>Analitica PostHog și Vercel: consimțământul tău, pe care îl poți retrage oricând din <a href="/cookies" class="text-primary-700 underline">preferințele de cookie-uri</a>.</li>
+          <li>Livrarea, prevenirea abuzurilor și protejarea site-ului: interesul legitim de a menține serviciul funcțional și sigur.</li>
         </ul>
-      </div>
+      </section>
 
-      <div>
-        <h2 class="text-lg font-bold text-primary-900 mb-2">4. Drepturi GDPR</h2>
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">4. Furnizori și transferuri</h2>
         <p>
-          Întrucât nu colectăm date personale pe serverele proprii, nu există date de șters sau de exportat.
-          Pentru date procesate de serviciile terțe menționate mai sus, vă rugăm să consultați politicile
-          de confidențialitate ale acestora.
+          Furnizorii implicați pot include Vercel (hosting și analitică), PostHog (analitică), Web3Creative/Web3Forms
+          (transmiterea formularelor și emailurilor), Google (fonturi) și GitHub (dacă alegi să deschizi repository-ul sau
+          formularul extern). PostHog este configurat prin domeniul <code class="rounded bg-surface-100 px-1">t.identitate.md</code>.
         </p>
-      </div>
+        <p class="mt-3">
+          Furnizorii pot prelucra date în afara Republicii Moldova, inclusiv în regiuni unde operează infrastructura lor.
+          Pentru detalii despre prelucrarea făcută de aceștia, consultă
+          <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Vercel</a>,
+          <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">PostHog</a>,
+          <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Web3Forms</a>
+          și <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Google</a>.
+        </p>
+      </section>
 
-      <div>
-        <h2 class="text-lg font-bold text-primary-900 mb-2">5. Modificări</h2>
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">5. Durata păstrării</h2>
+        <ul class="list-disc space-y-2 pl-5">
+          <li>Alegerea privind analitica este salvată în browser timp de 180 de zile.</li>
+          <li>Vercel declară că identificatorul unei sesiuni de Web Analytics este eliminat automat după 24 de ore; datele agregate urmează regulile platformei.</li>
+          <li>Evenimentele PostHog sunt păstrate potrivit configurației de retenție a proiectului PostHog.</li>
+          <li>Web3Forms indică o retenție de până la trei ani pentru datele formularelor. Mesajele de email primite de echipa proiectului sunt păstrate cât este necesar pentru soluționarea solicitării.</li>
+          <li>Jurnalele tehnice sunt păstrate de furnizorii de hosting potrivit politicilor și configurației lor de serviciu.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">6. Drepturile tale</h2>
         <p>
-          Această politică poate fi actualizată periodic. Modificările vor fi reflectate pe această pagină.
-          Vă încurajăm să revizitați periodic această pagină.
+          În condițiile Legii nr. 195/2024, poți cere accesul la date, rectificarea sau ștergerea lor, restricționarea
+          prelucrării, portabilitatea atunci când se aplică și te poți opune prelucrării bazate pe interes legitim.
+          Dacă prelucrarea se bazează pe consimțământ, îl poți retrage în orice moment; retragerea nu afectează prelucrarea
+          făcută înainte de retragere. Scrie la <a href="mailto:salut@shrift.md" class="text-primary-700 underline">salut@shrift.md</a>.
         </p>
-      </div>
+        <p class="mt-3">
+          Ai dreptul să depui o plângere la
+          <a href="https://datepersonale.md/about/plingeri-si-petitii/" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Centrul Național pentru Protecția Datelor cu Caracter Personal</a>
+          (CNPDCP), inclusiv prin email la <a href="mailto:centru@datepersonale.md" class="text-primary-700 underline">centru@datepersonale.md</a>.
+        </p>
+      </section>
 
-      <div>
-        <h2 class="text-lg font-bold text-primary-900 mb-2">6. Contact</h2>
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">7. Cookie-uri și consimțământ</h2>
         <p>
-          Pentru întrebări legate de confidențialitate, deschideți un
-          <a href="https://github.com/ZLDR/IdentitateMD/issues" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 underline">Issue pe GitHub</a>.
+          Analitica este blocată până când îți exprimi alegerea, conform art. 7 din Legea nr. 195/2024. Poți accepta, refuza sau modifica separat opțiunea pentru
+          analitică. Alegerea se poate schimba din butonul „Confidențialitate” sau din
+          <a href="/cookies" class="text-primary-700 underline">Politica de cookie-uri și stocare</a>.
         </p>
-      </div>
+      </section>
 
-    </section>
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-primary-900">8. Legea aplicabilă și actualizări</h2>
+        <p>
+          Prelucrăm datele potrivit legislației aplicabile din Republica Moldova, inclusiv
+          <a href="https://www.legis.md/cautare/downloadpdf/144681" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Legii nr. 195/2024 privind protecția datelor cu caracter personal</a>,
+          în vigoare din 23 august 2026. Putem actualiza această pagină când se schimbă serviciile sau practicile descrise aici;
+          data actualizării va fi indicată la începutul documentului.
+        </p>
+      </section>
+    </div>
   </article>
 </BaseLayout>

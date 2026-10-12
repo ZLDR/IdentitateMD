@@ -1,12 +1,12 @@
 {
   "id": "md-anre",
   "slug": "agentia-nationala-pentru-reglementare-in-energetica",
-  "name": "Agenția Națională pentru Reglementare în Energetică",
+  "name": "Agenția Națională pentru Reglementare în Energetică a Republicii Moldova",
   "shortname": "ANRE",
   "category": "agentie",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-19",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "agenție",
@@ -19,13 +19,13 @@
     ],
     "quality": "verified",
     "seo_title": "ANRE | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Agenția Națională pentru Reglementare în Energetică (ANRE) în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_description": "Descarcă sigla ANRE, Agenția Națională pentru Reglementare în Energetică a Republicii Moldova, în format SVG și consultă variantele de logo din catalog."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Agenția Națională pentru Reglementare în Energetică este autoritatea publică autonomă responsabilă de reglementarea activităților în sectorul energetic al Republicii Moldova.",
+  "description": "ANRE implementează politica statului privind reglementarea sectoarelor energetice și monitorizează funcționarea piețelor de energie din Republica Moldova.",
   "colors": [
     {
       "name": "Negru Închis",

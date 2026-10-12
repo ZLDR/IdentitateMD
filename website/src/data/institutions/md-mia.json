@@ -6,7 +6,7 @@
   "category": "altele",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-20",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "plăți",
@@ -26,7 +26,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "MIA Plăți Instant este platforma națională de plăți instant din Republica Moldova, operată de Banca Națională a Moldovei, care permite transferuri de bani în timp real între persoane și companii.",
+  "description": "MIA Plăți Instant este sistemul de plăți dezvoltat de Banca Națională a Moldovei. Acesta permite transferuri instant între persoane, iar din martie 2026 și transferuri B2B între companii.",
   "colors": [
     {
       "name": "Violet",
@@ -163,7 +163,7 @@
     }
   },
   "resources": {
-    "website": "https://mia.bnm.md/en",
+    "website": "https://mia.bnm.md/ro",
     "brandbook": "/brandbooks/MIA_identityGuideline1.6b.pdf",
     "contact": {
       "email": "Fintech@bnm.md"

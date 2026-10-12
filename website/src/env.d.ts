@@ -13,7 +13,10 @@ declare global {
     __CATEGORY_LABELS__: Record<string, string>;
     posthog?: {
       capture: (eventName: string, properties?: Record<string, unknown>) => void;
+      reset: () => void;
+      opt_out_capturing: () => void;
     };
+    __identitateVercelAnalyticsLoaded?: boolean;
   }
 }
 

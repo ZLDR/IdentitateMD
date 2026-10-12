@@ -6,7 +6,7 @@
   "category": "altele",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-03-18",
+    "last_updated": "2026-10-10",
     "keywords": [
       "moldova",
       "steag",
@@ -23,7 +23,7 @@
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Drapelul de Stat al Republicii Moldova este simbolul național oficial, compus din trei fâșii verticale în culorile albastru, galben și roșu, cu stema țării în centru.",
+  "description": "Drapelul de Stat al Republicii Moldova este un tricolor dreptunghiular cu trei benzi verticale egale, în ordinea albastru, galben și roșu de la hampă. În centrul benzii galbene este Stema de Stat; proporția drapelului este 1:2.",
   "assets": {
     "main": {
       "type": "horizontal",

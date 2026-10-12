@@ -1,12 +1,12 @@
 {
   "id": "md-cm",
   "slug": "md-cm",
-  "name": "Președinția Comitetului de Miniștri al Consiliului Europei",
+  "name": "Președinția Republicii Moldova la Comitetul de Miniștri al Consiliului Europei",
   "shortname": "COEMoldova",
   "category": "altele",
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-04-25",
+    "last_updated": "2026-10-10",
     "keywords": [
       "consiliul europei",
       "comitetul de ministri",
@@ -16,14 +16,14 @@
       "europa"
     ],
     "quality": "draft",
-    "seo_title": "Consiliul Europei Moldova | Sigla Oficială | Identitate.md",
-    "seo_description": "Descarcă sigla oficială a Președinției Comitetului de Miniștri al Consiliului Europei în format SVG. Logo, culori HEX/RGB și identitatea vizuală oficială."
+    "seo_title": "Președinția Republicii Moldova la Consiliul Europei | identitate.md",
+    "seo_description": "Identitatea vizuală a Președinției Republicii Moldova la Comitetul de Miniștri al Consiliului Europei, exercitată între 14 noiembrie 2025 și 15 mai 2026."
   },
   "location": {
     "country_code": "MD",
     "city": "Chișinău"
   },
-  "description": "Președinția Republicii Moldova la Comitetul de Miniștri al Consiliului Europei",
+  "description": "Republica Moldova a deținut Președinția Comitetului de Miniștri al Consiliului Europei în perioada 14 noiembrie 2025–15 mai 2026.",
   "colors": [
     {
       "name": "Albastru COE",
@@ -66,6 +66,6 @@
     }
   },
   "resources": {
-    "website": "https://www.coe.int/en/web/presidency"
+    "website": "https://www.coe.int/en/web/cm/cm-135-session"
   }
 }

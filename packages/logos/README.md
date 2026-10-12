@@ -35,7 +35,7 @@ Logo-urile sunt disponibile automat prin CDN-uri gratuite:
 ```html
 <!-- Versiune specifică (recomandată pentru producție) -->
 <img
-  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.4.1/logos/md-guvern/horizontal-color.svg"
+  src="https://cdn.jsdelivr.net/npm/@identitate-md/logos@1.5.8/logos/md-guvern/horizontal-color.svg"
   alt="Guvernul Republicii Moldova"
 />
 
