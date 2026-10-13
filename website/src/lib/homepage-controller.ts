@@ -165,6 +165,7 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
       if (copyBtn) {
         e.preventDefault();
         const logoPath = copyBtn.dataset.logoPath!;
+        const institution = copyBtn.closest<HTMLElement>('[data-institution-id]')?.dataset.institutionId;
         const orig = copyBtn.innerHTML;
         const showSuccess = () => {
           showToast('SVG copiat în clipboard!');
@@ -178,17 +179,35 @@ export function attachHomepageController({ data, labels, catalogPaths }: Homepag
                 'text/plain': fetch(logoPath).then(r => r.ok ? r.text() : Promise.reject()).then(t => new Blob([t], { type: 'text/plain' })),
               }),
             ]);
+            window.posthog?.capture('logo_copied', { institution, asset_path: logoPath });
             showSuccess();
           } else {
             const res = await fetch(logoPath);
             if (!res.ok) throw new Error();
             await navigator.clipboard.writeText(await res.text());
+            window.posthog?.capture('logo_copied', { institution, asset_path: logoPath });
             showSuccess();
           }
         } catch {
           showToast('Eroare la copiere', 'error');
         }
         return;
+      }
+
+      const downloadLink = target.closest<HTMLAnchorElement>('.logo-card a[download]');
+      if (downloadLink) {
+        const institution = downloadLink.closest<HTMLElement>('[data-institution-id]')?.dataset.institutionId;
+        window.posthog?.capture('logo_downloaded', {
+          institution,
+          format: 'svg',
+          asset: 'main',
+        });
+        if (institution) {
+          window.va?.('pageview', {
+            route: '/download/[slug]/[format]',
+            path: `/download/${institution}/svg`,
+          });
+        }
       }
 
     });
