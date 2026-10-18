@@ -34,7 +34,7 @@ const total = institutions.length;
   noHeader={true}
   noFooter={true}
 >
-  <div class="flex flex-col lg:flex-row min-h-screen bg-white">
+  <div class="flex flex-col lg:flex-row min-h-screen lg:h-screen bg-white overflow-hidden">
 
     <!-- ═══════════════════════════════════════════════════ -->
     <!-- SIDEBAR (desktop only)                              -->
@@ -114,7 +114,7 @@ const total = institutions.length;
     <!-- ═══════════════════════════════════════════════════ -->
     <!-- MAIN AREA                                           -->
     <!-- ═══════════════════════════════════════════════════ -->
-    <div class="flex-1 flex flex-col min-w-0">
+    <div class="flex-1 flex flex-col min-w-0 min-h-0">
 
       <!-- Mobile: compact top bar -->
       <div class="lg:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-surface-200 px-4 py-3 flex items-center gap-3">
@@ -166,7 +166,7 @@ const total = institutions.length;
 
       <!-- Desktop: search bar -->
       <div class="hidden lg:block border-b border-surface-200 bg-white" id="search-wrapper">
-        <div class="px-6 py-3 relative">
+        <div class="px-6 py-[9px] relative">
           <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg class="w-4 h-4 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,7 +189,7 @@ const total = institutions.length;
       </div>
 
       <!-- Scrollable content -->
-      <div class="flex-1 bg-surface-50">
+      <div class="flex-1 min-h-0 overflow-y-auto bg-surface-50">
         <div class="px-4 lg:px-6 py-5">
 
           <header class="mb-5">
