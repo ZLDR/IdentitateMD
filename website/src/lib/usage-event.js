@@ -36,3 +36,10 @@ export function parseUsageField(field) {
   const [event, institution, ...rest] = String(field).split('|');
   return { event, institution, asset: rest.join('|') };
 }
+
+const BOT_RE = /bot|crawl|spider|slurp|headless|lighthouse|curl|wget|python-requests|node-fetch|undici|axios|go-http-client|httpclient/i;
+
+/** Empty or automated user agents are not counted. The value is checked, never stored. */
+export function isAutomatedUserAgent(userAgent) {
+  return !userAgent || BOT_RE.test(userAgent);
+}
