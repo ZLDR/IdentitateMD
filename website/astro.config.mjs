@@ -11,7 +11,7 @@ export default defineConfig({
   site: 'https://identitate.md',
   trailingSlash: 'never',
   devToolbar: { enabled: false },
-  integrations: [tailwind(), sitemap({ filter: (page) => !page.includes('/privacy') })],
+  integrations: [tailwind(), sitemap({ filter: (page) => !page.includes('/privacy') && !page.includes('/statistici') })],
   server: {
     port: process.env.PORT ? parseInt(process.env.PORT) : 4321,
     host: process.env.HOST || 'localhost',
