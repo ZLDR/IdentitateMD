@@ -1,5 +1,6 @@
 import { buildCatalogDetail } from './catalog-detail';
 import { attachCatalogMobileSheet } from './catalog-mobile-sheet';
+import { countUsage } from './usage-counter';
 
 export function attachCatalogController() {
 // ─── Bootstrap ──────────────────────────────────────────────────────────────
@@ -148,6 +149,7 @@ function wireDetail() {
         const text = await fetch(path).then(r => r.text());
         await navigator.clipboard.writeText(text);
         window.posthog?.capture('logo_copied', { institution: currentSlug, asset_path: path });
+        countUsage('copy', currentSlug, path);
         flashCheck(btn);
       } catch { flashX(btn); }
       delete btn.dataset.copying;
@@ -201,6 +203,7 @@ function wireDetail() {
         a.href = url; a.download = `${slug}-logos.zip`; a.click();
         window.va?.('pageview', { route: '/download/[slug]/[format]', path: `/download/${slug}/zip` });
         window.posthog?.capture('zip_downloaded', { institution: slug, file_count: items.length });
+        countUsage('zip', slug, 'zip');
         URL.revokeObjectURL(url);
         zipBtn.innerHTML = `<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ZIP descărcat!`;
         setTimeout(() => { zipBtn.innerHTML = orig; zipBtn.disabled = false; }, 2000);
@@ -353,6 +356,7 @@ document.addEventListener('click', e => {
     format: a.dataset.vaFmt,
     asset: a.dataset.vaAsset,
   });
+  countUsage('download', a.dataset.vaDl, a.dataset.vaAsset);
 });
 
 const mobileSheet = attachCatalogMobileSheet((slug) => loadInstitution(slug, { updateUrl: true, replace: false }));
