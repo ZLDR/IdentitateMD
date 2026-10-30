@@ -16,7 +16,6 @@ declare global {
       reset: () => void;
       opt_out_capturing: () => void;
     };
-    __identitateVercelAnalyticsLoaded?: boolean;
   }
 }
 

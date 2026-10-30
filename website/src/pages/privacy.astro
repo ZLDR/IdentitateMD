@@ -48,8 +48,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             bază de date proprie. Web3Forms descrie în politica sa o retenție de până la trei ani pentru datele trimise prin formulare.
           </li>
           <li>
-            <strong>Analitică opțională:</strong> numai după alegerea ta, Vercel Web Analytics înregistrează statistici agregate
-            despre pagini, referințe, locație aproximativă și caracteristicile browserului/dispozitivului; PostHog înregistrează
+            <strong>Analitică opțională:</strong> numai după alegerea ta, PostHog înregistrează
             evenimente funcționale, precum vizualizarea unei instituții, copierea sau descărcarea unui logo. Nu activăm
             înregistrarea sesiunii, capturarea automată a interacțiunilor sau profiluri pentru persoane identificate.
             URL-urile analitice sunt trimise fără parametri de interogare.
@@ -69,7 +68,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 class="mb-2 text-lg font-semibold text-primary-900">3. Temeiuri juridice</h2>
         <ul class="list-disc space-y-2 pl-5">
           <li>Răspunsul la solicitarea trimisă de tine: prelucrarea necesară pentru a da curs cererii tale.</li>
-          <li>Analitica PostHog și Vercel: consimțământul tău, pe care îl poți retrage oricând din <a href="/cookies" class="text-primary-700 underline">preferințele de cookie-uri</a>.</li>
+          <li>Analitica PostHog: consimțământul tău, pe care îl poți retrage oricând din <a href="/cookies" class="text-primary-700 underline">preferințele de cookie-uri</a>.</li>
           <li>Livrarea, prevenirea abuzurilor și protejarea site-ului: interesul legitim de a menține serviciul funcțional și sigur.</li>
         </ul>
       </section>
@@ -77,14 +76,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section>
         <h2 class="mb-2 text-lg font-semibold text-primary-900">4. Furnizori și transferuri</h2>
         <p>
-          Furnizorii implicați pot include Vercel (hosting și analitică), PostHog (analitică), Web3Creative/Web3Forms
+          Furnizorii implicați pot include PostHog (analitică), Cloudflare (DNS și rețea de livrare), Web3Creative/Web3Forms
           (transmiterea formularelor și emailurilor), Google (fonturi) și GitHub (dacă alegi să deschizi repository-ul sau
           formularul extern). PostHog este configurat prin domeniul <code class="rounded bg-surface-100 px-1">t.identitate.md</code>.
         </p>
         <p class="mt-3">
           Furnizorii pot prelucra date în afara Republicii Moldova, inclusiv în regiuni unde operează infrastructura lor.
           Pentru detalii despre prelucrarea făcută de aceștia, consultă
-          <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Vercel</a>,
+          <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Cloudflare</a>,
           <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">PostHog</a>,
           <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Web3Forms</a>
           și <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-700 underline">Google</a>.
@@ -95,7 +94,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 class="mb-2 text-lg font-semibold text-primary-900">5. Durata păstrării</h2>
         <ul class="list-disc space-y-2 pl-5">
           <li>Alegerea privind analitica este salvată în browser timp de 180 de zile.</li>
-          <li>Vercel declară că identificatorul unei sesiuni de Web Analytics este eliminat automat după 24 de ore; datele agregate urmează regulile platformei.</li>
           <li>Evenimentele PostHog sunt păstrate potrivit configurației de retenție a proiectului PostHog.</li>
           <li>Web3Forms indică o retenție de până la trei ani pentru datele formularelor. Mesajele de email primite de echipa proiectului sunt păstrate cât este necesar pentru soluționarea solicitării.</li>
           <li>Jurnalele tehnice sunt păstrate de furnizorii de hosting potrivit politicilor și configurației lor de serviciu.</li>

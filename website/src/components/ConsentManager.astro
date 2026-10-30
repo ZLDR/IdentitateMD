@@ -9,8 +9,8 @@
         <div class="max-w-2xl">
           <h2 class="text-sm font-semibold text-primary-900">Tu alegi ce măsurăm</h2>
           <p class="mt-1 text-xs leading-relaxed text-surface-600">
-            Folosim stocare esențială pentru a reține alegerea ta. Cu acordul tău, folosim Vercel Analytics
-            și PostHog pentru statistici de utilizare. Analitica este oprită până alegi.
+            Folosim stocare esențială pentru a reține alegerea ta. Cu acordul tău, folosim PostHog
+            pentru statistici de utilizare. Analitica este oprită până alegi.
             <a href="/cookies" class="font-medium text-primary-700 underline underline-offset-2">Detalii despre cookie-uri și stocare</a>.
           </p>
         </div>
@@ -121,10 +121,7 @@
     if (!hasAnalyticsConsent()) return;
 
     try {
-      const [{ default: posthog }, { inject }] = await Promise.all([
-        import('posthog-js'),
-        import('@vercel/analytics'),
-      ]);
+      const { default: posthog } = await import('posthog-js');
 
       if (!hasAnalyticsConsent()) return;
 
@@ -164,22 +161,8 @@
         window.posthog = posthog;
       }
 
-      if (!window.__identitateVercelAnalyticsLoaded) {
-        inject({
-          beforeSend: (event) => {
-            if (!hasAnalyticsConsent()) return null;
-            try {
-              const url = new URL(event.url);
-              return { ...event, url: `${url.origin}${url.pathname}` };
-            } catch {
-              return null;
-            }
-          },
-        });
-        window.__identitateVercelAnalyticsLoaded = true;
-      }
     } catch {
-      // Keep the site usable if either optional analytics provider is unavailable.
+      // Keep the site usable if optional analytics is unavailable.
     }
   }
 
